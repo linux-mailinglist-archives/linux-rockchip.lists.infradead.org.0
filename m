@@ -2,73 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97EFC18356E
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 16:51:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD371183573
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 16:51:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TSv9Va+n24rW6mkbMgjiw6P480zIOcX9UE8gTNhnsWU=; b=EN5FZv+oje9cY2
-	Et1B7RBN6mfaRIaEqzZPWdsZ+xRnBnyEfPly+/0QWar7fxp3Ti7+1PmASatt3RktE1/UubG79xgoF
-	Cvp1zbJRPXxtGJ4M9aWweAoSnnQEzPOrmL3zzS4XYdeRiduNk/tvzifKfDYtViQJAObOyheCWW+UR
-	CXhnKnWJ/HZ9bRKtW94HNSIHP4dQNzQMVN0Dx6r5uu6RwH/ek0ZCdSoxzke68XuEcJ+KN+mDAZlQG
-	4SEIS0Wredk4dpkm5Og3XR5JeI6TS4scYyfhLh/YVbuQKr2Or/iWIxxnpXr0TCpYaNNV1jBmTpSbz
-	3JUDTGkJIoZ1Yr+rUXXg==;
+	List-Owner; bh=0z1OmqphFmNsn+0txMO2FCXxg+S4Gi2+2Wup2MUO+TI=; b=dpAdBVp40u2U1m
+	BOSf5CgCXD8I/pOvlxq1H5JTqH63zKzOUPwgcWIzSqCGj4xMiyC32Oh2Fx48HlkLp81aR7nIzHoJW
+	Z9r4LkWYhSa35FsHlOBpSv0U9RdrrwuUuf64jDNDzY7PDZrcduLjD35QhYwlzY88DUJPI7RBsZD+t
+	5phvDxDZ/YFGlJt88grR+3jfoMz0XGiov6n8UWkfTtkOtls2WUU68gjCWSOU1VFpkujjUrXl3e9Ob
+	lH/BcS1xlp4ll0d2Jh68L/ROT/f0/VsBtfnWrzmyBCgEJHnuqanM0A8oTgz94xmPctL1BGWsccTRa
+	NQR3de0h+mzw8FH8l+7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCQ7L-0003bo-EP; Thu, 12 Mar 2020 15:51:27 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jCQ7g-0003tB-Ct; Thu, 12 Mar 2020 15:51:48 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCQ76-0003Qm-Jh; Thu, 12 Mar 2020 15:51:13 +0000
-Received: by mail-ot1-f67.google.com with SMTP id a9so6767242otl.6;
- Thu, 12 Mar 2020 08:51:12 -0700 (PDT)
+ id 1jCQ7P-0003gh-Md; Thu, 12 Mar 2020 15:51:33 +0000
+Received: by mail-oi1-f196.google.com with SMTP id y71so5931018oia.7;
+ Thu, 12 Mar 2020 08:51:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ikJbvAhzJEgIWg4iBpBnF6s5EbtD/zP7fgvKc2Wxses=;
- b=uNi4u9wxjTABStmKI04WMRhpVm4z1aViyBMw8qbRM3+hZUR6BHdzyDtaVtmI/J49Pe
- 6yS5HFpHd2ovVlJ5IM+A2hJoLnL1Q7Dzc990d1U3RdsBM7yvI2qLsyai4bIymM8r5RwE
- c/qVKYD3362dNzgMGDBM2KXu2tjX0q/CnO20a5V3w09eGYKxvwO9K8gUB8wqppKhd9Xb
- 2QGilmwBJKFADEgrSTatuiCFe/6LgIDdgQgTENo28xqEod6u0liwyeM0S9DRmhDPC8N/
- uSVdhGkyCNdBqFL7nFdWeaaG76bz5Xqs/WtVMg/ucrC6JwcALNP/yPUomInp2XxOA96Y
- 6z2g==
-X-Gm-Message-State: ANhLgQ2pUrTCMhAwscYLGb6YnAuoyyjX9Hc+r+81ImR+nx9ZpehCeTCW
- UzChAEdG2l2+7zh+b1kqww==
-X-Google-Smtp-Source: ADFU+vswRgTiSFs3jrGhperqQ9lLysFDkyD31XUqW8Fep83FSF5i8XG+iYIQ5XapLA2hxlCgHDWQzQ==
-X-Received: by 2002:a9d:2208:: with SMTP id o8mr6706528ota.208.1584028271932; 
- Thu, 12 Mar 2020 08:51:11 -0700 (PDT)
+ bh=RVkiFkRTeMMPin+ptF3A5+ftH+/EpqC/zb0+nmdjcHs=;
+ b=gFBd+UkCsy6N3x/L3ijLHxPp5HQJdN65H1ly7Lb2a+YyzBE8RSYaZ+CT1KjKk3dMgT
+ m/WzuEBcdC5CNOBMuiELC+Sw4WufzEdh/Q7AV3t4JwrRtJv0MonhLm91IrMwpayI93Ra
+ M0sQfuqCAM0Xq4DPhFnCY/7cLU8gumQSXbxAGYXnK0n8R7blTPXsn06VxJAL7RKkHd/m
+ gHQZTQF6cYkJhN4iRsTCGXo9cmtZti43hPsoKcLDM6ytLyQn9uZDIByX+sozmjHIOWCl
+ Y0ds+TLey3OfE/f3wfdaE1EBevZTmixRMjtgwWQKnSVWnymFrLGwUtv+lsl+TtdT3L9C
+ Bk+g==
+X-Gm-Message-State: ANhLgQ1C8uDk2YBxF1fDi5EoQuUURpwY6JYp00qiDcyVD0c9JktnsQe4
+ Kl1YjGWxLCa85GvtHvF69g==
+X-Google-Smtp-Source: ADFU+vtk9BrXX5QE/hVGSJYCF4XdX2a674gSPQcVH6JhNyN1Jkv/+TdnylpBR4PjORujal77pChfLA==
+X-Received: by 2002:a54:4e8d:: with SMTP id c13mr3097374oiy.27.1584028290815; 
+ Thu, 12 Mar 2020 08:51:30 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 8sm6621696ois.15.2020.03.12.08.51.10
+ by smtp.gmail.com with ESMTPSA id 67sm6631494oid.30.2020.03.12.08.51.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 08:51:11 -0700 (PDT)
-Received: (nullmailer pid 26057 invoked by uid 1000);
- Thu, 12 Mar 2020 15:51:10 -0000
-Date: Thu, 12 Mar 2020 10:51:10 -0500
+ Thu, 12 Mar 2020 08:51:30 -0700 (PDT)
+Received: (nullmailer pid 26600 invoked by uid 1000);
+ Thu, 12 Mar 2020 15:51:29 -0000
+Date: Thu, 12 Mar 2020 10:51:29 -0500
 From: Rob Herring <robh@kernel.org>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v1 2/5] dt-bindings: i2c: i2c-rk3x: add description for
- rk3036
-Message-ID: <20200312155110.GA26004@bogus>
+Subject: Re: [PATCH v1 3/5] dt-bindings: i2c: i2c-rk3x: add description for
+ rk3368
+Message-ID: <20200312155129.GA26550@bogus>
 References: <20200305143611.10733-1-jbx6244@gmail.com>
- <20200305143611.10733-2-jbx6244@gmail.com>
+ <20200305143611.10733-3-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200305143611.10733-2-jbx6244@gmail.com>
+In-Reply-To: <20200305143611.10733-3-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_085112_643276_9C831392 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20200312_085131_772650_58CB7E0C 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -77,9 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -102,19 +101,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu,  5 Mar 2020 15:36:08 +0100, Johan Jonker wrote:
-> The description below is already in use for rk3036.dtsi,
+On Thu,  5 Mar 2020 15:36:09 +0100, Johan Jonker wrote:
+> The description below is already in use for rk3368.dtsi,
 > but was somehow never added to a document, so add
-> "rockchip,rk3036-i2c", "rockchip,rk3288-i2c"
-> for i2c nodes on a rk3036 platform to i2c-rk3x.yaml.
+> "rockchip,rk3368-i2c", "rockchip,rk3288-i2c"
+> for i2c nodes on a rk3368 platform to i2c-rk3x.yaml.
 > 
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
+>  Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
