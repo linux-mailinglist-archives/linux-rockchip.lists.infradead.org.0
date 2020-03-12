@@ -2,39 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A740F183556
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 16:46:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44CC0183559
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 16:46:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xxYgpezQUEUqXS3JF3oSUhtruH9bEePjfX6I6lkMRNo=; b=O1n
-	xPxXYnmmkQuvXaCAaiMsR46iOI3/nLDnlt9HIqNHwIGVScez2ePwCaWl+7ltLYpN2qHDGzANCPgPj
-	LxIGW1JXWBQePa9dCf2dFwzEmUmVso/ESm9PDGRtWWGl21XQRzFGTWuEtKix4kPpN9QgYRncT0Pnv
-	64yQ5EmDlaOFqyfV+NxmgmPqoz6Mex5qVChkQMadmWVcrDpC45/18KvyzwNPbD5smYank0ArlojiX
-	gWiTbLqRFBBOIE1blZ4eY8XE37q8LaDHhzthc36f1zTpm2bOClhYHdjhzaNsSdbiedx+xVw4btEfi
-	wPFEWN88RvDQkkTZeLYCMAIL5nATo+A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=asz/OYkIYZRWSZ4IBd6Ol0bvvw7mEZjXLE5QNB/l2dE=; b=k/ie651/q5zcmDf+jWmsHF2s5Z
+	1L5vrzqDucNtu+sbJgjSUE9fvKz79QGvJEDgqhTmRRGtffckd4omwKohObklPHGuYIUA5efyFgXSx
+	aBRVgRzawxEuXNg/XjrX4szPlkEXCgMlG+zmBi9ESVtg00KajSSRG3Y4+qhpGgLAalHXT+sGd6r8o
+	PczTLsFDlArzLfPhTsORzjqhC6N9bitFS02AuQEe/die4wOgKjZFai+VO+y38OthfH4/gnORcCrPw
+	gOQitNBVzp14XHPwnn7HAVJqMflLiL2KvvbSnBZJD88dCr4m/53WzNhhEZbA9EauxrjN2YWykFnJh
+	+yNC80OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCQ2j-0001Vd-4q; Thu, 12 Mar 2020 15:46:41 +0000
+	id 1jCQ2n-0001YS-BL; Thu, 12 Mar 2020 15:46:45 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCQ2g-0001Uf-Cc
- for linux-rockchip@lists.infradead.org; Thu, 12 Mar 2020 15:46:39 +0000
+ id 1jCQ2g-0001Ug-Cd
+ for linux-rockchip@lists.infradead.org; Thu, 12 Mar 2020 15:46:41 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 7DD0A296A72
+ (Authenticated sender: dafna) with ESMTPSA id 50DBD296A7A
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v2 0/2] fix fwnode API usage and remove v4l2_mbus_config field
-Date: Thu, 12 Mar 2020 16:46:02 +0100
-Message-Id: <20200312154604.24996-1-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v2 1/2] media: staging: rkisp1: remove mbus field from
+ rkisp1_sensor_async
+Date: Thu, 12 Mar 2020 16:46:03 +0100
+Message-Id: <20200312154604.24996-2-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200312154604.24996-1-dafna.hirschfeld@collabora.com>
+References: <20200312154604.24996-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_084638_566555_26DFDD8F 
-X-CRM114-Status: UNSURE (   7.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200312_084638_699673_DA28C061 
+X-CRM114-Status: GOOD (  14.13  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -68,41 +71,197 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patchset fixes usage of the APIs.
-This fixes the item in the TODO file:
+'struct v4l2_mbus_config' is a legacy struct that should not be used
+in new drivers. So replace it with the fields:
 
-* Don't use v4l2_async_notifier_parse_fwnode_endpoints_by_port().
-e.g. isp_parse_of_endpoints in drivers/media/platform/omap3isp/isp.c
-cio2_parse_firmware in drivers/media/pci/intel/ipu3/ipu3-cio2.c.
+enum v4l2_mbus_type mbus_type;
+unsigned int parallel_bus_flags;
 
-Patches summary:
+The field 'parallel_bus_flags' is used only for buses of types
+V4L2_MBUS_BT656, V4L2_MBUS_PARALLEL which are not yet supported
+so they are set to 0.
 
-- The first patch removes the field v4l2_mbus_config from
-'struct rkisp1_sensor_async'.
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+ drivers/staging/media/rkisp1/rkisp1-common.h |  3 +-
+ drivers/staging/media/rkisp1/rkisp1-dev.c    | 22 ++-------
+ drivers/staging/media/rkisp1/rkisp1-isp.c    | 52 +++++++-------------
+ 3 files changed, 24 insertions(+), 53 deletions(-)
 
-- The second patch removes the usage of
-v4l2_async_notifier_parse_fwnode_endpoints_by_port.
-The code is very similar to the code in the function cio2_parse_firmware
-but instead of iterating the ports it iterates the id's.
-The patch also removes the relevant item from the TODO file.
-
-changes since v1:
-- patch 2 - in the function rkisp1_subdev_notifier:
-1. move the test 'if (next_id == 0)' outside of the while loop
-2. remove the 'end' label.
-The changes are due to Helen Koike's comments
-
-Dafna Hirschfeld (2):
-  media: staging: rkisp1: remove mbus field from rkisp1_sensor_async
-  media: staging: rkisp1: replace the call to
-    v4l2_async_notifier_parse_fwnode_endpoints_by_port
-
- drivers/staging/media/rkisp1/TODO            |   3 -
- drivers/staging/media/rkisp1/rkisp1-common.h |   3 +-
- drivers/staging/media/rkisp1/rkisp1-dev.c    | 106 ++++++++++---------
- drivers/staging/media/rkisp1/rkisp1-isp.c    |  52 +++------
- 4 files changed, 74 insertions(+), 90 deletions(-)
-
+diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+index b291cc60de8e..f5ee72dc19d3 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-common.h
++++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+@@ -80,8 +80,9 @@ enum rkisp1_isp_pad {
+  */
+ struct rkisp1_sensor_async {
+ 	struct v4l2_async_subdev asd;
+-	struct v4l2_mbus_config mbus;
+ 	unsigned int lanes;
++	enum v4l2_mbus_type mbus_type;
++	unsigned int parallel_bus_flags;
+ 	struct v4l2_subdev *sd;
+ 	struct v4l2_ctrl *pixel_rate_ctrl;
+ 	struct phy *dphy;
+diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
+index b1b3c058e957..d2186856bb24 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-dev.c
++++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
+@@ -250,26 +250,14 @@ static int rkisp1_fwnode_parse(struct device *dev,
+ 		return -EINVAL;
+ 	}
+ 
+-	s_asd->mbus.type = vep->bus_type;
+-	s_asd->mbus.flags = vep->bus.mipi_csi2.flags;
++	s_asd->mbus_type = vep->bus_type;
+ 	s_asd->lanes = vep->bus.mipi_csi2.num_data_lanes;
+ 
+-	switch (vep->bus.mipi_csi2.num_data_lanes) {
+-	case 1:
+-		s_asd->mbus.flags |= V4L2_MBUS_CSI2_1_LANE;
+-		break;
+-	case 2:
+-		s_asd->mbus.flags |= V4L2_MBUS_CSI2_2_LANE;
+-		break;
+-	case 3:
+-		s_asd->mbus.flags |= V4L2_MBUS_CSI2_3_LANE;
+-		break;
+-	case 4:
+-		s_asd->mbus.flags |= V4L2_MBUS_CSI2_4_LANE;
+-		break;
+-	default:
++	/* Parallel bus is currently not supported */
++	s_asd->parallel_bus_flags = 0;
++
++	if (s_asd->lanes < 1 || s_asd->lanes > 4)
+ 		return -EINVAL;
+-	}
+ 
+ 	return 0;
+ }
+diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+index fa53f05e37d8..bd17c3c498af 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-isp.c
++++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+@@ -291,7 +291,7 @@ static int rkisp1_config_isp(struct rkisp1_device *rkisp1)
+ 	if (sink_fmt->fmt_type == RKISP1_FMT_BAYER) {
+ 		acq_mult = 1;
+ 		if (src_fmt->fmt_type == RKISP1_FMT_BAYER) {
+-			if (sensor->mbus.type == V4L2_MBUS_BT656)
++			if (sensor->mbus_type == V4L2_MBUS_BT656)
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_RAW_PICT_ITU656;
+ 			else
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_RAW_PICT;
+@@ -299,17 +299,17 @@ static int rkisp1_config_isp(struct rkisp1_device *rkisp1)
+ 			rkisp1_write(rkisp1, RKISP1_CIF_ISP_DEMOSAIC_TH(0xc),
+ 				     RKISP1_CIF_ISP_DEMOSAIC);
+ 
+-			if (sensor->mbus.type == V4L2_MBUS_BT656)
++			if (sensor->mbus_type == V4L2_MBUS_BT656)
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_BAYER_ITU656;
+ 			else
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_BAYER_ITU601;
+ 		}
+ 	} else if (sink_fmt->fmt_type == RKISP1_FMT_YUV) {
+ 		acq_mult = 2;
+-		if (sensor->mbus.type == V4L2_MBUS_CSI2_DPHY) {
++		if (sensor->mbus_type == V4L2_MBUS_CSI2_DPHY) {
+ 			isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_ITU601;
+ 		} else {
+-			if (sensor->mbus.type == V4L2_MBUS_BT656)
++			if (sensor->mbus_type == V4L2_MBUS_BT656)
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_ITU656;
+ 			else
+ 				isp_ctrl = RKISP1_CIF_ISP_CTRL_ISP_MODE_ITU601;
+@@ -319,17 +319,17 @@ static int rkisp1_config_isp(struct rkisp1_device *rkisp1)
+ 	}
+ 
+ 	/* Set up input acquisition properties */
+-	if (sensor->mbus.type == V4L2_MBUS_BT656 ||
+-	    sensor->mbus.type == V4L2_MBUS_PARALLEL) {
+-		if (sensor->mbus.flags & V4L2_MBUS_PCLK_SAMPLE_RISING)
++	if (sensor->mbus_type == V4L2_MBUS_BT656 ||
++	    sensor->mbus_type == V4L2_MBUS_PARALLEL) {
++		if (sensor->parallel_bus_flags & V4L2_MBUS_PCLK_SAMPLE_RISING)
+ 			signal = RKISP1_CIF_ISP_ACQ_PROP_POS_EDGE;
+ 	}
+ 
+-	if (sensor->mbus.type == V4L2_MBUS_PARALLEL) {
+-		if (sensor->mbus.flags & V4L2_MBUS_VSYNC_ACTIVE_LOW)
++	if (sensor->mbus_type == V4L2_MBUS_PARALLEL) {
++		if (sensor->parallel_bus_flags & V4L2_MBUS_VSYNC_ACTIVE_LOW)
+ 			signal |= RKISP1_CIF_ISP_ACQ_PROP_VSYNC_LOW;
+ 
+-		if (sensor->mbus.flags & V4L2_MBUS_HSYNC_ACTIVE_LOW)
++		if (sensor->parallel_bus_flags & V4L2_MBUS_HSYNC_ACTIVE_LOW)
+ 			signal |= RKISP1_CIF_ISP_ACQ_PROP_HSYNC_LOW;
+ 	}
+ 
+@@ -401,29 +401,11 @@ static int rkisp1_config_dvp(struct rkisp1_device *rkisp1)
+ static int rkisp1_config_mipi(struct rkisp1_device *rkisp1)
+ {
+ 	const struct rkisp1_isp_mbus_info *sink_fmt = rkisp1->isp.sink_fmt;
+-	unsigned int lanes;
++	unsigned int lanes = rkisp1->active_sensor->lanes;
+ 	u32 mipi_ctrl;
+ 
+-	/*
+-	 * rkisp1->active_sensor->mbus is set in isp or d-phy notifier_bound
+-	 * function
+-	 */
+-	switch (rkisp1->active_sensor->mbus.flags & V4L2_MBUS_CSI2_LANES) {
+-	case V4L2_MBUS_CSI2_4_LANE:
+-		lanes = 4;
+-		break;
+-	case V4L2_MBUS_CSI2_3_LANE:
+-		lanes = 3;
+-		break;
+-	case V4L2_MBUS_CSI2_2_LANE:
+-		lanes = 2;
+-		break;
+-	case V4L2_MBUS_CSI2_1_LANE:
+-		lanes = 1;
+-		break;
+-	default:
++	if (lanes < 1 || lanes > 4)
+ 		return -EINVAL;
+-	}
+ 
+ 	mipi_ctrl = RKISP1_CIF_MIPI_CTRL_NUM_LANES(lanes - 1) |
+ 		    RKISP1_CIF_MIPI_CTRL_SHUTDOWNLANES(0xf) |
+@@ -470,11 +452,11 @@ static int rkisp1_config_path(struct rkisp1_device *rkisp1)
+ 	u32 dpcl = rkisp1_read(rkisp1, RKISP1_CIF_VI_DPCL);
+ 	int ret = 0;
+ 
+-	if (sensor->mbus.type == V4L2_MBUS_BT656 ||
+-	    sensor->mbus.type == V4L2_MBUS_PARALLEL) {
++	if (sensor->mbus_type == V4L2_MBUS_BT656 ||
++	    sensor->mbus_type == V4L2_MBUS_PARALLEL) {
+ 		ret = rkisp1_config_dvp(rkisp1);
+ 		dpcl |= RKISP1_CIF_VI_DPCL_IF_SEL_PARALLEL;
+-	} else if (sensor->mbus.type == V4L2_MBUS_CSI2_DPHY) {
++	} else if (sensor->mbus_type == V4L2_MBUS_CSI2_DPHY) {
+ 		ret = rkisp1_config_mipi(rkisp1);
+ 		dpcl |= RKISP1_CIF_VI_DPCL_IF_SEL_MIPI;
+ 	}
+@@ -561,7 +543,7 @@ static void rkisp1_isp_start(struct rkisp1_device *rkisp1)
+ 	rkisp1_config_clk(rkisp1);
+ 
+ 	/* Activate MIPI */
+-	if (sensor->mbus.type == V4L2_MBUS_CSI2_DPHY) {
++	if (sensor->mbus_type == V4L2_MBUS_CSI2_DPHY) {
+ 		val = rkisp1_read(rkisp1, RKISP1_CIF_MIPI_CTRL);
+ 		rkisp1_write(rkisp1, val | RKISP1_CIF_MIPI_CTRL_OUTPUT_ENA,
+ 			     RKISP1_CIF_MIPI_CTRL);
+@@ -956,7 +938,7 @@ static int rkisp1_isp_s_stream(struct v4l2_subdev *sd, int enable)
+ 	rkisp1->active_sensor = container_of(sensor_sd->asd,
+ 					     struct rkisp1_sensor_async, asd);
+ 
+-	if (rkisp1->active_sensor->mbus.type != V4L2_MBUS_CSI2_DPHY)
++	if (rkisp1->active_sensor->mbus_type != V4L2_MBUS_CSI2_DPHY)
+ 		return -EINVAL;
+ 
+ 	atomic_set(&rkisp1->isp.frame_sequence, -1);
 -- 
 2.17.1
 
