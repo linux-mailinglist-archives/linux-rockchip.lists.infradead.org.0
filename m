@@ -2,77 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3609C183731
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 18:16:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A35E183751
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 18:23:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=AWd10uH3KdixG3XTDX4xLj4QE8Ut0UrlaJlmZBqI8ac=; b=nFBt1ptlhaDI1ld3THNdQjhbIB
-	XkJ5JvC2iIGFMCJnWkgQ2JZkwCZP73J9CDrija1rgxeeR10rVB5uNMp8BR0KrteC2+8vHGiPr8cZL
-	CDNQGpqOX3Pcx/PGbxGc/UdU/vQJ5JNz3W1VTawFvcpZv1PwH0ROYkWA93F4eGbuRddsyIfPEGLTs
-	fNEv7YhBeZ/f+2P48nsauOk7jvLIYMs8eVv0+jh1K0gSySlN/MKiqSz5aCf03zRR8qMYHTSc9DFk+
-	MOiHZG/UaFMAibvROJF/q4i2VzWLRhojtomo3J6PCYczWlzZR55ItzmKY+d1bsaQbK1W6GdEPCceI
-	+sS0rYPQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+HDibwf1NFl663UgZEcTRFjAK2K49mzfvkPqTvngDrw=; b=n4b
+	eCMZUDw8EEDiIplXp+ijafJ6C6g+HtS8R0VrUAPKKRSwSlacyV7LDLDqKRuKtlOU+aTdMyy3C8UxH
+	7aG1uOKlDckn5YT1YC6wXga5hZdEWJPjS/6EL6V4QqIj5BpJgDU6WtYGaFrsJeg0tfqmWjsEyQHGY
+	ZM3g2eXlfuRw8956k386VrYsdfyYOo4mFJqxRBOIgaEHCzJ1z+tZInO7BZ+ohIQ7qKfWybza/ZIGW
+	nnwndoVPZ28wzZupwsAftZJX0Wr3bwgwOvvnEl5DZaBdYr3dXyaEAB4UlaHfNQTIkQECsOmpxGDKV
+	pAR2nVATd1QDUK011dfEsMQZRnlrGfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCRRK-0000uo-9H; Thu, 12 Mar 2020 17:16:10 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jCRY2-0003wZ-1P; Thu, 12 Mar 2020 17:23:06 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCRQB-0006TB-9K; Thu, 12 Mar 2020 17:15:00 +0000
-Received: by mail-wr1-x444.google.com with SMTP id a25so8523767wrd.0;
- Thu, 12 Mar 2020 10:14:58 -0700 (PDT)
+ id 1jCRXl-0003je-2V; Thu, 12 Mar 2020 17:22:50 +0000
+Received: by mail-wm1-x342.google.com with SMTP id m3so7264364wmi.0;
+ Thu, 12 Mar 2020 10:22:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4SuRBJARNQVs5dyf0eB48d3tfDeB3eEZR49uCWJ2tP8=;
- b=uzPeiPdsp74lWp9Qj5xiaV3WA3py5k+YwaJ9xw/Ik0gg+Qg9JReCtwkJdtBRI63UQm
- Km5K/BOBZfAfyLom73b5wD82OqkEDCffMUGFyF/Lzro2SomkgOZFS/ltRjP4iOxrj15u
- ZS4o0giDu4Agko6eM9XCcnPFac9C33t1dwWlOKPo8wUhhdPeJJ/w7Qeo57BHTKi/Bqwo
- gjDMqGYx7KBnkxq5EQfD8U6MrmKKscXGMZ2YgGtFC66ovpsoAIvqA+px4JIwLa5iiMej
- y6PYERJgbbm8kh6iU1893TTGSXwjsS8gYuWmvBRoakV+iguLgW7TXKl4eL5QBTGXU3M9
- 0aQQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=Wy+lE/1lzqrBWgr4qGqulWltQuGidDCwcinzvkx26bY=;
+ b=J+5Z+2xKMn1aIC0Uo2VC9f/lb55f3cqFfWZj5j1p0lphY5XIDra1fpkc65qmhCFKGH
+ PWYVvNENVeQHN+rQtmr87GkugtvbXMwwNydg0Qsdf6YQnMJlQRwKgC3ksC/LDYm6iVbV
+ tqs8r3NS9FDGtv1emvZBbMXBcYjJWE5q/fdFEzYgRjxbIWDvxT64WYyIVnpf+oFv9Hil
+ ibu/wC1ULKbyQWjmFxELT7Z3UuIYKv+VAdw5v5dG0YIdU9haHa2rx7MRDMlZg3oJ6Qsu
+ nW1NcF7FhtB7L+7XNshghcODee93iH5lj+FVmjHqbCEmSOr3M37pYB1rn+aFKC4zSis7
+ ddkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=4SuRBJARNQVs5dyf0eB48d3tfDeB3eEZR49uCWJ2tP8=;
- b=I9ByxDaSXeOzE8S2e1PVwZPCY41HuGAUn06PVd1IuX6VW7pZDAuEG5g2uiJ8Tp3LeL
- bPSYKv4nGuPv+fsznmc30K+HOpyqXyggrIBXr128A8daMehjx3DYSU6fJjDhw5kWBKg8
- 7kUkcFi4ER+W9es0dUw43ZzuH9imeSi9SkGObZWIqAxjajDNO3BPgLF15K2RlCWxzb7O
- qaUxPkud8pTSZ4I8DK2OeavXap7FnqCS7zTyXTbD2BSPlm6XA5okngremgNhZcJ7AfZL
- iPJXNs+JZEug7f8CI9TkcU9Tn6vAk7uZdKBEMGOLoAN8iR2puIPfrx8At7PLQD/L5CDK
- 9dmQ==
-X-Gm-Message-State: ANhLgQ3wt809yuJ1jV4BmLwTeDb1Vlqfsdq3TIw/lIA4qbDsWAMaTTIU
- SkYmpznRaFURz6Q/ebTF6/I=
-X-Google-Smtp-Source: ADFU+vsZcBv981uxb63P0Pkt+xHhdWoNcU8cUuoWL3IDP3tTTIFt+ojHaQbBjZJnjoZGgpraBs9A4g==
-X-Received: by 2002:adf:ab4d:: with SMTP id r13mr12395984wrc.188.1584033297481; 
- Thu, 12 Mar 2020 10:14:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Wy+lE/1lzqrBWgr4qGqulWltQuGidDCwcinzvkx26bY=;
+ b=f4CeswWs56fkP5Ffru4KmxGO5VLRLeN5oCOEJiU9378nFkAY/78tIrBqISZ/p0YcKP
+ 2nSJNpE6UKNkzJoGV805+uF4xK8EQ1zUjZaMwya7J8WQP8p0a1nC4F+/dQCWwnJxVSdc
+ qIHgGwe9PBk74cQPH0eUjFa/Da3FN4AjzNY+g4xXy2ueUx3UNC+xmQLefd7bmarTXoNT
+ 3wK/2jPKe8dvKVUuqrcqDqI2KrynKSFP3oVcYud9QEk7PGfxd4IhvCgzFuE1cD6OTwnF
+ Eyhucqrv8I51cCkwyAvosdMDF3njwoD4B+AmHT6oXfWhX5TV9+XPFFOKKY27JTxGpe2Q
+ fiiw==
+X-Gm-Message-State: ANhLgQ09ZFOU+UxLsmGzr+5MXgehhe354ueZKNjbvC+adsfSK/ZipPeh
+ PvAg0rr2DbPTxqOvmt4uUY66efaR
+X-Google-Smtp-Source: ADFU+vvfIDpBkUD9w0w0y9O0EdtJTyviZVdZcBsPGD0KGGOBs+1FdKuhcvmu1jQbjlNqHpBDIAFSCA==
+X-Received: by 2002:a7b:cc6a:: with SMTP id n10mr5831317wmj.170.1584033767636; 
+ Thu, 12 Mar 2020 10:22:47 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v10sm3398832wmh.17.2020.03.12.10.14.56
+ by smtp.gmail.com with ESMTPSA id d7sm2064492wrc.25.2020.03.12.10.22.46
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Mar 2020 10:14:56 -0700 (PDT)
+ Thu, 12 Mar 2020 10:22:47 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 4/4] arm64: dts: rockchip: remove clock-names property from
- 'generic-ohci' nodes
-Date: Thu, 12 Mar 2020 18:14:41 +0100
-Message-Id: <20200312171441.21144-4-jbx6244@gmail.com>
+Subject: [PATCH 1/2] arm64: dts: rockchip: remove properties from spdif node
+ RK3399 Excavator
+Date: Thu, 12 Mar 2020 18:22:39 +0100
+Message-Id: <20200312172240.21362-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200312171441.21144-1-jbx6244@gmail.com>
-References: <20200312171441.21144-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_101459_382283_044BBECD 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20200312_102249_117788_E0BA04E3 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -108,70 +104,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+An expermental test with the command below gives this error:
 
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff5d0000:
-'clock-names' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dt.yaml:
+spdif@ff870000:
+'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns', 'power-domains'
+do not match any of the regexes: 'pinctrl-[0-9]+'
 
-'clock-names' is not a valid property name for usb_host nodes with
-compatible string 'generic-ohci', so remove them.
+'i2c-scl-falling-time-ns', 'i2c-scl-rising-time-ns'
+are not valid properties for 'spdif' nodes, so remove them.
 
 make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/generic-ohci.yaml
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 1 -
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 1 -
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ----
- 3 files changed, 6 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index be5569b74..bd5f51d23 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -892,7 +892,6 @@
- 		reg = <0x0 0xff350000 0x0 0x10000>;
- 		interrupts = <GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_HOST>;
--		clock-names = "usbhost";
- 		phys = <&u2phy_host>;
- 		phy-names = "usb";
- 		power-domains = <&power PX30_PD_USB>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index ac08d2b70..54b3f4616 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -977,7 +977,6 @@
- 		reg = <0x0 0xff5d0000 0x0 0x10000>;
- 		interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru HCLK_HOST0>, <&u2phy>;
--		clock-names = "usbhost", "utmi";
- 		phys = <&u2phy_host>;
- 		phy-names = "usb";
- 		status = "disabled";
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index bbae92ef3..8aac201f0 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -360,8 +360,6 @@
- 		interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH 0>;
- 		clocks = <&cru HCLK_HOST0>, <&cru HCLK_HOST0_ARB>,
- 			 <&u2phy0>;
--		clock-names = "usbhost", "arbiter",
--			      "utmi";
- 		phys = <&u2phy0_host>;
- 		phy-names = "usb";
- 		status = "disabled";
-@@ -384,8 +382,6 @@
- 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH 0>;
- 		clocks = <&cru HCLK_HOST1>, <&cru HCLK_HOST1_ARB>,
- 			 <&u2phy1>;
--		clock-names = "usbhost", "arbiter",
--			      "utmi";
- 		phys = <&u2phy1_host>;
- 		phy-names = "usb";
- 		status = "disabled";
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts b/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
+index b4d8f60b7..73e269a8a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire-excavator.dts
+@@ -230,7 +230,5 @@
+ };
+ 
+ &spdif {
+-	i2c-scl-rising-time-ns = <450>;
+-	i2c-scl-falling-time-ns = <15>;
+ 	status = "okay";
+ };
 -- 
 2.11.0
 
