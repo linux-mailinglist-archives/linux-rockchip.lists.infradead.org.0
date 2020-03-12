@@ -2,84 +2,65 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F4631830DE
-	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 14:09:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74F5B183458
+	for <lists+linux-rockchip@lfdr.de>; Thu, 12 Mar 2020 16:19:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JUyktyUcOZAx38AFjSAsMZEP0Zv3HhsakoYUcBGoKdI=; b=VWstb0PweMV/sY
-	B3ogK8fzrGs8ucR1HAQPCItx1idiV7Sk1nh/4UyRG19DetPi8Vnz5vKJMhSlJZVO/FhA8luG3AswR
-	K5k4ShWaRGd3441lh0di+YIeW0DJBdBvzqnRCDFiEMhNf8Z+agDHQeGUEhAZ7eq6yePUUhzuJC4D8
-	7RyPH97JB6m7emQzHcjky3Iag5g9LYbz6tGhWrFWXvRZbnuUhThhRyHxjdSE1W+Y3yweTtbh90/cq
-	J9byr46kQtXTYihf3WA+B1P9mNB8HSmVZHs712D0lBgAy9kZMDHbMbp7GuAwEZLqLCEfR38I8azGb
-	unmUrVaBPLTXFykGrzAg==;
+	List-Owner; bh=ayoIItIc0MCu6Du8kQVV7WK1kcoDcWfc5thnw9sArqI=; b=bXb22DX+lPwPHU
+	LfLf+gQH7AeViVkF7EyPttsnh8+BucOnJVrqxCjMM3gSG8pD6nG+yZo9/TNlJCi38UYcnGtmYLhPP
+	iv/aAudy5Qo8ndi/RjB9TrWKcnxe5fxa5C9ziKtrDI7Ho9JJo6zLURLWx1pZ6T5PMgSDwaClqo2Yi
+	36PQgX2GRucGQhDtxlvu2G+Z30oBjRYUJsnFOO7imNhnxA75RmJC+9fAliFlfdzj10SWmf+uE1LvJ
+	d5Km6+KlxT86gaZNRYoLFZZagRtRrcHz41Iug7XgEW/CgEph5heREc1yciWbc+9y3SLT+zSTa4g2O
+	MhJ2A1BcwONRFU9mVy3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNaB-0006nZ-7U; Thu, 12 Mar 2020 13:09:03 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1jCPbv-0006PN-Ca; Thu, 12 Mar 2020 15:18:59 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNa7-0006mg-A1
- for linux-rockchip@lists.infradead.org; Thu, 12 Mar 2020 13:09:00 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id m9so3634664vso.2
- for <linux-rockchip@lists.infradead.org>; Thu, 12 Mar 2020 06:08:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=c/71/1S9FFPBZLngXcn7eOGZxEYwsgQn+LiJXaTEkt8=;
- b=piJo3Qvo8x1s8VTBvAp8jS5t4o5VQEuBs+lWQCHYrxpJbtweH35oefXEg9GnzRQtdz
- 61TRYLXGKrksVOp7wxdDFIZl5QZ824OocSJHbPk7P8hZ70jpr88EaUGavwPNoL4Dn36K
- Nl5oXBejzLR1jLeDJKzYb6ixDcAWzPP7oWG8OeFjKk4/PM28R2Me2D0Tsq7x8rhewXrt
- r9U/8MqANn4Ec6qJ2Rhiv85PM01uXdt4/JzUZZopZGKv0JxfViBO1WHel4O7GIJWC1qc
- CC+Rw5K2v3jnnd/eFLnzoQo/ZNl/T0nWcHZQA9pE0ttsgYASG3J1iRFvKPj7l5rZ/lPs
- Rsiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=c/71/1S9FFPBZLngXcn7eOGZxEYwsgQn+LiJXaTEkt8=;
- b=cTp+SpIAHgNaXcw9FPfV2lBZ200QJmmmB9WC891/fx9vEkcLoh2LP91OyXfbUUIMgG
- AKczW1Te/peXT1mRl8BZu4WCy92unkUPI9mAuBXD/79Ixd+kvZW2PRmkK6fJPF7bOJQt
- VhS+5Yn7QRMHP7Cg7Y1h8k4TbX3zy3AtKr+Vaop2HA4efkOIfmufia4gkvn36xMiTuQx
- WzJ8CKFTy93XIB5AA/PmNH7CdsXiV16WyVnp5vFMnhNlVBN3Mm2a6B5gEOCu5gB/WBY1
- 5+wiZTX5MQnKLDzFyehlKh9yIQZjmx/t9X/XkbL6g88q6Ehf3JIyFSYrNOwaMt+NtraL
- 1HNQ==
-X-Gm-Message-State: ANhLgQ0l2nbwXed/stNbA8nHXtOoUUmYR4Dh1OKoqr/ut9n73rbziUAn
- wCb5kwlTLFHJ/8YMDWTuZqM6yMKYy3WZfxua6wsnOA==
-X-Google-Smtp-Source: ADFU+vvkBY6+7KljoIBo06yuh++7mQGBlfwWaxlmBrxgvs2H6ahSYqDiyk/zugbPV+nCMOkSfEf3tQK6yQglm6UvXwc=
-X-Received: by 2002:a05:6102:2051:: with SMTP id
- q17mr5487529vsr.165.1584018537836; 
- Thu, 12 Mar 2020 06:08:57 -0700 (PDT)
+ id 1jCPbr-0006Oq-Do
+ for linux-rockchip@lists.infradead.org; Thu, 12 Mar 2020 15:18:57 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 12 Mar 2020 08:18:54 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,545,1574150400"; d="scan'208";a="415968848"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga005.jf.intel.com with ESMTP; 12 Mar 2020 08:18:50 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jCPbl-000CKE-WF; Thu, 12 Mar 2020 23:18:49 +0800
+Date: Thu, 12 Mar 2020 23:18:47 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH 6/6] hantro: Refactor for V4L2 API spec compliancy
+Message-ID: <202003122343.vMh2bMyj%lkp@intel.com>
+References: <20200311174300.19407-7-ezequiel@collabora.com>
 MIME-Version: 1.0
-References: <20200307160556.16226-1-jbx6244@gmail.com>
-In-Reply-To: <20200307160556.16226-1-jbx6244@gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 12 Mar 2020 14:08:21 +0100
-Message-ID: <CAPDyKFq22RTPQ2FD+yMYTstyEhqU=6piiiDkEFs4CB5f6uRG4Q@mail.gmail.com>
-Subject: Re: [PATCH v1] dt-bindings: mmc: synopsys-dw-mshc: fix
- clock-freq-min-max in example
-To: Johan Jonker <jbx6244@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200311174300.19407-7-ezequiel@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_060859_352277_41B4A92E 
-X-CRM114-Status: GOOD (  16.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_081855_481421_276F89BC 
+X-CRM114-Status: GOOD (  12.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,72 +73,125 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kernel@collabora.com, kbuild-all@lists.01.org,
+ Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ linux-rockchip@lists.infradead.org,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, 7 Mar 2020 at 17:06, Johan Jonker <jbx6244@gmail.com> wrote:
->
-> A test with the command below does not detect all errors
-> in combination with 'additionalProperties: false' and
-> allOf:
->   - $ref: "synopsys-dw-mshc-common.yaml#"
-> allOf:
->   - $ref: "mmc-controller.yaml#"
->
-> 'additionalProperties' applies to all properties that are not
-> accounted-for by 'properties' or 'patternProperties' in
-> the immediate schema.
->
-> First when we combine synopsys-dw-mshc.yaml,
-> synopsys-dw-mshc-common.yaml and mmc-controller.yaml it gives
-> this error:
->
-> Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.example.dt.yaml:
-> mmc@12200000: 'clock-freq-min-max' does not match any of the regexes:
-> '^.*@[0-9]+$', '^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|
-> uhs-(sdr(12|25|50|104)|ddr50))$', 'pinctrl-[0-9]+'
->
-> 'clock-freq-min-max' is deprecated, so replace it by 'max-frequency'.
->
-> make ARCH=arm dt_binding_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
->
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Hi Ezequiel,
 
-Applied for next, thanks!
+I love your patch! Perhaps something to improve:
 
-Kind regards
-Uffe
+[auto build test WARNING on linuxtv-media/master]
+[also build test WARNING on v5.6-rc5 next-20200312]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/Ezequiel-Garcia/hantro-set-of-small-cleanups-and-fixes/20200312-061234
+base:   git://linuxtv.org/media_tree.git master
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-174-g094d5a94-dirty
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
 
-> ---
->  Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
-> index 05f9f36dc..dd2c1b147 100644
-> --- a/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
-> +++ b/Documentation/devicetree/bindings/mmc/synopsys-dw-mshc.yaml
-> @@ -62,7 +62,7 @@ examples:
->        cap-mmc-highspeed;
->        cap-sd-highspeed;
->        card-detect-delay = <200>;
-> -      clock-freq-min-max = <400000 200000000>;
-> +      max-frequency = <200000000>;
->        clock-frequency = <400000000>;
->        data-addr = <0x200>;
->        fifo-depth = <0x80>;
-> --
-> 2.11.0
->
+sparse warnings: (new ones prefixed by >>)
+
+>> drivers/staging/media/hantro/hantro_v4l2.c:282:44: sparse: sparse: incorrect type in argument 1 (different modifiers) @@    expected struct hantro_ctx *ctx @@    got structstruct hantro_ctx *ctx @@
+>> drivers/staging/media/hantro/hantro_v4l2.c:282:44: sparse:    expected struct hantro_ctx *ctx
+>> drivers/staging/media/hantro/hantro_v4l2.c:282:44: sparse:    got struct hantro_ctx const *ctx
+
+vim +282 drivers/staging/media/hantro/hantro_v4l2.c
+
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  234  
+0f07bff2f08018 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  235  static int hantro_try_fmt(const struct hantro_ctx *ctx,
+0f07bff2f08018 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  236  			  struct v4l2_pix_format_mplane *pix_mp,
+0f07bff2f08018 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  237  			  enum v4l2_buf_type type)
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  238  {
+5980d40276b36b drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2019-12-05  239  	const struct hantro_fmt *fmt, *vpu_fmt;
+0f07bff2f08018 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  240  	bool capture = !V4L2_TYPE_IS_OUTPUT(type);
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  241  	bool coded;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  242  
+a29add8c9bb29d drivers/staging/media/hantro/hantro_v4l2.c             Philipp Zabel   2019-06-12  243  	coded = capture == hantro_is_encoder_ctx(ctx);
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  244  
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  245  	vpu_debug(4, "trying format %c%c%c%c\n",
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  246  		  (pix_mp->pixelformat & 0x7f),
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  247  		  (pix_mp->pixelformat >> 8) & 0x7f,
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  248  		  (pix_mp->pixelformat >> 16) & 0x7f,
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  249  		  (pix_mp->pixelformat >> 24) & 0x7f);
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  250  
+5980d40276b36b drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2019-12-05  251  	fmt = hantro_find_format(ctx, pix_mp->pixelformat);
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  252  	if (!fmt) {
+5980d40276b36b drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2019-12-05  253  		fmt = hantro_get_default_fmt(ctx, coded);
+0f07bff2f08018 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  254  		pix_mp->pixelformat = fmt->fourcc;
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  255  	}
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  256  
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  257  	if (coded) {
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  258  		pix_mp->num_planes = 1;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  259  		vpu_fmt = fmt;
+a29add8c9bb29d drivers/staging/media/hantro/hantro_v4l2.c             Philipp Zabel   2019-06-12  260  	} else if (hantro_is_encoder_ctx(ctx)) {
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  261  		vpu_fmt = ctx->vpu_dst_fmt;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  262  	} else {
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  263  		vpu_fmt = ctx->vpu_src_fmt;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  264  		/*
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  265  		 * Width/height on the CAPTURE end of a decoder are ignored and
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  266  		 * replaced by the OUTPUT ones.
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  267  		 */
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  268  		pix_mp->width = ctx->src_fmt.width;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  269  		pix_mp->height = ctx->src_fmt.height;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  270  	}
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  271  
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  272  	pix_mp->field = V4L2_FIELD_NONE;
+0a4f091c12b3ea drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Boris Brezillon 2019-05-28  273  
+0a4f091c12b3ea drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Boris Brezillon 2019-05-28  274  	v4l2_apply_frmsize_constraints(&pix_mp->width, &pix_mp->height,
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  275  				       &vpu_fmt->frmsize);
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  276  
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  277  	if (!coded) {
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  278  		/* Fill remaining fields */
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  279  		v4l2_fill_pixfmt_mp(pix_mp, fmt->fourcc, pix_mp->width,
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  280  				    pix_mp->height);
+8c2d66b036c778 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2019-12-05  281  		if (ctx->vpu_src_fmt->fourcc == V4L2_PIX_FMT_H264_SLICE &&
+042584e9055b61 drivers/staging/media/hantro/hantro_v4l2.c             Philipp Zabel   2020-01-27 @282  		    !hantro_needs_postproc(ctx, fmt))
+a9471e25629b02 drivers/staging/media/hantro/hantro_v4l2.c             Hertz Wong      2019-08-16  283  			pix_mp->plane_fmt[0].sizeimage +=
+6574b7394c10e2 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  284  				hantro_h264_mv_size(pix_mp->width,
+6574b7394c10e2 drivers/staging/media/hantro/hantro_v4l2.c             Ezequiel Garcia 2020-03-11  285  						    pix_mp->height);
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  286  	} else if (!pix_mp->plane_fmt[0].sizeimage) {
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  287  		/*
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  288  		 * For coded formats the application can specify
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  289  		 * sizeimage. If the application passes a zero sizeimage,
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  290  		 * let's default to the maximum frame size.
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  291  		 */
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  292  		pix_mp->plane_fmt[0].sizeimage = fmt->header_size +
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  293  			pix_mp->width * pix_mp->height * fmt->max_depth;
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  294  	}
+953aaa1492c538 drivers/staging/media/rockchip/vpu/rockchip_vpu_v4l2.c Boris Brezillon 2019-05-28  295  
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  296  	return 0;
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  297  }
+775fec69008d30 drivers/staging/media/rockchip/vpu/rockchip_vpu_enc.c  Ezequiel Garcia 2018-12-05  298  
+
+:::::: The code at line 282 was first introduced by commit
+:::::: 042584e9055b615ac917239884fb0d65690f56ec media: hantro: fix extra MV/MC sync space calculation
+
+:::::: TO: Philipp Zabel <p.zabel@pengutronix.de>
+:::::: CC: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 Linux-rockchip mailing list
