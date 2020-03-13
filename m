@@ -2,55 +2,96 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9078C184CFF
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 17:52:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22188184EC6
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 19:39:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DYO9lQVCYiC6zJJWz1aqSGlYEnll3F1r4801YPd4UwI=; b=qmqfFhtVlMzijs
-	0ZtU7g7AiTuGzfF440NgpskjXD2rd05M0I1G/LUNIvQvOuumyK82oeewEttwR8xqtBac/7Z6z1Vse
-	Ipz1ooTzM37l5HMLi9KY4TKY/KG5eNREmnMWEhpMS3G752B+H/CRRQ2StJzN2WbUbxCwSHbOUBRLB
-	810DtnVdgRWNTCxvYPak4APZDzvWnqM1YbWFuN5DZH+Hg/vDEqTQkZ8M7hRY/e6csqThgLdnHV9Uj
-	/0FCZ6P0agGu66FZAGKY7CWMt+ZcbzbSs7lMZHJIKOLFvxtx0Z0o7h9S49RWLw7n8Pn7L6LH8wYrY
-	CXA2FdObZUZ0bZmdMsRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6+32GMTJcgKcfZgncBjEvx/QeAhjEg27yEw7kGK/RDs=; b=QxWqWq8eX6YSHuinXbWxocErf
+	1YuVvkGp0UH0SskfKkAuAFH84S8CDZRHe46zKaOEEAQqqbi9iNFcuZKlAPn+OYRi/NToxW+RX5fBU
+	j+nTc3hk0Uqojqs5ygl75ak6TI7vvulYSzzwFNJ6Le1unAfOQ7vanF7aTTCvPS2iPsUzZI+qCjaYd
+	q19r/2m6qn7x+Qft/ENk+buTCA1Nz+X1fegwcE9oFS8rrA6oE/SQqUYaCEOuvGZiMsKmgoy9gH/ds
+	dgjMiykOyCniof7ovfmy6+1MoqGhNoKT3RCIBC4uPHgKY11MXkmShjG0/IJaJCeNIdew+STWpDoV6
+	sG3+yMSHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCnXi-0006hO-6m; Fri, 13 Mar 2020 16:52:14 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jCpD1-0000eN-EE; Fri, 13 Mar 2020 18:38:59 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCnXX-0006WD-QS
- for linux-rockchip@lists.infradead.org; Fri, 13 Mar 2020 16:52:05 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 61E9529825B
-Subject: Re: [PATCH 0/3] media: staging: rkisp1: allow simultaneous streaming
- from multiple capture devices
-To: linux-media@vger.kernel.org
-References: <20200313014626.3103091-1-helen.koike@collabora.com>
-From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <9673b170-69cf-b951-bc29-76cf05e57fea@collabora.com>
-Date: Fri, 13 Mar 2020 13:51:53 -0300
+ id 1jCpCz-0000dk-50; Fri, 13 Mar 2020 18:38:58 +0000
+Received: by mail-io1-xd43.google.com with SMTP id h8so10532412iob.2;
+ Fri, 13 Mar 2020 11:38:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=cUuLSwZPrJiRgANKoLpU4cPUGPy0b1zzEtLmRHixawM=;
+ b=pdQfPVjVSSOD59vLUiszT2k4KPe/kCBMeiZthSOeCrEeeOkRG8ORIuJ1tYwaFCwj7u
+ mXd5jKvuHQ/shmhWkwEj9Fk0eZaWbfn+DzvqSmOOog5LZr/U6DbKJEEj+3Y/IiOHpmvS
+ RtKijyA3OxrinDMGSFixNsJjU5MTktY8LhoUPjYhNpsRBEWp/IOgqdm0054pahtufaBK
+ A8+jD31s69s+r8vC8XtTkqdjQEYSRmUdF0dP2tZeMxQ7dfB6ha/rWpsmmPCsneTN2ABc
+ sP6XarxcnXmSWfkKOoqav5la81uCFB1uFNpM+B09YTSNR5M9LwVh2Nkvf6Lxw7vODIRr
+ UNcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=cUuLSwZPrJiRgANKoLpU4cPUGPy0b1zzEtLmRHixawM=;
+ b=KPc9JCN7VMnh0b/dekIDXblpPK6ira4dQ6Xo7r5ah8uHRVlbg3v5l/qTDLLtkDe7Ta
+ 2Joha7Wu16Vm2uuD2vzVbVEKV67W4mf7Xmz2TOXD1+6e4Ke5IYEEQRFlWEP++7HOfJdy
+ cLnv+OHJHUlc8fuU0ZoVQMtusmibnEnLa0sKNM3C8ueYP9sAjMrgSxMJF67MTX84bwVL
+ 1GBxljdcHxbt1PamMrKDzeq4XpG1Jcyco+wr2qmf5jzm20PYJ0xHCPp93pYqVmydrJLG
+ sOU3PtpkmNJy/7DhdRd1MM6xvd4HyfMAtUD6Dp+mU31BEz2flSkpJdBbMazN6Fz9Sw9E
+ ACRw==
+X-Gm-Message-State: ANhLgQ0XprQqIFnS2eSu3SdmM+LNFCaJE3IMj3kBo0fsy7hAS3Ifq53h
+ n06BABKQ90zPXxiz87vGzPA=
+X-Google-Smtp-Source: ADFU+vtdsZ5CoLT8VEqVJq5gzOg+u0Z6Cy0SMBjXfTDYMAWxmxvUIJQyio7XZupCGfrbMwfmlLrgyA==
+X-Received: by 2002:a02:5489:: with SMTP id
+ t131mr14297947jaa.134.1584124735873; 
+ Fri, 13 Mar 2020 11:38:55 -0700 (PDT)
+Received: from [10.30.196.58] ([204.77.163.55])
+ by smtp.gmail.com with ESMTPSA id i82sm9783468ilf.32.2020.03.13.11.38.54
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 13 Mar 2020 11:38:54 -0700 (PDT)
+From: Joshua Watt <jpewhacker@gmail.com>
+X-Google-Original-From: Joshua Watt <JPEWhacker@gmail.com>
+Subject: Re: [PATCH] ARM: dts: rockchip: Keep rk3288-tinker SD card IO powered
+ during reboot
+To: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20200219204224.34154-1-JPEWhacker@gmail.com>
+Message-ID: <ed50e114-5efd-edcc-a287-3cacc4a28161@gmail.com>
+Date: Fri, 13 Mar 2020 13:38:53 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200313014626.3103091-1-helen.koike@collabora.com>
+In-Reply-To: <20200219204224.34154-1-JPEWhacker@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_095203_983424_4C0F9DDB 
-X-CRM114-Status: GOOD (  13.25  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200313_113857_194177_CB3FFE51 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jpewhacker[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,93 +104,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
- kernel@collabora.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
+On 2/19/20 2:42 PM, Joshua Watt wrote:
+> IO voltage regulator for the SD card must be kept on all the time,
+> otherwise when the board reboots the SD card can't be read by the
+> bootloader.
 
-On 3/12/20 10:46 PM, Helen Koike wrote:
-> Hi,
-> 
-> This series adds support for simultaneous streaming from both capture
-> devices (rkisp1_selfpath and rkisp1_mainpath).
-> 
-> Patch 1/3 fixes return error handling from pm functions, which was
-> preventing the second stream to start.
-> 
-> Patch 2/3 don't allow .s_stream entity callback to be called if a stream is
-> already enabled. Which fixes the issue when stopping one stream would
-> also stop the other.
-> 
-> Patch 3/3 serializes start/stop streaming calls, since they both read
-> and modify the streaming status of all the entities in the piipeline.
-> 
-> This series was tested with:
-> 
-> SEN_DEV=/dev/v4l-subdev3
-> ISP_DEV=/dev/v4l-subdev0
-> RSZ_SP_DEV=/dev/v4l-subdev2
-> RSZ_MP_DEV=/dev/v4l-subdev1
-> CAP_SP_DEV=/dev/video1
-> CAP_MP_DEV=/dev/video0
-> 
-> WIDTH=1920
-> HEIGHT=1080
-> RAW_CODE=SRGGB10_1X10
-> YUV_CODE=YUYV8_2X8
-> 
-> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $SEN_DEV
-> 
-> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $ISP_DEV
-> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
-> 
-> v4l2-ctl --set-subdev-selection pad=2,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
-> v4l2-ctl --set-subdev-fmt pad=2,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $ISP_DEV
-> 
-> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
-> v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
-> 
-> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_SP_DEV
-> 
-> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
-> v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
-> 
-> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_MP_DEV
-> 
-> v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_SP_DEV
-> v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_MP_DEV
-> 
-> sleep 1
-> 
-> v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_SP_DEV --stream-to=/tmp/test_sp.raw &
-> v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_MP_DEV --stream-to=/tmp/test_mp.raw &
-> 
-> wait
-> echo "Completed"
-> 
-> 
-> 
-> Helen Koike (3):
->   media: staging: rkisp1: cap: fix return values from pm functions
->   media: staging: rkisp1: do not call s_stream if the entity is still in
->     use
->   media: staging: rkisp1: cap: serialize start/stop stream
-> 
->  drivers/staging/media/rkisp1/rkisp1-capture.c | 25 ++++++++++++++++---
->  drivers/staging/media/rkisp1/rkisp1-common.h  |  2 ++
->  drivers/staging/media/rkisp1/rkisp1-dev.c     |  2 ++
->  3 files changed, 25 insertions(+), 4 deletions(-)
-> 
+Ping?
 
-Please, ignore this version, I rebased with the wrong branch. I'll send v2.
-
-Thanks
-Helen
+>
+> Signed-off-by: Joshua Watt <JPEWhacker@gmail.com>
+> ---
+>   arch/arm/boot/dts/rk3288-tinker.dtsi | 1 +
+>   1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> index 312582c1bd37..acfaa12ec239 100644
+> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+> @@ -276,6 +276,7 @@
+>   			};
+>   
+>   			vccio_sd: LDO_REG5 {
+> +				regulator-always-on;
+>   				regulator-boot-on;
+>   				regulator-min-microvolt = <1800000>;
+>   				regulator-max-microvolt = <3300000>;
 
 _______________________________________________
 Linux-rockchip mailing list
