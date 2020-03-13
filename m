@@ -2,91 +2,123 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08FE218450E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 11:38:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C008018457A
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 12:04:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=u7RuQMCoNi3d4bYV8IB3rXmSW2e8e0JB+thAMbWui/8=; b=ebDt33FyL4PNWeBGY3dAjH1j3Z
-	B1rYhBjn3tCdNyuu/AZUZqvnF17sL035Cjx6kpjObiEChZ736HtE9xho6wv7QzsUK0S0QwvCY6XoV
-	fYt4McP1kFR265ji/U3f1d+REquwLSNKDAzMaVGoYG4wkh45y6Fm23bJFAgq0caSKnqsvkCKuGf8V
-	Y8qRraCU57AKEMJMncTLe7Vjy/a5RKuBLrHYNBeHyyY+5PBE9kzKOJS9BJlx+rR5NeNAVqAO2NUqz
-	Wrms89XjEhJ8VHOv3aMaDX7vRSpp2pYvzrupUofNQqJWQhD5RY8E9nFiNy8FHxkENZ1k93AMnHt3/
-	1ZuvIWBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zxFGF4RrLkzwlfHsedFD1ZaTCyKYu1VO1CW5VY3GnkE=; b=Y9SfVBYmEjixNa
+	Q/YRekSQmt6fFPaqq/YWLKmeRSxGyDLzy0eNQIRNyVg1nqfgZiyXv2pbTZ1H2yAbpUd/IHDhHhT2G
+	cM3GEuYwfaIZSuO4B1I2Sa4NiaREVnSttvm1cAxrhni7VrlALHB4KTX7nhG0hPi/3cH3eO1zBPlyR
+	0GTiVtwcwpVHzSUI/i5NyepPESUtkoj3XhiEQ+Rtcn6tAMDTC5k+UEHa6zL1dnl1jVJXQ/OEETpC+
+	M6QOq7gqDBhoDXkNG2W5ZAG+L40+n7kmql9vQyvVgMxq1CiF8ZyjCYQt46m35XnE3W9HWDNM8D8Cp
+	G0eGKUv5PasxtOLJHgFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jChhb-00066w-71; Fri, 13 Mar 2020 10:38:03 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jCi6x-0001N1-SE; Fri, 13 Mar 2020 11:04:15 +0000
+Received: from mail-bn8nam12on2109.outbound.protection.outlook.com
+ ([40.107.237.109] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jChh9-0005eM-Em; Fri, 13 Mar 2020 10:37:36 +0000
-Received: by mail-wr1-x441.google.com with SMTP id r15so11423425wrx.6;
- Fri, 13 Mar 2020 03:37:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=k4BHlmlIIly19yAcT+U9SlSGDpikfNDuftvz1GG3NyI=;
- b=n+VQkJt4keLrX9Z1cmab2rKVIEKUzaRGvqgCHicwB+TzWWb5sc/zEKZvz0m2BFBtYY
- 2VfKrgvos4hhjRRo0Lig266Xz4lUDFlz0+LWVKUa42psEC3f5hWh6veiR84uBFMKuSWL
- MKTsF0XdvTidRIbMHj1jEl5I+pK2xg7chztbVijEKZMNFzrJvT1KlcPd17Bq8QUtIYQ/
- 3/ktCL+6KVRPqV18k3mAf5q+3wzF2sw8GuTnE9SMeZdrJpXsH5W/RtNXsGNBll9I0a6u
- ScfrJyaHFuO36hRHZeXmlB7kheCnmgP0rirvPSvk2hiuMkLJ3e3Wxxu4WQqno5EXcjsC
- pN4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=k4BHlmlIIly19yAcT+U9SlSGDpikfNDuftvz1GG3NyI=;
- b=XIDhC/n4++qG9zEk2OBTsY5jrT3Fnz4qwDsO9MZIuA61S2Jfxq2mXEduD4/6RFiAp2
- oANbdgqVk3QxnTMuQbMzkluUrKYFvBLV3UzN+ZqV8Ka4blj58Vo/ePdBpvJ4Vp2TIG57
- P4YNVjacSH2D7QPSdwDcKd3ew+HsLowqnmP8UnCDXQjWqZ7qlR008D9wdC1adxcHLOuQ
- 3I/SjSdy9rxjepfxCPJ/Vd+mnxfULWExibqdSdLb1W7w2ODPmMOHXco+g/6eLWaEJiLR
- JsM5CvhIUW3Gm44CFeDUxXXbHRcRT8RZSpY+y8lFN7hQAMylowFUI88N6Dp19OZx8NvQ
- KX8g==
-X-Gm-Message-State: ANhLgQ2YS80gIPN/M19ZgU5pXHcxaoACSWCZLJH2+k9HiAEn9L44eP8a
- EP82rZzGjQ8kG5ITVDNkTA8=
-X-Google-Smtp-Source: ADFU+vsCE/NjGMEqAImu3YZBGZWMwPRv2f7D0Xn0qVCk5kqumgbi15H0AYaphrhjWzVuCayVI52zQA==
-X-Received: by 2002:adf:fc0d:: with SMTP id i13mr16858848wrr.364.1584095854238; 
- Fri, 13 Mar 2020 03:37:34 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o3sm17688551wme.36.2020.03.13.03.37.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 13 Mar 2020 03:37:33 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: add missing @0 to memory
- nodenames
-Date: Fri, 13 Mar 2020 11:37:26 +0100
-Message-Id: <20200313103726.1678-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200313103726.1678-1-jbx6244@gmail.com>
-References: <20200313103726.1678-1-jbx6244@gmail.com>
+ id 1jCi6d-0001Bs-2A; Fri, 13 Mar 2020 11:04:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fLTbJC8MhC6oEGWFL5+j+iteNbC1bqX8Z26N0mybcC6x5dkFxWr/Mstt4moMo6Q7Ta8HT2PSPIWamxE0B4dPmBTpy4jBkMDZR9KEd1+ZL72B3LD+pG/7e1ATX6Rqxhv5HrLgsYH6ontkuO3tcxDLRw1PA94Rs/wGpVoOd0Imi/zcrR3HVBn9RGwtywxDaBXMDvZOaWp6gym9Hgijw+xpTTBOxdUEBk5f+soZKm4Lteii9OWrYlZrfjhyFXD8o5iP6Pz2cdDkSMR4Jvsrz+aMUSA3J7nMc9hGKQ94cc/xZb3ceca0PcRqOeAmp0tswoiRqrgCJ/ePNN95FVr1DFAlWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1Od+NrTrql0tkVgx2dHy7tXk6otgJpPhWVCxqjf5FEQ=;
+ b=O+dd6lwo+615A2lVNdnkGAj64erhm6kvh0r32G3WE8R4fh2l4zc422vO27kS+2az81kfb4wRmIC9YO+zMk8eHXwjtmj769UgV6duSjVj2EjAGgm4StWJpBb/ET18JCaRt/iaAkbRFSa4XCiDPVGSBBLTd3I5DVzqotL2bSzxZeiuM6F6US8XgrTY0Kqpwft3RXcCkaIcQN/carqhbnC0hr3iAyqehkJCmSmqA8gy2frgNt9AtFBcvMZbkyhuxAKuWfwzPSTOfQc72hAJfNKXAnZs9T59aZpsLi6fodOpLdChNrmtDccrSi60J6EGtqGPhltdewqzi491vV+V3P3D6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cypress.com; dmarc=pass action=none header.from=cypress.com;
+ dkim=pass header.d=cypress.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cypress.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1Od+NrTrql0tkVgx2dHy7tXk6otgJpPhWVCxqjf5FEQ=;
+ b=IwGNtYvFiKskGeYIScsNEvv4JP0IpRVCH13kV4/dNS0fO2guZeErcfuDlDDCR3D2ab40Xa6LhPJ3zwDc/pUGqPatQr3Jlva6hOX37CO6jDVTKv+XKQYZRoUIcGTvxEhJXlmhlq52B/Ei6U/mtiXPbfoQ0CtMHuIR1Abe48TNFt8=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Chi-Hsien.Lin@cypress.com; 
+Received: from BYAPR06MB4901.namprd06.prod.outlook.com (2603:10b6:a03:7a::30)
+ by BYAPR06MB5352.namprd06.prod.outlook.com (2603:10b6:a03:ab::29)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.17; Fri, 13 Mar
+ 2020 11:03:50 +0000
+Received: from BYAPR06MB4901.namprd06.prod.outlook.com
+ ([fe80::3cc3:7b1a:bd7b:a0a9]) by BYAPR06MB4901.namprd06.prod.outlook.com
+ ([fe80::3cc3:7b1a:bd7b:a0a9%5]) with mapi id 15.20.2793.021; Fri, 13 Mar 2020
+ 11:03:50 +0000
+Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
+To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>,
+ Soeren Moch <smoch@web.de>
+References: <20191211235253.2539-1-smoch@web.de>
+ <1daadfe0-5964-db9b-818c-6e4c75ac6a69@web.de>
+ <22526722-1ae8-a018-0e24-81d7ad7512dd@web.de> <2685733.IzV8dBlDb2@diego>
+From: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
+Message-ID: <d7b05a6c-dfba-c8e0-b5fb-f6f7f5a6c1b7@cypress.com>
+Date: Fri, 13 Mar 2020 19:03:31 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+In-Reply-To: <2685733.IzV8dBlDb2@diego>
+Content-Language: en-US
+X-ClientProxiedBy: BYAPR21CA0007.namprd21.prod.outlook.com
+ (2603:10b6:a03:114::17) To BYAPR06MB4901.namprd06.prod.outlook.com
+ (2603:10b6:a03:7a::30)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [10.9.112.143] (61.222.14.99) by
+ BYAPR21CA0007.namprd21.prod.outlook.com (2603:10b6:a03:114::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2835.6 via Frontend
+ Transport; Fri, 13 Mar 2020 11:03:48 +0000
+X-Originating-IP: [61.222.14.99]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 62396984-5167-4363-aa3b-08d7c73e35ed
+X-MS-TrafficTypeDiagnostic: BYAPR06MB5352:|BYAPR06MB5352:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <BYAPR06MB5352298F01774CF10B92EBCFBBFA0@BYAPR06MB5352.namprd06.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 034119E4F6
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(136003)(366004)(376002)(39860400002)(346002)(396003)(199004)(5660300002)(86362001)(956004)(81166006)(52116002)(6666004)(31696002)(81156014)(8676002)(53546011)(2616005)(186003)(66574012)(26005)(16526019)(8936002)(3450700001)(36756003)(31686004)(2906002)(4326008)(478600001)(6486002)(66556008)(316002)(66476007)(66946007)(110136005)(16576012)(55004002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR06MB5352;
+ H:BYAPR06MB4901.namprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+Received-SPF: None (protection.outlook.com: cypress.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: eGiO0gzk4t7r6kvIeuU4WEULq2+RBBElmtOciU4hDrWj8PnVoXBrUJJIK4kBYuKuhj30ryX0OwqGnCq8SXCqDE1SDXI6B+TXb+JWSc8o9sJF3MVORyQs9n3S0bPvwXmn+Cc1yq0Es2FCIgS6QFCiVktB9Szsy6P2TLLbFXX/8OOr49CsUdHic7AXA3/yYQtKpliVlqKdZDnIeiaJtuOkJJTzdFU6Rqr23KGwwYQD1m/xmDT5+kE0YtGMMNW2PPLUD9o19FKtlq8T1qBsEIxkojn+N/FS9EVVA6KLApdTd0jJadcu5mBDmVO2RKiAgF9eGcFx8y8RzWLznX9cMlQ6seBZF/9dl0AESX1ewBUjCKO+ga1/Yi9Pb5c9khKZeOlZbj9cOFoyA9rIblK9AVP2+pniSOkqfz1+ibV8gQaZEnBuccFVjgwpXtSeNRCbZ+My2HX8kygrlyLFJzprsGYB2HOkI2IDmyaNbnPPGQNJd5qsAxnU617moKYTvKXnG6LI
+X-MS-Exchange-AntiSpam-MessageData: jS/uIX4ame7sv/RcBvFv51Mbk/N9GufyJlubKi2gXzfNz4brHfHmA3jJufFNe+XRh0H+uQ4J52Pr/e0DAv/z/a9xo8GHiwzOqc+cUS1Z46h5zd7OZt6AZomHDlPj6WL9j9P+pjvfJ6h8HSK7GQ94rQ==
+X-OriginatorOrg: cypress.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 62396984-5167-4363-aa3b-08d7c73e35ed
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Mar 2020 11:03:50.7359 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 011addfc-2c09-450d-8938-e0bbc2dd2376
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 538WHKl5SCZhcVyaaHXJ5euGqVJ8NU7PshdF/NjhCFR/ZjGw9Wml+kpWwJT3JN+uPWSeZYGJMQ0XiPiqFpL58w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR06MB5352
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_033735_491248_CD5E8463 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200313_040359_974323_1EA02E1E 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.237.109 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,86 +131,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: chi-hsien.lin@cypress.com
+Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ brcm80211-dev-list@cypress.com, Kalle Valo <kvalo@codeaurora.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives these errors:
-
-arch/arm64/boot/dts/rockchip/rk3368-evb-act8846.dt.yaml: /: memory:
-False schema does not allow
-{'reg': [[0, 0, 0, 1073741824]], 'device_type': ['memory']}
-arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dt.yaml: /: memory:
-False schema does not allow
-{'reg': [[0, 0, 0, 2147483648]], 'device_type': ['memory']}
-arch/arm64/boot/dts/rockchip/rk3368-r88.dt.yaml: /: memory:
-False schema does not allow
-{'reg': [[0, 0, 0, 1073741824]], 'device_type': ['memory']}
-
-The memory nodes all have a reg property that requires '@' in
-the nodename. Fix this error by adding the missing '@0' to
-the involved memory nodenames.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/
-schemas/root-node.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3368-evb.dtsi           | 2 +-
- arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dts | 2 +-
- arch/arm64/boot/dts/rockchip/rk3368-r88.dts            | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-evb.dtsi b/arch/arm64/boot/dts/rockchip/rk3368-evb.dtsi
-index 1c52f47c4..b9e2e4bc0 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-evb.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-evb.dtsi
-@@ -12,7 +12,7 @@
- 		stdout-path = "serial2:115200n8";
- 	};
- 
--	memory {
-+	memory@0 {
- 		device_type = "memory";
- 		reg = <0x0 0x0 0x0 0x40000000>;
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dts b/arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dts
-index 6cc310255..9435008d5 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dts
-@@ -15,7 +15,7 @@
- 		stdout-path = "serial2:115200n8";
- 	};
- 
--	memory {
-+	memory@0 {
- 		device_type = "memory";
- 		reg = <0x0 0x0 0x0 0x80000000>;
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-r88.dts b/arch/arm64/boot/dts/rockchip/rk3368-r88.dts
-index 006a1fb6a..cf11175ec 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-r88.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-r88.dts
-@@ -15,7 +15,7 @@
- 		stdout-path = "serial2:115200n8";
- 	};
- 
--	memory {
-+	memory@0 {
- 		device_type = "memory";
- 		reg = <0x0 0x0 0x0 0x40000000>;
- 	};
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+CgpPbiAxMi8xNi8yMDE5IDc6NDMsIEhlaWtvIFN0w7xibmVyIHdyb3RlOgo+IEhpIFNvZXJlbiwK
+PiAKPiBBbSBTb25udGFnLCAxNS4gRGV6ZW1iZXIgMjAxOSwgMjI6MjQ6MTAgQ0VUIHNjaHJpZWIg
+U29lcmVuIE1vY2g6Cj4+IE9uIDEyLjEyLjE5IDExOjU5LCBTb2VyZW4gTW9jaCB3cm90ZToKPj4+
+IE9uIDEyLjEyLjE5IDEwOjQyLCBLYWxsZSBWYWxvIHdyb3RlOgo+Pj4+IFNvZXJlbiBNb2NoIDxz
+bW9jaEB3ZWIuZGU+IHdyaXRlczoKPj4+Pgo+Pj4+PiBBZGQgc3VwcG9ydCBmb3IgdGhlIEJDTTQz
+NTkgY2hpcHNldCB3aXRoIFNESU8gaW50ZXJmYWNlIGFuZCBSU0RCIHN1cHBvcnQKPj4+Pj4gdG8g
+dGhlIGJyY21mbWFjIHdpcmVsZXNzIG5ldHdvcmsgZHJpdmVyIGluIHBhdGNoZXMgMS03Lgo+Pj4+
+Pgo+Pj4+PiBFbmhhbmNlIGRldmljZXRyZWUgb2YgdGhlIFJvY2tQcm82NCBhcm02NC9yb2NrY2hp
+cCBib2FyZCB0byB1c2UgYW4KPj4+Pj4gQVA2MzU5U0EgYmFzZWQgd2lmaS9idCBjb21ibyBtb2R1
+bGUgd2l0aCB0aGlzIGNoaXBzZXQgaW4gcGF0Y2hlcyA4LTkuCj4+Pj4+Cj4+Pj4+Cj4+Pj4+IENo
+dW5nLUhzaWVuIEhzdSAoMSk6Cj4+Pj4+ICAgIGJyY21mbWFjOiBzZXQgRjIgYmxvY2tzaXplIGFu
+ZCB3YXRlcm1hcmsgZm9yIDQzNTkKPj4+Pj4KPj4+Pj4gU29lcmVuIE1vY2ggKDUpOgo+Pj4+PiAg
+ICBicmNtZm1hYzogZml4IHJhbWJhc2UgZm9yIDQzNTkvOQo+Pj4+PiAgICBicmNtZm1hYzogbWFr
+ZSBlcnJvcnMgd2hlbiBzZXR0aW5nIHJvYW1pbmcgcGFyYW1ldGVycyBub24tZmF0YWwKPj4+Pj4g
+ICAgYnJjbWZtYWM6IGFkZCBzdXBwb3J0IGZvciBCQ000MzU5IFNESU8gY2hpcHNldAo+Pj4+PiAg
+ICBhcm02NDogZHRzOiByb2NrY2hpcDogUm9ja1BybzY0OiBlbmFibGUgd2lmaSBtb2R1bGUgYXQg
+c2RpbzAKPj4+Pj4gICAgYXJtNjQ6IGR0czogcm9ja2NoaXA6IFJvY2tQcm82NDogaG9vayB1cCBi
+bHVldG9vdGggYXQgdWFydDAKPj4+Pj4KPj4+Pj4gV3JpZ2h0IEZlbmcgKDMpOgo+Pj4+PiAgICBi
+cmNtZm1hYzogcmVzZXQgdHdvIEQxMSBjb3JlcyBpZiBjaGlwIGhhcyB0d28gRDExIGNvcmVzCj4+
+Pj4+ICAgIGJyY21mbWFjOiBhZGQgUlNEQiBjb25kaXRpb24gd2hlbiBzZXR0aW5nIGludGVyZmFj
+ZSBjb21iaW5hdGlvbnMKPj4+Pj4gICAgYnJjbWZtYWM6IG5vdCBzZXQgbWJzcyBpbiB2aWYgaWYg
+ZmlybXdhcmUgZG9lcyBub3Qgc3VwcG9ydCBNQlNTCj4+Pj4+Cj4+Pj4+ICAgLi4uL2Jvb3QvZHRz
+L3JvY2tjaGlwL3JrMzM5OS1yb2NrcHJvNjQuZHRzICAgIHwgNTAgKysrKysrKysrKystLS0KPj4+
+Pj4gICAuLi4vYnJvYWRjb20vYnJjbTgwMjExL2JyY21mbWFjL2JjbXNkaC5jICAgICAgfCAgOCAr
+Ky0KPj4+Pj4gICAuLi4vYnJvYWRjb20vYnJjbTgwMjExL2JyY21mbWFjL2NmZzgwMjExLmMgICAg
+fCA2OCArKysrKysrKysrKysrKystLS0tCj4+Pj4+ICAgLi4uL2Jyb2FkY29tL2JyY204MDIxMS9i
+cmNtZm1hYy9jaGlwLmMgICAgICAgIHwgNTQgKysrKysrKysrKysrKystCj4+Pj4+ICAgLi4uL2Jy
+b2FkY29tL2JyY204MDIxMS9icmNtZm1hYy9jaGlwLmggICAgICAgIHwgIDEgKwo+Pj4+PiAgIC4u
+Li9icm9hZGNvbS9icmNtODAyMTEvYnJjbWZtYWMvcGNpZS5jICAgICAgICB8ICAyICstCj4+Pj4+
+ICAgLi4uL2Jyb2FkY29tL2JyY204MDIxMS9icmNtZm1hYy9zZGlvLmMgICAgICAgIHwgMTcgKysr
+KysKPj4+Pj4gICBpbmNsdWRlL2xpbnV4L21tYy9zZGlvX2lkcy5oICAgICAgICAgICAgICAgICAg
+fCAgMiArCj4+Pj4+ICAgOCBmaWxlcyBjaGFuZ2VkLCAxNzYgaW5zZXJ0aW9ucygrKSwgMjYgZGVs
+ZXRpb25zKC0pCj4+Pj4gSnVzdCB0byBtYWtlIHN1cmUgd2UgYXJlIG9uIHRoZSBzYW1lIHBhZ2Us
+IEkgd2lsbCBhcHBseSBwYXRjaGVzIDEtNyB0bwo+Pj4+IHdpcmVsZXNzLWRyaXZlcnMtbmV4dCBh
+bmQgcGF0Y2hlcyA4LTkgZ28gdG8gc29tZSBvdGhlciB0cmVlPyBBbmQgdGhlcmUKPj4+PiBhcmUg
+bm8gZGVwZW5kZW5jaWVzIGJldHdlZW4gdGhlIGJyY21mbWFjIHBhdGNoZXMgYW5kIGR0cyBwYXRj
+aGVzPwo+Pj4+Cj4+PiBZZXMsIHRoaXMgYWxzbyBpcyBteSB1bmRlcnN0YW5kaW5nLiBJJ20gZ2xh
+ZCBpZiB5b3UgYXJlIGZpbmUgd2l0aAo+Pj4gcGF0Y2hlcyAxLTcuCj4+PiBIZWlrbyB3aWxsIHBp
+Y2sgdXAgcGF0Y2hlcyA4LTkgbGF0ZXIgZm9yIGxpbnV4LXJvY2tjaGlwIGluZGVwZW5kZW50bHku
+Cj4+PiBBbmQgaWYgd2UgbmVlZCBhbm90aGVyIHJvdW5kIG9mIHJldmlldyBmb3IgcGF0Y2hlcyA4
+LTksIEkgdGhpbmsgd2UgZG9uJ3QKPj4+IG5lZWQgdG8gYm90aGVyIGxpbnV4LXdpcmVsZXNzIHdp
+dGggdGhpcy4KPj4KPj4gSGVpa28sCj4+Cj4+IGlzIHRoaXMgT0sgZm9yIHlvdSB3aGVuIHBhdGNo
+ZXMgMS03IGFyZSBtZXJnZWQgbm93IGluIHdpcmVsZXNzLWRyaXZlcnMsCj4+IGFuZCB0aGVuIEkg
+c2VuZCBhIHYzIGZvciBwYXRjaGVzIDgtOSBvbmx5IGZvciB5b3UgdG8gbWVyZ2UgaW4KPj4gbGlu
+dXgtcm9ja2NoaXAgbGF0ZXI/IE9yIGRvIHlvdSBwcmVmZXIgYSBmdWxsIHYzIGZvciB0aGUgd2hv
+bGUgc2VyaWVzCj4+IHdpdGggb25seSB0aGlzIHBlbmRpbmcgY2xvY2sgbmFtZSB1cGRhdGUgaW4g
+cGF0Y2ggOT8KPiAKPiBOb3BlLCBtZXJnaW5nIDEtNyBmcm9tIHRoaXMgdjIgYW5kIHRoZW4gZ2V0
+dGluZyBhIHYzIHdpdGggb25seSB0aGUgZHRzCj4gc3R1ZmYgaXMgcGVyZmVjdGx5IGZpbmUgOi0p
+CgpTb2VyZW4sCgpJIHN1cHBvc2UgcGF0Y2ggMS03IGZyb20gdGhpcyBzZXJpb3VzIGFyZSBhbGwg
+Z29vZCBmb3IgbWVyZ2luZy4gSXMgdGhhdCAKcmlnaHQ/IElmIHNvLCBjb3VsZCB5b3UgcGxlYXNl
+IGNyZWF0ZSBhIHJlYmFzZWQgVjM/CgoKUmVnYXJkcywKQ2hpLWhzaWVuIExpbgoKPiAKPiBIZWlr
+bwo+IAo+IAo+IC4KPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcm9ja2NoaXAK
