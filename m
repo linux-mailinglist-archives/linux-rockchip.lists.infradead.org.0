@@ -2,82 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A632618440D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 10:48:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25A2318450D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 11:37:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1wdSOKyCiopto5Y09+0/nlbOGx5kbD15Kt4hrhGDHUE=; b=kGwu+G36m6I60N
-	T+iE+gUnsGLjVS9VS7rLu+SZdyOIhzQpS4+dougfATQ92wcMPk6I5kydve4ZTF5FASlJ0sC2dlvx0
-	9PGb5zrC2NKrB0D6XQrLxeG+dx+HqpFIi4l6PnOpzM26tZlh71ERVRf0k5/DxcEwdUYkdnohesKlO
-	k2P4xn0HUp5aioFch9zW8ZKAq1czwn7C4NKsCG90mMS9gY2uDEVKzhRACEiSzO9H+ZzBqWnkR5lvH
-	03SeiCSqc9nECs6+PNkUjc/0Ztg7279MRrl4OLBowIAFPbKSQSF3cq65b0bmxvF9PG6rfMrZYRJv2
-	6vjNqO4wrK4WQ0MgBy2w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=t7sKl3q2w00tR/UdDO5H8ILAK+DihMVLkoS+qdREdkE=; b=gax
+	HyL0zQwQfnQDQ8j+CGBOAUhnA50tLIg6QcXmj3WhQlVGA5agBuFdeoAiT9L4NZ+5ayfDBwV/gVmLW
+	wBXYVaU/qGGK8CVNacgyyvwDdi6UAdng06t3sjUyNiTgJ2sXRkJSN1W7IHfAtiM2RsQzf8/ACjn+5
+	Px8UuNroF8JjyS2JPWgAhBjncGU7dS3PsbsQTpl9T2cPVDBh9hwoKNILztSPeqd5M781EZLQkE8kP
+	3yBb5UGZs1JqIKcdDv6rul3yfqKFzczdnhWHAwd/PKbtkljflPiV4lw8AcxeJYF4Zlx82cTNdJKcA
+	Vnbk4m1G1LFeLipCEDMHkIpESP3d+zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCgvC-0007QE-EG; Fri, 13 Mar 2020 09:48:02 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jChhM-0005pT-6W; Fri, 13 Mar 2020 10:37:48 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCgv8-0007JQ-W5; Fri, 13 Mar 2020 09:48:00 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t2so1148091wrx.12;
- Fri, 13 Mar 2020 02:47:58 -0700 (PDT)
+ id 1jChh9-0005dq-8F; Fri, 13 Mar 2020 10:37:36 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t13so3336306wmi.3;
+ Fri, 13 Mar 2020 03:37:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=XQL/ya+7buqNZWgLcV53EPIchP1Jf2XAfvnaPJGA1KA=;
- b=pYdPIASjYoqpQoZ+d0D1BtbpFxOaL31zy7s2vppMa61ioYUMdqnfucab9xSLprGaDe
- KGicwSl2z64hVgJwPPxeOtKJSWJRP0vq189Vy1BPL+jTmMa+VMOWe/NXV//VrMWJCkUy
- 5m9fX3NLEGm86NabuYrtSJ5drAQItP1zom27YjfmHKtnXn03WFVN39BlGaUpr3OKh/pW
- useVs+j1RAHP31DeNOzwEI0F8RdbySDuG9ZwxP0fv0m+LSQJyq6zpF54I/BNiIJyB5d9
- rkMCgtLU6AMeSCqrgPTrLvm1L6c3kAt+8Ak/s+CyalMgFapywFDRN8dOqKsEWuSOeWRt
- 3qew==
+ h=from:to:cc:subject:date:message-id;
+ bh=rQjq8uKoRrlLiAy2jC9SVIhkfPttmNZUWXbQLhDZM9k=;
+ b=UGBliQojrFTzcrINN1hj7VaIxQhifS1a+pj8O7CpftaSMpdX/jXa/e2ShvDTKrPtDg
+ /fRJICfUaCPHZHAL/PoJGQZLQbqzlIcyPGAvhNetLxmKmIuVbhuVT/3YC2+sLn6/l/lz
+ YcEuUOumTYQtWC8aSHnVQVQmxI50A+8b/Z1vom5CTboDz/Mr5ZUAmZNTd8D4XkhhACEO
+ 2qdHlYmOrqcec5DzyzF0TDDIPkPkJowmXOs3vydQavbqCyfGBQgcpKRnRAiVbOG50JRJ
+ 4VXELyeSJOTeO7IQmWQtFWAg96CAYdDzO7cj57V0b5pfjxV5jJWQRlXM66ff9YFUmnVx
+ dDBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=XQL/ya+7buqNZWgLcV53EPIchP1Jf2XAfvnaPJGA1KA=;
- b=tzXgJQxFtFdw94A6U7Kgm08kblFsKwYcWrAz1kUkNIReQN7NFHiDAP2hD7TLstNFEN
- +V/d3Zw4ESNOhMrFXtl3r3vpl8EOh+GbMimGasrjY0ripnuWDhD5eP5p20xA7g6aBaUV
- q5nDQOd8C7qvmxW5H08iCzJsA/TPgVotkpXBBpvFk1sCTL7eNuRfLU11Bwathj0P68zo
- kkNy3qn+mJ/hB1ZZsWUYpHt3LepDr0xZiz5MYKbf+7d2nhZ1exLQ5LQ/bspGyU6+yr3u
- /Eg270nDN0hjY28Es25+fq4A6RBts+PJ/Xybpu1mJ7L0dLRzpwApi/0v71ijE3dJFchg
- 9+sw==
-X-Gm-Message-State: ANhLgQ0hpqT/bGmbf002OLrVeqI/qfyoyQen/iaxFwm/L0nZu7HuHhz0
- 7uR0uNzvLDIXpKOlxmNAWXw=
-X-Google-Smtp-Source: ADFU+vtaxHOPeIyS6PgzifyQThwGs16+e+1vFL082dvhCXY95j+M8YBn6L+ANelNhAcd5SM3g8oOtQ==
-X-Received: by 2002:adf:94c2:: with SMTP id 60mr16813347wrr.396.1584092877688; 
- Fri, 13 Mar 2020 02:47:57 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id u7sm8109776wme.43.2020.03.13.02.47.56
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 13 Mar 2020 02:47:57 -0700 (PDT)
-Subject: Re: [PATCH 2/3] ARM: dts: rockchip: add missing @0 to memory nodenames
-To: Heiko Stuebner <heiko@sntech.de>, robh+dt@kernel.org
-References: <20200304074051.8742-1-jbx6244@gmail.com>
- <1784340.9KJLpVao5L@phil> <2a5ef6fc-2487-91ef-24ce-97dd47b0a137@gmail.com>
- <7869677.iSBujUIW6u@phil>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=rQjq8uKoRrlLiAy2jC9SVIhkfPttmNZUWXbQLhDZM9k=;
+ b=jQ26pBnCXw0vB47akXLyJqTaVwDZb9sa3HiTkMkXPhh0TQKi5z6RbNrWlBw+dG7Rmg
+ hhn+93oVQWSfcQAe8N56g3lRwcqEOV3+gbYxPrhQNJDQVSAWeS0Scryjlu14aYQV/oh+
+ O0B2nV2xezoqD4YKXIrOGRSik83NEowqEW5U82i2iSX9MrDjxRgqOxt9W8Vu5QcG9MZN
+ q2twYDCrczsv9MweQk2EtXsBIBQnsVTpTX731FFla6nqhTyhV3I+GyyEn/7XaLSe9siv
+ NT7bSq+CwreBv+y9JXxC2fqBCIlAtIMQ3v3OCHsv1PIkthxKjFkbR8OZyIvgsK16H0fw
+ noKA==
+X-Gm-Message-State: ANhLgQ0Lh4uhllNN3za7/LFkegnWP2OHrtHbwcZPQSvFRHoEDLR0lZ+v
+ DnPL+hDa4opFfSeRFJ0q/kg=
+X-Google-Smtp-Source: ADFU+vsvWMWzKMxNqeNsKtP8NvCy424vINQYoxocmtCUEXMyobJjwyOn9tG53zX72IKMsG6O9hK2aw==
+X-Received: by 2002:a1c:2048:: with SMTP id g69mr10462496wmg.187.1584095853079; 
+ Fri, 13 Mar 2020 03:37:33 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id o3sm17688551wme.36.2020.03.13.03.37.32
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 13 Mar 2020 03:37:32 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <5af5bdfd-3522-9066-8bde-84a5e468be32@gmail.com>
-Date: Fri, 13 Mar 2020 10:47:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <7869677.iSBujUIW6u@phil>
-Content-Language: en-US
+To: heiko@sntech.de
+Subject: [PATCH v2 1/2] ARM: dts: rockchip: add missing @0 to memory nodenames
+Date: Fri, 13 Mar 2020 11:37:25 +0100
+Message-Id: <20200313103726.1678-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_024759_036489_1E9FFD6F 
-X-CRM114-Status: GOOD (  19.13  )
+X-CRM114-CacheID: sfid-20200313_033735_294542_CD7112BD 
+X-CRM114-Status: GOOD (  12.34  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -104,59 +94,83 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sIFJvYiwKCkZyb20gaHR0cHM6Ly9jb3JlYm9vdC5vcmcvc3RhdHVzL2JvYXJkLXN0
-YXR1cy5odG1sCgpUaGUgb25seSBzdXBwb3J0ZWQgYm9hcmRzIGxpc3RlZCBhcmU6CgpWZXlyb24g
-Um9ja2NoaXAgUkszMjg4IGJvYXJkcwpWZXlyb24gTWlja2V5IFJvY2tjaGlwIFJLMzI4OCBib2Fy
-ZApWZXlyb24gUmlhbHRvIFJvY2tjaGlwIFJLMzI4OCBib2FyZApHcnUgUm9ja2NoaXAgUkszMzk5
-IHJlZmVyZW5jZSBib2FyZAoKRml4ZWQgd2l0aDoKQVJNOiBkdHM6IHJvY2tjaGlwOiBSZW1vdmUg
-QDAgZnJvbSB0aGUgdmV5cm9uIG1lbW9yeSBub2RlCmh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5v
-cmcvcGF0Y2gvMTA2ODgwODEvCgpUaGUgcHJvYmxlbSBpcyByazMyODgtdmV5cm9uIG9ubHkgSSB0
-aGluay4KRWxzZSBmaXggY29yZWJvb3QgdG8gY29tcGx5IHdpdGggRFQgcnVsZXMsIG5vdCB0aGUg
-b3RoZXIgd2F5IGFyb3VuZC4KV2lsbCBtYWtlIHYyLgoKQ2FuIHJvYmggZ2l2ZSBhZHZpY2UgaGVy
-ZT8KClRoYW5rcwoKT24gMy82LzIwIDEyOjU4IEFNLCBIZWlrbyBTdHVlYm5lciB3cm90ZToKPiBI
-aSBKb2hhbiwgUm9iLAo+IAo+IEFtIERvbm5lcnN0YWcsIDUuIE3DpHJ6IDIwMjAsIDIzOjIxOjUy
-IENFVCBzY2hyaWViIEpvaGFuIEpvbmtlcjoKPj4gR29hbCB3YXMgdG8gcmVkdWNlIHRoZSBlcnJv
-ciBvdXRwdXQgb2YgZXhpc3RpbmcgY29kZSBhIGxpdHRsZSBiaXQsCj4+IHNvIHRoYXQgd2UgY2Fu
-IHVzZSBpdCBmb3IgdGhlIHJldmlldyBvZiBuZXcgcGF0Y2hlcy4KPj4gU29tZSBxdWVzdGlvbnM6
-Cj4+IEFzIEkgZG9uJ3QgaGF2ZSB0aGUgaGFyZHdhcmUsIHdoZXJlIGVsc2UgaXMgY29yZWJvb3Qg
-dXNlZD8KPj4gSXMgdGhpcyBhIHJrMzI4OC12ZXlyb24uZHRzaSBwcm9ibGVtIG9ubHk/Cj4+IGll
-LiBJcyBpdCBhIG9wdGlvbiB0byBwcm9kdWNlIGEgcGF0Y2ggc2VyaWUgdjIgd2l0aG91dCB2ZXly
-b24/Cj4+IENhbiBzb21lb25lIGhlbHAgdGVzdGluZz8KPiAKPiBJIGJlbGlldmUgdGhhdCBpcyBt
-b3JlIHF1ZXN0aW9uIGZvciBAUm9iIDoKPiAKPiBJbiB0aGUgcGFzdCB3ZSBzYWlkIHRoYXQgaXQg
-d291bGQgYmUgb2sgdG8gaGF2ZSAibWVtb3J5IiBub2RlcyB3aXRob3V0Cj4gYWRkcmVzcywgc28g
-Im1lbW9yeSB7fSIgaW5zdGVhZCBvZiAibWVtb3J5QDAge30iLCBzaW1wbHkgYmVjYXVzZQo+IGJv
-b3Rsb2FkZXJzIG1lc3MgdXAgc29tZXRpbWVzLgo+IAo+IFF1ZXN0aW9uIG5vdyB3b3VsZCBiZSBo
-b3cgdG8gbWFrZSB0aGUgeWFtbCBiaW5kaW5ncyBoYXBweS4KPiAKPiBUaGFua3MKPiBIZWlrbwo+
-IAo+IAo+Pgo+PiBKb2hhbgo+Pgo+PiBPbiAzLzUvMjAgMTA6MzEgUE0sIEhlaWtvIFN0dWVibmVy
-IHdyb3RlOgo+Pj4gSGkgSm9oYW4sCj4+Pgo+Pj4gQW0gTWl0dHdvY2gsIDQuIE3DpHJ6IDIwMjAs
-IDA4OjQwOjUwIENFVCBzY2hyaWViIEpvaGFuIEpvbmtlcjoKPj4+PiBBIHRlc3Qgd2l0aCB0aGUg
-Y29tbWFuZCBiZWxvdyBnaXZlcyBmb3IgZXhhbXBsZSB0aGlzIGVycm9yOgo+Pj4+Cj4+Pj4gYXJj
-aC9hcm0vYm9vdC9kdHMvcmszMjg4LXRpbmtlci5kdC55YW1sOiAvOiBtZW1vcnk6Cj4+Pj4gRmFs
-c2Ugc2NoZW1hIGRvZXMgbm90IGFsbG93Cj4+Pj4geydkZXZpY2VfdHlwZSc6IFsnbWVtb3J5J10s
-ICdyZWcnOiBbWzAsIDAsIDAsIDIxNDc0ODM2NDhdXX0KPj4+Pgo+Pj4+IFRoZSBtZW1vcnkgbm9k
-ZXMgYWxsIGhhdmUgYSByZWcgcHJvcGVydHkgdGhhdCByZXF1aXJlcyAnQCcgaW4KPj4+PiB0aGUg
-bm9kZW5hbWUuIEZpeCB0aGlzIGVycm9yIGJ5IGFkZGluZyB0aGUgbWlzc2luZyAnQDAnIHRvCj4+
-Pj4gdGhlIGludm9sdmVkIG1lbW9yeSBub2RlbmFtZXMuCj4+Pj4KPj4+PiBtYWtlIEFSQ0g9YXJt
-IGR0YnNfY2hlY2sKPj4+PiBEVF9TQ0hFTUFfRklMRVM9fi8ubG9jYWwvbGliL3B5dGhvbjMuNS9z
-aXRlLXBhY2thZ2VzL2R0c2NoZW1hLwo+Pj4+IHNjaGVtYXMvcm9vdC1ub2RlLnlhbWwKPj4+Cj4+
-PiBjaGFuZ2VzIHRvIG1lbW9yeSBub2RlcyB5b3Ugc2FkbHkgY2Fubm90IGRvIGluIHN1Y2ggYW4g
-YXV0b21hdGVkIGZhc2hpb24uCj4+PiBJZiB5b3UgcmVhZCB0aGUgY29tbWVudCBpbiByazMyODgt
-dmV5cm9uLmR0c2kgeW91J2xsIHNlZSB0aGF0IGEgcHJldmlvdXMKPj4+IHNpbWlsYXIgaXRlcmF0
-aW9uIGJyb2tlIGFsbCBvZiB0aG9zZSBtYWNoaW5lcyBhcyB0aGVpciBjb3JlYm9vdCBkb2Vzbid0
-Cj4+PiBjb3B5IHdpdGggbWVtb3J5QDAgYW5kIHdvdWxkIGluc2VydCBhbm90aGVyIG1lbW9yeSBu
-b2RlIHdpdGhvdXQgQDAKPj4+Cj4+PiBJbiB0aGUgcGFzdCBpdGVyYXRpb24gdGhlIGNvbnNlbnN1
-cyB0aGVuIHdhcyB0aGF0IG1lbW9yeSB3aXRob3V0IEAwCj4+PiBpcyBhbHNvIG9rIChhcyBpdCBp
-c24ndCBjaGFuZ2VhYmxlIGFueXdheSkuCj4+Pgo+Pgo+Pj4gQXMgSSBkb24ndCByZWFsbHkgd2Fu
-dCB0byByZXBlYXQgdGhhdCwgSSdkIGxpa2UgYWN0dWFsIGhhcmR3YXJlIHRlc3RzCj4+PiBiZWZv
-cmUgdG91Y2hpbmcgbWVtb3J5IG5vZGVzLgo+Pgo+PiBBbnkgc3VnZ2VzdGlvbi9mZWVkYmFjayBy
-YXBwb3J0IHdlbGNvbWUuCj4+Cj4+Pgo+Pj4gSGVpa28KPj4+Cj4+Pgo+Pgo+IAo+IAo+IAo+IAoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJv
-Y2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+A test with the command below gives for example this error:
+
+arch/arm/boot/dts/rk3288-tinker.dt.yaml: /: memory:
+False schema does not allow
+{'device_type': ['memory'], 'reg': [[0, 0, 0, 2147483648]]}
+
+The memory nodes all have a reg property that requires '@' in
+the nodename. Fix this error by adding the missing '@0' to
+the involved memory nodenames.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/
+schemas/root-node.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+Changes v2:
+  Skip rk3288-veyron
+---
+ arch/arm/boot/dts/rk3288-phycore-som.dtsi | 2 +-
+ arch/arm/boot/dts/rk3288-tinker.dtsi      | 2 +-
+ arch/arm/boot/dts/rk3288-vyasa.dts        | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rk3288-phycore-som.dtsi b/arch/arm/boot/dts/rk3288-phycore-som.dtsi
+index 77a47b9b7..9e76166c3 100644
+--- a/arch/arm/boot/dts/rk3288-phycore-som.dtsi
++++ b/arch/arm/boot/dts/rk3288-phycore-som.dtsi
+@@ -16,7 +16,7 @@
+ 	 * Set the minimum memory size here and
+ 	 * let the bootloader set the real size.
+ 	 */
+-	memory {
++	memory@0 {
+ 		device_type = "memory";
+ 		reg = <0x0 0x0 0x0 0x8000000>;
+ 	};
+diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+index 312582c1b..77ae303b0 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dtsi
++++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+@@ -12,7 +12,7 @@
+ 		stdout-path = "serial2:115200n8";
+ 	};
+ 
+-	memory {
++	memory@0 {
+ 		reg = <0x0 0x0 0x0 0x80000000>;
+ 		device_type = "memory";
+ 	};
+diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk3288-vyasa.dts
+index ba06e9f97..889b95e95 100644
+--- a/arch/arm/boot/dts/rk3288-vyasa.dts
++++ b/arch/arm/boot/dts/rk3288-vyasa.dts
+@@ -14,7 +14,7 @@
+ 		stdout-path = &uart2;
+ 	};
+ 
+-	memory {
++	memory@0 {
+ 		reg = <0x0 0x0 0x0 0x80000000>;
+ 		device_type = "memory";
+ 	};
+-- 
+2.11.0
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
