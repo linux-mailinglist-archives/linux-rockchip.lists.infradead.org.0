@@ -2,92 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1B47183DB6
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 01:01:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D104183EC8
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 02:46:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iMi3SNFmfoVocdEyJSJzzP6TxhK/vSQH4z2fPYW4ZPw=; b=SUI7KII00lDIpa
-	uECqMyxhJg4URIMawcstXoiHaevjLQbySY69h28pMkiLvlOeDhB2DdEI4KAuExFFRpoHu3LJCZ8Qj
-	X7yeAI4zn1Dusx/DgezlUzaxfQqcVC4OqM28LVXsVrOxGcEXJTZdICN+zLNAyPXa1HTk+lBQRdBa9
-	9D2tCCGw09LKdbmtjlTaZXNd1EPQtozrPHnTq+RALacF+iU+++fy8uqnIkO6KEBUlpfo9DAlirVMN
-	nXIvgW+Lq9j+zTtRcLBOp4Kd7u+tn2NvulTZK1bZf41Ihm2wFRnxnfkZnRgBTAKJkqVigpLr+hMoN
-	GnkX79VjqnHMUIl/RByQ==;
+	List-Owner; bh=QbvtpKN7SJxzQxDNoDNrCKpzHNn0br5dj2msjLjzbBE=; b=laVPJ0W+guPhn2
+	pmBX1Qoj0mMiVAcgffOWsTdevvVkFVHgxCD/ghF8U6lXIX3KClLeQk5eZnZKrDHn6J7QrfoU9k/S+
+	AVzjfN9wqmb69Ca6wxWxUUodDayAaOFvlthmJKsB9B1EjQORCZ7JhRikY6zzQ0t+6DH9bnZ0czhXk
+	Yh559VXvKmD6vnt5yfnqzQBhjH1X7c8CszOIbrYKGkBxJbvidPYyykacwtdqKAZpkLSwnjk1l+oUP
+	NB99+SxtTMEy/6Y+4v+7SMbLuprLK0WA1yDXIH1Mv7uR9QAT7AB136/6KSiBklntJULgXRPllfBdY
+	R5FslFnBnToxoaX9IYfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCXlp-0001IP-55; Fri, 13 Mar 2020 00:01:45 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1jCZPV-0002qs-N3; Fri, 13 Mar 2020 01:46:49 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCXlg-00019z-Ax; Fri, 13 Mar 2020 00:01:37 +0000
-Received: by mail-qk1-x743.google.com with SMTP id h14so9564957qke.5;
- Thu, 12 Mar 2020 17:01:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4F6aCvMwJEvodjQcp+3IIHrmQA07dblW9GNp3FIT77w=;
- b=oX1Hbv734WRN6kIB5DlUxS/NzZ85FTGqjDcbH8BscB2d69i7BDHDmpNG4NePCMsrPb
- L6g4qe+BcN5qh4OFhVR7NsBVYCxzJ3ie9u+Jct5RrfkmQqQplDNydj3RVxkXD7aueEWA
- sh1StPdX01hI8xYvS0lklsx6eqDJor2pIgC+yx4n5GKyK2Qpoj4jhq1Qq0pmCdLzJir9
- qII2fu74pN/pVjb9joxsqqs/RDw1LJMwKXvQPVKxl1INCWEwJEqqi2uqx26HxEo4Yyth
- nhQCzpn9m2bDGDaFEIQ/52830KryQX4kDvcG6FEA2eoDNjQ4ebCvDMByczRBFx/pV4H8
- fSbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4F6aCvMwJEvodjQcp+3IIHrmQA07dblW9GNp3FIT77w=;
- b=mbohUgAJRJX2bSHOwYuqzSY3uhqWdHVsqAL1caxjiVSTe0RSmsW45iWskpZd3Z4tam
- hybO5mqYfoYT3fa//l7qEaIiVm0NPkgE0eKyNQ0swaVDD9JoHrEouQHDYqBBNgtTAFYb
- KMgmIYZJkU1pdWV1qnNLR++Hv7GPHoMCywPE6OJNK9AOqY5OX02YJfABbOIOwlNAneQK
- bgcrnK2ZS7Z7hyEVloU05WCeTOc6f/R+0lsCeNhLkp7OhJGsHjwXnQ30kjA1WT9VXxlH
- XpObp+gZ2+LuCeByx9mSWeQ5Z+fZO3cDVA59O40428CElMFSCEKYIyKN8+OozJZFZKyp
- KRnQ==
-X-Gm-Message-State: ANhLgQ05s3qeHyMlGEgj6lgqvd+p/o4yfAOpPSFh0GlQlYuD23vq8DbB
- y2fROGt8u8du1r+19EV2xoY=
-X-Google-Smtp-Source: ADFU+vtRT9YtSpWfTr62cQOvqoKlnBy08CT8ETqziryBs19ZCrjhES5yaXYjB8SDzIrv16QSXmQMfg==
-X-Received: by 2002:a05:620a:12d5:: with SMTP id
- e21mr10283265qkl.226.1584057692741; 
- Thu, 12 Mar 2020 17:01:32 -0700 (PDT)
-Received: from localhost.localdomain (ool-45785633.dyn.optonline.net.
- [69.120.86.51])
- by smtp.googlemail.com with ESMTPSA id c190sm6819210qkb.80.2020.03.12.17.01.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Mar 2020 17:01:32 -0700 (PDT)
-From: Vivek Unune <npcomplete13@gmail.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
- ezequiel@collabora.com, jbx6244@gmail.com, akash@openedev.com
-Subject: [PATCH] arm64: dts: rockchip: Add Hugsun X99 IR receiver and power led
-Date: Thu, 12 Mar 2020 20:01:12 -0400
-Message-Id: <20200313000112.19419-1-npcomplete13@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ id 1jCZPR-0002pJ-8G
+ for linux-rockchip@lists.infradead.org; Fri, 13 Mar 2020 01:46:47 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id A489728DA67
+From: Helen Koike <helen.koike@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH 0/3] media: staging: rkisp1: allow simultaneous streaming from
+ multiple capture devices
+Date: Thu, 12 Mar 2020 22:46:23 -0300
+Message-Id: <20200313014626.3103091-1-helen.koike@collabora.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_170136_378732_578D1A64 
-X-CRM114-Status: GOOD (  10.07  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200312_184645_466978_B3585195 
+X-CRM114-Status: UNSURE (   6.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [npcomplete13[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [npcomplete13[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,88 +60,87 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Vivek Unune <npcomplete13@gmail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: mchehab@kernel.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ hans.verkuil@cisco.com, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
- - Add Hugsun X99 IR receiver and power led
- - Remove pwm0 node as it interferes with pwer LED gpio
-   Also, it's not used in factory firmware
-   
-Tested with Libreelec kernel v5.6
+Hi,
 
-Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
----
- .../boot/dts/rockchip/rk3399-hugsun-x99.dts   | 37 +++++++++++++++++--
- 1 file changed, 33 insertions(+), 4 deletions(-)
+This series adds support for simultaneous streaming from both capture
+devices (rkisp1_selfpath and rkisp1_mainpath).
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-index d69a613fb65a..df425e164a2e 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
-@@ -29,6 +29,26 @@
- 		regulator-max-microvolt = <5000000>;
- 	};
- 
-+	ir-receiver {
-+		compatible = "gpio-ir-receiver";
-+		gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&ir_rx>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&power_led_gpio>;
-+
-+		power-led {
-+			label = "blue:power";
-+			gpios = <&gpio4 RK_PC2 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
-+			linux,default-trigger = "none";
-+		};
-+	};
-+
- 	vcc_sys: vcc-sys {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vcc_sys";
-@@ -483,6 +503,18 @@
- 		};
- 	};
- 
-+	ir {
-+		ir_rx: ir-rx {
-+			rockchip,pins = <0 RK_PA6 1 &pcfg_pull_none>;
-+		};
-+	};
-+
-+	leds {
-+		power_led_gpio: power-led-gpio {
-+			rockchip,pins = <4 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
- 	pmic {
- 		pmic_int_l: pmic-int-l {
- 			rockchip,pins =
-@@ -539,10 +572,6 @@
- 	};
- };
- 
--&pwm0 {
--	status = "okay";
--};
--
- &pwm2 {
- 	status = "okay";
- 	pinctrl-0 = <&pwm2_pin_pull_down>;
+Patch 1/3 fixes return error handling from pm functions, which was
+preventing the second stream to start.
+
+Patch 2/3 don't allow .s_stream entity callback to be called if a stream is
+already enabled. Which fixes the issue when stopping one stream would
+also stop the other.
+
+Patch 3/3 serializes start/stop streaming calls, since they both read
+and modify the streaming status of all the entities in the piipeline.
+
+This series was tested with:
+
+SEN_DEV=/dev/v4l-subdev3
+ISP_DEV=/dev/v4l-subdev0
+RSZ_SP_DEV=/dev/v4l-subdev2
+RSZ_MP_DEV=/dev/v4l-subdev1
+CAP_SP_DEV=/dev/video1
+CAP_MP_DEV=/dev/video0
+
+WIDTH=1920
+HEIGHT=1080
+RAW_CODE=SRGGB10_1X10
+YUV_CODE=YUYV8_2X8
+
+v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $SEN_DEV
+
+v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $ISP_DEV
+v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
+
+v4l2-ctl --set-subdev-selection pad=2,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
+v4l2-ctl --set-subdev-fmt pad=2,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $ISP_DEV
+
+v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
+v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
+
+v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_SP_DEV
+
+v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
+v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
+
+v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_MP_DEV
+
+v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_SP_DEV
+v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_MP_DEV
+
+sleep 1
+
+v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_SP_DEV --stream-to=/tmp/test_sp.raw &
+v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_MP_DEV --stream-to=/tmp/test_mp.raw &
+
+wait
+echo "Completed"
+
+
+
+Helen Koike (3):
+  media: staging: rkisp1: cap: fix return values from pm functions
+  media: staging: rkisp1: do not call s_stream if the entity is still in
+    use
+  media: staging: rkisp1: cap: serialize start/stop stream
+
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 25 ++++++++++++++++---
+ drivers/staging/media/rkisp1/rkisp1-common.h  |  2 ++
+ drivers/staging/media/rkisp1/rkisp1-dev.c     |  2 ++
+ 3 files changed, 25 insertions(+), 4 deletions(-)
+
 -- 
-2.20.1
+2.25.0
 
 
 _______________________________________________
