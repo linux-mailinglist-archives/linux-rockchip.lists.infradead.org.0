@@ -2,86 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB373184BD4
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 16:57:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9078C184CFF
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 17:52:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=soYEZybTmLQn4ZEo41KPJpFsZcey5innzyLigm10l9A=; b=RGdaCJGZmZInoX
-	O0YULI0jmUYcBT6bkeRdsC6IPLLYpkPCnWQxRS+Wvt+mg+mTRVTSko4nWJvy/iU+EKVzozCQ8OX+0
-	1BcYvbo6WfxRtt7GyuYOIOAUoZo+RKBXFxH05eN6Auecygw2i6vI14tbm0h5/mOkERlVxBhXbxfx8
-	1kPDdcpeovS8ZpNYAkTiawIwhI4nVPoX528UD/be7raMENEEAy0+W1UIXs6ZvH/orLRR7F5EkER8O
-	GOV4hURLbeNEZBA0SlqpfNFx46FeqOMa85sqJs1KGposu75XrkKEknF6KP1zmK8kHMd35zp9wlYZV
-	PvO7WmPi+EiILFp1zjMA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DYO9lQVCYiC6zJJWz1aqSGlYEnll3F1r4801YPd4UwI=; b=qmqfFhtVlMzijs
+	0ZtU7g7AiTuGzfF440NgpskjXD2rd05M0I1G/LUNIvQvOuumyK82oeewEttwR8xqtBac/7Z6z1Vse
+	Ipz1ooTzM37l5HMLi9KY4TKY/KG5eNREmnMWEhpMS3G752B+H/CRRQ2StJzN2WbUbxCwSHbOUBRLB
+	810DtnVdgRWNTCxvYPak4APZDzvWnqM1YbWFuN5DZH+Hg/vDEqTQkZ8M7hRY/e6csqThgLdnHV9Uj
+	/0FCZ6P0agGu66FZAGKY7CWMt+ZcbzbSs7lMZHJIKOLFvxtx0Z0o7h9S49RWLw7n8Pn7L6LH8wYrY
+	CXA2FdObZUZ0bZmdMsRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCmgJ-0002ZB-To; Fri, 13 Mar 2020 15:57:03 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jCnXi-0006hO-6m; Fri, 13 Mar 2020 16:52:14 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCmWl-0008V1-1H; Fri, 13 Mar 2020 15:47:19 +0000
-Received: by mail-ot1-x344.google.com with SMTP id j16so10551173otl.1;
- Fri, 13 Mar 2020 08:47:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
- b=gAIDs6WqqY4C6m2b5QdZWRTmIT3xf9Ik6Np8m+/Z/J5ikCql9gM3IwFQvuOl178Nzr
- 3IZ3HkdzXqzSrRImXqzs86OwH+pAqPX8nDIT3mW1Ilmq8XWcuyISAxCtav2E5OxoXkJd
- a2/19fycsXGRTcGjxcuP0a4HCJbtcxuT8E/3Qd61YjhSuJj8H7bt5BJQisMoSsu6OF3r
- 8isHVQs3wlSr7wkc0M+N89U79Mnd2s08qw4ocvTBql6Eg+sDcwjF1Pu6TDMJAIo8zT6Y
- gfs62X7oCtBvDY2WKFVGT1I4sbyDSbi3FtifMvad/OCwI0ELcGXTZnGrLvH6ugFlEC4R
- c8YA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=g2F6bNMNbjYMOmG6AT0+6XH/uYDDsMXrJ7rvJH7Wv54=;
- b=o34bh3vZQnVROatS3y7gmFwFwBmoda1dY1KZLnlzlXPeE4wzsPt024Oaqig2PKeXRe
- BEr3LThnWMCIDIhYxN6uuZc5wI6uFKr/oUGR4591KtgxPK+p6OKLFBBafgxxROS61KqH
- qa+p3yPvvA+6AQnFdq7DWj+5VMJH5gmQ1f7S6HrIpycPCoBhn2W8ASGQlKlWcodUIh1l
- bNzleF8oF3S0E2UB6f5W5JO9n2cr5TaA8FRzFwEITcwuwh9VIM5m2cJukZMm7cnWNlGi
- sOJRhd/M+m8MNKgv2Ron+8zN71jXPGfxzlGr0nLydKyEt7XJTaX1Efft2188Bp25xxLc
- +jJQ==
-X-Gm-Message-State: ANhLgQ26V6h09Ozad1rfplNWQSglyxc2ZrHeon8ir5H5mcnDGgCVDrgn
- 4TBftGf0phqlpCMAqS6ZjCm7DxtdtzvP1x+5Q+U=
-X-Google-Smtp-Source: ADFU+vu760GpCPmD7yZUXlIQeGa3R1i+fs+y1tbGVZM1WMb4f80I+07TGxLiEF8SFrU09Xrxz1LyHjcMcOFDGWeTS2I=
-X-Received: by 2002:a05:6830:20c9:: with SMTP id
- z9mr11632227otq.44.1584114429233; 
- Fri, 13 Mar 2020 08:47:09 -0700 (PDT)
+ id 1jCnXX-0006WD-QS
+ for linux-rockchip@lists.infradead.org; Fri, 13 Mar 2020 16:52:05 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id 61E9529825B
+Subject: Re: [PATCH 0/3] media: staging: rkisp1: allow simultaneous streaming
+ from multiple capture devices
+To: linux-media@vger.kernel.org
+References: <20200313014626.3103091-1-helen.koike@collabora.com>
+From: Helen Koike <helen.koike@collabora.com>
+Message-ID: <9673b170-69cf-b951-bc29-76cf05e57fea@collabora.com>
+Date: Fri, 13 Mar 2020 13:51:53 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Fri, 13 Mar 2020 15:46:42 +0000
-Message-ID: <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
- endpoint mode on R-Car SoCs
-To: Bjorn Helgaas <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+In-Reply-To: <20200313014626.3103091-1-helen.koike@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_084711_091172_350E09E3 
-X-CRM114-Status: GOOD (  19.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_095203_983424_4C0F9DDB 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,107 +63,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+Cc: mchehab@kernel.org, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
+ kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Bjorn/Kishon,
 
-On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
-<prabhakar.csengg@gmail.com> wrote:
->
-> This patch series adds support for PCIe controller on rcar to work in
-> endpoint mode, this also extends the epf framework to handle base region
-> for mapping PCI address locally.
->
-> Note:
-> The cadence/rockchip/designware endpoint drivers are build tested only.
->
-> Changes for v5:
-> 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
->    linux/kernel/git/helgaas/pci.git
-> 2] Fixed review comments reported by Kishon while fetching the matching
->    window in function pci_epc_get_matching_window()
-> 3] Fixed review comments reported by Bjorn
->    a] Split patch up first patch so that its easier to review and incremental
->    b] Fixed typos
-> 4] Included Reviewed tag from Rob for the dt-binding patch
-> 5] Fixed issue reported by Nathan for assigning variable to itself
->
-> Changes for v4:
-> 1] Fixed dtb_check error reported by Rob
-> 2] Fixed review comments reported by Kishon
->    a] Dropped pci_epc_find_best_fit_window()
->    b] Fixed initializing mem ptr in __pci_epc_mem_init()
->    c] Dropped map_size from pci_epc_mem_window structure
->
-> Changes for v3:
-> 1] Fixed review comments from Bjorn and Kishon.
-> 3] Converted to DT schema
->
-> Changes for v2:
-> 1] Fixed review comments from Biju for dt-bindings to include an example
->    for a tested platform.
-> 2] Fixed review comments from Kishon to extend the features of outbound
->    regions in epf framework.
-> 3] Added support to parse outbound-ranges in OF.
->
-> Lad Prabhakar (7):
->   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
->   PCI: rcar: Move shareable code to a common file
->   PCI: rcar: Fix calculating mask for PCIEPAMR register
->   PCI: endpoint: Add support to handle multiple base for mapping
->     outbound memory
->   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
->     controller
->   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
->   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
->
-Gentle ping.
 
-Cheers,
---Prabhakar Lad
+On 3/12/20 10:46 PM, Helen Koike wrote:
+> Hi,
+> 
+> This series adds support for simultaneous streaming from both capture
+> devices (rkisp1_selfpath and rkisp1_mainpath).
+> 
+> Patch 1/3 fixes return error handling from pm functions, which was
+> preventing the second stream to start.
+> 
+> Patch 2/3 don't allow .s_stream entity callback to be called if a stream is
+> already enabled. Which fixes the issue when stopping one stream would
+> also stop the other.
+> 
+> Patch 3/3 serializes start/stop streaming calls, since they both read
+> and modify the streaming status of all the entities in the piipeline.
+> 
+> This series was tested with:
+> 
+> SEN_DEV=/dev/v4l-subdev3
+> ISP_DEV=/dev/v4l-subdev0
+> RSZ_SP_DEV=/dev/v4l-subdev2
+> RSZ_MP_DEV=/dev/v4l-subdev1
+> CAP_SP_DEV=/dev/video1
+> CAP_MP_DEV=/dev/video0
+> 
+> WIDTH=1920
+> HEIGHT=1080
+> RAW_CODE=SRGGB10_1X10
+> YUV_CODE=YUYV8_2X8
+> 
+> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $SEN_DEV
+> 
+> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$RAW_CODE -d $ISP_DEV
+> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
+> 
+> v4l2-ctl --set-subdev-selection pad=2,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $ISP_DEV
+> v4l2-ctl --set-subdev-fmt pad=2,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $ISP_DEV
+> 
+> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
+> v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_SP_DEV
+> 
+> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_SP_DEV
+> 
+> v4l2-ctl --set-subdev-fmt pad=0,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
+> v4l2-ctl --set-subdev-fmt pad=1,width=$WIDTH,height=$HEIGHT,code=$YUV_CODE -d $RSZ_MP_DEV
+> 
+> v4l2-ctl --set-subdev-selection pad=0,target=crop,top=0,left=0,width=$WIDTH,height=$HEIGHT -d $RSZ_MP_DEV
+> 
+> v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_SP_DEV
+> v4l2-ctl -v width=$WIDTH,height=$HEIGHT,pixelformat=NV12 -d $CAP_MP_DEV
+> 
+> sleep 1
+> 
+> v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_SP_DEV --stream-to=/tmp/test_sp.raw &
+> v4l2-ctl --stream-mmap --stream-count=100 -d $CAP_MP_DEV --stream-to=/tmp/test_mp.raw &
+> 
+> wait
+> echo "Completed"
+> 
+> 
+> 
+> Helen Koike (3):
+>   media: staging: rkisp1: cap: fix return values from pm functions
+>   media: staging: rkisp1: do not call s_stream if the entity is still in
+>     use
+>   media: staging: rkisp1: cap: serialize start/stop stream
+> 
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 25 ++++++++++++++++---
+>  drivers/staging/media/rkisp1/rkisp1-common.h  |  2 ++
+>  drivers/staging/media/rkisp1/rkisp1-dev.c     |  2 ++
+>  3 files changed, 25 insertions(+), 4 deletions(-)
+> 
 
->  .../devicetree/bindings/pci/rcar-pci-ep.yaml       |   76 ++
->  arch/arm64/configs/defconfig                       |    2 +-
->  drivers/misc/pci_endpoint_test.c                   |    3 +
->  drivers/pci/controller/Kconfig                     |   15 +-
->  drivers/pci/controller/Makefile                    |    3 +-
->  drivers/pci/controller/cadence/pcie-cadence-ep.c   |    7 +-
->  drivers/pci/controller/dwc/pcie-designware-ep.c    |   29 +-
->  drivers/pci/controller/pcie-rcar-ep.c              |  490 ++++++++
->  drivers/pci/controller/pcie-rcar-host.c            | 1053 +++++++++++++++++
->  drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
->  drivers/pci/controller/pcie-rcar.h                 |  129 ++
->  drivers/pci/controller/pcie-rockchip-ep.c          |    7 +-
->  drivers/pci/endpoint/pci-epc-mem.c                 |  167 ++-
->  include/linux/pci-epc.h                            |   39 +-
->  14 files changed, 1985 insertions(+), 1264 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
->  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
->  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
->  create mode 100644 drivers/pci/controller/pcie-rcar.h
->
-> --
-> 2.7.4
->
+Please, ignore this version, I rebased with the wrong branch. I'll send v2.
+
+Thanks
+Helen
 
 _______________________________________________
 Linux-rockchip mailing list
