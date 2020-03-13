@@ -2,94 +2,93 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E112C18502E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 21:19:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F210E18520D
+	for <lists+linux-rockchip@lfdr.de>; Sat, 14 Mar 2020 00:05:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wer9QB88OtaOojIRHsNLyIxZeKevWzu+M/LkQxOOSTU=; b=H/3C0nKZ1DCWRE
-	I6l4zuFdrk92XIxE2VPu8rEnKe2mnDKzqXKvR0nccYIqw4YzkkNyWEKq+Srbb3E8IJMT/yg51VjKp
-	+24ftRp1wCGv+xw3sZRSCC5iLlSrk0mW/7jH6/Ax4fU8+7RlmysgeinBQq3X/B/LXmlrOum++2Oww
-	L5Wz8egkRYD8M3UPIz/KPnIaZTkWLDErGKt7ozOjsZcPHmYG3LP1cWjUBsnNC98XjezpKkXPB0i24
-	L8M2YK/zI1Yo8DOWAcyyY4y4wx8Swmyo8B0kRVVceb4rJriNtYylSRX7bLyYzMk35mpI3XK/v0uKf
-	t+XGfv4GmFwACuSaaAmQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Lk7wNT4VvsHUYnGBtsGdK8jEklauEjv9NeHG6WVGJxs=; b=cS0svbkRo8RLGe
+	csQz8xvxyjZJNvoKesE6eOuHPee4xlMVqHfkYoEfuOMJV5ovduAIa3V9ZlVKAy1W1XoueUAzknLzS
+	3RRCmumuLPf/BNaG5OybxZpP1kEDtOBu5HQg/jxormjzIJFc9M+1t367m1/DBq8pb3oLqdNK8saa0
+	Y6ezbEafHCafY5AUEldQE7PD6CQbQ1OZieSUblkPyeNw7Jf3fpE9FSfIN58fAL9b/HPp42mqdkC09
+	wFAwVPPE1O/ZE8x88LDIHUrvKja4Np4GGBuNsGphkXW/qxyeQ/onMfHELT4fjEHPk6Ctb2YBLk2iu
+	rsfIjG1+sF1feVZvesXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCqmQ-0002Ke-Py; Fri, 13 Mar 2020 20:19:38 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jCtN8-0007Ud-GR; Fri, 13 Mar 2020 23:05:42 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCqkw-0000wd-Ib; Fri, 13 Mar 2020 20:18:08 +0000
-Received: by mail-lf1-x144.google.com with SMTP id 5so1810292lfr.2;
- Fri, 13 Mar 2020 13:18:04 -0700 (PDT)
+ id 1jCtMx-0007Lj-MR; Fri, 13 Mar 2020 23:05:33 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 59so9119944qtb.1;
+ Fri, 13 Mar 2020 16:05:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=BOrKdqp0xX849tkbGYoL5GifZ0fJWuSnmKvneHoBEPI=;
- b=SFHap9SA3MQWq/rDzTcpj95GukhT+WmakBXzY2/W/iVbaG3CYS78HgdDNCnklu2dLE
- kFU0QDG9SImIs7hlVZiJyUAgm7YUizziMveCoCVIzJ9O8cqrKgolPpoV6am7DfhU89XJ
- ltxCH8nvbIYs393MHpsDO6BhvtaKdvLKO1cCTYQMgnrpgZsHazgpH66LACi+70HhiJ6l
- AJYv+s/W3gch6gNZXXxxbLFCll+TfRRcrcTxa5xQeHRhtYaQSbszeLTX6zP5G5Jz7Jm/
- gUDVBMvSktGH2MZ2dnKv8dJAIQub63dYzfpzuua04+X6h9+JvUqOMVK/Ctt+DZXCV3Yi
- OCig==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=K19tWYumSLxb2jgL1zYdrr/V94anTYSOiMqlc5VxdrE=;
+ b=alFec87BZpXN0KlqpPOND8yBwUN3qvnWceUs7RmxNXeRDLzbLwA4DYwSftKfaQlb/5
+ 7CAPgS3YNllTd3voPPiwGOMxjOQZSYwCJA51vA5c2WrbGD0dXJDIk37PRPc9mHoyySa/
+ gIQjUk+ytd9tDQFbOxNsYc6bySk+TmEccp59iajt3fu5Fv8UiXif7ksXa1pNMPrSv3II
+ c0pFJjeFk7YuM2R/Dsl0S74VPm2Wq6bFgbInkAYrPMvMgz2NxorHElKI3Z7GPyyxPvOO
+ UHvD8Ewk/06FHXmloZqLkhsG/pS6FtdDbTO7EKDWK1SBmLHKgaVYuYCuUu7HS5LfHfbd
+ JtQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=BOrKdqp0xX849tkbGYoL5GifZ0fJWuSnmKvneHoBEPI=;
- b=Twzx7em6i2JFt89Mu/l6h9XaTie4JaxSUUxZyB4NYUt6GRm/zcElAegNSaWEJE7rdx
- rRPVSXlwURA26mpnvjs3CcyqoNERxmoihk8dKP8f6/Or2l4vDy4rNzy0gWvlxSbqmCAf
- Bi0laoQAYMAMLSomTIjgkGYsLFJwnJe0I2zB2cKdgnkrxKQLT2D2qSPc4nP94vAP9N6e
- TfsiMT4/R9fmbZ2VK09jEtayav6w9Bs0+CKQ3NuMTv/saUoLCLEvK2weQkWcFPg/aK1q
- 5Qbrw4KFZShaQ+e20WKTkI2qDLLke5ZBhAZDVprsIlyE4vHxZjZOp77EPwCmbob1M4HF
- nlwA==
-X-Gm-Message-State: ANhLgQ3Nd8H3CoQRGdFIHdhokfUkzjZcoKr97a8/A9Id50kScW9kp8cQ
- JxDKzzhxeT5tMuLb5GPiZvg=
-X-Google-Smtp-Source: ADFU+vuWMe8I2528Uyu2tKaIGPqCCGIWF6uu2OphKJd6rnCU8MYCRJ3bIyFwbbl07L6oMFBFxGQoig==
-X-Received: by 2002:a19:7d04:: with SMTP id y4mr9463704lfc.111.1584130682588; 
- Fri, 13 Mar 2020 13:18:02 -0700 (PDT)
-Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
- by smtp.gmail.com with ESMTPSA id
- v10sm30774074lfb.61.2020.03.13.13.18.00
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=K19tWYumSLxb2jgL1zYdrr/V94anTYSOiMqlc5VxdrE=;
+ b=QnaMfgQs/fVosguVSdU6N2VuRMaVHqZ6rjzjE0bVjEMXzc8O9BIqMEl5cy3EXelY1t
+ wxQhMoITixuta1C3w4zcw6MEJN/+Mr7D0FhrzTOjrb4mPttFS1lskgERJEIrwCCzMHRp
+ FkfIbhO9xGlG5QAIafjEmtgIGriLJASxyaInOX/tOGFE2AS2Ig/golGWDHLxlGRLlI4t
+ /lyIQOa/XaZDL1MBmQjoHm0Z44qi/90+dIQTgUrdVqS87sNais16+AM30q01w2W858mf
+ TExdqP+K6hf8augflXZAVjGTMwW8CKA8BrnNI9VwwnFm4sbS9LFwLKjJ2baBUH16lVkM
+ BXNw==
+X-Gm-Message-State: ANhLgQ2vU/N75fxWW9/nduxYkeyf0NirpxEYs+3uCF6rDONiL2sJFrdb
+ Fe4Ycaa6z2NwiDkWEo/FGMI=
+X-Google-Smtp-Source: ADFU+vu2A0jQITKSfb9D6lzWugdRnkulN3l3qRdmwJK7GenwUubT5WBUEj4UMaYTfXtbMNN5smwyEQ==
+X-Received: by 2002:ac8:6685:: with SMTP id d5mr15145698qtp.170.1584140730346; 
+ Fri, 13 Mar 2020 16:05:30 -0700 (PDT)
+Received: from localhost.localdomain (ool-45785633.dyn.optonline.net.
+ [69.120.86.51])
+ by smtp.googlemail.com with ESMTPSA id i1sm25756015qtg.31.2020.03.13.16.05.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 13:18:01 -0700 (PDT)
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Thomas Zimmermann <tzimmermann@suse.de>, Daniel Vetter <daniel@ffwll.ch>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- dri-devel@lists.freedesktop.org
-Subject: [PATCH v1 3/3] drm/atmel-hlcdc: Use drm_encoder_init()
-Date: Fri, 13 Mar 2020 21:17:44 +0100
-Message-Id: <20200313201744.19773-4-sam@ravnborg.org>
+ Fri, 13 Mar 2020 16:05:29 -0700 (PDT)
+From: Vivek Unune <npcomplete13@gmail.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, heiko@sntech.de,
+ npcomplete13@gmail.com, ezequiel@collabora.com, jbx6244@gmail.com,
+ akash@openedev.com
+Subject: [PATCH v2] arm64: dts: rockchip: Add Hugsun X99 IR receiver and power
+ led
+Date: Fri, 13 Mar 2020 19:05:13 -0400
+Message-Id: <20200313230513.123049-1-npcomplete13@gmail.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200313201744.19773-1-sam@ravnborg.org>
-References: <20200313201744.19773-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_131806_666525_2B3C178C 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200313_160531_758383_3E08287F 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [npcomplete13[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [sam.ravnborg[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ provider [npcomplete13[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,67 +101,89 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- David Airlie <airlied@linux.ie>, Jose Roberto de Souza <jose.souza@intel.com>,
- virtualization@lists.linux-foundation.org, Gerd Hoffmann <kraxel@redhat.com>,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Emil Velikov <emil.velikov@collabora.com>, linux-samsung-soc@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Boris Brezillon <bbrezillon@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- linux-renesas-soc@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-atmel-hlcdc has no need to extend the functionality of the
-encoder, so use drm_encoder_init().
+ - Add Hugsun X99 IR receiver and power led
+ - Remove pwm0 node as it interferes with power LED gpio
+   pwm0 is not used in factory firmware as well
 
-Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-Cc: Sam Ravnborg <sam@ravnborg.org>
-Cc: Boris Brezillon <bbrezillon@kernel.org>
-Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-Cc: Thomas Zimmermann <tzimmermann@suse.de>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Tested with LibreElec linux-next-20200305
+
+Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
 ---
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+Changes in v2:
+	- Changed led trigger from none to default-on
+	- Changed led node name from power-led to led-0
+---
+ .../boot/dts/rockchip/rk3399-hugsun-x99.dts   | 37 +++++++++++++++++--
+ 1 file changed, 33 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
-index a845d587c315..96e0d85748d2 100644
---- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
-+++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c
-@@ -22,10 +22,6 @@ struct atmel_hlcdc_rgb_output {
- 	int bus_fmt;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+index d69a613fb65a..df425e164a2e 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+@@ -29,6 +29,26 @@
+ 		regulator-max-microvolt = <5000000>;
+ 	};
+ 
++	ir-receiver {
++		compatible = "gpio-ir-receiver";
++		gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&ir_rx>;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&power_led_gpio>;
++
++		led-0 {
++			label = "blue:power";
++			gpios = <&gpio4 RK_PC2 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++			linux,default-trigger = "default-on";
++		};
++	};
++
+ 	vcc_sys: vcc-sys {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc_sys";
+@@ -483,6 +503,18 @@
+ 		};
+ 	};
+ 
++	ir {
++		ir_rx: ir-rx {
++			rockchip,pins = <0 RK_PA6 1 &pcfg_pull_none>;
++		};
++	};
++
++	leds {
++		power_led_gpio: power-led-gpio {
++			rockchip,pins = <4 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	pmic {
+ 		pmic_int_l: pmic-int-l {
+ 			rockchip,pins =
+@@ -539,10 +572,6 @@
+ 	};
  };
  
--static const struct drm_encoder_funcs atmel_hlcdc_panel_encoder_funcs = {
--	.destroy = drm_encoder_cleanup,
+-&pwm0 {
+-	status = "okay";
 -};
 -
- static struct atmel_hlcdc_rgb_output *
- atmel_hlcdc_encoder_to_rgb_output(struct drm_encoder *encoder)
- {
-@@ -98,9 +94,7 @@ static int atmel_hlcdc_attach_endpoint(struct drm_device *dev, int endpoint)
- 		return -EINVAL;
- 	}
- 
--	ret = drm_encoder_init_funcs(dev, &output->encoder,
--				     &atmel_hlcdc_panel_encoder_funcs,
--				     DRM_MODE_ENCODER_NONE, NULL);
-+	ret = drm_encoder_init(dev, &output->encoder, DRM_MODE_ENCODER_NONE);
- 	if (ret)
- 		return ret;
- 
+ &pwm2 {
+ 	status = "okay";
+ 	pinctrl-0 = <&pwm2_pin_pull_down>;
 -- 
 2.20.1
 
