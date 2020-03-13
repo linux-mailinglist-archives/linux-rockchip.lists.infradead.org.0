@@ -2,96 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FAD518498E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 15:38:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0374184A96
+	for <lists+linux-rockchip@lfdr.de>; Fri, 13 Mar 2020 16:23:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5KQGb5feoEZoxxo44ZHTHdPjphM8X5l5uV70tGe36iM=; b=W0NzEjp/UukqGB
-	1xzJEES8AnWLZm/Yn5TCZf/mMTISo1RRvrTv/YU3PLOa5ykp+1SLUbFU3SsN2wPcJG+QzV4r0Ohl2
-	STKr5kllkD9SR8OCqqO17L7CjIgBtSTjrZ3Ej1/D0DU1VklGgEq0Jlo/9wBpV63OBxb43G9H3/3NP
-	K2JWaZlL6hpCCcWUwnXN1vjM7GDF03mlYYFdvEYtFoySW4JEF/WxZVm7DyjheyZac/uBWJUadYhD9
-	eAh+qphlBVzGfc/AX/9o2DuHiSf/IuXAa+Hjhfsaq7wu/wmSPv1aVedoQAzGpD6RIV2TJM5ATcmMB
-	Q3eD8o1mH+oquUydZyew==;
+	List-Owner; bh=ubQrTnY0Ea1SFfgvJc28webaQsv6L5tyw8KcXMuV8e4=; b=iYdaMin8Xo/eUu
+	Mp5Hf+piICKgCXqi2zBqc+wbaQcbvYOLMK0+hZQvYVdKTFzHf998oocBPe9XgnpRWf4QxAgRY1ZUN
+	mICopHO4UOwvTS8kG4SHlQYlz+gJxqY2zkQ5zSSogDer8gIXWrri5MYQMaqn1Oqdq4aj/O3rwVRIY
+	2IYat9IauZU5nRpTj6f/6zL++xsJc8OcU1dw4JMsoLKWiXLQaKbjqdDEkky3PNJAOkWdG/Bk7Qce2
+	erVsfFiez0zIN68dDol1Qp6cOD7RBql/ZD+1O/IusahA/Ph+4s5m9pvDCiQOqi8RrHjczWgf6NHQr
+	I5fcn5nAZQ81or1l3r1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jClRo-0004wN-2C; Fri, 13 Mar 2020 14:38:00 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jCmAB-00067S-TJ; Fri, 13 Mar 2020 15:23:51 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jClRc-0004mr-6l; Fri, 13 Mar 2020 14:37:49 +0000
-Received: by mail-qt1-x844.google.com with SMTP id v15so7663520qto.2;
- Fri, 13 Mar 2020 07:37:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=IWiLFXJoL3qzIWPZA+/ObRS+WhWUeKdoLxXVkW4bKYs=;
- b=brZ2kJbjo1lXXEUpoExW2a/8G0/kWb1PeWR+PPjo6qWE07rGKGJJJfKSYDBWaEOBfb
- HY2Zuz1UULlojcdDUKrOG4Mgy1PsVmYAIQdf31LXqqWJMM2Ty+twX9y8qAArRwNuopbS
- hbvBiStgtszXEpjHoeNm4f/jTFXWmNGbx9Hb/HZYh2krtxLnDdKp8slf8rMDcDMdeVes
- KreGLJHoT4ZlcBvE2unTECFt8JW2/OE4AWozICObqdK80uWYqvALjqzAaJI/ymPGI6wQ
- ptUYbezk4AEjWaXlSmzvkjiSbmhUVQCbzfDkXTBRv32wB1TfzHnOAbh5pi1SJoQzPbRW
- be9w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=IWiLFXJoL3qzIWPZA+/ObRS+WhWUeKdoLxXVkW4bKYs=;
- b=iEjZaJ6hpKB2LYJ/MZL7WN3ozKYp6LXxXHSNzc3N7KbQXlqad7e5KRDDIs+7K62ZdN
- mHhZsJddRS/8FLv3LYp7tx+NOw8UsSis1TTNSOvefGzoohC3VcMRi+bPBqZ9EXkOUso+
- og3I7QchIvOZfjCic8FLpI2XrX8Lxyue3w/dVFbAmOQjTc4pgHOdh9POdG4cxLYpGNKJ
- m5sM9anH7s6j7S1dQVzriXt9ELb7hEIi63eX70aIygAUjcrEFz/j4rrvK7XvEmvD+VVS
- OPkBheIUVqafUCw4/aAOAkdyxbjXHoE3AsxqBsO3KnzMB/OACvs+RQ+EZGnvA1NixUc9
- s0FQ==
-X-Gm-Message-State: ANhLgQ1dP/gzbRaRTZLFsSq0LCIwwR5PvuyJ2OkZHWTvKf+rXoegukzU
- 1JRo+t43+xV3tpN+UzLVBbA=
-X-Google-Smtp-Source: ADFU+vvlub9/e063qHJY4ONDofRHLu3BpPYkMPUk0Qd2gV0L32YCNySXCwj+Bj5/yZrupMY4cVTAkg==
-X-Received: by 2002:ac8:ac1:: with SMTP id g1mr12820614qti.287.1584110266692; 
- Fri, 13 Mar 2020 07:37:46 -0700 (PDT)
-Received: from ubuntu (ool-45785633.dyn.optonline.net. [69.120.86.51])
- by smtp.gmail.com with ESMTPSA id w30sm5476313qtw.21.2020.03.13.07.37.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Mar 2020 07:37:45 -0700 (PDT)
-Date: Fri, 13 Mar 2020 10:37:43 -0400
-From: Vivek Unune <npcomplete13@gmail.com>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Add Hugsun X99 IR receiver and
- power led
-Message-ID: <20200313143743.GA92675@ubuntu>
-References: <20200313000112.19419-1-npcomplete13@gmail.com>
- <7f294dd5-3188-e2d6-dd49-4b2afb04455a@gmail.com>
- <20200313142005.GA25349@ubuntu>
- <4deb154d-3095-7d18-fbf9-85b60f57765f@gmail.com>
+ id 1jCmA8-00066v-Jj
+ for linux-rockchip@lists.infradead.org; Fri, 13 Mar 2020 15:23:50 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 13 Mar 2020 08:23:47 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,549,1574150400"; d="scan'208";a="261919545"
+Received: from mmatus1x-mobl.ger.corp.intel.com (HELO mara.localdomain)
+ ([10.249.153.214])
+ by orsmga002.jf.intel.com with ESMTP; 13 Mar 2020 08:23:44 -0700
+Received: from sailus by mara.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@linux.intel.com>)
+ id 1jCm9v-0000ZK-TW; Fri, 13 Mar 2020 17:23:38 +0200
+Date: Fri, 13 Mar 2020 17:23:34 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v2 2/2] media: staging: rkisp1: replace the call to
+ v4l2_async_notifier_parse_fwnode_endpoints_by_port
+Message-ID: <20200313152334.GA2173@mara.localdomain>
+References: <20200312154604.24996-1-dafna.hirschfeld@collabora.com>
+ <20200312154604.24996-3-dafna.hirschfeld@collabora.com>
+ <20200313091804.GP5379@paasikivi.fi.intel.com>
+ <ea74e214-6fba-dede-5355-2b1c48e1a3a0@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4deb154d-3095-7d18-fbf9-85b60f57765f@gmail.com>
+In-Reply-To: <ea74e214-6fba-dede-5355-2b1c48e1a3a0@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200313_073748_275058_828F560F 
-X-CRM114-Status: GOOD (  14.94  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200313_082348_702771_B2B67D62 
+X-CRM114-Status: GOOD (  26.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [npcomplete13[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [npcomplete13[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,92 +75,142 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, akash@openedev.com, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mchehab@kernel.org, Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ dafna3@gmail.com, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ laurent.pinchart@ideasonboard.com, kernel@collabora.com,
+ ezequiel@collabora.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 03:29:59PM +0100, Johan Jonker wrote:
-> Hi Vivek,
+Hi Helen,
+
+On Fri, Mar 13, 2020 at 11:06:54AM -0300, Helen Koike wrote:
+> Hi Sakari,
 > 
-> On 3/13/20 3:20 PM, Vivek Unune wrote:
-> > On Fri, Mar 13, 2020 at 09:32:27AM +0100, Johan Jonker wrote:
-> >> Hi Vivek,
-> >>
-> >> The 'power-led' need some changes.
-> >>
-> >> From leds-gpio.yaml:
-> >>
-> >> patternProperties:
-> >>   # The first form is preferred, but fall back to just 'led' anywhere in the
-> >>   # node name to at least catch some child nodes.
-> >>   "(^led-[0-9a-f]$|led)":
-> >>     type: object
-> >>
-> >> Test with:
-> >> make -k ARCH=arm64 dtbs_check
-> >>
-> >> arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dt.yaml: leds:
-> >> power-led:linux,default-trigger:0: 'none' is not one of ['backlight',
-> >> 'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
-> >>
-> >> On 3/13/20 1:01 AM, Vivek Unune wrote:
-> >>>  - Add Hugsun X99 IR receiver and power led
-> >>>  - Remove pwm0 node as it interferes with pwer LED gpio
-> >>
-> >> pwer => power
-> >>
+> On 3/13/20 6:18 AM, Sakari Ailus wrote:
+> > Hi Dafna,
 > > 
-> > Hi Johan,
+> > Thanks for the patch.
 > > 
-> > I'll fix those in my next version. Here's what I intended to to:
+> > On Thu, Mar 12, 2020 at 04:46:04PM +0100, Dafna Hirschfeld wrote:
+> >> don't call 'v4l2_async_notifier_parse_fwnode_endpoints_by_port'
+> >> in order to register async subdevices. Instead call
+> >> 'v4l2_fwnode_endpoint_parse' to parse the remote endpoints
+> >> and then register each async subdev with
+> >> 'v4l2_async_notifier_add_fwnode_remote_subdev'
+> >>
+> >> Also remove the relevant item in the TODO file
+> >>
+> >> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> >> ---
+> >>  drivers/staging/media/rkisp1/TODO         |  3 -
+> >>  drivers/staging/media/rkisp1/rkisp1-dev.c | 94 +++++++++++++----------
+> >>  2 files changed, 55 insertions(+), 42 deletions(-)
+> >>
+> >> diff --git a/drivers/staging/media/rkisp1/TODO b/drivers/staging/media/rkisp1/TODO
+> >> index 0aa9877dd64a..1aa3bb9fd6cb 100644
+> >> --- a/drivers/staging/media/rkisp1/TODO
+> >> +++ b/drivers/staging/media/rkisp1/TODO
+> >> @@ -1,6 +1,3 @@
+> >> -* Don't use v4l2_async_notifier_parse_fwnode_endpoints_by_port().
+> >> -e.g. isp_parse_of_endpoints in drivers/media/platform/omap3isp/isp.c
+> >> -cio2_parse_firmware in drivers/media/pci/intel/ipu3/ipu3-cio2.c.
+> >>  * Fix pad format size for statistics and parameters entities.
+> >>  * Use threaded interrupt for rkisp1_stats_isr(), remove work queue.
+> >>  * Fix checkpatch errors.
+> >> diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
+> >> index d2186856bb24..1035a39f3e49 100644
+> >> --- a/drivers/staging/media/rkisp1/rkisp1-dev.c
+> >> +++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
+> >> @@ -233,35 +233,6 @@ static int rkisp1_subdev_notifier_complete(struct v4l2_async_notifier *notifier)
+> >>  	return 0;
+> >>  }
+> >>  
+> >> -static int rkisp1_fwnode_parse(struct device *dev,
+> >> -			       struct v4l2_fwnode_endpoint *vep,
+> >> -			       struct v4l2_async_subdev *asd)
+> >> -{
+> >> -	struct rkisp1_sensor_async *s_asd =
+> >> -			container_of(asd, struct rkisp1_sensor_async, asd);
+> >> -
+> >> -	if (vep->bus_type != V4L2_MBUS_CSI2_DPHY) {
+> >> -		dev_err(dev, "Only CSI2 bus type is currently supported\n");
+> >> -		return -EINVAL;
+> >> -	}
+> >> -
+> >> -	if (vep->base.port != 0) {
+> >> -		dev_err(dev, "The ISP has only port 0\n");
+> >> -		return -EINVAL;
+> >> -	}
+> >> -
+> >> -	s_asd->mbus_type = vep->bus_type;
+> >> -	s_asd->lanes = vep->bus.mipi_csi2.num_data_lanes;
+> >> -
+> >> -	/* Parallel bus is currently not supported */
+> >> -	s_asd->parallel_bus_flags = 0;
+> >> -
+> >> -	if (s_asd->lanes < 1 || s_asd->lanes > 4)
+> >> -		return -EINVAL;
+> >> -
+> >> -	return 0;
+> >> -}
+> >> -
+> >>  static const struct v4l2_async_notifier_operations rkisp1_subdev_notifier_ops = {
+> >>  	.bound = rkisp1_subdev_notifier_bound,
+> >>  	.unbind = rkisp1_subdev_notifier_unbind,
+> >> @@ -271,23 +242,68 @@ static const struct v4l2_async_notifier_operations rkisp1_subdev_notifier_ops =
+> >>  static int rkisp1_subdev_notifier(struct rkisp1_device *rkisp1)
+> >>  {
+> >>  	struct v4l2_async_notifier *ntf = &rkisp1->notifier;
+> >> -	struct device *dev = rkisp1->dev;
+> >> +	int next_id = 0;
+> >>  	int ret;
+> >>  
+> >>  	v4l2_async_notifier_init(ntf);
+> >>  
+> >> -	ret = v4l2_async_notifier_parse_fwnode_endpoints_by_port(dev, ntf,
+> >> -					sizeof(struct rkisp1_sensor_async),
+> >> -					0, rkisp1_fwnode_parse);
+> >> -	if (ret)
+> >> -		return ret;
+> >> +	while (1) {
 > > 
+> > I might loop over each port here instead.
 > 
-> > 1. Rename 'power-led' node to 'led-power'
+> ISP has a single port (please, see my comment below).
 > 
-> The first form is preferred.
-> Put 'led-power' in a regex tester with ^led-[0-9a-f]$
-> https://regex101.com/
-> Your regular expression does not match the subject string.
+> > 
+> >> +		struct v4l2_fwnode_endpoint vep = {
+> >> +			.bus_type = V4L2_MBUS_CSI2_DPHY
+> >> +		};
+> >> +		struct rkisp1_sensor_async *rk_asd = NULL;
+> >> +		struct fwnode_handle *ep;
+> >>  
+> >> -	if (list_empty(&ntf->asd_list))
+> >> -		return -ENODEV;
+> >> +		ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(rkisp1->dev),
+> >> +			0, next_id, FWNODE_GRAPH_ENDPOINT_NEXT);
+> > 
+> > The port number is always zero, whereas the endpoint id changes on each
+> > iteration. Is that intended?
 > 
-> Test 'led-0'
-> Full match
+> Yes, so ISP has a single connection port (a single MIPI-DPHY bus), but hardware can plug more then one
+> sensor in this port (but only one can be active at a time).
 > 
-
-Hi Johan,
-
-Thanks for quick reply. 
-
-Indeed led-power won't work. Although I'm trying to figure out the dtbs_check
-Currently, make compains that it's missing.
-I'll verify this properly without having you to verify it next time.
-
-Thanks,
-
-Vivek
-
-
-> >>>  		regulator-max-microvolt = <5000000>;
-> >>>  	};
-> >>>  
-> >>> +	leds {
-> >>> +		compatible = "gpio-leds";
-> >>> +		pinctrl-names = "default";
-> >>> +		pinctrl-0 = <&power_led_gpio>;
-> >>> +
-> >>> +		power-led {
-> >>> +			label = "blue:power";
-> >>> +			gpios = <&gpio4 RK_PC2 GPIO_ACTIVE_HIGH>;
-> >>> +			default-state = "on";
-> >>> +			linux,default-trigger = "none";
-> >>> +		};
-> >>> +	};
-> >>> +
+> At least this is how I understand how the modeling should be.
+> And this is how we modeled the device tree bindings:
+> https://git.linuxtv.org/media_tree.git/tree/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml#n139
 > 
+> Make sense?
+
+Ack; then this seems fine. I thought there were several receivers.
+
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 Linux-rockchip mailing list
