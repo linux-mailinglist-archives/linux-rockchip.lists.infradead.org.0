@@ -2,87 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 239B9186AF2
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 13:33:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37127186C69
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 14:45:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHn8c0254ehXapWarDvb1Ay0UrsddmiQjT1d8iNrM+4=; b=DmK8NdqHFhvhBn
-	RPD/SQe9C49BeNzZta7eRABaq520j3zF6cromUvY47f3ISKu4nPTp7fyR1lmDpUps3lnChHRrp8FN
-	RpSSEthpG3BLo1VX7TZFjj39dQk5kWMH8KNrs6Z7WSnXd0TBz/Hq1i6vYkhl421znRP5qcT9uDslf
-	X2yfbIkuZZSNSr4cqLGCxfp7NUK6xWt124rBilz6McHEZvUFCun8vZaVBcuyKRsdTEyi/Er/nr5LS
-	laHV7nXeXbb+RJQeAAaZMuWJcrhlXsYNJSPc1ufEIVm+dsKezt0CTInUAY2jI2CsCsjYLERICm9GF
-	a9pCBghxE/KzCvJFnd0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZD7ONBfw3Dq7AYM9zRZ7FxirIKPqHl9B9ffTs64VmlE=; b=aGH8adgRivtZXOq+doVRdpt4E
+	liI7C1daJmMSI76NkXP4/ccKu+wmgfNH7OmZopzDuQ/VZ/yUbPeA9/MJxkLZjZNHWVuLxsa/2S1BP
+	cXxEvs+hxWD4XPI3ucGlAhc49/vauZN1EvjcwjQ4UJB4rqWVchGgUmLcXhiWBrvXZYBViZ1TPbxku
+	Qlmhp0RAOp9xoTwrfPDaq2tH83TikRDBLQQKyJSc1YkQYKjYwibnlTiAsoNnRAV2HceAOqt1bQ1V/
+	3Ry+9B+rwlgZtpl1FnLnnVyQzVwcrtOAitTEGSlc21jMgcasc7ei44sxMa/saD50ULx345MEAeCKJ
+	6gfZ9PvKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDowK-000686-Hf; Mon, 16 Mar 2020 12:33:52 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jDq3O-0003rY-PZ; Mon, 16 Mar 2020 13:45:14 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDow9-0005z8-Kv; Mon, 16 Mar 2020 12:33:43 +0000
-Received: by mail-ot1-x344.google.com with SMTP id 111so17555312oth.13;
- Mon, 16 Mar 2020 05:33:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iU3FB0SyhngQVmNrB57sk80xf7jnFSDISDtNBOMq4Po=;
- b=Ho0aqwmb57ckxndR0nOlrJQQHdA2mJXB5YlwQQJnhKoJXqfcCp/6i4urvKVTyqUldz
- YbwtSkfbmHa2xl1j+qFKiM91ZBRZFyhjhBCe6r6LOMQ8BiL6PEDO+hHk8HlOQfTPnkch
- PfwZ4LoeKANmdvkQ87t5uFKZPMfXDxOsY8wpt2rdYr4zyt1KLSI2J3zFgWHpQaoD2gE4
- 3xoE349tRVoJbH4NH8iqDyBEWdbxpGRp5jDY7EwAqIVIG8uMmXhR3T95mbtgBsJlGaOW
- lREaLGHlkUH+o9KybZIh3UGZw+I9Z+TFpELjB5Hc/dXxVC43ew+jXucZoJ87CxVYAgUE
- doww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iU3FB0SyhngQVmNrB57sk80xf7jnFSDISDtNBOMq4Po=;
- b=DNPJT8RX0NoHu4GqoNfZ99RqA5jmk+HUSozcTSt6+OQhcIgoOFyOOQcc9m0zQxNiYI
- hN11TDDgYkaJSFN59YS5LEm3TQt9m5C6j52u3LMnYrv7ScR7+HV6pD0GIv9/md9Pw3vx
- Q5QButN9RtHLYrxAakBhIhLEjdKoQDz83dO1uzeZAQj2nPQ3lJ/l/zCSnUfbI8iEbgsF
- pv2gau+xFpeNjO9g6XvoM3SxAMrP4UQHor7oNUlHYAs9Wwja+VkVaz+oHmmsE+2FruCF
- WYdP4hb3W2EA/H3s5T9Ps0otdQZC/er+xoG1wD2vLOplcon/MmcwnDh2wCgfajCrli33
- AZnQ==
-X-Gm-Message-State: ANhLgQ2tZclrlAw3AdUHDAg46sLjMglNh2zVzmRwg0nQwi/Nrp3ruYpT
- zsMyca6T1kYLSNfz1VhI0DdkXR7/4WVEDS5F1xw=
-X-Google-Smtp-Source: ADFU+vunioe+QWKw8j1Bl+f35z1EgNbIWiFK9X1ZpyeZAg5Og09WtiPgTXrhXd8gSYgqrBjQUh+ilgczIyEUJvIUgog=
-X-Received: by 2002:a05:6830:20c9:: with SMTP id
- z9mr22360874otq.44.1584362018759; 
- Mon, 16 Mar 2020 05:33:38 -0700 (PDT)
+ id 1jDq3K-0003es-Pf
+ for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 13:45:12 +0000
+Received: from [IPv6:2003:cb:8701:9100:60ee:cf5c:40c0:ec5a]
+ (p200300CB8701910060EECF5C40C0EC5A.dip0.t-ipconnect.de
+ [IPv6:2003:cb:8701:9100:60ee:cf5c:40c0:ec5a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: dafna)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id B52AC2946FE;
+ Mon, 16 Mar 2020 13:45:07 +0000 (GMT)
+Subject: Re: [PATCH] media: v4l2-common: Add BGR666 to v4l2_format_info
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+References: <20200316070123.2434-1-dafna.hirschfeld@collabora.com>
+ <20200316072214.GA16123@pendragon.ideasonboard.com>
+ <31efd58f-1ab1-d3d0-e4b9-ea9072e608fa@collabora.com>
+ <20200316081516.GK4732@pendragon.ideasonboard.com>
+ <401a9aca-f61f-d818-28dc-0e4cf7c2ac20@collabora.com>
+ <20200316100036.GR4732@pendragon.ideasonboard.com>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <ca5838da-d18c-1bef-e1b2-bfa13bf79ad3@collabora.com>
+Date: Mon, 16 Mar 2020 14:45:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
- <20200316121859.GB5043@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20200316121859.GB5043@e121166-lin.cambridge.arm.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Mon, 16 Mar 2020 12:33:12 +0000
-Message-ID: <CA+V-a8tEty80_XsU2qhmxLVWXnsfv3PE+ZiVfw+jrcOJXTwr6A@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
- endpoint mode on R-Car SoCs
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+In-Reply-To: <20200316100036.GR4732@pendragon.ideasonboard.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_053341_683946_8469C986 
-X-CRM114-Status: GOOD (  21.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200316_064510_973361_C1A2C9D7 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,96 +70,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-pci <linux-pci@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>, Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com,
+ linux-media@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Lorenzo,
 
-On Mon, Mar 16, 2020 at 12:19 PM Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Fri, Mar 13, 2020 at 03:46:42PM +0000, Lad, Prabhakar wrote:
-> > Hi Bjorn/Kishon,
-> >
-> > On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
-> > <prabhakar.csengg@gmail.com> wrote:
-> > >
-> > > This patch series adds support for PCIe controller on rcar to work in
-> > > endpoint mode, this also extends the epf framework to handle base region
-> > > for mapping PCI address locally.
-> > >
-> > > Note:
-> > > The cadence/rockchip/designware endpoint drivers are build tested only.
-> > >
-> > > Changes for v5:
-> > > 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
-> > >    linux/kernel/git/helgaas/pci.git
-> > > 2] Fixed review comments reported by Kishon while fetching the matching
-> > >    window in function pci_epc_get_matching_window()
-> > > 3] Fixed review comments reported by Bjorn
-> > >    a] Split patch up first patch so that its easier to review and incremental
-> > >    b] Fixed typos
-> > > 4] Included Reviewed tag from Rob for the dt-binding patch
-> > > 5] Fixed issue reported by Nathan for assigning variable to itself
-> > >
-> > > Changes for v4:
-> > > 1] Fixed dtb_check error reported by Rob
-> > > 2] Fixed review comments reported by Kishon
-> > >    a] Dropped pci_epc_find_best_fit_window()
-> > >    b] Fixed initializing mem ptr in __pci_epc_mem_init()
-> > >    c] Dropped map_size from pci_epc_mem_window structure
-> > >
-> > > Changes for v3:
-> > > 1] Fixed review comments from Bjorn and Kishon.
-> > > 3] Converted to DT schema
-> > >
-> > > Changes for v2:
-> > > 1] Fixed review comments from Biju for dt-bindings to include an example
-> > >    for a tested platform.
-> > > 2] Fixed review comments from Kishon to extend the features of outbound
-> > >    regions in epf framework.
-> > > 3] Added support to parse outbound-ranges in OF.
-> > >
-> > > Lad Prabhakar (7):
-> > >   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
-> > >   PCI: rcar: Move shareable code to a common file
-> > >   PCI: rcar: Fix calculating mask for PCIEPAMR register
-> > >   PCI: endpoint: Add support to handle multiple base for mapping
-> > >     outbound memory
-> > >   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
-> > >     controller
-> > >   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
-> > >   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
-> > >
-> > Gentle ping.
->
-> You should ask the R-CAR maintainers first to have a look at your
-> code and ACK accordingly.
->
-Thanks I have pinged the R-CAR maintainers to do the needy.
 
-Cheers,
---Prabhakar
+On 16.03.20 11:00, Laurent Pinchart wrote:
+> Hi Dafna,
+> 
+> On Mon, Mar 16, 2020 at 09:59:56AM +0100, Dafna Hirschfeld wrote:
+>> On 16.03.20 09:15, Laurent Pinchart wrote:
+>>> On Mon, Mar 16, 2020 at 09:07:16AM +0100, Dafna Hirschfeld wrote:
+>>>> On 16.03.20 08:22, Laurent Pinchart wrote:
+>>>>> On Mon, Mar 16, 2020 at 08:01:23AM +0100, Dafna Hirschfeld wrote:
+>>>>>> Add V4L2_PIX_FMT_BGR666 to the format table.
+>>>>>>
+>>>>>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>>>>>> ---
+>>>>>> Hi,
+>>>>>> BGR66 is needed for the rkisp1 driver.
+>>>>>> Currently it crashes since the call to
+>>>>>> v4l2_format_info returns NULL.
+>>>>>>
+>>>>>>     drivers/media/v4l2-core/v4l2-common.c | 1 +
+>>>>>>     1 file changed, 1 insertion(+)
+>>>>>>
+>>>>>> diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+>>>>>> index d0e5ebc736f9..d7f82b2aa22f 100644
+>>>>>> --- a/drivers/media/v4l2-core/v4l2-common.c
+>>>>>> +++ b/drivers/media/v4l2-core/v4l2-common.c
+>>>>>> @@ -253,6 +253,7 @@ const struct v4l2_format_info *v4l2_format_info(u32 format)
+>>>>>>     		{ .format = V4L2_PIX_FMT_GREY,    .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 1, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+>>>>>>     		{ .format = V4L2_PIX_FMT_RGB565,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+>>>>>>     		{ .format = V4L2_PIX_FMT_RGB555,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+>>>>>> +		{ .format = V4L2_PIX_FMT_BGR666,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+>>>>>
+>>>>> Isn't BGR666 stored in 3 bytes per pixel ?
+>>>>
+>>>> Hi, I also discussed it with Helen. From the documentation we
+>>>> understood that it uses 4 bytes and the last one is empty.
+>>>> https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/pixfmt-rgb.html
+>>>
+>>> Would you then also understand V4L2_PIX_FMT_RGB565 to use 4 bytes with
+>>> the last 2 bytes empty ? :-)
+>>
+>> hmm, the formats between BGR24 and XRGB32 in the docs table have vertical lines crossing all 4 bytes so we understood that they are all 4 bytes. Isn't it?
+>> Format RGB565 doesn't have does vertical lines on the last two bytes which means it uses 2. At least that is what we understood.
+> 
+> I stand corrected, looking at the drivers implementing
+> V4L2_PIX_FMT_BGR666, they all handle it as a 32bpp format.
+> 
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> 
+>>> I agree that the documentation is somehow ambiguous and should be fixed.
+>>> Patches are welcome ;-)
+> 
+> I think adding explicit '-' or 'x' in the cells that contain "don't
+> care" bits would help avoiding confusion.
+
+sure, I'll do that
+
+> 
+>>>>>>     
+>>>>>>     		/* YUV packed formats */
+>>>>>>     		{ .format = V4L2_PIX_FMT_YUYV,    .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv = 2, .vdiv = 1 },
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
