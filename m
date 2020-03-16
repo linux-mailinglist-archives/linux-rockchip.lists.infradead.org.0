@@ -2,57 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43387186AC2
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 13:19:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 239B9186AF2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 13:33:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MUPOKd2kLfUdXYoA+CPS3zAV/lsZWi9gL4ORmNJNcR8=; b=TJnBsDpgzypeIx
-	qrl0P3OompgiptD5kHgS4duZ1IDm+iweUTz6ZdWSbGpKDfpzp5L8bDutBxFYLw+zi4VGhJGsuEozS
-	GStmtRKMNUOA0+L3xKp3SJdd5b9Wi73IU5GK/WJLVYXBHbUZQJ9RiUj/ffLZzWF8oMQOPQsWsbNYC
-	DGzAtHUsModRwly7SApkNGijBVASp84C6BLrhY6nrTIGWZJiWxbyuxlqHtRk2c+YpVj38aDq76Og2
-	6B0pdSke9dxHjsxnMwrIcFV4WHLj6Oxz3FtzSdaaFkr3swW9TZWfujHFLop6gYyI1QAEbHmRMGjfC
-	M4G4U7B+IcBtTT6R2OwQ==;
+	List-Owner; bh=qHn8c0254ehXapWarDvb1Ay0UrsddmiQjT1d8iNrM+4=; b=DmK8NdqHFhvhBn
+	RPD/SQe9C49BeNzZta7eRABaq520j3zF6cromUvY47f3ISKu4nPTp7fyR1lmDpUps3lnChHRrp8FN
+	RpSSEthpG3BLo1VX7TZFjj39dQk5kWMH8KNrs6Z7WSnXd0TBz/Hq1i6vYkhl421znRP5qcT9uDslf
+	X2yfbIkuZZSNSr4cqLGCxfp7NUK6xWt124rBilz6McHEZvUFCun8vZaVBcuyKRsdTEyi/Er/nr5LS
+	laHV7nXeXbb+RJQeAAaZMuWJcrhlXsYNJSPc1ufEIVm+dsKezt0CTInUAY2jI2CsCsjYLERICm9GF
+	a9pCBghxE/KzCvJFnd0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDoiE-0000H2-ER; Mon, 16 Mar 2020 12:19:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDoi5-00009F-2H; Mon, 16 Mar 2020 12:19:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACEBA30E;
- Mon, 16 Mar 2020 05:19:04 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB8C83F52E;
- Mon, 16 Mar 2020 05:19:01 -0700 (PDT)
-Date: Mon, 16 Mar 2020 12:18:59 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
- endpoint mode on R-Car SoCs
-Message-ID: <20200316121859.GB5043@e121166-lin.cambridge.arm.com>
+	id 1jDowK-000686-Hf; Mon, 16 Mar 2020 12:33:52 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jDow9-0005z8-Kv; Mon, 16 Mar 2020 12:33:43 +0000
+Received: by mail-ot1-x344.google.com with SMTP id 111so17555312oth.13;
+ Mon, 16 Mar 2020 05:33:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iU3FB0SyhngQVmNrB57sk80xf7jnFSDISDtNBOMq4Po=;
+ b=Ho0aqwmb57ckxndR0nOlrJQQHdA2mJXB5YlwQQJnhKoJXqfcCp/6i4urvKVTyqUldz
+ YbwtSkfbmHa2xl1j+qFKiM91ZBRZFyhjhBCe6r6LOMQ8BiL6PEDO+hHk8HlOQfTPnkch
+ PfwZ4LoeKANmdvkQ87t5uFKZPMfXDxOsY8wpt2rdYr4zyt1KLSI2J3zFgWHpQaoD2gE4
+ 3xoE349tRVoJbH4NH8iqDyBEWdbxpGRp5jDY7EwAqIVIG8uMmXhR3T95mbtgBsJlGaOW
+ lREaLGHlkUH+o9KybZIh3UGZw+I9Z+TFpELjB5Hc/dXxVC43ew+jXucZoJ87CxVYAgUE
+ doww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iU3FB0SyhngQVmNrB57sk80xf7jnFSDISDtNBOMq4Po=;
+ b=DNPJT8RX0NoHu4GqoNfZ99RqA5jmk+HUSozcTSt6+OQhcIgoOFyOOQcc9m0zQxNiYI
+ hN11TDDgYkaJSFN59YS5LEm3TQt9m5C6j52u3LMnYrv7ScR7+HV6pD0GIv9/md9Pw3vx
+ Q5QButN9RtHLYrxAakBhIhLEjdKoQDz83dO1uzeZAQj2nPQ3lJ/l/zCSnUfbI8iEbgsF
+ pv2gau+xFpeNjO9g6XvoM3SxAMrP4UQHor7oNUlHYAs9Wwja+VkVaz+oHmmsE+2FruCF
+ WYdP4hb3W2EA/H3s5T9Ps0otdQZC/er+xoG1wD2vLOplcon/MmcwnDh2wCgfajCrli33
+ AZnQ==
+X-Gm-Message-State: ANhLgQ2tZclrlAw3AdUHDAg46sLjMglNh2zVzmRwg0nQwi/Nrp3ruYpT
+ zsMyca6T1kYLSNfz1VhI0DdkXR7/4WVEDS5F1xw=
+X-Google-Smtp-Source: ADFU+vunioe+QWKw8j1Bl+f35z1EgNbIWiFK9X1ZpyeZAg5Og09WtiPgTXrhXd8gSYgqrBjQUh+ilgczIyEUJvIUgog=
+X-Received: by 2002:a05:6830:20c9:: with SMTP id
+ z9mr22360874otq.44.1584362018759; 
+ Mon, 16 Mar 2020 05:33:38 -0700 (PDT)
+MIME-Version: 1.0
 References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
  <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+V-a8vchrpa-1N1J+yVdo6-3zouOHX6=G4epWm68yirPirzag@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ <20200316121859.GB5043@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20200316121859.GB5043@e121166-lin.cambridge.arm.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Mon, 16 Mar 2020 12:33:12 +0000
+Message-ID: <CA+V-a8tEty80_XsU2qhmxLVWXnsfv3PE+ZiVfw+jrcOJXTwr6A@mail.gmail.com>
+Subject: Re: [PATCH v5 0/7] Add support for PCIe controller to work in
+ endpoint mode on R-Car SoCs
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_051909_199587_B27A10AE 
-X-CRM114-Status: GOOD (  21.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200316_053341_683946_8469C986 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.csengg[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,65 +118,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 03:46:42PM +0000, Lad, Prabhakar wrote:
-> Hi Bjorn/Kishon,
-> 
-> On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
-> <prabhakar.csengg@gmail.com> wrote:
-> >
-> > This patch series adds support for PCIe controller on rcar to work in
-> > endpoint mode, this also extends the epf framework to handle base region
-> > for mapping PCI address locally.
-> >
-> > Note:
-> > The cadence/rockchip/designware endpoint drivers are build tested only.
-> >
-> > Changes for v5:
-> > 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
-> >    linux/kernel/git/helgaas/pci.git
-> > 2] Fixed review comments reported by Kishon while fetching the matching
-> >    window in function pci_epc_get_matching_window()
-> > 3] Fixed review comments reported by Bjorn
-> >    a] Split patch up first patch so that its easier to review and incremental
-> >    b] Fixed typos
-> > 4] Included Reviewed tag from Rob for the dt-binding patch
-> > 5] Fixed issue reported by Nathan for assigning variable to itself
-> >
-> > Changes for v4:
-> > 1] Fixed dtb_check error reported by Rob
-> > 2] Fixed review comments reported by Kishon
-> >    a] Dropped pci_epc_find_best_fit_window()
-> >    b] Fixed initializing mem ptr in __pci_epc_mem_init()
-> >    c] Dropped map_size from pci_epc_mem_window structure
-> >
-> > Changes for v3:
-> > 1] Fixed review comments from Bjorn and Kishon.
-> > 3] Converted to DT schema
-> >
-> > Changes for v2:
-> > 1] Fixed review comments from Biju for dt-bindings to include an example
-> >    for a tested platform.
-> > 2] Fixed review comments from Kishon to extend the features of outbound
-> >    regions in epf framework.
-> > 3] Added support to parse outbound-ranges in OF.
-> >
-> > Lad Prabhakar (7):
-> >   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
-> >   PCI: rcar: Move shareable code to a common file
-> >   PCI: rcar: Fix calculating mask for PCIEPAMR register
-> >   PCI: endpoint: Add support to handle multiple base for mapping
-> >     outbound memory
-> >   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
-> >     controller
-> >   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
-> >   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
-> >
-> Gentle ping.
+Hi Lorenzo,
 
-You should ask the R-CAR maintainers first to have a look at your
-code and ACK accordingly.
+On Mon, Mar 16, 2020 at 12:19 PM Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Fri, Mar 13, 2020 at 03:46:42PM +0000, Lad, Prabhakar wrote:
+> > Hi Bjorn/Kishon,
+> >
+> > On Fri, Feb 28, 2020 at 3:41 PM Lad Prabhakar
+> > <prabhakar.csengg@gmail.com> wrote:
+> > >
+> > > This patch series adds support for PCIe controller on rcar to work in
+> > > endpoint mode, this also extends the epf framework to handle base region
+> > > for mapping PCI address locally.
+> > >
+> > > Note:
+> > > The cadence/rockchip/designware endpoint drivers are build tested only.
+> > >
+> > > Changes for v5:
+> > > 1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
+> > >    linux/kernel/git/helgaas/pci.git
+> > > 2] Fixed review comments reported by Kishon while fetching the matching
+> > >    window in function pci_epc_get_matching_window()
+> > > 3] Fixed review comments reported by Bjorn
+> > >    a] Split patch up first patch so that its easier to review and incremental
+> > >    b] Fixed typos
+> > > 4] Included Reviewed tag from Rob for the dt-binding patch
+> > > 5] Fixed issue reported by Nathan for assigning variable to itself
+> > >
+> > > Changes for v4:
+> > > 1] Fixed dtb_check error reported by Rob
+> > > 2] Fixed review comments reported by Kishon
+> > >    a] Dropped pci_epc_find_best_fit_window()
+> > >    b] Fixed initializing mem ptr in __pci_epc_mem_init()
+> > >    c] Dropped map_size from pci_epc_mem_window structure
+> > >
+> > > Changes for v3:
+> > > 1] Fixed review comments from Bjorn and Kishon.
+> > > 3] Converted to DT schema
+> > >
+> > > Changes for v2:
+> > > 1] Fixed review comments from Biju for dt-bindings to include an example
+> > >    for a tested platform.
+> > > 2] Fixed review comments from Kishon to extend the features of outbound
+> > >    regions in epf framework.
+> > > 3] Added support to parse outbound-ranges in OF.
+> > >
+> > > Lad Prabhakar (7):
+> > >   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+> > >   PCI: rcar: Move shareable code to a common file
+> > >   PCI: rcar: Fix calculating mask for PCIEPAMR register
+> > >   PCI: endpoint: Add support to handle multiple base for mapping
+> > >     outbound memory
+> > >   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+> > >     controller
+> > >   PCI: rcar: Add support for rcar PCIe controller in endpoint mode
+> > >   misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
+> > >
+> > Gentle ping.
+>
+> You should ask the R-CAR maintainers first to have a look at your
+> code and ACK accordingly.
+>
+Thanks I have pinged the R-CAR maintainers to do the needy.
 
-Lorenzo
+Cheers,
+--Prabhakar
 
 _______________________________________________
 Linux-rockchip mailing list
