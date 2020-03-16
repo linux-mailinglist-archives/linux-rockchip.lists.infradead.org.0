@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13832187365
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 20:33:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5B2118736D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 20:33:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iNbaeCTGVczlRMOO883X3Wi4Nnrsc5o8AgIax4WWT5w=; b=ffu2ZPTWkUFGB2
-	jhbqKv3PwEbePwf4ookyeFYwkeQaNT75XM2Fh/XMYMNDpzUYScOIyu8QB0Y024owPpbEOLY/8KRCW
-	iLX2ZVMid2D6O7v+SZont4Eb/yX9VgOq2Ep6d+r0MjXYpi/2rNYkVGu1VGQ5MTP7a+p8vxZIY6zyh
-	7dvpew0HvoQnNiiWanfnSRIlM2BVwpnvphYak+zQSCK09aMcLQ7AeLkJYvfFJeDEAlXPd6bHNIWZX
-	6Mw/hUvCbj6ZM7w604r1DTwuujrignUVcppEtqtp9t5ZyenMqpZjBKj9/3kDrEYYJHvAOBqLag3Y7
-	Td1PxeMhqiPz6dsWZ+gw==;
+	List-Owner; bh=KMiFApT6jH+MG/lqxa4F0RAz1Dqz3zZ8wQnEvH04OrQ=; b=nMPxGQBk2n9C8U
+	zNFQGbOlS5VHjck0yXy/I7m/Aof9HNNF9zVbeHi/cCnYLqm2TV2igXzh99lmXTeVfwARUQIChcdO+
+	9yMQS8MBk1/GSXmhdw8Misy6wrKlDiW6zN9WgSeLmHxuaSmcBSDK41QuT0RJR1bjKMYbAxVl5XjVq
+	ASfV1GVmZGpgyJ+r1VCe7wgi1FA26yHd4zqf83g40hycnp0EGN5vpPakfxL2CYw7tdKjrQpjkeorp
+	0K/9RO5MbBGf+eB7Fa9iy8f8knL2gZaUogzlYruOd9ATVLyKCDHdoXGjroqrRu9W2E4R2f69z9BJ/
+	A7nwVMwB5d7QBgZI3TVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDvUS-0003ju-4b; Mon, 16 Mar 2020 19:33:32 +0000
+	id 1jDvUW-0003na-0Y; Mon, 16 Mar 2020 19:33:36 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDvUO-0003hU-Kt
- for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 19:33:30 +0000
+ id 1jDvUR-0003jo-T8
+ for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 19:33:33 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 2B27B293369
+ (Authenticated sender: koike) with ESMTPSA id 2B18E294879
 From: Helen Koike <helen.koike@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH 2/4] media: v4l2-common: add helper functions to call
- s_stream() callbacks
-Date: Mon, 16 Mar 2020 16:33:03 -0300
-Message-Id: <20200316193305.428378-3-helen.koike@collabora.com>
+Subject: [PATCH 3/4] media: staging: rkisp1: use v4l2_pipeline_stream_{enable,
+ disable} helpers
+Date: Mon, 16 Mar 2020 16:33:04 -0300
+Message-Id: <20200316193305.428378-4-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200316193305.428378-1-helen.koike@collabora.com>
 References: <20200316193305.428378-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_123328_949791_90A1502A 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20200316_123332_094165_31000832 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -69,195 +69,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add v4l2_pipeline_stream_{enable,disable} helper functions to iterate
-through the subdevices in a given stream (i.e following links from sink
-to source) and call .s_stream() callback.
+Use v4l2_pipeline_stream_{enable,disable} to call .s_stream() subdevice
+callbacks through the pipeline.
 
-Add stream_count on the subdevice object for simultaneous streaming from
-different video devices which shares subdevices.
-
-Prevent calling .s_stream(true) if it was already called previously by
-another stream.
-
-Prevent calling .s_stream(false) from one stream when there are still
-others active.
+Tested by streaming on RockPi4 with imx219.
 
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
 ---
 
- drivers/media/v4l2-core/v4l2-common.c | 99 +++++++++++++++++++++++++++
- include/media/v4l2-common.h           | 30 ++++++++
- include/media/v4l2-subdev.h           |  2 +
- 3 files changed, 131 insertions(+)
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 74 +------------------
+ 1 file changed, 4 insertions(+), 70 deletions(-)
 
-diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
-index d0e5ebc736f9..6a5a3d2c282e 100644
---- a/drivers/media/v4l2-core/v4l2-common.c
-+++ b/drivers/media/v4l2-core/v4l2-common.c
-@@ -441,3 +441,102 @@ int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
- 	return 0;
+diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+index 24fe6a7888aa..9e1f3e022016 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-capture.c
++++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+@@ -838,71 +838,6 @@ static void rkisp1_return_all_buffers(struct rkisp1_capture *cap,
+ 	spin_unlock_irqrestore(&cap->buf.lock, flags);
  }
- EXPORT_SYMBOL_GPL(v4l2_fill_pixfmt);
-+
-+int v4l2_pipeline_stream_disable(struct media_entity *entity,
-+				 struct media_pipeline *pipe)
-+{
-+	struct media_device *mdev = entity->graph_obj.mdev;
-+	int ret = 0;
-+
-+	mutex_lock(&mdev->graph_mutex);
-+
-+	if (!pipe->streaming_count) {
-+		ret = media_graph_walk_init(&pipe->graph, mdev);
-+		if (ret) {
-+			mutex_unlock(&mdev->graph_mutex);
-+			return ret;
-+		}
-+	}
-+
-+	media_graph_walk_start(&pipe->graph, entity);
-+
-+	while ((entity = media_graph_walk_next_stream(&pipe->graph))) {
-+		struct v4l2_subdev *sd;
-+
-+		if (!is_media_entity_v4l2_subdev(entity))
-+			continue;
-+
-+		sd = media_entity_to_v4l2_subdev(entity);
-+		if (!sd->stream_count || --sd->stream_count)
-+			continue;
-+
-+		ret = v4l2_subdev_call(sd, video, s_stream, false);
-+		if (ret && ret != -ENOIOCTLCMD)
-+			dev_dbg(mdev->dev,
-+				"couldn't disable stream for subdevice '%s'\n",
-+				entity->name);
-+			break;
-+		}
-+
-+		dev_dbg(mdev->dev,
-+			"stream disabled for subdevice '%s'\n", entity->name);
-+	}
-+
-+	if (!pipe->streaming_count)
-+		media_graph_walk_cleanup(&pipe->graph);
-+
-+	mutex_unlock(&mdev->graph_mutex);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(v4l2_pipeline_stream_disable);
-+
-+__must_check int v4l2_pipeline_stream_enable(struct media_entity *entity,
-+					     struct media_pipeline *pipe)
-+{
-+	struct media_device *mdev = entity->graph_obj.mdev;
-+	int ret = 0;
-+
-+	mutex_lock(&mdev->graph_mutex);
-+
-+	if (!pipe->streaming_count) {
-+		ret = media_graph_walk_init(&pipe->graph, mdev);
-+		if (ret) {
-+			mutex_unlock(&mdev->graph_mutex);
-+			return ret;
-+		}
-+	}
-+
-+	media_graph_walk_start(&pipe->graph, entity);
-+
-+	while ((entity = media_graph_walk_next_stream(&pipe->graph))) {
-+		struct v4l2_subdev *sd;
-+
-+		if (!is_media_entity_v4l2_subdev(entity))
-+			continue;
-+
-+		sd = media_entity_to_v4l2_subdev(entity);
-+		if (sd->stream_count++)
-+			continue;
-+
-+		ret = v4l2_subdev_call(sd, video, s_stream, true);
-+		if (ret && ret != -ENOIOCTLCMD)
-+			dev_dbg(mdev->dev,
-+				"couldn't enable stream for subdevice '%s'\n",
-+				entity->name);
-+			v4l2_pipeline_stream_disable(entity, pipe);
-+			break;
-+		}
-+
-+		dev_dbg(mdev->dev,
-+			"stream enabled for subdevice '%s'\n", entity->name);
-+	}
-+
-+	if (!pipe->streaming_count)
-+		media_graph_walk_cleanup(&pipe->graph);
-+
-+	mutex_unlock(&mdev->graph_mutex);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(v4l2_pipeline_stream_enable);
-diff --git a/include/media/v4l2-common.h b/include/media/v4l2-common.h
-index 150ee16ebd81..46c0857d07c4 100644
---- a/include/media/v4l2-common.h
-+++ b/include/media/v4l2-common.h
-@@ -519,6 +519,36 @@ int v4l2_fill_pixfmt(struct v4l2_pix_format *pixfmt, u32 pixelformat,
- int v4l2_fill_pixfmt_mp(struct v4l2_pix_format_mplane *pixfmt, u32 pixelformat,
- 			u32 width, u32 height);
  
-+/**
-+ * media_pipeline_stop - Mark a pipeline as not streaming
-+ * @entity: Starting entity
-+ * @pipe: Media pipeline to iterate through the topology
-+ *
-+ * Call .s_stream(false) callback in all the subdevices participating in the
-+ * stream, i.e. following links from sink to source.
-+ *
-+ * If multiple calls to v4l2_pipeline_stream_enable() have been made, the
-+ * same number of calls to this function are required.
-+ */
-+int v4l2_pipeline_stream_disable(struct media_entity *entity,
-+				 struct media_pipeline *pipe);
-+
-+/**
-+ * v4l2_pipeline_stream_enable - Call .s_stream(true) callbacks in the stream
-+ * @entity: Starting entity
-+ * @pipe: Media pipeline to iterate through the topology
-+ *
-+ * Call .s_stream(true) callback in all the subdevices participating in the
-+ * stream, i.e. following links from sink to source.
-+ *
-+ * Calls to this function can be nested, in which case the same number of
-+ * v4l2_pipeline_stream_disable() calls will be required to stop streaming.
-+ * The  pipeline pointer must be identical for all nested calls to
-+ * v4l2_pipeline_stream_enable().
-+ */
-+__must_check int v4l2_pipeline_stream_enable(struct media_entity *entity,
-+					     struct media_pipeline *pipe);
-+
- static inline u64 v4l2_buffer_get_timestamp(const struct v4l2_buffer *buf)
+-/*
+- * rkisp1_pipeline_sink_walk - Walk through the pipeline and call cb
+- * @from: entity at which to start pipeline walk
+- * @until: entity at which to stop pipeline walk
+- *
+- * Walk the entities chain starting at the pipeline video node and stop
+- * all subdevices in the chain.
+- *
+- * If the until argument isn't NULL, stop the pipeline walk when reaching the
+- * until entity. This is used to disable a partially started pipeline due to a
+- * subdev start error.
+- */
+-static int rkisp1_pipeline_sink_walk(struct media_entity *from,
+-				     struct media_entity *until,
+-				     int (*cb)(struct media_entity *from,
+-					       struct media_entity *curr))
+-{
+-	struct media_entity *entity = from;
+-	struct media_pad *pad;
+-	unsigned int i;
+-	int ret;
+-
+-	while (1) {
+-		pad = NULL;
+-		/* Find remote source pad */
+-		for (i = 0; i < entity->num_pads; i++) {
+-			struct media_pad *spad = &entity->pads[i];
+-
+-			if (!(spad->flags & MEDIA_PAD_FL_SINK))
+-				continue;
+-			pad = media_entity_remote_pad(spad);
+-			if (pad && is_media_entity_v4l2_subdev(pad->entity))
+-				break;
+-		}
+-		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
+-			break;
+-
+-		entity = pad->entity;
+-		if (entity == until)
+-			break;
+-
+-		ret = cb(from, entity);
+-		if (ret)
+-			return ret;
+-	}
+-
+-	return 0;
+-}
+-
+-static int rkisp1_pipeline_disable_cb(struct media_entity *from,
+-				      struct media_entity *curr)
+-{
+-	struct v4l2_subdev *sd = media_entity_to_v4l2_subdev(curr);
+-
+-	return v4l2_subdev_call(sd, video, s_stream, false);
+-}
+-
+-static int rkisp1_pipeline_enable_cb(struct media_entity *from,
+-				     struct media_entity *curr)
+-{
+-	struct v4l2_subdev *sd = media_entity_to_v4l2_subdev(curr);
+-
+-	return v4l2_subdev_call(sd, video, s_stream, true);
+-}
+-
+ static void rkisp1_stream_stop(struct rkisp1_capture *cap)
  {
- 	/*
-diff --git a/include/media/v4l2-subdev.h b/include/media/v4l2-subdev.h
-index a4848de59852..20f913a9f70c 100644
---- a/include/media/v4l2-subdev.h
-+++ b/include/media/v4l2-subdev.h
-@@ -838,6 +838,7 @@ struct v4l2_subdev_platform_data {
-  * @subdev_notifier: A sub-device notifier implicitly registered for the sub-
-  *		     device using v4l2_device_register_sensor_subdev().
-  * @pdata: common part of subdevice platform data
-+ * @stream_count: Stream count for the subdevice.
-  *
-  * Each instance of a subdev driver should create this struct, either
-  * stand-alone or embedded in a larger struct.
-@@ -869,6 +870,7 @@ struct v4l2_subdev {
- 	struct v4l2_async_notifier *notifier;
- 	struct v4l2_async_notifier *subdev_notifier;
- 	struct v4l2_subdev_platform_data *pdata;
-+	unsigned int stream_count;
- };
+ 	int ret;
+@@ -929,8 +864,8 @@ static void rkisp1_vb2_stop_streaming(struct vb2_queue *queue)
  
+ 	rkisp1_stream_stop(cap);
+ 	media_pipeline_stop(&node->vdev.entity);
+-	ret = rkisp1_pipeline_sink_walk(&node->vdev.entity, NULL,
+-					rkisp1_pipeline_disable_cb);
++	ret = v4l2_pipeline_stream_disable(&node->vdev.entity,
++					   &cap->rkisp1->pipe);
+ 	if (ret)
+ 		dev_err(rkisp1->dev,
+ 			"pipeline stream-off failed error:%d\n", ret);
+@@ -1005,8 +940,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
+ 	rkisp1_stream_start(cap);
  
+ 	/* start sub-devices */
+-	ret = rkisp1_pipeline_sink_walk(entity, NULL,
+-					rkisp1_pipeline_enable_cb);
++	ret = v4l2_pipeline_stream_enable(entity, &cap->rkisp1->pipe);
+ 	if (ret)
+ 		goto err_stop_stream;
+ 
+@@ -1019,7 +953,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
+ 	return 0;
+ 
+ err_pipe_disable:
+-	rkisp1_pipeline_sink_walk(entity, NULL, rkisp1_pipeline_disable_cb);
++	v4l2_pipeline_stream_disable(entity, &cap->rkisp1->pipe);
+ err_stop_stream:
+ 	rkisp1_stream_stop(cap);
+ 	v4l2_pipeline_pm_put(entity);
 -- 
 2.25.0
 
