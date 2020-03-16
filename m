@@ -2,48 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD800187467
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 22:01:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6A80187468
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 22:01:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1a7IkVtvKAZc418hb055izZad6Z/AknJtRtMnKAfTw=; b=I3UbmwprqvutcG
-	XB+dcTHxRUXMmK61dK9kqK5EgepbTrQ3l6VPRQE6qbrjetc+35ixMVF304IJg/oeQxiJ15p0spz4d
-	sSR0ha68v6eM84fo/iJa8pnpRHdKw41Jn/v7SpXXo9CDi7fYBzs8T3zp6PPNLYaA2M67MDYSnO4gW
-	8IPZfSRzqdCkvh6Ke0RD/NbMXCt60zIz9RNXR4xor+M8sep2fcpTpaES+IXdWJKaxkJuLV/QVPR0G
-	8vQ+JXeG0ikfBRqkVzKEbnTGbVbwTZ1sl1qkgHijaFeKG2SdcMz4cObuFk4lL53GczP9m+D2giryi
-	/aLUFBnjVDycTgP5oOnw==;
+	List-Owner; bh=ThkCDFhQAjbAaYQZftVOigotIbQwEu/w65mfOF5DqsU=; b=NUS5UQmZBTEJgv
+	jgWqiBiHeLScTP2vM+zwbxb2RwJyVS4Sq7B+CqqhxUZ/x21OqHk0o8O+WfdV8qYl23WxNefoVDJrf
+	XGaHMQERZY8IWUTo27EWoKQUZtXG6LlaYvqGYOA/ZNpmEs6rJLoArcshIpSJO0lohSSrRbbU3XihN
+	WxlMjiOF7NEjARz3saoyTBEt4DqaHoTvmSJd9Xpd2hRexsfE/RJAfixlgy586jU0uHz6b7YngU2gx
+	2BD2sEa722oASKkPnJDnT9ptvClVDlOEVvqCE3EFUI44z9/672JSNaY5QJAI4nEFhCXekSxp5Z+Uq
+	YuOLqUY4gP/Hm/iIEdwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDwr7-0003ko-UW; Mon, 16 Mar 2020 21:01:01 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jDwrA-0003nm-R8; Mon, 16 Mar 2020 21:01:04 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDwr4-0003jJ-Oh
- for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 21:01:00 +0000
+ id 1jDwr7-0003ki-PG
+ for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 21:01:03 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 0CE48291A70
+ (Authenticated sender: koike) with ESMTPSA id 377FC28A3BA
 From: Helen Koike <helen.koike@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v2 1/2] media: staging: rkisp1: cap: fix return values from pm
- functions
-Date: Mon, 16 Mar 2020 18:00:43 -0300
-Message-Id: <20200316210044.595312-2-helen.koike@collabora.com>
+Subject: [PATCH v2 2/2] media: staging: rkisp1: cap: serialize start/stop
+ stream
+Date: Mon, 16 Mar 2020 18:00:44 -0300
+Message-Id: <20200316210044.595312-3-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200316210044.595312-1-helen.koike@collabora.com>
 References: <20200316210044.595312-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_140058_927488_945358B1 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20200316_140101_955377_00C533B6 
+X-CRM114-Status: UNSURE (   8.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -68,45 +70,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-If no errors occurs, pm functions return usage counters, so they can
-return positive numbers.
-This happens when streaming from multiple capture devices (mainpath and
-selfpath).
-
-Fix simultaneous streaming from mainpath and selfpath by not failing
-when pm usage counters returns a positive number.
+In order to support simultaneous streaming from both capture devices,
+start/stop vb2 calls need to be serialized to allow multiple concurrent
+calls.
 
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
 ---
 
 Changes in v2:
-- Rebased on media/master
+- Rebased with media/master
 
- drivers/staging/media/rkisp1/rkisp1-capture.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 9 +++++++++
+ drivers/staging/media/rkisp1/rkisp1-common.h  | 2 ++
+ drivers/staging/media/rkisp1/rkisp1-dev.c     | 2 ++
+ 3 files changed, 13 insertions(+)
 
 diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-index 24fe6a7888aa..967bd05b4507 100644
+index 967bd05b4507..f3c4f2a198ca 100644
 --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
 +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-@@ -939,7 +939,7 @@ static void rkisp1_vb2_stop_streaming(struct vb2_queue *queue)
+@@ -927,6 +927,8 @@ static void rkisp1_vb2_stop_streaming(struct vb2_queue *queue)
+ 	struct rkisp1_device *rkisp1 = cap->rkisp1;
+ 	int ret;
  
- 	v4l2_pipeline_pm_put(&node->vdev.entity);
- 	ret = pm_runtime_put(rkisp1->dev);
--	if (ret)
-+	if (ret < 0)
++	mutex_lock(&cap->rkisp1->stream_lock);
++
+ 	rkisp1_stream_stop(cap);
+ 	media_pipeline_stop(&node->vdev.entity);
+ 	ret = rkisp1_pipeline_sink_walk(&node->vdev.entity, NULL,
+@@ -943,6 +945,8 @@ static void rkisp1_vb2_stop_streaming(struct vb2_queue *queue)
  		dev_err(rkisp1->dev, "power down failed error:%d\n", ret);
  
  	rkisp1_dummy_buf_destroy(cap);
-@@ -992,7 +992,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
- 		goto err_ret_buffers;
++
++	mutex_unlock(&cap->rkisp1->stream_lock);
+ }
  
- 	ret = pm_runtime_get_sync(cap->rkisp1->dev);
--	if (ret) {
-+	if (ret < 0) {
- 		dev_err(cap->rkisp1->dev, "power up failed %d\n", ret);
- 		goto err_destroy_dummy;
+ /*
+@@ -987,6 +991,8 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
+ 	struct media_entity *entity = &cap->vnode.vdev.entity;
+ 	int ret;
+ 
++	mutex_lock(&cap->rkisp1->stream_lock);
++
+ 	ret = rkisp1_dummy_buf_create(cap);
+ 	if (ret)
+ 		goto err_ret_buffers;
+@@ -1016,6 +1022,8 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
+ 		goto err_pipe_disable;
  	}
+ 
++	mutex_unlock(&cap->rkisp1->stream_lock);
++
+ 	return 0;
+ 
+ err_pipe_disable:
+@@ -1029,6 +1037,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, unsigned int count)
+ 	rkisp1_dummy_buf_destroy(cap);
+ err_ret_buffers:
+ 	rkisp1_return_all_buffers(cap, VB2_BUF_STATE_QUEUED);
++	mutex_unlock(&cap->rkisp1->stream_lock);
+ 
+ 	return ret;
+ }
+diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+index b291cc60de8e..4ec5aae9694a 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-common.h
++++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+@@ -247,6 +247,7 @@ struct rkisp1_debug {
+  * @rkisp1_capture: capture video device
+  * @stats: ISP statistics output device
+  * @params: ISP input parameters device
++ * @stream_lock: lock to serialize start/stop streaming in capture devices.
+  */
+ struct rkisp1_device {
+ 	void __iomem *base_addr;
+@@ -266,6 +267,7 @@ struct rkisp1_device {
+ 	struct rkisp1_params params;
+ 	struct media_pipeline pipe;
+ 	struct vb2_alloc_ctx *alloc_ctx;
++	struct mutex stream_lock;
+ 	struct rkisp1_debug debug;
+ };
+ 
+diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
+index b1b3c058e957..3e3a3925b019 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-dev.c
++++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
+@@ -471,6 +471,8 @@ static int rkisp1_probe(struct platform_device *pdev)
+ 	dev_set_drvdata(dev, rkisp1);
+ 	rkisp1->dev = dev;
+ 
++	mutex_init(&rkisp1->stream_lock);
++
+ 	rkisp1->base_addr = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(rkisp1->base_addr))
+ 		return PTR_ERR(rkisp1->base_addr);
 -- 
 2.25.0
 
