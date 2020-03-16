@@ -2,87 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75AE818717D
-	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 18:47:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F05E5187362
+	for <lists+linux-rockchip@lfdr.de>; Mon, 16 Mar 2020 20:33:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dILCwfKVBSQjtklSs5RtbQKuSpbmrLkBM3ltDWX//j8=; b=oZV
-	zBmfPnnvNQMh3t3koxuzK2bb7ow9eZbYFoXYumOV/LOvQQheX2S2tpOq/b2e4e18WoDWtYLP/jac5
-	ujBw7eenojAYn2v58t372qITYiNlSi41KtVJ2ofoMHgeKN5bsKK7h3ZGq7bSoLQ6j3EfG2NxwkVe1
-	Ym7NR0oLCuYjqnITAegU1SIz6JDYTtCrk8L1XDvuUJrKqvNCsMQclSSR0YPNQfoJW5OvEPU5MDeEH
-	LT3fSpkWfBUARWRcs4TqDzUtA2T84iD0KDpOTxAGeE68eZcpWxJExy3GldZDhgPwpPBzFjZfudOki
-	A1oDgt7e0To5xNU7WIXwyoB8g5JNoEQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VWH1bL+nAddMh6J+GZ9Fi6RojLLSrR+nOpOhh6YmadU=; b=r+3UwF5meIna46
+	oTRJ1MjHHgndvMBDYthWElcwhG7D/192mpBu9+BMCy/+/+tqTrJiSVyYoETkY5dBhzjkwpRJJjveX
+	TD065Wwh5FhIed7eSsl/t34Ni5eztBrkY38vJRyr30y07CvmOndpSHAZnDCN2lbHaBWMm2ejfWgtC
+	tHRagglIQNbPizDa/zyHJeZm9xl3ptgbZ/kWHufVQyl6TrwWUcyZZZ303jr78pVJq3gnVjbsw8NBJ
+	YqnNwHysbBSBwD68pHLIwp4aVIbsOWjRTWz79b+g5hBQyUC/w+YFbg5xXHz3Xp9y6pEdwS1nzluk/
+	eEH5/hUQLvCWlgYDR1xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jDtpT-00062X-BG; Mon, 16 Mar 2020 17:47:07 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jDvUM-0003g6-DM; Mon, 16 Mar 2020 19:33:26 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jDtpI-0005tV-SD; Mon, 16 Mar 2020 17:46:58 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y2so6877596wrn.11;
- Mon, 16 Mar 2020 10:46:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=MLNLveD6L+cH6avKSQcqN3AiAJkE99e4WdFigQsP9tE=;
- b=cc/KfyNxH1udwLv/GxysgrFxyCGR7MoHAFg+yjnWH+XHZgkIHtu/ZXMhqn4hDjaf+Q
- +faD+0V+taSxrcG9GhVHBbhZEck94ccZ7kbmgImtmMSA/zcD13JfSP/pzNhSZObXvrUp
- j0KCtd1D1lbm4Qc1F6bQcNr71jxk2lXVOHhVoeunTdVOZJCWgDpR8w2UmezNdHr50tlh
- ZAlK6+Nbblsh6s18P06WlVKkk34Y6w5tESE6W1vVJmznVMBvG2RXpTLH75AYFirMtg87
- FH8uyM0f9/qlL14Q9L/FNa15bhFWEGrLH6L2aMbcur/nFVbqeoVRKiojLOiiDVqL/Cfu
- vk7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=MLNLveD6L+cH6avKSQcqN3AiAJkE99e4WdFigQsP9tE=;
- b=ZErlqYibqosRVlyBOPz+8RPVJuwjqdWDxD1SLW6vKEFRoeaS8U4ymvWNOk++ulQeDf
- RV9+eUTL5vASPRDYK8oYRRYQOLOx9lZWi/DPYtlR5bOj86jY15sUu/GVWPD74EnW2/HY
- HECXwKELBjw0DDCaSUKO4pVyf1rs/tBe5cOTggn4n7wRpREuuJusnV4LRL1gyKYXaIme
- 5anQSlUTZcjQcvON9oFwG22rdXe1vx2C2KiTI0BZzj5xr5dJID04/RVmJ0lmDM7JJrvg
- uVvuPwMOIYXYTzARKdKKoW4NDshjze4qKH8ltfXKZQ7EbhTTod/YeOctSwcJE1/ITgDG
- VN8Q==
-X-Gm-Message-State: ANhLgQ1mQK3V4i3IxzNh7TMstUcTlupsgKnMpLRAlLM0n8jf9Km3RrYy
- wlCtboBV8KIyCrcLMkdCZ3gXCp0j
-X-Google-Smtp-Source: ADFU+vs1VNAsqxRwQaM3OZDVeqqND1v9e+aTzeUXh86E6O8j108hjsIXs8dG9PQ8GnSWhYlnyBF6Zw==
-X-Received: by 2002:a5d:5342:: with SMTP id t2mr526454wrv.104.1584380814347;
- Mon, 16 Mar 2020 10:46:54 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id b202sm587440wmd.15.2020.03.16.10.46.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 16 Mar 2020 10:46:53 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] ARM: dts: rockchip: fix lvds-encoder ports subnode for
- rk3188-bqedison2qc
-Date: Mon, 16 Mar 2020 18:46:47 +0100
-Message-Id: <20200316174647.5598-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jDvUI-0003em-VF
+ for linux-rockchip@lists.infradead.org; Mon, 16 Mar 2020 19:33:24 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id CAFCD293369
+From: Helen Koike <helen.koike@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH 0/4] media: add v4l2_pipeline_stream_{enable,disable} helpers
+Date: Mon, 16 Mar 2020 16:33:01 -0300
+Message-Id: <20200316193305.428378-1-helen.koike@collabora.com>
+X-Mailer: git-send-email 2.25.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_104656_964959_BE04791C 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200316_123323_144290_F114882C 
+X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,75 +59,83 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: kernel@collabora.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ hans.verkuil@cisco.com, niklas.soderlund@ragnatech.se, mchehab@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives this error:
+Hi,
 
-arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: lvds-encoder:
-'ports' is a required property
+Media drivers need to iterate through the pipeline and call .s_stream()
+callbacks in the subdevices.
 
-Fix error by adding a ports wrapper for port@0 and port@1
-inside the 'lvds-encoder' node for rk3188-bqedison2qc.
+Instead of repeating code, add helpers for this.
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/
-bridge/lvds-codec.yaml
+These helpers will go walk through the pipeline only visiting entities
+that participates in the stream, i.e. it follow link from sink to source
+(and not the opposite).
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 27 ++++++++++++++++-----------
- 1 file changed, 16 insertions(+), 11 deletions(-)
+Which means that in a topology like this https://bit.ly/3b2MxjI
+calling v4l2_pipeline_stream_enable() from rkisp1_mainpath won't call
+.s_stream(true) for rkisp1_resizer_selfpath.
 
-diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index 8afb2fd5d..66a0ff196 100644
---- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-+++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -58,20 +58,25 @@
- 
- 	lvds-encoder {
- 		compatible = "ti,sn75lvds83", "lvds-encoder";
--		#address-cells = <1>;
--		#size-cells = <0>;
- 
--		port@0 {
--			reg = <0>;
--			lvds_in_vop0: endpoint {
--				remote-endpoint = <&vop0_out_lvds>;
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+
-+				lvds_in_vop0: endpoint {
-+					remote-endpoint = <&vop0_out_lvds>;
-+				};
- 			};
--		};
- 
--		port@1 {
--			reg = <1>;
--			lvds_out_panel: endpoint {
--				remote-endpoint = <&panel_in_lvds>;
-+			port@1 {
-+				reg = <1>;
-+
-+				lvds_out_panel: endpoint {
-+					remote-endpoint = <&panel_in_lvds>;
-+				};
- 			};
- 		};
- 	};
+stream_count variable was added in v4l2_subdevice to handle nested calls
+to the helpers.
+This is useful when the driver allows streaming from more then one
+capture device sharing subdevices.
+
+This patch came from the error I was facing when multistreaming from
+rkisp1 driver, where stopping one capture would call s_stream(false) in
+the pipeline, causing a stall in the second capture device.
+
+Also, the vimc patch https://patchwork.kernel.org/patch/10948833/ won't
+be required with this patchset.
+
+This patchset was tested on rkisp1 and vimc drivers.
+
+Other cleanup might be possible (but I won't add in this patchset as I
+don't have the hw to test):
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/omap3isp/isp.c#n697
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/qcom/camss/camss-video.c#n430
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/stm32/stm32-dcmi.c#n680
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/xilinx/xilinx-dma.c#n97
+
+Overview of patches:
+====================
+
+Patch 1/4 adds a new iterator function to follow links from sink to
+source only.
+
+Path 2/4 adds the helpers in v4l2-common.c, allowing nested calls by
+adding stream_count in the subdevice struct.
+
+Patch 3/4 cleanup rkisp1 driver to use the helpers.
+
+Patch 4/4 cleanup vimc driver to use the helpers.
+
+
+Helen Koike (4):
+  media: mc-entity.c: add media_graph_walk_next_stream()
+  media: v4l2-common: add helper functions to call s_stream() callbacks
+  media: staging: rkisp1: use v4l2_pipeline_stream_{enable,disable}
+    helpers
+  media: vimc: use v4l2_pipeline_stream_{enable,disable} helpers
+
+ drivers/media/mc/mc-entity.c                  | 34 ++++++-
+ drivers/media/platform/vimc/vimc-capture.c    | 28 ++++--
+ drivers/media/platform/vimc/vimc-streamer.c   | 49 +--------
+ drivers/media/v4l2-core/v4l2-common.c         | 99 +++++++++++++++++++
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 74 +-------------
+ include/media/media-entity.h                  | 15 +++
+ include/media/v4l2-common.h                   | 30 ++++++
+ include/media/v4l2-subdev.h                   |  2 +
+ 8 files changed, 204 insertions(+), 127 deletions(-)
+
 -- 
-2.11.0
+2.25.0
 
 
 _______________________________________________
