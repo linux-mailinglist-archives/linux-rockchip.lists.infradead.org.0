@@ -2,107 +2,107 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B09187B3F
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 09:29:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB5DE187DA5
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 10:59:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8vHKIys5l9M0p5cFUImqCQ+mV5QcWPXy8UjuFPgfquY=; b=jfhEIwZm0jbRN9
-	3PJ/g7cDnliAe++0T21VDdOk6Oefb3fl29U7og+i9e/HRvt2SQvineXHfAX2gSlOCJs5MU71z9mWz
-	zdXzRFTieGLY2hRICQu/seADms4ezsHJEQ4+4Yzfn8t6TuQmptYfvSv6CGmD8XvsqIBN2w75WxqnR
-	c4KrhLZ5TZF9klMsltxNO3HdDBox4jTcX+2lSMPsdjHUXMYixZuIjMvqg1kKk2/szNOl30nzHOyoU
-	4PDDqGaRsak8Gt+E/jrDT3/iEhp4MicQAhD7Ih48qQZCo/hpbn3M4JZMqTiahNg56YO5IsSwanITI
-	Fwy/WzJDTzhWwYxCT4MA==;
+	List-Owner; bh=I2bHvJdOp207pBhwmYKE6sE2vkeIJRO9qhQALYFu3PQ=; b=pap5RFKgKuz1nV
+	x6ANACZwc8lmKbTVHpiEDJFpHAhUhO3ca/31n8Gbu5HNG+dYwpO0EdTBr+CI2MRlHRFZf8FKCE+Wg
+	jP8tYGwesSYwJdUTMN/hyz6DmOXqUDKcSPeYk8H8pUTUOOlzCWyYT1KkZkf0jZRDQERKTtRSdfW2Z
+	Heo8GdBxHE4auQKq0UQPIr8+NxCwq6ynK+sbXFjA1c/htqkKK/f4LDovphNsF3RtKA21jfJy3Sf2V
+	bUtvpMLbkABxCjJWXeSRuog8T2Q/WZm+g5AVIOrLNlGX0E6aBvQTllj8iBIca7VbrQTqz3R09qcZe
+	9d1vaTD7rLqyGjTD2AUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE7bS-00038H-7u; Tue, 17 Mar 2020 08:29:34 +0000
-Received: from mail-eopbgr1400127.outbound.protection.outlook.com
- ([40.107.140.127] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1jE90e-00035I-JS; Tue, 17 Mar 2020 09:59:40 +0000
+Received: from mail-eopbgr1410115.outbound.protection.outlook.com
+ ([40.107.141.115] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE7bF-0002ob-Kv; Tue, 17 Mar 2020 08:29:24 +0000
+ id 1jE90O-0002vL-GL; Tue, 17 Mar 2020 09:59:26 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EODR3Rhkb7l1V/w7e2bZ6D2jLGYZoKRyKVrsaRuIC16k+SUUB/vb4ByPnsNO1j5mYVqddwwKzCHelpsV2xV1stFJJAuyxobeREPZC7MR8fwdjOzKdiepnZnZRipQIQCi50EQrwHizeql2iHQF83qnmkXJUtNoigk3bmHT7hVAZORCl9orlwjvUBpls176xqOBEdPfXF/PyP/xxgj/hL4l8Si5nDAXmvP9QZf2316JUVOaXKmR9ooiac8ZwUR82DPA2cm4q/43y1tuacmENyzvkQNYXn9aVCf3hO9NLc4d7DgYoZm+t2O0eP5OO9qqLW0XYLp5j2J/P4+My40bsS9eQ==
+ b=Gl5v+ZFC8Zh9bqWBRQGyetYn1mSG/nE2IEdh2Pz46I6xnBQSZMTRFOyhEjhcaqq4ANxgMUFcFCdv37h0wtoLgmCvEAVlggqseUWcLjookv2+WnZJB2louTxfgNHyVnGZox1VKNIwkS1EyCxJ7H33tXp5wAuS+CFRuBN8uL+PH42xQ2Li+aGYq90usyhzKwmGV+IZdbnUD9HZYplkxOgLYnlRIB1Qp+ieCXaN2BIKeAbxQ1FRqiS5zw0Xk7qwiScLyYn7PZC8TO/6wabiFa4q0swF/HpWhQVW4lRw/ZRzWKH+fqHkuTJilVI274+xDVJ6smaSql7XGGD5EvyDW/ZuVQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t+hb1wGoS9Gc8Is/SOw//s41JqYi9EiKPzZM2BMYz5o=;
- b=acpT6igvqX8M5VUmu70HrfaRTnraKfvBOeaoGrsPWOE+B5h5DNZAs9jHHYqJ1PxRtE1qaa9wyMHzO1rxeXKj0Zp6T0aDzDDu1E9WToTx+b4WNVPyoOq5xm7ZNfdjMQHQEgPPPwx27BRzCiCEJaUFF2LHHpT4CC/H3NyZ3pNJn4M6yLnp4iplfxgC9YQcMCS+apza0txyxbQWxUSx1wDMV1KdBDLZTmu8tMLk/nfLP44YdIx++9ZjUizCQKy3TGuR/ut66GWS44D4Iu6iMKhvKoPR+hru5ozMoCPdBl0FFbPIObXyBgG/UVNZAwrnzJU6zD9ZF8xC5DxVERwRDJ+Lag==
+ bh=fePM37l7GGMckJ+yLTGu3BPLxB5feX/N1muhSe/6L9w=;
+ b=dEL3JadugBzMHs+aanUHgHR8FdaAU6IyQP+YPZZCpd9ksRi/XiQI3HgL1AykXjnxxp4NQTA8PNj29ygSVxCJRgNw+GjGaSQqROhyn4kMoS9jHuH/UxZ6jTZmTKMGnoilLf5Tec+A1UpOAuVMpnKiQ1GU0aarY0j6MyExvUJuL1mDJWuCQ5iPPNy+tmNdpz5mZXfl4NxGd4tbxzCFvrQqTJRJrlhWqOsCijLcUGSP1RYVK1JG7fiZFmazXIQcsLntWT6Q3qssGWoEgWkxpSW5QNuAVMSJZzU3AtWvgaLz7IWs5lT035WWmV2qrD5HumPGqBMO7hc/ZOLW4IkOoN6y7g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t+hb1wGoS9Gc8Is/SOw//s41JqYi9EiKPzZM2BMYz5o=;
- b=hontv9zwaWVfWEsrstkAnGwkPfDqL1sVQK591v1rxX/oc6vzpYIY0z/G1/pkHvswyupWDUW9xyqn1EKZvKNY2ghCzpBlYEACG53sfgN898aj+cBj2wFc7kcTxIuqmRVa05JOEoyNoOdx5lbCbdKTDbcJI+o7xaQ9fE4wxDlZUic=
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
- OSBPR01MB2616.jpnprd01.prod.outlook.com (52.134.253.73) with Microsoft SMTP
+ bh=fePM37l7GGMckJ+yLTGu3BPLxB5feX/N1muhSe/6L9w=;
+ b=bB5mBFcJnblz1V+8hzKAqv5IeHmrhJ4fJgRj1WKGZlQyBj3x7A/8/Apm2sc9vNXjh4vrR0B5Vaq05Ti+OVSzq/gVRgPB23g3aToDJFNf+pzT0qJPP1gzYU6tCqot3GH9gcw162dCm9Z3+0f8kNHgQFTenDjOIhzQJ6Fan9jzq5k=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB3952.jpnprd01.prod.outlook.com (20.178.139.75) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.22; Tue, 17 Mar 2020 08:29:17 +0000
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b%5]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
- 08:29:17 +0000
-From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Lad Prabhakar
- <prabhakar.csengg@gmail.com>
-Subject: RE: [PATCH v5 2/7] PCI: rcar: Move shareable code to a common file
-Thread-Topic: [PATCH v5 2/7] PCI: rcar: Move shareable code to a common file
-Thread-Index: AQHV7k2coenBQgwOOESYP68l9QNRTahMfTGAgAASLqA=
-Date: Tue, 17 Mar 2020 08:29:17 +0000
-Message-ID: <OSBPR01MB3590A81511AD004519F1A20BAAF60@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+ 15.20.2814.14; Tue, 17 Mar 2020 09:59:20 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 09:59:20 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Lad Prabhakar <prabhakar.csengg@gmail.com>
+Subject: RE: [PATCH v5 6/7] PCI: rcar: Add support for rcar PCIe controller in
+ endpoint mode
+Thread-Topic: [PATCH v5 6/7] PCI: rcar: Add support for rcar PCIe controller
+ in endpoint mode
+Thread-Index: AQHV7k2o5Onf4KClakaz57hoModJO6hMjyUw
+Date: Tue, 17 Mar 2020 09:59:19 +0000
+Message-ID: <TYAPR01MB4544EAC877ADD0664CB93FF5D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
 References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200228154122.14164-3-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB45444A34A4B2DC6F8594EABFD8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB45444A34A4B2DC6F8594EABFD8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
+ <20200228154122.14164-7-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200228154122.14164-7-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
-x-originating-ip: [193.141.220.21]
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 82c7292b-7b64-44f5-ed78-08d7ca4d489a
-x-ms-traffictypediagnostic: OSBPR01MB2616:|OSBPR01MB2616:
+x-ms-office365-filtering-correlation-id: 3be9faa8-1476-40db-7923-08d7ca59dce6
+x-ms-traffictypediagnostic: TYAPR01MB3952:|TYAPR01MB3952:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSBPR01MB261662ABDFE001710DEC867DAAF60@OSBPR01MB2616.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <TYAPR01MB39524DA68CEC2FCCF52D60F2D8F60@TYAPR01MB3952.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0345CFD558
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(346002)(376002)(39860400002)(366004)(396003)(199004)(81166006)(86362001)(81156014)(7416002)(5660300002)(55016002)(4326008)(7696005)(316002)(8936002)(8676002)(9686003)(71200400001)(52536014)(30864003)(478600001)(54906003)(186003)(2906002)(66556008)(66946007)(64756008)(110136005)(76116006)(53546011)(66446008)(26005)(33656002)(6506007)(66476007)(579004)(559001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB2616;
- H:OSBPR01MB3590.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; 
-received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ SFS:(10019020)(4636009)(136003)(366004)(346002)(39860400002)(376002)(396003)(199004)(478600001)(2906002)(8936002)(8676002)(33656002)(81166006)(81156014)(86362001)(64756008)(71200400001)(6916009)(26005)(4326008)(5660300002)(6506007)(186003)(52536014)(55236004)(55016002)(7416002)(9686003)(7696005)(66946007)(76116006)(66476007)(54906003)(316002)(66446008)(66556008);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB3952;
+ H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 7O/wElT0VrGzY6QE0JYh16qFznYp+xsZpXAi4jLmd0Gtx3sCNVUNJHkpGEVaeuTMXy1KaLG5ZPS2AGenW6FqHdX8wCs8jJQocDysYMERO99GuIJE1GXPdPlXCQp7vrnlYqSNpn9yuic/CexIWk/I8N6iMsFe0OL4FMMQkhq9AKJxZm97+VCftKyca5Nv8sbnSfrJYt2lAVxjlZbNfzu2qovtKEnEnquhSjJQeObu+3mgRF96OUqoefZ0kM12PBf52rPewbhY43F2VH+xeFvcpWxA2S1AACQV1lRM1fBR7Z2CfxMADXYtTREa1OVwhdOXS5kNIYBb5TOh2QU932RmEIzZ84U+ab8SvF6anOb0sFJ2o+1p08mURcQ1z2lq5KaM0iMwLRcgiA1TdrXT4z9V7P/E6muVJGkWiU/nj8ikHvkFsZMTY92KA3zOM24U445H
-x-ms-exchange-antispam-messagedata: D/CtWk7aTLGvWdY/zO+R6DCoPTWyTaX74LCyLVKpAoCcNPp8pChgOD24AwtDqtY4Ju4sz7ZSu9d1feZwshiEE8RZZl4CiaLTomF9xYa+uL3wHnjc1NvvfbsnTc07sXoYg39QACgaTzYfzCEpM5KyTw==
+x-microsoft-antispam-message-info: kCvVIzyawL0LRlasqf0t3E0W6e1bHkK7KTILgx/OBJQJ/WtoetLWXMREf2JSMkkejSr7X8zPy5fjp8jxUlmCJYA2Hs7EGa90xoCxfQ1X+8RCo+CNsvLQGirGUPxI5uy0tsUBLvJxQPECBn1Z3N4jPeF8yLGtxBfO2uabO6+ETC6rSzDN/We3Vd8bE9EIG4WdXgIbQQm5BJpaKY+82hMFWtG6kAWiMZFxctVv23x1yyZyI59CGaLzSo9MQT/fdQBrX1jiZMd5QHMYQBCB+fcnBsnjYqkkpNHv4hJDDIPYSrsEVmb/9Ko82igWa30Clsc5FpJ5cQ/ZjE1npFICUR+acYxHt/XvYFl31PtdrPACJhtx+MZtnvWaSHEk4JABzxs9tMGErAqwK8hKtA019b+S2pk4yW/PDMDc8JUM8C2SIXNejXfgjjEx5+7zlXy8B6HO
+x-ms-exchange-antispam-messagedata: TdQOESFzqF6eHW+kCjGt1UCormjZBUILTU8Zkoy5pdD8wKsV2Y8B7ElG8FMlrAQzaAGHdyw1+H9I1psD37qoYh+qRgmQJAZzSEY+k8gyiWzMDCj5R77OzKRRVg4TfHO3LxOvZhaflmZkIvRTzA0HBA==
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 82c7292b-7b64-44f5-ed78-08d7ca4d489a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 08:29:17.3631 (UTC)
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3be9faa8-1476-40db-7923-08d7ca59dce6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 09:59:20.1087 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rz04nIy0ZF9C2HybcO8zaH70YAPB2DqyaSLFYoTTbNtaEp4tSvgib2n1SlCRQJugTTmhSFq9HTDpR2qy8lAoCXQBEEUbp3860b+Iv2Fs74s71bKYx+pmk8PF43cB1hdg
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2616
+X-MS-Exchange-CrossTenant-userprincipalname: ttpo8Vd7ZyUv2/bFyEt+mHbLfEyvT3S3hM9USU9hID2foarIFKEhfvaaJ+/aPb0D8c7Z4JuLKFiVOUtioW2SvEVoGbYBSSjbXTYc1RCCDsc40qxWzpJ0AJ5uwsM0Prvl
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3952
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_012921_813714_7A3785DD 
-X-CRM114-Status: GOOD (  28.88  )
+X-CRM114-CacheID: sfid-20200317_025924_592923_A99CBCC9 
+X-CRM114-Status: GOOD (  25.23  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.127 listed in list.dnswl.org]
+ no trust [40.107.141.115 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -120,1023 +120,206 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
  "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Jingoo Han <jingoohan1@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Yoshihiro-san,
+Hi Prabhakar-san,
 
-Thank you for the review.
+Thank you for the patch!
 
-> -----Original Message-----
-> From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> Sent: 17 March 2020 07:23
-> To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>; linux-pci@vger.kernel.org;
-> linux-arm-kernel@lists.infradead.org; linux-renesas-soc@vger.kernel.org;
-> linux-rockchip@lists.infradead.org; linux-kernel@vger.kernel.org;
-> devicetree@vger.kernel.org; Prabhakar Mahadev Lad <prabhakar.mahadev-
-> lad.rj@bp.renesas.com>; Bjorn Helgaas <bhelgaas@google.com>; Rob
-> Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>;
-> Catalin Marinas <catalin.marinas@arm.com>; Will Deacon <will@kernel.org>;
-> Kishon Vijay Abraham I <kishon@ti.com>; Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com>; Arnd Bergmann <arnd@arndb.de>; Greg
-> Kroah-Hartman <gregkh@linuxfoundation.org>; Jingoo Han
-> <jingoohan1@gmail.com>; Gustavo Pimentel
-> <gustavo.pimentel@synopsys.com>; Marek Vasut
-> <marek.vasut+renesas@gmail.com>; Shawn Lin <shawn.lin@rock-
-> chips.com>; Heiko Stuebner <heiko@sntech.de>
-> Subject: RE: [PATCH v5 2/7] PCI: rcar: Move shareable code to a common file
->
-> Hi Prabhakar-san,
->
-> Thank you for the patch!
->
-> > From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
-> >
-> > This patch moves sharable code to common file pcie-rcar.c and the
-> > #defines to pcie-rcar.h so that the common code can be reused with
-> endpoint driver.
-> > There are no functional changes with this patch for the host
-> > controller driver.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-
-> lad.rj@bp.renesas.com>
-> > ---
-> >  drivers/pci/controller/Makefile         |   2 +-
-> >  drivers/pci/controller/pcie-rcar-host.c | 358 ++++++++------------------------
-> >  drivers/pci/controller/pcie-rcar.c      | 117 +++++++++++
-> >  drivers/pci/controller/pcie-rcar.h      | 125 +++++++++++
-> >  4 files changed, 324 insertions(+), 278 deletions(-)  create mode
-> > 100644 drivers/pci/controller/pcie-rcar.c
-> >  create mode 100644 drivers/pci/controller/pcie-rcar.h
-> >
-> > diff --git a/drivers/pci/controller/Makefile
-> > b/drivers/pci/controller/Makefile index 4ca2da6..b4ada32 100644
-> > --- a/drivers/pci/controller/Makefile
-> > +++ b/drivers/pci/controller/Makefile
-> > @@ -7,7 +7,7 @@ obj-$(CONFIG_PCI_MVEBU) += pci-mvebu.o
-> >  obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
-> >  obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
-> >  obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
-> > -obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar-host.o
-> > +obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar.o pcie-rcar-host.o
-> >  obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
-> >  obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
-> >  obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o diff --git
-> > a/drivers/pci/controller/pcie-rcar-host.c
-> > b/drivers/pci/controller/pcie-rcar-host.c
-> > index 759c654..93f22d8 100644
-> > --- a/drivers/pci/controller/pcie-rcar-host.c
-> > +++ b/drivers/pci/controller/pcie-rcar-host.c
-> > @@ -1,7 +1,7 @@
-> >  // SPDX-License-Identifier: GPL-2.0
-> >  /*
-> >   * PCIe driver for Renesas R-Car SoCs
-> > - *  Copyright (C) 2014 Renesas Electronics Europe Ltd
-> > + *  Copyright (C) 2014-2020 Renesas Electronics Europe Ltd
-> >   *
-> >   * Based on:
-> >   *  arch/sh/drivers/pci/pcie-sh7786.c @@ -30,104 +30,7 @@  #include
-> > <linux/pm_runtime.h>  #include <linux/slab.h>
-> >
-> > -#define PCIECAR0x000010
-> > -#define PCIECCTLR0x000018
-> > -#define  CONFIG_SEND_ENABLEBIT(31)
-> > -#define  TYPE0(0 << 8)
-> > -#define  TYPE1BIT(8)
-> > -#define PCIECDR0x000020
-> > -#define PCIEMSR0x000028
-> > -#define PCIEINTXR0x000400
-> > -#define PCIEPHYSR0x0007f0
-> > -#define  PHYRDYBIT(0)
-> > -#define PCIEMSITXR0x000840
-> > -
-> > -/* Transfer control */
-> > -#define PCIETCTLR0x02000
-> > -#define  DL_DOWNBIT(3)
-> > -#define  CFINITBIT(0)
-> > -#define PCIETSTR0x02004
-> > -#define  DATA_LINK_ACTIVEBIT(0)
-> > -#define PCIEERRFR0x02020
-> > -#define  UNSUPPORTED_REQUESTBIT(4)
-> > -#define PCIEMSIFR0x02044
-> > -#define PCIEMSIALR0x02048
-> > -#define  MSIFEBIT(0)
-> > -#define PCIEMSIAUR0x0204c
-> > -#define PCIEMSIIER0x02050
-> > -
-> > -/* root port address */
-> > -#define PCIEPRAR(x)(0x02080 + ((x) * 0x4))
-> > -
-> > -/* local address reg & mask */
-> > -#define PCIELAR(x)(0x02200 + ((x) * 0x20))
-> > -#define PCIELAMR(x)(0x02208 + ((x) * 0x20))
-> > -#define  LAM_PREFETCHBIT(3)
-> > -#define  LAM_64BITBIT(2)
-> > -#define  LAR_ENABLEBIT(1)
-> > -
-> > -/* PCIe address reg & mask */
-> > -#define PCIEPALR(x)(0x03400 + ((x) * 0x20))
-> > -#define PCIEPAUR(x)(0x03404 + ((x) * 0x20))
-> > -#define PCIEPAMR(x)(0x03408 + ((x) * 0x20))
-> > -#define PCIEPTCTLR(x)(0x0340c + ((x) * 0x20))
-> > -#define  PAR_ENABLEBIT(31)
-> > -#define  IO_SPACEBIT(8)
-> > -
-> > -/* Configuration */
-> > -#define PCICONF(x)(0x010000 + ((x) * 0x4))
-> > -#define PMCAP(x)(0x010040 + ((x) * 0x4))
-> > -#define EXPCAP(x)(0x010070 + ((x) * 0x4))
-> > -#define VCCAP(x)(0x010100 + ((x) * 0x4))
-> > -
-> > -/* link layer */
-> > -#define IDSETR10x011004
-> > -#define TLCTLR0x011048
-> > -#define MACSR0x011054
-> > -#define  SPCHGFINBIT(4)
-> > -#define  SPCHGFAILBIT(6)
-> > -#define  SPCHGSUCBIT(7)
-> > -#define  LINK_SPEED(0xf << 16)
-> > -#define  LINK_SPEED_2_5GTS(1 << 16)
-> > -#define  LINK_SPEED_5_0GTS(2 << 16)
-> > -#define MACCTLR0x011058
-> > -#define  MACCTLR_NFTS_MASKGENMASK(23, 16)/* The name
-> is from SH7786 */
-> > -#define  SPEED_CHANGEBIT(24)
-> > -#define  SCRAMBLE_DISABLEBIT(27)
-> > -#define  LTSMDISBIT(31)
-> > -#define  MACCTLR_INIT_VAL(LTSMDIS | MACCTLR_NFTS_MASK)
-> > -#define PMSR0x01105c
-> > -#define MACS2R0x011078
-> > -#define MACCGSPSETR0x011084
-> > -#define  SPCNGRSNBIT(31)
-> > -
-> > -/* R-Car H1 PHY */
-> > -#define H1_PCIEPHYADRR0x04000c
-> > -#define  WRITE_CMDBIT(16)
-> > -#define  PHY_ACKBIT(24)
-> > -#define  RATE_POS12
-> > -#define  LANE_POS8
-> > -#define  ADR_POS0
-> > -#define H1_PCIEPHYDOUTR0x040014
-> > -
-> > -/* R-Car Gen2 PHY */
-> > -#define GEN2_PCIEPHYADDR0x780
-> > -#define GEN2_PCIEPHYDATA0x784
-> > -#define GEN2_PCIEPHYCTRL0x78c
-> > -
-> > -#define INT_PCI_MSI_NR32
-> > -
-> > -#define RCONF(x)(PCICONF(0) + (x))
-> > -#define RPMCAP(x)(PMCAP(0) + (x))
-> > -#define REXPCAP(x)(EXPCAP(0) + (x))
-> > -#define RVCCAP(x)(VCCAP(0) + (x))
-> > -
-> > -#define PCIE_CONF_BUS(b)(((b) & 0xff) << 24)
-> > -#define PCIE_CONF_DEV(d)(((d) & 0x1f) << 19)
-> > -#define PCIE_CONF_FUNC(f)(((f) & 0x7) << 16)
-> > -
-> > -#define RCAR_PCI_MAX_RESOURCES4
-> > -#define MAX_NR_INBOUND_MAPS6
-> > +#include "pcie-rcar.h"
-> >
-> >  struct rcar_msi {
-> >  DECLARE_BITMAP(used, INT_PCI_MSI_NR); @@ -155,36 +58,10 @@
-> struct
-> > rcar_pcie {
-> >  structrcar_msi msi;
-> >  };
-> >
-> > -static void rcar_pci_write_reg(struct rcar_pcie *pcie, u32 val,
-> > -       unsigned int reg)
-> > -{
-> > -writel(val, pcie->base + reg);
-> > -}
-> > -
-> > -static u32 rcar_pci_read_reg(struct rcar_pcie *pcie, unsigned int
-> > reg) -{
-> > -return readl(pcie->base + reg);
-> > -}
-> > -
-> > -enum {
-> > -RCAR_PCI_ACCESS_READ,
-> > -RCAR_PCI_ACCESS_WRITE,
-> > -};
-> > -
-> > -static void rcar_rmw32(struct rcar_pcie *pcie, int where, u32 mask,
-> > u32 data) -{
-> > -unsigned int shift = BITS_PER_BYTE * (where & 3);
-> > -u32 val = rcar_pci_read_reg(pcie, where & ~3);
-> > -
-> > -val &= ~(mask << shift);
-> > -val |= data << shift;
-> > -rcar_pci_write_reg(pcie, val, where & ~3);
-> > -}
-> > -
-> >  static u32 rcar_read_conf(struct rcar_pcie *pcie, int where)  {
-> >  unsigned int shift = BITS_PER_BYTE * (where & 3);
-> > -u32 val = rcar_pci_read_reg(pcie, where & ~3);
-> > +u32 val = rcar_pci_read_reg(pcie->base, where & ~3);
->
-> I'd like to avoid these many changes about "pcie" to "pcie->base" somehow.
-> My idea is moving declaration of struct rcar_pcie to rcar-pcie.h and use it
-> from both host and ep codes. According to the patch 6/7, the rcar-pcie-ep.c
-> also has the same name of struct rcar_pcie and this has the same "base" and
-> "dev.
-> So, common rcar_pcie should have these members. Remaining members are
-> contained on renamed structures like "rcar_pcie_host" and "rcar_pcie_ep".
-> And then, the rcar_pcie_{host,ep} have struct rcar_pcie pcie member.
->
-Agreed will do that.
+> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
+> 
+> This patch adds support for rcar PCIe controller to work in endpoint mode.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  drivers/pci/controller/Kconfig        |   8 +
+>  drivers/pci/controller/Makefile       |   1 +
+>  drivers/pci/controller/pcie-rcar-ep.c | 490 ++++++++++++++++++++++++++++++++++
+>  drivers/pci/controller/pcie-rcar.h    |   4 +
+>  4 files changed, 503 insertions(+)
+>  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+> 
+> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> index 37e0ea7..9bf4b02 100644
+> --- a/drivers/pci/controller/Kconfig
+> +++ b/drivers/pci/controller/Kconfig
+> @@ -62,6 +62,14 @@ config PCIE_RCAR_HOST
+>  	  Say Y here if you want PCIe controller support on R-Car SoCs in host
+>  	  mode.
+> 
+> +config PCIE_RCAR_EP
+> +	bool "Renesas R-Car PCIe endpoint controller"
+> +	depends on ARCH_RENESAS || COMPILE_TEST
+> +	depends on PCI_ENDPOINT
+> +	help
+> +	  Say Y here if you want PCIe controller support on R-Car SoCs in
+> +	  endpoint mode.
+> +
+>  config PCI_HOST_COMMON
+>  	bool
+>  	select PCI_ECAM
+> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> index b4ada32..067bd33 100644
+> --- a/drivers/pci/controller/Makefile
+> +++ b/drivers/pci/controller/Makefile
+> @@ -8,6 +8,7 @@ obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
+>  obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
+>  obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
+>  obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar.o pcie-rcar-host.o
+> +obj-$(CONFIG_PCIE_RCAR_EP) += pcie-rcar.o pcie-rcar-ep.o
+>  obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
+>  obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
+>  obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o
+> diff --git a/drivers/pci/controller/pcie-rcar-ep.c b/drivers/pci/controller/pcie-rcar-ep.c
+> new file mode 100644
+> index 0000000..db89bbe
+> --- /dev/null
+> +++ b/drivers/pci/controller/pcie-rcar-ep.c
+> @@ -0,0 +1,490 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * PCIe endpoint driver for Renesas R-Car SoCs
+> + *  Copyright (c) 2020 Renesas Electronics Europe GmbH
+> + *
+> + * Author: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/of_pci.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/pci.h>
+> +#include <linux/pci-epc.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +
+> +#include "pcie-rcar.h"
+> +
+> +/* Structure representing the PCIe interface */
+> +struct rcar_pcie {
+> +	phys_addr_t		*ob_addr;
 
-Cheers,
---Prabhakar
+I think "ob_mapped_addr" is better.
 
-> Best regards,
-> Yoshihiro Shimoda
->
-> >  return val >> shift;
-> >  }
-> > @@ -221,13 +98,13 @@ static int rcar_pcie_config_access(struct rcar_pcie
-> *pcie,
-> >  return PCIBIOS_DEVICE_NOT_FOUND;
-> >
-> >  if (access_type == RCAR_PCI_ACCESS_READ) {
-> > -*data = rcar_pci_read_reg(pcie, PCICONF(index));
-> > +*data = rcar_pci_read_reg(pcie->base,
-> PCICONF(index));
-> >  } else {
-> >  /* Keep an eye out for changes to the root bus
-> number */
-> >  if (pci_is_root_bus(bus) && (reg ==
-> PCI_PRIMARY_BUS))
-> >  pcie->root_bus_nr = *data & 0xff;
-> >
-> > -rcar_pci_write_reg(pcie, *data, PCICONF(index));
-> > +rcar_pci_write_reg(pcie->base, *data,
-> PCICONF(index));
-> >  }
-> >
-> >  return PCIBIOS_SUCCESSFUL;
-> > @@ -237,20 +114,23 @@ static int rcar_pcie_config_access(struct rcar_pcie
-> *pcie,
-> >  return PCIBIOS_DEVICE_NOT_FOUND;
-> >
-> >  /* Clear errors */
-> > -rcar_pci_write_reg(pcie, rcar_pci_read_reg(pcie, PCIEERRFR),
-> PCIEERRFR);
-> > +rcar_pci_write_reg(pcie->base, rcar_pci_read_reg(pcie->base,
-> PCIEERRFR),
-> > +   PCIEERRFR);
-> >
-> >  /* Set the PIO address */
-> > -rcar_pci_write_reg(pcie, PCIE_CONF_BUS(bus->number) |
-> > +rcar_pci_write_reg(pcie->base, PCIE_CONF_BUS(bus->number) |
-> >  PCIE_CONF_DEV(dev) | PCIE_CONF_FUNC(func) | reg,
-> PCIECAR);
-> >
-> >  /* Enable the configuration access */
-> >  if (bus->parent->number == pcie->root_bus_nr)
-> > -rcar_pci_write_reg(pcie, CONFIG_SEND_ENABLE | TYPE0,
-> PCIECCTLR);
-> > +rcar_pci_write_reg(pcie->base, CONFIG_SEND_ENABLE |
-> TYPE0,
-> > +   PCIECCTLR);
-> >  else
-> > -rcar_pci_write_reg(pcie, CONFIG_SEND_ENABLE | TYPE1,
-> PCIECCTLR);
-> > +rcar_pci_write_reg(pcie->base, CONFIG_SEND_ENABLE |
-> TYPE1,
-> > +   PCIECCTLR);
-> >
-> >  /* Check for errors */
-> > -if (rcar_pci_read_reg(pcie, PCIEERRFR) & UNSUPPORTED_REQUEST)
-> > +if (rcar_pci_read_reg(pcie->base, PCIEERRFR) &
-> UNSUPPORTED_REQUEST)
-> >  return PCIBIOS_DEVICE_NOT_FOUND;
-> >
-> >  /* Check for master and target aborts */ @@ -259,12 +139,12 @@
-> > static int rcar_pcie_config_access(struct rcar_pcie *pcie,
-> >  return PCIBIOS_DEVICE_NOT_FOUND;
-> >
-> >  if (access_type == RCAR_PCI_ACCESS_READ)
-> > -*data = rcar_pci_read_reg(pcie, PCIECDR);
-> > +*data = rcar_pci_read_reg(pcie->base, PCIECDR);
-> >  else
-> > -rcar_pci_write_reg(pcie, *data, PCIECDR);
-> > +rcar_pci_write_reg(pcie->base, *data, PCIECDR);
-> >
-> >  /* Disable the configuration access */
-> > -rcar_pci_write_reg(pcie, 0, PCIECCTLR);
-> > +rcar_pci_write_reg(pcie->base, 0, PCIECCTLR);
-> >
-> >  return PCIBIOS_SUCCESSFUL;
-> >  }
-> > @@ -332,41 +212,6 @@ static struct pci_ops rcar_pcie_ops = {
-> >  .write= rcar_pcie_write_conf,
-> >  };
-> >
-> > -static void rcar_pcie_setup_window(int win, struct rcar_pcie *pcie,
-> > -   struct resource *res)
-> > -{
-> > -/* Setup PCIe address space mappings for each resource */
-> > -resource_size_t size;
-> > -resource_size_t res_start;
-> > -u32 mask;
-> > -
-> > -rcar_pci_write_reg(pcie, 0x00000000, PCIEPTCTLR(win));
-> > -
-> > -/*
-> > - * The PAMR mask is calculated in units of 128Bytes, which
-> > - * keeps things pretty simple.
-> > - */
-> > -size = resource_size(res);
-> > -mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> > -rcar_pci_write_reg(pcie, mask << 7, PCIEPAMR(win));
-> > -
-> > -if (res->flags & IORESOURCE_IO)
-> > -res_start = pci_pio_to_address(res->start);
-> > -else
-> > -res_start = res->start;
-> > -
-> > -rcar_pci_write_reg(pcie, upper_32_bits(res_start), PCIEPAUR(win));
-> > -rcar_pci_write_reg(pcie, lower_32_bits(res_start) & ~0x7F,
-> > -   PCIEPALR(win));
-> > -
-> > -/* First resource is for IO */
-> > -mask = PAR_ENABLE;
-> > -if (res->flags & IORESOURCE_IO)
-> > -mask |= IO_SPACE;
-> > -
-> > -rcar_pci_write_reg(pcie, mask, PCIEPTCTLR(win));
-> > -}
-> > -
-> >  static int rcar_pcie_setup(struct list_head *resource, struct
-> > rcar_pcie *pci)  {
-> >  struct resource_entry *win;
-> > @@ -382,7 +227,7 @@ static int rcar_pcie_setup(struct list_head
-> *resource, struct rcar_pcie *pci)
-> >  switch (resource_type(res)) {
-> >  case IORESOURCE_IO:
-> >  case IORESOURCE_MEM:
-> > -rcar_pcie_setup_window(i, pci, res);
-> > +rcar_pcie_set_outbound(i, pci->base, res);
-> >  i++;
-> >  break;
-> >  case IORESOURCE_BUS:
-> > @@ -404,37 +249,38 @@ static void rcar_pcie_force_speedup(struct
-> rcar_pcie *pcie)
-> >  unsigned int timeout = 1000;
-> >  u32 macsr;
-> >
-> > -if ((rcar_pci_read_reg(pcie, MACS2R) & LINK_SPEED) !=
-> LINK_SPEED_5_0GTS)
-> > +if ((rcar_pci_read_reg(pcie->base, MACS2R) & LINK_SPEED) !=
-> > +LINK_SPEED_5_0GTS)
-> >  return;
-> >
-> > -if (rcar_pci_read_reg(pcie, MACCTLR) & SPEED_CHANGE) {
-> > +if (rcar_pci_read_reg(pcie->base, MACCTLR) & SPEED_CHANGE) {
-> >  dev_err(dev, "Speed change already in progress\n");
-> >  return;
-> >  }
-> >
-> > -macsr = rcar_pci_read_reg(pcie, MACSR);
-> > +macsr = rcar_pci_read_reg(pcie->base, MACSR);
-> >  if ((macsr & LINK_SPEED) == LINK_SPEED_5_0GTS)
-> >  goto done;
-> >
-> >  /* Set target link speed to 5.0 GT/s */
-> > -rcar_rmw32(pcie, EXPCAP(12), PCI_EXP_LNKSTA_CLS,
-> > +rcar_rmw32(pcie->base, EXPCAP(12), PCI_EXP_LNKSTA_CLS,
-> >     PCI_EXP_LNKSTA_CLS_5_0GB);
-> >
-> >  /* Set speed change reason as intentional factor */
-> > -rcar_rmw32(pcie, MACCGSPSETR, SPCNGRSN, 0);
-> > +rcar_rmw32(pcie->base, MACCGSPSETR, SPCNGRSN, 0);
-> >
-> >  /* Clear SPCHGFIN, SPCHGSUC, and SPCHGFAIL */
-> >  if (macsr & (SPCHGFIN | SPCHGSUC | SPCHGFAIL))
-> > -rcar_pci_write_reg(pcie, macsr, MACSR);
-> > +rcar_pci_write_reg(pcie->base, macsr, MACSR);
-> >
-> >  /* Start link speed change */
-> > -rcar_rmw32(pcie, MACCTLR, SPEED_CHANGE, SPEED_CHANGE);
-> > +rcar_rmw32(pcie->base, MACCTLR, SPEED_CHANGE,
-> SPEED_CHANGE);
-> >
-> >  while (timeout--) {
-> > -macsr = rcar_pci_read_reg(pcie, MACSR);
-> > +macsr = rcar_pci_read_reg(pcie->base, MACSR);
-> >  if (macsr & SPCHGFIN) {
-> >  /* Clear the interrupt bits */
-> > -rcar_pci_write_reg(pcie, macsr, MACSR);
-> > +rcar_pci_write_reg(pcie->base, macsr, MACSR);
-> >
-> >  if (macsr & SPCHGFAIL)
-> >  dev_err(dev, "Speed change failed\n"); @@
-> -498,7 +344,7 @@ static
-> > int phy_wait_for_ack(struct rcar_pcie *pcie)
-> >  unsigned int timeout = 100;
-> >
-> >  while (timeout--) {
-> > -if (rcar_pci_read_reg(pcie, H1_PCIEPHYADRR) & PHY_ACK)
-> > +if (rcar_pci_read_reg(pcie->base, H1_PCIEPHYADRR) &
-> PHY_ACK)
-> >  return 0;
-> >
-> >  udelay(100);
-> > @@ -521,60 +367,31 @@ static void phy_write_reg(struct rcar_pcie *pcie,
-> >  ((addr & 0xff) << ADR_POS);
-> >
-> >  /* Set write data */
-> > -rcar_pci_write_reg(pcie, data, H1_PCIEPHYDOUTR);
-> > -rcar_pci_write_reg(pcie, phyaddr, H1_PCIEPHYADRR);
-> > +rcar_pci_write_reg(pcie->base, data, H1_PCIEPHYDOUTR);
-> > +rcar_pci_write_reg(pcie->base, phyaddr, H1_PCIEPHYADRR);
-> >
-> >  /* Ignore errors as they will be dealt with if the data link is down */
-> >  phy_wait_for_ack(pcie);
-> >
-> >  /* Clear command */
-> > -rcar_pci_write_reg(pcie, 0, H1_PCIEPHYDOUTR);
-> > -rcar_pci_write_reg(pcie, 0, H1_PCIEPHYADRR);
-> > +rcar_pci_write_reg(pcie->base, 0, H1_PCIEPHYDOUTR);
-> > +rcar_pci_write_reg(pcie->base, 0, H1_PCIEPHYADRR);
-> >
-> >  /* Ignore errors as they will be dealt with if the data link is down */
-> >  phy_wait_for_ack(pcie);
-> >  }
-> >
-> > -static int rcar_pcie_wait_for_phyrdy(struct rcar_pcie *pcie) -{
-> > -unsigned int timeout = 10;
-> > -
-> > -while (timeout--) {
-> > -if (rcar_pci_read_reg(pcie, PCIEPHYSR) & PHYRDY)
-> > -return 0;
-> > -
-> > -msleep(5);
-> > -}
-> > -
-> > -return -ETIMEDOUT;
-> > -}
-> > -
-> > -static int rcar_pcie_wait_for_dl(struct rcar_pcie *pcie) -{
-> > -unsigned int timeout = 10000;
-> > -
-> > -while (timeout--) {
-> > -if ((rcar_pci_read_reg(pcie, PCIETSTR) &
-> DATA_LINK_ACTIVE))
-> > -return 0;
-> > -
-> > -udelay(5);
-> > -cpu_relax();
-> > -}
-> > -
-> > -return -ETIMEDOUT;
-> > -}
-> > -
-> >  static int rcar_pcie_hw_init(struct rcar_pcie *pcie)  {
-> >  int err;
-> >
-> >  /* Begin initialization */
-> > -rcar_pci_write_reg(pcie, 0, PCIETCTLR);
-> > +rcar_pci_write_reg(pcie->base, 0, PCIETCTLR);
-> >
-> >  /* Set mode */
-> > -rcar_pci_write_reg(pcie, 1, PCIEMSR);
-> > +rcar_pci_write_reg(pcie->base, 1, PCIEMSR);
-> >
-> > -err = rcar_pcie_wait_for_phyrdy(pcie);
-> > +err = rcar_pcie_wait_for_phyrdy(pcie->base);
-> >  if (err)
-> >  return err;
-> >
-> > @@ -583,51 +400,51 @@ static int rcar_pcie_hw_init(struct rcar_pcie *pcie)
-> >   * class to match. Hardware takes care of propagating the IDSETR
-> >   * settings, so there is no need to bother with a quirk.
-> >   */
-> > -rcar_pci_write_reg(pcie, PCI_CLASS_BRIDGE_PCI << 16, IDSETR1);
-> > +rcar_pci_write_reg(pcie->base, PCI_CLASS_BRIDGE_PCI << 16,
-> IDSETR1);
-> >
-> >  /*
-> >   * Setup Secondary Bus Number & Subordinate Bus Number, even
-> though
-> >   * they aren't used, to avoid bridge being detected as broken.
-> >   */
-> > -rcar_rmw32(pcie, RCONF(PCI_SECONDARY_BUS), 0xff, 1);
-> > -rcar_rmw32(pcie, RCONF(PCI_SUBORDINATE_BUS), 0xff, 1);
-> > +rcar_rmw32(pcie->base, RCONF(PCI_SECONDARY_BUS), 0xff, 1);
-> > +rcar_rmw32(pcie->base, RCONF(PCI_SUBORDINATE_BUS), 0xff, 1);
-> >
-> >  /* Initialize default capabilities. */
-> > -rcar_rmw32(pcie, REXPCAP(0), 0xff, PCI_CAP_ID_EXP);
-> > -rcar_rmw32(pcie, REXPCAP(PCI_EXP_FLAGS),
-> > -PCI_EXP_FLAGS_TYPE, PCI_EXP_TYPE_ROOT_PORT << 4);
-> > -rcar_rmw32(pcie, RCONF(PCI_HEADER_TYPE), 0x7f,
-> > -PCI_HEADER_TYPE_BRIDGE);
-> > +rcar_rmw32(pcie->base, REXPCAP(0), 0xff, PCI_CAP_ID_EXP);
-> > +rcar_rmw32(pcie->base, REXPCAP(PCI_EXP_FLAGS),
-> > +   PCI_EXP_FLAGS_TYPE, PCI_EXP_TYPE_ROOT_PORT << 4);
-> > +rcar_rmw32(pcie->base, RCONF(PCI_HEADER_TYPE), 0x7f,
-> > +   PCI_HEADER_TYPE_BRIDGE);
-> >
-> >  /* Enable data link layer active state reporting */
-> > -rcar_rmw32(pcie, REXPCAP(PCI_EXP_LNKCAP),
-> PCI_EXP_LNKCAP_DLLLARC,
-> > -PCI_EXP_LNKCAP_DLLLARC);
-> > +rcar_rmw32(pcie->base, REXPCAP(PCI_EXP_LNKCAP),
-> PCI_EXP_LNKCAP_DLLLARC,
-> > +   PCI_EXP_LNKCAP_DLLLARC);
-> >
-> >  /* Write out the physical slot number = 0 */
-> > -rcar_rmw32(pcie, REXPCAP(PCI_EXP_SLTCAP),
-> PCI_EXP_SLTCAP_PSN, 0);
-> > +rcar_rmw32(pcie->base, REXPCAP(PCI_EXP_SLTCAP),
-> PCI_EXP_SLTCAP_PSN,
-> > +0);
-> >
-> >  /* Set the completion timer timeout to the maximum 50ms. */
-> > -rcar_rmw32(pcie, TLCTLR + 1, 0x3f, 50);
-> > +rcar_rmw32(pcie->base, TLCTLR + 1, 0x3f, 50);
-> >
-> >  /* Terminate list of capabilities (Next Capability Offset=0) */
-> > -rcar_rmw32(pcie, RVCCAP(0), 0xfff00000, 0);
-> > +rcar_rmw32(pcie->base, RVCCAP(0), 0xfff00000, 0);
-> >
-> >  /* Enable MSI */
-> >  if (IS_ENABLED(CONFIG_PCI_MSI))
-> > -rcar_pci_write_reg(pcie, 0x801f0000, PCIEMSITXR);
-> > +rcar_pci_write_reg(pcie->base, 0x801f0000, PCIEMSITXR);
-> >
-> > -rcar_pci_write_reg(pcie, MACCTLR_INIT_VAL, MACCTLR);
-> > +rcar_pci_write_reg(pcie->base, MACCTLR_INIT_VAL, MACCTLR);
-> >
-> >  /* Finish initialization - establish a PCI Express link */
-> > -rcar_pci_write_reg(pcie, CFINIT, PCIETCTLR);
-> > +rcar_pci_write_reg(pcie->base, CFINIT, PCIETCTLR);
-> >
-> >  /* This will timeout if we don't have a link. */
-> > -err = rcar_pcie_wait_for_dl(pcie);
-> > +err = rcar_pcie_wait_for_dl(pcie->base);
-> >  if (err)
-> >  return err;
-> >
-> >  /* Enable INTx interrupts */
-> > -rcar_rmw32(pcie, PCIEINTXR, 0, 0xF << 8);
-> > +rcar_rmw32(pcie->base, PCIEINTXR, 0, 0xF << 8);
-> >
-> >  wmb();
-> >
-> > @@ -663,16 +480,16 @@ static int rcar_pcie_phy_init_gen2(struct
-> rcar_pcie *pcie)
-> >   * These settings come from the R-Car Series, 2nd Generation User's
-> >   * Manual, section 50.3.1 (2) Initialization of the physical layer.
-> >   */
-> > -rcar_pci_write_reg(pcie, 0x000f0030, GEN2_PCIEPHYADDR);
-> > -rcar_pci_write_reg(pcie, 0x00381203, GEN2_PCIEPHYDATA);
-> > -rcar_pci_write_reg(pcie, 0x00000001, GEN2_PCIEPHYCTRL);
-> > -rcar_pci_write_reg(pcie, 0x00000006, GEN2_PCIEPHYCTRL);
-> > +rcar_pci_write_reg(pcie->base, 0x000f0030, GEN2_PCIEPHYADDR);
-> > +rcar_pci_write_reg(pcie->base, 0x00381203, GEN2_PCIEPHYDATA);
-> > +rcar_pci_write_reg(pcie->base, 0x00000001, GEN2_PCIEPHYCTRL);
-> > +rcar_pci_write_reg(pcie->base, 0x00000006, GEN2_PCIEPHYCTRL);
-> >
-> > -rcar_pci_write_reg(pcie, 0x000f0054, GEN2_PCIEPHYADDR);
-> > +rcar_pci_write_reg(pcie->base, 0x000f0054, GEN2_PCIEPHYADDR);
-> >  /* The following value is for DC connection, no termination resistor
-> */
-> > -rcar_pci_write_reg(pcie, 0x13802007, GEN2_PCIEPHYDATA);
-> > -rcar_pci_write_reg(pcie, 0x00000001, GEN2_PCIEPHYCTRL);
-> > -rcar_pci_write_reg(pcie, 0x00000006, GEN2_PCIEPHYCTRL);
-> > +rcar_pci_write_reg(pcie->base, 0x13802007, GEN2_PCIEPHYDATA);
-> > +rcar_pci_write_reg(pcie->base, 0x00000001, GEN2_PCIEPHYCTRL);
-> > +rcar_pci_write_reg(pcie->base, 0x00000006, GEN2_PCIEPHYCTRL);
-> >
-> >  return 0;
-> >  }
-> > @@ -735,7 +552,7 @@ static irqreturn_t rcar_pcie_msi_irq(int irq, void
-> *data)
-> >  struct device *dev = pcie->dev;
-> >  unsigned long reg;
-> >
-> > -reg = rcar_pci_read_reg(pcie, PCIEMSIFR);
-> > +reg = rcar_pci_read_reg(pcie->base, PCIEMSIFR);
-> >
-> >  /* MSI & INTx share an interrupt - we only handle MSI here */
-> >  if (!reg)
-> > @@ -746,7 +563,7 @@ static irqreturn_t rcar_pcie_msi_irq(int irq, void
-> *data)
-> >  unsigned int msi_irq;
-> >
-> >  /* clear the interrupt */
-> > -rcar_pci_write_reg(pcie, 1 << index, PCIEMSIFR);
-> > +rcar_pci_write_reg(pcie->base, 1 << index, PCIEMSIFR);
-> >
-> >  msi_irq = irq_find_mapping(msi->domain, index);
-> >  if (msi_irq) {
-> > @@ -760,7 +577,7 @@ static irqreturn_t rcar_pcie_msi_irq(int irq, void
-> *data)
-> >  }
-> >
-> >  /* see if there's any more pending in this vector */
-> > -reg = rcar_pci_read_reg(pcie, PCIEMSIFR);
-> > +reg = rcar_pci_read_reg(pcie->base, PCIEMSIFR);
-> >  }
-> >
-> >  return IRQ_HANDLED;
-> > @@ -787,8 +604,8 @@ static int rcar_msi_setup_irq(struct
-> > msi_controller *chip, struct pci_dev *pdev,
-> >
-> >  irq_set_msi_desc(irq, desc);
-> >
-> > -msg.address_lo = rcar_pci_read_reg(pcie, PCIEMSIALR) & ~MSIFE;
-> > -msg.address_hi = rcar_pci_read_reg(pcie, PCIEMSIAUR);
-> > +msg.address_lo = rcar_pci_read_reg(pcie->base, PCIEMSIALR) &
-> ~MSIFE;
-> > +msg.address_hi = rcar_pci_read_reg(pcie->base, PCIEMSIAUR);
-> >  msg.data = hwirq;
-> >
-> >  pci_write_msi_msg(irq, &msg);
-> > @@ -839,8 +656,8 @@ static int rcar_msi_setup_irqs(struct msi_controller
-> *chip,
-> >  desc->nvec_used = nvec;
-> >  desc->msi_attrib.multiple = order_base_2(nvec);
-> >
-> > -msg.address_lo = rcar_pci_read_reg(pcie, PCIEMSIALR) & ~MSIFE;
-> > -msg.address_hi = rcar_pci_read_reg(pcie, PCIEMSIAUR);
-> > +msg.address_lo = rcar_pci_read_reg(pcie->base, PCIEMSIALR) &
-> ~MSIFE;
-> > +msg.address_hi = rcar_pci_read_reg(pcie->base, PCIEMSIAUR);
-> >  msg.data = hwirq;
-> >
-> >  pci_write_msi_msg(irq, &msg);
-> > @@ -940,11 +757,11 @@ static int rcar_pcie_enable_msi(struct rcar_pcie
-> *pcie)
-> >  }
-> >  base = virt_to_phys((void *)msi->pages);
-> >
-> > -rcar_pci_write_reg(pcie, lower_32_bits(base) | MSIFE, PCIEMSIALR);
-> > -rcar_pci_write_reg(pcie, upper_32_bits(base), PCIEMSIAUR);
-> > +rcar_pci_write_reg(pcie->base, lower_32_bits(base) | MSIFE,
-> PCIEMSIALR);
-> > +rcar_pci_write_reg(pcie->base, upper_32_bits(base), PCIEMSIAUR);
-> >
-> >  /* enable all MSI interrupts */
-> > -rcar_pci_write_reg(pcie, 0xffffffff, PCIEMSIIER);
-> > +rcar_pci_write_reg(pcie->base, 0xffffffff, PCIEMSIIER);
-> >
-> >  return 0;
-> >
-> > @@ -958,10 +775,10 @@ static void rcar_pcie_teardown_msi(struct
-> rcar_pcie *pcie)
-> >  struct rcar_msi *msi = &pcie->msi;
-> >
-> >  /* Disable all MSI interrupts */
-> > -rcar_pci_write_reg(pcie, 0, PCIEMSIIER);
-> > +rcar_pci_write_reg(pcie->base, 0, PCIEMSIIER);
-> >
-> >  /* Disable address decoding of the MSI interrupt, MSIFE */
-> > -rcar_pci_write_reg(pcie, 0, PCIEMSIALR);
-> > +rcar_pci_write_reg(pcie->base, 0, PCIEMSIALR);
-> >
-> >  free_pages(msi->pages, 0);
-> >
-> > @@ -1054,21 +871,8 @@ static int rcar_pcie_inbound_ranges(struct
-> rcar_pcie *pcie,
-> >  mask = roundup_pow_of_two(size) - 1;
-> >  mask &= ~0xf;
-> >
-> > -/*
-> > - * Set up 64-bit inbound regions as the range parser doesn't
-> > - * distinguish between 32 and 64-bit types.
-> > - */
-> > -rcar_pci_write_reg(pcie, lower_32_bits(pci_addr),
-> > -   PCIEPRAR(idx));
-> > -rcar_pci_write_reg(pcie, lower_32_bits(cpu_addr),
-> PCIELAR(idx));
-> > -rcar_pci_write_reg(pcie, lower_32_bits(mask) | flags,
-> > -   PCIELAMR(idx));
-> > -
-> > -rcar_pci_write_reg(pcie, upper_32_bits(pci_addr),
-> > -   PCIEPRAR(idx + 1));
-> > -rcar_pci_write_reg(pcie, upper_32_bits(cpu_addr),
-> > -   PCIELAR(idx + 1));
-> > -rcar_pci_write_reg(pcie, 0, PCIELAMR(idx + 1));
-> > +rcar_pcie_set_inbound(pcie->base, cpu_addr, pci_addr,
-> > +      lower_32_bits(mask) | flags, idx, true);
-> >
-> >  pci_addr += size;
-> >  cpu_addr += size;
-> > @@ -1170,7 +974,7 @@ static int rcar_pcie_probe(struct platform_device
-> *pdev)
-> >  goto err_phy_shutdown;
-> >  }
-> >
-> > -data = rcar_pci_read_reg(pcie, MACSR);
-> > +data = rcar_pci_read_reg(pcie->base, MACSR);
-> >  dev_info(dev, "PCIe x%d: link up\n", (data >> 20) & 0x3f);
-> >
-> >  if (IS_ENABLED(CONFIG_PCI_MSI)) {
-> > @@ -1223,14 +1027,14 @@ static int rcar_pcie_resume_noirq(struct
-> > device *dev)  {
-> >  struct rcar_pcie *pcie = dev_get_drvdata(dev);
-> >
-> > -if (rcar_pci_read_reg(pcie, PMSR) &&
-> > -    !(rcar_pci_read_reg(pcie, PCIETCTLR) & DL_DOWN))
-> > +if (rcar_pci_read_reg(pcie->base, PMSR) &&
-> > +    !(rcar_pci_read_reg(pcie->base, PCIETCTLR) & DL_DOWN))
-> >  return 0;
-> >
-> >  /* Re-establish the PCIe link */
-> > -rcar_pci_write_reg(pcie, MACCTLR_INIT_VAL, MACCTLR);
-> > -rcar_pci_write_reg(pcie, CFINIT, PCIETCTLR);
-> > -return rcar_pcie_wait_for_dl(pcie);
-> > +rcar_pci_write_reg(pcie->base, MACCTLR_INIT_VAL, MACCTLR);
-> > +rcar_pci_write_reg(pcie->base, CFINIT, PCIETCTLR);
-> > +return rcar_pcie_wait_for_dl(pcie->base);
-> >  }
-> >
-> >  static const struct dev_pm_ops rcar_pcie_pm_ops = { diff --git
-> > a/drivers/pci/controller/pcie-rcar.c
-> > b/drivers/pci/controller/pcie-rcar.c
-> > new file mode 100644
-> > index 0000000..41275f9
-> > --- /dev/null
-> > +++ b/drivers/pci/controller/pcie-rcar.c
-> > @@ -0,0 +1,117 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * PCIe driver for Renesas R-Car SoCs
-> > + *  Copyright (C) 2014-2020 Renesas Electronics Europe Ltd
-> > + *
-> > + * Author: Phil Edworthy <phil.edworthy@renesas.com>  */
-> > +
-> > +#include <linux/delay.h>
-> > +#include <linux/pci.h>
-> > +
-> > +#include "pcie-rcar.h"
-> > +
-> > +void rcar_pci_write_reg(void __iomem *base, u32 val, unsigned int
-> > +reg) {
-> > +writel(val, base + reg);
-> > +}
-> > +
-> > +u32 rcar_pci_read_reg(void __iomem *base, unsigned int reg) {
-> > +return readl(base + reg);
-> > +}
-> > +
-> > +void rcar_rmw32(void __iomem *base, int where, u32 mask, u32 data) {
-> > +unsigned int shift = BITS_PER_BYTE * (where & 3);
-> > +u32 val = rcar_pci_read_reg(base, where & ~3);
-> > +
-> > +val &= ~(mask << shift);
-> > +val |= data << shift;
-> > +rcar_pci_write_reg(base, val, where & ~3); }
-> > +
-> > +int rcar_pcie_wait_for_phyrdy(void __iomem *base) {
-> > +unsigned int timeout = 10;
-> > +
-> > +while (timeout--) {
-> > +if (rcar_pci_read_reg(base, PCIEPHYSR) & PHYRDY)
-> > +return 0;
-> > +
-> > +msleep(5);
-> > +}
-> > +
-> > +return -ETIMEDOUT;
-> > +}
-> > +
-> > +int rcar_pcie_wait_for_dl(void __iomem *base) {
-> > +unsigned int timeout = 10000;
-> > +
-> > +while (timeout--) {
-> > +if ((rcar_pci_read_reg(base, PCIETSTR) &
-> DATA_LINK_ACTIVE))
-> > +return 0;
-> > +
-> > +udelay(5);
-> > +cpu_relax();
-> > +}
-> > +
-> > +return -ETIMEDOUT;
-> > +}
-> > +
-> > +void rcar_pcie_set_outbound(int win, void __iomem *base,
-> > +    struct resource *res)
-> > +{
-> > +/* Setup PCIe address space mappings for each resource */
-> > +resource_size_t res_start;
-> > +resource_size_t size;
-> > +u32 mask;
-> > +
-> > +rcar_pci_write_reg(base, 0x00000000, PCIEPTCTLR(win));
-> > +
-> > +/*
-> > + * The PAMR mask is calculated in units of 128Bytes, which
-> > + * keeps things pretty simple.
-> > + */
-> > +size = resource_size(res);
-> > +mask = (roundup_pow_of_two(size) / SZ_128) - 1;
-> > +rcar_pci_write_reg(base, mask << 7, PCIEPAMR(win));
-> > +
-> > +if (res->flags & IORESOURCE_IO)
-> > +res_start = pci_pio_to_address(res->start);
-> > +else
-> > +res_start = res->start;
-> > +
-> > +rcar_pci_write_reg(base, upper_32_bits(res_start), PCIEPAUR(win));
-> > +rcar_pci_write_reg(base, lower_32_bits(res_start) & ~0x7F,
-> > +   PCIEPALR(win));
-> > +
-> > +/* First resource is for IO */
-> > +mask = PAR_ENABLE;
-> > +if (res->flags & IORESOURCE_IO)
-> > +mask |= IO_SPACE;
-> > +
-> > +rcar_pci_write_reg(base, mask, PCIEPTCTLR(win)); }
-> > +
-> > +void rcar_pcie_set_inbound(void __iomem *base,
-> > +   u64 cpu_addr, u64 pci_addr,
-> > +   u64 flags, int idx, bool host)
-> > +{
-> > +/*
-> > + * Set up 64-bit inbound regions as the range parser doesn't
-> > + * distinguish between 32 and 64-bit types.
-> > + */
-> > +if (host)
-> > +rcar_pci_write_reg(base, lower_32_bits(pci_addr),
-> > +   PCIEPRAR(idx));
-> > +rcar_pci_write_reg(base, lower_32_bits(cpu_addr), PCIELAR(idx));
-> > +rcar_pci_write_reg(base, flags, PCIELAMR(idx));
-> > +
-> > +if (host)
-> > +rcar_pci_write_reg(base, upper_32_bits(pci_addr),
-> > +   PCIEPRAR(idx + 1));
-> > +rcar_pci_write_reg(base, upper_32_bits(cpu_addr), PCIELAR(idx +
-> 1));
-> > +rcar_pci_write_reg(base, 0, PCIELAMR(idx + 1)); }
-> > diff --git a/drivers/pci/controller/pcie-rcar.h
-> > b/drivers/pci/controller/pcie-rcar.h
-> > new file mode 100644
-> > index 0000000..b529d806
-> > --- /dev/null
-> > +++ b/drivers/pci/controller/pcie-rcar.h
-> > @@ -0,0 +1,125 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * PCIe driver for Renesas R-Car SoCs
-> > + *  Copyright (C) 2014-2020 Renesas Electronics Europe Ltd
-> > + *
-> > + * Author: Phil Edworthy <phil.edworthy@renesas.com>  */
-> > +
-> > +#ifndef _PCIE_RCAR_H
-> > +#define _PCIE_RCAR_H
-> > +
-> > +#define PCIECAR0x000010
-> > +#define PCIECCTLR0x000018
-> > +#define  CONFIG_SEND_ENABLEBIT(31)
-> > +#define  TYPE0(0 << 8)
-> > +#define  TYPE1BIT(8)
-> > +#define PCIECDR0x000020
-> > +#define PCIEMSR0x000028
-> > +#define PCIEINTXR0x000400
-> > +#define PCIEPHYSR0x0007f0
-> > +#define  PHYRDYBIT(0)
-> > +#define PCIEMSITXR0x000840
-> > +
-> > +/* Transfer control */
-> > +#define PCIETCTLR0x02000
-> > +#define  DL_DOWNBIT(3)
-> > +#define  CFINITBIT(0)
-> > +#define PCIETSTR0x02004
-> > +#define  DATA_LINK_ACTIVEBIT(0)
-> > +#define PCIEERRFR0x02020
-> > +#define  UNSUPPORTED_REQUESTBIT(4)
-> > +#define PCIEMSIFR0x02044
-> > +#define PCIEMSIALR0x02048
-> > +#define  MSIFEBIT(0)
-> > +#define PCIEMSIAUR0x0204c
-> > +#define PCIEMSIIER0x02050
-> > +
-> > +/* root port address */
-> > +#define PCIEPRAR(x)(0x02080 + ((x) * 0x4))
-> > +
-> > +/* local address reg & mask */
-> > +#define PCIELAR(x)(0x02200 + ((x) * 0x20))
-> > +#define PCIELAMR(x)(0x02208 + ((x) * 0x20))
-> > +#define  LAM_PREFETCHBIT(3)
-> > +#define  LAM_64BITBIT(2)
-> > +#define  LAR_ENABLEBIT(1)
-> > +
-> > +/* PCIe address reg & mask */
-> > +#define PCIEPALR(x)(0x03400 + ((x) * 0x20))
-> > +#define PCIEPAUR(x)(0x03404 + ((x) * 0x20))
-> > +#define PCIEPAMR(x)(0x03408 + ((x) * 0x20))
-> > +#define PCIEPTCTLR(x)(0x0340c + ((x) * 0x20))
-> > +#define  PAR_ENABLEBIT(31)
-> > +#define  IO_SPACEBIT(8)
-> > +
-> > +/* Configuration */
-> > +#define PCICONF(x)(0x010000 + ((x) * 0x4))
-> > +#define PMCAP(x)(0x010040 + ((x) * 0x4))
-> > +#define EXPCAP(x)(0x010070 + ((x) * 0x4))
-> > +#define VCCAP(x)(0x010100 + ((x) * 0x4))
-> > +
-> > +/* link layer */
-> > +#define IDSETR10x011004
-> > +#define TLCTLR0x011048
-> > +#define MACSR0x011054
-> > +#define  SPCHGFINBIT(4)
-> > +#define  SPCHGFAILBIT(6)
-> > +#define  SPCHGSUCBIT(7)
-> > +#define  LINK_SPEED(0xf << 16)
-> > +#define  LINK_SPEED_2_5GTS(1 << 16)
-> > +#define  LINK_SPEED_5_0GTS(2 << 16)
-> > +#define MACCTLR0x011058
-> > +#define  MACCTLR_NFTS_MASKGENMASK(23, 16)/* The name
-> is from SH7786 */
-> > +#define  SPEED_CHANGEBIT(24)
-> > +#define  SCRAMBLE_DISABLEBIT(27)
-> > +#define  LTSMDISBIT(31)
-> > +#define  MACCTLR_INIT_VAL(LTSMDIS | MACCTLR_NFTS_MASK)
-> > +#define PMSR0x01105c
-> > +#define MACS2R0x011078
-> > +#define MACCGSPSETR0x011084
-> > +#define  SPCNGRSNBIT(31)
-> > +
-> > +/* R-Car H1 PHY */
-> > +#define H1_PCIEPHYADRR0x04000c
-> > +#define  WRITE_CMDBIT(16)
-> > +#define  PHY_ACKBIT(24)
-> > +#define  RATE_POS12
-> > +#define  LANE_POS8
-> > +#define  ADR_POS0
-> > +#define H1_PCIEPHYDOUTR0x040014
-> > +
-> > +/* R-Car Gen2 PHY */
-> > +#define GEN2_PCIEPHYADDR0x780
-> > +#define GEN2_PCIEPHYDATA0x784
-> > +#define GEN2_PCIEPHYCTRL0x78c
-> > +
-> > +#define INT_PCI_MSI_NR32
-> > +
-> > +#define RCONF(x)(PCICONF(0) + (x))
-> > +#define RPMCAP(x)(PMCAP(0) + (x))
-> > +#define REXPCAP(x)(EXPCAP(0) + (x))
-> > +#define RVCCAP(x)(VCCAP(0) + (x))
-> > +
-> > +#define PCIE_CONF_BUS(b)(((b) & 0xff) << 24)
-> > +#define PCIE_CONF_DEV(d)(((d) & 0x1f) << 19)
-> > +#define PCIE_CONF_FUNC(f)(((f) & 0x7) << 16)
-> > +
-> > +#define RCAR_PCI_MAX_RESOURCES4
-> > +#define MAX_NR_INBOUND_MAPS6
-> > +
-> > +enum {
-> > +RCAR_PCI_ACCESS_READ,
-> > +RCAR_PCI_ACCESS_WRITE,
-> > +};
-> > +
-> > +void rcar_pci_write_reg(void __iomem *base, u32 val, unsigned int
-> > +reg);
-> > +u32 rcar_pci_read_reg(void __iomem *base, unsigned int reg); void
-> > +rcar_rmw32(void __iomem *base, int where, u32 mask, u32 data); int
-> > +rcar_pcie_wait_for_phyrdy(void __iomem *base); int
-> > +rcar_pcie_wait_for_dl(void __iomem *base); void
-> > +rcar_pcie_set_outbound(int win, void __iomem *base, struct resource
-> > +*res); void rcar_pcie_set_inbound(void __iomem *base, u64 cpu_addr,
-> u64 pci_addr,
-> > +   u64 mask, int idx, bool host);
-> > +
-> > +#endif
-> > --
-> > 2.7.4
+> +	struct pci_epc_mem_window *ob_window;
 
+I think we can get these windows from "array of address space of
+the endpoint controller" in struct pci_epc. If so, we can remove
+this member.
 
+> +	struct pci_epc		*epc;
 
-Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
+This member can be removed like pcie-cadence-ep.c because
+this is not used except saving the epc value from devm_pci_epc_create().
+
+<snip>
+> +static int rcar_pcie_ep_start(struct pci_epc *epc)
+> +{
+> +	struct rcar_pcie *ep = epc_get_drvdata(epc);
+> +
+> +	rcar_pci_write_reg(ep->base, CFINIT, PCIETCTLR);
+
+The following setting is needed before CFINIT like host.
+
+	rcar_pci_write_reg(pcie->base, MACCTLR_INIT_VAL, MACCTLR);
+
+> +
+> +	return 0;
+> +}
+> +
+> +static void rcar_pcie_ep_stop(struct pci_epc *epc)
+> +{
+> +	struct rcar_pcie *ep = epc_get_drvdata(epc);
+> +
+> +	rcar_pci_write_reg(ep->base, 0, PCIETCTLR);
+> +}
+> +
+> +static const struct pci_epc_features rcar_pcie_epc_features = {
+> +	.linkup_notifier = false,
+> +	.msi_capable = false,
+> +	.msix_capable = false,
+> +	/* use 64-bit bars so mark bar1/3/5 as reserved */
+> +	.reserved_bar = 1 << BAR_1 | 1 << BAR_3 | 1 << BAR_5,
+> +	.bar_fixed_64bit =  (1 << BAR_0) | (1 << BAR_2) | (1 << BAR_4),
+
+These parentheses are not needed like .reserved_bar.
+
+<snip>
+> +	err = pci_epc_mem_init(epc, pcie->ob_window, pcie->num_ob_windows);
+> +	if (err < 0) {
+> +		dev_err(dev, "failed to initialize the epc memory space\n");
+> +		goto err_pm_put;
+> +	}
+> +
+> +	rcar_pcie_ep_hw_init(pcie);
+
+I'm not sure, but I wonder if we should call this hw init before pci_epc_mem_init().
+
+<snip>
+> +builtin_platform_driver(rcar_pcie_ep_driver);
+> diff --git a/drivers/pci/controller/pcie-rcar.h b/drivers/pci/controller/pcie-rcar.h
+> index b529d806..5564ca8 100644
+> --- a/drivers/pci/controller/pcie-rcar.h
+> +++ b/drivers/pci/controller/pcie-rcar.h
+> @@ -17,6 +17,7 @@
+>  #define PCIECDR			0x000020
+>  #define PCIEMSR			0x000028
+>  #define PCIEINTXR		0x000400
+> +#define  ASTINTX_SHIFT		BIT(16)
+
+Just "ASTINTX" is better.
+
+>  #define PCIEPHYSR		0x0007f0
+>  #define  PHYRDY			BIT(0)
+>  #define PCIEMSITXR		0x000840
+> @@ -55,12 +56,15 @@
+> 
+>  /* Configuration */
+>  #define PCICONF(x)		(0x010000 + ((x) * 0x4))
+> +#define  INTDIS_SHIFT		BIT(10)
+
+Same here (we can remove "_SHIFT").
+
+Best regards,
+Yoshihiro Shimoda
+
+>  #define PMCAP(x)		(0x010040 + ((x) * 0x4))
+>  #define EXPCAP(x)		(0x010070 + ((x) * 0x4))
+>  #define VCCAP(x)		(0x010100 + ((x) * 0x4))
+> 
+>  /* link layer */
+> +#define IDSETR0			0x011000
+>  #define IDSETR1			0x011004
+> +#define SUBIDSETR		0x011024
+>  #define TLCTLR			0x011048
+>  #define MACSR			0x011054
+>  #define  SPCHGFIN		BIT(4)
+> --
+> 2.7.4
+
 
 _______________________________________________
 Linux-rockchip mailing list
