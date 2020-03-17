@@ -2,109 +2,107 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0BF3187E0D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 11:18:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A593187E5F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 11:32:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y8rfgSrwDyhh62RLRN1O6c5WNku36IKMrFKiiQMbK1M=; b=p/WWdIKQLBtkNl
-	7hW0BpPhx0nd0kHG34kcXy8i5++F9c0QkTlr7Hkb7OJsPHbRUNDN5da6Czju6pM/LOnqjaqhTLpLE
-	q08sDW1VaiDOLAdlNZTNeHD0nFpuO/MpIZ/b0Nr7XIs1D6mWC2yfcNlXw6Y4Dm5YWGBomYt9XBfpR
-	ntaucXmYOU3L2vjU6jqWChCcGmb4HREBAGHWEbOfkJwKX63ms9qKlIR8J3YCOO39K3D7YjKns3ZDS
-	o0N+4hVXHqzU4KDTtMNQLOIdN+zGFP0GJTGuN201ULBgWf0rRemxB7fwyzkBam1sczVEtiWOjjBkE
-	Or83GlWHsn0r6rM8TTBQ==;
+	List-Owner; bh=nDsaG1MdX8aowCzBeEqzpQ353TprGSP2tK3DZvyhRi4=; b=EMVu5gxEtLkc4R
+	yQ7z4o4AtTRfxzopK8ssmL1KWec3jkmHcfQbDNnaFDfIg9b9WXWRe429w/UdH2Pu+Rqcl9S1LcGYp
+	YlN5tH+Ct+9kAin9R6tAgRuaYxLfPDC4Cs/3jzfx+XpPd2bCHLEPfYywXotvISD4NQQZanqi4CXOL
+	zgLpbLFxj/pYmuQG+m+i8dKLiuXPHGWaKqGfVBIhq9EPjP1ibM2ktaVzmkc500OmLdRRpnWKO0pxF
+	fG8AXaSR1iAJqvFjoMqAE/hp+XQmTjSlMHmNqukxCd7k6mKnZejVnvpY5FtdACH3Vkd46unYBUjwV
+	lTCCWYIo0dvWAAyQZWDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE9In-0003b6-S4; Tue, 17 Mar 2020 10:18:25 +0000
-Received: from mail-eopbgr1410121.outbound.protection.outlook.com
- ([40.107.141.121] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jE9W9-0002mh-Ta; Tue, 17 Mar 2020 10:32:13 +0000
+Received: from mail-eopbgr1400090.outbound.protection.outlook.com
+ ([40.107.140.90] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE9Ib-0003Rd-Dn; Tue, 17 Mar 2020 10:18:14 +0000
+ id 1jE9Vx-0002df-NB; Tue, 17 Mar 2020 10:32:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mGON62+el/kSiCRvx5caojw7l4aCLJTGGpOCy52PteJbIW1j59lOJOzHjiv2z/2XFkGovh1qWZ0kXLxWhEsVYt34mIwUBikJwMJ2A6fCK3CTFqDZPc9xS9usP6G5u3LC2ic649Msv8LNDJW+GIDHSZ9KwefeOmFwLV9/ssqK3OUi7oK3C+44HrrjqW9LgAId42GBDwxp+EzwTR0tWmZcY0lqhltQD+sDV1EoXU2g1NQGXoXJ2PsZCs+YVa2ZfKgyj7EcbVNSXxKbgZjdB0FgP/M7ZnUWK/Hq3+9vupQ2mW7n8r39PEqntTVGUK9xQwx+hZ7ZFpUVVtDlE0/sMDkvcw==
+ b=TiSBUcrr4bjwM7KPwb5yat0MnuqWWqC2EepXhTV7YvlHMtTO0o3/E6ak/ObYr8r1orw8REEdhRur3syRrHYT5LDwhbrA+CaCrTzCK2LD45iRKmGjufiV1K4vBkcxDRGjF9AOG3QjD447uGZZsVGptZlBjJMRTsR31NBgMxzym58R9qE20HfaLvUqNBc5c6x+lEQWmwXayybPiA1fZTbPL5ia6J4LfUhz06y00b2Dvk0KALKiArEiZFc6Zps7HhljTRBnN04YpLlspuENLTD9ih/KOWdl+L/AWgFcwq405cX9PulyjGLcQGDX1Tkli1KYFLAco8kxOng7KiB45ZPcAA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AwUntoL11ukJsITrpHrU6ydIPM8tizbPDa4EU0vKSgE=;
- b=b/rMG2kcwKJJC0HnPq+KX1BtGbP+MqX5AgNhzhRG/jo1wmSK9k8y3nL/l5D/qXtgGunKwSFTqvQ0wiMnhNLIe3AHMXtF7J0/jEppnAjlQT/H0PkWp0IcnuboEWRYaAN9pRlyisHIwRhIgbRxMZq8QB2JYpHasIbbbSjWSIJy8F6jcbO42qpqTwejdw8dEBswPM5n7bTSTT6Rq0A+JWBdngK9+plCfQv1o6+X8z275+DE4ue50RVHBps+xtjKtxMxpsYxjL+D/5JSjOAr/+mPC+B37b9+EEg+i2YALOzAuX43sYktBarstj8oJWTHanQgwWdtP1IIQv7V3220Q+iffg==
+ bh=eu8UK+Jfc4WoPTx5eJLlb5g59gTziksrjZufXPvKPmg=;
+ b=RlMJWXkHSpY+ww+t81hf5Ijx9yy3dH7fV1cIQOiXmd+Gn6p5m3FBmRHS0zJ2V9pmPaQNT5gd9Fgp2U8eEJ6g7eeawg7ZW6ZDE7vBn41MbpvcjRikcyxEJ4zQVt6TWMh491xXDUTTuWXvL9f7NUoRPrvIU+j8/sUPbim985h6fjiIbN2a9M9LVPB7c/40zFNNubBHtAp/2V/2abHEduFU2Ki5k0+XD8mcBPWyG0JDwoKf2wGKxD/nCiWIn0p7TqF8FMkiYTibE38bv7dH/5FGBl/M11s6Wnvx0dWCjkL/qtGOmKvDUjKqAk9cO0fX0V+f0oDMDiVTVdwche0WphIb3g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AwUntoL11ukJsITrpHrU6ydIPM8tizbPDa4EU0vKSgE=;
- b=iFm4sddOXZawW4q3B9Vc0ojmwp7oKWaKxh54r4ECjy3fTW1JW2uwXwnCcEUzhv+J5Y8YgS9XpwmBfKXdXnfpXXUqA/f5sUvCXw3Vjwj++4els3kUQa33x8IAzaBIfCHwl2ZDx6ky2AK+AQBRyWYMgpE3HOqwQDy0JKIkvs4MrDQ=
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
- OSBPR01MB2454.jpnprd01.prod.outlook.com (52.134.253.75) with Microsoft SMTP
+ bh=eu8UK+Jfc4WoPTx5eJLlb5g59gTziksrjZufXPvKPmg=;
+ b=rDNtGB7s6aqNn3RXFVeQOO9/w6kM/0AlsnrNqGyPiSpkJL87xX1iazfqosKjVmsbEt8TxDkocbOFmXYbnJTaebzVgQl+HgowSAe02jcY/LpYN7RwmNYcdJnNFWzHyzNFLQx0b5GvOP3dWprsMoJfrr/RwiVj3VAVsPW/5K3hlS8=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB2909.jpnprd01.prod.outlook.com (20.177.104.21) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.22; Tue, 17 Mar 2020 10:18:10 +0000
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b%5]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
- 10:18:10 +0000
-From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Lad Prabhakar
- <prabhakar.csengg@gmail.com>
-Subject: RE: [PATCH v5 5/7] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Topic: [PATCH v5 5/7] dt-bindings: PCI: rcar: Add bindings for R-Car
- PCIe endpoint controller
-Thread-Index: AQHV7k2mb/v0bc2DvUS+HUsmhvWhMqhMjsmAgAAea9A=
-Date: Tue, 17 Mar 2020 10:18:10 +0000
-Message-ID: <OSBPR01MB3590F13134F6E9BD106EC506AAF60@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+ 15.20.2793.15; Tue, 17 Mar 2020 10:31:59 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 10:31:58 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Lad Prabhakar <prabhakar.csengg@gmail.com>
+Subject: RE: [PATCH v5 7/7] misc: pci_endpoint_test: Add Device ID for RZ/G2E
+ PCIe controller
+Thread-Topic: [PATCH v5 7/7] misc: pci_endpoint_test: Add Device ID for RZ/G2E
+ PCIe controller
+Thread-Index: AQHV7k2qI6asQ7deFUG6PTswsFNMeqhMr50A
+Date: Tue, 17 Mar 2020 10:31:58 +0000
+Message-ID: <TYAPR01MB45441E4766FD57506A5B9F98D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
 References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200228154122.14164-6-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB454466B8451E3115D8A7DFB7D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB454466B8451E3115D8A7DFB7D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
+ <20200228154122.14164-8-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200228154122.14164-8-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
-x-originating-ip: [193.141.220.21]
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7e099edf-b43f-43ee-8065-08d7ca5c7e92
-x-ms-traffictypediagnostic: OSBPR01MB2454:|OSBPR01MB2454:
+x-ms-office365-filtering-correlation-id: dc60be62-cd83-4385-3346-08d7ca5e6c4a
+x-ms-traffictypediagnostic: TYAPR01MB2909:|TYAPR01MB2909:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSBPR01MB2454C261CB16645A0158108EAAF60@OSBPR01MB2454.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2958;
+x-microsoft-antispam-prvs: <TYAPR01MB2909D1E180965EE442FA1A72D8F60@TYAPR01MB2909.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3631;
 x-forefront-prvs: 0345CFD558
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(396003)(376002)(39860400002)(346002)(366004)(199004)(316002)(110136005)(54906003)(2906002)(76116006)(4326008)(5660300002)(52536014)(33656002)(7416002)(66946007)(66476007)(64756008)(66446008)(8676002)(86362001)(7696005)(26005)(66556008)(186003)(71200400001)(8936002)(53546011)(81156014)(6506007)(478600001)(9686003)(81166006)(55016002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB2454;
- H:OSBPR01MB3590.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; 
-received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ SFS:(10019020)(4636009)(396003)(366004)(39860400002)(346002)(376002)(136003)(199004)(7416002)(4326008)(2906002)(66946007)(316002)(76116006)(66476007)(66556008)(66446008)(64756008)(6916009)(9686003)(33656002)(5660300002)(55016002)(26005)(52536014)(186003)(478600001)(7696005)(6506007)(55236004)(86362001)(81156014)(8936002)(54906003)(71200400001)(81166006)(8676002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB2909;
+ H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: QUAO5tMnOTmqzudeSh4ZLSAGLD1cQ3tvJiwtrEQLbijr/MVLPR1/muSO3DzkvzIaNZA/OBpBr5CHp0SYi2+3iyW3WMzhXV5ZRVw/3qEos+gCSc1NyXCFU/EMnURjqVX6oSxOC7HhkHBMUk+eUwaneJbCzvYcG4YJOd4qCPjP91/XXdeu1mxs4obCl2ooG9qc+tGsQb5DHG8ENOnXtEmaM+qOiICzlRlgWKQwSSCgAfK7dlvrFy5HHFr+csILHPdZkrv2nthjqCQO9rvWJ1yLEH67g6RKcm45NTDYTrCV7f7IMvXi580ZZ2Aci32Vxpr9DjXMBA62sbnQof1xkDDguWEwgUhz+g0SS7MOi3kt2lfa6/Tse1Pn2Hasyd7CDvkPv8DTWrdxG6suvLXit1FJ2sc7/dyPNQktnNDUmU4WYLh75bmh7Dw8hPmYK6Pn+qvE
-x-ms-exchange-antispam-messagedata: w0zgGx/VgV4KExD9yJ8pV7WikUiHfRwYt9btPpF9nPg0jhmlfU6pgaWuSgcEphmgpCkG0+4Fp6IAmbXjncFg3K6p4/1RfLSIdZOY1E4EWni44SUpq4s/pTIz5Y7PqJjE8yPBpFwbLvHVZL6aeTp77g==
+x-microsoft-antispam-message-info: v+Z6XA03ak9zirdqR98LV5G+L6woEeK3tSMU7Cezr3QhlfhAKRNAhFPorBbWIObzUNDWIVpa/Ub8ik8terMAqDxEcgjI7tyKRwCL6msl7Rmw+R/h1CO0Z9+FUkMzz+ITMvTD/hY6CF/4B53MjvB9z5BDkf1cIY/ttJ5f2Gw3FplPNgk6Hk7h0y8URqidbYmXkXhzl9yePfem6i1zxKu8VC3hgDqE5ogDDldSRBlo7EwpFBSpF9sXeP65+Q5EIKgobYt0QQ40WQcmEnSynsat7PmLtGRCCzAu1BN44fquSYVQY+HSqt0zBS+G/ytYgE5N0c7oTXVCoGkcKUg+07+64I6Z6ARAgqNz7rQmkT2BltHgi9mw4sXTbTwi9MymY/00i4MUh4jJy6oFoK53cuYiJBhOIumO7LHAny5m/8jOYgXBXcUROw/AS4SnC6KYTXzR
+x-ms-exchange-antispam-messagedata: cn++2yLtz0+nAfPMwGGSSxwW1dv+kEoIVupTtAz1fLbl+b4mwgFwvVYfo7tR1uWjxZ6M3DRdhjXtYSH3rgf6AgRJtWW9Xc0t9c7i0qA2NHiVIFqF4ICQrrvy0bb7N4vZ9wufkF73AGM3tisqKFfUOw==
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e099edf-b43f-43ee-8065-08d7ca5c7e92
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 10:18:10.3458 (UTC)
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dc60be62-cd83-4385-3346-08d7ca5e6c4a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 10:31:58.6804 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: LbQJmjNJSX6JMv9MLQ20FG9AW2lwXWMHHysf1RCtDtTHekw0/zVDyIuwrY3cNRHHKL86hSqXgcLbiQDQ4iIt3c1vddDL6l7Gl5yzt6HQSAl5yJeUEUo1gvL3kIHOP3Zs
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2454
+X-MS-Exchange-CrossTenant-userprincipalname: v6960+RUidK/DpGaBZTNvwjs9iSgZN1Xex9OkltPpzWMxmsF4+s/40+5ynpAbA2XMbkJdUhs/B6IyHhtND8L3y3xz++l1KaUKVlB+c/qvV0GbGpvyFn+fmp+T7/wk/Lj
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2909
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_031813_472923_0E352CB7 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20200317_033201_756641_50E920E1 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.121 listed in list.dnswl.org]
+ no trust [40.107.140.90 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -125,75 +123,71 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
  "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
  Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>, Rob Herring <robh@kernel.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Kishon Vijay Abraham I <kishon@ti.com>,
  "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Rob Herring <robh+dt@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jingoo Han <jingoohan1@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Andrew Murray <andrew.murray@arm.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Yoshihiro-san,
+Hi Prabhakar-san,
 
-> -----Original Message-----
-> From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> Sent: 17 March 2020 08:26
-> To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-> Cc: Andrew Murray <andrew.murray@arm.com>; linux-pci@vger.kernel.org;
-> linux-arm-kernel@lists.infradead.org; linux-renesas-soc@vger.kernel.org;
-> linux-rockchip@lists.infradead.org; linux-kernel@vger.kernel.org;
-> devicetree@vger.kernel.org; Prabhakar Mahadev Lad <prabhakar.mahadev-
-> lad.rj@bp.renesas.com>; Rob Herring <robh@kernel.org>; Bjorn Helgaas
-> <bhelgaas@google.com>; Rob Herring <robh+dt@kernel.org>; Mark Rutland
-> <mark.rutland@arm.com>; Catalin Marinas <catalin.marinas@arm.com>; Will
-> Deacon <will@kernel.org>; Kishon Vijay Abraham I <kishon@ti.com>;
-> Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>; Arnd Bergmann
-> <arnd@arndb.de>; Greg Kroah-Hartman <gregkh@linuxfoundation.org>;
-> Jingoo Han <jingoohan1@gmail.com>; Gustavo Pimentel
-> <gustavo.pimentel@synopsys.com>; Marek Vasut
-> <marek.vasut+renesas@gmail.com>; Shawn Lin <shawn.lin@rock-
-> chips.com>; Heiko Stuebner <heiko@sntech.de>
-> Subject: RE: [PATCH v5 5/7] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
-> endpoint controller
->
-> Hi Prabhakar-san,
->
-> Thank you for the patch!
->
-> > From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
-> >
-> > This patch adds the bindings for the R-Car PCIe endpoint driver.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-
-> lad.rj@bp.renesas.com>
-> > Reviewed-by: Rob Herring <robh@kernel.org>
->
-> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
->
-Thank you for the review. Shall I add this file under "PCI DRIVER FOR RENESAS R-CAR"
-In MAINTAINERS file as a separate patch ?
+Thank you for the patch!
 
-Cheers,
---Prabhakar
+> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
+> 
+> Add RZ/G2E in pci_device_id table so that pci-epf-test can be used for
+> testing PCIe EP in RZ/G2E.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  drivers/misc/pci_endpoint_test.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
+> index a5e3170..3c84e9a 100644
+> --- a/drivers/misc/pci_endpoint_test.c
+> +++ b/drivers/misc/pci_endpoint_test.c
+> @@ -66,6 +66,8 @@
+> 
+>  #define PCI_DEVICE_ID_TI_AM654			0xb00c
+> 
+> +#define PCI_DEVICE_ID_RENESAS_RZG2E		0x002d
 
-> Best regards,
-> Yoshihiro Shimoda
+This define should be in include/linux/pci_ids.h, and adding
+the define should be separated.
+Also, I think "R8A774C0" is better than "RZG2E".
 
+Best regards,
+Yoshihiro Shimoda
 
+>  #define is_am654_pci_dev(pdev)		\
+>  		((pdev)->device == PCI_DEVICE_ID_TI_AM654)
+> 
+> @@ -797,6 +799,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
+>  	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
+>  	  .driver_data = (kernel_ulong_t)&am654_data
+>  	},
+> +	{ PCI_DEVICE(PCI_VENDOR_ID_RENESAS, PCI_DEVICE_ID_RENESAS_RZG2E) },
+>  	{ }
+>  };
+>  MODULE_DEVICE_TABLE(pci, pci_endpoint_test_tbl);
+> --
+> 2.7.4
 
-Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
 
 _______________________________________________
 Linux-rockchip mailing list
