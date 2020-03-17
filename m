@@ -2,49 +2,110 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 935BE18773B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 02:02:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4BF8187A18
+	for <lists+linux-rockchip@lfdr.de>; Tue, 17 Mar 2020 07:59:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=94L8B4OGMFr6L6DK9H6BKNCMxRrZPxd3EIIxzB7M+64=; b=rOACWZHuYMDXHH
-	mmTIpSsSfroaXT96orfGIpmMIYHieDp7FPNu4fYUlpQOaSfib8w0mgcsONh/76G9isPsTUXiVBP4x
-	sAHTydWhaio5bI6H3OZUMkBFvbJeE5quE07dsJ9orte8KURh08r7nBrHlPoIg6OQjnuJPpWs2FV9Q
-	awRSEmi3spy809NckBf36G0xYoeRFr3o3Ixv2dsWdNhoT3Jqk74dqil4kVok9Gf67ywqwRaQJcG0d
-	EN3X1NziiN58BPbJuUwQGblkxNLS15kUN4gkorRV2ieB0ZQtBJwOf+AJvbleeFDhn9z419O4Min2x
-	68vvZRv3IMb+8LXcplfA==;
+	List-Owner; bh=bcKCBrhDRt8hrwLhAs426dB1cG7uHkh2eglzxHWJZVc=; b=Jr2waaABcNNbSc
+	WyHxd9FcCSMSEw0S7NWEaz13PqMFQdvrRGeydoqBqeRS2izEhIOzuVcnGvbBopFHhg1YV4BWvu5wP
+	NVYUfyqBghATEvlegrUv5sk1mYQ9vf0WEfPWrdwawwcDPOCwXdJZ2JrFmSLk/Ws6BvXU0HdlCvk3d
+	Hsd1E/xl8i9w/ew72kUxFSIDY72gTcBWLxGT2NfjcSyVmK6uS+3+/sHbL9uusUn3Bik3CbfdCvaAd
+	oYaoLg1FZDONLn99h0l/OX/p/Lyd8sfYCdFV1bxOKvMGsSgRahKC+rgrm4wdCu+tEdC12QrViz2Yh
+	U0f0rYJSQth5MkIZRp3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jE0cj-0006aP-97; Tue, 17 Mar 2020 01:02:25 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jE6CT-0007Rv-Fw; Tue, 17 Mar 2020 06:59:41 +0000
+Received: from mail-eopbgr1400128.outbound.protection.outlook.com
+ ([40.107.140.128] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jE0cg-0006Zk-06; Tue, 17 Mar 2020 01:02:23 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jE0ce-0004YM-Kl; Tue, 17 Mar 2020 02:02:20 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: arm@kernel.org
-Subject: [GIT PULL 2/2] Rockchip dt64 for 5.7
-Date: Tue, 17 Mar 2020 02:02:19 +0100
-Message-ID: <27799037.pT45f1LVdF@phil>
-In-Reply-To: <7846023.TtVhTo4ACP@phil>
-References: <7846023.TtVhTo4ACP@phil>
+ id 1jE6CI-0007Jj-ON; Tue, 17 Mar 2020 06:59:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S+f+WDnSpMXdh2HyiGWGsfj+RocSy08aznAMfXJHZTae/qme0sugB2gFljGghtAvkvopGBnw+UZLpUntbb0zmM1ortreDmBvCN69TfmUKMe6ThkFCcn3QASrARSjHd2Mg7R1mEM7MTkFn1GSIVLNozyBlNUiwYAFKonoCihsN1vpQvyrsVRtjH0Ce0GXaMqk8AatoxP5PbR6bbhN3BUyVe1L8iAJC5SVlmhIrbs5A1bGxl4mMRQ7wAtbX+t2t+VRUP3mJD1hJIeBOrmuWAM292TBvCqPv9S0B0loo7sG6h5cenlRLs+apjFCvAjqS9lmCsjhtDR3BU6nmjLdKuYtuQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bvgBaiYMFl65vwB9pUqq2lPz6PHp29Rl9ZCxeQoChxU=;
+ b=f7kITLagq1uEE4O4kI805DCcWDT4bPUCj7GxMLG1VpXqLla3a3SpwHjg5t4nm9bYbNWKBI5iTdJonA3a4xAzrj3Z30YNfrZeZp9OsNHJATFj0s9cvyPpKyYxVpQNvbiajc0LlU+po5u2xPac2rCjb5SiTUiw5BOii8dTH4Vt4eQG+FS5hSvnP55gNfkG3lV71UwW5azyROtVtwMug7vbslG+kZ6VNEmwi2Ld+2FlO3nqLavOAEAjel5g6AhYpxyknR+JXYkS9UwEmWvLyqG0UaZGMHgIApX/V/WX6xAlTz0lUaQ4qPDcvRY1+yTq7WXyDsmnl33IFcxrcpc29jXWYg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bvgBaiYMFl65vwB9pUqq2lPz6PHp29Rl9ZCxeQoChxU=;
+ b=rf0qVzXBJJTkrMcLzSMyVKslXcC+/VTMQhcXj0/l3UyU3znzQ6m0rwsyVMp3R0/M6OXeKcpsFUa+3hv5tOvk9hE9EZKskDUthSe1zelOkY2LKiRYj448I4dpJOyim9Ysm7iZN6Zj2+jYurKUwRF+29w9gDKeR5oPJPHy3ZqyjAI=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB2271.jpnprd01.prod.outlook.com (52.133.177.147) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2814.22; Tue, 17 Mar 2020 06:59:27 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2814.021; Tue, 17 Mar 2020
+ 06:59:26 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Lad Prabhakar <prabhakar.csengg@gmail.com>
+Subject: RE: [PATCH v5 1/7] PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+Thread-Topic: [PATCH v5 1/7] PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+Thread-Index: AQHV7k2WVIVkhQSkg0uFpKD+VtIGFahMctrQ
+Date: Tue, 17 Mar 2020 06:59:26 +0000
+Message-ID: <TYAPR01MB4544CBB9CD07CAF55D7D3845D8F60@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200228154122.14164-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20200228154122.14164-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 67a28bf4-cb8a-4cc7-c1e4-08d7ca40bb89
+x-ms-traffictypediagnostic: TYAPR01MB2271:|TYAPR01MB2271:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TYAPR01MB22715B73A1D612DC16835B5BD8F60@TYAPR01MB2271.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 0345CFD558
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(346002)(396003)(136003)(39860400002)(366004)(376002)(199004)(8936002)(81166006)(8676002)(81156014)(33656002)(2906002)(86362001)(7416002)(478600001)(6916009)(55236004)(5660300002)(316002)(6506007)(54906003)(7696005)(66946007)(52536014)(71200400001)(66446008)(66556008)(64756008)(66476007)(76116006)(186003)(4326008)(107886003)(26005)(9686003)(55016002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB2271;
+ H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: rbGSTNjEH0FVbOC7gK8csi0H0+rctePEOQAAJcOkLbYyQNdlTsvHhbouYb+FXCXeLDTJetCFqdD4mwsP32lZ3mlpP+0UiERdR28pQ4iONdOazgdzAhc6smaUeq2t8vdh0/Fj2TJzIvJ+H4uh9yzrPYJPkSEt32a918qWYIUAnpMpDM1ICP+kNMS1J5O7yuGuQ1+BcpzOc0Ou3AL3oUO+Oa43PGXIvDQ6tV3MWSRtKZRFWCzdzh72bU9trLRqVCXwO1V3y1/uoZKNtY94AlDVmpvwpks+Yq0+e0GkW8FFSmm0U8yllTFVp3jgBiG4Ob/+6rO1SRtiQzITpHC0cl1XTJCs2apwkc35o0lKkiyY7EljyCPbnktWSpxO41b5TBwPULgAm7fVq6Ma3gadlzitokLIewdr/cr9ClbVDUOI78UjbPfdoCfQxzGMLsDYuari
+x-ms-exchange-antispam-messagedata: tK/Ev2ARZR9LoKUufpPKieQM4f7zRapAXzfdqzbzU8mf4X6kNPWxn0o9zLXCgZTNoT43lu9ZijxYXcBRCj+DCYt+CIXQ9G1QBd4xgbQdkeoGPiu5bS6LaiRVmqlzW7zYIw9o0OQ5RoPddCyIiYYk+A==
 MIME-Version: 1.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 67a28bf4-cb8a-4cc7-c1e4-08d7ca40bb89
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Mar 2020 06:59:26.7500 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: UDbEkOriX71qBSGDakZGlMIrNusMpgrTvwm/M2+uBfPV1NrCQ48n+qk3j6J4dmgnjK+EweteNHojyx3SlCIc1Wv3xIasjnlmAzL+6K9bsyWns4zcZ3jhr/dJ7F0jDFz6
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2271
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200316_180222_185342_C688C8A0 
-X-CRM114-Status: GOOD (  15.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200316_235930_838379_88F96DCD 
+X-CRM114-Status: GOOD (  22.88  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.140.128 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,105 +118,142 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, soc@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+Hi Prabhakar-san,
 
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+Thank you for the patch!
 
-are available in the Git repository at:
+> From: Lad Prabhakar, Sent: Saturday, February 29, 2020 12:41 AM
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.7-rockchip-dts64-1
+Since your email account is different with the Singed-off-by,
+I think you should add your From: tag here like your v2 patch series.
 
-for you to fetch changes up to 68c33366a95664ab6afafd9b0ed591597890ede7:
+> This commit renames pcie-rcar.c to pcie-rcar-host.c in preparation for
+> adding support for endpoint mode. CONFIG_PCIE_RCAR is also renamed to
+> CONFIG_PCIE_RCAR_HOST to match the driver name accordingly.
+> 
+> In addition to this defconfig file has also been updated to match the new
+> config option.
+> 
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> ---
+>  arch/arm64/configs/defconfig                             | 2 +-
+>  drivers/pci/controller/Kconfig                           | 7 ++++---
+>  drivers/pci/controller/Makefile                          | 2 +-
+>  drivers/pci/controller/{pcie-rcar.c => pcie-rcar-host.c} | 0
+>  4 files changed, 6 insertions(+), 5 deletions(-)
+>  rename drivers/pci/controller/{pcie-rcar.c => pcie-rcar-host.c} (100%)
+> 
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 0f21288..7a34fce 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -185,7 +185,7 @@ CONFIG_HOTPLUG_PCI=y
+>  CONFIG_HOTPLUG_PCI_ACPI=y
+>  CONFIG_PCI_AARDVARK=y
+>  CONFIG_PCI_TEGRA=y
+> -CONFIG_PCIE_RCAR=y
+> +CONFIG_PCIE_RCAR_HOST=y
 
-  arm64: dts: rockchip: Add Hugsun X99 power led (2020-03-17 01:49:03 +0100)
+I think you should separate this change.
+To avoid this, I have an idea in the Kconfig like below:
+ - adding PCIE_RCAR_HOST.
+ - keeping PCIE_RCAR and select PCIE_RCAR_HOST here.
+ - adding a description in the help of PCIE_RCAR like "This will be removed after defconfig is updated" is better.
 
-----------------------------------------------------------------
-Support for the rk3399-based Pinebook Pro, eDP support and power-tree for
-the rk3399 evaluation board, a big number of fixes for issues found by
-checking against the new yaml dt-bindings.
-And on the smaller side, fixes for network transfers, the mute gpio
-on rk3328 gets actually described and one lvds fix on the px30 and
-the rk3399-hugsun board gets IR and power led.
+The following is a sample. What do you think?
+---
+--- a/drivers/pci/controller/Kconfig
++++ b/drivers/pci/controller/Kconfig
+@@ -58,8 +58,18 @@ config PCIE_RCAR
+ 	bool "Renesas R-Car PCIe controller"
+ 	depends on ARCH_RENESAS || COMPILE_TEST
+ 	depends on PCI_MSI_IRQ_DOMAIN
++	select PCIE_RCAR_HOST
+ 	help
+ 	  Say Y here if you want PCIe controller support on R-Car SoCs.
++	  This will be removed after defconfig is updated.
++
++config PCIE_RCAR_HOST
++	bool "Renesas R-Car PCIe host controller"
++	depends on ARCH_RENESAS || COMPILE_TEST
++	depends on PCI_MSI_IRQ_DOMAIN
++	help
++	  Say Y here if you want PCIe controller support on R-Car SoCs in host
++	  mode.
+ 
+ config PCI_HOST_COMMON
+ 	bool
+---
 
-----------------------------------------------------------------
-Alexis Ballier (2):
-      arm64: dts: rockchip: Add ethernet phy to rk3399-orangepi
-      arm64: dts: rockchip: Explicitly pinmux the regulator configuration GPIOs on rk3399-orangepi
+Best regards,
+Yoshihiro Shimoda
 
-Andy Yan (4):
-      arm64: dts: rockchip: remove dvs2 pinctrl for pmic on rk3399 evb
-      arm64: dts: rockchip: Add pmic dt tree for rk3399 evb
-      arm64: dts: rockchip: remove enable-gpio of backlight on rk3399 evb
-      arm64: dts: rockchip: Enable eDP display on rk3399 evb
-
-Carlos de Paula (1):
-      arm64: dts: rockchip: Add txpbl node for RK3399/RK3328
-
-Emmanuel Vadot (1):
-      dt-bindings: Add doc for Pine64 Pinebook Pro
-
-Enric Balletbo i Serra (1):
-      arm64: dts: rk3399: Remove extcon unit address and extcon-cells from Gru
-
-Heiko Stuebner (1):
-      arm64: dts: rockchip: fix px30 lvds ports
-
-Johan Jonker (13):
-      arm64: dts: rockchip: fix cpu compatible property for rk3308
-      arm64: dts: remove g-use-dma from rockchip usb nodes
-      arm64: dts: rockchip: fix compatible property for Radxa ROCK Pi N10
-      arm64: dts: rockchip: fix compatible property for rk3399-evb
-      arm64: dts: rockchip: remove max-freq from &spi1 node for Hugsun X99
-      arm64: dts: rockchip: remove rockchip,grf from vop nodes for px30
-      arm64: dts: remove no-emmc from mmc node for Rockchip PX5 EVB
-      arm64: dts: rockchip: fix vqmmc-supply property name for rk3399 puma
-      arm64: dts: rockchip: replace clock-freq-min-max by max-frequency
-      arm64: dts: add bus to rockchip amba nodenames
-      arm64: dts: rockchip: remove properties from spdif node RK3399 Excavator
-      arm64: dts: rockchip: remove clock-names property from 'generic-ehci' nodes
-      arm64: dts: rockchip: remove clock-names property from 'generic-ohci' nodes
-
-Robin Murphy (1):
-      arm64: dts: rockchip: Describe RK3328 GPIO_MUTE users
-
-Tobias Schramm (1):
-      arm64: dts: rockchip: Add initial support for Pinebook Pro
-
-Vivek Unune (2):
-      arm64: dts: rockchip: Add Hugsun X99 IR receiver
-      arm64: dts: rockchip: Add Hugsun X99 power led
-
- .../devicetree/bindings/arm/rockchip.yaml          |    5 +
- arch/arm64/boot/dts/rockchip/Makefile              |    1 +
- arch/arm64/boot/dts/rockchip/px30.dtsi             |   32 +-
- arch/arm64/boot/dts/rockchip/rk3308.dtsi           |   10 +-
- arch/arm64/boot/dts/rockchip/rk3328-a1.dts         |    1 +
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts     |    1 +
- arch/arm64/boot/dts/rockchip/rk3328.dtsi           |    7 +-
- arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts    |    1 -
- arch/arm64/boot/dts/rockchip/rk3368.dtsi           |    3 +-
- arch/arm64/boot/dts/rockchip/rk3399-evb.dts        |  270 ++++-
- .../boot/dts/rockchip/rk3399-gru-chromebook.dtsi   |    4 +-
- arch/arm64/boot/dts/rockchip/rk3399-gru.dtsi       |    4 +-
- arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts |   39 +-
- arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts   |   43 +-
- .../boot/dts/rockchip/rk3399-pinebook-pro.dts      | 1096 ++++++++++++++++++++
- arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi      |    2 +-
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi   |    2 +-
- .../dts/rockchip/rk3399-sapphire-excavator.dts     |    2 -
- arch/arm64/boot/dts/rockchip/rk3399.dtsi           |   11 +-
- .../boot/dts/rockchip/rk3399pro-rock-pi-n10.dts    |    3 +-
- 20 files changed, 1470 insertions(+), 67 deletions(-)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
-
-
+>  CONFIG_PCI_HOST_GENERIC=y
+>  CONFIG_PCI_XGENE=y
+>  CONFIG_PCIE_ALTERA=y
+> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> index f84e5ff..37e0ea7 100644
+> --- a/drivers/pci/controller/Kconfig
+> +++ b/drivers/pci/controller/Kconfig
+> @@ -54,12 +54,13 @@ config PCI_RCAR_GEN2
+>  	  There are 3 internal PCI controllers available with a single
+>  	  built-in EHCI/OHCI host controller present on each one.
+> 
+> -config PCIE_RCAR
+> -	bool "Renesas R-Car PCIe controller"
+> +config PCIE_RCAR_HOST
+> +	bool "Renesas R-Car PCIe host controller"
+>  	depends on ARCH_RENESAS || COMPILE_TEST
+>  	depends on PCI_MSI_IRQ_DOMAIN
+>  	help
+> -	  Say Y here if you want PCIe controller support on R-Car SoCs.
+> +	  Say Y here if you want PCIe controller support on R-Car SoCs in host
+> +	  mode.
+> 
+>  config PCI_HOST_COMMON
+>  	bool
+> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> index 01b2502..4ca2da6 100644
+> --- a/drivers/pci/controller/Makefile
+> +++ b/drivers/pci/controller/Makefile
+> @@ -7,7 +7,7 @@ obj-$(CONFIG_PCI_MVEBU) += pci-mvebu.o
+>  obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
+>  obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
+>  obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
+> -obj-$(CONFIG_PCIE_RCAR) += pcie-rcar.o
+> +obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar-host.o
+>  obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
+>  obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
+>  obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o
+> diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar-host.c
+> similarity index 100%
+> rename from drivers/pci/controller/pcie-rcar.c
+> rename to drivers/pci/controller/pcie-rcar-host.c
+> --
+> 2.7.4
 
 
 _______________________________________________
