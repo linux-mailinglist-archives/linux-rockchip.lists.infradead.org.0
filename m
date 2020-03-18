@@ -2,48 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE555189CC0
+	by mail.lfdr.de (Postfix) with ESMTPS id D12D7189CC1
 	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Mar 2020 14:21:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pbf3APYqSvqxPM62XXPks2rAbMpog4uFohIb7uGs86c=; b=O4qX0XwkLciFn8
-	dKa9m5npvHIiG0oPe+G+FaNYtNk+AVw0sdueb26TPcviWrU6Lnmwcwu6fSTe+0grTjHBzc8p7GJlI
-	xGLYEy9jiu9CLQadz6FLpfikv+MTxeco5hzAhRoOgDOnhxD6dG8IN6D40UMbbBMlriKu+0VxET9EI
-	YJkd85AGQ5uMqA03a7Ta1cvt9CXSdL8hFpwI3bigS7lBwp4tfnGF5IMAJhHDEP8OoIvqrvuhgQRIX
-	PJpNbOq0XF7sJPh6pGBUNN9Jr58Zm923wFPLdgc0sHST53AH7N9dG7XqvGFm+HRp8Tug7DPbKN3a9
-	G5fewUclGypkncNi87xw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nv8nAuJ/4kO+kdkb37CAysbAi8u1HCc7tyU8iN/DNIM=; b=KI5CW8aXPwyvuK
+	zOcW4tkru4cnZJT6K6vybrVuYCpOk0KYnb6DcSlqTjOUva02ZkT2ym0vQEYJu0tymAJgHyW0zZ02B
+	WL7vzU0VCnUwcugORyYm1kq9jIkM4e68LKxV6IZSZqaRntZRx5OOxJ6f2ssoseAVXVkP/xkvj1yuo
+	ddmuS6bgNiHvhCIzADfqE5QgfaO9HljKhXToIass5brAQS1A3A1OBN8IGwOEJ3K4o4Uw2p384Z424
+	MMjzl3q/Q6jX/41Fr/zQg3CPeYvrurbNwMlh/byJvDPp4zQVsLNvOxd5tPH7BsvAh2IlYhXCqZrcC
+	zUPNY1Fw/1GMVlg+bdbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEYds-0003GT-U8; Wed, 18 Mar 2020 13:21:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jEYdw-0003IP-JM; Wed, 18 Mar 2020 13:21:56 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEYdp-0003FZ-N9
- for linux-rockchip@lists.infradead.org; Wed, 18 Mar 2020 13:21:51 +0000
+ id 1jEYdt-0003GR-2J
+ for linux-rockchip@lists.infradead.org; Wed, 18 Mar 2020 13:21:54 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 60E0429661A
+ (Authenticated sender: ezequiel) with ESMTPSA id 8D2D229661B
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/8] hantro: set of small cleanups and fixes
-Date: Wed, 18 Mar 2020 10:21:00 -0300
-Message-Id: <20200318132108.21873-1-ezequiel@collabora.com>
+Subject: [PATCH v2 1/8] v4l2-mem2mem: return CAPTURE buffer first
+Date: Wed, 18 Mar 2020 10:21:01 -0300
+Message-Id: <20200318132108.21873-2-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200318132108.21873-1-ezequiel@collabora.com>
+References: <20200318132108.21873-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_062149_885695_E2FB06A9 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20200318_062153_237129_7E3CDFB8 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -64,64 +64,61 @@ Cc: Rob Herring <robh@kernel.org>, Tomasz Figa <tfiga@chromium.org>,
  Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
  Jonas Karlman <jonas@kwiboo.se>, Nicolas Dufresne <nicolas@ndufresne.ca>,
  Hans Verkuil <hverkuil@xs4all.nl>, Jeffrey Kardatzke <jkardatzke@chromium.org>,
- kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi all,
+When the request API is used, typically an OUTPUT (src) buffer
+will be part of a request. A userspace process will be typically
+blocked, waiting on the request file descriptor.
 
-Cleanups and fixes, second iteration.
+Returning the OUTPUT (src) buffer will wake-up such processes,
+who will immediately attempt to dequeue the CAPTURE buffer,
+only to find it's still unavailable.
 
-The main idea here is to address two issues, and while
-at it, clean the driver a bit.
+Therefore, change v4l2_m2m_buf_done_and_job_finish returning
+the CAPTURE (dst) buffer first, to avoid signalling the request
+file descriptor prematurely, i.e. before the CAPTURE buffer is done.
 
-The first issue can be found in Patch 1, when the Request
-API is used, the CAPTURE buffer should be returned _before_
-the OUTPUT buffer, to avoid waking up userspace prematurely.
+When the request API is not used, this change should have
+no impact.
 
-I noticed this issue while working on the rkvdec driver,
-but this time I've decided to tackle it at the core,
-in v4l2_m2m_buf_done_and_job_finish().
+Tested-by: Nicolas Dufresne <nicolas.dufresne@collabora.com>
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+---
+ drivers/media/v4l2-core/v4l2-mem2mem.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-The second issue is a simple compliance issue, which is solved
-by refactoring the driver, dealing with internal set format
-properly.
-
-Changes v2:
-
-* Fix compile warning introduced by patch 6.
-
-* I'm adding two additional patches this time.
-  Patch 7 converts the binding to json-schema,
-  and patch 8 puts linux-rockchip mailing list in MAINTAINERS. 
-
-Thanks,
-Ezequiel
-
-Ezequiel Garcia (8):
-  v4l2-mem2mem: return CAPTURE buffer first
-  hantro: Set buffers' zeroth plane payload in .buf_prepare
-  hantro: Use v4l2_m2m_buf_done_and_job_finish
-  hantro: Remove unneeded hantro_dec_buf_finish
-  hantro: Move H264 motion vector calculation to a helper
-  hantro: Refactor for V4L2 API spec compliancy
-  dt-bindings: rockchip-vpu: Convert bindings to json-schema
-  hantro: Add linux-rockchip mailing list to MAINTAINERS
-
- .../bindings/media/rockchip-vpu.txt           |  43 -------
- .../bindings/media/rockchip-vpu.yaml          |  82 +++++++++++++
- MAINTAINERS                                   |   3 +-
- drivers/media/v4l2-core/v4l2-mem2mem.c        |  11 +-
- drivers/staging/media/hantro/hantro.h         |   7 +-
- drivers/staging/media/hantro/hantro_drv.c     |  37 ++----
- drivers/staging/media/hantro/hantro_hw.h      |  31 +++++
- drivers/staging/media/hantro/hantro_v4l2.c    | 111 +++++++++---------
- 8 files changed, 194 insertions(+), 131 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.txt
- create mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-
+diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
+index 8986c31176e9..62ac9424c92a 100644
+--- a/drivers/media/v4l2-core/v4l2-mem2mem.c
++++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
+@@ -504,12 +504,21 @@ void v4l2_m2m_buf_done_and_job_finish(struct v4l2_m2m_dev *m2m_dev,
+ 
+ 	if (WARN_ON(!src_buf || !dst_buf))
+ 		goto unlock;
+-	v4l2_m2m_buf_done(src_buf, state);
+ 	dst_buf->is_held = src_buf->flags & V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF;
+ 	if (!dst_buf->is_held) {
+ 		v4l2_m2m_dst_buf_remove(m2m_ctx);
+ 		v4l2_m2m_buf_done(dst_buf, state);
+ 	}
++	/*
++	 * If the request API is being used, returning the OUTPUT
++	 * (src) buffer will wake-up any process waiting on the
++	 * request file descriptor.
++	 *
++	 * Therefore, return the CAPTURE (dst) buffer first,
++	 * to avoid signalling the request file descriptor
++	 * before the CAPTURE buffer is done.
++	 */
++	v4l2_m2m_buf_done(src_buf, state);
+ 	schedule_next = _v4l2_m2m_job_finish(m2m_dev, m2m_ctx);
+ unlock:
+ 	spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
 -- 
 2.25.0
 
