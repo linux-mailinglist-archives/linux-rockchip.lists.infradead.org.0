@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43122189CC8
-	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Mar 2020 14:22:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E1EA189CC9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 18 Mar 2020 14:22:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tPu7Sc8n7E4HHKdbiIHLwwfrhvPTNpAkJ4ZS+Tzdngs=; b=j5e/VNcdZPEcIJ
-	Kj/iUJ8ytfIzeRuXX4gxvNEAUuZoiTkYifcyAjbiSn3mXTgpAHLV4Qvd17t73wQfLpevLtuxTXUR0
-	waPFknkGcT6Bdkou6sBBgP3S24KtAlH7dgifC57zSWZNge2OsmLnA4hk5Wl2nJjMeEmXaCObMdt5C
-	k6fgneAjzWffK1cpbOagBcJsWKO8zz/0TjWHBbALnAG8hyL9zHU7BEpC2SWV2eS8sAAQAygvrtqjU
-	U9aLbZ9SCODjMrzWysZQZPJnYNk2e0U4PRoGpJ8V122XPuVEdGJ1L1P5it4ZNYnurMnASfz42YuNh
-	9aqPhkJdN+0YljqI8RzQ==;
+	List-Owner; bh=gdy4FJ84JZeeB3639IvlaBLrPJdJUXKQJGTbIF6gw0c=; b=doAwUaT/KNtGb7
+	gPvGlIZAzDIlnCqShIdewI+wGsW8u4ss1OpDtin8Ye0ydFkr7WrJ0AgdQlGygQafBBJJrm58GUZY6
+	5SesOOJ+a9Tpz/GVSoMmPhTw7MyFdE/j4jTLRJcWB/zB8SK5PIvjtVw9tOsuXuyxAUsb0pie2klL9
+	beJ44yzuDSQlSSuII3srBqgz6xjKsvxwm2ymn5YUE6k/jAcYl310uQYLKBjoiSmrAXj1AgPkebkel
+	dVdpWaynzPz/gSqRlwG2jv4R0ZBcFjnbBGNzX/1eHmRQ6J1SqW+k2oDo0ZefI83iWy0MHFVTdYp4U
+	3N5Y+SeBHwDUMUwYkr9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEYe5-0003Pe-EX; Wed, 18 Mar 2020 13:22:05 +0000
+	id 1jEYeA-0003Sz-A3; Wed, 18 Mar 2020 13:22:10 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEYe2-0003N8-4J
- for linux-rockchip@lists.infradead.org; Wed, 18 Mar 2020 13:22:03 +0000
+ id 1jEYe6-0003RE-Lh
+ for linux-rockchip@lists.infradead.org; Wed, 18 Mar 2020 13:22:07 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 1330629661A
+ (Authenticated sender: ezequiel) with ESMTPSA id 9E1E729661B
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/8] hantro: Use v4l2_m2m_buf_done_and_job_finish
-Date: Wed, 18 Mar 2020 10:21:03 -0300
-Message-Id: <20200318132108.21873-4-ezequiel@collabora.com>
+Subject: [PATCH v2 4/8] hantro: Remove unneeded hantro_dec_buf_finish
+Date: Wed, 18 Mar 2020 10:21:04 -0300
+Message-Id: <20200318132108.21873-5-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200318132108.21873-1-ezequiel@collabora.com>
 References: <20200318132108.21873-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_062202_299351_FE7951CE 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20200318_062206_837993_78BF2B54 
+X-CRM114-Status: UNSURE (   9.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,64 +70,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Let the core sort out the nuances of returning buffers
-to userspace, by using the v4l2_m2m_buf_done_and_job_finish
-helper.
-
-This change also removes usage of buffer sequence fields,
-which shouldn't have any meaning for stateless decoders.
+Since now .buf_prepare takes care of setting the
+buffer payload size, we can get rid of this,
+at least for decoders.
 
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 ---
- drivers/staging/media/hantro/hantro_drv.c | 27 ++++++++---------------
- 1 file changed, 9 insertions(+), 18 deletions(-)
+ drivers/staging/media/hantro/hantro_drv.c | 10 ----------
+ 1 file changed, 10 deletions(-)
 
 diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
-index 0b1200fc0e1a..ec889d755cd6 100644
+index ec889d755cd6..bd204da6c669 100644
 --- a/drivers/staging/media/hantro/hantro_drv.c
 +++ b/drivers/staging/media/hantro/hantro_drv.c
-@@ -94,32 +94,23 @@ static void hantro_job_finish(struct hantro_dev *vpu,
- 			      unsigned int bytesused,
- 			      enum vb2_buffer_state result)
- {
--	struct vb2_v4l2_buffer *src, *dst;
- 	int ret;
- 
- 	pm_runtime_mark_last_busy(vpu->dev);
- 	pm_runtime_put_autosuspend(vpu->dev);
- 	clk_bulk_disable(vpu->variant->num_clocks, vpu->clocks);
- 
--	src = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
--	dst = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
--
--	if (WARN_ON(!src))
--		return;
--	if (WARN_ON(!dst))
--		return;
--
--	src->sequence = ctx->sequence_out++;
--	dst->sequence = ctx->sequence_cap++;
--
--	ret = ctx->buf_finish(ctx, &dst->vb2_buf, bytesused);
--	if (ret)
--		result = VB2_BUF_STATE_ERROR;
-+	if (ctx->buf_finish) {
-+		struct vb2_v4l2_buffer *dst;
- 
--	v4l2_m2m_buf_done(src, result);
--	v4l2_m2m_buf_done(dst, result);
-+		dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-+		ret = ctx->buf_finish(ctx, &dst->vb2_buf, bytesused);
-+		if (ret)
-+			result = VB2_BUF_STATE_ERROR;
-+	}
- 
--	v4l2_m2m_job_finish(vpu->m2m_dev, ctx->fh.m2m_ctx);
-+	v4l2_m2m_buf_done_and_job_finish(ctx->dev->m2m_dev, ctx->fh.m2m_ctx,
-+					 result);
+@@ -80,15 +80,6 @@ hantro_enc_buf_finish(struct hantro_ctx *ctx, struct vb2_buffer *buf,
+ 	return 0;
  }
  
- void hantro_irq_done(struct hantro_dev *vpu, unsigned int bytesused,
+-static int
+-hantro_dec_buf_finish(struct hantro_ctx *ctx, struct vb2_buffer *buf,
+-		      unsigned int bytesused)
+-{
+-	/* For decoders set bytesused as per the output picture. */
+-	buf->planes[0].bytesused = ctx->dst_fmt.plane_fmt[0].sizeimage;
+-	return 0;
+-}
+-
+ static void hantro_job_finish(struct hantro_dev *vpu,
+ 			      struct hantro_ctx *ctx,
+ 			      unsigned int bytesused,
+@@ -422,7 +413,6 @@ static int hantro_open(struct file *filp)
+ 		ctx->buf_finish = hantro_enc_buf_finish;
+ 	} else if (func->id == MEDIA_ENT_F_PROC_VIDEO_DECODER) {
+ 		allowed_codecs = vpu->variant->codec & HANTRO_DECODERS;
+-		ctx->buf_finish = hantro_dec_buf_finish;
+ 	} else {
+ 		ret = -ENODEV;
+ 		goto err_ctx_free;
 -- 
 2.25.0
 
