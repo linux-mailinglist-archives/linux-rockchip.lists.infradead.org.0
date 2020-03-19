@@ -2,63 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2D9A18BD7D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 18:05:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DACB318BDBF
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 18:13:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0nJRw/BBVNPBzHgnHmd0mQnVW1iM4BAJccgv2aaMxc=; b=aPvuOlAioyhh2S
-	deKmxLqfhNZFdDBtjKZlu3CusxQow8lW+516ThRW963qNoL/lHyzj7yAhqCO40C98rKyWpi0h+yDN
-	Mo5uaDvSxS2WmSw0s78fGzrq3yNU9bSCiamAe8MBD3Y0PpmL7KZ8DyyT31Ax/vMz6njna9j2gbEFd
-	pHn2siPtg52wLuNGoijUDVJyysG3msvzyTXFNDtRKQ/xS97B5LOMLXdlWE+g7PRjLqrwDexAiVU+Q
-	3UyyGTVHdba8PPlrdlxtRMIz6AYysYSWoxewlhOablVrBgpOD1LTKZx10VQZUDHDu/DkDsv8Xv7J+
-	Dlx9yol3xGQ7p890u9Kg==;
+	List-Owner; bh=+CwOPjenwxk+eEoqAumsx6IEwlBwvNkXOKfzdYXUvgU=; b=O5C08CfMm7nEKC
+	hXeQOcCVyIbru69SWet0mR6xgMdcK3PhnxR9J+XqQNNWpNWwaY1WUXDgovR2CKM84hpPEIAu/OJmQ
+	Ykssm66Bf85k85Ln77g/SUHGgYx0UGYLEd0Hwhhyu/1z5SMgeSjZdpFEXNDuGZ72tI2DmLiSB4506
+	5dBWDpT2joY4f6ZbYvvaz6wJ0LBRYG+kD93L2Ed8e/83W2/ZsEU6Ji5qkIRNGoMK2nmFuED8lHsTu
+	1FQtOtGsjUVT5lGbcs4UZbDRUWgVGliYAqhTVr6ImJ7ftszz7RRUnl27xrOnnYsZwsX6keToGhKeK
+	Q/d4497dRtmnC46RtDlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEyc9-0001Mi-Iw; Thu, 19 Mar 2020 17:05:49 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1jEyjP-0005DE-Sn; Thu, 19 Mar 2020 17:13:19 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEybs-00018m-7V; Thu, 19 Mar 2020 17:05:34 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 1AAD32002D;
- Thu, 19 Mar 2020 18:05:24 +0100 (CET)
-Date: Thu, 19 Mar 2020 18:05:22 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Thomas Zimmermann <tzimmermann@suse.de>, Daniel Vetter <daniel@ffwll.ch>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v1 0/3] drm: drm_encoder_init() => drm_encoder_init_funcs()
-Message-ID: <20200319170522.GA29213@ravnborg.org>
-References: <20200313201744.19773-1-sam@ravnborg.org>
- <20200319141954.GA25036@ravnborg.org>
+ id 1jEyjE-00053V-3O; Thu, 19 Mar 2020 17:13:09 +0000
+Received: by mail-io1-f68.google.com with SMTP id h8so3091486iob.2;
+ Thu, 19 Mar 2020 10:13:08 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vaMeRGcAwte1RmEGSngS2OcQrt9TNWs2C+uDaacmCzY=;
+ b=lkc5NYcx7MMZ2dHWw6fVcPb7PTldAwQOdj96wUidyCKJ8WAScEoWiRKxJv7Piu7+aR
+ VTEq7yOvA1E44dzk0O1RPwuie8CcqpIj2VDD+5wbH7BpV25zsPyOgAIKzgtna2VN0uSZ
+ KlnMSJMI8tQenx3S/iDxqtWTgCofWx0QM68lm+cLwfGhwNg1+yH38HaZDpAUlpNvky5d
+ 1/iHPt99SYRrfmBlJfkye194bumnPr75pMQ2/gB0X4mNLNoWI0GDypLrxnvZYO77XeOP
+ aRDvsWWSZHQHvgExlVDWZ8N2zQycvXA+3+yFK5taHoC6U6Bcj4aG371r8FU9xHYp1Wbu
+ LiTQ==
+X-Gm-Message-State: ANhLgQ1Vkq/o0B6tzVuDbje8vPmsQaVmihPCMeaYvdAHiGcqYiQGUDro
+ rJTQpxvUFvLu6ZX0zyzWOQ==
+X-Google-Smtp-Source: ADFU+vsNzhhlAgAANEzR2hL4ECz0qv+I1PFFy4PjVP6P9NnX2JFAcIQgt4cGP2efDTKjZcnzATPDWw==
+X-Received: by 2002:a6b:5a0c:: with SMTP id o12mr3606837iob.137.1584637987422; 
+ Thu, 19 Mar 2020 10:13:07 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id j23sm923575ioa.10.2020.03.19.10.13.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Mar 2020 10:13:06 -0700 (PDT)
+Received: (nullmailer pid 19540 invoked by uid 1000);
+ Thu, 19 Mar 2020 17:13:05 -0000
+Date: Thu, 19 Mar 2020 11:13:05 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [RFC PATCH 1/2] dt-bindings: phy: convert phy-rockchip-inno-usb2
+ bindings to yaml
+Message-ID: <20200319171305.GA19150@bogus>
+References: <20200318192901.5023-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200319141954.GA25036@ravnborg.org>
+In-Reply-To: <20200318192901.5023-1-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=e5mUnYsNAAAA:8
- a=9MVmhzcSsuuJt3ktV8oA:9 a=CjuIK1q_8ugA:10 a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_100532_637130_87403CD6 
-X-CRM114-Status: GOOD (  21.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200319_101308_142966_A992CE62 
+X-CRM114-Status: GOOD (  10.97  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [109.247.116.14 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ [209.85.166.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.68 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,78 +91,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-samsung-soc@vger.kernel.org, Emil Velikov <emil.velikov@collabora.com>,
- Boris Brezillon <bbrezillon@kernel.org>, David Airlie <airlied@linux.ie>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Jose Roberto de Souza <jose.souza@intel.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-mediatek@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>,
- Dave Airlie <airlied@redhat.com>, linux-tegra@vger.kernel.org,
- linux-amlogic@lists.infradead.org, virtualization@lists.linux-foundation.org,
- amd-gfx@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, Gerd Hoffmann <kraxel@redhat.com>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ kishon@ti.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 03:19:54PM +0100, Sam Ravnborg wrote:
-> On Fri, Mar 13, 2020 at 09:17:41PM +0100, Sam Ravnborg wrote:
-> > Thomas Zimmermann had made a nice patch-set that introduced
-> > drm_simple_encoder_init() which is already present in drm-misc-next.
-> > 
-> > While looking at this it was suddenly obvious to me that
-> > this was functionalty that really should be included in drm_encoder.c
-> > The case where the core could handle the callback is pretty
-> > common and not part of the simple pipe line.
-> > 
-> > So after some dialog on dri-devel the conclusion was to go for
-> > a change like this:
-> > 
-> >     drm_encoder_init_funcs() for all users that specified a
-> >     drm_encoder_funcs to extend the functionality.
-> > 
-> >     drm_encoder_init() for all users that did not
-> >     need to extend the basic functionality with
-> >     drm_encoder_funcs.
-> > 
-> > A similar approach with a _funcs() prefix is used elsewhere in drm/
-> > 
-> > This required a rename of the existing users, and
-> > a follow-up patch that moves drm_simple_encoder_init()
-> > to drm_encoder.c
-> > 
-> > Patches 3 in this set demonstrate the use of drm_encoder_init().
-> > There are many more drivers that can be converted as Thomas
-> > has already demonstrated.
-> > 
-> > This is all based on work done by Thomas Zimmermann,
-> > I just wanted to implement my suggestion so
-> > we could select the best way forward.
-> > 
-> > Note: Daniel Vetter has hinted the approach implemented
-> > here smelled like middle-layer.
-> > IMO this is not so, it is just a way to handle cleanup
-> > for the simple cases.
+On Wed, 18 Mar 2020 20:29:00 +0100, Johan Jonker wrote:
+> Current dts files for Rockchip with 'usb2-phy' subnodes
+> are manually verified. In order to automate this process
+> phy-rockchip-inno-usb2.txt has to be converted to yaml.
 > 
-> We discussed this patch-set briefly on irc.
-Just to clarify, we in this context was Daniel Vetter & me.
+> Changed:
+>   Removed unused "rockchip,rk3366-usb2phy" support.
+>   Replaced example with something that has SoC support
+>   in the kernel.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/phy/phy-rockchip-inno-usb2.txt        |  81 -----------
+>  .../bindings/phy/phy-rockchip-inno-usb2.yaml       | 149 +++++++++++++++++++++
+>  2 files changed, 149 insertions(+), 81 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.yaml
+> 
 
-	Sam
+My bot found errors running 'make dt_binding_check' on your patch:
 
-> With the upcoming drmm_ changes and such this is bad timing..
-> And in the end this may be pointless code-chrunch.
-> 
-> Patch-set shelfed for now - may re-visit it later.
-> 
-> 	Sam
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.example.dt.yaml: usb2-phy@e450: '#phy-cells' is a required property
+
+See https://patchwork.ozlabs.org/patch/1257721
+Please check and re-submit.
 
 _______________________________________________
 Linux-rockchip mailing list
