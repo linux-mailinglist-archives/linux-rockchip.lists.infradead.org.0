@@ -2,51 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18D7918B94A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 15:23:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A1C218BAB8
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 16:13:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z46uiTuvbwg+l3YCAkUS0Uq8XQA0EF3DAQWmhf00+Bo=; b=OaDbB2f7hdV0h0
-	jvCp2hauXVshhPtMJ5A4P7KnFJKiH8eVGwxlS4DbWE5thYC13JZA9gr/DRUWRv8su1dtFdR6EkwDX
-	ItPWsC0LBmHUV8viKbsNWqxNAv7Mz9/4peK4D8Omz6VBVC7lEKQ6J0mY3TimGQ/iCo/y7VDZLCqe0
-	Myg7eJR3AdCyttVkRPXCDt40UU893LaOt6ObG3/qS54ArxGj20EW8OHCyhEeKEwEcbL9gD7WaLJ3V
-	506Iho+6O+keV06Y9NcS6yqWPKkHY7z+HN1wibTWxqGSGE0w1LJ4INcEzGM2cjoTBBj/mKbvYeCQ6
-	sn48mkFH4oVBwpQiVxTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rkHHsIWCEfRtrwr5jNbeMMuaadqfQsoe/YxCoHIxlrY=; b=gs39BIr9AVJkFh
+	ftyzZgqvq2rfFVRidFBCJ81jfVG16zWa+rNPfyey3uFPTHEsVMd1foxzx4xt3nslMcsgroGe3iM08
+	tuTMR/ftZdfLO0mbPYUQCwk2rNbVA2nwVp9BCPLhpID7PAHB+ZRmPjA/ZhNS61fhrq0if5OJAxVU0
+	5GZ2zcX1ttzLBqTDlygvTe71GH1i6jE7oTChnuRWqP5kaJh2UE6Htx9LQae+QEWLDDOnVs61JdmtI
+	qMOsP7VjLj1i376nv8Hni3JMCZo6Kb+VU2tztYY2ZW9LnJ4SNWUxVnwfsQaaBwNFauEyVVJZuOQBR
+	xr+CLUNfvaCH/gxdzHHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEw4d-0005mg-Er; Thu, 19 Mar 2020 14:23:03 +0000
-Received: from vegas.theobroma-systems.com ([144.76.126.164]
- helo=mail.theobroma-systems.com)
+	id 1jEwrp-0004kl-RB; Thu, 19 Mar 2020 15:13:53 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEw4T-0005d5-K3; Thu, 19 Mar 2020 14:22:54 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]:43774
- helo=diego.localnet) by mail.theobroma-systems.com with esmtpsa
- (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256) (Exim 4.80)
- (envelope-from <heiko.stuebner@theobroma-systems.com>)
- id 1jEw4P-0004O5-2t; Thu, 19 Mar 2020 15:22:49 +0100
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-To: Christoph Muellner <christoph.muellner@theobroma-systems.com>
-Subject: Re: [PATCH] phy: rk-inno-usb2: Decrease verbosity of repeating log.
-Date: Thu, 19 Mar 2020 15:22:48 +0100
-Message-ID: <2002640.57rdNQtM3Z@diego>
-Organization: Theobroma Systems
-In-Reply-To: <20200319140852.27636-1-christoph.muellner@theobroma-systems.com>
-References: <20200319140852.27636-1-christoph.muellner@theobroma-systems.com>
+ id 1jEwrn-0004jw-68; Thu, 19 Mar 2020 15:13:53 +0000
+Received: from fsav303.sakura.ne.jp (fsav303.sakura.ne.jp [153.120.85.134])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 02JFDj1l032351;
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav303.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp);
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav303.sakura.ne.jp)
+Received: from localhost.localdomain (121.252.232.153.ap.dti.ne.jp
+ [153.232.252.121]) (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 02JFDeaK032340
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+ Fri, 20 Mar 2020 00:13:45 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
+Subject: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each dts
+ for rk3288
+Date: Fri, 20 Mar 2020 00:13:39 +0900
+Message-Id: <20200319151339.17909-1-katsuhiro@katsuster.net>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_072253_810076_A613EF20 
-X-CRM114-Status: UNSURE (   7.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200319_081351_567309_2D1B0159 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,34 +66,229 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 19. M=E4rz 2020, 15:08:52 CET schrieb Christoph Muellner:
-> phy-rockchip-inno-usb2 logs the message
-> =
+This patch removes conflicted pinctrl settings uart2 and pwm 2/3
+from common rk3288.dtsi and moves exist uart2 pinctrl settings
+into each rk3288*.dts files.
 
->   "phy-ff2c0000.syscon:usb2-phy@100.2: charger =3D INVALID_CHARGER"
-> =
+  - pwm2_pin  : use GPIO7_C6
+  - pwm3_pin  : use GPIO7_C7
+  - uart2_xfer: use GPIO7_C6, GPIO7_C7
 
-> constantly with a frequency of about 1 Hz and a verbosity level
-> of INFO. As this is clearly annoying, this patch decreases
-> the log level to DEBUG.
-> =
+Currently uart2 rk3288 user is the following:
 
-> Signed-off-by: Christoph Muellner <christoph.muellner@theobroma-systems.c=
-om>
+  - rk3288-evb.dtsi:&uart2 {
+  - rk3288-firefly-reload.dts:&uart2 {
+  - rk3288-firefly.dtsi:&uart2 {
+  - rk3288-miqi.dts:&uart2 {
+  - rk3288-phycore-rdk.dts:&uart2 {
+  - rk3288-popmetal.dts:&uart2 {
+  - rk3288-r89.dts:&uart2 {
+  - rk3288-rock2-square.dts:&uart2 {
+  - rk3288-tinker.dtsi:&uart2 {
+  - rk3288-veyron.dtsi:&uart2 {
+  - rk3288-vyasa.dts:&uart2 {
 
-I've noticed these messages in the past as well, but I guess in my short
-test-cycles never got annoyed enough to do something about it, but it's
-nice to see them go away, so
+And no one is using pwm2 nor pwm3.
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+---
+ arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
+ arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
+ arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
+ arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
+ arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
+ arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
+ arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
+ arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
+ arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
+ arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
+ arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
+ arch/arm/boot/dts/rk3288.dtsi               | 6 ------
+ 12 files changed, 22 insertions(+), 6 deletions(-)
 
+diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3288-evb.dtsi
+index 018802df4c0e..74091f831ecf 100644
+--- a/arch/arm/boot/dts/rk3288-evb.dtsi
++++ b/arch/arm/boot/dts/rk3288-evb.dtsi
+@@ -285,6 +285,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+index 8c38bda21a7c..b0c976c8e35b 100644
+--- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
++++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
+@@ -283,6 +283,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts/rk3288-firefly.dtsi
+index 5e0a19004e46..1632cc083c12 100644
+--- a/arch/arm/boot/dts/rk3288-firefly.dtsi
++++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
+@@ -532,6 +532,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3288-miqi.dts
+index c41d012c8850..2c0ed37fde80 100644
+--- a/arch/arm/boot/dts/rk3288-miqi.dts
++++ b/arch/arm/boot/dts/rk3288-miqi.dts
+@@ -379,6 +379,8 @@ &tsadc {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+index 1e33859de484..6532c1ac43cd 100644
+--- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
++++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
+@@ -244,6 +244,8 @@ &uart0 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts/rk3288-popmetal.dts
+index 6a51940398b5..f18306bd9e6e 100644
+--- a/arch/arm/boot/dts/rk3288-popmetal.dts
++++ b/arch/arm/boot/dts/rk3288-popmetal.dts
+@@ -481,6 +481,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk3288-r89.dts
+index a258c7ae5329..02d2f5cfe201 100644
+--- a/arch/arm/boot/dts/rk3288-r89.dts
++++ b/arch/arm/boot/dts/rk3288-r89.dts
+@@ -340,6 +340,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot/dts/rk3288-rock2-square.dts
+index cdcdc921ee09..a44290e882be 100644
+--- a/arch/arm/boot/dts/rk3288-rock2-square.dts
++++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
+@@ -264,6 +264,8 @@ &spdif {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3288-tinker.dtsi
+index acfaa12ec239..0327119f71b4 100644
+--- a/arch/arm/boot/dts/rk3288-tinker.dtsi
++++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
+@@ -500,6 +500,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
+index 54a6838d73f5..baa44d00e49a 100644
+--- a/arch/arm/boot/dts/rk3288-veyron.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+@@ -412,6 +412,8 @@ &uart1 {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk3288-vyasa.dts
+index 385dd59393e1..aa50cdc7f839 100644
+--- a/arch/arm/boot/dts/rk3288-vyasa.dts
++++ b/arch/arm/boot/dts/rk3288-vyasa.dts
+@@ -398,6 +398,8 @@ &tsadc {
+ };
+ 
+ &uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart2_xfer>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 0cd88774db95..4c1f8cabb5eb 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -450,8 +450,6 @@ uart2: serial@ff690000 {
+ 		reg-io-width = <4>;
+ 		clocks = <&cru SCLK_UART2>, <&cru PCLK_UART2>;
+ 		clock-names = "baudclk", "apb_pclk";
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&uart2_xfer>;
+ 		status = "disabled";
+ 	};
+ 
+@@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
+ 		compatible = "rockchip,rk3288-pwm";
+ 		reg = <0x0 0xff680020 0x0 0x10>;
+ 		#pwm-cells = <3>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pwm2_pin>;
+ 		clocks = <&cru PCLK_RKPWM>;
+ 		clock-names = "pwm";
+ 		status = "disabled";
+@@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
+ 		compatible = "rockchip,rk3288-pwm";
+ 		reg = <0x0 0xff680030 0x0 0x10>;
+ 		#pwm-cells = <3>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pwm3_pin>;
+ 		clocks = <&cru PCLK_RKPWM>;
+ 		clock-names = "pwm";
+ 		status = "disabled";
+-- 
+2.25.1
 
 
 _______________________________________________
