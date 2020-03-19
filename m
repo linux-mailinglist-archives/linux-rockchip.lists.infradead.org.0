@@ -2,43 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87E9218BB0A
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 16:25:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AE5618BB0E
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 16:26:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YZRdiNFxfYqdpN06kTnNu4dOQMHENIsKRSblSlhVCTY=; b=fudNL0CFkxjfkj
-	wONhDzYPSx0SaiG8tpdE/jxf24hckMZ+gCsyKHT6ar+df0JGCKoINLdFpMCYkjUahsqNgyybePBbt
-	AOHaWl33Dg9YVr9rRrnAz32AOlSgKFsEE/HEOvYmHH08aYtzvzcuA6gL4/gQRx+IuhNeQTEY1Ln/c
-	DccL+nxSw7oTmjsf8TVSs8N2UX6oMB67FqiaMHVqSGKs4g9e5zClL/PjmSAnkgGr0MUlyCfjX1+Ho
-	mdY1adYVi6aaEndiD0Q1luFrHrbVhaS7JBD1K37rF2u3O5wVa9wUJTrqOcTMTv2lODC7S5qseZmL3
-	O6QTKZM3AiK7VMTo4pIg==;
+	List-Owner; bh=TIcyn3UQPfswcC7ZRbzF+hMYcrqzsU8t2EpN2BfL6ow=; b=eFii47btGSplks
+	ylzsBFkzCNyMWsqxomo3Uzl1xGymNW70nRe6XhCsGcwAi+3z2UXbWxjjZv3YPY62aRPsKWC4HfliP
+	KXUdLC/xcDfnakxLbAIo6R01vhw74jtWRoLTdwquyu/EmSO310WW6gfg7wNM3+3OjUHk1lDwacxWP
+	i/lPzHwh0a2sJs2J3tGsmkOmxKnX6TLgl9gt9SIsxc1gYMo+wWNRSaHV2JlYT9f6yLNygWqwFmQZF
+	iTPv6PcJuwlN5g64Jhu/LkozPpwDe1l3c7xpVXZ0myjXXFL2mci/dOoyw5Aia+rtyYoZwolxgYk1l
+	gh7AJahqK2J3bvmYhn8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEx3I-0002cj-JV; Thu, 19 Mar 2020 15:25:44 +0000
+	id 1jEx44-0002zY-Np; Thu, 19 Mar 2020 15:26:32 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEx3E-0002c5-85; Thu, 19 Mar 2020 15:25:42 +0000
+ id 1jEx42-0002z7-25
+ for linux-rockchip@lists.infradead.org; Thu, 19 Mar 2020 15:26:31 +0000
 Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
  helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jEx39-0001eF-PI; Thu, 19 Mar 2020 16:25:35 +0100
+ id 1jEx3z-0001ef-OB; Thu, 19 Mar 2020 16:26:27 +0100
 From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-Subject: Re: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each
- dts for rk3288
-Date: Thu, 19 Mar 2020 16:25:35 +0100
-Message-ID: <4307911.4IBKxFWOMT@diego>
-In-Reply-To: <20200319151339.17909-1-katsuhiro@katsuster.net>
-References: <20200319151339.17909-1-katsuhiro@katsuster.net>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v2 8/8] hantro: Add linux-rockchip mailing list to
+ MAINTAINERS
+Date: Thu, 19 Mar 2020 16:26:27 +0100
+Message-ID: <1737479.UCjzuJY553@diego>
+In-Reply-To: <20200318132108.21873-9-ezequiel@collabora.com>
+References: <20200318132108.21873-1-ezequiel@collabora.com>
+ <20200318132108.21873-9-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_082540_436098_F1F3069D 
-X-CRM114-Status: GOOD (  17.05  )
+X-CRM114-CacheID: sfid-20200319_082630_247108_45665075 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,283 +60,45 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Alexandre Courbot <acourbot@chromium.org>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
+ Rob Herring <robh@kernel.org>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-Am Donnerstag, 19. M=E4rz 2020, 16:13:39 CET schrieb Katsuhiro Suzuki:
-> This patch removes conflicted pinctrl settings uart2 and pwm 2/3
-> from common rk3288.dtsi and moves exist uart2 pinctrl settings
-> into each rk3288*.dts files.
+Am Mittwoch, 18. M=E4rz 2020, 14:21:08 CET schrieb Ezequiel Garcia:
+> The linux-rockchip mailing list is relevant for the
+> Hantro driver, given this support the VPU present
+> in Rockchip SoCs.
 > =
 
->   - pwm2_pin  : use GPIO7_C6
->   - pwm3_pin  : use GPIO7_C7
->   - uart2_xfer: use GPIO7_C6, GPIO7_C7
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 
-Board files only ever get to enable either pwm2/3 or uart2,
-not both at once - so I'm not sure where you see conflicts.
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-And of course there are alternative pins to use, if you need uart2
-you need both pins in uart-pinmux and if you need either as pwm, then
-the board by design just can't use them as uart2.
-
-So pin setting should stay where they are, as there really is no conflict.
-
-
-Heiko
-
-
-
-> Currently uart2 rk3288 user is the following:
-> =
-
->   - rk3288-evb.dtsi:&uart2 {
->   - rk3288-firefly-reload.dts:&uart2 {
->   - rk3288-firefly.dtsi:&uart2 {
->   - rk3288-miqi.dts:&uart2 {
->   - rk3288-phycore-rdk.dts:&uart2 {
->   - rk3288-popmetal.dts:&uart2 {
->   - rk3288-r89.dts:&uart2 {
->   - rk3288-rock2-square.dts:&uart2 {
->   - rk3288-tinker.dtsi:&uart2 {
->   - rk3288-veyron.dtsi:&uart2 {
->   - rk3288-vyasa.dts:&uart2 {
-> =
-
-> And no one is using pwm2 nor pwm3.
-> =
-
-> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 > ---
->  arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
->  arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
->  arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
->  arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
->  arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
->  arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
->  arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
->  arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
->  arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
->  arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
->  arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
->  arch/arm/boot/dts/rk3288.dtsi               | 6 ------
->  12 files changed, 22 insertions(+), 6 deletions(-)
+>  MAINTAINERS | 1 +
+>  1 file changed, 1 insertion(+)
 > =
 
-> diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3288=
--evb.dtsi
-> index 018802df4c0e..74091f831ecf 100644
-> --- a/arch/arm/boot/dts/rk3288-evb.dtsi
-> +++ b/arch/arm/boot/dts/rk3288-evb.dtsi
-> @@ -285,6 +285,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/boot/=
-dts/rk3288-firefly-reload.dts
-> index 8c38bda21a7c..b0c976c8e35b 100644
-> --- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
-> +++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
-> @@ -283,6 +283,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts/rk=
-3288-firefly.dtsi
-> index 5e0a19004e46..1632cc083c12 100644
-> --- a/arch/arm/boot/dts/rk3288-firefly.dtsi
-> +++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
-> @@ -532,6 +532,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3288=
--miqi.dts
-> index c41d012c8850..2c0ed37fde80 100644
-> --- a/arch/arm/boot/dts/rk3288-miqi.dts
-> +++ b/arch/arm/boot/dts/rk3288-miqi.dts
-> @@ -379,6 +379,8 @@ &tsadc {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/dts=
-/rk3288-phycore-rdk.dts
-> index 1e33859de484..6532c1ac43cd 100644
-> --- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
-> +++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
-> @@ -244,6 +244,8 @@ &uart0 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts/rk=
-3288-popmetal.dts
-> index 6a51940398b5..f18306bd9e6e 100644
-> --- a/arch/arm/boot/dts/rk3288-popmetal.dts
-> +++ b/arch/arm/boot/dts/rk3288-popmetal.dts
-> @@ -481,6 +481,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk3288-=
-r89.dts
-> index a258c7ae5329..02d2f5cfe201 100644
-> --- a/arch/arm/boot/dts/rk3288-r89.dts
-> +++ b/arch/arm/boot/dts/rk3288-r89.dts
-> @@ -340,6 +340,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot/dt=
-s/rk3288-rock2-square.dts
-> index cdcdc921ee09..a44290e882be 100644
-> --- a/arch/arm/boot/dts/rk3288-rock2-square.dts
-> +++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
-> @@ -264,6 +264,8 @@ &spdif {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/rk3=
-288-tinker.dtsi
-> index acfaa12ec239..0327119f71b4 100644
-> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
-> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
-> @@ -500,6 +500,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3=
-288-veyron.dtsi
-> index 54a6838d73f5..baa44d00e49a 100644
-> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-> @@ -412,6 +412,8 @@ &uart1 {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk328=
-8-vyasa.dts
-> index 385dd59393e1..aa50cdc7f839 100644
-> --- a/arch/arm/boot/dts/rk3288-vyasa.dts
-> +++ b/arch/arm/boot/dts/rk3288-vyasa.dts
-> @@ -398,6 +398,8 @@ &tsadc {
->  };
->  =
-
->  &uart2 {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&uart2_xfer>;
->  	status =3D "okay";
->  };
->  =
-
-> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-> index 0cd88774db95..4c1f8cabb5eb 100644
-> --- a/arch/arm/boot/dts/rk3288.dtsi
-> +++ b/arch/arm/boot/dts/rk3288.dtsi
-> @@ -450,8 +450,6 @@ uart2: serial@ff690000 {
->  		reg-io-width =3D <4>;
->  		clocks =3D <&cru SCLK_UART2>, <&cru PCLK_UART2>;
->  		clock-names =3D "baudclk", "apb_pclk";
-> -		pinctrl-names =3D "default";
-> -		pinctrl-0 =3D <&uart2_xfer>;
->  		status =3D "disabled";
->  	};
->  =
-
-> @@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
->  		compatible =3D "rockchip,rk3288-pwm";
->  		reg =3D <0x0 0xff680020 0x0 0x10>;
->  		#pwm-cells =3D <3>;
-> -		pinctrl-names =3D "default";
-> -		pinctrl-0 =3D <&pwm2_pin>;
->  		clocks =3D <&cru PCLK_RKPWM>;
->  		clock-names =3D "pwm";
->  		status =3D "disabled";
-> @@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
->  		compatible =3D "rockchip,rk3288-pwm";
->  		reg =3D <0x0 0xff680030 0x0 0x10>;
->  		#pwm-cells =3D <3>;
-> -		pinctrl-names =3D "default";
-> -		pinctrl-0 =3D <&pwm3_pin>;
->  		clocks =3D <&cru PCLK_RKPWM>;
->  		clock-names =3D "pwm";
->  		status =3D "disabled";
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 28bbbb6c73ef..dc56b9bfc3b3 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -14313,6 +14313,7 @@ F:	Documentation/devicetree/bindings/media/rockch=
+ip-rga.txt
+>  HANTRO VPU CODEC DRIVER
+>  M:	Ezequiel Garcia <ezequiel@collabora.com>
+>  L:	linux-media@vger.kernel.org
+> +L:	linux-rockchip@lists.infradead.org
+>  S:	Maintained
+>  F:	drivers/staging/media/hantro/
+>  F:	Documentation/devicetree/bindings/media/rockchip-vpu.yaml
 > =
 
 
