@@ -2,51 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99CA518BC3D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 17:17:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CFFF18BCA5
+	for <lists+linux-rockchip@lfdr.de>; Thu, 19 Mar 2020 17:32:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Kmaso1y4PS3CNZS+8xsVp3Q4VNyZuSpPUboLb7uGgs=; b=ks8wDoN6vD139y
-	r221YISNrbUAhrpKf8Sm7c6qmtRP0W+upVCNIgtfeVOwF7KRFX2Rd5BDuoeLUUyzJlYd1XvHontjg
-	uiHERF6UOYPezI015bgbd2uBHCPdYx+ot+JUAHgemULqb1i4cP/w2lY//v2L5vFtm7s226Ul0r5PJ
-	s50ZLfAVAcC4BnZEo1oTjwOURjd5YzLYlrOsnUbws4paFCOLn4nb7RlLEB9nayohfeP5FUaOhSJfP
-	WcjIQ8/z9kGpLn0DDmqdP9Yh9QB/4iWjHe4b0nqU3Bgpm7M5eMitnQSFz863ppHLbYoC8od2t+0Bt
-	FSY2MkN+qnf3CDgGC84w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+4K93uKiq5epJJAubIG/gIMP4a346JoKnMjy0XgjLW8=; b=BDnt2yAF2EwI7h5/Gp+B23Co5
+	oJHTT04o4BZcFBPCeqKgHtboMAS1y/e6ZyF8jW0DN5wccKB8ryBV8q26H3kQYSKgoMCIZpJF2DWPO
+	fr2KYwlqrx8xtyVKmDLAsvKujxo+MtQjhf1ha6OVaAtZrFgZq39AiP51QIspkZGPs9uWzdC+MM7TC
+	rXIhDNjwbL3z8Yrn2Jee6QxPFYJ7Y0c3o5XD6DNpgCiKlWbTthzQFkYZ1iRjNNHoVRMFVUZAax9IG
+	2oZWcbGzXDJZFnZQJ6T+VYLpIKcD8WUOhLnJNEaN4HP2B7EpulNiJgp6YGoWQarTCWqm6sUe/9kjO
+	4e+UapWQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jExrj-0002hY-RY; Thu, 19 Mar 2020 16:17:51 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jExrf-0002h2-Gp; Thu, 19 Mar 2020 16:17:49 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jExrc-0001rp-J9; Thu, 19 Mar 2020 17:17:44 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+	id 1jEy60-0003LS-HL; Thu, 19 Mar 2020 16:32:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEy2g-0007Du-5l; Thu, 19 Mar 2020 16:29:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D60830E;
+ Thu, 19 Mar 2020 09:29:08 -0700 (PDT)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 347323F52E;
+ Thu, 19 Mar 2020 09:29:07 -0700 (PDT)
 Subject: Re: [PATCH] ARM: dts: rockchip: move uart2 pinctrl settings to each
  dts for rk3288
-Date: Thu, 19 Mar 2020 17:17:41 +0100
-Message-ID: <3546891.GlR2YxYlMe@diego>
-In-Reply-To: <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
+To: Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
 References: <20200319151339.17909-1-katsuhiro@katsuster.net>
  <4307911.4IBKxFWOMT@diego>
  <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <4d93b050-6185-0d39-c89a-ac7fb6fc7780@arm.com>
+Date: Thu, 19 Mar 2020 16:29:06 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
+In-Reply-To: <8eed33d8-142c-28cf-7fa4-faf9bebb13cf@katsuster.net>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_091747_708521_412F23AA 
-X-CRM114-Status: GOOD (  23.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200319_092910_393342_9BBB97D8 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,354 +69,182 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-Am Donnerstag, 19. M=E4rz 2020, 16:58:00 CET schrieb Katsuhiro Suzuki:
-> On 2020/03/20 0:25, Heiko St=FCbner wrote:
-> > Am Donnerstag, 19. M=E4rz 2020, 16:13:39 CET schrieb Katsuhiro Suzuki:
-> >> This patch removes conflicted pinctrl settings uart2 and pwm 2/3
-> >> from common rk3288.dtsi and moves exist uart2 pinctrl settings
-> >> into each rk3288*.dts files.
-> >>
-> >>    - pwm2_pin  : use GPIO7_C6
-> >>    - pwm3_pin  : use GPIO7_C7
-> >>    - uart2_xfer: use GPIO7_C6, GPIO7_C7
-> > =
-
-> > Board files only ever get to enable either pwm2/3 or uart2,
-> > not both at once - so I'm not sure where you see conflicts.
-> > =
-
-> =
-
-> At first, I think so too. But I've saw this message when booting.
-> =
-
-> ----------
-> [    2.435504] rockchip-pinctrl pinctrl: pin gpio7-22 already requested b=
-y ff680020.pwm; cannot claim for ff690000.serial
-> [    2.447506] rockchip-pinctrl pinctrl: pin-238 (ff690000.serial) status=
- -22
-> [    2.455198] rockchip-pinctrl pinctrl: could not request pin 238 (gpio7=
--22) from group uart2-xfer  on device rockchip-pinctrl
-> ----------
-> =
-
-> And it seems that uart2(ttyS2) is not working correctly.
-> =
-
-> ----------
-> # cat /dev/ttyS2
-> cat: /dev/ttyS2: Input/output error
-> ----------
-> =
-
-> I'm using newest linux-next, make defconfig and CONFIG_MODULES =3D n sett=
-ing
-> with TinkerBoard. Can I resolve this issue in other ways?
-
-On the tinker-board pwm2 is unused and has a status=3Ddisabled in the
-devicetree [at least when checking my current branches], so the kernel
-shouldn't even create a plaform-device for it.
-
-I.e. see [0] - the of_device_is_available() call should already drop the
-disabled devices, so there should not even exist a ff680020.pwm .
-
-So I guess the solution would be to find out why it creates ff680020.pwm
-in the first place and fix that.
-
-Heiko
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tre=
-e/drivers/of/platform.c#n174
-
-
-
-> > And of course there are alternative pins to use, if you need uart2
-> > you need both pins in uart-pinmux and if you need either as pwm, then
-> > the board by design just can't use them as uart2.
-> > =
-
-> > So pin setting should stay where they are, as there really is no confli=
-ct.
-> > =
-
-> > =
-
-> > Heiko
-> > =
-
-> > =
-
-> > =
-
-> >> Currently uart2 rk3288 user is the following:
-> >>
-> >>    - rk3288-evb.dtsi:&uart2 {
-> >>    - rk3288-firefly-reload.dts:&uart2 {
-> >>    - rk3288-firefly.dtsi:&uart2 {
-> >>    - rk3288-miqi.dts:&uart2 {
-> >>    - rk3288-phycore-rdk.dts:&uart2 {
-> >>    - rk3288-popmetal.dts:&uart2 {
-> >>    - rk3288-r89.dts:&uart2 {
-> >>    - rk3288-rock2-square.dts:&uart2 {
-> >>    - rk3288-tinker.dtsi:&uart2 {
-> >>    - rk3288-veyron.dtsi:&uart2 {
-> >>    - rk3288-vyasa.dts:&uart2 {
-> >>
-> >> And no one is using pwm2 nor pwm3.
-> >>
-> >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> >> ---
-> >>   arch/arm/boot/dts/rk3288-evb.dtsi           | 2 ++
-> >>   arch/arm/boot/dts/rk3288-firefly-reload.dts | 2 ++
-> >>   arch/arm/boot/dts/rk3288-firefly.dtsi       | 2 ++
-> >>   arch/arm/boot/dts/rk3288-miqi.dts           | 2 ++
-> >>   arch/arm/boot/dts/rk3288-phycore-rdk.dts    | 2 ++
-> >>   arch/arm/boot/dts/rk3288-popmetal.dts       | 2 ++
-> >>   arch/arm/boot/dts/rk3288-r89.dts            | 2 ++
-> >>   arch/arm/boot/dts/rk3288-rock2-square.dts   | 2 ++
-> >>   arch/arm/boot/dts/rk3288-tinker.dtsi        | 2 ++
-> >>   arch/arm/boot/dts/rk3288-veyron.dtsi        | 2 ++
-> >>   arch/arm/boot/dts/rk3288-vyasa.dts          | 2 ++
-> >>   arch/arm/boot/dts/rk3288.dtsi               | 6 ------
-> >>   12 files changed, 22 insertions(+), 6 deletions(-)
-> >>
-> >> diff --git a/arch/arm/boot/dts/rk3288-evb.dtsi b/arch/arm/boot/dts/rk3=
-288-evb.dtsi
-> >> index 018802df4c0e..74091f831ecf 100644
-> >> --- a/arch/arm/boot/dts/rk3288-evb.dtsi
-> >> +++ b/arch/arm/boot/dts/rk3288-evb.dtsi
-> >> @@ -285,6 +285,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-firefly-reload.dts b/arch/arm/bo=
-ot/dts/rk3288-firefly-reload.dts
-> >> index 8c38bda21a7c..b0c976c8e35b 100644
-> >> --- a/arch/arm/boot/dts/rk3288-firefly-reload.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-firefly-reload.dts
-> >> @@ -283,6 +283,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-firefly.dtsi b/arch/arm/boot/dts=
-/rk3288-firefly.dtsi
-> >> index 5e0a19004e46..1632cc083c12 100644
-> >> --- a/arch/arm/boot/dts/rk3288-firefly.dtsi
-> >> +++ b/arch/arm/boot/dts/rk3288-firefly.dtsi
-> >> @@ -532,6 +532,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-miqi.dts b/arch/arm/boot/dts/rk3=
-288-miqi.dts
-> >> index c41d012c8850..2c0ed37fde80 100644
-> >> --- a/arch/arm/boot/dts/rk3288-miqi.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-miqi.dts
-> >> @@ -379,6 +379,8 @@ &tsadc {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-phycore-rdk.dts b/arch/arm/boot/=
-dts/rk3288-phycore-rdk.dts
-> >> index 1e33859de484..6532c1ac43cd 100644
-> >> --- a/arch/arm/boot/dts/rk3288-phycore-rdk.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-phycore-rdk.dts
-> >> @@ -244,6 +244,8 @@ &uart0 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-popmetal.dts b/arch/arm/boot/dts=
-/rk3288-popmetal.dts
-> >> index 6a51940398b5..f18306bd9e6e 100644
-> >> --- a/arch/arm/boot/dts/rk3288-popmetal.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-popmetal.dts
-> >> @@ -481,6 +481,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-r89.dts b/arch/arm/boot/dts/rk32=
-88-r89.dts
-> >> index a258c7ae5329..02d2f5cfe201 100644
-> >> --- a/arch/arm/boot/dts/rk3288-r89.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-r89.dts
-> >> @@ -340,6 +340,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-rock2-square.dts b/arch/arm/boot=
-/dts/rk3288-rock2-square.dts
-> >> index cdcdc921ee09..a44290e882be 100644
-> >> --- a/arch/arm/boot/dts/rk3288-rock2-square.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-rock2-square.dts
-> >> @@ -264,6 +264,8 @@ &spdif {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-tinker.dtsi b/arch/arm/boot/dts/=
-rk3288-tinker.dtsi
-> >> index acfaa12ec239..0327119f71b4 100644
-> >> --- a/arch/arm/boot/dts/rk3288-tinker.dtsi
-> >> +++ b/arch/arm/boot/dts/rk3288-tinker.dtsi
-> >> @@ -500,6 +500,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/=
-rk3288-veyron.dtsi
-> >> index 54a6838d73f5..baa44d00e49a 100644
-> >> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-> >> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-> >> @@ -412,6 +412,8 @@ &uart1 {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288-vyasa.dts b/arch/arm/boot/dts/rk=
-3288-vyasa.dts
-> >> index 385dd59393e1..aa50cdc7f839 100644
-> >> --- a/arch/arm/boot/dts/rk3288-vyasa.dts
-> >> +++ b/arch/arm/boot/dts/rk3288-vyasa.dts
-> >> @@ -398,6 +398,8 @@ &tsadc {
-> >>   };
-> >>   =
-
-> >>   &uart2 {
-> >> +	pinctrl-names =3D "default";
-> >> +	pinctrl-0 =3D <&uart2_xfer>;
-> >>   	status =3D "okay";
-> >>   };
-> >>   =
-
-> >> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.=
-dtsi
-> >> index 0cd88774db95..4c1f8cabb5eb 100644
-> >> --- a/arch/arm/boot/dts/rk3288.dtsi
-> >> +++ b/arch/arm/boot/dts/rk3288.dtsi
-> >> @@ -450,8 +450,6 @@ uart2: serial@ff690000 {
-> >>   		reg-io-width =3D <4>;
-> >>   		clocks =3D <&cru SCLK_UART2>, <&cru PCLK_UART2>;
-> >>   		clock-names =3D "baudclk", "apb_pclk";
-> >> -		pinctrl-names =3D "default";
-> >> -		pinctrl-0 =3D <&uart2_xfer>;
-> >>   		status =3D "disabled";
-> >>   	};
-> >>   =
-
-> >> @@ -706,8 +704,6 @@ pwm2: pwm@ff680020 {
-> >>   		compatible =3D "rockchip,rk3288-pwm";
-> >>   		reg =3D <0x0 0xff680020 0x0 0x10>;
-> >>   		#pwm-cells =3D <3>;
-> >> -		pinctrl-names =3D "default";
-> >> -		pinctrl-0 =3D <&pwm2_pin>;
-> >>   		clocks =3D <&cru PCLK_RKPWM>;
-> >>   		clock-names =3D "pwm";
-> >>   		status =3D "disabled";
-> >> @@ -717,8 +713,6 @@ pwm3: pwm@ff680030 {
-> >>   		compatible =3D "rockchip,rk3288-pwm";
-> >>   		reg =3D <0x0 0xff680030 0x0 0x10>;
-> >>   		#pwm-cells =3D <3>;
-> >> -		pinctrl-names =3D "default";
-> >> -		pinctrl-0 =3D <&pwm3_pin>;
-> >>   		clocks =3D <&cru PCLK_RKPWM>;
-> >>   		clock-names =3D "pwm";
-> >>   		status =3D "disabled";
-> >>
-> > =
-
-> > =
-
-> > =
-
-> > =
-
-> > =
-
-> =
-
-> =
-
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gMjAyMC0wMy0xOSAzOjU4IHBtLCBLYXRzdWhpcm8gU3V6dWtpIHdyb3RlOgo+IEhlbGxvIEhl
+aWtvLAo+IAo+IE9uIDIwMjAvMDMvMjAgMDoyNSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4+IEhp
+LAo+Pgo+PiBBbSBEb25uZXJzdGFnLCAxOS4gTcOkcnogMjAyMCwgMTY6MTM6MzkgQ0VUIHNjaHJp
+ZWIgS2F0c3VoaXJvIFN1enVraToKPj4+IFRoaXMgcGF0Y2ggcmVtb3ZlcyBjb25mbGljdGVkIHBp
+bmN0cmwgc2V0dGluZ3MgdWFydDIgYW5kIHB3bSAyLzMKPj4+IGZyb20gY29tbW9uIHJrMzI4OC5k
+dHNpIGFuZCBtb3ZlcyBleGlzdCB1YXJ0MiBwaW5jdHJsIHNldHRpbmdzCj4+PiBpbnRvIGVhY2gg
+cmszMjg4Ki5kdHMgZmlsZXMuCj4+Pgo+Pj4gwqDCoCAtIHB3bTJfcGluwqAgOiB1c2UgR1BJTzdf
+QzYKPj4+IMKgwqAgLSBwd20zX3BpbsKgIDogdXNlIEdQSU83X0M3Cj4+PiDCoMKgIC0gdWFydDJf
+eGZlcjogdXNlIEdQSU83X0M2LCBHUElPN19DNwo+Pgo+PiBCb2FyZCBmaWxlcyBvbmx5IGV2ZXIg
+Z2V0IHRvIGVuYWJsZSBlaXRoZXIgcHdtMi8zIG9yIHVhcnQyLAo+PiBub3QgYm90aCBhdCBvbmNl
+IC0gc28gSSdtIG5vdCBzdXJlIHdoZXJlIHlvdSBzZWUgY29uZmxpY3RzLgo+Pgo+IAo+IEF0IGZp
+cnN0LCBJIHRoaW5rIHNvIHRvby4gQnV0IEkndmUgc2F3IHRoaXMgbWVzc2FnZSB3aGVuIGJvb3Rp
+bmcuCj4gCj4gLS0tLS0tLS0tLQo+IFvCoMKgwqAgMi40MzU1MDRdIHJvY2tjaGlwLXBpbmN0cmwg
+cGluY3RybDogcGluIGdwaW83LTIyIGFscmVhZHkgcmVxdWVzdGVkIAo+IGJ5IGZmNjgwMDIwLnB3
+bTsgY2Fubm90IGNsYWltIGZvciBmZjY5MDAwMC5zZXJpYWwKPiBbwqDCoMKgIDIuNDQ3NTA2XSBy
+b2NrY2hpcC1waW5jdHJsIHBpbmN0cmw6IHBpbi0yMzggKGZmNjkwMDAwLnNlcmlhbCkgCj4gc3Rh
+dHVzIC0yMgo+IFvCoMKgwqAgMi40NTUxOThdIHJvY2tjaGlwLXBpbmN0cmwgcGluY3RybDogY291
+bGQgbm90IHJlcXVlc3QgcGluIDIzOCAKPiAoZ3BpbzctMjIpIGZyb20gZ3JvdXAgdWFydDIteGZl
+csKgIG9uIGRldmljZSByb2NrY2hpcC1waW5jdHJsCj4gLS0tLS0tLS0tLQo+IAo+IEFuZCBpdCBz
+ZWVtcyB0aGF0IHVhcnQyKHR0eVMyKSBpcyBub3Qgd29ya2luZyBjb3JyZWN0bHkuCj4gCj4gLS0t
+LS0tLS0tLQo+ICMgY2F0IC9kZXYvdHR5UzIKPiBjYXQ6IC9kZXYvdHR5UzI6IElucHV0L291dHB1
+dCBlcnJvcgo+IC0tLS0tLS0tLS0KPiAKPiBJJ20gdXNpbmcgbmV3ZXN0IGxpbnV4LW5leHQsIG1h
+a2UgZGVmY29uZmlnIGFuZCBDT05GSUdfTU9EVUxFUyA9IG4gc2V0dGluZwo+IHdpdGggVGlua2Vy
+Qm9hcmQuIENhbiBJIHJlc29sdmUgdGhpcyBpc3N1ZSBpbiBvdGhlciB3YXlzPwoKRG8geW91IHBl
+cmhhcHMgaGF2ZSBhIERUIG92ZXJsYXkgb3IgYm9vdGxvYWRlciBzY3JpcHQgZW5hYmxpbmcgcHdt
+Mj8gCih0cnkgYGNhdCAvc3lzL2Zpcm13YXJlL2RldmljZXRyZWUvYmFzZS9wd21AZmY2ODAwMjAv
+c3RhdHVzYCBmb3IgYSAKc2FuaXR5IGNoZWNrKS4gRldJVyBJIGRvbid0IHJlY2FsbCBldmVyIHNl
+ZWluZyB0aGlzIG9uIG15IFJLMzI4OCBib3guCgoob3Igb2YgY291cnNlIG1heWJlIHRoZXJlJ3Mg
+anVzdCBzb21lIHBpbmN0cmwgYnVnIGluIC1uZXh0IHRoYXQncyAKY2xhaW1pbmcgY29uZmlncyBm
+b3IgZGlzYWJsZWQgZGV2aWNlcykKClJvYmluLgoKPiAKPiBCZXN0IFJlZ2FyZHMsCj4gS2F0c3Vo
+aXJvIFN1enVraQo+IAo+IAo+PiBBbmQgb2YgY291cnNlIHRoZXJlIGFyZSBhbHRlcm5hdGl2ZSBw
+aW5zIHRvIHVzZSwgaWYgeW91IG5lZWQgdWFydDIKPj4geW91IG5lZWQgYm90aCBwaW5zIGluIHVh
+cnQtcGlubXV4IGFuZCBpZiB5b3UgbmVlZCBlaXRoZXIgYXMgcHdtLCB0aGVuCj4+IHRoZSBib2Fy
+ZCBieSBkZXNpZ24ganVzdCBjYW4ndCB1c2UgdGhlbSBhcyB1YXJ0Mi4KPj4KPj4gU28gcGluIHNl
+dHRpbmcgc2hvdWxkIHN0YXkgd2hlcmUgdGhleSBhcmUsIGFzIHRoZXJlIHJlYWxseSBpcyBubyAK
+Pj4gY29uZmxpY3QuCj4+Cj4+Cj4+IEhlaWtvCj4+Cj4+Cj4+Cj4+PiBDdXJyZW50bHkgdWFydDIg
+cmszMjg4IHVzZXIgaXMgdGhlIGZvbGxvd2luZzoKPj4+Cj4+PiDCoMKgIC0gcmszMjg4LWV2Yi5k
+dHNpOiZ1YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LWZpcmVmbHktcmVsb2FkLmR0czomdWFydDIg
+ewo+Pj4gwqDCoCAtIHJrMzI4OC1maXJlZmx5LmR0c2k6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMy
+ODgtbWlxaS5kdHM6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtcGh5Y29yZS1yZGsuZHRzOiZ1
+YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LXBvcG1ldGFsLmR0czomdWFydDIgewo+Pj4gwqDCoCAt
+IHJrMzI4OC1yODkuZHRzOiZ1YXJ0MiB7Cj4+PiDCoMKgIC0gcmszMjg4LXJvY2syLXNxdWFyZS5k
+dHM6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtdGlua2VyLmR0c2k6JnVhcnQyIHsKPj4+IMKg
+wqAgLSByazMyODgtdmV5cm9uLmR0c2k6JnVhcnQyIHsKPj4+IMKgwqAgLSByazMyODgtdnlhc2Eu
+ZHRzOiZ1YXJ0MiB7Cj4+Pgo+Pj4gQW5kIG5vIG9uZSBpcyB1c2luZyBwd20yIG5vciBwd20zLgo+
+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEthdHN1aGlybyBTdXp1a2kgPGthdHN1aGlyb0BrYXRzdXN0
+ZXIubmV0Pgo+Pj4gLS0tCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9yazMyODgtZXZiLmR0c2nC
+oMKgwqDCoMKgwqDCoMKgwqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
+OC1maXJlZmx5LXJlbG9hZC5kdHMgfCAyICsrCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9yazMy
+ODgtZmlyZWZseS5kdHNpwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0vYm9vdC9k
+dHMvcmszMjg4LW1pcWkuZHRzwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCAyICsrCj4+PiDCoCBhcmNo
+L2FybS9ib290L2R0cy9yazMyODgtcGh5Y29yZS1yZGsuZHRzwqDCoMKgIHwgMiArKwo+Pj4gwqAg
+YXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0c8KgwqDCoMKgwqDCoCB8IDIgKysK
+Pj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yODkuZHRzwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yb2NrMi1zcXVhcmUu
+ZHRzwqDCoCB8IDIgKysKPj4+IMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRz
+acKgwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZl
+eXJvbi5kdHNpwqDCoMKgwqDCoMKgwqAgfCAyICsrCj4+PiDCoCBhcmNoL2FybS9ib290L2R0cy9y
+azMyODgtdnlhc2EuZHRzwqDCoMKgwqDCoMKgwqDCoMKgIHwgMiArKwo+Pj4gwqAgYXJjaC9hcm0v
+Ym9vdC9kdHMvcmszMjg4LmR0c2nCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgNiAtLS0t
+LS0KPj4+IMKgIDEyIGZpbGVzIGNoYW5nZWQsIDIyIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25z
+KC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1ldmIuZHRz
+aSAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWV2Yi5kdHNpCj4+PiBpbmRleCAwMTg4
+MDJkZjRjMGUuLjc0MDkxZjgzMWVjZiAxMDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRz
+L3JrMzI4OC1ldmIuZHRzaQo+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWV2Yi5k
+dHNpCj4+PiBAQCAtMjg1LDYgKzI4NSw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4gwqAgJnVh
+cnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvCoMKgwqAg
+cGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0gIm9rYXki
+Owo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMyODgtZmly
+ZWZseS1yZWxvYWQuZHRzIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtZmlyZWZseS1y
+ZWxvYWQuZHRzCj4+PiBpbmRleCA4YzM4YmRhMjFhN2MuLmIwYzk3NmM4ZTM1YiAxMDA2NDQKPj4+
+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LXJlbG9hZC5kdHMKPj4+ICsr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LXJlbG9hZC5kdHMKPj4+IEBAIC0y
+ODMsNiArMjgzLDggQEAgJnVhcnQxIHsKPj4+IMKgIH07Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8Kg
+wqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8
+JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDCoCBzdGF0dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+
+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LmR0c2kgCj4+
+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1maXJlZmx5LmR0c2kKPj4+IGluZGV4IDVlMGEx
+OTAwNGU0Ni4uMTYzMmNjMDgzYzEyIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMv
+cmszMjg4LWZpcmVmbHkuZHRzaQo+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LWZp
+cmVmbHkuZHRzaQo+Pj4gQEAgLTUzMiw2ICs1MzIsOCBAQCAmdWFydDEgewo+Pj4gwqAgfTsKPj4+
+IMKgICZ1YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiAr
+wqDCoMKgIHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9
+ICJva2F5IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmsz
+Mjg4LW1pcWkuZHRzIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtbWlxaS5kdHMKPj4+
+IGluZGV4IGM0MWQwMTJjODg1MC4uMmMwZWQzN2ZkZTgwIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9h
+cm0vYm9vdC9kdHMvcmszMjg4LW1pcWkuZHRzCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9y
+azMyODgtbWlxaS5kdHMKPj4+IEBAIC0zNzksNiArMzc5LDggQEAgJnRzYWRjIHsKPj4+IMKgIH07
+Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8KgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+
+Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDCoCBzdGF0
+dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRz
+L3JrMzI4OC1waHljb3JlLXJkay5kdHMgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1w
+aHljb3JlLXJkay5kdHMKPj4+IGluZGV4IDFlMzM4NTlkZTQ4NC4uNjUzMmMxYWM0M2NkIDEwMDY0
+NAo+Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBoeWNvcmUtcmRrLmR0cwo+Pj4g
+KysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBoeWNvcmUtcmRrLmR0cwo+Pj4gQEAgLTI0
+NCw2ICsyNDQsOCBAQCAmdWFydDAgewo+Pj4gwqAgfTsKPj4+IMKgICZ1YXJ0MiB7Cj4+PiArwqDC
+oMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKgIHBpbmN0cmwtMCA9IDwm
+dWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5IjsKPj4+IMKgIH07Cj4+
+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0cyAKPj4+
+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXBvcG1ldGFsLmR0cwo+Pj4gaW5kZXggNmE1MTk0
+MDM5OGI1Li5mMTgzMDZiZDllNmUgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9y
+azMyODgtcG9wbWV0YWwuZHRzCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtcG9w
+bWV0YWwuZHRzCj4+PiBAQCAtNDgxLDYgKzQ4MSw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4g
+wqAgJnVhcnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvC
+oMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0g
+Im9rYXkiOwo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMy
+ODgtcjg5LmR0cyAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXI4OS5kdHMKPj4+IGlu
+ZGV4IGEyNThjN2FlNTMyOS4uMDJkMmY1Y2ZlMjAxIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm0v
+Ym9vdC9kdHMvcmszMjg4LXI4OS5kdHMKPj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
+OC1yODkuZHRzCj4+PiBAQCAtMzQwLDYgKzM0MCw4IEBAICZ1YXJ0MSB7Cj4+PiDCoCB9Owo+Pj4g
+wqAgJnVhcnQyIHsKPj4+ICvCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvC
+oMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0g
+Im9rYXkiOwo+Pj4gwqAgfTsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMy
+ODgtcm9jazItc3F1YXJlLmR0cyAKPj4+IGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXJvY2sy
+LXNxdWFyZS5kdHMKPj4+IGluZGV4IGNkY2RjOTIxZWUwOS4uYTQ0MjkwZTg4MmJlIDEwMDY0NAo+
+Pj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXJvY2syLXNxdWFyZS5kdHMKPj4+ICsr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC1yb2NrMi1zcXVhcmUuZHRzCj4+PiBAQCAtMjY0
+LDYgKzI2NCw4IEBAICZzcGRpZiB7Cj4+PiDCoCB9Owo+Pj4gwqAgJnVhcnQyIHsKPj4+ICvCoMKg
+wqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvCoMKgwqAgcGluY3RybC0wID0gPCZ1
+YXJ0Ml94ZmVyPjsKPj4+IMKgwqDCoMKgwqAgc3RhdHVzID0gIm9rYXkiOwo+Pj4gwqAgfTsKPj4+
+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdGlua2VyLmR0c2kgCj4+PiBi
+L2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIuZHRzaQo+Pj4gaW5kZXggYWNmYWExMmVj
+MjM5Li4wMzI3MTE5ZjcxYjQgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9yazMy
+ODgtdGlua2VyLmR0c2kKPj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC10aW5rZXIu
+ZHRzaQo+Pj4gQEAgLTUwMCw2ICs1MDAsOCBAQCAmdWFydDEgewo+Pj4gwqAgfTsKPj4+IMKgICZ1
+YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKg
+IHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDCoMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5
+IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZl
+eXJvbi5kdHNpIAo+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLmR0c2kKPj4+
+IGluZGV4IDU0YTY4MzhkNzNmNS4uYmFhNDRkMDBlNDlhIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9h
+cm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi5kdHNpCj4+PiArKysgYi9hcmNoL2FybS9ib290L2R0
+cy9yazMyODgtdmV5cm9uLmR0c2kKPj4+IEBAIC00MTIsNiArNDEyLDggQEAgJnVhcnQxIHsKPj4+
+IMKgIH07Cj4+PiDCoCAmdWFydDIgewo+Pj4gK8KgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1
+bHQiOwo+Pj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8JnVhcnQyX3hmZXI+Owo+Pj4gwqDCoMKgwqDC
+oCBzdGF0dXMgPSAib2theSI7Cj4+PiDCoCB9Owo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jv
+b3QvZHRzL3JrMzI4OC12eWFzYS5kdHMgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12
+eWFzYS5kdHMKPj4+IGluZGV4IDM4NWRkNTkzOTNlMS4uYWE1MGNkYzdmODM5IDEwMDY0NAo+Pj4g
+LS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZ5YXNhLmR0cwo+Pj4gKysrIGIvYXJjaC9h
+cm0vYm9vdC9kdHMvcmszMjg4LXZ5YXNhLmR0cwo+Pj4gQEAgLTM5OCw2ICszOTgsOCBAQCAmdHNh
+ZGMgewo+Pj4gwqAgfTsKPj4+IMKgICZ1YXJ0MiB7Cj4+PiArwqDCoMKgIHBpbmN0cmwtbmFtZXMg
+PSAiZGVmYXVsdCI7Cj4+PiArwqDCoMKgIHBpbmN0cmwtMCA9IDwmdWFydDJfeGZlcj47Cj4+PiDC
+oMKgwqDCoMKgIHN0YXR1cyA9ICJva2F5IjsKPj4+IMKgIH07Cj4+PiBkaWZmIC0tZ2l0IGEvYXJj
+aC9hcm0vYm9vdC9kdHMvcmszMjg4LmR0c2kgCj4+PiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4
+OC5kdHNpCj4+PiBpbmRleCAwY2Q4ODc3NGRiOTUuLjRjMWY4Y2FiYjVlYiAxMDA2NDQKPj4+IC0t
+LSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC5kdHNpCj4+PiArKysgYi9hcmNoL2FybS9ib290
+L2R0cy9yazMyODguZHRzaQo+Pj4gQEAgLTQ1MCw4ICs0NTAsNiBAQCB1YXJ0Mjogc2VyaWFsQGZm
+NjkwMDAwIHsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZWctaW8td2lkdGggPSA8ND47Cj4+PiDC
+oMKgwqDCoMKgwqDCoMKgwqAgY2xvY2tzID0gPCZjcnUgU0NMS19VQVJUMj4sIDwmY3J1IFBDTEtf
+VUFSVDI+Owo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIGNsb2NrLW5hbWVzID0gImJhdWRjbGsiLCAi
+YXBiX3BjbGsiOwo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7
+Cj4+PiAtwqDCoMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZ1YXJ0Ml94ZmVyPjsKPj4+IMKgwqDC
+oMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+Pj4gwqDCoMKgwqDCoCB9Owo+Pj4g
+QEAgLTcwNiw4ICs3MDQsNiBAQCBwd20yOiBwd21AZmY2ODAwMjAgewo+Pj4gwqDCoMKgwqDCoMKg
+wqDCoMKgIGNvbXBhdGlibGUgPSAicm9ja2NoaXAscmszMjg4LXB3bSI7Cj4+PiDCoMKgwqDCoMKg
+wqDCoMKgwqAgcmVnID0gPDB4MCAweGZmNjgwMDIwIDB4MCAweDEwPjsKPj4+IMKgwqDCoMKgwqDC
+oMKgwqDCoCAjcHdtLWNlbGxzID0gPDM+Owo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFt
+ZXMgPSAiZGVmYXVsdCI7Cj4+PiAtwqDCoMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZwd20yX3Bp
+bj47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2tzID0gPCZjcnUgUENMS19SS1BXTT47Cj4+
+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xvY2stbmFtZXMgPSAicHdtIjsKPj4+IMKgwqDCoMKgwqDC
+oMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+Pj4gQEAgLTcxNyw4ICs3MTMsNiBAQCBwd20z
+OiBwd21AZmY2ODAwMzAgewo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIGNvbXBhdGlibGUgPSAicm9j
+a2NoaXAscmszMjg4LXB3bSI7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4MCAweGZm
+NjgwMDMwIDB4MCAweDEwPjsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCAjcHdtLWNlbGxzID0gPDM+
+Owo+Pj4gLcKgwqDCoMKgwqDCoMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+PiAtwqDC
+oMKgwqDCoMKgwqAgcGluY3RybC0wID0gPCZwd20zX3Bpbj47Cj4+PiDCoMKgwqDCoMKgwqDCoMKg
+wqAgY2xvY2tzID0gPCZjcnUgUENMS19SS1BXTT47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgY2xv
+Y2stbmFtZXMgPSAicHdtIjsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAiZGlzYWJs
+ZWQiOwo+Pj4KPj4KPj4KPj4KPj4KPj4KPiAKPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4g
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
+IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
