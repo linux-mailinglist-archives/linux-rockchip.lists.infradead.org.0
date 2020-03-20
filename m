@@ -2,73 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2ED218CA78
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Mar 2020 10:34:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E233B18CB12
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Mar 2020 11:03:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hS2JiUNvrlrM9ojMpS0UiSz5zaQP3QQrQk1QOEAQaoM=; b=ghnA2pfMjvncXY9AB9gK5Ejj7y
-	vX+XZvDfGFLsgSuDOc/y987ewbWFDvXEQK0NX/K28qS9NBr2ABZSzj2WkAqjXQgYIulDnsulkD9m6
-	71+TY6O0uF2d72KxRVfNF5mez8/hOnQhp7yLoKRb53PeUtMpDJ8yi2E1ZX5OUQrFAt5kJqnJmgTRO
-	Kp+0oFpoCCRaVHtOxU96MirrIn1eEAJpEvEEJgkEc1uwurhy8csusUjoP4MEIUxVIU+4IY/yWMV16
-	YpOtCTlxZfyAqkkIbvKDpQEcRAs6J1RKWaOtW43ojEkpyZBQ1NTA7ydwY+4F8+Nik0DfyssCQo+Ez
-	AvbNDyOQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UhD7yA36zJzWnM4hPNvNOphTSFUpuUNyMdJoSq7fUJ0=; b=qcSe1p4pDNBmcF
+	iCK/EsOzqWjk//KFxUX1sywNRQOMQYEe0S3OlENCfEy/NCXN+/j+JppuJqlVcG/9ooOPyMY/IM+H4
+	eo1ONSyAneObYQTrfGIGVHB8UMbHmagmWVBccVqmgvDTKKS4Jmo+SwiyORMMTvrB8sHxI3p777K5t
+	3Qdj+naPG0z9HWCkKxip7lwrLRhaUgWiUiCnygwjmRSH1eY/OO7fwDCiHnpfGR7eUYvvqGallAwJx
+	6PJL9j4ET9W2CXkK+Xgs8xtxizIQDvLXhDqhA0+SfgX5NAZJbFNvQeq/DCfex3W3bl6k+bbAbwltQ
+	55BJDd6FV1Z6zdGImyUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFE3C-0002Hs-EC; Fri, 20 Mar 2020 09:34:46 +0000
-Received: from lucky1.263xmail.com ([211.157.147.130])
+	id 1jFEUc-0005U3-Cb; Fri, 20 Mar 2020 10:03:06 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFE2i-0001s1-QJ; Fri, 20 Mar 2020 09:34:20 +0000
-Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id 048AD97EC6;
- Fri, 20 Mar 2020 17:34:04 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from ubuntu18.lan (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P19134T140660085376768S1584696835111908_; 
- Fri, 20 Mar 2020 17:34:03 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <4376441f08d837ef13cdf1a798570f93>
-X-RL-SENDER: yifeng.zhao@rock-chips.com
-X-SENDER: zyf@rock-chips.com
-X-LOGIN-NAME: yifeng.zhao@rock-chips.com
-X-FST-TO: miquel.raynal@bootlin.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-To: miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
- robh+dt@kernel.org
-Subject: [PATCH v4 3/3] MAINTAINERS: add maintainers to rockchip nfc
-Date: Fri, 20 Mar 2020 17:33:42 +0800
-Message-Id: <20200320093342.15470-4-yifeng.zhao@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200320093342.15470-1-yifeng.zhao@rock-chips.com>
-References: <20200320093342.15470-1-yifeng.zhao@rock-chips.com>
+ id 1jFEUP-0005Kq-1P; Fri, 20 Mar 2020 10:02:54 +0000
+Received: by mail-ed1-f66.google.com with SMTP id z65so6481399ede.0;
+ Fri, 20 Mar 2020 03:02:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=yKhEFD0HDc489I3cxzxcRx7nCJ4icJCiGjR0lWOPd2k=;
+ b=p2xLRa8/c3PDzyJVTS1qmgzQoP3wVrxe8xiT4PnhTArOjQ5Lvd6dmq0AfdLAQ9ez/n
+ YuS71Ymcv1VdgKTMeYnI4Z8W5TZAV+CvvANf3oS56okq39L0ChBIP9hEA9+0eY8Qjlxm
+ egSXESZr7XGWxSstz+k/ENtU0h5pw+CRmoMc69zeDJaxtCVXIHgOGD053FLOq1bGvAOQ
+ gjQA2ZGWleKfF71Y1eWHh+2K8mBW5IM+6USD6VQ+9a9C3CcKunrXv3eTSOkScvREXqBW
+ aHTVliN+fLcuh74J4W9mc7WOASLMJRi3BAt2raZKGP/dHMQxJg555hhwvRT9Ux0nJhJA
+ Dq+Q==
+X-Gm-Message-State: ANhLgQ3/wpJO0Cb8McT+XV24K8AhDPP6DvdwsO8SUud1ORuwdQWWzuFg
+ 4nfn4gYDr9p+AAztjbodpAA=
+X-Google-Smtp-Source: ADFU+vtTJo8GuuHT33eJ8VISdzNZK+dw+AG9XHRSiOF+v3/TwxvILo+kc3y2aVtBOdqG/TC06c4U9g==
+X-Received: by 2002:a17:906:80d5:: with SMTP id
+ a21mr7612042ejx.240.1584698571643; 
+ Fri, 20 Mar 2020 03:02:51 -0700 (PDT)
+Received: from pi3 ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id e16sm319824ejx.53.2020.03.20.03.02.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Mar 2020 03:02:50 -0700 (PDT)
+Date: Fri, 20 Mar 2020 11:02:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Subject: Re: [RFC PATCH 7/7] arm: dts: pwm: replace polarity constant with
+ macro
+Message-ID: <20200320100243.GA16931@pi3>
+References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
+ <20200317123231.2843297-8-oleksandr.suvorov@toradex.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200317123231.2843297-8-oleksandr.suvorov@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_023417_098245_C4621338 
-X-CRM114-Status: UNSURE (   7.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200320_030253_082235_8D1A4C67 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.130 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,50 +88,109 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yifeng Zhao <yifeng.zhao@rock-chips.com>,
- linux-mtd@lists.infradead.org, heiko@sntech.de,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pwm@vger.kernel.org, Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sekhar Nori <nsekhar@ti.com>, Stefan Agner <stefan@agner.ch>,
+ linux-kernel@vger.kernel.org,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>,
+ Magnus Damm <magnus.damm@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ devicetree@vger.kernel.org, David Lechner <david@lechnology.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Paul Barker <pbarker@konsulko.com>, Rob Herring <robh+dt@kernel.org>,
+ Tony Lindgren <tony@atomide.com>, linux-amlogic@lists.infradead.org,
+ linux-omap@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Igor Opaniuk <igor.opaniuk@toradex.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>, linux-renesas-soc@vger.kernel.org,
+ Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Shawn Guo <shawnguo@kernel.org>, Peter Rosin <peda@axentia.se>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
----
+On Tue, Mar 17, 2020 at 02:32:31PM +0200, Oleksandr Suvorov wrote:
+> There is the PWM_POLARITY_NORMAL defined and describled in
+> <dt-bindings/pwm/pwm.h> and used by pwm drivers.
+> 
+> This patch converts all '0' constant in pwms parameters into
+> PWM_POLARITY_NORMAL.
+> 
+> Replace with sed regexp:
+> 's/(pwms = <&[a-zA-Z_0-9]+ [0-9]+ [0-9]+) 0>/\1 PWM_POLARITY_NORMAL>/'
+> 
+> Then:
+> - included pwm.h in some dts/dtsi to fix building errors about undefined
+>   symbols.
+> - fixed the patman warnings about the code format;
+> 
+> Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+> ---
+> 
+>  arch/arm/boot/dts/am335x-cm-t335.dts               | 2 +-
+>  arch/arm/boot/dts/am335x-evm.dts                   | 2 +-
+>  arch/arm/boot/dts/am3517-evm.dts                   | 2 +-
+>  arch/arm/boot/dts/at91-dvk_su60_somc_lcm.dtsi      | 2 +-
+>  arch/arm/boot/dts/at91-kizbox2-common.dtsi         | 6 +++---
+>  arch/arm/boot/dts/at91-kizbox3_common.dtsi         | 8 ++++----
+>  arch/arm/boot/dts/at91-kizboxmini-common.dtsi      | 6 +++---
+>  arch/arm/boot/dts/at91-nattis-2-natte-2.dts        | 2 +-
+>  arch/arm/boot/dts/at91-sama5d4_ma5d4evk.dts        | 2 +-
+>  arch/arm/boot/dts/at91sam9n12ek.dts                | 2 +-
+>  arch/arm/boot/dts/at91sam9x5dm.dtsi                | 2 +-
+>  arch/arm/boot/dts/berlin2cd-google-chromecast.dts  | 4 ++--
+>  arch/arm/boot/dts/da850-evm.dts                    | 2 +-
+>  arch/arm/boot/dts/da850-lego-ev3.dts               | 4 ++--
+>  arch/arm/boot/dts/exynos4412-midas.dtsi            | 2 +-
+>  arch/arm/boot/dts/exynos4412-odroidu3.dts          | 2 +-
+>  arch/arm/boot/dts/exynos5250-snow-common.dtsi      | 2 +-
+>  arch/arm/boot/dts/exynos5410-odroidxu.dts          | 2 +-
+>  arch/arm/boot/dts/exynos5420-peach-pit.dts         | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidhc1.dts         | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi | 2 +-
+>  arch/arm/boot/dts/exynos5422-odroidxu4.dts         | 2 +-
+>  arch/arm/boot/dts/exynos54xx-odroidxu-leds.dtsi    | 4 ++--
+>  arch/arm/boot/dts/exynos5800-peach-pi.dts          | 2 +-
+>  arch/arm/boot/dts/imx53-tx53-x13x.dts              | 5 +++--
+>  arch/arm/boot/dts/imx6dl-tx6dl-comtft.dts          | 2 +-
+>  arch/arm/boot/dts/imx6q-display5.dtsi              | 2 +-
+>  arch/arm/boot/dts/imx6q-tx6q-1010-comtft.dts       | 2 +-
+>  arch/arm/boot/dts/imx6q-tx6q-1020-comtft.dts       | 2 +-
+>  arch/arm/boot/dts/imx6qdl-tx6-lvds.dtsi            | 4 ++--
+>  arch/arm/boot/dts/imx7-colibri.dtsi                | 4 +++-
+>  arch/arm/boot/dts/imx7d-nitrogen7.dts              | 3 ++-
+>  arch/arm/boot/dts/imx7d-pico.dtsi                  | 3 ++-
+>  arch/arm/boot/dts/imx7d-sdb.dts                    | 3 ++-
+>  arch/arm/boot/dts/imx7ulp-evk.dts                  | 3 ++-
+>  arch/arm/boot/dts/iwg20d-q7-common.dtsi            | 2 +-
+>  arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   | 2 +-
+>  arch/arm/boot/dts/meson8b-ec100.dts                | 4 ++--
+>  arch/arm/boot/dts/meson8b-mxq.dts                  | 4 ++--
+>  arch/arm/boot/dts/meson8b-odroidc1.dts             | 4 ++--
+>  arch/arm/boot/dts/motorola-mapphone-common.dtsi    | 3 ++-
+>  arch/arm/boot/dts/omap3-gta04.dtsi                 | 2 +-
+>  arch/arm/boot/dts/omap3-n900.dts                   | 2 +-
+>  arch/arm/boot/dts/rk3288-veyron-edp.dtsi           | 2 +-
+>  arch/arm/boot/dts/rk3288-veyron.dtsi               | 2 +-
+>  arch/arm/boot/dts/rv1108-evb.dts                   | 2 +-
+>  arch/arm/boot/dts/s3c6410-mini6410.dts             | 2 +-
+>  arch/arm/boot/dts/s5pv210-aries.dtsi               | 2 +-
+>  arch/arm/boot/dts/s5pv210-smdkv210.dts             | 2 +-
 
-Changes in v4: None
-Changes in v3: None
-Changes in v2: None
+For Exynos/S3C/S5P:
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
- MAINTAINERS | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 4017e6b760be..79cfad293549 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2242,6 +2242,7 @@ L:	linux-rockchip@lists.infradead.org
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
- S:	Maintained
- F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-+F:	Documentation/devicetree/bindings/*/*rockchip*.yaml
- F:	arch/arm/boot/dts/rk3*
- F:	arch/arm/boot/dts/rv1108*
- F:	arch/arm/mach-rockchip/
-@@ -2249,6 +2250,7 @@ F:	drivers/clk/rockchip/
- F:	drivers/i2c/busses/i2c-rk3x.c
- F:	drivers/*/*rockchip*
- F:	drivers/*/*/*rockchip*
-+F:	drivers/*/*/*/*rockchip*
- F:	sound/soc/rockchip/
- N:	rockchip
- 
--- 
-2.17.1
-
-
-
+Best regards,
+Krzysztof
 
 _______________________________________________
 Linux-rockchip mailing list
