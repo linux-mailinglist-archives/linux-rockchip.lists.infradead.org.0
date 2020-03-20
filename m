@@ -2,79 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 121C818CB1A
-	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Mar 2020 11:03:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04D2318CB5D
+	for <lists+linux-rockchip@lfdr.de>; Fri, 20 Mar 2020 11:19:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xcc3IZrHJLWFsYxlqP6x4qCZNZO4HxB4b+Ua+2le61Q=; b=OAcC3ePjarXmuv
-	7aejlSabAIgDajsUw6QpgGD6Rh38U1pt0R+TitM1kG5eopcIpSA6uXfcxrVd9y2PsxDWjgHL0tXbM
-	CQx3DLUdkVqfVD0Z7nGdDHQx9HYi71BnrnazqFbh4DEHtXrmBy8L8XP/tMDsp+Zkbr7o5ePZI+OVl
-	i7k8e28x/Ao4MXpOuLyopOTKRzEOC0QY4WVAGA93z+yOcz2Ih9pJWKQe5Nqfp1oWk0TgNyVtlGZ1/
-	NZqqlR+/Wy3WMcSpG8QxRTRLSeZMNw5MlwmNAI15IeUQkwaan/YF8mzZgmZA3J4iz2tpvd3AIaCrX
-	57vtOeW4KMqeJKrW1HYw==;
+	List-Owner; bh=CV/1BLKjNyO2PdhEVgLB0YbdB453kLxkr5ibUi/m0CQ=; b=hpypZsWuTFdUSf
+	9UQTrC0q07nZ6zj7lXG3o6QJd/Ola10GY+9TtHY817wlKYg6m/PnuU/1Qu3vZeAivEWmHd/6pL3u5
+	I8PWqJ35kjhowIAW+1GLZgegT5FCyVDvd9zOCdmxjEFBnMbpg5qYDUYrUKjppBMx6N0XR/z05TNbS
+	oN0ijSef2j3cQoMKKDm/9MRsxhd11KCC5VFH1dD/TYaOYhYt5JroVtOd+2V3Kg1szO0iTUDDNef0k
+	q7m9DWOtbYqbWUWhKp0OxDoKaMrdP3D9bm/+dnc/5bKN2VDJ8p0KMP50hj7/czoB9KgzclfvEDknO
+	S+R3xSO+YDhWLLWa5j8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFEVH-0005qN-JC; Fri, 20 Mar 2020 10:03:47 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1jFEk7-0004CO-1o; Fri, 20 Mar 2020 10:19:07 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFEV5-0005fP-9j; Fri, 20 Mar 2020 10:03:36 +0000
-Received: by mail-ed1-f65.google.com with SMTP id i24so6485868eds.1;
- Fri, 20 Mar 2020 03:03:34 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=tSuC6rirFkPp7o5onqQW1YOkCb60MvR5bv8PP1Z/cQg=;
- b=tYbmb2sg4YxZ9RDO2tmatImQVmQQQXaFErfaTrb19TyiC6bt92Jbz56PV3/0mCusN1
- 4/v09VZuL6WzBLbZanAu0ewfKFkEFVQnNhp8xks76eu/4RHgjxX/hWQlIF/xNPVtP+4q
- QJivYup1hsQegru3IMeyqQeIEErOo1YK43KaR09XjlNvscHKiLb+5x1b3Hw9SfAq+1M3
- /XKROIQ7cYkUZosBfi/kprgNkJnwLE0JjPgQxhL6FNeUcJ83rWTvqQcubX7PVN41G7vZ
- SBsl/hKifZv3vD3NrPmi+3s+tyjDUjhAeiEy/vHQUZnAmT5jvATHPwxrskIbPBfF+pQD
- 2mdA==
-X-Gm-Message-State: ANhLgQ3Ax6PIL9UTlLwNy531uDJeVxPK6IjzAlr6lz56sZ7V4z5TnsPu
- PoBGHYu4g2VG+f39RSjYP4c=
-X-Google-Smtp-Source: ADFU+vugt2YyfL8cQT7+vpLHG9am8cCqBSB7XauUNUkR7U3UGvGj4jp51sCnSueZSIT/VpkoqnmJXA==
-X-Received: by 2002:aa7:c658:: with SMTP id z24mr6922331edr.298.1584698613669; 
- Fri, 20 Mar 2020 03:03:33 -0700 (PDT)
-Received: from pi3 ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id y14sm330361ejc.85.2020.03.20.03.03.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 20 Mar 2020 03:03:32 -0700 (PDT)
-Date: Fri, 20 Mar 2020 11:03:29 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-Subject: Re: [RFC PATCH 6/7] arm64: dts: pwm: replace polarity constant with
- macro
-Message-ID: <20200320100329.GB16931@pi3>
-References: <20200317123231.2843297-1-oleksandr.suvorov@toradex.com>
- <20200317123231.2843297-7-oleksandr.suvorov@toradex.com>
+ id 1jFEjw-00042O-73; Fri, 20 Mar 2020 10:18:58 +0000
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 4F407240014;
+ Fri, 20 Mar 2020 10:18:43 +0000 (UTC)
+Date: Fri, 20 Mar 2020 11:18:41 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Subject: Re: [PATCH v4 0/3] Add Rockchip NFC drivers for RK3308 and others
+Message-ID: <20200320111841.3386d415@xps13>
+In-Reply-To: <20200320093342.15470-1-yifeng.zhao@rock-chips.com>
+References: <20200320093342.15470-1-yifeng.zhao@rock-chips.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200317123231.2843297-7-oleksandr.suvorov@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_030335_341053_5053F1AE 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200320_031856_390574_D498D175 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,92 +61,23 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pwm@vger.kernel.org,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Kever Yang <kever.yang@rock-chips.com>, Soeren Moch <smoch@web.de>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Hugh Cole-Baker <sigmaris@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- Kevin Hilman <khilman@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Markus Reichl <m.reichl@fivetechno.de>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- devicetree@vger.kernel.org, Nick Xie <nick@khadas.com>,
- Maxime Ripard <mripard@kernel.org>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Paul Barker <pbarker@konsulko.com>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, Johan Jonker <jbx6244@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Andrius =?utf-8?B?xaB0aWtvbmFz?= <andrius@stikonas.eu>,
- Igor Opaniuk <igor.opaniuk@toradex.com>, linux-kernel@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Andy Yan <andy.yan@rock-chips.com>, Robin Murphy <robin.murphy@arm.com>,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-mtd@lists.infradead.org, heiko@sntech.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 02:32:30PM +0200, Oleksandr Suvorov wrote:
-> There is the PWM_POLARITY_NORMAL defined and describled in
-> <dt-bindings/pwm/pwm.h> and used by pwm drivers.
-> 
-> This patch converts all '0' constant in pwms parameters into
-> PWM_POLARITY_NORMAL.
-> 
-> Replace with sed regexp:
-> 's/(pwms = <&[a-zA-Z_0-9]+ [0-9]+ [0-9]+) 0>/\1 PWM_POLARITY_NORMAL>/'
-> 
-> Then:
-> - include pwm.h in some dts/dtsi to fix building errors about undefined
->   symbols.
-> - fix the patman warnings about the code format;
-> 
-> Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-> ---
-> 
->  arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts      | 2 +-
->  arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts       | 2 +-
->  arch/arm64/boot/dts/amlogic/meson-axg-s400.dts             | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-axg.dtsi                 | 1 +
->  arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi          | 1 +
->  arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts          | 5 +++--
->  arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts            | 2 +-
->  arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts         | 5 +++--
->  arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi    | 4 ++--
->  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts       | 4 ++--
->  arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts       | 7 ++++---
->  arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi        | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gx.dtsi                  | 1 +
->  arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts       | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts     | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi           | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi       | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi          | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts       | 3 ++-
->  .../boot/dts/amlogic/meson-gxl-s905x-hwacom-amazetv.dts    | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts | 2 +-
->  .../arm64/boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi      | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts      | 5 +++--
->  arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts         | 3 ++-
->  arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi         | 4 +++-
->  arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts     | 2 +-
->  arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts           | 7 ++++---
->  arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi      | 3 ++-
-
-For Exynos:
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Best regards,
-Krzysztof
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgWWlmZW5nLAoKWWlmZW5nIFpoYW8gPHlpZmVuZy56aGFvQHJvY2stY2hpcHMuY29tPiB3cm90
+ZSBvbiBGcmksIDIwIE1hciAyMDIwCjE3OjMzOjM5ICswODAwOgoKPiBSb2NrY2hwJ3MgTkZDKE5h
+bmQgRmxhc2ggQ29udHJvbGxlcikgaGFzIHRocmVlIHZlcnNpb25zOiBWNiwgVjggYW5kIFY5Lgo+
+IFRoaXMgc2VyaWVzIHBhdGNoIGNhbiBzdXBwb3J0IGFsbCAgdGhyZWUgdmVyc2lvbnMuCj4gCj4g
+Ckl0IGxvb2tzIGxpa2UgaXQncyB0aGUgdGhpcmQgdGltZSB5b3Ugc2VuZCBhIHY0IGZvciB0aGlz
+IHNlcmllcywgaWYgeW91CmNoYW5nZSB0aGluZ3MgaW4gdGhlIHNlcmllcywgcGxlYXNlIGluY3Jl
+YXNlIHRoZSB2ZXJzaW9uIG51bWJlci4gSWYKaXQgaXMgYSBtaXN0YWtlLCBwbGVhc2UgdGVsbCB1
+cyBzbywgYmVjYXVzZSBpdCBpcyBub3QgZWFzeSB0byBmb2xsb3cgOikKCgpUaGFua3MsCk1pcXXD
+qGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4
+LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2No
+aXAK
