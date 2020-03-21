@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 523E818E4F3
-	for <lists+linux-rockchip@lfdr.de>; Sat, 21 Mar 2020 22:56:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 734FD18E4F1
+	for <lists+linux-rockchip@lfdr.de>; Sat, 21 Mar 2020 22:56:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,61 +11,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wP3kgdcrK1zBBR9L3aKIJAUA1hjKDn8K3v5v9+cIzB0=; b=s6OK0HmuR1vlW2MuuZYvb8QKp7
-	bt3qiJeLywAyy6d2GCH2eqLHq40nHAwM1FTYfCzHF8KL4mBA+BI3JpL9UgiTbnN+Lq8O7sUUY0l0J
-	cl1KnbwD/EsidSVsFkJopkcl5NQw3/pJ7Tielvkg82s4cZ34L0EbTmzmvnW9vlCAALeXisQMr4EVu
-	C9dVUsHFFiyeb1FLONfm8Ym/T9s2LG5WuuIdZhNIG7BnWn84936Q9i/SMWm+4fCaKgcAO5izcQohd
-	sZ5a2Fcq7pBYbe0pO9oAuHRtnBjrKai5h5HUSgPynxDir2JrLs/9eMkAgCMnr/i2cYD1xQ+1Gy5+1
-	T17kg82w==;
+	bh=LakVdVFRSfnKc8AnyODPTM7+kMoZ2KEKV2hGri7/eQU=; b=Oerwiuenep50ICfkZn5gsfVA7f
+	YHqdnqCEPkwwx/KDr2Ff1FyT1VErcQ9vPWcOYhxuQFuRpIIThRK6PsxfmY5dKk/FB/FtDwlBQZyZk
+	LflLdocRDnAG80X1jaXdylS1pJT+R0ACDWuv8vmmOshLLw6zCL7swAHSkpvysNJcjMo0pP/pyc02c
+	65/dLHqn+8ZdYLFSiC2g6+XmIW4+iOI+B62ajoeNjcFK0A4HssUWmRw/Ff+8CoD13kbJDKXqfJvj4
+	rUuhcajps9rt0PZV4ZJBqfE839M1XhiNG3pTII6LjsByZqSrcj8LXDTmpXW+CBlA5Ph7f/16zV2c1
+	l/eAg+gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFm6E-00061i-5z; Sat, 21 Mar 2020 21:56:10 +0000
+	id 1jFm60-0005nS-Fm; Sat, 21 Mar 2020 21:55:56 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFm4h-0003b4-Fp; Sat, 21 Mar 2020 21:54:36 +0000
-Received: by mail-wr1-x444.google.com with SMTP id m17so2908399wrw.11;
- Sat, 21 Mar 2020 14:54:35 -0700 (PDT)
+ id 1jFm4i-0003bJ-4K; Sat, 21 Mar 2020 21:54:37 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a25so11909161wrd.0;
+ Sat, 21 Mar 2020 14:54:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Bxcr3nNnRLp2AG9FEGj15mIEI/kFHkOT02wIVui39kg=;
- b=SapOtdi4CUcy3PP4jh3XqIzTwXML5Wv/wnJb/OwAFB538IYea64Y6ExPjoIG0SzOij
- aazEeEFBMTbZRxJ4kBvuZfLBiYAQZaKjT4GHqsjMWzxDsm0IKi+b3CQjbL1re6vuKlxd
- dke7jLU0SPvxmQsNC4eBMfOrWt5c4xe+Qzhd8PQkjITqEcKBE2vwkjz4WEbWOyOj2TcF
- mnwq3ZsB1PXSG5zUc1W19Xb7xG0a5/GCRVcZUpk+RakV87qMK5qVqLisUIY+bXPYTbj5
- X8cwdXTV+ynxu6erBzcT+pbSop0dflfJjK2Atx6w31QfcHGOb7g8tZMpvEDxMzx1vuKB
- ORvw==
+ bh=CRbOK0Ug5vXhs9Z5fx1QPwSTD+scMmXofqeuZ2mekL0=;
+ b=ZeU5GSaazwnBvQe4FiH0Pxb6wa5Q9/UWZtE29jPBGqMsThgxKNMe2flZjSeEa7evUG
+ xm9aj/xmgysYMgjKSMGjkduMqHh7Vh2nDZZEwBJxZY5oQPvXbTKaJJCd82Q1knkRK6dH
+ 0XqGEKxQxGLfexoPbESNTIeE8AMICKO1JkAHG+EGnZES+3F2S8bugNdjF2tQe9vRNJX2
+ zVC8kReytt4t7UMbwa7rlFrZdzPyAItaBm7tSCctbSGH+6bV5wNwKlO8EVzdGlPxEVRp
+ PxPFE8Ks1e+z/fM9Jl/uIBC78R/9hPjPn3kfdptZNMH49Vcr7g8uI2uyJPpKSBbXCf5a
+ Q9bA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Bxcr3nNnRLp2AG9FEGj15mIEI/kFHkOT02wIVui39kg=;
- b=rrsRP/iKYs7urQeJ8qGBMwucpOGrdwsKg3VO0tXGpph7klTgpyjISbpjTyFbQJ1DfV
- 5iMZt91kg6mja2LzdIEOcW2AfYq+QsrAZR+A421UY4Sm7KD5YVueAb7rA0gT0DGJsQCF
- xJb4XBs3i0O88hVw7XQC4jO5o3TJFGBUpQ1t38y89NM7EzaFTpAg9YsIy0cAZsCjtGPm
- bHsvZrgdMfaaPx5IMW4GNIXkiLkz95Q8kTpFrfkmJ4QDSZ1wx8X2L3idR/pcufwhTAav
- 2vIfQTxgkO7x87hxIzj2gHDvnnRz9e55QlQGmSgPhMHMwbqBMeXGjoj7iCVdAe9mK3BD
- jPYw==
-X-Gm-Message-State: ANhLgQ2OGU4nCCOF3uo13RjdsW6DEXkQtRe8eJs5fcRrgjmGmcBr5PPK
- NwW6EU9JVpHMFJ0jy54bs0Q=
-X-Google-Smtp-Source: ADFU+vsnerx72rIsn/e3/S0PUZrUA3I/NLF1OcJy9UClE81yPoADVu/RCabv7zYfNmrnE2Ad6JVelw==
-X-Received: by 2002:a5d:528e:: with SMTP id c14mr20126416wrv.308.1584827673988; 
- Sat, 21 Mar 2020 14:54:33 -0700 (PDT)
+ bh=CRbOK0Ug5vXhs9Z5fx1QPwSTD+scMmXofqeuZ2mekL0=;
+ b=Hn+dSNttar50h3gskQJdmtnPaxaLF/Z7j5jGGRtNR09xxJakiFPDMlIH08fO9/2Xxp
+ 2akVolzdjzh7tIc7NDY3tfRMd6mQt6FlG+kay12CAzgKTPwarJmdsjIAAjbkMi3cuEp3
+ dhOLpi3aBYVu5ATVYLtlytq1vVLjmVjSMuBYS5HkbvqySLD5fd3mS/yc8yb+NaNfUBem
+ vJaCkMk1a1xpFkkLrZ6/8uhIradEcukMlgVfw+yp58oo3K+JD6LrjySWwv+fNlf5IOd+
+ miC2b+teSke3EM+D7tVp9ukeRoLttQ7Ztg8dxYiU4Awavg3SXq1d3i8nPIHSQfvH1Wa7
+ BE6A==
+X-Gm-Message-State: ANhLgQ1vtJMXoaXxVwNhd0Uhszrijm8NnvQPssp/FftZUs/tQ0l19VrM
+ h6L1qyq/a5BQksT+pR0rYePGh8gv
+X-Google-Smtp-Source: ADFU+vtATJV3UPOuxt1SDCJN9hIZRqrM8HTS/NXRJUM+lx3c5VqCCNm2IXp0T90Nk916rwvxDgkyAw==
+X-Received: by 2002:adf:f7cb:: with SMTP id a11mr10473149wrq.79.1584827674881; 
+ Sat, 21 Mar 2020 14:54:34 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id l83sm14113796wmf.43.2020.03.21.14.54.33
+ by smtp.gmail.com with ESMTPSA id l83sm14113796wmf.43.2020.03.21.14.54.34
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 21 Mar 2020 14:54:33 -0700 (PDT)
+ Sat, 21 Mar 2020 14:54:34 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 4/6] arm64: dts: rockchip: fix &pinctrl phy sub nodename for
- rk3399-nanopi4
-Date: Sat, 21 Mar 2020 22:54:21 +0100
-Message-Id: <20200321215423.12176-4-jbx6244@gmail.com>
+Subject: [PATCH 5/6] arm64: dts: rockchip: fix rtl8211e nodename for
+ rk3399-orangepi
+Date: Sat, 21 Mar 2020 22:54:22 +0100
+Message-Id: <20200321215423.12176-5-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200321215423.12176-1-jbx6244@gmail.com>
 References: <20200321215423.12176-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_145435_535646_5D62F7C5 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200321_145436_206268_6D39DEA3 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -108,17 +108,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+A test with the command below gives this error:
 
-arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dt.yaml: phy:
-'#phy-cells' is a required property
-arch/arm64/boot/dts/rockchip/rk3399-nanopi-m4.dt.yaml: phy:
-'#phy-cells' is a required property
-arch/arm64/boot/dts/rockchip/rk3399-nanopi-neo4.dt.yaml: phy:
+arch/arm64/boot/dts/rockchip/rk3399-orangepi.dt.yaml: phy@1:
 '#phy-cells' is a required property
 
-'phy' is a reserved nodename and should not be used for pinctrl,
-so change it to 'gmac'.
+The phy nodename is used by a phy-handle.
+The parent node is compatible with "snps,dwmac-mdio",
+so change nodename to 'ethernet-phy', for which '#phy-cells'
+is not a required property
 
 make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
@@ -126,22 +124,22 @@ phy/phy-provider.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-index 20529105c..1d246c2ca 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-@@ -525,7 +525,7 @@
- 		};
- 	};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+index f9f7246d4..afbcd213c 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+@@ -214,7 +214,7 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
--	phy {
-+	gmac {
- 		phy_intb: phy-intb {
- 			rockchip,pins = <3 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
- 		};
+-		rtl8211e: phy@1 {
++		rtl8211e: ethernet-phy@1 {
+ 			reg = <1>;
+ 			interrupt-parent = <&gpio3>;
+ 			interrupts = <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
 -- 
 2.11.0
 
