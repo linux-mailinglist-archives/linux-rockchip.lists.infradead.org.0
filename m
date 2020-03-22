@@ -2,72 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7E4718E949
-	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 15:01:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFC6F18E9DB
+	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 16:45:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=AGZBsnJIpJEMBeld3/H4XkG+ZVQwxc8zKM3T6CYhS1s=; b=ZMv
-	E9AJ1aBX+SfktTcZOB/SfehN2PqNFu/blf+ImrAhB5D+Qh5TT+EZhSl+AE7ULvlwkzj9OFNf+4fcq
-	oWuYvcrF4TTT5haCO6DQDWcFM3hhHwRAYI+fKZ6rgLk7/0mq1Zj9AWjGv/lCPRTIMPMPczuxwzXH0
-	I/ikgqMfhxq1UwM0Q0xFezmUFog5cayd41zlLl9aMLsSDhq6lDZsaYXSmoad2kgFqlS1S4V0oLfy2
-	ZcRzsoAn/ZyWAj9q4VKL0iDtvPlc7wUmmJqRC5dYaajOrzbbkZkYKDkxdwUBnLTpg4VsLZGl3/sak
-	ksyH2UqY5agiHucmN6X/MOyqc/B5DSA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VK5ENAaDGKYKSXPNN0+FSo5kh8gBQcP8Yf69PJ+ie2s=; b=ky61qrOzXYyelI
+	G0m37LrjN5uQ+X24ZsGPTdBv5oUixX5NRL+SKU9W5xgC/NBI9Ynkt21+wZyktOwfIsk+M2/LnstLC
+	DQF7woVDVHu0ZUXGCqq0ZzDCB0Bj30VURTxLA8TeahHGy5txO55yw/ZLsq1VMARTsCrvyVdydezTS
+	upDp3inQyixXOu94znSsGpez40uEZuBnGFzyzu/nb8DfLgUijvLKr9u1ZuBxGUBf6s/YnAzs2oJ9m
+	gLP4u1LbC4hMGev1EqtLVNJoaL/OISYvgdBHxnZFcKzEKez/fSzvYtDQCXxVFuhNgJ238rkPHbUtX
+	rOIXn2AyPt1ZZIEmMGRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG1A2-0004lC-Ag; Sun, 22 Mar 2020 14:01:06 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jG2nL-00025M-0V; Sun, 22 Mar 2020 15:45:47 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG19t-0004e4-Po; Sun, 22 Mar 2020 14:00:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m17so4318461wrw.11;
- Sun, 22 Mar 2020 07:00:54 -0700 (PDT)
+ id 1jG2nI-00024O-ID; Sun, 22 Mar 2020 15:45:45 +0000
+Received: by mail-wr1-x442.google.com with SMTP id h9so13532087wrc.8;
+ Sun, 22 Mar 2020 08:45:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=+Pk1Qm0yKFU4UFpPiRDPyywzNL1S0kp3oY+pR0dHLbM=;
- b=oi5rzEX0X8RLP2HKiTVVqVs7HpQ7aPojsZDgCYmMnYOtWabV8UXffBg4gms1wqcqft
- +/58QOvDf6bioXi8SnjrvUM7F6HcQ70/1Kpghz3s2qRBBNtUZxZnrX4Yh6Ho/3kN3BEZ
- 2fwN1nJFoFiZLWIdXHivtU9nzJ/K74nWzVxFipAPBoTgjuB/lHjvOcolL4ISXWR2XX/5
- 2SZu3Kx1bDbRDkXb8q/hn6hJR7uYBQmORF1lUEz1xfVgDOYNuaJYiHKGGcPQ7yUmPxN8
- +cEeu8HCCo+YMhwe0vXdnx9jtXryqqQwOsPdky5SVb8bgshlml7FsP7PDftZnOxPPhM3
- y/Cw==
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=oW0vYewmMm0M3PXQVGqM0DMXOo8Xcl8P8bGj8WAcz1s=;
+ b=UZAlZvIAW51LULMnDZHiLUIyOPiuB672JgdsY9xSfZmPxy9rSKsc2mRMp26i4Uv2Nm
+ ByT7sJUTHNxolCeVb7eNDxWXO1BvR6+ZwFHcZxr9gHN8Vkac3Zd3B7DKjYykBp+GOABq
+ T74BZntD5uAnvoQ3JlOfihftY9JeoXu0n8g6YdqPErGdkWIDmsNJGUTZ/a3m5CxP8t2f
+ Wm2stFjip8ht8zH3nq0kba+vMB8i4avKJsePBOY2kIopk/amvbvEc0TAZ5aYMYUUOGy5
+ 4i9GaJXboD41m6m6h13rDonxBTFGTwN3i/luyjrBH1qfV3/xg4s6v2qj0j3nvvecqnqc
+ H30w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=+Pk1Qm0yKFU4UFpPiRDPyywzNL1S0kp3oY+pR0dHLbM=;
- b=Egj+b3253VMzggeym1AGD4o1GDNy8ua6UdkkWuEZf0wcZgrcPwRd1hX3D0k9WnODHr
- 8b1IFnwhVD/mLNsw6o39M0aGAubOh8Nwt8Cig6LeUdMroWRsBB5aGcAkgidBVWtkV/Ka
- AtARjNwC9yz6hH5jeqC8iV01ZBn6Vu+1MhNj+NTauoOJCjnMjwiBZTVD3cIq79pT9aEZ
- GH6zYKCHX2Yew2VW600Wewjy+Q9AQJPab+E7RtegHgTvmjZfE33+DtlN7/QDoZMxe0fy
- FptD/vKCjRmhg58XBxpSPaAFWZf5GjKn34vAWEsnLWMpS5ROLFmDxJ0MGMB9GNjUNYIo
- VHbw==
-X-Gm-Message-State: ANhLgQ3wncvAF6wB+y19u5I1GyjfKPrwRlIiBlqw9SWYlbJWvXU2qWl8
- QAMYUF6euMvx8RQXastisI4=
-X-Google-Smtp-Source: ADFU+vv9LrpAvriFkI/duBNcEmS2l2/uhLRxDqAJ4ObMkC37RlGZ/y1+sMgI5XKHs3Xia3KUeu4Mjw==
-X-Received: by 2002:adf:a4d2:: with SMTP id h18mr24215660wrb.90.1584885653724; 
- Sun, 22 Mar 2020 07:00:53 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 1sm11355129wmz.32.2020.03.22.07.00.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 22 Mar 2020 07:00:53 -0700 (PDT)
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=oW0vYewmMm0M3PXQVGqM0DMXOo8Xcl8P8bGj8WAcz1s=;
+ b=NV8OT8g0sWEwm0kU/7yZDRvs7bqGvNDHdlkPxY+pNdqqyJdpuUTsq38UfjSzfADGEr
+ hrWQdniQsB3AmanJ4X1eGzWPNom8+zGJUVcJ8VEzwV2wranu9RVxdUVCUTyRn5Pz9nfP
+ SrNxpHAvG63Z6Mu+gAy1sydl4jCkugLyl3LDY0jaaa4CoYWYdDXscpL0GafvPl3nPblq
+ /ksLIh09FdZsPSh03b4PvcfptyLFDh++d1uK4nr2LJfz9EbU4f+AM6nNyUAaJl/TtqPn
+ 0dJqSHrbzIYWMndfU96FoMcbIy8NXZwGr7/7VOH7VoAhYHAyIid7V9mbl3xHHFc4YLch
+ saSQ==
+X-Gm-Message-State: ANhLgQ0Ky9okUj87mXk8gHsQcx+4tpGMRR3rcSq3eyUFdrnQtUmbnAz3
+ J/W0MQyqenGh6OI46ZHIru6D/0b+
+X-Google-Smtp-Source: ADFU+vuLfqJLTVWgtE2gxmF3zyW7/5g33LYY933B6JEG7gw8iL8V704y0dGVTMbKy7oXYEW3aN89ag==
+X-Received: by 2002:adf:e60b:: with SMTP id p11mr23245914wrm.140.1584891942005; 
+ Sun, 22 Mar 2020 08:45:42 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id x17sm17685351wmi.28.2020.03.22.08.45.40
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 22 Mar 2020 08:45:41 -0700 (PDT)
+To: jbx6244@gmail.com
+References: <20200322140046.5824-1-jbx6244@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: fix defines in pd_vio node for
+ rk3399
 From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: fix defines in pd_vio node for rk3399
-Date: Sun, 22 Mar 2020 15:00:46 +0100
-Message-Id: <20200322140046.5824-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+Message-ID: <48a91cc1-7751-4df0-a2cd-940eb829fa16@gmail.com>
+Date: Sun, 22 Mar 2020 16:45:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+MIME-Version: 1.0
+In-Reply-To: <20200322140046.5824-1-jbx6244@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_070057_840809_7E67832B 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20200322_084544_605770_49B54F2B 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -94,57 +103,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+Hi,
 
-arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: pd_vio@15:
-'pd_tcpc0@RK3399_PD_TCPC0', 'pd_tcpc1@RK3399_PD_TCPC1'
-do not match any of the regexes:
-'.*-names$', '.*-supply$', '^#.*-cells$',
-'^#[a-zA-Z0-9,+\\-._]{0,63}$',
-'^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}$',
-'^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-fA-F]+(,[0-9a-fA-F]+)*$',
-'^__.*__$', 'pinctrl-[0-9]+'
+The RK3399 TRM uses both
 
-Fix error by replacing the wrong defines by the ones
-mentioned in 'rk3399-power.h'.
+'pd_tcpc0, pd_tcpc1'
 
-make -k ARCH=arm64 dtbs_check
+as
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+'pd_tcpd0, pd_tcpd1'.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 8aac201f0..3dc8fe620 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1087,12 +1087,12 @@
- 					pm_qos = <&qos_isp1_m0>,
- 						 <&qos_isp1_m1>;
- 				};
--				pd_tcpc0@RK3399_PD_TCPC0 {
-+				pd_tcpc0@RK3399_PD_TCPD0 {
- 					reg = <RK3399_PD_TCPD0>;
- 					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
- 						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
- 				};
--				pd_tcpc1@RK3399_PD_TCPC1 {
-+				pd_tcpc1@RK3399_PD_TCPD1 {
- 					reg = <RK3399_PD_TCPD1>;
- 					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
- 						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
--- 
-2.11.0
+What should we use here?
+
+Thanks.
+
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index 8aac201f0..3dc8fe620 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -1087,12 +1087,12 @@
+>  					pm_qos = <&qos_isp1_m0>,
+>  						 <&qos_isp1_m1>;
+>  				};
+> -				pd_tcpc0@RK3399_PD_TCPC0 {
+> +				pd_tcpc0@RK3399_PD_TCPD0 {
+>  					reg = <RK3399_PD_TCPD0>;
+>  					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
+>  						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+>  				};
+> -				pd_tcpc1@RK3399_PD_TCPC1 {
+> +				pd_tcpc1@RK3399_PD_TCPD1 {
+>  					reg = <RK3399_PD_TCPD1>;
+>  					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
+>  						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+> -- 
+> 2.11.0
 
 
 _______________________________________________
