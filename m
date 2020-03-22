@@ -2,55 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77F5C18E62D
-	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 04:00:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7E4718E949
+	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 15:01:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5BjbdQMei63Z5odb6fG7+Y+lzdOkQw67VfYWWwEmnhw=; b=o+VnxcPSBcUj5/
-	cZbQIe6h9TVE++9KRjT+xn1Zn/uDr09KWRcGWodzwilqa8e/p5jvkKjiUvZ4K+A7ewnmhuXyVXUo3
-	zasC5QcxxHpgUvCd0P0EGjbzQGojCAeNLBhQbhGqoQW9Ln5y06XWj0ZWaY8oHmVOzIBj3n+SthIyH
-	9F6Fch+c/Iuilsfzq06j/HvTiD9NEY3xt0xXI3F8OCE8/4Z31fc43m7nG3eznOW9huVOaT+xuNQkk
-	md4J/Gr5XBkNhftF0mHFZIFkzWcvwCnSvTo+Q2kx+GjlKlHw/UEdkmGhg0S2Z62VzltbIGcxqRxE2
-	6jTJgi1ul1aMaKBTjL9w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=AGZBsnJIpJEMBeld3/H4XkG+ZVQwxc8zKM3T6CYhS1s=; b=ZMv
+	E9AJ1aBX+SfktTcZOB/SfehN2PqNFu/blf+ImrAhB5D+Qh5TT+EZhSl+AE7ULvlwkzj9OFNf+4fcq
+	oWuYvcrF4TTT5haCO6DQDWcFM3hhHwRAYI+fKZ6rgLk7/0mq1Zj9AWjGv/lCPRTIMPMPczuxwzXH0
+	I/ikgqMfhxq1UwM0Q0xFezmUFog5cayd41zlLl9aMLsSDhq6lDZsaYXSmoad2kgFqlS1S4V0oLfy2
+	ZcRzsoAn/ZyWAj9q4VKL0iDtvPlc7wUmmJqRC5dYaajOrzbbkZkYKDkxdwUBnLTpg4VsLZGl3/sak
+	ksyH2UqY5agiHucmN6X/MOyqc/B5DSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFqqU-0001Vu-N2; Sun, 22 Mar 2020 03:00:14 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jG1A2-0004lC-Ag; Sun, 22 Mar 2020 14:01:06 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFqqC-00008x-8I; Sun, 22 Mar 2020 02:59:58 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 1990E15AC0C0F;
- Sat, 21 Mar 2020 19:59:48 -0700 (PDT)
-Date: Sat, 21 Mar 2020 19:59:47 -0700 (PDT)
-Message-Id: <20200321.195947.2027395800786640789.davem@davemloft.net>
-To: kernel@esmil.dk
-Subject: Re: [PATCH] net: stmmac: dwmac-rk: fix error path in rk_gmac_probe
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200321143619.91533-1-kernel@esmil.dk>
-References: <20200321143619.91533-1-kernel@esmil.dk>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sat, 21 Mar 2020 19:59:50 -0700 (PDT)
+ id 1jG19t-0004e4-Po; Sun, 22 Mar 2020 14:00:59 +0000
+Received: by mail-wr1-x441.google.com with SMTP id m17so4318461wrw.11;
+ Sun, 22 Mar 2020 07:00:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=+Pk1Qm0yKFU4UFpPiRDPyywzNL1S0kp3oY+pR0dHLbM=;
+ b=oi5rzEX0X8RLP2HKiTVVqVs7HpQ7aPojsZDgCYmMnYOtWabV8UXffBg4gms1wqcqft
+ +/58QOvDf6bioXi8SnjrvUM7F6HcQ70/1Kpghz3s2qRBBNtUZxZnrX4Yh6Ho/3kN3BEZ
+ 2fwN1nJFoFiZLWIdXHivtU9nzJ/K74nWzVxFipAPBoTgjuB/lHjvOcolL4ISXWR2XX/5
+ 2SZu3Kx1bDbRDkXb8q/hn6hJR7uYBQmORF1lUEz1xfVgDOYNuaJYiHKGGcPQ7yUmPxN8
+ +cEeu8HCCo+YMhwe0vXdnx9jtXryqqQwOsPdky5SVb8bgshlml7FsP7PDftZnOxPPhM3
+ y/Cw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=+Pk1Qm0yKFU4UFpPiRDPyywzNL1S0kp3oY+pR0dHLbM=;
+ b=Egj+b3253VMzggeym1AGD4o1GDNy8ua6UdkkWuEZf0wcZgrcPwRd1hX3D0k9WnODHr
+ 8b1IFnwhVD/mLNsw6o39M0aGAubOh8Nwt8Cig6LeUdMroWRsBB5aGcAkgidBVWtkV/Ka
+ AtARjNwC9yz6hH5jeqC8iV01ZBn6Vu+1MhNj+NTauoOJCjnMjwiBZTVD3cIq79pT9aEZ
+ GH6zYKCHX2Yew2VW600Wewjy+Q9AQJPab+E7RtegHgTvmjZfE33+DtlN7/QDoZMxe0fy
+ FptD/vKCjRmhg58XBxpSPaAFWZf5GjKn34vAWEsnLWMpS5ROLFmDxJ0MGMB9GNjUNYIo
+ VHbw==
+X-Gm-Message-State: ANhLgQ3wncvAF6wB+y19u5I1GyjfKPrwRlIiBlqw9SWYlbJWvXU2qWl8
+ QAMYUF6euMvx8RQXastisI4=
+X-Google-Smtp-Source: ADFU+vv9LrpAvriFkI/duBNcEmS2l2/uhLRxDqAJ4ObMkC37RlGZ/y1+sMgI5XKHs3Xia3KUeu4Mjw==
+X-Received: by 2002:adf:a4d2:: with SMTP id h18mr24215660wrb.90.1584885653724; 
+ Sun, 22 Mar 2020 07:00:53 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id 1sm11355129wmz.32.2020.03.22.07.00.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 22 Mar 2020 07:00:53 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: fix defines in pd_vio node for rk3399
+Date: Sun, 22 Mar 2020 15:00:46 +0100
+Message-Id: <20200322140046.5824-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200321_195956_294522_06E4FDAD 
-X-CRM114-Status: UNSURE (   4.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200322_070057_840809_7E67832B 
+X-CRM114-Status: GOOD (  11.31  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,25 +94,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- joabreu@synopsys.com, david.wu@rock-chips.com, peppe.cavallaro@st.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Emil Renner Berthing <kernel@esmil.dk>
-Date: Sat, 21 Mar 2020 15:36:19 +0100
+A test with the command below gives for example this error:
 
-> Make sure we clean up devicetree related configuration
-> also when clock init fails.
-> 
-> Fixes: fecd4d7eef8b ("net: stmmac: dwmac-rk: Add integrated PHY support")
-> Signed-off-by: Emil Renner Berthing <kernel@esmil.dk>
+arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: pd_vio@15:
+'pd_tcpc0@RK3399_PD_TCPC0', 'pd_tcpc1@RK3399_PD_TCPC1'
+do not match any of the regexes:
+'.*-names$', '.*-supply$', '^#.*-cells$',
+'^#[a-zA-Z0-9,+\\-._]{0,63}$',
+'^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}$',
+'^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-fA-F]+(,[0-9a-fA-F]+)*$',
+'^__.*__$', 'pinctrl-[0-9]+'
 
-Applied and queued up for -stable, thank you.
+Fix error by replacing the wrong defines by the ones
+mentioned in 'rk3399-power.h'.
+
+make -k ARCH=arm64 dtbs_check
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 8aac201f0..3dc8fe620 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1087,12 +1087,12 @@
+ 					pm_qos = <&qos_isp1_m0>,
+ 						 <&qos_isp1_m1>;
+ 				};
+-				pd_tcpc0@RK3399_PD_TCPC0 {
++				pd_tcpc0@RK3399_PD_TCPD0 {
+ 					reg = <RK3399_PD_TCPD0>;
+ 					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
+ 						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+ 				};
+-				pd_tcpc1@RK3399_PD_TCPC1 {
++				pd_tcpc1@RK3399_PD_TCPD1 {
+ 					reg = <RK3399_PD_TCPD1>;
+ 					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
+ 						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+-- 
+2.11.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
