@@ -2,98 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2004818EA15
-	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 17:15:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A46918EB53
+	for <lists+linux-rockchip@lfdr.de>; Sun, 22 Mar 2020 19:04:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:Subject:Reply-To:To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MEQuK4j34AZpAwrHes8w042BLeaFT9jltwsdp0wzusc=; b=qLO09LCMLHz9VD
-	/dji/FrsMtooI2PA4A717jYKY6TFzfSGds4prafFBZF8P3enLpUlbV8m245sI3BIymR1tbjwsg0vV
-	/JZf03oGV2aAXN5oZdI3WxUYJEnyQjJRbad4HS6UV62AvVifcGtr6sD3uim2Cc2A20nY6IsSKGzyL
-	Ndjkrl1QV1X/KVu+sLTWnf6UpO1j5BuJDpchZhvHbdQAPDErF8w51GsBCvRrSXvUcwx38XKuPU9Ga
-	/+BqQ8E0e9o6Pu/A6JxOBZt15MgMiHBf691uxwotFEJ3rorIIPpSYJAcGCKfOkmqAT68w/Nk1t5de
-	Vf2/3LW2aUG9S7UhWg8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DTjZ/p9z1j/jiGHjB8CJpSIl+0s0/ApGl92X3gjhnG8=; b=mtK93mf/j0AfYq
+	+hANnViF3CXV3+TCyxhqjwKz29RrNOgS363XSZkuy9nU6OBQcxBtzuywu8LKxQ4+pY3uymHcUSjHt
+	betcWQ1WhF8IvIr5YfMXJOfwCCmkZ/9dCXoiI2a5vBcsSP3pX5sfInb3QF0NZPuKuaOPPbtJ6QXUp
+	op/nZId5Gj7pByA4phE1dAfSo8fOcHPt2NBLjRLXoxgGbYYQMfHjzqXaqP6Z/O9kf5mACcgTEUi+s
+	wYrrKcF4VGUaBzmUP0cmBgX5Hg2jKvVvl+ldLoPakNDQRRMRseod554mThO30nn7q+2FwKkycWCkR
+	tQchUYzELNWYVeAtSqzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG3Fg-0003AF-KK; Sun, 22 Mar 2020 16:15:04 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jG4x4-0000o1-4Z; Sun, 22 Mar 2020 18:03:58 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG3Fd-0002xz-Es; Sun, 22 Mar 2020 16:15:02 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m17so4648240wrw.11;
- Sun, 22 Mar 2020 09:14:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:cc:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=hizVSe59radb+6FhRqDPjO/ntM+mFAolvmlI5rEmhI0=;
- b=QB2WW586/dn1R2EKvP9IStphvlHgFLJvuuhgtH0CBS6HHLKq2N2mHhFKG3E5fwHN0W
- uw/NagBrkjWo1TreySFiPUrykpJZz6KiYSR7pAQxhSvjbNgoH7OkIk4PF/fiHRPzUHkK
- WyGPqHZxvyoCgWJUZLsmfFCS4tIK2SoDeAnP5f9Vo4VRy1EpAC0CZKQRF21O8W+MW811
- XTLNinDhFFgd2ZcVChKbC2EwsTadMosoMPgrO88IWBR1Zy+a6L2JLKpQlMzTe03BY/M0
- ttoXlV7KFxd7HR9gPQWMfplkEETMUnXOT2i0PZuGdHYkvMn9CbG3UPdIIfGegQvv9uwA
- H4ug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=hizVSe59radb+6FhRqDPjO/ntM+mFAolvmlI5rEmhI0=;
- b=c/cazoPRawbgladqGxIQODuOH0JdNnI02R83QMcGZObJMaMCeMxWZTb5+bMs6TSuSQ
- jDyxvR+tZsliOlv9XnfR09J+1isaPcz86ZDkPojowOgqbeZkB3xZW8LFgoNC5eGkDTMm
- Bd2IT+dmk9zPIKdOn3unnB+7mFWuRwrg+hyEnRIjVBbddeuKeFQjv+4ILhiM/V/OI0d4
- WW/is+KAXPtR6oa14LzcZG4Vh76QyLWbG1FaCHvIbstZdc9wK/AZS27ahJXJ6CU26YyK
- rEJA11d4VLoFYK0+RaYzrvIyVxBtcVmxk1by08rLq3WiHQOu1NMkMH+v30wZos22bfzq
- lUBg==
-X-Gm-Message-State: ANhLgQ1gEJ4C7PP7JhmJEdGgOEnsMq62o5FTR9ie2+/DwLjBiqXe0kT2
- zy+b9vKOPW+PYI+SRE4P74w=
-X-Google-Smtp-Source: ADFU+vuL8u1yT0LW3mBPs899oOcxhjI7ql5VCngzIx8aQj1gkmk9nYlVF3dvavMFzzvuU9NzW/a43Q==
-X-Received: by 2002:a5d:5386:: with SMTP id d6mr17017585wrv.92.1584893696625; 
- Sun, 22 Mar 2020 09:14:56 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q4sm19846680wmj.1.2020.03.22.09.14.55
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 22 Mar 2020 09:14:56 -0700 (PDT)
+ id 1jG4wu-0000gE-CM; Sun, 22 Mar 2020 18:03:50 +0000
+Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jG4wk-0007rU-0k; Sun, 22 Mar 2020 19:03:38 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>, Caesar Wang <wxt@rock-chips.com>,
+ kever.yang@rock-chips.com
 Subject: Re: [PATCH] arm64: dts: rockchip: fix defines in pd_vio node for
  rk3399
+Date: Sun, 22 Mar 2020 19:03:35 +0100
+Message-ID: <48029127.kezn7BFppT@diego>
+In-Reply-To: <1a6f0ba0-c49c-c547-1252-eed404655f43@gmail.com>
 References: <20200322140046.5824-1-jbx6244@gmail.com>
  <48a91cc1-7751-4df0-a2cd-940eb829fa16@gmail.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <1a6f0ba0-c49c-c547-1252-eed404655f43@gmail.com>
-Date: Sun, 22 Mar 2020 17:14:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ <1a6f0ba0-c49c-c547-1252-eed404655f43@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <48a91cc1-7751-4df0-a2cd-940eb829fa16@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_091501_510469_EF90ED8F 
-X-CRM114-Status: GOOD (  11.85  )
-X-Spam-Score: 2.9 (++)
+X-CRM114-CacheID: sfid-20200322_110348_578304_1081B3F4 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (2.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.2 MISSING_HEADERS        Missing To: header
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 1.7 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,57 +61,85 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi,
-
-Why is 'pd_tcpc0, pd_tcpc1' grouped under 'pd_vio' instead of VD_LOGIC?
-
-Thanks
-
-On 3/22/20 4:45 PM, Johan Jonker wrote:
+Am Sonntag, 22. M=E4rz 2020, 17:14:54 CET schrieb Johan Jonker:
 > Hi,
-> 
-> The RK3399 TRM uses both
-> 
-> 'pd_tcpc0, pd_tcpc1'
-> 
-> as
-> 
-> 'pd_tcpd0, pd_tcpd1'.
-> 
-> What should we use here?
-> 
-> Thanks.
-> 
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> index 8aac201f0..3dc8fe620 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> @@ -1087,12 +1087,12 @@
->>  					pm_qos = <&qos_isp1_m0>,
->>  						 <&qos_isp1_m1>;
->>  				};
->> -				pd_tcpc0@RK3399_PD_TCPC0 {
->> +				pd_tcpc0@RK3399_PD_TCPD0 {
->>  					reg = <RK3399_PD_TCPD0>;
->>  					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
->>  						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
->>  				};
->> -				pd_tcpc1@RK3399_PD_TCPC1 {
->> +				pd_tcpc1@RK3399_PD_TCPD1 {
->>  					reg = <RK3399_PD_TCPD1>;
->>  					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
->>  						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
->> -- 
->> 2.11.0
-> 
+> =
+
+> Why is 'pd_tcpc0, pd_tcpc1' grouped under 'pd_vio' instead of VD_LOGIC?
+
+^^
+You'll need to add Rockchip-people for that - I've done that now ;-)
+
+
+
+> On 3/22/20 4:45 PM, Johan Jonker wrote:
+> > Hi,
+> > =
+
+> > The RK3399 TRM uses both
+> > =
+
+> > 'pd_tcpc0, pd_tcpc1'
+> > =
+
+> > as
+> > =
+
+> > 'pd_tcpd0, pd_tcpd1'.
+> > =
+
+> > What should we use here?
+
+We should probably just fix the nodename as you did.
+- For one tcpD seems to be appearing way more often than tcpC
+- and of course the header is part of the binding itself, so that shouldn't
+  change without a really good reason
+
+
+Heiko
+
+> > =
+
+> > Thanks.
+> > =
+
+> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boo=
+t/dts/rockchip/rk3399.dtsi
+> >> index 8aac201f0..3dc8fe620 100644
+> >> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> >> @@ -1087,12 +1087,12 @@
+> >>  					pm_qos =3D <&qos_isp1_m0>,
+> >>  						 <&qos_isp1_m1>;
+> >>  				};
+> >> -				pd_tcpc0@RK3399_PD_TCPC0 {
+> >> +				pd_tcpc0@RK3399_PD_TCPD0 {
+> >>  					reg =3D <RK3399_PD_TCPD0>;
+> >>  					clocks =3D <&cru SCLK_UPHY0_TCPDCORE>,
+> >>  						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+> >>  				};
+> >> -				pd_tcpc1@RK3399_PD_TCPC1 {
+> >> +				pd_tcpc1@RK3399_PD_TCPD1 {
+> >>  					reg =3D <RK3399_PD_TCPD1>;
+> >>  					clocks =3D <&cru SCLK_UPHY1_TCPDCORE>,
+> >>  						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+> > =
+
+> =
+
+> =
+
+
+
+
 
 
 _______________________________________________
