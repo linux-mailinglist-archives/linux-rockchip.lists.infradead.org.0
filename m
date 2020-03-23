@@ -2,72 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1501F18FE3A
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Mar 2020 20:55:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ED361900F2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Mar 2020 23:11:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IMSZhWLbZSjITEUXMfKpLN6QfRCXKqcYetDsxg8Ji7E=; b=OtPupelL9VTKnM
-	nLSWHGrlVE7y4vCVp/WHzchUoWBNxc/c4IEFO4k1+8/UTJCkgV+E+K/8g0onRNcNVBDX9zbPuzOxN
-	brim+KEXL/8J5yEw2KBkxmBpPm1c26zSx4gLxXsyDiOVR26MIK9Hs0xstxyzfVZpHvr+uxahvKwjk
-	e54rTAVZ2IYZMFthBEurilyAgOX7QH7dJS68NVy33o5ZC99cNt2gZM3Kd8Elksju/LA0rv8cePejX
-	o5Z171aY0GEiS7T4ryM9z29di+uOOfpAxShLeCqfAOl6cT4j7Uz/mQm9rPKiRPzCoV5auC0scC3qn
-	YNTTh7gECXhl3jDt1l4g==;
+	List-Owner; bh=iC5vN54JhIWTsgTP6AlpmDCd1URUTpskqmKgCTwxL+k=; b=YYYCRZNXSxGP/M
+	sm6mZ8zyadRwff7ZXXPnPVxUhPI5iG3XV8qd6W7s5TqdSjmKMZ3Mi94y+o+RuaS0ho2Jmx18TpMdA
+	KO+P6ZmImru8g0p/kkK5fC8nFEFoMa9Uo1kqA6rYp+zJBzQ2IQMP+VCNnp0Z8jST89ksxJFsejXPD
+	s/DbiF6Hjp72vBwQoHe5f/sE5m1LijZ9SI8jSNyH4oMndKwFHLWmk54socIZazeSPskJI8PyrJpHS
+	pddQVE8W+sT7AGxkzjMxrDMzQs1da+bSlVYMZqbMk6TTuvo1PAcCMWk94P/jO7QHMxflNXH0LCx8p
+	WY4zymzsGxRN1ws73aMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGTAe-00033b-UZ; Mon, 23 Mar 2020 19:55:36 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jGVIS-0003hH-RV; Mon, 23 Mar 2020 22:11:48 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGTAb-00032w-Qr; Mon, 23 Mar 2020 19:55:35 +0000
-Received: by mail-il1-f196.google.com with SMTP id g15so5409815ilj.10;
- Mon, 23 Mar 2020 12:55:33 -0700 (PDT)
+ id 1jGVIG-0003Xx-9q; Mon, 23 Mar 2020 22:11:37 +0000
+Received: by mail-io1-f68.google.com with SMTP id q9so16120567iod.4;
+ Mon, 23 Mar 2020 15:11:36 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kFJFA9AgWvFk/kEnU8vamRR2gWaNyHgegYHT2Tyfw1s=;
- b=PcLwydHDy6GkcE+locWolQn2PtuS+nJsTNIlhfIKVJPH8F1rofQH1xuc5FKKhk45xM
- JogM4s7jE4HLBXvJx6Q/m2+RgA5DAzknZuvou3l4hKmuDb6HEu8j0lftyCbZ051hQtM4
- T43dWHY/ISj2eH+T8o+1ikVfKIsnYtJJgSIdcRh385mAZg74D8pMc8Hl6RYrq2bcxNba
- Z3RGRshClqkY1XRTyQBx3cwDalSoKreOy/UO494FmfkxJotzOyEYbV/RaQF3ZyogL6YX
- IP4eNB1oP19vFNRWW8EwVRy+6zWMsdatqBqAlUK4I0A/dW22McfVzOno752V7PkFIARi
- 0Jpg==
-X-Gm-Message-State: ANhLgQ1gZ6KEGX/8oCNHbRfVb5nWYjxtIbCBcmOCkpBl9UJdDZvDmpIw
- kr/1DrwXqr+2JozFrf+Lkg==
-X-Google-Smtp-Source: ADFU+vvuzRa31naxtDjJTr2hNuD1sIvCIOHJrm60YMlQcXIoc6vaYFq5cIIV9MqEbf92kT5yUeZ1Ng==
-X-Received: by 2002:a92:c790:: with SMTP id c16mr393841ilk.206.1584993333182; 
- Mon, 23 Mar 2020 12:55:33 -0700 (PDT)
+ bh=CXIO1RuJbIyd33SKijqeKvFhxWfXHto+5uHWG1/sMRA=;
+ b=VY60Ym1v5BJxYb4vVyX8C/wYFwgRNfE0vI7oQC92CDu97XBaaaYqXHz9gnEX2R0PUu
+ 3sugOy5eUK+pu+pU+N/Fw2LB4TFHUB5zi9Wftg0xjih3nskT3MOVZitRK7FT0Hb/mU7V
+ h4Py8q7XBGshhBUyGMzTfkE+pN41CfrkXxdgk8Q1FAu4euRvhmi6vTpOv3Ao2u4DLYUF
+ 75/MGE5EIvUkO8n458a8tWpqribWB55UhdMJa+m31UBF8cmHxbndSPZtPRt+KeJbJ2hS
+ frio6i9h6ByibYdAMIM/PzRfuCP5wbcWe3IrNekwls1jEHSnMMOuB5ZqcJIQIe/mRmwy
+ 08Yw==
+X-Gm-Message-State: ANhLgQ1zcrIeHr7ZZkxVdQ9EmVpSgiqvsUoLuNXdFTofPgmDbfS/kMbg
+ y1568ZfZirbwx/paUjFmCW2ax9A=
+X-Google-Smtp-Source: ADFU+vuxvKf/q1ZfFJJiZuqcHHfTUME8CXHg4jNa1UZ/F14DpnV8NJR/r/bzHrCDo4Qu5Piq/XFZzg==
+X-Received: by 2002:a5d:958f:: with SMTP id a15mr20875411ioo.170.1585001495416; 
+ Mon, 23 Mar 2020 15:11:35 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id l17sm5488218ilc.49.2020.03.23.12.55.31
+ by smtp.gmail.com with ESMTPSA id h9sm414079iow.37.2020.03.23.15.11.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 12:55:32 -0700 (PDT)
-Received: (nullmailer pid 6267 invoked by uid 1000);
- Mon, 23 Mar 2020 19:55:31 -0000
-Date: Mon, 23 Mar 2020 13:55:31 -0600
+ Mon, 23 Mar 2020 15:11:34 -0700 (PDT)
+Received: (nullmailer pid 28519 invoked by uid 1000);
+ Mon, 23 Mar 2020 22:11:33 -0000
+Date: Mon, 23 Mar 2020 16:11:33 -0600
 From: Rob Herring <robh@kernel.org>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [PATCH v2 2/3] dt-bindings: Add binding for Hardkernel Odroid Go
- Advance
-Message-ID: <20200323195531.GA6201@bogus>
-References: <20200308223250.353053-1-heiko@sntech.de>
- <20200308223250.353053-2-heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v1 1/2] dt-bindings: sound: convert rockchip i2s bindings
+ to yaml
+Message-ID: <20200323221133.GA28453@bogus>
+References: <20200311174322.23813-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200308223250.353053-2-heiko@sntech.de>
+In-Reply-To: <20200311174322.23813-1-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_125533_871282_C715837E 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200323_151136_345565_076B0E3C 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [209.85.166.68 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
+ [209.85.166.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -92,32 +92,30 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- kever.yang@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, jbx6244@gmail.com,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun,  8 Mar 2020 23:32:49 +0100, Heiko Stuebner wrote:
-> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+On Wed, 11 Mar 2020 18:43:21 +0100, Johan Jonker wrote:
+> Current dts files with 'i2s' nodes are manually verified.
+> In order to automate this process rockchip-i2s.txt
+> has to be converted to yaml.
 > 
-> Add a compatible for the Odroid Go Advance from Hardkernel.
-> The compatible used by the vendor already is odroid-go2, to distinguish
-> it from the previous (microcontroller-based) Odroid Go, so we're keeping
-> that, also to not cause unnecessary incompatibilites.
-> 
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
+>  .../devicetree/bindings/sound/rockchip-i2s.txt     |  49 ----------
+>  .../devicetree/bindings/sound/rockchip-i2s.yaml    | 106 +++++++++++++++++++++
+>  2 files changed, 106 insertions(+), 49 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.txt
+>  create mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
