@@ -2,83 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E551418FDC6
-	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Mar 2020 20:36:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EA5818FDDA
+	for <lists+linux-rockchip@lfdr.de>; Mon, 23 Mar 2020 20:41:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rkfZU6XfKEqDJDf856D6+KsZdrgyj66Me+ojelBw69Q=; b=FQygfZOp4ckW+e
-	dgJWLWPtYMRmIQnYXkhfuAK7LlYxpfPav3VX72L+JKMstXqsA0VGuL1fTew0y1h8b5C5aTIY6Jm/T
-	oNjpqGMKjAUNzkQ2111TUn5MRJ0kOaML/2aMipcOJIIu3Vw8F2+YXZ0HeC7XADmDA25EyluLLDw97
-	x69u8u7IPo7xh12vDA9Fhfru6kKWNRNAlDMX4lxJY1lkNnZnQNvf/yLVAjb4xW0vSJ/L32KDV/SPk
-	TPsU9ODQvAcSawNeh5ZArDSz/h5GnmseuCWTSNlcG2xeUbaMqyNBcX0ATu9vC2+aqiAjheFw3QYj5
-	Aq2PIB1TLOlPahyFuwaQ==;
+	List-Owner; bh=uJX2ZmibqFunFSk4AyiOG27qQCi62PMUllHsUg3HQo8=; b=fZqAQkyxIowQan
+	uwTSPvpeLjYfGUbQZAh5sf+2pSvVOqYQR0N8BBz5WCC0Z1VLIwbklJw5LN49Ip/6WmWnzlz0ODgGc
+	CfUFAt8T7DLRskplkn/hrBkyxMnjWCYi3EvTxhwl1atDuzMlxjGPi9gIM36YpKJui6O4ehVM6Wfwb
+	qB42rZSZrHFIHcROObQBRLRotVIT4B0jsUJNTyS93E+ebX+hz1eyc8ctyqI4jsPomEoQ91DjJzt8A
+	gfoTHD7toBpOFRGHeHReqGisMg30xx3QlsxwTOpYjbnsJJYc4RYq3WHe4y4jAxBdQQ72X4zPE74KW
+	i8l5qlwZerMoK6h0vrLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGSs2-0002lr-QE; Mon, 23 Mar 2020 19:36:22 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jGSxK-0004rn-RQ; Mon, 23 Mar 2020 19:41:51 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGSrk-0002cs-Th; Mon, 23 Mar 2020 19:36:06 +0000
-Received: by mail-io1-f68.google.com with SMTP id m15so10530665iob.5;
- Mon, 23 Mar 2020 12:36:04 -0700 (PDT)
+ id 1jGSx0-0004fw-OX; Mon, 23 Mar 2020 19:41:32 +0000
+Received: by mail-il1-f196.google.com with SMTP id h3so14539131ils.3;
+ Mon, 23 Mar 2020 12:41:30 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3mkiUpmYaWqeC/9fVOMmUolcEDs7SdX572qqK/WHG1k=;
- b=CCpfxoPv4DohmtvVEGKpRzgD5Z9t6midU5BNkeGBP3PDAXzOVy2ORCnlGzLbSMkVEy
- oSKf5Laq9UGc0vfqq2Jb5pRoIqxa5a6YRKRmGQ5GuGauhjhoxQ60l5XbIIK5w74gze1g
- QQJpDwwCzgYj85uIjm5at52pYCzkLfN+Kf1PTmwQ1EM0dRTJpv255Y/PQlpOGMJLznDZ
- B3nAVfpBLib4/CZt8mtBvTZYD8tOUz6OybGNRB4tol1htlvNvad84dGTBGF8Rt3dl35A
- ZmjflpBw3adt9NbWmQZFnfOtcEThfuFBkcR4iMfRTuTDmg56RGRsg7mFu9PN105NiP/T
- BO3g==
-X-Gm-Message-State: ANhLgQ3XHy1IwEqepbLEk6sGHE6qsqGG4KCRPCTKQ8eaE/9Q71TpKQFh
- WcTZCqfi3Dkped+yPnK3jw==
-X-Google-Smtp-Source: ADFU+vtIcAv5y12f47+MkcXTNTAvWLJ98g9D7CVFcGDkK6sgqnjzg0FRX1r8Nvkvjh9Ami3EEIH0qg==
-X-Received: by 2002:a5d:8d90:: with SMTP id b16mr21124412ioj.9.1584992163562; 
- Mon, 23 Mar 2020 12:36:03 -0700 (PDT)
+ bh=wZqIgGpvp/4WvbCX5pHBFK/yoCSdaoYyZWmUWDi0I6w=;
+ b=JYWLP12mS9qt3UnLekspazMRJwuHCJDlyXGLsy9ol+VviKHixs5zrHQITuSgxg1Eys
+ xP7CLsUR5s3m9b8QcwOHycCJgglEzY061wz8vmnQVTH73aDPERhf9XeBPxWQEQ293sfE
+ TOILuq4ahBe7UN+Z+e3p8592by5KlAh+4h0ogc45ZvML1q0KdECotJU5Ob+UPOZA6W3F
+ cv8FDxLrCptolEXs14fk2NS7KVO463y3KE0kK9KKU8nnQaCafNfucjG4engwJmmOiqaX
+ RUD/jp0uvkdWh0Fotssw2AmU52N9k651oEjHf+havNk50hZ80hkuSoxKwQQcW/tpDZGv
+ 1alg==
+X-Gm-Message-State: ANhLgQ0LYpzGStQhMuETC5woPuvrJId5kWS78qjecxwX+QdI+zgSK3+5
+ C4PZ7mkOyrGrRyt0GJIh1Q==
+X-Google-Smtp-Source: ADFU+vvGYTk0BRk7h8eRIHfK7+xZWKAn2MCIiE63wBii1saw9W0SBjLLJ/OUebYGdQPaJwZK8SFAlw==
+X-Received: by 2002:a92:41c7:: with SMTP id o190mr22269984ila.11.1584992489760; 
+ Mon, 23 Mar 2020 12:41:29 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id y1sm4614140ioq.47.2020.03.23.12.36.02
+ by smtp.gmail.com with ESMTPSA id m14sm795371ilr.16.2020.03.23.12.41.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 23 Mar 2020 12:36:02 -0700 (PDT)
-Received: (nullmailer pid 6841 invoked by uid 1000);
- Mon, 23 Mar 2020 19:36:01 -0000
-Date: Mon, 23 Mar 2020 13:36:01 -0600
+ Mon, 23 Mar 2020 12:41:29 -0700 (PDT)
+Received: (nullmailer pid 15741 invoked by uid 1000);
+ Mon, 23 Mar 2020 19:41:28 -0000
+Date: Mon, 23 Mar 2020 13:41:28 -0600
 From: Rob Herring <robh@kernel.org>
 To: Johan Jonker <jbx6244@gmail.com>
 Subject: Re: [PATCH v1] dt-bindings: display: rockchip: convert rockchip vop
  bindings to yaml
-Message-ID: <20200323193601.GC8470@bogus>
+Message-ID: <20200323194128.GD8470@bogus>
 References: <20200306170353.11393-1-jbx6244@gmail.com>
- <590762ab-db79-c8b1-7f0e-b653ed4b1721@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <590762ab-db79-c8b1-7f0e-b653ed4b1721@gmail.com>
+In-Reply-To: <20200306170353.11393-1-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_123604_962184_B86FFA3B 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200323_124130_806949_A6B97635 
+X-CRM114-Status: GOOD (  20.28  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -102,27 +100,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 07:55:22AM +0100, Johan Jonker wrote:
-> Hi,
+On Fri, Mar 06, 2020 at 06:03:53PM +0100, Johan Jonker wrote:
+> Current dts files with 'vop' nodes are manually verified.
+> In order to automate this process rockchip-vop.txt
+> has to be converted to yaml. Also included are new
+> properties needed for the latest Rockchip Socs.
 > 
-> Question for robh:
+> Added properties:
+>   assigned-clocks
+>   assigned-clock-rates
+>   power-domains
+>   rockchip,grf
 > 
-> In the old txt situation we add/describe only properties that are used
-> by the driver/hardware itself. With yaml it also filters things in a
-> node that are used by other drivers like:
-> 
-> assigned-clocks:
-> assigned-clock-rates:
-> power-domains:
-> 
-> Should we add or not?
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/display/rockchip/rockchip-vop.txt     |  74 -----------
+>  .../bindings/display/rockchip/rockchip-vop.yaml    | 141 +++++++++++++++++++++
+>  2 files changed, 141 insertions(+), 74 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
 
-Yes, only pinctrl properties are automatically added.
 
-We could change 'assigned-clocks', but for now I think they should be 
-added.
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+> new file mode 100644
+> index 000000000..93ccd32aa
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+> @@ -0,0 +1,141 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/rockchip/rockchip-vop.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip soc display controller (VOP)
+> +
+> +description:
+> +  VOP (Visual Output Processor) is the Display Controller for the Rockchip
+> +  series of SoCs which transfers the image data from a video memory
+> +  buffer to an external LCD interface.
+> +
+> +maintainers:
+> +  - Sandy Huang <hjc@rock-chips.com>
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: rockchip,px30-vop-big
+> +      - const: rockchip,px30-vop-lit
+> +      - const: rockchip,rk3036-vop
+> +      - const: rockchip,rk3066-vop
+> +      - const: rockchip,rk3126-vop
+> +      - const: rockchip,rk3188-vop
+> +      - const: rockchip,rk3228-vop
+> +      - const: rockchip,rk3288-vop
+> +      - const: rockchip,rk3328-vop
+> +      - const: rockchip,rk3366-vop
+> +      - const: rockchip,rk3368-vop
+> +      - const: rockchip,rk3399-vop-big
+> +      - const: rockchip,rk3399-vop-lit
 
-Rob
+Use an 'enum' instead of oneOf+const.
+
+> +
+> +  reg:
+> +    minItems: 1
+> +    items:
+> +      - description:
+> +          Must contain one entry corresponding to the base address and length
+> +          of the register space.
+> +      - description:
+> +          Can optionally contain a second entry corresponding to
+> +          the CRTC gamma LUT address.
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +    description:
+> +      Should contain a list of all VOP IP block interrupts in the
+> +      order VSYNC, LCD_SYSTEM. The interrupt specifier
+> +      format depends on the interrupt controller used.
+
+maxItems and the description disagree.
+
+> +
+> +  clocks:
+> +    items:
+> +      - description: Clock for ddr buffer transfer.
+> +      - description: Pixel clock.
+> +      - description: Clock for the ahb bus to R/W the phy regs.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: aclk_vop
+> +      - const: dclk_vop
+> +      - const: hclk_vop
+> +
+> +  resets:
+> +    minItems: 3
+> +    maxItems: 3
+
+Just maxItems is enough.
+
+> +
+> +  reset-names:
+> +    items:
+> +      - const: axi
+> +      - const: ahb
+> +      - const: dclk
+> +
+> +  port:
+> +    type: object
+> +    description:
+> +      A port node with endpoint definitions as defined in
+> +      Documentation/devicetree/bindings/media/video-interfaces.txt.
+> +
+> +  assigned-clocks:
+> +    maxItems: 2
+> +
+> +  assigned-clock-rates:
+> +    maxItems: 2
+> +
+> +  iommus:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  rockchip,grf:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description:
+> +      The phandle of the syscon node for
+> +      the general register file (GRF).
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - port
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3288-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    vopb: vopb@ff930000 {
+> +      compatible = "rockchip,rk3288-vop";
+> +      reg = <0x0 0xff930000 0x0 0x19c>,
+> +            <0x0 0xff931000 0x0 0x1000>;
+> +      interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&cru ACLK_VOP0>,
+> +               <&cru DCLK_VOP0>,
+> +               <&cru HCLK_VOP0>;
+> +      clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+> +      resets = <&cru SRST_LCDC1_AXI>,
+> +               <&cru SRST_LCDC1_AHB>,
+> +               <&cru SRST_LCDC1_DCLK>;
+> +      reset-names = "axi", "ahb", "dclk";
+> +      iommus = <&vopb_mmu>;
+> +      vopb_out: port {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        vopb_out_edp: endpoint@0 {
+> +          reg = <0>;
+> +          remote-endpoint=<&edp_in_vopb>;
+> +        };
+> +        vopb_out_hdmi: endpoint@1 {
+> +          reg = <1>;
+> +          remote-endpoint=<&hdmi_in_vopb>;
+> +        };
+> +      };
+> +    };
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
