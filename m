@@ -2,91 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 485D7190D90
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 13:32:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E4151910F3
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 14:35:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=s4fiI6pBPWfc8tX25IonspN+ncCLgZ4zkW6mqOhsTK4=; b=riajt9458T6UYFcvfGSsitYOCF
-	367mDKkynnYTrS9Nr0jFaRfldqPmNIJIZoL7guClkj6zfwrORMz9BXNlvZ1pRscKYS/Qz95RL8K0E
-	4xvFSaHg4sB0GxY9CmWYmjjUnmGMsN3smHFNfCUCHk291ygg+Kaclz7aGbA+x0Cdxc9LDnXI6R8C8
-	IFwQjINX7Bbzt+6yw4yUPZQRImYj3cQB4s654+tnIeW/L6soXv5KkqbVdJkjXKiGbFM8k3PeByPQc
-	NQ0OkWCP7J/oxTvuMx84IKussSoMWbzqCyj4Tq5U0WBZJrKVLwLP7jdU1gLuq9E8Epozvq6wfTp/D
-	IuwUV7Bg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Fr9sxMMs0ZdUROC6Rh0isHbtZXmNBzCXE6p0XuVpIRo=; b=DC5+NKL4ubo3fc+MQexNGPk2z
+	TUpVkH42nKS8WG7bvxfz23e/24QpCPXg3dmVPVieOjxxxU+hCO1IvDjRqJ8ABPz++6Zi8PBy/iBaJ
+	dg+f/9L4lC9kwcjnhP3NMtYuOxb1YRIhXNODSFp1AKwpWbRbohGJcHAu6BRAaLaT2bcRUFJwhlT6T
+	+YXajkFiwo6qbxJ16OYHFTigJqkkIUxpVDal6zIEGh+79nLqPK63Z8b1sMwUGk+5iyhJKx33aB6LD
+	07wdNFmeWo0tVmqCdlkfx0OWArEciF6qYtIkcgYz8gCftpmzqFGt38MdxpHKSbT+3K4oGsoTdpcvW
+	fI0Q2icig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGijk-0004IX-B1; Tue, 24 Mar 2020 12:32:52 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGij0-0003bI-98; Tue, 24 Mar 2020 12:32:08 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j17so17790524wru.13;
- Tue, 24 Mar 2020 05:32:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Q8xyTZiiURMuZz55C+lV5frFi0juzWLh763pjmleRTI=;
- b=XvEENzKw2wGFTbrDGRT3ml/i9ciXc0tz7Wabz9yXGUzdkYE4+jwsp4Oz1tZnNsOQCx
- RmPmOt4EITNYP6enElBEOeeXIbsROyVn/p1lqndCXnzohUIBGvGRb/tiN60CTc0I7iJD
- l/pmAsVQna4eQPy3zsl1/eAfMPmPFeItIjs13dfnfRxcuhygA1DmUnp6Vu6Qm9nrK95+
- C6KCyFvUph3EfIxZqM3ZoEDoFrelVWO3c2sdPswtZjzNRrhkihhX/2HLq+yNX0gom61J
- zOVQeIk0PYGQCuoLabwoEAX8SlcTWE0gGuPQKBMgrN383EZ+iVcL4ZkKcqHdJOK1Htk4
- 62JQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Q8xyTZiiURMuZz55C+lV5frFi0juzWLh763pjmleRTI=;
- b=NPBQ5IYqlsD+oLJ1Rq8Yt15qnq9EUymtdQlitg7MXZosufhCbmshIqpNzciT20diec
- LuPaqNZr6WajMf5C9VPgtzjVQ2UnqRNM2gDze6WhLo6ZXOOBftL/2rK/MLzMq16M2G91
- jWyb5QG12AwwKhvsEszgPJnP0eheJgp65e6rqqe6uiBT31S5zmy+I3tUnBqIenkxkzDK
- wAjFpGPhL3qIpZhsv6Cb0szw69id1MkL6ewo8Xwhv7J+iaNjzekzai1jPSkEBb5d1tZd
- Hvsk29ursh1rlUeorIk7BTbxRTMFCL4TK2bkZGC9v2gqmlU3OgKw+V6qSm/4857xtTRW
- OmWQ==
-X-Gm-Message-State: ANhLgQ05NJxZo8OOpFh+RJaYMKimRzwuQpnv3Ri3QIA3e4gnAplfxdLp
- lY2NjU6qwpMOhE3FhWmTd9I=
-X-Google-Smtp-Source: ADFU+vspS2iaiHICA89DEah3/meoLs+mzhJGZMZqXh2WzZtOitG+ZLB8tygXug0W+SCEjGmNzcIUmg==
-X-Received: by 2002:adf:f892:: with SMTP id u18mr27024616wrp.367.1585053124710; 
- Tue, 24 Mar 2020 05:32:04 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id k185sm4215029wmb.7.2020.03.24.05.32.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Mar 2020 05:32:04 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: lgirdwood@gmail.com
-Subject: [PATCH v2 3/3] dt-bindings: sound: rockchip-spdif: add power-domains
- property
-Date: Tue, 24 Mar 2020 13:31:55 +0100
-Message-Id: <20200324123155.11858-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200324123155.11858-1-jbx6244@gmail.com>
+	id 1jGjiG-0001dz-Aa; Tue, 24 Mar 2020 13:35:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGji3-0001Vu-GB; Tue, 24 Mar 2020 13:35:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 798F91FB;
+ Tue, 24 Mar 2020 06:35:08 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F16843F52E;
+ Tue, 24 Mar 2020 06:35:07 -0700 (PDT)
+Date: Tue, 24 Mar 2020 13:35:06 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: sound: convert rockchip spdif
+ bindings to yaml
+Message-ID: <20200324133506.GC7039@sirena.org.uk>
 References: <20200324123155.11858-1-jbx6244@gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <20200324123155.11858-1-jbx6244@gmail.com>
+X-Cookie: I feel ... JUGULAR ...
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_053206_316438_AF65C676 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200324_063511_621415_D5F21F59 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +67,65 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1013319262949368171=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like 'power-domains' for rk3399,
-so add it to 'rockchip-spdif.yaml'.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+--===============1013319262949368171==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ALfTUftag+2gvp1h"
+Content-Disposition: inline
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-index 0546fd4cc..f79dbd153 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -51,6 +51,9 @@ properties:
-   dma-names:
-     const: tx
- 
-+  power-domains:
-+    maxItems: 1
-+
-   rockchip,grf:
-     $ref: /schemas/types.yaml#/definitions/phandle
-     description:
--- 
-2.11.0
 
+--ALfTUftag+2gvp1h
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Mar 24, 2020 at 01:31:53PM +0100, Johan Jonker wrote:
+> Current dts files with 'spdif' nodes are manually verified.
+> In order to automate this process rockchip-spdif.txt
+> has to be converted to yaml.
+
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+> Changed V2:
+>   dmas and dma-names layout
+
+This is the second v2 you've sent of this today - it adds these but
+drops Rob's ack?
+
+--ALfTUftag+2gvp1h
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl56DIkACgkQJNaLcl1U
+h9AN6Af+MtKFdLKwXOq0ZSd3pZudYzkK/o1iRhCoZguoCb361prSfHsrNxVH7UgS
+NoCl9lTGtnOnD0dSRW08nP6R1Uzy6S4RUHXymuSFsbFoE807UgdMhI2SlwOkSwYF
+3LqiuhploNOIFoQaW3InXfrzV1Xf5DQoC2765ifQGd/WvEMD42tBSLLWHZHtS2uU
+KykRMKF9TMjBko2J1usbH41ye2j5a/ubelF180cqOOdjGD+3hZ9V7CYqcEAS8zVX
+CRdNEpBGVl8EDKzzcnJAR1+cjxdUAO3bC0vtcN1HD+71ut9ZN6hc5SyMvBTL2/FU
+1m9eFraFsZ2Jpr4U0N4/N/LTdSmjTw==
+=I6tW
+-----END PGP SIGNATURE-----
+
+--ALfTUftag+2gvp1h--
+
+
+--===============1013319262949368171==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============1013319262949368171==--
+
