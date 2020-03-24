@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0375B190D79
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 13:32:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 485D7190D90
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 13:32:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Z0UNGgpEukXDwu12CUqCkvAFpXidCxI4J5qx0sCd1Y0=; b=Tvwy1d5ELexDXsBHFv/SeLDh2i
-	HkQKNY0vtGOxExm5G13+D9LtkKAzfv4w1NpqBsp8NFAeIMLPnhEuZGC8F6YNqOm0kKM4pBuTodecX
-	Kh/5r+gxbJX7Cyvnm8L2fU6Cixm8a0WUI1oSy5ThcTm9jYn8lmFBU+5kes8nWjn+2sHfRNHj2jJC3
-	bta4ezoEcFpwEYiz1oWFIKRqe2nhjjA6x84fLjbR1colwgGqhbIiI81cDVRAdEU6gyAoxB0E+yLmo
-	0br7wG2AaK7cgZ80y2SoroKP5/cJpP6zAzAWD+keDqeNoKL34irX70dK3AsyWuT+Htjtix7d0CRy7
-	E4ZP36pQ==;
+	bh=s4fiI6pBPWfc8tX25IonspN+ncCLgZ4zkW6mqOhsTK4=; b=riajt9458T6UYFcvfGSsitYOCF
+	367mDKkynnYTrS9Nr0jFaRfldqPmNIJIZoL7guClkj6zfwrORMz9BXNlvZ1pRscKYS/Qz95RL8K0E
+	4xvFSaHg4sB0GxY9CmWYmjjUnmGMsN3smHFNfCUCHk291ygg+Kaclz7aGbA+x0Cdxc9LDnXI6R8C8
+	IFwQjINX7Bbzt+6yw4yUPZQRImYj3cQB4s654+tnIeW/L6soXv5KkqbVdJkjXKiGbFM8k3PeByPQc
+	NQ0OkWCP7J/oxTvuMx84IKussSoMWbzqCyj4Tq5U0WBZJrKVLwLP7jdU1gLuq9E8Epozvq6wfTp/D
+	IuwUV7Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGijE-0003js-Il; Tue, 24 Mar 2020 12:32:20 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jGijk-0004IX-B1; Tue, 24 Mar 2020 12:32:52 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGiiz-0003bH-KU; Tue, 24 Mar 2020 12:32:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t7so16507689wrw.12;
- Tue, 24 Mar 2020 05:32:04 -0700 (PDT)
+ id 1jGij0-0003bI-98; Tue, 24 Mar 2020 12:32:08 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j17so17790524wru.13;
+ Tue, 24 Mar 2020 05:32:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=atHO2cCzgOMkDYaDPQrtakvRe3Ydex6Qe9QJS9pzzX8=;
- b=TN2CwCxNWlYG1JfPYWRaeZ2r0cqpdUtqKj4DxRAJ+Vcp+KYsdavUdDfv5MMVdDam89
- QsN80wkxMFNnZKozAPaRWDyiNjGIWm6PhzoTyQ4IluC4yb2kXCp4GlMM3MOTkPGhRcrv
- jg55wqIdWr9IpkIsMIrKYD+pUyQIECB7tWUNtG/DY/Dyoux6kqUgoyMCatfdDPKftdod
- nUyk7yIZBGb/ZZIWWVo/QXHt0YLbh+mpnA6XO0f8vHvVvsyg5SWsO0z8oGQ5LyzPwZ0u
- tdtoZFiZgqZKL+s+SDNNFuHRKgGDu2/NE51KiSKcxi2rG1z1IfTz14bey+GX8KqPdW8U
- tvFA==
+ bh=Q8xyTZiiURMuZz55C+lV5frFi0juzWLh763pjmleRTI=;
+ b=XvEENzKw2wGFTbrDGRT3ml/i9ciXc0tz7Wabz9yXGUzdkYE4+jwsp4Oz1tZnNsOQCx
+ RmPmOt4EITNYP6enElBEOeeXIbsROyVn/p1lqndCXnzohUIBGvGRb/tiN60CTc0I7iJD
+ l/pmAsVQna4eQPy3zsl1/eAfMPmPFeItIjs13dfnfRxcuhygA1DmUnp6Vu6Qm9nrK95+
+ C6KCyFvUph3EfIxZqM3ZoEDoFrelVWO3c2sdPswtZjzNRrhkihhX/2HLq+yNX0gom61J
+ zOVQeIk0PYGQCuoLabwoEAX8SlcTWE0gGuPQKBMgrN383EZ+iVcL4ZkKcqHdJOK1Htk4
+ 62JQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=atHO2cCzgOMkDYaDPQrtakvRe3Ydex6Qe9QJS9pzzX8=;
- b=G5cLYcyU7r7snqdbp8G2apRAP/C8Y7zn/h/wt4kvW6ghiciTGd+7NeC9+Zj1xe+VlQ
- Y7I2lxWF3JNhV/sc9OP9lUv+HwIgmLrOAHoRTZCBLU4aQdWn/mNsBy4wDxh1CzDloiuA
- 8CIjxajd2Z3WhRE5p/V+jIikGbe2PfP4LFv30CDyZIfyJHARGFXBlvIY5Hm1YLIHBi2k
- u0S9c1dAN/G3Vyv0iz32QBE5mdLnTdPfE+AfvZk2OLI7unmSbW4FKLHbxMSBKsl+m48Z
- ygHZ7xwZSll5vSMe+4TQF5YBsSzzJU6eGudXCJimo6lhaKy+mTtrqRuBirF/SWIzJIaD
- 9UwQ==
-X-Gm-Message-State: ANhLgQ3vIXz1e71evkBQHDILNQig9LTI8YH/k0QJSr8838CWHRpjB9vD
- teAHkhSjwWarFsuYkXQdkc0=
-X-Google-Smtp-Source: ADFU+vvwc7ZZX4Hf0V7jwJm1hdyW8wN+2s2AUbaBpJXWj10D0kLU62MU+6Z0rzHvlOwAe0jPxp+BMw==
-X-Received: by 2002:adf:f688:: with SMTP id v8mr36392951wrp.344.1585053123707; 
- Tue, 24 Mar 2020 05:32:03 -0700 (PDT)
+ bh=Q8xyTZiiURMuZz55C+lV5frFi0juzWLh763pjmleRTI=;
+ b=NPBQ5IYqlsD+oLJ1Rq8Yt15qnq9EUymtdQlitg7MXZosufhCbmshIqpNzciT20diec
+ LuPaqNZr6WajMf5C9VPgtzjVQ2UnqRNM2gDze6WhLo6ZXOOBftL/2rK/MLzMq16M2G91
+ jWyb5QG12AwwKhvsEszgPJnP0eheJgp65e6rqqe6uiBT31S5zmy+I3tUnBqIenkxkzDK
+ wAjFpGPhL3qIpZhsv6Cb0szw69id1MkL6ewo8Xwhv7J+iaNjzekzai1jPSkEBb5d1tZd
+ Hvsk29ursh1rlUeorIk7BTbxRTMFCL4TK2bkZGC9v2gqmlU3OgKw+V6qSm/4857xtTRW
+ OmWQ==
+X-Gm-Message-State: ANhLgQ05NJxZo8OOpFh+RJaYMKimRzwuQpnv3Ri3QIA3e4gnAplfxdLp
+ lY2NjU6qwpMOhE3FhWmTd9I=
+X-Google-Smtp-Source: ADFU+vspS2iaiHICA89DEah3/meoLs+mzhJGZMZqXh2WzZtOitG+ZLB8tygXug0W+SCEjGmNzcIUmg==
+X-Received: by 2002:adf:f892:: with SMTP id u18mr27024616wrp.367.1585053124710; 
+ Tue, 24 Mar 2020 05:32:04 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id k185sm4215029wmb.7.2020.03.24.05.32.02
+ by smtp.gmail.com with ESMTPSA id k185sm4215029wmb.7.2020.03.24.05.32.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Mar 2020 05:32:03 -0700 (PDT)
+ Tue, 24 Mar 2020 05:32:04 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: lgirdwood@gmail.com
-Subject: [PATCH v2 2/3] dt-bindings: sound: rockchip-spdif: add
- #sound-dai-cells property
-Date: Tue, 24 Mar 2020 13:31:54 +0100
-Message-Id: <20200324123155.11858-2-jbx6244@gmail.com>
+Subject: [PATCH v2 3/3] dt-bindings: sound: rockchip-spdif: add power-domains
+ property
+Date: Tue, 24 Mar 2020 13:31:55 +0100
+Message-Id: <20200324123155.11858-3-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200324123155.11858-1-jbx6244@gmail.com>
 References: <20200324123155.11858-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_053205_675210_EF55A772 
-X-CRM114-Status: GOOD (  11.81  )
+X-CRM114-CacheID: sfid-20200324_053206_316438_AF65C676 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -109,43 +109,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-'#sound-dai-cells' is required to properly interpret
-the list of DAI specified in the 'sound-dai' property,
-so add them to 'rockchip-spdif.yaml'
+In the old txt situation we add/describe only properties that are used
+by the driver/hardware itself. With yaml it also filters things in a
+node that are used by other drivers like 'power-domains' for rk3399,
+so add it to 'rockchip-spdif.yaml'.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ Documentation/devicetree/bindings/sound/rockchip-spdif.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-index d1c72c8a5..0546fd4cc 100644
+index 0546fd4cc..f79dbd153 100644
 --- a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
 +++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -57,6 +57,9 @@ properties:
-       The phandle of the syscon node for the GRF register.
-       Required property on RK3288.
+@@ -51,6 +51,9 @@ properties:
+   dma-names:
+     const: tx
  
-+  "#sound-dai-cells":
-+    const: 0
++  power-domains:
++    maxItems: 1
 +
- required:
-   - compatible
-   - reg
-@@ -65,6 +68,7 @@ required:
-   - clock-names
-   - dmas
-   - dma-names
-+  - "#sound-dai-cells"
- 
- if:
-   properties:
-@@ -91,4 +95,5 @@ examples:
-       clock-names = "mclk", "hclk";
-       dmas = <&dmac1_s 8>;
-       dma-names = "tx";
-+      #sound-dai-cells = <0>;
-     };
+   rockchip,grf:
+     $ref: /schemas/types.yaml#/definitions/phandle
+     description:
 -- 
 2.11.0
 
