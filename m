@@ -2,82 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DDFE1907AA
-	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 09:34:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89E6F1909B0
+	for <lists+linux-rockchip@lfdr.de>; Tue, 24 Mar 2020 10:42:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xoWROSSM4EUn4jUXWUrGgRDc6TWAInc5XUwwBDMf+Gw=; b=mqaI5qvxNA/Rknyw6UXHxbjEq
-	x5wixEHzgin50GdvcY+6A9iO8/XjMhaMHp47frCUze7yHz87t9pMep/5wfnFaO4+gYZq99i3MHb5H
-	9fjSyIUDa4M8qtmUxduveL5ztjVpXnV+7zWk1ZGEsfSG+ahMkf1FJppVTU6VeD9MLZKTMPiTT56jg
-	EbYZfIobD1x60JP+7z9tg0TGsCWnAf+RL4x1nC6esKobEn7tMQNeWLS5GElgeEcl18whHGM3BshwV
-	/xWx9mkLlWdMJBqEm4vXwksohU8lDgVdT4xjqvDPRwcMmpnt07iFJyTbeznZNyU/V8Wp84VMPsJSx
-	iIm2WuUMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=c+LzVLLmPLt90p7zy0ajX2kuQdu4VWCWMZamCtNLXu4=; b=VGJ
+	GoigkEvQEx+7KDop2cxQjfzBql0rm63cec1NdslFGT0huErH5KJIiGuO+qlbK6/50zWw6mOksjukP
+	wC5IHPmzqygFr7avSeuV7GS5ji25tyL1hYJZfd5sPhoJWpPTDTvDBL7nTi1RA7lTKXkepQiQp7EUa
+	FXlo2RY69GP2bHoOBx6bjCsGE1qVAdfUtCaLa1vVtoKQv+0iHKcdSgJiSJMCK/pEdis40Tlg3RjqU
+	LfPQjrP7UFHlaZOYzf/SmFzXKQ0SGeK4lu2hrusCekWgrWN7Ht/YD2CrY3Z8DdxckDtsIiTRZKV33
+	peAlf5BEcc2GsPKZa6kP1gEKbzXTE6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGf0T-00006T-59; Tue, 24 Mar 2020 08:33:53 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jGg50-0001sj-St; Tue, 24 Mar 2020 09:42:38 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGf0D-0008Nl-N5; Tue, 24 Mar 2020 08:33:41 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 9E62FACCE;
- Tue, 24 Mar 2020 08:33:28 +0000 (UTC)
-Subject: Re: [PATCH v1 0/3] drm: drm_encoder_init() => drm_encoder_init_funcs()
-To: Sam Ravnborg <sam@ravnborg.org>, Daniel Vetter <daniel@ffwll.ch>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- dri-devel@lists.freedesktop.org
-References: <20200313201744.19773-1-sam@ravnborg.org>
-From: Thomas Zimmermann <tzimmermann@suse.de>
-Autocrypt: addr=tzimmermann@suse.de; keydata=
- mQENBFs50uABCADEHPidWt974CaxBVbrIBwqcq/WURinJ3+2WlIrKWspiP83vfZKaXhFYsdg
- XH47fDVbPPj+d6tQrw5lPQCyqjwrCPYnq3WlIBnGPJ4/jreTL6V+qfKRDlGLWFjZcsrPJGE0
- BeB5BbqP5erN1qylK9i3gPoQjXGhpBpQYwRrEyQyjuvk+Ev0K1Jc5tVDeJAuau3TGNgah4Yc
- hdHm3bkPjz9EErV85RwvImQ1dptvx6s7xzwXTgGAsaYZsL8WCwDaTuqFa1d1jjlaxg6+tZsB
- 9GluwvIhSezPgnEmimZDkGnZRRSFiGP8yjqTjjWuf0bSj5rUnTGiyLyRZRNGcXmu6hjlABEB
- AAG0J1Rob21hcyBaaW1tZXJtYW5uIDx0emltbWVybWFubkBzdXNlLmRlPokBVAQTAQgAPhYh
- BHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsDBQkDwmcABQsJCAcCBhUKCQgLAgQWAgMB
- Ah4BAheAAAoJEGgNwR1TC3ojR80H/jH+vYavwQ+TvO8ksXL9JQWc3IFSiGpuSVXLCdg62AmR
- irxW+qCwNncNQyb9rd30gzdectSkPWL3KSqEResBe24IbA5/jSkPweJasgXtfhuyoeCJ6PXo
- clQQGKIoFIAEv1s8l0ggPZswvCinegl1diyJXUXmdEJRTWYAtxn/atut1o6Giv6D2qmYbXN7
- mneMC5MzlLaJKUtoH7U/IjVw1sx2qtxAZGKVm4RZxPnMCp9E1MAr5t4dP5gJCIiqsdrVqI6i
- KupZstMxstPU//azmz7ZWWxT0JzgJqZSvPYx/SATeexTYBP47YFyri4jnsty2ErS91E6H8os
- Bv6pnSn7eAq5AQ0EWznS4AEIAMYmP4M/V+T5RY5at/g7rUdNsLhWv1APYrh9RQefODYHrNRH
- UE9eosYbT6XMryR9hT8XlGOYRwKWwiQBoWSDiTMo/Xi29jUnn4BXfI2px2DTXwc22LKtLAgT
- RjP+qbU63Y0xnQN29UGDbYgyyK51DW3H0If2a3JNsheAAK+Xc9baj0LGIc8T9uiEWHBnCH+R
- dhgATnWWGKdDegUR5BkDfDg5O/FISymJBHx2Dyoklv5g4BzkgqTqwmaYzsl8UxZKvbaxq0zb
- ehDda8lvhFXodNFMAgTLJlLuDYOGLK2AwbrS3Sp0AEbkpdJBb44qVlGm5bApZouHeJ/+n+7r
- 12+lqdsAEQEAAYkBPAQYAQgAJhYhBHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsMBQkD
- wmcAAAoJEGgNwR1TC3ojpfcIAInwP5OlcEKokTnHCiDTz4Ony4GnHRP2fXATQZCKxmu4AJY2
- h9ifw9Nf2TjCZ6AMvC3thAN0rFDj55N9l4s1CpaDo4J+0fkrHuyNacnT206CeJV1E7NYntxU
- n+LSiRrOdywn6erjxRi9EYTVLCHcDhBEjKmFZfg4AM4GZMWX1lg0+eHbd5oL1as28WvvI/uI
- aMyV8RbyXot1r/8QLlWldU3NrTF5p7TMU2y3ZH2mf5suSKHAMtbE4jKJ8ZHFOo3GhLgjVrBW
- HE9JXO08xKkgD+w6v83+nomsEuf6C6LYrqY/tsZvyEX6zN8CtirPdPWu/VXNRYAl/lat7lSI
- 3H26qrE=
-Message-ID: <c93bb45d-7922-56dc-061f-6ef70493a358@suse.de>
-Date: Tue, 24 Mar 2020 09:33:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20200313201744.19773-1-sam@ravnborg.org>
+ id 1jGg4N-0001Lh-PZ; Tue, 24 Mar 2020 09:42:01 +0000
+Received: by mail-wr1-x443.google.com with SMTP id 65so3841644wrl.1;
+ Tue, 24 Mar 2020 02:41:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=UfwyyCOVp7fJ/e8HRRUukv3oRa/wd6NHXME/Nbpa+ws=;
+ b=WPSgghiHRVzrwArc/G6qj7hS8TULYEmNI5RNn7iywgiMvs1JuSfMgnIRnzNDlwdlZd
+ iH9wOswp2PzsKjU2K1d/QTcsBK01Bk01UYy4FW03l/Lbqi3SghtaXWTkmCmt6usq6nhV
+ sTkAWHDkP9ZVSFl+TF4/xUAJrtdaqbWfHTrSzmxzn1qLeoiDM9S7PcrijO5e36VBEKI4
+ C0osWAsK3zHTaEXUPiSDdLamAtSsG65g4U/jsfTj9kXoJanekC0nvdP1FRRJNSEgbHb7
+ 50djO41DN0X/DGnttXM+4dOqtOPXvPhmGwhgvhedb1RNcDMVQ9WsZWlbUhMaQKy2Mg/Z
+ rYjw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=UfwyyCOVp7fJ/e8HRRUukv3oRa/wd6NHXME/Nbpa+ws=;
+ b=ENgKnYeFnbaCh2KhlqRsQe4scFJJS/ukVq+HAtssYlFXuTkT3HZ/cYANQljXLjB20M
+ 2MDTWZy2zaqUiYHhctCGE9neLuojJy+Zsr6M0O3hjP7QtBGUbPAW4dKcy0apdHXKLpLa
+ cZiLHQ4aTn8di5Y4ztclFuD/CB7huTWi2vWm+yVpludrMbkIffq0SkroS6JalC62a8oC
+ xIOp4BNCWo7l+OBrv+WL14TX28XhGF1kowHYFxIUKFScycLULs9Yo0GR73Gz+KXQO0Q2
+ g3hUZ+8lhRsg7DwE4i9QwhdRWm9vbVsXAH6OOcWyarpuRxt9fZG+w2rU1W6pbXvuYfCB
+ 4YWQ==
+X-Gm-Message-State: ANhLgQ3BmtMJ9Ujs0bH52xr6iPJCM6fdXrQ3gI3SDxNd9Ofz+6Z13oU9
+ Vq65firDg+6CYh7+iFqddfk=
+X-Google-Smtp-Source: ADFU+vsqACwnEGdz/AJwhtKAn07kBM93otHuS309xoHIHLRUqkWj8CpyfKBlB8yVQzRrgyFFZ3Drow==
+X-Received: by 2002:adf:d846:: with SMTP id k6mr2544744wrl.268.1585042917062; 
+ Tue, 24 Mar 2020 02:41:57 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id r15sm22489916wra.19.2020.03.24.02.41.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 24 Mar 2020 02:41:56 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: lgirdwood@gmail.com
+Subject: [PATCH v2 1/3] dt-bindings: sound: convert rockchip i2s bindings to
+ yaml
+Date: Tue, 24 Mar 2020 10:41:47 +0100
+Message-Id: <20200324094149.6904-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_013339_046718_C5A8ED38 
-X-CRM114-Status: GOOD (  26.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200324_024159_878489_251C503D 
+X-CRM114-Status: GOOD (  17.22  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,305 +95,204 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-samsung-soc@vger.kernel.org, Boris Brezillon <bbrezillon@kernel.org>,
- David Airlie <airlied@linux.ie>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Jose Roberto de Souza <jose.souza@intel.com>,
- virtualization@lists.linux-foundation.org, linux-renesas-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-mediatek@lists.infradead.org, Gerd Hoffmann <kraxel@redhat.com>,
- linux-amlogic@lists.infradead.org, linux-tegra@vger.kernel.org,
- Dave Airlie <airlied@redhat.com>, amd-gfx@lists.freedesktop.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Emil Velikov <emil.velikov@collabora.com>
-Content-Type: multipart/mixed; boundary="===============5709743393864072692=="
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-rockchip@lists.infradead.org, broonie@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============5709743393864072692==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="Ufl74Lq2kLxag3rezk70YaJ2XyXJCpUyg"
+Current dts files with 'i2s' nodes are manually verified.
+In order to automate this process rockchip-i2s.txt
+has to be converted to yaml.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Ufl74Lq2kLxag3rezk70YaJ2XyXJCpUyg
-Content-Type: multipart/mixed; boundary="De4ctwLgWXvPGwhVVivy7i6RNXKKkyzAV";
- protected-headers="v1"
-From: Thomas Zimmermann <tzimmermann@suse.de>
-To: Sam Ravnborg <sam@ravnborg.org>, Daniel Vetter <daniel@ffwll.ch>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- dri-devel@lists.freedesktop.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- David Airlie <airlied@linux.ie>, Jose Roberto de Souza
- <jose.souza@intel.com>, virtualization@lists.linux-foundation.org,
- Gerd Hoffmann <kraxel@redhat.com>, linux-stm32@st-md-mailman.stormreply.com,
- Emil Velikov <emil.velikov@collabora.com>,
- linux-samsung-soc@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Boris Brezillon <bbrezillon@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- linux-renesas-soc@vger.kernel.org
-Message-ID: <c93bb45d-7922-56dc-061f-6ef70493a358@suse.de>
-Subject: Re: [PATCH v1 0/3] drm: drm_encoder_init() =>
- drm_encoder_init_funcs()
-References: <20200313201744.19773-1-sam@ravnborg.org>
-In-Reply-To: <20200313201744.19773-1-sam@ravnborg.org>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+Changed V2:
+  Add Reviewed-by
+---
+ .../devicetree/bindings/sound/rockchip-i2s.txt     |  49 ----------
+ .../devicetree/bindings/sound/rockchip-i2s.yaml    | 106 +++++++++++++++++++++
+ 2 files changed, 106 insertions(+), 49 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.txt
+ create mode 100644 Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
 
---De4ctwLgWXvPGwhVVivy7i6RNXKKkyzAV
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.txt b/Documentation/devicetree/bindings/sound/rockchip-i2s.txt
+deleted file mode 100644
+index 54aefab71..000000000
+--- a/Documentation/devicetree/bindings/sound/rockchip-i2s.txt
++++ /dev/null
+@@ -1,49 +0,0 @@
+-* Rockchip I2S controller
+-
+-The I2S bus (Inter-IC sound bus) is a serial link for digital
+-audio data transfer between devices in the system.
+-
+-Required properties:
+-
+-- compatible: should be one of the following:
+-   - "rockchip,rk3066-i2s": for rk3066
+-   - "rockchip,px30-i2s", "rockchip,rk3066-i2s": for px30
+-   - "rockchip,rk3036-i2s", "rockchip,rk3066-i2s": for rk3036
+-   - "rockchip,rk3188-i2s", "rockchip,rk3066-i2s": for rk3188
+-   - "rockchip,rk3228-i2s", "rockchip,rk3066-i2s": for rk3228
+-   - "rockchip,rk3288-i2s", "rockchip,rk3066-i2s": for rk3288
+-   - "rockchip,rk3328-i2s", "rockchip,rk3066-i2s": for rk3328
+-   - "rockchip,rk3366-i2s", "rockchip,rk3066-i2s": for rk3366
+-   - "rockchip,rk3368-i2s", "rockchip,rk3066-i2s": for rk3368
+-   - "rockchip,rk3399-i2s", "rockchip,rk3066-i2s": for rk3399
+-- reg: physical base address of the controller and length of memory mapped
+-  region.
+-- interrupts: should contain the I2S interrupt.
+-- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
+-	Documentation/devicetree/bindings/dma/dma.txt
+-- dma-names: should include "tx" and "rx".
+-- clocks: a list of phandle + clock-specifer pairs, one for each entry in clock-names.
+-- clock-names: should contain the following:
+-   - "i2s_hclk": clock for I2S BUS
+-   - "i2s_clk" : clock for I2S controller
+-- rockchip,playback-channels: max playback channels, if not set, 8 channels default.
+-- rockchip,capture-channels: max capture channels, if not set, 2 channels default.
+-
+-Required properties for controller which support multi channels
+-playback/capture:
+-
+-- rockchip,grf: the phandle of the syscon node for GRF register.
+-
+-Example for rk3288 I2S controller:
+-
+-i2s@ff890000 {
+-	compatible = "rockchip,rk3288-i2s", "rockchip,rk3066-i2s";
+-	reg = <0xff890000 0x10000>;
+-	interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
+-	dmas = <&pdma1 0>, <&pdma1 1>;
+-	dma-names = "tx", "rx";
+-	clock-names = "i2s_hclk", "i2s_clk";
+-	clocks = <&cru HCLK_I2S0>, <&cru SCLK_I2S0>;
+-	rockchip,playback-channels = <8>;
+-	rockchip,capture-channels = <2>;
+-};
+diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+new file mode 100644
+index 000000000..eff06b4b5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+@@ -0,0 +1,106 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sound/rockchip-i2s.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip I2S controller
++
++description:
++  The I2S bus (Inter-IC sound bus) is a serial link for digital
++  audio data transfer between devices in the system.
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,rk3066-i2s
++      - items:
++          - enum:
++            - rockchip,px30-i2s
++            - rockchip,rk3036-i2s
++            - rockchip,rk3188-i2s
++            - rockchip,rk3228-i2s
++            - rockchip,rk3288-i2s
++            - rockchip,rk3328-i2s
++            - rockchip,rk3366-i2s
++            - rockchip,rk3368-i2s
++            - rockchip,rk3399-i2s
++          - const: rockchip,rk3066-i2s
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: clock for I2S controller
++      - description: clock for I2S BUS
++
++  clock-names:
++    items:
++      - const: i2s_clk
++      - const: i2s_hclk
++
++  dmas:
++    items:
++      - description: TX DMA Channel
++      - description: RX DMA Channel
++
++  dma-names:
++    items:
++      - const: tx
++      - const: rx
++
++  rockchip,capture-channels:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    default: 2
++    description:
++      Max capture channels, if not set, 2 channels default.
++
++  rockchip,playback-channels:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    default: 8
++    description:
++      Max playback channels, if not set, 8 channels default.
++
++  rockchip,grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      The phandle of the syscon node for the GRF register.
++      Required property for controllers which support multi channel
++      playback/capture.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - dmas
++  - dma-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    i2s@ff890000 {
++      compatible = "rockchip,rk3288-i2s", "rockchip,rk3066-i2s";
++      reg = <0xff890000 0x10000>;
++      interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0>;
++      clock-names = "i2s_clk", "i2s_hclk";
++      dmas = <&pdma1 0>, <&pdma1 1>;
++      dma-names = "tx", "rx";
++      rockchip,capture-channels = <2>;
++      rockchip,playback-channels = <8>;
++    };
+-- 
+2.11.0
 
-Hi Sam
-
-Am 13.03.20 um 21:17 schrieb Sam Ravnborg:
-> Thomas Zimmermann had made a nice patch-set that introduced
-> drm_simple_encoder_init() which is already present in drm-misc-next.
->=20
-> While looking at this it was suddenly obvious to me that
-> this was functionalty that really should be included in drm_encoder.c
-> The case where the core could handle the callback is pretty
-> common and not part of the simple pipe line.
-
-The original patchset put the new function into the core implementation
-and was shot down for this. So it ended up in the simple-KMS helpers.
-
->=20
-> So after some dialog on dri-devel the conclusion was to go for
-> a change like this:
->=20
->     drm_encoder_init_funcs() for all users that specified a
->     drm_encoder_funcs to extend the functionality.
->=20
->     drm_encoder_init() for all users that did not
->     need to extend the basic functionality with
->     drm_encoder_funcs.
-
-TBH, my take-away was to keep the core as it is ans maybe rename
-drm_simple_encoder_init() to some better name.
-
->=20
-> A similar approach with a _funcs() prefix is used elsewhere in drm/
-
-IMHO, there are a few things to consider:
-
-=46rom grepping, I could only find drm_gem_fb_create_with_funcs(). And th=
-e
-proposed change would make the encoder's function name inconsistent with
-drm_connector_init(), drm_crtc_init(), and others. Finally,
-drm_connector_init_with_ddc() was criticiced for being mid-layerish and
-could lead to many combinations of postfixes (e.g., _with_funcs(),
-with_ddc(), _with_ddc_and_funcs(), etc).
-
-If there is consent that the drm_simple_encoder_init() should go away,
-I'd propose to change drm_encoder_init(). It could use a default
-implementation for funcs, if no funcs argument has been specified. We
-already have such behavior for some GEM callbacks. In later patches,
-drm_gem_fb_create_with_funcs() and drm_connector_init_with_ddc() could
-go away as well.
-
-Best regards
-Thomas
-
-
->=20
-> This required a rename of the existing users, and
-> a follow-up patch that moves drm_simple_encoder_init()
-> to drm_encoder.c
->=20
-> Patches 3 in this set demonstrate the use of drm_encoder_init().
-> There are many more drivers that can be converted as Thomas
-> has already demonstrated.
->=20
-> This is all based on work done by Thomas Zimmermann,
-> I just wanted to implement my suggestion so
-> we could select the best way forward.
->=20
-> Note: Daniel Vetter has hinted the approach implemented
-> here smelled like middle-layer.
-> IMO this is not so, it is just a way to handle cleanup
-> for the simple cases.
->=20
-> 	Sam
->=20
->=20
-> Sam Ravnborg (3):
->       drm: drm_encoder_init() =3D> drm_encoder_init_funcs()
->       drm: drm_simple_encoder_init() =3D> drm_encoder_init()
->       drm/atmel-hlcdc: Use drm_encoder_init()
->=20
->  drivers/gpu/drm/amd/amdgpu/dce_v10_0.c             | 28 ++++++-------
->  drivers/gpu/drm/amd/amdgpu/dce_v11_0.c             | 28 ++++++-------
->  drivers/gpu/drm/amd/amdgpu/dce_v6_0.c              | 28 ++++++-------
->  drivers/gpu/drm/amd/amdgpu/dce_v8_0.c              | 28 ++++++-------
->  drivers/gpu/drm/amd/amdgpu/dce_virtual.c           |  4 +-
->  drivers/gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c  | 10 ++---
->  .../amd/display/amdgpu_dm/amdgpu_dm_mst_types.c    | 10 ++---
->  drivers/gpu/drm/arc/arcpgu_hdmi.c                  |  4 +-
->  drivers/gpu/drm/arc/arcpgu_sim.c                   |  4 +-
->  drivers/gpu/drm/ast/ast_mode.c                     |  3 +-
->  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_output.c   |  8 +---
->  drivers/gpu/drm/drm_encoder.c                      | 49 ++++++++++++++=
-+++++---
->  drivers/gpu/drm/drm_encoder_slave.c                |  2 +-
->  drivers/gpu/drm/drm_simple_kms_helper.c            | 45 +-------------=
-------
->  drivers/gpu/drm/drm_writeback.c                    |  6 +--
->  drivers/gpu/drm/exynos/exynos_dp.c                 |  4 +-
->  drivers/gpu/drm/exynos/exynos_drm_dpi.c            |  4 +-
->  drivers/gpu/drm/exynos/exynos_drm_dsi.c            |  4 +-
->  drivers/gpu/drm/exynos/exynos_drm_vidi.c           |  4 +-
->  drivers/gpu/drm/exynos/exynos_hdmi.c               |  4 +-
->  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c          |  4 +-
->  drivers/gpu/drm/gma500/cdv_intel_crt.c             |  5 ++-
->  drivers/gpu/drm/gma500/cdv_intel_dp.c              |  4 +-
->  drivers/gpu/drm/gma500/cdv_intel_hdmi.c            |  4 +-
->  drivers/gpu/drm/gma500/cdv_intel_lvds.c            |  6 +--
->  drivers/gpu/drm/gma500/mdfld_dsi_dpi.c             |  7 ++--
->  drivers/gpu/drm/gma500/oaktrail_hdmi.c             |  6 +--
->  drivers/gpu/drm/gma500/oaktrail_lvds.c             |  4 +-
->  drivers/gpu/drm/gma500/psb_intel_lvds.c            |  6 +--
->  drivers/gpu/drm/gma500/psb_intel_sdvo.c            |  4 +-
->  drivers/gpu/drm/hisilicon/hibmc/hibmc_drm_vdac.c   |  4 +-
->  drivers/gpu/drm/hisilicon/kirin/dw_drm_dsi.c       |  4 +-
->  drivers/gpu/drm/i2c/tda998x_drv.c                  |  5 ++-
->  drivers/gpu/drm/i915/display/icl_dsi.c             |  4 +-
->  drivers/gpu/drm/i915/display/intel_crt.c           |  5 ++-
->  drivers/gpu/drm/i915/display/intel_ddi.c           |  6 ++-
->  drivers/gpu/drm/i915/display/intel_dp.c            |  6 +--
->  drivers/gpu/drm/i915/display/intel_dp_mst.c        |  6 ++-
->  drivers/gpu/drm/i915/display/intel_dvo.c           |  6 +--
->  drivers/gpu/drm/i915/display/intel_hdmi.c          |  6 +--
->  drivers/gpu/drm/i915/display/intel_lvds.c          |  4 +-
->  drivers/gpu/drm/i915/display/intel_sdvo.c          |  6 +--
->  drivers/gpu/drm/i915/display/intel_tv.c            |  4 +-
->  drivers/gpu/drm/i915/display/vlv_dsi.c             |  5 ++-
->  drivers/gpu/drm/imx/dw_hdmi-imx.c                  |  4 +-
->  drivers/gpu/drm/imx/imx-ldb.c                      |  4 +-
->  drivers/gpu/drm/imx/imx-tve.c                      |  4 +-
->  drivers/gpu/drm/imx/parallel-display.c             |  4 +-
->  drivers/gpu/drm/ingenic/ingenic-drm.c              |  5 ++-
->  drivers/gpu/drm/mediatek/mtk_dpi.c                 |  5 ++-
->  drivers/gpu/drm/mediatek/mtk_dsi.c                 |  4 +-
->  drivers/gpu/drm/meson/meson_dw_hdmi.c              |  5 ++-
->  drivers/gpu/drm/meson/meson_venc_cvbs.c            |  5 ++-
->  drivers/gpu/drm/mgag200/mgag200_mode.c             |  7 +---
->  drivers/gpu/drm/msm/disp/dpu1/dpu_encoder.c        |  4 +-
->  drivers/gpu/drm/msm/disp/mdp4/mdp4_dsi_encoder.c   |  4 +-
->  drivers/gpu/drm/msm/disp/mdp4/mdp4_dtv_encoder.c   |  4 +-
->  drivers/gpu/drm/msm/disp/mdp4/mdp4_lcdc_encoder.c  |  4 +-
->  drivers/gpu/drm/msm/disp/mdp5/mdp5_encoder.c       |  3 +-
->  drivers/gpu/drm/nouveau/dispnv04/dac.c             |  4 +-
->  drivers/gpu/drm/nouveau/dispnv04/dfp.c             |  3 +-
->  drivers/gpu/drm/nouveau/dispnv04/tvnv04.c          |  4 +-
->  drivers/gpu/drm/nouveau/dispnv04/tvnv17.c          |  4 +-
->  drivers/gpu/drm/nouveau/dispnv50/disp.c            | 16 +++----
->  drivers/gpu/drm/omapdrm/omap_encoder.c             |  4 +-
->  drivers/gpu/drm/qxl/qxl_display.c                  |  7 +---
->  drivers/gpu/drm/radeon/atombios_encoders.c         | 40 +++++++++-----=
-----
->  drivers/gpu/drm/radeon/radeon_dp_mst.c             |  4 +-
->  drivers/gpu/drm/radeon/radeon_legacy_encoders.c    | 20 ++++-----
->  drivers/gpu/drm/rcar-du/rcar_du_encoder.c          |  4 +-
->  drivers/gpu/drm/rockchip/analogix_dp-rockchip.c    |  5 ++-
->  drivers/gpu/drm/rockchip/cdn-dp-core.c             |  4 +-
->  drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c    |  5 ++-
->  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        |  4 +-
->  drivers/gpu/drm/rockchip/inno_hdmi.c               |  4 +-
->  drivers/gpu/drm/rockchip/rk3066_hdmi.c             |  4 +-
->  drivers/gpu/drm/rockchip/rockchip_lvds.c           |  5 ++-
->  drivers/gpu/drm/rockchip/rockchip_rgb.c            |  5 ++-
->  drivers/gpu/drm/shmobile/shmob_drm_crtc.c          |  4 +-
->  drivers/gpu/drm/sti/sti_tvout.c                    | 16 +++----
->  drivers/gpu/drm/stm/ltdc.c                         |  4 +-
->  drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c             | 10 ++---
->  drivers/gpu/drm/sun4i/sun4i_lvds.c                 | 10 ++---
->  drivers/gpu/drm/sun4i/sun4i_rgb.c                  | 10 ++---
->  drivers/gpu/drm/sun4i/sun4i_tv.c                   | 10 ++---
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c             | 10 ++---
->  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c              |  4 +-
->  drivers/gpu/drm/tegra/dsi.c                        |  6 +--
->  drivers/gpu/drm/tegra/hdmi.c                       |  5 ++-
->  drivers/gpu/drm/tegra/rgb.c                        |  4 +-
->  drivers/gpu/drm/tegra/sor.c                        |  4 +-
->  drivers/gpu/drm/tidss/tidss_encoder.c              |  4 +-
->  drivers/gpu/drm/tilcdc/tilcdc_external.c           |  8 ++--
->  drivers/gpu/drm/tilcdc/tilcdc_panel.c              |  4 +-
->  drivers/gpu/drm/vboxvideo/vbox_mode.c              |  4 +-
->  drivers/gpu/drm/vc4/vc4_dpi.c                      |  4 +-
->  drivers/gpu/drm/vc4/vc4_dsi.c                      |  4 +-
->  drivers/gpu/drm/vc4/vc4_hdmi.c                     |  4 +-
->  drivers/gpu/drm/vc4/vc4_vec.c                      |  4 +-
->  drivers/gpu/drm/virtio/virtgpu_display.c           |  4 +-
->  drivers/gpu/drm/vkms/vkms_output.c                 |  4 +-
->  drivers/gpu/drm/vmwgfx/vmwgfx_ldu.c                |  4 +-
->  drivers/gpu/drm/vmwgfx/vmwgfx_scrn.c               |  5 ++-
->  drivers/gpu/drm/vmwgfx/vmwgfx_stdu.c               |  4 +-
->  drivers/gpu/drm/zte/zx_hdmi.c                      |  4 +-
->  drivers/gpu/drm/zte/zx_tvenc.c                     |  4 +-
->  drivers/gpu/drm/zte/zx_vga.c                       |  4 +-
->  include/drm/drm_encoder.h                          |  9 ++--
->  include/drm/drm_simple_kms_helper.h                |  4 --
->  109 files changed, 394 insertions(+), 395 deletions(-)
->=20
->=20
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
->=20
-
---=20
-Thomas Zimmermann
-Graphics Driver Developer
-SUSE Software Solutions Germany GmbH
-Maxfeldstr. 5, 90409 N=C3=BCrnberg, Germany
-(HRB 36809, AG N=C3=BCrnberg)
-Gesch=C3=A4ftsf=C3=BChrer: Felix Imend=C3=B6rffer
-
-
---De4ctwLgWXvPGwhVVivy7i6RNXKKkyzAV--
-
---Ufl74Lq2kLxag3rezk70YaJ2XyXJCpUyg
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEchf7rIzpz2NEoWjlaA3BHVMLeiMFAl55xdYACgkQaA3BHVML
-eiNJUgf+LxlsmFqczF3bmdnqDSQXVB5DSYpT/HzisNKZmH17VGhSjbA3cP6Y+MqX
-r8dHz/QG6y6SoIMm1lhQ4I8uGA3Swmf+Iaod60POAoD4mzFwTfXiI29WEYQ3Qhd2
-sH8DzeBhnTyCt5aUBHxlPkhY4tuF7rfNHwyc1lTAweYfWoy+yMDgWTOQG8ZON7vT
-LScFm4Y78iS3XrmPMMjgZnckvzUrexf7AILZ5zJovktYC1HQVbimK2UY/HxwXmc5
-oiKOttFDWLE9zM4jv7xTzDJ+17ERSiLuHiPcnMU3O3MQmwfWLVY5j5uPF7vhsLw/
-WxudAVCiFE1ukZUitIL3GVyYKuoKNw==
-=3HjZ
------END PGP SIGNATURE-----
-
---Ufl74Lq2kLxag3rezk70YaJ2XyXJCpUyg--
-
-
---===============5709743393864072692==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============5709743393864072692==--
-
