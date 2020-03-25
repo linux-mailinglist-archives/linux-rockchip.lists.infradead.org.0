@@ -2,43 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E56071932CE
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 22:35:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C77DF1932D2
+	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 22:35:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/md+SZG6E53WuY3nLx4LDlc7/5KZQZ3Lbw/ypxwkUM=; b=M37h6Ck+rSexbp
-	J00ELihBORkHCwVF156TXnrqPBbhTKaflDK8vEZZh6dW/n1AMOi16ROf6xew66lDubsePDlm+T8uI
-	ETaHUAtx4x2Rka4QID3Czod4ebrwyUFpYf7qfqiJGj7K8RKJUxVD15klLxF8PH4Rc/Wkz4liQWZFh
-	LeooDWrHS0OJHdjpTLfofGpJ5p9q+QP+tqw0ukBhUZ4TyyrCEHNxvxUf2msV6Mkkq3NRWEOEXAlaz
-	YfPXOiBiuq74/9AzITsL+IlC/7nDQaDPqRL0K8eakiVyzJAS5NjRP38O1P0QFLB71Tpkov3cXJppB
-	dUbuCG3kG7HNvENU5yqA==;
+	List-Owner; bh=7wMTZU4G2wnUWsbcBbrfkRBfufrc7z0Sj5T+dVH6WMU=; b=jRTVW2RXgqLf4n
+	i1D4k3JIF5ApntD6GPyoRVWebIwkvyKD/RRtJJvYL3GkoQ3zb1JKqb7FBHr2QGJKbCwHi9L3ufO8m
+	i4FDLpi7G/1QoxrNGF6WbsccC5C8sucy38ORxuo8ynkHN16KWoJgoXK9YpJppUAO3R6yUykob/Njr
+	le/SVVfozXHftJBChrhf6adpQ3EeDq5PMzTv0wGfnLCxCbMdFVVaUo6GTxd3RwrOeKSILK+OljO9C
+	+wOeJKhLPsXSG08lJuAXpcCxbj5sNO98rfuy+1qi4eLqmEcARR6xPM7fQEkir8SponpWHWF05zTAk
+	vWHkPFfJZnXJy0/V56cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHDgJ-0007ky-0L; Wed, 25 Mar 2020 21:35:23 +0000
+	id 1jHDgO-0007oc-TI; Wed, 25 Mar 2020 21:35:28 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHDgE-0007jJ-U0
- for linux-rockchip@lists.infradead.org; Wed, 25 Mar 2020 21:35:20 +0000
+ id 1jHDgK-0007mX-H3
+ for linux-rockchip@lists.infradead.org; Wed, 25 Mar 2020 21:35:26 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 03FA8293EA9
+ (Authenticated sender: ezequiel) with ESMTPSA id 6D0EC293F04
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3 4/7] hantro: Remove unneeded hantro_dec_buf_finish
-Date: Wed, 25 Mar 2020 18:34:35 -0300
-Message-Id: <20200325213439.16509-5-ezequiel@collabora.com>
+Subject: [PATCH v3 5/7] hantro: Move H264 motion vector calculation to a helper
+Date: Wed, 25 Mar 2020 18:34:36 -0300
+Message-Id: <20200325213439.16509-6-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.26.0.rc2
 In-Reply-To: <20200325213439.16509-1-ezequiel@collabora.com>
 References: <20200325213439.16509-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_143519_101098_10BD13A4 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200325_143524_710277_210E9977 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -73,43 +72,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Since now .buf_prepare takes care of setting the
-buffer payload size, we can get rid of this,
-at least for decoders.
+Move the extra bytes calculation that are needed for H264
+motion vector to a helper. This is just a cosmetic cleanup.
 
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 ---
- drivers/staging/media/hantro/hantro_drv.c | 10 ----------
- 1 file changed, 10 deletions(-)
+ drivers/staging/media/hantro/hantro.h      |  4 ---
+ drivers/staging/media/hantro/hantro_hw.h   | 31 ++++++++++++++++++++++
+ drivers/staging/media/hantro/hantro_v4l2.c | 25 ++---------------
+ 3 files changed, 33 insertions(+), 27 deletions(-)
 
-diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
-index d0097c5fe7d9..0db8ad455160 100644
---- a/drivers/staging/media/hantro/hantro_drv.c
-+++ b/drivers/staging/media/hantro/hantro_drv.c
-@@ -80,15 +80,6 @@ hantro_enc_buf_finish(struct hantro_ctx *ctx, struct vb2_buffer *buf,
- 	return 0;
- }
+diff --git a/drivers/staging/media/hantro/hantro.h b/drivers/staging/media/hantro/hantro.h
+index 327ddef45345..2089f88a44a2 100644
+--- a/drivers/staging/media/hantro/hantro.h
++++ b/drivers/staging/media/hantro/hantro.h
+@@ -26,10 +26,6 @@
  
--static int
--hantro_dec_buf_finish(struct hantro_ctx *ctx, struct vb2_buffer *buf,
--		      unsigned int bytesused)
--{
--	/* For decoders set bytesused as per the output picture. */
--	buf->planes[0].bytesused = ctx->dst_fmt.plane_fmt[0].sizeimage;
--	return 0;
--}
+ #include "hantro_hw.h"
+ 
+-#define MB_DIM			16
+-#define MB_WIDTH(w)		DIV_ROUND_UP(w, MB_DIM)
+-#define MB_HEIGHT(h)		DIV_ROUND_UP(h, MB_DIM)
 -
- static void hantro_job_finish(struct hantro_dev *vpu,
- 			      struct hantro_ctx *ctx,
- 			      unsigned int bytesused,
-@@ -431,7 +422,6 @@ static int hantro_open(struct file *filp)
- 		ctx->buf_finish = hantro_enc_buf_finish;
- 	} else if (func->id == MEDIA_ENT_F_PROC_VIDEO_DECODER) {
- 		allowed_codecs = vpu->variant->codec & HANTRO_DECODERS;
--		ctx->buf_finish = hantro_dec_buf_finish;
- 	} else {
- 		ret = -ENODEV;
- 		goto err_ctx_free;
+ struct hantro_ctx;
+ struct hantro_codec_ops;
+ 
+diff --git a/drivers/staging/media/hantro/hantro_hw.h b/drivers/staging/media/hantro/hantro_hw.h
+index 7dfc9bad7297..4053d8710e04 100644
+--- a/drivers/staging/media/hantro/hantro_hw.h
++++ b/drivers/staging/media/hantro/hantro_hw.h
+@@ -18,6 +18,10 @@
+ 
+ #define DEC_8190_ALIGN_MASK	0x07U
+ 
++#define MB_DIM			16
++#define MB_WIDTH(w)		DIV_ROUND_UP(w, MB_DIM)
++#define MB_HEIGHT(h)		DIV_ROUND_UP(h, MB_DIM)
++
+ struct hantro_dev;
+ struct hantro_ctx;
+ struct hantro_buf;
+@@ -176,6 +180,33 @@ void hantro_g1_h264_dec_run(struct hantro_ctx *ctx);
+ int hantro_h264_dec_init(struct hantro_ctx *ctx);
+ void hantro_h264_dec_exit(struct hantro_ctx *ctx);
+ 
++static inline size_t
++hantro_h264_mv_size(unsigned int width, unsigned int height)
++{
++	/*
++	 * A decoded 8-bit 4:2:0 NV12 frame may need memory for up to
++	 * 448 bytes per macroblock with additional 32 bytes on
++	 * multi-core variants.
++	 *
++	 * The H264 decoder needs extra space on the output buffers
++	 * to store motion vectors. This is needed for reference
++	 * frames and only if the format is non-post-processed NV12.
++	 *
++	 * Memory layout is as follow:
++	 *
++	 * +---------------------------+
++	 * | Y-plane   256 bytes x MBs |
++	 * +---------------------------+
++	 * | UV-plane  128 bytes x MBs |
++	 * +---------------------------+
++	 * | MV buffer  64 bytes x MBs |
++	 * +---------------------------+
++	 * | MC sync          32 bytes |
++	 * +---------------------------+
++	 */
++	return 64 * MB_WIDTH(width) * MB_WIDTH(height) + 32;
++}
++
+ void hantro_g1_mpeg2_dec_run(struct hantro_ctx *ctx);
+ void rk3399_vpu_mpeg2_dec_run(struct hantro_ctx *ctx);
+ void hantro_mpeg2_dec_copy_qtable(u8 *qtable,
+diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
+index 3142ab6697d5..458b502ff01b 100644
+--- a/drivers/staging/media/hantro/hantro_v4l2.c
++++ b/drivers/staging/media/hantro/hantro_v4l2.c
+@@ -273,32 +273,11 @@ static int vidioc_try_fmt(struct file *file, void *priv, struct v4l2_format *f,
+ 		/* Fill remaining fields */
+ 		v4l2_fill_pixfmt_mp(pix_mp, fmt->fourcc, pix_mp->width,
+ 				    pix_mp->height);
+-		/*
+-		 * A decoded 8-bit 4:2:0 NV12 frame may need memory for up to
+-		 * 448 bytes per macroblock with additional 32 bytes on
+-		 * multi-core variants.
+-		 *
+-		 * The H264 decoder needs extra space on the output buffers
+-		 * to store motion vectors. This is needed for reference
+-		 * frames and only if the format is non-post-processed NV12.
+-		 *
+-		 * Memory layout is as follow:
+-		 *
+-		 * +---------------------------+
+-		 * | Y-plane   256 bytes x MBs |
+-		 * +---------------------------+
+-		 * | UV-plane  128 bytes x MBs |
+-		 * +---------------------------+
+-		 * | MV buffer  64 bytes x MBs |
+-		 * +---------------------------+
+-		 * | MC sync          32 bytes |
+-		 * +---------------------------+
+-		 */
+ 		if (ctx->vpu_src_fmt->fourcc == V4L2_PIX_FMT_H264_SLICE &&
+ 		    !hantro_needs_postproc(ctx, fmt))
+ 			pix_mp->plane_fmt[0].sizeimage +=
+-				64 * MB_WIDTH(pix_mp->width) *
+-				     MB_WIDTH(pix_mp->height) + 32;
++				hantro_h264_mv_size(pix_mp->width,
++						    pix_mp->height);
+ 	} else if (!pix_mp->plane_fmt[0].sizeimage) {
+ 		/*
+ 		 * For coded formats the application can specify
 -- 
 2.26.0.rc2
 
