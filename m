@@ -2,64 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200D81923C4
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 10:11:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E09151925DF
+	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 11:39:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LIopCLTlN1PKFvujhGYUaH6ORCby730z2KsPHRRZzyg=; b=ENp1xVjklyimqq
-	7qXOLqrFei4WGHhBYvCLNJDl+hVFClG+IYk19tFZG3Y6DtcwU70qoAE89/py4F/n1ZYe+F3T2rTS3
-	ZzxLefgqWB2YFH4Ks0ripPbS8JlkmdpHXByWwlJsbsCMn09ZoUixq5V23+dHAk6iSYOIlhMVCybba
-	nNOjUKR1BGpYNZbKe5hcAbIxKEcQsuUe1Z37tKfahEe0ImK7a++yQwG738CKm3z2aYJJlmDm0ENS2
-	AnV7ogcz4Y7DMcXIGYldkVhPxWjTqnmGNjh0AIUc+7Sb35NTH6p9LMWuYjj5CH/+kReN0X1EM/Rsj
-	XQy+qeZcL4Z3pT0ftzMQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Gh8mvfAj5Byu7aGFCsbk6q0sGX0N0gZszk6BjH6Bczs=; b=dmR
+	u9uoqmT2TqDP2FfAFYJsKeoUNs+KJ/Pt9b70C2Nv+TFAuh5I1FixoaTIsc29O4IXwfWZfuOli7Ye5
+	GXhuzahCDa71iDLsDcKP1S3i8WW8ysGcTCs5Pq56jfJJJHFzrVwfpx9vGGqVO4MyY5U3JHEm1bjHv
+	CFDEKH/7s4CNwJzSz8JNOPnxguUhicV4hIQSGle6+MIsfI1KDX8MDIfAV6kbeNSt6+fQ94USivQFC
+	I5U151pbGw+5H8FsAyirOZPMyGN3/b6ZI1FV7QEt/NptbWOy6xKn0lJv6jjm8qUCL8o/Da4KBi9S/
+	T+raAQEe1UF8BaOZhOH7A9kew4A/hIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH24O-00088j-5V; Wed, 25 Mar 2020 09:11:28 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jH3RI-0007ja-Eu; Wed, 25 Mar 2020 10:39:12 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH24B-00080s-SA; Wed, 25 Mar 2020 09:11:17 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id CFFD580C;
- Wed, 25 Mar 2020 10:11:08 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1585127469;
- bh=h0S77ZM+eorU0Bj5tWHi+EgzvOZ1BT+YGd02enoTmdk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Aq8uYCH+3nd88qxPAUWcGyHandJr27L+DHMSaB2DpJeVoITAH5c1uafzoKIv0oJ6+
- cKnqaT1IS/A77GYy87L73q2OEWSjaptG5+vBMPXSGK1PuEaRlLCeFCktKlJKUjbBmE
- D09qm3urkl0FsKoEHv5u6Hfk0k2O4VPOQeaVKQJo=
-Date: Wed, 25 Mar 2020 11:11:07 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Dafna Hirschfeld <dafna3@gmail.com>
-Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
-Message-ID: <20200325091107.GB4760@pendragon.ideasonboard.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-6-helen.koike@collabora.com>
- <86e17716-193f-ca49-1104-9c599a667eeb@collabora.com>
- <f229a840-bcf3-50c8-27c6-363c72de1d01@xs4all.nl>
- <20190815193511.GB5011@pendragon.ideasonboard.com>
- <CAJ1myNREvdbfw5t7RCX1RtBZnarXy7O6_+Cg89w7njWutijNqQ@mail.gmail.com>
- <20200325071157.GA4760@pendragon.ideasonboard.com>
- <CAJ1myNT5AdWRsJHn34xwWsO9XssnHdhsJRdwRgi+TfGguL+h=Q@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ1myNT5AdWRsJHn34xwWsO9XssnHdhsJRdwRgi+TfGguL+h=Q@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jH3Qj-0007I6-Rs; Wed, 25 Mar 2020 10:38:39 +0000
+Received: by mail-wm1-x343.google.com with SMTP id a9so1952940wmj.4;
+ Wed, 25 Mar 2020 03:38:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=EzOA88IPnqtfpe/48GPuflQNR0kYjwA+VSvKhhJrxps=;
+ b=RsGdMY8IvlSnAyG0MzIkhchfOXRHnz2dyXPRTkAmdwR5Sa9twAHcAGWe9qyGKH7sFo
+ mxxkmrp3kY9sgPF9DXmJNhevLM4IHDd3xR7Drk0z6tK17xIIwmWpONvnx6msWUP/YJkH
+ wiRxrnH/pQG8F4aUsOiA/SlkA72KVr9g/YULwRFtQQVECRj71W8OVYA1WHURheRC1svq
+ +9YHK6ESY5j8KbqcOZ9fHdSwZ/1han8PUzEYbVwGNk8MATWwv+wrjd17c5jM56zOSw9h
+ PMu/51uwxJ425YHNf9Iy5g7FwAuIVBDpXRz7uE5ZMg2comkxccRQzi3cQ92sZffi8rpP
+ Jfrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=EzOA88IPnqtfpe/48GPuflQNR0kYjwA+VSvKhhJrxps=;
+ b=QVdgghEaI+fuc+l6EfD13KI7uu9FokDiI5g5UMtLiV4vdMQhUPKXA1l/eQwvhbpilT
+ pevTkt/GiDWZyL4fP55Tad2F7UQs/4qikt1JJetp0gQzbkga614oNO2PVWH9CUFJPk7H
+ R5h8jsY1jTpTvrQoo0gCeo5NfnnorwCiRw30U6D1DOl+kdQcwOgom3mOaIbQjAavxb60
+ LMUlr4g0w/TfXy0hMhZ7onua4wHYkDQYDacFKKu4IxQlL8RcyRCI/5m0dRbEgWuPq7Lz
+ VzSzPnY5aPOLUhqcjqM91qtoUJsmD6bxUZUo6q7AUuXpqVjTKWQ1WytjMrKJ3GZVndVt
+ AaLA==
+X-Gm-Message-State: ANhLgQ2/SzaY/WvL+MdwrWcbtYaNxmqm1rujavTnadJk5dCynvJvYkE8
+ j6e5WJ3SVozIxXlJOG2eWcY=
+X-Google-Smtp-Source: ADFU+vuLT8aCFByvpsLDF8ub9Jibc1JcFf94p8oOJbCJ7SMUFWAVz+SXA2LWU40cK+9fXNGYdVX9NQ==
+X-Received: by 2002:a1c:2e04:: with SMTP id u4mr2936248wmu.185.1585132715841; 
+ Wed, 25 Mar 2020 03:38:35 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i21sm9163108wmb.23.2020.03.25.03.38.34
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 25 Mar 2020 03:38:35 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v4 1/2] dt-bindings: display: convert rockchip vop bindings to
+ yaml
+Date: Wed, 25 Mar 2020 11:38:27 +0100
+Message-Id: <20200325103828.5422-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_021116_060787_0EBEC9E3 
-X-CRM114-Status: GOOD (  43.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200325_033837_900173_44D0147C 
+X-CRM114-Status: GOOD (  16.01  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,203 +95,253 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
- linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
- Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
- sakari.ailus@linux.intel.com, zhengsq@rock-chips.com,
- Allon Huang <allon.huang@rock-chips.com>, mchehab@kernel.org,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
+Current dts files with 'vop' nodes are manually verified.
+In order to automate this process rockchip-vop.txt
+has to be converted to yaml.
 
-On Wed, Mar 25, 2020 at 09:51:51AM +0100, Dafna Hirschfeld wrote:
-> On Wed, Mar 25, 2020 at 8:12 AM Laurent Pinchart wrote:
-> > On Wed, Mar 25, 2020 at 07:34:37AM +0100, Dafna Hirschfeld wrote:
-> > > On Thu, Aug 15, 2019 at 10:17 PM Laurent Pinchart wrote:
-> > > > On Wed, Aug 07, 2019 at 12:39:17PM +0200, Hans Verkuil wrote:
-> > > > > On 8/6/19 8:51 PM, Helen Koike wrote:
-> > > > > > On 7/30/19 3:42 PM, Helen Koike wrote:
-> > > > > >> From: Jacob Chen <jacob2.chen@rock-chips.com>
-> > > > > >>
-> > > > > >> Add the subdev driver for rockchip isp1.
-> > > > > >>
-> > > > > >> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-> > > > > >> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-> > > > > >> Signed-off-by: Yichong Zhong <zyc@rock-chips.com>
-> > > > > >> Signed-off-by: Jacob Chen <cc@rock-chips.com>
-> > > > > >> Signed-off-by: Eddie Cai <eddie.cai.linux@gmail.com>
-> > > > > >> Signed-off-by: Jeffy Chen <jeffy.chen@rock-chips.com>
-> > > > > >> Signed-off-by: Allon Huang <allon.huang@rock-chips.com>
-> > > > > >> Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-> > > > > >> [fixed unknown entity type / switched to PIXEL_RATE]
-> > > > > >> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> > > > > >> [update for upstream]
-> > > > > >> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> > > > > >>
-> > > > > >> ---
-> > > > > >>
-> > > > > >> Changes in v8: None
-> > > > > >> Changes in v7:
-> > > > > >> - fixed warning because of unknown entity type
-> > > > > >> - fixed v4l2-compliance errors regarding rkisp1 formats, try formats
-> > > > > >> and default values
-> > > > > >> - fix typo riksp1/rkisp1
-> > > > > >> - redesign: remove mipi/csi subdevice, sensors connect directly to the
-> > > > > >> isp subdevice in the media topology now. As a consequence, remove the
-> > > > > >> hack in mipidphy_g_mbus_config() where information from the sensor was
-> > > > > >> being propagated through the topology.
-> > > > > >> - From the old dphy:
-> > > > > >>         * cache get_remote_sensor() in s_stream
-> > > > > >>         * use V4L2_CID_PIXEL_RATE instead of V4L2_CID_LINK_FREQ
-> > > > > >> - Replace stream state with a boolean
-> > > > > >> - code styling and checkpatch fixes
-> > > > > >> - fix stop_stream (return after calling stop, do not reenable the stream)
-> > > > > >> - fix rkisp1_isp_sd_get_selection when V4L2_SUBDEV_FORMAT_TRY is set
-> > > > > >> - fix get format in output (isp_sd->out_fmt.mbus_code was being ignored)
-> > > > > >> - s/intput/input
-> > > > > >> - remove #define sd_to_isp_sd(_sd), add a static inline as it will be
-> > > > > >> reused by the capture
-> > > > > >>
-> > > > > >>  drivers/media/platform/rockchip/isp1/rkisp1.c | 1286 +++++++++++++++++
-> > > > > >>  drivers/media/platform/rockchip/isp1/rkisp1.h |  111 ++
-> > > > > >>  2 files changed, 1397 insertions(+)
-> > > > > >>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.c
-> > > > > >>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.h
-> > > > > >>
-> > > > > >> diff --git a/drivers/media/platform/rockchip/isp1/rkisp1.c b/drivers/media/platform/rockchip/isp1/rkisp1.c
-> > > > > >> new file mode 100644
-> > > > > >> index 000000000000..6d0c0ffb5e03
-> > > > > >> --- /dev/null
-> > > > > >> +++ b/drivers/media/platform/rockchip/isp1/rkisp1.c
-> > > > > >> @@ -0,0 +1,1286 @@
-> > > > >
-> > > > > <snip>
-> > > > >
-> > > > > >> +static int rkisp1_isp_sd_get_fmt(struct v4l2_subdev *sd,
-> > > > > >> +                           struct v4l2_subdev_pad_config *cfg,
-> > > > > >> +                           struct v4l2_subdev_format *fmt)
-> > > > > >> +{
-> > > > > >> +  struct rkisp1_isp_subdev *isp_sd = sd_to_isp_sd(sd);
-> > > > > >> +  struct v4l2_mbus_framefmt *mf = &fmt->format;
-> > > > > >> +
-> > > > > >> +  if ((fmt->pad != RKISP1_ISP_PAD_SINK) &&
-> > > > > >> +      (fmt->pad != RKISP1_ISP_PAD_SOURCE_PATH)) {
-> > > > > >> +          fmt->format.code = MEDIA_BUS_FMT_FIXED;
-> > > > > >> +          /*
-> > > > > >> +           * NOTE: setting a format here doesn't make much sense
-> > > > > >> +           * but v4l2-compliance complains
-> > > > > >> +           */
-> > > > > >> +          fmt->format.width = RKISP1_DEFAULT_WIDTH;
-> > > > > >> +          fmt->format.height = RKISP1_DEFAULT_HEIGHT;
-> > > > > >
-> > > > > > As I had mentioned to you, this is called for the isp pads connected to the
-> > > > > > DMA engines for statistics and parameters (meta data).
-> > > > > >
-> > > > > > If I remove those, I get the following errors:
-> > > > > >
-> > > > > > Sub-Device ioctls (Sink Pad 1):
-> > > > > >         test Try VIDIOC_SUBDEV_ENUM_MBUS_CODE/FRAME_SIZE/FRAME_INTERVAL: OK
-> > > > > >                 fail: v4l2-test-subdevs.cpp(311): fmt.width == 0 || fmt.width > 65536
-> > > > > >                 fail: v4l2-test-subdevs.cpp(356): checkMBusFrameFmt(node, fmt.format)
-> > > > > >         test Try VIDIOC_SUBDEV_G/S_FMT: FAIL
-> > > > > >         test Try VIDIOC_SUBDEV_G/S_SELECTION/CROP: OK
-> > > > > >         test Active VIDIOC_SUBDEV_ENUM_MBUS_CODE/FRAME_SIZE/FRAME_INTERVAL: OK
-> > > > > >                 fail: v4l2-test-subdevs.cpp(311): fmt.width == 0 || fmt.width > 65536
-> > > > > >                 fail: v4l2-test-subdevs.cpp(356): checkMBusFrameFmt(node, fmt.format)
-> > > > > >         test Active VIDIOC_SUBDEV_G/S_FMT: FAIL
-> > > > > >         test Active VIDIOC_SUBDEV_G/S_SELECTION/CROP: OK
-> > > > > >         test VIDIOC_SUBDEV_G/S_FRAME_INTERVAL: OK (Not Supported)
-> > > > > >
-> > > > > > Here is the full log: http://ix.io/1QNt
-> > > > > >
-> > > > > > Is this a bug in v4l2-compliance?
-> > > > >
-> > > > > Yes and no :-)
-> > > > >
-> > > > > Currently v4l2-compliance assumes that only video is transferred over a media bus.
-> > > > > But that's not the case here, and testing the code field doesn't help v4l2-compliance
-> > > > > since MEDIA_BUS_FMT_FIXED is also still used by some older subdev drivers for video.
-> > > > >
-> > > > > I think we need a new bus format: MEDIA_BUS_FMT_FIXED_METADATA. Then v4l2-compliance
-> > > > > can tell it apart from the regular fixed video bus format.
-> > > >
-> > > > Wouldn't a pad flag that identifies the type of data transmitted by a
-> > > > pad be a better, backward-compatible option ? This could be useful for
-> > > > audio as well.
-> > >
-> > > Hi,
-> > > Can you explain what pad flag do you mean?
-> > > Do you mean adding a flag in the 'MEDIA_LNK_FL_*' list ?
-> >
-> > I meant MEDIA_PAD_FL_*. We could reserve a few bits in
-> > media_pad_desc.flags to tell what type of data is being transported.
-> >
-> So the idea is that when the MBUS format is MEDIA_BUS_FMT_FIXED,
-> then userspace should look at the flags of the pad to see what format is it?
-> So if I add a flag  'MEDIA_PAD_FL_METADATA' it knows it is a metadata ?
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+Changes v4:
+  Change description
+  Replace compatible oneOf by enum
+  Change interrupts description
+  Remove resets minItems
 
-Not just when it's MEDIA_BUS_FMT_FIXED. Userspace can look at the pad
-flags to determine the type of data carried by the pad. This can, for
-instance, allow userspace to walk graphs to find video data paths
-without going down metadata or audio links.
+Changes v3:
+  Change description
 
-> What makes is more backward-comaptible ?
+Changes v2:
+  No new properties
+---
+ .../bindings/display/rockchip/rockchip-vop.txt     |  74 ------------
+ .../bindings/display/rockchip/rockchip-vop.yaml    | 124 +++++++++++++++++++++
+ 2 files changed, 124 insertions(+), 74 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
 
-We won't need to change the current format used on those pads
-(MEDIA_BUS_FMT_FIXED), which would break userspace that relies on that
-format. Of course, if it's just for the rkisp1 driver, we don't care
-much about breakages as the driver is in staging :-)
-
-> > > Also, some valid value should be set to  'fmt->format.code' so with
-> > > the flags solution
-> > > that you suggest it should stay  MEDIA_BUS_FMT_FIXED ?
-> >
-> > Correct.
-> >
-> > > > > If I do a 'git grep MEDIA_BUS_FMT_FIXED' then I see that it is also in use by vsp1
-> > > > > for histogram information, so that should also be converted to use the new FIXED_METADATA
-> > > > > format, although that might be too late (there might be userspace complications).
-> > > >
-> > > > Yes, probably not a good idea.
-> > > >
-> > > > > >> +          fmt->format.field = V4L2_FIELD_NONE;
-> > > > > >> +          return 0;
-> > > > > >> +  }
-> > > > > >> +
-> > > > > >> +  if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
-> > > > > >> +          mf = v4l2_subdev_get_try_format(sd, cfg, fmt->pad);
-> > > > > >> +          fmt->format = *mf;
-> > > > > >> +          return 0;
-> > > > > >> +  }
-> > > > > >> +
-> > > > > >> +  if (fmt->pad == RKISP1_ISP_PAD_SINK) {
-> > > > > >> +          *mf = isp_sd->in_frm;
-> > > > > >> +  } else if (fmt->pad == RKISP1_ISP_PAD_SOURCE_PATH) {
-> > > > > >> +          /* format of source pad */
-> > > > > >> +          *mf = isp_sd->in_frm;
-> > > > > >> +          mf->code = isp_sd->out_fmt.mbus_code;
-> > > > > >> +          /* window size of source pad */
-> > > > > >> +          mf->width = isp_sd->out_crop.width;
-> > > > > >> +          mf->height = isp_sd->out_crop.height;
-> > > > > >> +          mf->quantization = isp_sd->quantization;
-> > > > > >> +  }
-> > > > > >> +  mf->field = V4L2_FIELD_NONE;
-> > > > > >> +
-> > > > > >> +  return 0;
-> > > > > >> +}
-
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+deleted file mode 100644
+index 8b3a5f514..000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++++ /dev/null
+@@ -1,74 +0,0 @@
+-device-tree bindings for rockchip soc display controller (vop)
+-
+-VOP (Visual Output Processor) is the Display Controller for the Rockchip
+-series of SoCs which transfers the image data from a video memory
+-buffer to an external LCD interface.
+-
+-Required properties:
+-- compatible: value should be one of the following
+-		"rockchip,rk3036-vop";
+-		"rockchip,rk3126-vop";
+-		"rockchip,px30-vop-lit";
+-		"rockchip,px30-vop-big";
+-		"rockchip,rk3066-vop";
+-		"rockchip,rk3188-vop";
+-		"rockchip,rk3288-vop";
+-		"rockchip,rk3368-vop";
+-		"rockchip,rk3366-vop";
+-		"rockchip,rk3399-vop-big";
+-		"rockchip,rk3399-vop-lit";
+-		"rockchip,rk3228-vop";
+-		"rockchip,rk3328-vop";
+-
+-- reg: Must contain one entry corresponding to the base address and length
+-	of the register space. Can optionally contain a second entry
+-	corresponding to the CRTC gamma LUT address.
+-
+-- interrupts: should contain a list of all VOP IP block interrupts in the
+-		 order: VSYNC, LCD_SYSTEM. The interrupt specifier
+-		 format depends on the interrupt controller used.
+-
+-- clocks: must include clock specifiers corresponding to entries in the
+-		clock-names property.
+-
+-- clock-names: Must contain
+-		aclk_vop: for ddr buffer transfer.
+-		hclk_vop: for ahb bus to R/W the phy regs.
+-		dclk_vop: pixel clock.
+-
+-- resets: Must contain an entry for each entry in reset-names.
+-  See ../reset/reset.txt for details.
+-- reset-names: Must include the following entries:
+-  - axi
+-  - ahb
+-  - dclk
+-
+-- iommus: required a iommu node
+-
+-- port: A port node with endpoint definitions as defined in
+-  Documentation/devicetree/bindings/media/video-interfaces.txt.
+-
+-Example:
+-SoC specific DT entry:
+-	vopb: vopb@ff930000 {
+-		compatible = "rockchip,rk3288-vop";
+-		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
+-		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
+-		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+-		resets = <&cru SRST_LCDC1_AXI>, <&cru SRST_LCDC1_AHB>, <&cru SRST_LCDC1_DCLK>;
+-		reset-names = "axi", "ahb", "dclk";
+-		iommus = <&vopb_mmu>;
+-		vopb_out: port {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			vopb_out_edp: endpoint@0 {
+-				reg = <0>;
+-				remote-endpoint=<&edp_in_vopb>;
+-			};
+-			vopb_out_hdmi: endpoint@1 {
+-				reg = <1>;
+-				remote-endpoint=<&hdmi_in_vopb>;
+-			};
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+new file mode 100644
+index 000000000..bc58c5132
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+@@ -0,0 +1,124 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/rockchip/rockchip-vop.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip SoC display controller (VOP)
++
++description:
++  VOP (Video Output Processor) is the display controller for the Rockchip
++  series of SoCs which transfers the image data from a video memory
++  buffer to an external LCD interface.
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com>
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    enum:
++      - rockchip,px30-vop-big
++      - rockchip,px30-vop-lit
++      - rockchip,rk3036-vop
++      - rockchip,rk3066-vop
++      - rockchip,rk3126-vop
++      - rockchip,rk3188-vop
++      - rockchip,rk3228-vop
++      - rockchip,rk3288-vop
++      - rockchip,rk3328-vop
++      - rockchip,rk3366-vop
++      - rockchip,rk3368-vop
++      - rockchip,rk3399-vop-big
++      - rockchip,rk3399-vop-lit
++
++  reg:
++    minItems: 1
++    items:
++      - description:
++          Must contain one entry corresponding to the base address and length
++          of the register space.
++      - description:
++          Can optionally contain a second entry corresponding to
++          the CRTC gamma LUT address.
++
++  interrupts:
++    maxItems: 1
++    description:
++      The VOP interrupt is shared by several interrupt sources, such as
++      frame start (VSYNC), line flag and other status interrupts.
++
++  clocks:
++    items:
++      - description: Clock for ddr buffer transfer.
++      - description: Pixel clock.
++      - description: Clock for the ahb bus to R/W the phy regs.
++
++  clock-names:
++    items:
++      - const: aclk_vop
++      - const: dclk_vop
++      - const: hclk_vop
++
++  resets:
++    maxItems: 3
++
++  reset-names:
++    items:
++      - const: axi
++      - const: ahb
++      - const: dclk
++
++  port:
++    type: object
++    description:
++      A port node with endpoint definitions as defined in
++      Documentation/devicetree/bindings/media/video-interfaces.txt.
++
++  iommus:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - port
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    vopb: vopb@ff930000 {
++      compatible = "rockchip,rk3288-vop";
++      reg = <0x0 0xff930000 0x0 0x19c>,
++            <0x0 0xff931000 0x0 0x1000>;
++      interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru ACLK_VOP0>,
++               <&cru DCLK_VOP0>,
++               <&cru HCLK_VOP0>;
++      clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
++      resets = <&cru SRST_LCDC1_AXI>,
++               <&cru SRST_LCDC1_AHB>,
++               <&cru SRST_LCDC1_DCLK>;
++      reset-names = "axi", "ahb", "dclk";
++      iommus = <&vopb_mmu>;
++      vopb_out: port {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        vopb_out_edp: endpoint@0 {
++          reg = <0>;
++          remote-endpoint=<&edp_in_vopb>;
++        };
++        vopb_out_hdmi: endpoint@1 {
++          reg = <1>;
++          remote-endpoint=<&hdmi_in_vopb>;
++        };
++      };
++    };
 -- 
-Regards,
+2.11.0
 
-Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
