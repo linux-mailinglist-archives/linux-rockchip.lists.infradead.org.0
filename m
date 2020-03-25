@@ -2,43 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 151501932C5
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 22:35:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD7E11932C9
+	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 22:35:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDM3rf5Mx/iw0C3+NIQYuv5mGhZB9IB/D7fcxyX0kd0=; b=s3+k6fD9Qmocn2
-	5yIUE12kxvkLBa1Ej/7+RwOzndYABsWmPZStCeC8synRj+yd6NRCUOBTV2hCw1TSqHJOOusVHiYj5
-	QIDsguQHmKigt5Mo0SGFl0nCDaaNcZNM6dmT8eBL4mMDM4pPG442RNB0aN/2gNjm2F1y6iidmXqoM
-	xbgrUlgYaWQiavjehGy052GOpf4Dk6AFN1B7XV04/wiO/E/nH2e1ek08svWeprK/qRHvw/jEcW2Qh
-	MW3OwiWcnrfpjK9iN2my1S8IhI7oOOi1IZk6Nb4f5WW5kLvrsNw1OmYl/72lGOFi1nw3ZHM0c5uwW
-	DOe6ankd8dAON7wdXRxw==;
+	List-Owner; bh=A1ASumIhRhOPP3A06PPYPAyI9IS0lKH/ifk3hbY7zGg=; b=D/eSE1WedOXVhg
+	d7No0UqWeD5qNGJkz7ToZA9i6JB7afN90DMZdiNepXuruEVE8JsQm7NtWlqsUukqlZ0j4OgvKLR/A
+	bCWlYN+rNcxsHosFdlgEDVodJl+w7yqz2QfYpJ07PXiIy7I/BkjdH+AKyrpgPO5iUak+QyYDB8/0O
+	rs/DXs90XGcy+Q/j3F+EI9RCN09Er0iVQwW9CuFgn1HIqtfRWJrnWdkIaVQAXa1Tl79n8tDKZvE0M
+	GlyE3UzBRVDyxzgUuQULRsBAWUCC1fNIGGzF8vHi1QrW1KsxZxn5Re0Y44me9psUWPfheHqXJFweS
+	lFoupdBEeRK5aF89I8YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHDg8-0007QC-Q2; Wed, 25 Mar 2020 21:35:12 +0000
+	id 1jHDgC-0007hD-2V; Wed, 25 Mar 2020 21:35:16 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHDg3-0006sw-3u
- for linux-rockchip@lists.infradead.org; Wed, 25 Mar 2020 21:35:08 +0000
+ id 1jHDg8-0007YR-Iv
+ for linux-rockchip@lists.infradead.org; Wed, 25 Mar 2020 21:35:14 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 097D0293EA8
+ (Authenticated sender: ezequiel) with ESMTPSA id 87055293ECE
 From: Ezequiel Garcia <ezequiel@collabora.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/7] hantro: Set buffers' zeroth plane payload in
- .buf_prepare
-Date: Wed, 25 Mar 2020 18:34:33 -0300
-Message-Id: <20200325213439.16509-3-ezequiel@collabora.com>
+Subject: [PATCH v3 3/7] hantro: Use v4l2_m2m_buf_done_and_job_finish
+Date: Wed, 25 Mar 2020 18:34:34 -0300
+Message-Id: <20200325213439.16509-4-ezequiel@collabora.com>
 X-Mailer: git-send-email 2.26.0.rc2
 In-Reply-To: <20200325213439.16509-1-ezequiel@collabora.com>
 References: <20200325213439.16509-1-ezequiel@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_143507_313970_AC732198 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200325_143512_797942_54BB4158 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -71,54 +71,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Buffers' zeroth plane payload size is calculated at format
-negotiation time, and so it can be set in .buf_prepare.
-
-Keep in mind that, to make this change easier, hantro_buf_prepare
-is refactored, using the cedrus driver as reference. This results
-in cleaner code as byproduct.
+Let the core sort out the nuances of returning buffers
+to userspace, by using the v4l2_m2m_buf_done_and_job_finish
+helper.
 
 Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
----
- drivers/staging/media/hantro/hantro_v4l2.c | 16 +++++++++++-----
- 1 file changed, 11 insertions(+), 5 deletions(-)
+--
+ drivers/staging/media/hantro/hantro_drv.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/staging/media/hantro/hantro_v4l2.c b/drivers/staging/media/hantro/hantro_v4l2.c
-index f4ae2cee0f18..3142ab6697d5 100644
---- a/drivers/staging/media/hantro/hantro_v4l2.c
-+++ b/drivers/staging/media/hantro/hantro_v4l2.c
-@@ -608,7 +608,7 @@ hantro_queue_setup(struct vb2_queue *vq, unsigned int *num_buffers,
- }
+diff --git a/drivers/staging/media/hantro/hantro_drv.c b/drivers/staging/media/hantro/hantro_drv.c
+index ace13973e2d0..d0097c5fe7d9 100644
+--- a/drivers/staging/media/hantro/hantro_drv.c
++++ b/drivers/staging/media/hantro/hantro_drv.c
+@@ -101,8 +101,8 @@ static void hantro_job_finish(struct hantro_dev *vpu,
+ 	pm_runtime_put_autosuspend(vpu->dev);
+ 	clk_bulk_disable(vpu->variant->num_clocks, vpu->clocks);
  
- static int
--hantro_buf_plane_check(struct vb2_buffer *vb, const struct hantro_fmt *vpu_fmt,
-+hantro_buf_plane_check(struct vb2_buffer *vb,
- 		       struct v4l2_pix_format_mplane *pixfmt)
- {
- 	unsigned int sz;
-@@ -630,12 +630,18 @@ static int hantro_buf_prepare(struct vb2_buffer *vb)
- {
- 	struct vb2_queue *vq = vb->vb2_queue;
- 	struct hantro_ctx *ctx = vb2_get_drv_priv(vq);
-+	struct v4l2_pix_format_mplane *pix_fmt;
-+	int ret;
+-	src = v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
+-	dst = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
++	src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
++	dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
  
- 	if (V4L2_TYPE_IS_OUTPUT(vq->type))
--		return hantro_buf_plane_check(vb, ctx->vpu_src_fmt,
--						  &ctx->src_fmt);
+ 	if (WARN_ON(!src))
+ 		return;
+@@ -112,14 +112,14 @@ static void hantro_job_finish(struct hantro_dev *vpu,
+ 	src->sequence = ctx->sequence_out++;
+ 	dst->sequence = ctx->sequence_cap++;
+ 
+-	ret = ctx->buf_finish(ctx, &dst->vb2_buf, bytesused);
+-	if (ret)
+-		result = VB2_BUF_STATE_ERROR;
 -
--	return hantro_buf_plane_check(vb, ctx->vpu_dst_fmt, &ctx->dst_fmt);
-+		pix_fmt = &ctx->src_fmt;
-+	else
-+		pix_fmt = &ctx->dst_fmt;
-+	ret = hantro_buf_plane_check(vb, pix_fmt);
-+	if (ret)
-+		return ret;
-+	vb2_set_plane_payload(vb, 0, pix_fmt->plane_fmt[0].sizeimage);
-+	return 0;
+-	v4l2_m2m_buf_done(src, result);
+-	v4l2_m2m_buf_done(dst, result);
++	if (ctx->buf_finish) {
++		ret = ctx->buf_finish(ctx, &dst->vb2_buf, bytesused);
++		if (ret)
++			result = VB2_BUF_STATE_ERROR;
++	}
+ 
+-	v4l2_m2m_job_finish(vpu->m2m_dev, ctx->fh.m2m_ctx);
++	v4l2_m2m_buf_done_and_job_finish(ctx->dev->m2m_dev, ctx->fh.m2m_ctx,
++					 result);
  }
  
- static void hantro_buf_queue(struct vb2_buffer *vb)
+ void hantro_irq_done(struct hantro_dev *vpu, unsigned int bytesused,
 -- 
 2.26.0.rc2
 
