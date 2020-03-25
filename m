@@ -2,77 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E65EA1925E0
-	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 11:39:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 676CE19265E
+	for <lists+linux-rockchip@lfdr.de>; Wed, 25 Mar 2020 11:57:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+TphqdyjZAKorf4A2afRZiiO0Fnc/9h1eHiYrEeUX8o=; b=qYutXas4oGkHsy+dxPKVkn/0d7
-	1h2lt7z/tDR5qeBc6/ZahKd+WGPc6P0qXgYR9YFPDV54jSmGU44OP9DwJK85LzJMKiYGaACVTcJGD
-	PMAslEq2KfJ6O5jXXJVKsnsU3NhHZjbRWzRv1NKRqw7RqcPlFv1PjoyPxRWHUKP6kceTA/cOIFVUP
-	7Fzdqd0J7OTSCI8fOi+yIoZEZcVnb549JO25FB+PZuSQNYcPFh19Cj3IpjYdmvHmdFS/qQuhwylvI
-	BqpYirNyjcVifYkTmdiWzo1iTyBqwKSfXeCZ9q9D2fH2m36FgVult4Zbf8Q8R0WHn/kboe8XL2cEB
-	u8v5yWmg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ok3AtFAykACVChVb0FXsxLnc0y/Hcimpab1yGMlitrs=; b=Zmk
+	yCZ2ccRMwOHVW4049kY5YIX5v3PESkkV+toBOHj6U0qLlbTUVfsp5EMcgzec0JsmMyLHFqOPkSclM
+	278hU/dJj4LKkCTD7kZrLrpDcalF3Yp8EAyhDpek9DMABAuFd1s9vFy4YQZiAN0Hh82l39c83csbA
+	IV6qR1LifXX6c4Dcq9LtyI29fzlNsFyYm9UZdTLG/Mq9IEEGW4d1xFfOgEQEB3YVnfR5ImS9DNkyf
+	c3jpwRdz5hF+xIMiaxSSltpjhhNsAwkO12RQcbYEbAXrHgtiIqUZ+4dDmm7zFTY4C80Hxwip9H0R8
+	YHpU3+w0KBgT9B8wSJPswMPOcovVfaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jH3RJ-0007kK-70; Wed, 25 Mar 2020 10:39:13 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jH3jN-0007UN-8f; Wed, 25 Mar 2020 10:57:53 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jH3Qk-0007I8-FH; Wed, 25 Mar 2020 10:38:39 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d5so2348184wrn.2;
- Wed, 25 Mar 2020 03:38:38 -0700 (PDT)
+ id 1jH3jC-0007Ks-3B; Wed, 25 Mar 2020 10:57:43 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j17so2333599wru.13;
+ Wed, 25 Mar 2020 03:57:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/wgvz2lVpp5+P73ebkZ5cpJlG6NyplWSlH1ZFZco8LM=;
- b=eReNsT3/ql4XtBGPugbUGLIbqp4B391Ps/1xoYiR+OGIUAH8+B72MCrP2HlKPfoWaP
- pqYGsv0O8ZMQL6PQ+IalWVy372tw3azPRtzZgqDbyElePH+Tqh+q33JT2PdJ0HFxNGP5
- qRaT84ztZV1Oows1zWBxj5nUJUo4aoP26PcBpAec19SxZPm2MMk9Uq/svtyyxKJa3orv
- yvka7cvw1E52RdM4qI00bCg31CXx3lSjeUvvg7UbfjpHHVojeBhPr/W/FFRckGeye2FJ
- 15R/lKijLyeFma7tkjaxFYbz40cTthdWPkHJoqQNrVmFBJPB1baHaW6/959pOfdz/cVB
- JpJA==
+ h=from:to:cc:subject:date:message-id;
+ bh=LK/63VpRTinhiS72eGFe8hpGS9Ib9592eNpC47zP9eg=;
+ b=STJZraM7KnNG5j/4mxy5/JwGK6u9Ls8g+U8aHGuB8OiwBRazBmk0EmDZVLasIpVg0l
+ LorsN9AwIU5jU31QyO9MIuxJJW+sLYNIXrfLt4pYBdOE8Pu9Oj734hNYJNCkwEUnLk5l
+ myQiEIBn9uX3gVw6J0TL7xoI12fBLhYqtTKXViXTBiOQsiDYTS65LvrfphITeNZzZI86
+ nOxz0frKnPvmmxaYRS8Ntfuz6rcaJ1Ay0bjXlkUIVMiNa21MYbucmpJA2Q0GYyiCbs4T
+ 6XRBiv6s6z5p7ID+Zv2krl/rKyFjIbPLOqvQCItXfyFap7VfMmxa1WY1RjJS/qNiRnL5
+ udXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/wgvz2lVpp5+P73ebkZ5cpJlG6NyplWSlH1ZFZco8LM=;
- b=V7PF4ylCI0RS7lq8ybiNXPlgWhC/d5OwaXFx2yb9COu3mJwEwLcAQrKAxV5jVrO8/P
- cCGddzOG8khpq1MP2fGnNYf5fYaObvEp6VoI50iSp7EWUKC38OOUvS2LfxPnSUQ2lvHQ
- 8iAxf7la13QJsASYBUSlOy8++G00GNY99kC8ve+q7aYrYGWmlE1ZJdMq7FTtTBQremq+
- 8hUpVcyND4Y4yxHzw7H2UdSymaL4QRKLQb6W4g8fG6wwl3dCl9JlqN93sWrvKr0gffsZ
- FJw/2BggrascmgH9jLdPJ/9zEtM3CqhJN6BdpzP/ts/hMYCnh1I6izxYGyCL6NPVZbr5
- C8qg==
-X-Gm-Message-State: ANhLgQ3yBmYAVdQUSTWB4axSY13AL91jBacEsoYwLkFxZSHsKDs5kPBM
- B1Vsz14VuSH7BoHo2QRxQsA=
-X-Google-Smtp-Source: ADFU+vt2Dw8Gg8y8PXMVIdEPTxwRM9hacRHxiTFN7DEjZdRm/qg5K+XBLFsyyZk6b1ZiLZCI4gwDuw==
-X-Received: by 2002:a5d:53d1:: with SMTP id a17mr2871409wrw.41.1585132716907; 
- Wed, 25 Mar 2020 03:38:36 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=LK/63VpRTinhiS72eGFe8hpGS9Ib9592eNpC47zP9eg=;
+ b=AdM97UZ4Dv3BaxxeBN9g357svhdQ9cpCy6k1W8jwopGsa8UDmcI7xo2UpqqLEAq6x5
+ 9Cy8Zc6eAyCMq+OAcSbt7N8zg9bn/GVslJoqaozDhE0JfmMYH+WqIskzNDKiTqSDN3yJ
+ bBe5jB9lTLW/crMzfKGiOnINf/oVZHSHBE9qGQ+Aao5SD2IEAZzmPs0qr0Hm7L6FnU0D
+ 6bnJUm1vtVdyC1xodoSQ58LuHSs2XQ0Db7ag/Reov4TbK2j6PmSn9taPhj59u6Cfl1Md
+ m/LYV29cOeseBaLRvZzAIK2k1SCHyslsiHfm4bptl0uhnT+1HYwzYJhrIxsoAwdWcKz2
+ C1aw==
+X-Gm-Message-State: ANhLgQ0MHH2QKZ13k8SYjLGEtI+JmDERfLi6qDuR1V2J3SbK4h3KjedS
+ Oh+4TXbeNsrHSiXZ7/qyDCAtKSjb
+X-Google-Smtp-Source: ADFU+vsNgfBpz3csz9luqYb8b7ZDiuvrOxIb4oqdh2Jlq7yApLxnA+XyWS3p4B5eABuEpP56HxycWA==
+X-Received: by 2002:a5d:468c:: with SMTP id u12mr2983370wrq.394.1585133860900; 
+ Wed, 25 Mar 2020 03:57:40 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i21sm9163108wmb.23.2020.03.25.03.38.35
+ by smtp.gmail.com with ESMTPSA id o9sm33867584wrw.20.2020.03.25.03.57.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 25 Mar 2020 03:38:36 -0700 (PDT)
+ Wed, 25 Mar 2020 03:57:40 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH v4 2/2] dt-bindings: display: rockchip-vop: add additional
- properties
-Date: Wed, 25 Mar 2020 11:38:28 +0100
-Message-Id: <20200325103828.5422-2-jbx6244@gmail.com>
+Subject: [PATCH] ARM: dts: rockchip: remove identical #include from rk3288.dtsi
+Date: Wed, 25 Mar 2020 11:57:34 +0100
+Message-Id: <20200325105734.5868-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200325103828.5422-1-jbx6244@gmail.com>
-References: <20200325103828.5422-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_033838_507109_3F9B61E3 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20200325_035742_133073_EF75444D 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -99,66 +95,35 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like 'assigned-clocks' and
-'assigned-clock-rates' for rk3399 and 'power-domains' for most
-Rockchip Socs in 'vop' nodes, so add them to 'rockchip-vop.yaml'.
+There are 2 identical '#include' for 'rk3288-power.h',
+so remove one of them.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- .../devicetree/bindings/display/rockchip/rockchip-vop.yaml    | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm/boot/dts/rk3288.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-index bc58c5132..497a9fb2d 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
-@@ -75,9 +75,18 @@ properties:
-       A port node with endpoint definitions as defined in
-       Documentation/devicetree/bindings/media/video-interfaces.txt.
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index e72368a7a..f102fec69 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -7,7 +7,6 @@
+ #include <dt-bindings/clock/rk3288-cru.h>
+ #include <dt-bindings/power/rk3288-power.h>
+ #include <dt-bindings/thermal/thermal.h>
+-#include <dt-bindings/power/rk3288-power.h>
+ #include <dt-bindings/soc/rockchip,boot-mode.h>
  
-+  assigned-clocks:
-+    maxItems: 2
-+
-+  assigned-clock-rates:
-+    maxItems: 2
-+
-   iommus:
-     maxItems: 1
- 
-+  power-domains:
-+    maxItems: 1
-+
- required:
-   - compatible
-   - reg
-@@ -95,6 +104,7 @@ examples:
-     #include <dt-bindings/clock/rk3288-cru.h>
-     #include <dt-bindings/interrupt-controller/arm-gic.h>
-     #include <dt-bindings/interrupt-controller/irq.h>
-+    #include <dt-bindings/power/rk3288-power.h>
-     vopb: vopb@ff930000 {
-       compatible = "rockchip,rk3288-vop";
-       reg = <0x0 0xff930000 0x0 0x19c>,
-@@ -104,6 +114,7 @@ examples:
-                <&cru DCLK_VOP0>,
-                <&cru HCLK_VOP0>;
-       clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
-+      power-domains = <&power RK3288_PD_VIO>;
-       resets = <&cru SRST_LCDC1_AXI>,
-                <&cru SRST_LCDC1_AHB>,
-                <&cru SRST_LCDC1_DCLK>;
+ / {
 -- 
 2.11.0
 
