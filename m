@@ -2,75 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2461E19433F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Mar 2020 16:32:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 388661944BB
+	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Mar 2020 17:55:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/oRrqnn5elbCAi0yTpZIThnF9nllhngY9S5lq+QWjP0=; b=NCSqQi2B8VHylE
-	2vpYByGEicTYMFaSLgiQRTdiio2+F8a7CVHXtGyhVPhaNVE9aV1jAPDDXfmC6El+HnXunu9B9Kbef
-	bcZCj00Fn+YWpukrnDjI/zXhZUGV/aDh4SFR1Ycj67aHh1gbu99mrgyQBfavScph1n1dnmyhfjtu7
-	RdGkXaTXGdx9wIoOKMagGhU+tlamlmiV8a/CLGSFB0o8yQZkMjRZhoSUvWadzwmrJG/pCS8s3F2BW
-	9u/6akc3DywNQUiiCboPiLnrHivF9T46iuXDdZhWfZ36DmSmBEZ4yH5lIEZbeCcFKZmGWsqRuwMKV
-	aqET2FP2/kysLD2BJ4hA==;
+	List-Owner; bh=m6l4L2RVKWf3nYrIsLhpNT3QL3dxPdGwaK0H6iwjlIs=; b=Vj7930Qu9fQ9x+
+	7vuoXaH1ldFewdj0pQyJ+QoPeNwYbubg3LlALwGu9XBUovCQZGPKYRuTEK7ACqnQ7o2U14uVoUJA5
+	b8QypskfgHyxUWnK7x/CrVzd2NfrG5wfqBCaESA1wDfk64BM/IHItuK8hznE9cN36s7OBwpzgbAAr
+	Y6etsBkcfO3nS2DH51Mj9ZwM8TGQbt5joc5KlRMu1CijyRsEGe9LlJfZSKBZMMf8RTonicjYgHPQf
+	i68CmKu+EF/yrwG6cpqL9OXYTHNvnu9h0vTKrKLUnqFPlzjjPT5jcPD4mxnk/Y+DRhr+0xCAiA04l
+	+b83Fzk8oEXmf3cuOSvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHUU6-0006hk-Ii; Thu, 26 Mar 2020 15:31:54 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jHVmo-0003AU-2n; Thu, 26 Mar 2020 16:55:18 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHUU3-0006h4-8s; Thu, 26 Mar 2020 15:31:52 +0000
-Received: by mail-ot1-f65.google.com with SMTP id z5so5941970oth.9;
- Thu, 26 Mar 2020 08:31:50 -0700 (PDT)
+ id 1jHVmk-0003A9-MY
+ for linux-rockchip@lists.infradead.org; Thu, 26 Mar 2020 16:55:16 +0000
+Received: by mail-il1-f195.google.com with SMTP id f16so6016877ilj.9
+ for <linux-rockchip@lists.infradead.org>; Thu, 26 Mar 2020 09:55:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=XTkjkxktGYVZu1YuzBjsBjxOC6QKuT6CUAB31DIHFjc=;
- b=A+SnnfXJTYkbWDc81wWKu639jCbHo8tjGTOaBkl8bEx/JC3N7E9GWDbD7E+BSAyqOy
- VW+9h1/P8zSDbo1wjOzR4Flqj3BEvS0eahPJ1QOwTCh7sOMGfeNmKm/Dd90Xiw/Dq9hc
- 7p8p2Xp/skNoQ96N1CcPk6qCj9Xzx37Kaq0LCZKumyT68QmLofFUTRKGp7EjQUlZ+gbx
- sOLMD9tcoeCxblrKtUcjtoeD7z4G3XMbbmtbiePMxAkAK0TSsD+6UtiCFur2NnmoZLK0
- fBxwlpbwwqpjUk3LO17wohfsXKS6QSVjGSHz6GhCdKRwI5XiSY8tKC1ga7zrID/XhpIg
- +QxA==
-X-Gm-Message-State: ANhLgQ0JldvW5KzZhgwBfmfVJh79inx4B2EamFbu5zEG5i+hRWhkpd1Z
- YzUw0MO5TKgdDDYSyik2Lxufxg7LpjwjIlvIaLmEDRGE
-X-Google-Smtp-Source: ADFU+vtISW4Cc/lOTpsR8iCtEMqgOt8HbkosAvUpULKrxq2q94u8VIBgjINOhV0/ykBD+p9s4UDoxKwL/DYSfkijdtI=
-X-Received: by 2002:a9d:5c0c:: with SMTP id o12mr6588642otk.145.1585236710072; 
- Thu, 26 Mar 2020 08:31:50 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vVdQEQ7sYzGEqjW9g4tDgsuflsduuCDMUset/5YfDPE=;
+ b=egzgOwnG50GZkpL06/dbKte4qYLLl6DazmMWcmuv9G/QJoOkWKR8/eEAafYmDyLn3W
+ NgZDHVtttSJjlwfRzlJibSpfpBbn2Q5kZO6CeuFh7Iq9IBNzL2hRk8kw9of8b15+Xia+
+ cqlGz3uQAyATzrBA169DAjSZ4+hrzCrzPmLJAi2aEE7Xd8U6zzaSrpy7iZP+OCYvtQpb
+ wDZOAcAOaKJjGkrHKIE7xK0XRlQNyQC//7E53EYBmt75Zr+wHjqwOK9PnF8QRbAy7JvR
+ vHvonlMLutzoHm2mffh1pw1mpQSprUTWIgrGEZNyeZ8UEm8DwQlAmaCBEqdjbK4TpNAH
+ dErg==
+X-Gm-Message-State: ANhLgQ0h0cDEhG5YgdkyKlfElfzlEqonrKyMnu9dBEIB+sx+vdwMj9Zv
+ azQp4Pv6pjKvUBcm1LC8PQ==
+X-Google-Smtp-Source: ADFU+vsYLSSDAWb+PFaYg/iNpnKHWjxEl8YuPbb4mV1g+BY74zuyxxL1mGYiXVbV73u6V8GgemDOLQ==
+X-Received: by 2002:a92:8410:: with SMTP id l16mr9701669ild.288.1585241713894; 
+ Thu, 26 Mar 2020 09:55:13 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id u5sm754957ion.51.2020.03.26.09.55.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 26 Mar 2020 09:55:12 -0700 (PDT)
+Received: (nullmailer pid 11967 invoked by uid 1000);
+ Thu, 26 Mar 2020 16:55:11 -0000
+Date: Thu, 26 Mar 2020 10:55:11 -0600
+From: Rob Herring <robh@kernel.org>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v3 7/7] dt-bindings: rockchip-vpu: Convert bindings to
+ json-schema
+Message-ID: <20200326165511.GA11084@bogus>
+References: <20200325213439.16509-1-ezequiel@collabora.com>
+ <20200325213439.16509-8-ezequiel@collabora.com>
 MIME-Version: 1.0
-References: <20200302155703.278421-1-mylene.josserand@collabora.com>
- <20200302155703.278421-2-mylene.josserand@collabora.com>
- <2221545.2vEflg7qi2@diego>
- <CAMuHMdXJQqaCcMko9GUAeUiYQzmy3vnX42yVQNPzhj5ijtFuYA@mail.gmail.com>
- <5802ec08-5e6a-8547-ee8e-dde630791235@collabora.com>
-In-Reply-To: <5802ec08-5e6a-8547-ee8e-dde630791235@collabora.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 26 Mar 2020 16:31:38 +0100
-Message-ID: <CAMuHMdVKFT7eNK0RUi3miJ08O9FMAVs5Qz=YmbHH5-9UUzLNPw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
-To: Mylene Josserand <mylene.josserand@collabora.com>
+Content-Disposition: inline
+In-Reply-To: <20200325213439.16509-8-ezequiel@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_083151_314603_46FA89F8 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200326_095514_740756_2EEE87D3 
+X-CRM114-Status: GOOD (  10.29  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ no trust [209.85.166.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.195 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -85,61 +93,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>, Heiko Stuebner <heiko@sntech.de>,
+ Alexandre Courbot <acourbot@chromium.org>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org, Jeffrey Kardatzke <jkardatzke@chromium.org>,
+ kernel@collabora.com, Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgTXlsZW5lLAoKT24gVGh1LCBNYXIgMjYsIDIwMjAgYXQgMjo1MCBQTSBNeWxlbmUgSm9zc2Vy
-YW5kCjxteWxlbmUuam9zc2VyYW5kQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+IE9uIDMvNi8yMCAx
-MTo0NSBBTSwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+ID4gT24gV2VkLCBNYXIgNCwgMjAy
-MCBhdCAxMjowMCBQTSBIZWlrbyBTdMO8Ym5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZToKPiA+
-PiBBbSBNb250YWcsIDIuIE3DpHJ6IDIwMjAsIDE2OjU3OjAyIENFVCBzY2hyaWViIE15bMOobmUg
-Sm9zc2VyYW5kOgo+ID4+PiBEZXRlcm1pbmUgd2hpY2ggcmV2aXNpb24gb2YgcmszMjg4IGJ5IGNo
-ZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4gPj4+IEFjY29yZGluZyB0byB0aGUgUm9ja2NoaXAg
-QlNQIGtlcm5lbCwgb24gcmszMjg4dywgdGhlIEhETUkKPiA+Pj4gcmV2aXNpb24gZXF1YWxzIDB4
-MUEgd2hpY2ggaXMgbm90IHRoZSBjYXNlIGZvciB0aGUgcmszMjg4IFsxXS4KPiA+Pj4KPiA+Pj4g
-QXMgdGhlc2UgU09DIGhhdmUgc29tZSBkaWZmZXJlbmNlcywgdGhlIG5ldyBmdW5jdGlvbgo+ID4+
-PiAnc29jX2lzX3JrMzI4OHcnIHdpbGwgaGVscCB1cyB0byBrbm93IG9uIHdoaWNoIHJldmlzaW9u
-Cj4gPj4+IHdlIGFyZS4KPiA+Pgo+ID4+IHdoYXQgaGFwcGVuZWQgdG8ganVzdCBoYXZpbmcgYSBk
-aWZmZXJlbnQgY29tcGF0aWJsZSBpbiB0aGUgZHRzPwo+ID4+IEFrYSBkb2luZyBhCj4gPj4KPiA+
-PiByazMyODh3LmR0c2kgd2l0aAo+ID4+Cj4gPj4gI2luY2x1ZGUgInJrMzI4OC5kdHNpIgo+ID4+
-Cj4gPj4gJmNydSB7Cj4gPj4gICAgICAgICAgY29tcGF0aWJsZSA9ICJyb2NrY2hpcCxyazMyODh3
-LWNydSI7Cj4gPj4gfQo+ID4+Cj4gPj4gSSBzb21laG93IGRvbid0IGV4cGVjdCBib2FyZHMgdG8g
-anVzdCBzd2l0Y2ggYmV0d2VlbiBzb2MgdmFyaWFudHMKPiA+PiBvbiB0aGUgZmx5Lgo+ID4+Cj4g
-Pj4gQWxzbywgZG9pbmcgdGhpbmdzIGluIG1hY2gtcm9ja2NoaXAgaXMgbm90IHZlcnkgZnV0dXJl
-LXByb29mOgo+ID4+Cj4gPj4gKDEpIGhhdmluZyByYW5kb20gc29jLXNwZWNpZmljIEFQSXMgc3Bh
-bm5pbmcgdGhlIGtlcm5lbCBmZWVscyB3cm9uZywKPiA+PiAgICAgIGVzcGVjaWFsbHkgYXMgYXQg
-c29tZSBwb2ludCBpdCBtaWdodCBub3QgYmUgY29udGFpbmVkIHRvIG91ciBvd24gc3BlY2lhbAo+
-ID4+ICAgICAgZHJpdmVycyBsaWtlIHRoZSBjcnUuIEkgY2Fubm90IHJlYWxseSBzZWUgcGVvcGxl
-IGJlaW5nIGVudGh1c2lhc3RpYyBpZgo+ID4+ICAgICAgc29tZXRoaW5nIGxpa2UgdGhpcyB3b3Vs
-ZCBiZSBuZWVkZWQgaW4gc2F5IHRoZSBjb3JlIEFuYWxvZ2l4LURQIGJyaWRnZSA7LSkKPiA+Cj4g
-PiBJbmRlZWQuICBZb3UncmUgYmV0dGVyIG9mIHJlZ2lzdGVyaW5nIGFuIHNvY19kZXZpY2VfYXR0
-cmlidXRlIHVzaW5nCj4gPiBzb2NfZGV2aWNlX3JlZ2lzdGVyKCksIGFmdGVyIHdoaWNoIGFueSBk
-cml2ZXIgY2FuIHVzZSBzb2NfZGV2aWNlX21hdGNoKCkKPiA+IHRvIGRpZmZlcmVudGlhdGUgYmFz
-ZWQgb24gdGhlIFNvQyByZXZpc2lvbi4KPgo+IFRoYW5rIHlvdSBmb3IgdGhpcyBzdWdnZXN0aW9u
-LiBUaGUgaXNzdWUgaXMgdGhhdCBjbG9ja3MgYXJlIHJlZ2lzdGVyZWQKPiBhdCBhbiBlYXJseSBz
-dGFnZSBvZiB0aGUgYm9vdCBzbyB1c2luZyBpbml0Y2FsbHMgaXMgdG9vIGxhdGUgZm9yIHRoZQo+
-IGNsb2NrIGRpZmZlcmVudGlhdGlvbiA6KAoKSUMsIHJrMzg4IGlzIHN0aWxsIHVzaW5nIENMS19P
-Rl9ERUNMQVJFKCkuCldoYXQgYWJvdXQgY29udmVydGluZyBpdCB0byBhIHBsYXRmb3JtIGRyaXZl
-ciwgcmVnaXN0ZXJlZCBmcm9tIGUuZy4Kc3Vic3lzX2luaXRjYWxsKCk/CklmIHlvdSBuZWVkIHNv
-bWUgY2xvY2tzIGVhcmx5IChlLmcuIGZvciB0aW1lcnMpLCB5b3UgY2FuIGRvIHNwbGl0CnJlZ2lz
-dHJhdGlvbiwgd2l0aCB0aGUgZWFybHkgcGFydCBzdGlsbCB1c2luZyBDTEtfT0ZfREVDTEFSRSgp
-LgpUaGF0IHNob3VsZCB3b3JrLCBhc3N1bWVkIHRoZSB0aW1lciBjbG9ja3MgZG9uJ3QgbmVlZCBk
-aWZmZXJlbnRpYXRpb24uCgpHcntvZXRqZSxlZXRpbmd9cywKCiAgICAgICAgICAgICAgICAgICAg
-ICAgIEdlZXJ0CgotLSAKR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRoZXJlJ3MgbG90cyBvZiBMaW51
-eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwoKSW4gcGVyc29uYWwgY29udmVy
-c2F0aW9ucyB3aXRoIHRlY2huaWNhbCBwZW9wbGUsIEkgY2FsbCBteXNlbGYgYSBoYWNrZXIuIEJ1
-dAp3aGVuIEknbSB0YWxraW5nIHRvIGpvdXJuYWxpc3RzIEkganVzdCBzYXkgInByb2dyYW1tZXIi
-IG9yIHNvbWV0aGluZyBsaWtlIHRoYXQuCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-LS0gTGludXMgVG9ydmFsZHMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtcm9ja2NoaXAK
+On Wed, 25 Mar 2020 18:34:38 -0300, Ezequiel Garcia wrote:
+> Convert Rockchip VPU (Hantro IP block) codec driver documentation to
+> json-schema.
+> 
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Rob Herring <robh@kernel.org>
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> ---
+>  .../bindings/media/rockchip-vpu.txt           | 43 ----------
+>  .../bindings/media/rockchip-vpu.yaml          | 82 +++++++++++++++++++
+>  MAINTAINERS                                   |  2 +-
+>  3 files changed, 83 insertions(+), 44 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+> 
+
+My bot found errors running 'make dt_binding_check' on your patch:
+
+Error: Documentation/devicetree/bindings/media/rockchip-vpu.example.dts:28.41-42 syntax error
+FATAL ERROR: Unable to parse input tree
+scripts/Makefile.lib:311: recipe for target 'Documentation/devicetree/bindings/media/rockchip-vpu.example.dt.yaml' failed
+make[1]: *** [Documentation/devicetree/bindings/media/rockchip-vpu.example.dt.yaml] Error 1
+make[1]: *** Waiting for unfinished jobs....
+Makefile:1262: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
+
+See https://patchwork.ozlabs.org/patch/1261669
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
+
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
