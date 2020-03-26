@@ -2,54 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70BCB19488C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Mar 2020 21:16:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 313BC19488D
+	for <lists+linux-rockchip@lfdr.de>; Thu, 26 Mar 2020 21:16:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m8C20snBVbMEc36g2JKExDimfAY96hVzpLoz/2GrgxU=; b=bFhQgOeoX2Ap0u
-	uES3xDQXw/l2ln+cUMGTzUk8krTkghDMlVHFIwhsP9iTZVxWSzKVLk3J+w6cDvuCFGy/sAKLH17PE
-	HH19DlbkZGPGCcB3vZpZ8ZqPlf7ZQpg7C2HCKzYvDd3d+SG9bBnmYQ5C46xaKE9yE4R4Whc3Q+tA3
-	mpl084MLnzojItHlMWSkhQI3lj8uKxIKEhmisB9ZPCEe6oyAcWpxVyeN90ycus7u7rTZWxPsbJFR4
-	voIul1eqWx/5IL6lLWQbA2Erg3tT9u67tLRh0Y4DZBlE47VBucU0K5XoAwcG3QyFim1INQdTPdBgp
-	SgSViqHPFCH4auz1sULg==;
+	List-Owner; bh=4M1YHPyLYJD/F8gKOuFXDHFJL4V+pfvEeRo66PYV5hU=; b=TKbPUk7+hZq6U5
+	QaddwPizStRdaq6wSFwG3kCZ0Hu3fOGKiJrEAT9kpw7EBtOY/oWxt32Ui7GbatT8LKss73turK3oS
+	4xuIop79QCqmWininEuNA9/pZqYtb+rtjzrv8FazVDbzImoKC0w1t7jBimseaV641RdPKSeFowp+M
+	l+Nt0OKTqU2m8979XexRI+c/OVB/PfAvef8XyIIAjhJ+nl2rakm/u4QxakqB4gRfTjs9L2O1W++NX
+	icGoFXplQi/MhkHAJtYZumPM2I+dBttaZWV5hmNt9exdbWeIUZDUsyjUp1daeyU1J1z9ZaXkGZ4dO
+	fpKk3DCpxvp09JOBs5Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHYvb-0005OZ-Ev; Thu, 26 Mar 2020 20:16:35 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jHYvf-0005QY-8W; Thu, 26 Mar 2020 20:16:39 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHYvZ-0005NE-3C
- for linux-rockchip@lists.infradead.org; Thu, 26 Mar 2020 20:16:34 +0000
+ id 1jHYvZ-0005NF-TV
+ for linux-rockchip@lists.infradead.org; Thu, 26 Mar 2020 20:16:35 +0000
 Received: from localhost.localdomain (unknown
  [IPv6:2a02:810a:113f:ad1c:b024:988e:8796:31a])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: dafna)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8D83E297A74;
- Thu, 26 Mar 2020 20:16:31 +0000 (GMT)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 22F95297A75;
+ Thu, 26 Mar 2020 20:16:32 +0000 (GMT)
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org, dafna.hirschfeld@collabora.com,
  helen.koike@collabora.com, ezequiel@collabora.com, hverkuil@xs4all.nl,
  kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com,
  linux-rockchip@lists.infradead.org, mchehab@kernel.org,
  laurent.pinchart@ideasonboard.com
-Subject: [PATCH 1/4] media: staging: rkisp1: cap: fix issues when writing to
- uv swap register
-Date: Thu, 26 Mar 2020 21:16:07 +0100
-Message-Id: <20200326201610.31762-2-dafna.hirschfeld@collabora.com>
+Subject: [PATCH 2/4] media: staging: rkisp1: cap: support uv swap only for
+ semiplanar formats
+Date: Thu, 26 Mar 2020 21:16:08 +0100
+Message-Id: <20200326201610.31762-3-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200326201610.31762-1-dafna.hirschfeld@collabora.com>
 References: <20200326201610.31762-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_131633_266547_3E91BF02 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20200326_131634_076834_6791C8C4 
+X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -70,44 +72,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-When writing to the RKISP1_CIF_MI_XTD_FORMAT_CTRL register
-in mainpath, a redundant mask that clears the related swap
-flag is applied and then the flag is set again.
-
-In the selfpath, a mask that clears the swap setting is applied
-instead of adding the setting.
-This patch fixes those issues by just adding the swap setting.
+The register RKISP1_CIF_MI_XTD_FORMAT_CTRL is relevant only
+for semiplanar formats, therefore the uv swap can be supported
+through this register only for semiplanar formats.
 
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- drivers/staging/media/rkisp1/rkisp1-capture.c | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-index 45d237a77ca4..84a3cf565106 100644
+index 84a3cf565106..fa2849209433 100644
 --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
 +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-@@ -432,8 +432,7 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
- 	if (cap->pix.cfg->uv_swap) {
+@@ -37,6 +37,10 @@
+ 
+ #define RKISP1_MIN_BUFFERS_NEEDED 3
+ 
++#define RKISP1_IS_SEMI_PLANAR(write_format)				\
++	(((write_format) == RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA) ||	\
++	 ((write_format) == RKISP1_MI_CTRL_SP_WRITE_SPLA))
++
+ enum rkisp1_plane {
+ 	RKISP1_PLANE_Y	= 0,
+ 	RKISP1_PLANE_CB	= 1,
+@@ -429,7 +433,8 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
+ 		     cap->config->mi.cr_size_init);
+ 
+ 	rkisp1_irq_frame_end_enable(cap);
+-	if (cap->pix.cfg->uv_swap) {
++	if (RKISP1_IS_SEMI_PLANAR(cap->pix.cfg->write_format) &&
++	    cap->pix.cfg->uv_swap) {
  		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
  
--		reg = (reg & ~BIT(0)) |
--		      RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
-+		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
- 		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
- 	}
+ 		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+@@ -466,7 +471,8 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
+ 	rkisp1_write(rkisp1, cap->sp_y_stride, RKISP1_CIF_MI_SP_Y_LLENGTH);
  
-@@ -470,8 +469,8 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
- 	if (cap->pix.cfg->uv_swap) {
+ 	rkisp1_irq_frame_end_enable(cap);
+-	if (cap->pix.cfg->uv_swap) {
++	if (RKISP1_IS_SEMI_PLANAR(cap->pix.cfg->write_format) &&
++	    cap->pix.cfg->uv_swap) {
  		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
  
--		rkisp1_write(rkisp1, reg & ~BIT(1),
--			     RKISP1_CIF_MI_XTD_FORMAT_CTRL);
-+		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
-+		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
- 	}
- 
- 	rkisp1_mi_config_ctrl(cap);
+ 		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
 -- 
 2.17.1
 
