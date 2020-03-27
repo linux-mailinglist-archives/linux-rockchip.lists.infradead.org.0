@@ -2,68 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CC6E195298
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 09:09:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A372E195497
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 10:58:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VfwmMuGgEYKat5rcIi5PJyT1HBarQHHKDOVLYzY3nlk=; b=rVRpUXSpG0Lzxd
-	L7+J2A1Qbb6PWLiAY7ul28wQ94nl/+hEKV2Yuh93p2QndKfU354fXxjf1yJEsMJjzxLaI5E8o6TJe
-	SlxzXwmN/iVHbqKtAVKGq5GeaOutK+BIo66jGenoar7SNKCiZJbn57uQA6RtvZDV4ML9z9m2hGI+J
-	LYvzJqn7NSAPuJKJpsLjI9xwQoYuG9mxv1mpRxfMlVQOUP/3ThibuQ+Whq8QrCkBDOGMtZ6R38CUQ
-	P5pMZ0eF3krjpOYegWbK0vixsUwOyTLm7PA7uBIwGz2hW1GuwjLoAXk3Q4KHKLfuf23ZhEZcwzGMP
-	kbKY3AgMeZMMHuKMY5Vg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ODOKNaDc9wbiq0op3jnPRKZDyRLxQjlLXS67b4FZLGo=; b=oNkTB0yNSjrATP
+	RV1JbMN/rlWuJWGFpxJoe5HrRiPG6ym9NR6kaP+Y0BkHyVWTDL8oDGYcC7z3J0K4bjjN/ZT8BkuQB
+	wHiEl5TCSB72tFPCSjsMQGwkKJbUQ6kAroIdYFH72ym+sDgLrb1cNi+qU32X+tWk3tXhwTLDnrj4D
+	11I4gkuAzlc9XYSmXfDtv0gNq2WE5T9lkFL1KY6sUetlKmXHkIDfkoYP46Hot3RGs9i7do1sSQba1
+	R9x/kfZ34Ek9DO6ZKnMvjYab6TQ9muKJJTJQEpHsmUW8ZI/IyJBjxq9t0ELyMTGHzsYfWvLtEtxXx
+	itxG1nh5sCKC+EX7xxKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHk3F-0006dY-2q; Fri, 27 Mar 2020 08:09:13 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1jHlkz-0006xu-Da; Fri, 27 Mar 2020 09:58:29 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHk3C-0006cy-HH
- for linux-rockchip@lists.infradead.org; Fri, 27 Mar 2020 08:09:11 +0000
-IronPort-SDR: WXR8p9DSMY0Zrg92tmYKxYOunzu/8GkgvVOtxHQ/ArQm4ifJ2G36VytaZk3HSZd0LM1Vsqr6tu
- LK7DIK6A9VgQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 27 Mar 2020 01:09:09 -0700
-IronPort-SDR: 5J/RwyflbWm32w71GF4z5lmYGOl2kbe497SSuaCuBRRLLps1quezNfpbggSyq9bGdKLmHglGB0
- ujwe7da4WDxQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,311,1580803200"; d="scan'208";a="236561315"
-Received: from jmikkola-mobl1.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
- ([10.252.32.179])
- by orsmga007.jf.intel.com with ESMTP; 27 Mar 2020 01:09:05 -0700
-Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
- id DB1CE21F8C; Fri, 27 Mar 2020 10:08:58 +0200 (EET)
-Date: Fri, 27 Mar 2020 10:08:58 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dafna Hirschfeld <dafna3@gmail.com>
-Subject: Re: [PATCH 1/2] media: media.h: Add a pad flag MEDIA_PAD_FL_METADATA
-Message-ID: <20200327080858.GB23713@kekkonen.localdomain>
-References: <20200325212704.29862-1-dafna.hirschfeld@collabora.com>
- <20200325212704.29862-2-dafna.hirschfeld@collabora.com>
- <20200325222621.GX19171@pendragon.ideasonboard.com>
- <CAJ1myNS5jdqCXAtueA_j+ULkiioDxhegfCLQWFXrvL6_AYPwFg@mail.gmail.com>
+ id 1jHlkw-0006x5-Ha; Fri, 27 Mar 2020 09:58:27 +0000
+Received: by mail-wr1-x441.google.com with SMTP id m11so4741365wrx.10;
+ Fri, 27 Mar 2020 02:58:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=bcArWLKO9gfS9yL0ZKsjHCpsyjSMPm/VjOI4JkSoq3E=;
+ b=GpPQrDbw/IAnWIIEIIEqlGvJ5p9qqvos443bO3SjGfFlqI5ayDKJICbICXHECKygIX
+ 8kUA1/dtP53vDcyhoKuwd1ySYMH8Gunv3rzIz+q+3EEP9dOpoRJUknnJzSo2CgdA9OBt
+ g8zW3peo9OrCsNNvmllmzqKa5jqD/O1+5OBjBV9YpSv251uZo/9Y/B1BGVs9oSmKdiXb
+ Z32JnGiS6duI/3g1nXMWffY6jpbFe6q0YmwotUWYRp88OxYstP9uS3V0u+RczDTho2cg
+ B1fcf27IDtmm1ZZ2ijilv89Kxl4FavPiiKtfefsMcoc00bBntzClc9svrFbckvjF6g6Z
+ zYLw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=bcArWLKO9gfS9yL0ZKsjHCpsyjSMPm/VjOI4JkSoq3E=;
+ b=eq1i6kcvbtetlkIrevMWD+1DdEzaN2OVdK8CTRZbltko/Hh4Lc6G2nDQVI7ZdoNdU1
+ fIT6zVr0SarnBnSnk/IfOLtI//4jlGHzFlryRzvLVIViWzqJSMURQYDQtj+2RcbHs0X1
+ DWUQLAxSSv0c+K84eXnKaNDNPtyZGSJE4bECrFFMtXduvUBdrZLytzBhOZVZGY8bhj/H
+ AuL4xNFgIHD7kQtGdeMpPJwJPv7JE6XL2TbnV8jKOtxbycjHEWyMrkqGZI4qgEvepF47
+ aGqHlfDJ4O3LUPu847ayW3e+vNpZ1R8OWIC5hXdGGavK+rH8Aytx7f29b78PnGVCYKkY
+ FG5w==
+X-Gm-Message-State: ANhLgQ0UxZFhIrXAnrTdZr/0nHlkRbaQrvvfh5p5FfYNFDKTTfSWL1Qo
+ QX2g+0Mld/Y/M3aZw0UeHNM=
+X-Google-Smtp-Source: ADFU+vvKZfMOqNUJZ4uhISq6XNpwcMVRpDU3ieIyScDuSXDwquFHmAA9qExS6vclylLaSiMNsr4rkA==
+X-Received: by 2002:adf:a55b:: with SMTP id j27mr5645578wrb.418.1585303103675; 
+ Fri, 27 Mar 2020 02:58:23 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i4sm7826034wrm.32.2020.03.27.02.58.22
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 27 Mar 2020 02:58:23 -0700 (PDT)
+To: wens@kernel.org
+References: <20200327030414.5903-2-wens@kernel.org>
+Subject: Re: [PATCH 1/6] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
+ numbering for LED triggers
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <684a08e6-7dfe-4cb1-2ae5-c1fb4128976b@gmail.com>
+Date: Fri, 27 Mar 2020 10:58:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ1myNS5jdqCXAtueA_j+ULkiioDxhegfCLQWFXrvL6_AYPwFg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200327030414.5903-2-wens@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_010910_622141_06A7AB70 
-X-CRM114-Status: GOOD (  26.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200327_025826_583605_27AE8355 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,97 +103,117 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: heiko@sntech.de, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, wens@csie.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Dafna, Laurent,
+Hi Chen-Yu Tsai,
 
-On Thu, Mar 26, 2020 at 08:59:04AM +0100, Dafna Hirschfeld wrote:
-> On Wed, Mar 25, 2020 at 11:26 PM Laurent Pinchart
-> <laurent.pinchart@ideasonboard.com> wrote:
-> >
-> > Hi Dafna,
-> >
-> > Thank you for the patch.
-> >
-> > On Wed, Mar 25, 2020 at 10:27:03PM +0100, Dafna Hirschfeld wrote:
-> > > Add a flag to the flags field of 'struct media_pad_desc'
-> > > that indicates that the data transmitted by the pad is
-> > > metadata.
-> > >
-> > > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> > > ---
-> > >  Documentation/media/uapi/mediactl/media-types.rst | 4 ++++
-> > >  include/uapi/linux/media.h                        | 1 +
-> > >  2 files changed, 5 insertions(+)
-> > >
-> > > diff --git a/Documentation/media/uapi/mediactl/media-types.rst b/Documentation/media/uapi/mediactl/media-types.rst
-> > > index 3af6a414b501..4ca902478971 100644
-> > > --- a/Documentation/media/uapi/mediactl/media-types.rst
-> > > +++ b/Documentation/media/uapi/mediactl/media-types.rst
-> > > @@ -361,6 +361,7 @@ Types and flags used to represent the media graph elements
-> > >  .. _MEDIA-PAD-FL-SINK:
-> > >  .. _MEDIA-PAD-FL-SOURCE:
-> > >  .. _MEDIA-PAD-FL-MUST-CONNECT:
-> > > +.. _MEDIA-PAD-FL-METADATA:
-> > >
-> > >  .. flat-table:: Media pad flags
-> > >      :header-rows:  0
-> > > @@ -381,6 +382,9 @@ Types and flags used to represent the media graph elements
-> > >         configuration dependent) for the pad to need enabled links even
-> > >         when this flag isn't set; the absence of the flag doesn't imply
-> > >         there is none.
-> > > +    *  -  ``MEDIA_PAD_FL_METADATA``
-> > > +       -  This flag indicates that the data transmitted by the pad is of
-> > > +          type metadata.
-> > >
-> > >
-> > >  One and only one of ``MEDIA_PAD_FL_SINK`` and ``MEDIA_PAD_FL_SOURCE``
-> > > diff --git a/include/uapi/linux/media.h b/include/uapi/linux/media.h
-> > > index 383ac7b7d8f0..ae37226eb5c9 100644
-> > > --- a/include/uapi/linux/media.h
-> > > +++ b/include/uapi/linux/media.h
-> > > @@ -210,6 +210,7 @@ struct media_entity_desc {
-> > >  #define MEDIA_PAD_FL_SINK                    (1 << 0)
-> > >  #define MEDIA_PAD_FL_SOURCE                  (1 << 1)
-> > >  #define MEDIA_PAD_FL_MUST_CONNECT            (1 << 2)
-> > > +#define MEDIA_PAD_FL_METADATA                        (1 << 3)
-> >
-> > I think we need to reserve a few bits here. We'll have more than
-> > metadata. Audio comes to mind, there will likely be more. Having
-> > independent flags would not only waste a bit of space in the bitfield
-> > (not that we're about to run out of bits, but still), but would make it
-> > possible to specify invalid configurations such as MEDIA_PAD_FL_METADATA
-> > | MEDIA_PAD_FL_AUDIO. And now that I've written this, I realize that
-> > audio metadata could be a thing, so maybe a metadata flag is actually
-> > the best option :-)
-> hehe, ok, but drivers that set the METADATA flag should also set the media
-> bus code to MEDIA_BUS_FMT_FIXED ? If yes then setting
-> the METADATA flag with a different media bus is also an invalid configuration.
+The led node names need some changes.
+'linux,default-trigger' value does not fit.
 
-That may be currently the case, but not all non-image data (metadata in
-practice) will be using MEDIA_BUS_FMT_FIXED, for instance sensor embedded
-data when we support that in upstream.
+From leds-gpio.yaml:
 
-Note that whether metadata flows over a pad is dynamic configuration. I
-wonder if it is useful to tell this to the user, as the user, in many
-cases, will be making the configuration affecting this. There definitely
-are devices where this configuration would be static, but many of those
-cases (ISPs in particular) have DMAs (i.e. video nodes) directly connected
-over a link, where you'll find this information on the video node.
+patternProperties:
+  # The first form is preferred, but fall back to just 'led' anywhere in the
+  # node name to at least catch some child nodes.
+  "(^led-[0-9a-f]$|led)":
+    type: object
 
--- 
-Regards,
+Rename led nodenames to 'led-0' form
 
-Sakari Ailus
+Also include all mail lists found with:
+./scripts/get_maintainer.pl --nogit-fallback --nogit
+
+devicetree@vger.kernel.org
+
+If you like change the rest of dts with leds as well...
+
+  DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
+  CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml
+arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
+yellow-led:linux,default-trigger:0: 'mmc0' is not one of ['backlight',
+'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dt.yaml: leds:
+diy-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
+'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+  DTC     arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
+  CHECK   arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml
+arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
+diy-led:linux,default-trigger:0: 'mmc2' is not one of ['backlight',
+'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dt.yaml: leds:
+yellow-led:linux,default-trigger:0: 'mmc1' is not one of ['backlight',
+'default-on', 'heartbeat', 'disk-activity', 'ide-disk', 'timer', 'pattern']
+
+make -k ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
+
+> From: Chen-Yu Tsai <wens@csie.org>
+> 
+> With SDIO now enabled, the numbering of the existing MMC host controllers
+> gets incremented by 1, as the SDIO host is the first one.
+> 
+> Increment the numbering of the MMC LED triggers to match.
+> 
+> Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
+>  2 files changed, 10 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> index 2acb3d500fb9..f0686fc276be 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> @@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
+>  	};
+>  };
+>  
+> +&diy_led {
+> +	linux,default-trigger = "mmc2";
+> +};
+> +
+>  &pcie_phy {
+>  	status = "okay";
+>  };
+> @@ -91,3 +95,7 @@ &uart0 {
+>  	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+>  	status = "okay";
+>  };
+> +
+> +&yellow_led {
+> +	linux,default-trigger = "mmc1";
+> +};
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> index 9f225e9c3d54..bc060ac7972d 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> @@ -70,14 +70,14 @@ work-led {
+>  			linux,default-trigger = "heartbeat";
+>  		};
+>  
+> -		diy-led {
+> +		diy_led: diy-led {
+>  			label = "red:diy";
+>  			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
+>  			default-state = "off";
+>  			linux,default-trigger = "mmc1";
+>  		};
+>  
+> -		yellow-led {
+> +		yellow_led: yellow-led {
+>  			label = "yellow:yellow-led";
+>  			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+>  			default-state = "off";
+> -- 
+> 2.25.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
