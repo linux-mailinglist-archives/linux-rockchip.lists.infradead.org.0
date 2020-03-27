@@ -2,136 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E3B6195243
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 08:44:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CC6E195298
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 09:09:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lz9hye9Ji31tpXABtaL5Hpwdqu5/+bikCTcyUsSq2Rk=; b=SpxUmQaUUSy89P
-	gGYfr+2YqgAxR/116nVg79ndYIpEd6IREKNscgMXtGIPdAbR2qC9aXCyxtCfyu1NfB+q++ugegxg+
-	95KJKHwGhCsjuONis/XJUxGV8T5YIxLkG474nyekSiBVxsNRnZqZz/dS8DD1AbD+S5WgmGtHuSpSr
-	Izdxjq5awnUh3MFASZZ3l2Pys6Kx21iOqqVIdNvqC3L290n09WXXUtDZvwmCe8n0vkpk4KHLuemqq
-	L144dnoiWw9lKi+1wqGojuTfT8mNXWaP4WHpSOOFXCtojtmcq5YA/Bv9gpOnGzOacqZJdOAIIodIC
-	3cbiOMT02pMKF6GyXg8Q==;
+	List-Owner; bh=VfwmMuGgEYKat5rcIi5PJyT1HBarQHHKDOVLYzY3nlk=; b=rVRpUXSpG0Lzxd
+	L7+J2A1Qbb6PWLiAY7ul28wQ94nl/+hEKV2Yuh93p2QndKfU354fXxjf1yJEsMJjzxLaI5E8o6TJe
+	SlxzXwmN/iVHbqKtAVKGq5GeaOutK+BIo66jGenoar7SNKCiZJbn57uQA6RtvZDV4ML9z9m2hGI+J
+	LYvzJqn7NSAPuJKJpsLjI9xwQoYuG9mxv1mpRxfMlVQOUP/3ThibuQ+Whq8QrCkBDOGMtZ6R38CUQ
+	P5pMZ0eF3krjpOYegWbK0vixsUwOyTLm7PA7uBIwGz2hW1GuwjLoAXk3Q4KHKLfuf23ZhEZcwzGMP
+	kbKY3AgMeZMMHuKMY5Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHjfZ-0005wn-Jf; Fri, 27 Mar 2020 07:44:45 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jHk3F-0006dY-2q; Fri, 27 Mar 2020 08:09:13 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHjfW-0005wK-K5
- for linux-rockchip@lists.infradead.org; Fri, 27 Mar 2020 07:44:44 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200327074439euoutp01f2d169e9abd0e4469460b3b4abe4c252~AGXnF8OTW2462324623euoutp01X
- for <linux-rockchip@lists.infradead.org>; Fri, 27 Mar 2020 07:44:39 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200327074439euoutp01f2d169e9abd0e4469460b3b4abe4c252~AGXnF8OTW2462324623euoutp01X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1585295079;
- bh=/saM3byIZvfXG+T7y4Al0/135Ja5jfEK/cijvzHBurw=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=H43wiQVRZMEhMpcOveazAJzk5WVLhXPDJsOzJAwFBngDeKPceEchcvFYGP58FHoHs
- bgwBwLD9gnV4UG8HC8yZHtmwjZRoggbKLajv2dAxAAz2C/5xHR+AHyPjTL39goodxK
- K7BprqggZxRLbueXVbi2L+GajLv4zpjsGeRpG7U8=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200327074439eucas1p1ecdd5313a25deeabad0a3873a1e757cb~AGXmohhRG3126931269eucas1p1y;
- Fri, 27 Mar 2020 07:44:39 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id E0.45.60698.7EEAD7E5; Fri, 27
- Mar 2020 07:44:39 +0000 (GMT)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200327074438eucas1p1aa7d1f0f07814a6d77114b6cc1b5dcf8~AGXmPjcaC2921029210eucas1p1V;
- Fri, 27 Mar 2020 07:44:38 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200327074438eusmtrp2ea01d6038b27ddf280835d5b90738b01~AGXmO06E42463624636eusmtrp2S;
- Fri, 27 Mar 2020 07:44:38 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-b9-5e7daee75331
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id B4.F4.08375.6EEAD7E5; Fri, 27
- Mar 2020 07:44:38 +0000 (GMT)
-Received: from [106.120.51.74] (unknown [106.120.51.74]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200327074438eusmtip27ac22e5f2743ef860347087c9c86a9f8~AGXloYKrH1556715567eusmtip2S;
- Fri, 27 Mar 2020 07:44:38 +0000 (GMT)
-Subject: Re: [PATCH v2] drm/bridge: analogix_dp: Split bind() into probe()
- and real bind()
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- dri-devel@lists.freedesktop.org, linux-samsung-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org
-From: Andrzej Hajda <a.hajda@samsung.com>
-Message-ID: <1386cf0a-7359-c1c5-35bc-c86ce944f035@samsung.com>
-Date: Fri, 27 Mar 2020 08:44:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jHk3C-0006cy-HH
+ for linux-rockchip@lists.infradead.org; Fri, 27 Mar 2020 08:09:11 +0000
+IronPort-SDR: WXR8p9DSMY0Zrg92tmYKxYOunzu/8GkgvVOtxHQ/ArQm4ifJ2G36VytaZk3HSZd0LM1Vsqr6tu
+ LK7DIK6A9VgQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 27 Mar 2020 01:09:09 -0700
+IronPort-SDR: 5J/RwyflbWm32w71GF4z5lmYGOl2kbe497SSuaCuBRRLLps1quezNfpbggSyq9bGdKLmHglGB0
+ ujwe7da4WDxQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.72,311,1580803200"; d="scan'208";a="236561315"
+Received: from jmikkola-mobl1.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
+ ([10.252.32.179])
+ by orsmga007.jf.intel.com with ESMTP; 27 Mar 2020 01:09:05 -0700
+Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
+ id DB1CE21F8C; Fri, 27 Mar 2020 10:08:58 +0200 (EET)
+Date: Fri, 27 Mar 2020 10:08:58 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Dafna Hirschfeld <dafna3@gmail.com>
+Subject: Re: [PATCH 1/2] media: media.h: Add a pad flag MEDIA_PAD_FL_METADATA
+Message-ID: <20200327080858.GB23713@kekkonen.localdomain>
+References: <20200325212704.29862-1-dafna.hirschfeld@collabora.com>
+ <20200325212704.29862-2-dafna.hirschfeld@collabora.com>
+ <20200325222621.GX19171@pendragon.ideasonboard.com>
+ <CAJ1myNS5jdqCXAtueA_j+ULkiioDxhegfCLQWFXrvL6_AYPwFg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200310103427.26048-1-m.szyprowski@samsung.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHKsWRmVeSWpSXmKPExsWy7djP87rP19XGGcx/zGbRf/4mo8XGGetZ
- La58fc9mMXdSrcXV7y+ZLVZ8mclucfLNVRaLzolL2C0+PfjPbDHj/D4mi7VH7rJbHOqLtpgx
- +SWbA6/H+xut7B47Z91l95jdMZPV48SES0we97uPM3lsXlLv8XfWfhaPvi2rGD0O9E5m8fi8
- SS6AK4rLJiU1J7MstUjfLoErY+vDx0wFzQIVS1fsYW1g3MnbxcjJISFgIrH0ywPWLkYuDiGB
- FYwS8+9uY4dwvjBKvFo4lQnC+cwoce/jfMYuRg6wlnl/HSHiyxkl3lx7A9XxllFi+q/1rCBF
- wgIxEjdmMoPERQRmM0rcOvaMBcRhFvjHJPFizSdGkOVsApoSfzffZAOxeQXsJO4feMACYrMI
- qEp8uv4QrEZUIEJi2vZ/jBA1ghInZz4Bq+EEqn+59ww7iM0sIC+x/e0cZghbXOLWk/lgZ0sI
- tHJIfJs5gx3iUxeJJX9WsEDYwhKvjm+BistI/N8J0gBi10vcX9HCDNHcwSixdcNOZoiEtcSd
- c7/YQF5jBrp6/S59SFA4Srx7XQdh8knceCsIcQKfxKRt05khwrwSHW1CEDMUJe6f3Qo1T1xi
- 6YWvbBMYlWYheWwWkmdmIXlmFsLaBYwsqxjFU0uLc9NTi43zUsv1ihNzi0vz0vWS83M3MQJT
- 3el/x7/uYNz3J+kQowAHoxIPb0NbTZwQa2JZcWXuIUYJDmYlEd6nkUAh3pTEyqrUovz4otKc
- 1OJDjNIcLErivMaLXsYKCaQnlqRmp6YWpBbBZJk4OKUaGMX6HiTe23Tsyt4ZnZU/t2a62D7+
- tTfHTruLX7u4LpI7a79lab1C/7Wl4gGFF9qfntOYysoYvIrhWrt+cL5SblMIX0IoR5htQpbo
- j5Aa3vOaId1uHd7+8c3X+yQzd/vUndy4kqvz9+r874usGbedOJax7MT7687eTyc0Gjps3hVp
- yRPEIJioxFKckWioxVxUnAgA1iL4EXEDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrMIsWRmVeSWpSXmKPExsVy+t/xe7rP1tXGGczYpWHRf/4mo8XGGetZ
- La58fc9mMXdSrcXV7y+ZLVZ8mclucfLNVRaLzolL2C0+PfjPbDHj/D4mi7VH7rJbHOqLtpgx
- +SWbA6/H+xut7B47Z91l95jdMZPV48SES0we97uPM3lsXlLv8XfWfhaPvi2rGD0O9E5m8fi8
- SS6AK0rPpii/tCRVISO/uMRWKdrQwkjP0NJCz8jEUs/Q2DzWyshUSd/OJiU1J7MstUjfLkEv
- Y+vDx0wFzQIVS1fsYW1g3MnbxcjBISFgIjHvr2MXIxeHkMBSRokta3qYuxg5geLiErvnv4Wy
- hSX+XOtigyh6zSgx9dMpVpCEsECMxJo9L8ASIgKzGSXWHVjFDuIwCzQwS5zq+c8M0TKRUeLm
- +dPsIC1sApoSfzffZAOxeQXsJO4feMACYrMIqEp8uv6QEcQWFYiQeDyxnRGiRlDi5MwnYDWc
- QPUv954Bm8MsoC7xZ94lZghbXmL72zlQtrjErSfzmSYwCs1C0j4LScssJC2zkLQsYGRZxSiS
- Wlqcm55bbKhXnJhbXJqXrpecn7uJERjh24793LyD8dLG4EOMAhyMSjy8Gi01cUKsiWXFlbmH
- GCU4mJVEeJ9GAoV4UxIrq1KL8uOLSnNSiw8xmgI9N5FZSjQ5H5h88kriDU0NzS0sDc2NzY3N
- LJTEeTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MGpdUitp7PxvGpa9V+FS5P10wyOTNv+f2fS9
- sUhvyuGtCeq+Gp/+KjpKyTC+ONBz8fEktQf5t4Kdbz5nS9sz7VYUy+7Ptea/u3wNPiz9FBH4
- 9cBV87Bzj6Q1v9vp1jdONff7uVUqu6F3Vt2Ku2F5LLbLN6/Y4PIsmXVFyfMV/o+ZT0Qc3bFE
- XkSJpTgj0VCLuag4EQBNfC7pBgMAAA==
-X-CMS-MailID: 20200327074438eucas1p1aa7d1f0f07814a6d77114b6cc1b5dcf8
-X-Msg-Generator: CA
-X-RootMTR: 20200310104049eucas1p107e1ec61456fce4c830d3232a400b32f
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200310104049eucas1p107e1ec61456fce4c830d3232a400b32f
-References: <CGME20200310104049eucas1p107e1ec61456fce4c830d3232a400b32f@eucas1p1.samsung.com>
- <20200310103427.26048-1-m.szyprowski@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <CAJ1myNS5jdqCXAtueA_j+ULkiioDxhegfCLQWFXrvL6_AYPwFg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_004442_862586_EA622323 
-X-CRM114-Status: GOOD (  14.76  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200327_010910_622141_06A7AB70 
+X-CRM114-Status: GOOD (  26.11  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,60 +76,97 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Jonas Karlman <jonas@kwiboo.se>,
- Jingoo Han <jingoohan1@gmail.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Andy Yan <andy.yan@rock-chips.com>
+Cc: mchehab@kernel.org, Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-rockchip@lists.infradead.org,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 10.03.2020 11:34, Marek Szyprowski wrote:
-> Analogix_dp driver acquires all its resources in the ->bind() callback,
-> what is a bit against the component driver based approach, where the
-> driver initialization is split into a probe(), where all resources are
-> gathered, and a bind(), where all objects are created and a compound
-> driver is initialized.
->
-> Extract all the resource related operations to analogix_dp_probe() and
-> analogix_dp_remove(), then call them before/after registration of the
-> device components from the main Exynos DP and Rockchip DP drivers. Also
-> move the plat_data initialization to the probe() to make it available for
-> the analogix_dp_probe() function.
->
-> This fixes the multiple calls to the bind() of the DRM compound driver
-> when the DP PHY driver is not yet loaded/probed:
->
-> [drm] Exynos DRM: using 14400000.fimd device for DMA mapping operations
-> exynos-drm exynos-drm: bound 14400000.fimd (ops fimd_component_ops [exynosdrm])
-> exynos-drm exynos-drm: bound 14450000.mixer (ops mixer_component_ops [exynosdrm])
-> exynos-dp 145b0000.dp-controller: no DP phy configured
-> exynos-drm exynos-drm: failed to bind 145b0000.dp-controller (ops exynos_dp_ops [exynosdrm]): -517
-> exynos-drm exynos-drm: master bind failed: -517
-> ...
-> [drm] Exynos DRM: using 14400000.fimd device for DMA mapping operations
-> exynos-drm exynos-drm: bound 14400000.fimd (ops hdmi_enable [exynosdrm])
-> exynos-drm exynos-drm: bound 14450000.mixer (ops hdmi_enable [exynosdrm])
-> exynos-drm exynos-drm: bound 145b0000.dp-controller (ops hdmi_enable [exynosdrm])
-> exynos-drm exynos-drm: bound 14530000.hdmi (ops hdmi_enable [exynosdrm])
-> [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
-> Console: switching to colour frame buffer device 170x48
-> exynos-drm exynos-drm: fb0: exynosdrmfb frame buffer device
-> [drm] Initialized exynos 1.1.0 20180330 for exynos-drm on minor 1
-> ...
->
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Dafna, Laurent,
 
+On Thu, Mar 26, 2020 at 08:59:04AM +0100, Dafna Hirschfeld wrote:
+> On Wed, Mar 25, 2020 at 11:26 PM Laurent Pinchart
+> <laurent.pinchart@ideasonboard.com> wrote:
+> >
+> > Hi Dafna,
+> >
+> > Thank you for the patch.
+> >
+> > On Wed, Mar 25, 2020 at 10:27:03PM +0100, Dafna Hirschfeld wrote:
+> > > Add a flag to the flags field of 'struct media_pad_desc'
+> > > that indicates that the data transmitted by the pad is
+> > > metadata.
+> > >
+> > > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> > > ---
+> > >  Documentation/media/uapi/mediactl/media-types.rst | 4 ++++
+> > >  include/uapi/linux/media.h                        | 1 +
+> > >  2 files changed, 5 insertions(+)
+> > >
+> > > diff --git a/Documentation/media/uapi/mediactl/media-types.rst b/Documentation/media/uapi/mediactl/media-types.rst
+> > > index 3af6a414b501..4ca902478971 100644
+> > > --- a/Documentation/media/uapi/mediactl/media-types.rst
+> > > +++ b/Documentation/media/uapi/mediactl/media-types.rst
+> > > @@ -361,6 +361,7 @@ Types and flags used to represent the media graph elements
+> > >  .. _MEDIA-PAD-FL-SINK:
+> > >  .. _MEDIA-PAD-FL-SOURCE:
+> > >  .. _MEDIA-PAD-FL-MUST-CONNECT:
+> > > +.. _MEDIA-PAD-FL-METADATA:
+> > >
+> > >  .. flat-table:: Media pad flags
+> > >      :header-rows:  0
+> > > @@ -381,6 +382,9 @@ Types and flags used to represent the media graph elements
+> > >         configuration dependent) for the pad to need enabled links even
+> > >         when this flag isn't set; the absence of the flag doesn't imply
+> > >         there is none.
+> > > +    *  -  ``MEDIA_PAD_FL_METADATA``
+> > > +       -  This flag indicates that the data transmitted by the pad is of
+> > > +          type metadata.
+> > >
+> > >
+> > >  One and only one of ``MEDIA_PAD_FL_SINK`` and ``MEDIA_PAD_FL_SOURCE``
+> > > diff --git a/include/uapi/linux/media.h b/include/uapi/linux/media.h
+> > > index 383ac7b7d8f0..ae37226eb5c9 100644
+> > > --- a/include/uapi/linux/media.h
+> > > +++ b/include/uapi/linux/media.h
+> > > @@ -210,6 +210,7 @@ struct media_entity_desc {
+> > >  #define MEDIA_PAD_FL_SINK                    (1 << 0)
+> > >  #define MEDIA_PAD_FL_SOURCE                  (1 << 1)
+> > >  #define MEDIA_PAD_FL_MUST_CONNECT            (1 << 2)
+> > > +#define MEDIA_PAD_FL_METADATA                        (1 << 3)
+> >
+> > I think we need to reserve a few bits here. We'll have more than
+> > metadata. Audio comes to mind, there will likely be more. Having
+> > independent flags would not only waste a bit of space in the bitfield
+> > (not that we're about to run out of bits, but still), but would make it
+> > possible to specify invalid configurations such as MEDIA_PAD_FL_METADATA
+> > | MEDIA_PAD_FL_AUDIO. And now that I've written this, I realize that
+> > audio metadata could be a thing, so maybe a metadata flag is actually
+> > the best option :-)
+> hehe, ok, but drivers that set the METADATA flag should also set the media
+> bus code to MEDIA_BUS_FMT_FIXED ? If yes then setting
+> the METADATA flag with a different media bus is also an invalid configuration.
 
-Queued to fixes.
+That may be currently the case, but not all non-image data (metadata in
+practice) will be using MEDIA_BUS_FMT_FIXED, for instance sensor embedded
+data when we support that in upstream.
 
+Note that whether metadata flows over a pad is dynamic configuration. I
+wonder if it is useful to tell this to the user, as the user, in many
+cases, will be making the configuration affecting this. There definitely
+are devices where this configuration would be static, but many of those
+cases (ISPs in particular) have DMAs (i.e. video nodes) directly connected
+over a link, where you'll find this information on the video node.
 
-Andrzej
+-- 
+Regards,
 
-
+Sakari Ailus
 
 _______________________________________________
 Linux-rockchip mailing list
