@@ -2,54 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55D65194F85
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 04:06:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6346F194F87
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 04:06:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zuf4og9RnAu0JF3gI8CRVBLPoRLcBySnVJc5B9srqOQ=; b=eLIhOZALnIy2VG
-	Kzbgg2ccISeyQZ016IbSxhzOtYJdHpqJARj3VsN7/Mgw8MWUFRoYDK46IUmvIKRkchUURCxW2HSiw
-	zO+3aaJx4E1+BbUxFkrlQWNk+WsPVJ0bSHWAC7d/WPnjlVMtPSIZNi/2RN4zHVDif7wiKQByEUZ0F
-	HnTSyTO1F4WGbtP1awaFz8/PoMUQaouNgojRikqcK0Kw2rrYzJdrDB4+Me5ohWNMT5Ys8EEoRMHhY
-	R8ZhckwwGgFp9PKrC51E96roPCf3XFSj8eEh4QYHDV/XZ7eJbAo2aRORmuRG2h/mVBSxenw0M581w
-	mDzhjhRch4A1n444Nu9A==;
+	List-Owner; bh=mzf625D3ZNXtqh9BcIUAMt97l0teBAtvdWdD9u1FzWM=; b=NBME6Q0gbEZo3L
+	w4bkO5jTwRJhISTaKfzGE6UYD1Y9CV/1FW9hXouNiFjAeh9Ys30NhZ4p/oU3F3pxA45sa5i7mPM3R
+	ZR8FXEYPQg6h0h1h9N3le9l9ij3aEV4etpCAqGoeB2Hq8AsYNIHJOQqz/MpG5qj3f7EIrSS3iPaeU
+	n9D4rBzhVZEUb3ONgIuunWEh3mQmIrcR3Fwy89U4ZrtAtY60JEkZkzQRJcLHCtj68MjnBXkWlWCdi
+	k/umgSAW83j17ZGRva8FASVSgUZ3KVnoDCowmr5y+mMy0y20Mvv5v8EtCGepkTWO//0ZwtalPfghm
+	rT38Y38klQ8hQvMPhRSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHfKG-0007BR-Kl; Fri, 27 Mar 2020 03:06:28 +0000
+	id 1jHfKN-0007H6-KC; Fri, 27 Mar 2020 03:06:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHfIP-0004BT-Vt; Fri, 27 Mar 2020 03:04:35 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jHfJ7-0005l5-9v
+ for linux-rockchip@lists.infradead.org; Fri, 27 Mar 2020 03:05:20 +0000
+Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
+ [209.85.160.177])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8C8D5214D8;
- Fri, 27 Mar 2020 03:04:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6335D20848
+ for <linux-rockchip@lists.infradead.org>; Fri, 27 Mar 2020 03:05:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585278273;
- bh=+VivrJSNavP7dQm9czqzrLUyFrtNJAC1T71ZuCbvtck=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=U/HRdYG6988iHf1qykXbWpHCWlswl5wLsIIfo7NL5dZRLNEqfamLUo3bC2zP/mueF
- wQce0bC13NDPNDt06K+pbRlxff3uWP/b5xRgNbSv1fm7t+pnMC4UNVCDkC0VYBI+Mq
- fGQbo+LhGKCEMRglJT6mVikWUcRv6SWgLakChrS0=
-Received: by wens.tw (Postfix, from userid 1000)
- id 6340860141; Fri, 27 Mar 2020 11:04:26 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Heiko Stuebner <heiko@sntech.de>,
-	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 6/6] arm64: dts: rockchip: rk3399: Rename dwc3 device nodes to
- make dtc happy
-Date: Fri, 27 Mar 2020 11:04:14 +0800
-Message-Id: <20200327030414.5903-7-wens@kernel.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200327030414.5903-1-wens@kernel.org>
-References: <20200327030414.5903-1-wens@kernel.org>
+ s=default; t=1585278315;
+ bh=YIf6aQbdkDH1cQnI7Mm8lvierFh+tPaKpJdINhnNVxg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=gscSa0b2I4VjrlYCOv6soG876N5HH7XtFKOr7CVoyAdEubKbOAJ2tJIWrq1LDaPTv
+ 2OgcQNdP2Smb82Ad4//KDNT/R+YSAMyUtelYOm0raw7jA6ZAs18OP02GBfdrLMIrk+
+ 4mrxLpUGuZIV9KQiswZsEDoDT2LpjukSVdhCuT54=
+Received: by mail-qt1-f177.google.com with SMTP id i3so7475265qtv.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 26 Mar 2020 20:05:15 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ1S6Ef2hooCNnDF58kcSQUprkBZZjdZWFVHEFhQC8ilSzOzWzgE
+ 2TLm1CM2Yf10zOg0zS2x5Vca+oRS/4/Hut2wbg==
+X-Google-Smtp-Source: ADFU+vslGC615com2rm1wCgzAp5WB2w4yiciuQ1qMy22ERjZcJ2jcVj8Uw6zWW9MVqImCv+H7p5eSrCRLUyipOXv8/Y=
+X-Received: by 2002:ac8:59:: with SMTP id i25mr12051193qtg.110.1585278314570; 
+ Thu, 26 Mar 2020 20:05:14 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200325213439.16509-8-ezequiel@collabora.com>
+ <20200326191343.1989-1-ezequiel@collabora.com>
+In-Reply-To: <20200326191343.1989-1-ezequiel@collabora.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 26 Mar 2020 21:05:03 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ4sLE8mf=Ssg3wxbpf-f65i+YRkCBj+8DVGPonRA0=9A@mail.gmail.com>
+Message-ID: <CAL_JsqJ4sLE8mf=Ssg3wxbpf-f65i+YRkCBj+8DVGPonRA0=9A@mail.gmail.com>
+Subject: Re: [PATCH v4] dt-bindings: rockchip-vpu: Convert bindings to
+ json-schema
+To: Ezequiel Garcia <ezequiel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_200434_040469_88F1BB66 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20200326_200517_569110_29E7D772 
+X-CRM114-Status: GOOD (  10.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,57 +86,41 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Dufresne <nicolas@ndufresne.ca>, Heiko Stuebner <heiko@sntech.de>,
+ Alexandre Courbot <acourbot@chromium.org>, Jonas Karlman <jonas@kwiboo.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ devicetree@vger.kernel.org, Jeffrey Kardatzke <jkardatzke@chromium.org>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+On Thu, Mar 26, 2020 at 1:14 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
+>
+> Convert Rockchip VPU (Hantro IP block) codec driver documentation to
+> json-schema.
+>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Rob Herring <robh@kernel.org>
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> ---
+> v4:
+> * Fix issues pointed out by Rob,
+>   and make sure now dt_binding_check passes.
+>
+>  .../bindings/media/rockchip-vpu.txt           | 43 -----------
+>  .../bindings/media/rockchip-vpu.yaml          | 74 +++++++++++++++++++
+>  MAINTAINERS                                   |  2 +-
+>  3 files changed, 75 insertions(+), 44 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-vpu.yaml
 
-The device tree compiler complains that the dwc3 nodes have regs
-properties but no matching unit addresses.
-
-Add the unit addresses to the device node name. While at it, also rename
-the nodes from "dwc3" to "usb", as guidelines require device nodes have
-generic names.
-
-Fixes: 7144224f2c2b ("arm64: dts: rockchip: support dwc3 USB for rk3399")
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
-
-dtc also complains about the usbdrd3 nodes not having regs properties
-despite having unit addresses. What can we do about those?
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 3499d1497127..90c27723cec5 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -403,7 +403,7 @@ usbdrd3_0: usb@fe800000 {
- 		reset-names = "usb3-otg";
- 		status = "disabled";
- 
--		usbdrd_dwc3_0: dwc3 {
-+		usbdrd_dwc3_0: usb@fe800000 {
- 			compatible = "snps,dwc3";
- 			reg = <0x0 0xfe800000 0x0 0x100000>;
- 			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
-@@ -439,7 +439,7 @@ usbdrd3_1: usb@fe900000 {
- 		reset-names = "usb3-otg";
- 		status = "disabled";
- 
--		usbdrd_dwc3_1: dwc3 {
-+		usbdrd_dwc3_1: usb@fe900000 {
- 			compatible = "snps,dwc3";
- 			reg = <0x0 0xfe900000 0x0 0x100000>;
- 			interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
--- 
-2.25.1
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
