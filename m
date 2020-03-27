@@ -2,52 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40EB7194F77
-	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 04:05:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C29FF194F80
+	for <lists+linux-rockchip@lfdr.de>; Fri, 27 Mar 2020 04:06:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OELzVjHGgppBbOJxULEuTwB1JqSVI5DxfhuH1PYzz8s=; b=hAqmLkhcMuO5tf
-	HgC6dyKbwpqZrRCMFvOgsPx3OYZ8SPD8RA676KWcnUlKKu8hWtd1vpL/yk3Sbmpylkvp83JkR24vx
-	EPjy3260lWcOUmXVgf5Td0xJL/MpkEqW4x+XAzZaUt+En9IM7g933tjppiwS/IqokboUpuqpJF2Us
-	Yw5o6wCO5fSv42qKWCF3r4iQw34HLkUsGPegw8mNPCCNDEHyWqScaPHr4kA8XupDDwURWMMzLFanE
-	5uAFhHk7pkJSONvVjk381aHeqlYpq7KmLKoV6BmnhdW2l7WI1Pz6XbwHKfGDlRP0hkx5mlhbVcZgd
-	ty3i3GQ/WPR+SvvTeZAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vgdYzp74T959lFoSepn0SCGYrdrNBrGBek6iBJfOeEg=; b=ZZ/4QfvY5KqODB
+	gMkxHFZGJrTnXkbA1Wl6jDg+ZZVRmdgqdnpy5xd94kafGJSPVWH8SkQjQzB6yJ+Dzd0RkXtt771Mj
+	xdTPHIdRN51D8/1irLbWGfmixazxC5smjeGbN1I4uMqu/Y9EmBqvZO7+9jgHoi3yh1aNani7F+s0x
+	QOQuIgUJeXKYxllBGbI5c4npOXNIgrfUpeXwZcwf/gP65q907vXJ1C9gqdnYmPZUbz9OlEteBrwxa
+	1pv/LQv/Ohy1FXo3bPtd+7y4LAJ84AxZtnOTzO+3tUrmmG5qRjIDN3NTsYufxP3ypGRDMtFhfr6Gf
+	FMN7vTwW603LfveGEtNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHfJ7-00054c-JM; Fri, 27 Mar 2020 03:05:17 +0000
+	id 1jHfJn-0006eW-ON; Fri, 27 Mar 2020 03:05:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHfIN-0004A0-W3; Fri, 27 Mar 2020 03:04:33 +0000
+ id 1jHfIO-0004A2-2w; Fri, 27 Mar 2020 03:04:34 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EC95620787;
- Fri, 27 Mar 2020 03:04:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3AA86208E4;
+ Fri, 27 Mar 2020 03:04:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1585278271;
- bh=6y12TvNjGQ59pOhao3h7PXzCpe1LrErO1ZETO+Q38/8=;
- h=From:To:Cc:Subject:Date:From;
- b=oBVc4pwmUnHocEPPHYmexfW8XvqTWf1SifihhT9bbCZczSyCXwKHOQHMC5zApG36V
- hVen6Haxaoaqede+i3aptmdkwJ+AswxVxjx3RPGV7dkki4mCp/VNYC5SIR7ZnDGVLQ
- +RQ8lPAlVwa0aUVtnvN8d4xLxegjP1JIMWsQqizo=
+ bh=WXqxkgQ1ud/hiEzSNH14Fo3ArHlfptlNHM75xEEiT1Y=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=EVCsOvyapeqvkz2F2L7G6l7j024IAawq2lRTvlyHOyFOzqq/s9SzOsin71Oq4pCDy
+ 8ADjdoyaRtv+OBPEvLLsG0nIwgZUzVC/gkcksm12eFG1EpC0tdi2o9xxbkoYc3x6VK
+ 4bNYSxbnvZq/Ee797B0wJzOFUTBrU+7TGYaO0Xlo=
 Received: by wens.tw (Postfix, from userid 1000)
- id 2E8525FD2A; Fri, 27 Mar 2020 11:04:26 +0800 (CST)
+ id 3B3905FBBF; Fri, 27 Mar 2020 11:04:26 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 0/6] arm64: dts: rockchip: misc. cleanups
-Date: Fri, 27 Mar 2020 11:04:08 +0800
-Message-Id: <20200327030414.5903-1-wens@kernel.org>
+Subject: [PATCH 1/6] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC numbering
+ for LED triggers
+Date: Fri, 27 Mar 2020 11:04:09 +0800
+Message-Id: <20200327030414.5903-2-wens@kernel.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200327030414.5903-1-wens@kernel.org>
+References: <20200327030414.5903-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_200432_055138_9676AA86 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200326_200432_164510_C5F2231B 
+X-CRM114-Status: GOOD (  12.69  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,47 +88,62 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-Hi,
+With SDIO now enabled, the numbering of the existing MMC host controllers
+gets incremented by 1, as the SDIO host is the first one.
 
-Here are a bunch of cleanups for rk3399 and rk3328.
+Increment the numbering of the MMC LED triggers to match.
 
-  - Some dtc warnings were silenced, however a few still remain.
-    Found those while making device tree overlays
+Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-  - Replaced some hardware specific device node names, such as dwc3
-    and rk808, with generic names
-
-  - Fixed MMC numbering for roc-rk3399-pc with mezzanine
-
-The series is based on linux-next 2020-03-24. For some reason 2020-03-26
-doesn't boot.
-
-Please have a look.
-
-Regards
-ChenYu
-
-Chen-Yu Tsai (6):
-  arm64: dts: rockchip: rk3399-roc-pc: Fix MMC numbering for LED
-    triggers
-  arm64: dts: rockchip: rk3328: Replace RK805 PMIC node name with "pmic"
-  arm64: dts: rockchip: rk3328: drop non-existent gmac2phy pinmux
-    options
-  arm64: dts: rockchip: rk3328: drop #address-cells, #size-cells from
-    grf node
-  arm64: dts: rockchip: rk3399: drop #address-cells, #size-cells from
-    pmugrf node
-  arm64: dts: rockchip: rk3399: Rename dwc3 device nodes to make dtc
-    happy
-
- arch/arm64/boot/dts/rockchip/rk3328-evb.dts    |  2 +-
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts |  2 +-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi       | 18 ------------------
- .../dts/rockchip/rk3399-roc-pc-mezzanine.dts   |  8 ++++++++
- .../arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3399.dtsi       |  6 ++----
- 6 files changed, 14 insertions(+), 26 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+index 2acb3d500fb9..f0686fc276be 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+@@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
+ 	};
+ };
+ 
++&diy_led {
++	linux,default-trigger = "mmc2";
++};
++
+ &pcie_phy {
+ 	status = "okay";
+ };
+@@ -91,3 +95,7 @@ &uart0 {
+ 	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+ 	status = "okay";
+ };
++
++&yellow_led {
++	linux,default-trigger = "mmc1";
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index 9f225e9c3d54..bc060ac7972d 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -70,14 +70,14 @@ work-led {
+ 			linux,default-trigger = "heartbeat";
+ 		};
+ 
+-		diy-led {
++		diy_led: diy-led {
+ 			label = "red:diy";
+ 			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
+ 			default-state = "off";
+ 			linux,default-trigger = "mmc1";
+ 		};
+ 
+-		yellow-led {
++		yellow_led: yellow-led {
+ 			label = "yellow:yellow-led";
+ 			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+ 			default-state = "off";
 -- 
 2.25.1
 
