@@ -2,88 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD7C819648C
-	for <lists+linux-rockchip@lfdr.de>; Sat, 28 Mar 2020 09:40:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D2C5196491
+	for <lists+linux-rockchip@lfdr.de>; Sat, 28 Mar 2020 09:49:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pnvc+kBDJNvA0esp1NfVUKIG8iqLSaZaczlT9FNdnFY=; b=pq8gdza+y/A7OB
-	LoRXdFNETusynXIAClVRSIGk/dcSRp5+2twObRYM8hZICIdz4t+xFV18SlZpULe2hiG2IiS0kHt1q
-	+akBYO4Mn2dh+nlTWhynqYT741dcEoAJV5VE6WtXs0JNY208i5D5l+RtuHdzurd9Sg1DL+jhNjp2P
-	ZIzEAbrm72VfUFj2WHOpLFmQt8r/FhaHKbwyNtE4IO1DQgroSYQEPCdFWy6i4svvMqHSbnGUpAQmt
-	qICDp8roB78gF0vSPVSqHMJ24vKf3zRIxHvHxw6Wzrl0LmgC+J9+miChKfpf0G11pYcb9mvhq3nP/
-	7bJkWgnZpPfJSOJNK7SA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7nzOPmvI+DXZkhwDCAEsfC0FZbDk0Z7wSBp7bVIAJ0Q=; b=NE63icN60dFGoT
+	rs8awZRDib5stnWQ2/Rcu4QPaTR6SQ3VbBOsmn+zoZZ4NEO38SX7vX2lVGfvMqCjKVL0Ky5vObQ/J
+	r+VqGB3Px3fc5aExPkAgheojd/FM/DoS0Zct91NQy0wx1to6KMoORWo5nGYSxvaMkyLxYw+EIgy6x
+	5FofxWhmG2wpZ3kHAxvq1vHonS/qVnqI5bVIALQs2rlU72dGRrrcTnKNwPDu0m/UqE36GIJgd5gjb
+	75Yh6+giLSCYDJJaAtM0rY62QAFiG3atI9E/pe+9x0tPJR+K6AJ46h5blXh5Wvv+NWDd1zCYwEsOi
+	0CZQcN4IYj02lpBlPnEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jI71F-0000bZ-PV; Sat, 28 Mar 2020 08:40:41 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jI79q-0003QY-0B; Sat, 28 Mar 2020 08:49:34 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jI71A-0000Zy-1T; Sat, 28 Mar 2020 08:40:38 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a81so15237559wmf.5;
- Sat, 28 Mar 2020 01:40:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RK5s9y0N/tIoE2e9Nu4p4mT+71t0juiExgh22pBU+98=;
- b=ui+Z8l4WJe4BvZxZml5akIQYEC78KGxcL1a2TzQIC9JVB8fpHFTgbeSZ8YIrardZ9F
- myqH0bMw/j19BfKdYkMrNvjPpDkQLLNsvtpNtd/1hmDMgzTiDSSVKhKrqbH9x9XUadmf
- VGm6FvtTQ2pYuTzdrPk5q6f0Km0mlbRCsswMsda3LHs5v1jyx12X7wTt8qJXDz41ksOz
- QlyL/XWFpZGAaB/ihgYNPKo2ypqIARYYEPxAhA4T4/uTUZrsjpJPIsMROpdnej0jWpVx
- kZEyeaCXv5rSO5gA4x/mv26EqhSuQQ801KFq9JKa8FDgnDLw1f2CIad4LJnZQwd7OZgP
- mGew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RK5s9y0N/tIoE2e9Nu4p4mT+71t0juiExgh22pBU+98=;
- b=R/ykoR0bFdNTZw0oQDFUszHcaYK+/eXTJXJR8R1GJmbZk1t5cW5eIydguiA8MnYQJS
- wlfelYh/6Krul3rykVBC/vciX06f1QiVjjkcM5aJ+1rPRad0xYgyk1moiDCYR0yl2/rj
- thz10ffR4GZfjp8A/KQvJAuqM1x/2b8lGlkDVR6hBJG+pPLhQbA+epc0OrFoqwLa91TD
- D7r1rWWNfghJTxFLzcpodHF44IXxVsx+HAWsnG2OddKI6jMP/h/W3F335n3lG7lsVbs4
- nISqV/6mveB7sMKEGzJDOnyOoxOvPpT5ZOPUv3yq77WqYPM8fRv7RbpecPUarSWCKx75
- 5vDA==
-X-Gm-Message-State: ANhLgQ2q7FzgoVuXuOMJEGaCic1mC0k1yphKvpADSnyUbWUorh6lYT0U
- lTLoD5FLpsT0pX5EDq6clkWuhwFRMvbpsFMui/8=
-X-Google-Smtp-Source: ADFU+vsicfc1dNbYJP/jM1ucMn5obaoJFz9J4TUIiwcm50bPBRxigcDF/AAYhIcjZ8kjGoIyjw9okgb179Mnj6ctTCU=
-X-Received: by 2002:a7b:c8d0:: with SMTP id f16mr2900723wml.50.1585384833051; 
- Sat, 28 Mar 2020 01:40:33 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200319203427.2259891-1-martin.blumenstingl@googlemail.com>
- <20200319203427.2259891-3-martin.blumenstingl@googlemail.com>
- <CAKGbVbtKqdCEcawkjG=7TRd30df6GJ+gagV_JegntyqRpzC4cg@mail.gmail.com>
-In-Reply-To: <CAKGbVbtKqdCEcawkjG=7TRd30df6GJ+gagV_JegntyqRpzC4cg@mail.gmail.com>
-From: Qiang Yu <yuq825@gmail.com>
-Date: Sat, 28 Mar 2020 16:40:21 +0800
-Message-ID: <CAKGbVbvAvk0L5sGQmuqfxeL6AwtVnSsYyCp6YBYV6ZHKepWBXg@mail.gmail.com>
-Subject: Re: [PATCH v4 2/2] drm/lima: Add optional devfreq and cooling device
- support
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+ id 1jI79k-0003Pj-Tt
+ for linux-rockchip@lists.infradead.org; Sat, 28 Mar 2020 08:49:31 +0000
+Received: from localhost.localdomain (unknown
+ [IPv6:2a02:810a:1140:6758:90b5:2774:1094:333f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: dafna)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 06955296854;
+ Sat, 28 Mar 2020 08:49:22 +0000 (GMT)
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org, dafna.hirschfeld@collabora.com,
+ helen.koike@collabora.com, ezequiel@collabora.com, hverkuil@xs4all.nl,
+ kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com,
+ linux-rockchip@lists.infradead.org, mchehab@kernel.org,
+ laurent.pinchart@ideasonboard.com
+Subject: [PATCH] media: staging: rkisp1: cap: remove field fmt_type from
+ struct rkisp1_capture_fmt_cfg
+Date: Sat, 28 Mar 2020 09:49:15 +0100
+Message-Id: <20200328084915.21398-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_014036_113116_3A43EF85 
-X-CRM114-Status: GOOD (  27.55  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200328_014929_231844_D905F166 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [yuq825[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yuq825[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,528 +64,313 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- linux-pm@vger.kernel.org, David Airlie <airlied@linux.ie>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Applied to drm-misc-next.
+The pixel encoding can be retrieved from the cap->pix.info.
+Therefore the field fmt_type can be removed from the
+struct rkisp1_capture_fmt_cfg.
 
-On Sun, Mar 22, 2020 at 10:24 AM Qiang Yu <yuq825@gmail.com> wrote:
->
-> Looks good for me, patch is:
-> Reviewed-by: Qiang Yu <yuq825@gmail.com>
->
-> Regards,
-> Qiang
->
-> On Fri, Mar 20, 2020 at 4:35 AM Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > Most platforms with a Mali-400 or Mali-450 GPU also have support for
-> > changing the GPU clock frequency. Add devfreq support so the GPU clock
-> > rate is updated based on the actual GPU usage when the
-> > "operating-points-v2" property is present in the board.dts.
-> >
-> > The actual devfreq code is taken from panfrost_devfreq.c and modified so
-> > it matches what the lima hardware needs:
-> > - a call to dev_pm_opp_set_clkname() during initialization because there
-> >   are two clocks on Mali-4x0 IPs. "core" is the one that actually clocks
-> >   the GPU so we need to control it using devfreq.
-> > - locking when reading or writing the devfreq statistics because (unlike
-> >   than panfrost) we have multiple PP and GP IRQs which may finish jobs
-> >   concurrently.
-> >
-> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> > ---
-> >  drivers/gpu/drm/lima/Kconfig        |   2 +
-> >  drivers/gpu/drm/lima/Makefile       |   3 +-
-> >  drivers/gpu/drm/lima/lima_devfreq.c | 234 ++++++++++++++++++++++++++++
-> >  drivers/gpu/drm/lima/lima_devfreq.h |  41 +++++
-> >  drivers/gpu/drm/lima/lima_device.c  |   4 +
-> >  drivers/gpu/drm/lima/lima_device.h  |   3 +
-> >  drivers/gpu/drm/lima/lima_drv.c     |  14 +-
-> >  drivers/gpu/drm/lima/lima_sched.c   |   7 +
-> >  drivers/gpu/drm/lima/lima_sched.h   |   3 +
-> >  9 files changed, 308 insertions(+), 3 deletions(-)
-> >  create mode 100644 drivers/gpu/drm/lima/lima_devfreq.c
-> >  create mode 100644 drivers/gpu/drm/lima/lima_devfreq.h
-> >
-> > diff --git a/drivers/gpu/drm/lima/Kconfig b/drivers/gpu/drm/lima/Kconfig
-> > index d589f09d04d9..fa1d4f5df31e 100644
-> > --- a/drivers/gpu/drm/lima/Kconfig
-> > +++ b/drivers/gpu/drm/lima/Kconfig
-> > @@ -10,5 +10,7 @@ config DRM_LIMA
-> >         depends on OF
-> >         select DRM_SCHED
-> >         select DRM_GEM_SHMEM_HELPER
-> > +       select PM_DEVFREQ
-> > +       select DEVFREQ_GOV_SIMPLE_ONDEMAND
-> >         help
-> >          DRM driver for ARM Mali 400/450 GPUs.
-> > diff --git a/drivers/gpu/drm/lima/Makefile b/drivers/gpu/drm/lima/Makefile
-> > index a85444b0a1d4..5e5c29875e9c 100644
-> > --- a/drivers/gpu/drm/lima/Makefile
-> > +++ b/drivers/gpu/drm/lima/Makefile
-> > @@ -14,6 +14,7 @@ lima-y := \
-> >         lima_sched.o \
-> >         lima_ctx.o \
-> >         lima_dlbu.o \
-> > -       lima_bcast.o
-> > +       lima_bcast.o \
-> > +       lima_devfreq.o
-> >
-> >  obj-$(CONFIG_DRM_LIMA) += lima.o
-> > diff --git a/drivers/gpu/drm/lima/lima_devfreq.c b/drivers/gpu/drm/lima/lima_devfreq.c
-> > new file mode 100644
-> > index 000000000000..8c4d21d07529
-> > --- /dev/null
-> > +++ b/drivers/gpu/drm/lima/lima_devfreq.c
-> > @@ -0,0 +1,234 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright 2020 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> > + *
-> > + * Based on panfrost_devfreq.c:
-> > + *   Copyright 2019 Collabora ltd.
-> > + */
-> > +#include <linux/clk.h>
-> > +#include <linux/devfreq.h>
-> > +#include <linux/devfreq_cooling.h>
-> > +#include <linux/device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/pm_opp.h>
-> > +#include <linux/property.h>
-> > +
-> > +#include "lima_device.h"
-> > +#include "lima_devfreq.h"
-> > +
-> > +static void lima_devfreq_update_utilization(struct lima_devfreq *devfreq)
-> > +{
-> > +       ktime_t now, last;
-> > +
-> > +       now = ktime_get();
-> > +       last = devfreq->time_last_update;
-> > +
-> > +       if (devfreq->busy_count > 0)
-> > +               devfreq->busy_time += ktime_sub(now, last);
-> > +       else
-> > +               devfreq->idle_time += ktime_sub(now, last);
-> > +
-> > +       devfreq->time_last_update = now;
-> > +}
-> > +
-> > +static int lima_devfreq_target(struct device *dev, unsigned long *freq,
-> > +                              u32 flags)
-> > +{
-> > +       struct dev_pm_opp *opp;
-> > +       int err;
-> > +
-> > +       opp = devfreq_recommended_opp(dev, freq, flags);
-> > +       if (IS_ERR(opp))
-> > +               return PTR_ERR(opp);
-> > +       dev_pm_opp_put(opp);
-> > +
-> > +       err = dev_pm_opp_set_rate(dev, *freq);
-> > +       if (err)
-> > +               return err;
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static void lima_devfreq_reset(struct lima_devfreq *devfreq)
-> > +{
-> > +       devfreq->busy_time = 0;
-> > +       devfreq->idle_time = 0;
-> > +       devfreq->time_last_update = ktime_get();
-> > +}
-> > +
-> > +static int lima_devfreq_get_dev_status(struct device *dev,
-> > +                                      struct devfreq_dev_status *status)
-> > +{
-> > +       struct lima_device *ldev = dev_get_drvdata(dev);
-> > +       struct lima_devfreq *devfreq = &ldev->devfreq;
-> > +       unsigned long irqflags;
-> > +
-> > +       status->current_frequency = clk_get_rate(ldev->clk_gpu);
-> > +
-> > +       spin_lock_irqsave(&devfreq->lock, irqflags);
-> > +
-> > +       lima_devfreq_update_utilization(devfreq);
-> > +
-> > +       status->total_time = ktime_to_ns(ktime_add(devfreq->busy_time,
-> > +                                                  devfreq->idle_time));
-> > +       status->busy_time = ktime_to_ns(devfreq->busy_time);
-> > +
-> > +       lima_devfreq_reset(devfreq);
-> > +
-> > +       spin_unlock_irqrestore(&devfreq->lock, irqflags);
-> > +
-> > +       dev_dbg(ldev->dev, "busy %lu total %lu %lu %% freq %lu MHz\n",
-> > +               status->busy_time, status->total_time,
-> > +               status->busy_time / (status->total_time / 100),
-> > +               status->current_frequency / 1000 / 1000);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static struct devfreq_dev_profile lima_devfreq_profile = {
-> > +       .polling_ms = 50, /* ~3 frames */
-> > +       .target = lima_devfreq_target,
-> > +       .get_dev_status = lima_devfreq_get_dev_status,
-> > +};
-> > +
-> > +void lima_devfreq_fini(struct lima_device *ldev)
-> > +{
-> > +       struct lima_devfreq *devfreq = &ldev->devfreq;
-> > +
-> > +       if (devfreq->cooling) {
-> > +               devfreq_cooling_unregister(devfreq->cooling);
-> > +               devfreq->cooling = NULL;
-> > +       }
-> > +
-> > +       if (devfreq->devfreq) {
-> > +               devm_devfreq_remove_device(&ldev->pdev->dev,
-> > +                                          devfreq->devfreq);
-> > +               devfreq->devfreq = NULL;
-> > +       }
-> > +
-> > +       if (devfreq->opp_of_table_added) {
-> > +               dev_pm_opp_of_remove_table(&ldev->pdev->dev);
-> > +               devfreq->opp_of_table_added = false;
-> > +       }
-> > +
-> > +       if (devfreq->regulators_opp_table) {
-> > +               dev_pm_opp_put_regulators(devfreq->regulators_opp_table);
-> > +               devfreq->regulators_opp_table = NULL;
-> > +       }
-> > +
-> > +       if (devfreq->clkname_opp_table) {
-> > +               dev_pm_opp_put_clkname(devfreq->clkname_opp_table);
-> > +               devfreq->clkname_opp_table = NULL;
-> > +       }
-> > +}
-> > +
-> > +int lima_devfreq_init(struct lima_device *ldev)
-> > +{
-> > +       struct thermal_cooling_device *cooling;
-> > +       struct device *dev = &ldev->pdev->dev;
-> > +       struct opp_table *opp_table;
-> > +       struct devfreq *devfreq;
-> > +       struct lima_devfreq *ldevfreq = &ldev->devfreq;
-> > +       struct dev_pm_opp *opp;
-> > +       unsigned long cur_freq;
-> > +       int ret;
-> > +
-> > +       if (!device_property_present(dev, "operating-points-v2"))
-> > +               /* Optional, continue without devfreq */
-> > +               return 0;
-> > +
-> > +       spin_lock_init(&ldevfreq->lock);
-> > +
-> > +       opp_table = dev_pm_opp_set_clkname(dev, "core");
-> > +       if (IS_ERR(opp_table)) {
-> > +               ret = PTR_ERR(opp_table);
-> > +               goto err_fini;
-> > +       }
-> > +
-> > +       ldevfreq->clkname_opp_table = opp_table;
-> > +
-> > +       opp_table = dev_pm_opp_set_regulators(dev,
-> > +                                             (const char *[]){ "mali" },
-> > +                                             1);
-> > +       if (IS_ERR(opp_table)) {
-> > +               ret = PTR_ERR(opp_table);
-> > +
-> > +               /* Continue if the optional regulator is missing */
-> > +               if (ret != -ENODEV)
-> > +                       goto err_fini;
-> > +       } else {
-> > +               ldevfreq->regulators_opp_table = opp_table;
-> > +       }
-> > +
-> > +       ret = dev_pm_opp_of_add_table(dev);
-> > +       if (ret)
-> > +               goto err_fini;
-> > +       ldevfreq->opp_of_table_added = true;
-> > +
-> > +       lima_devfreq_reset(ldevfreq);
-> > +
-> > +       cur_freq = clk_get_rate(ldev->clk_gpu);
-> > +
-> > +       opp = devfreq_recommended_opp(dev, &cur_freq, 0);
-> > +       if (IS_ERR(opp)) {
-> > +               ret = PTR_ERR(opp);
-> > +               goto err_fini;
-> > +       }
-> > +
-> > +       lima_devfreq_profile.initial_freq = cur_freq;
-> > +       dev_pm_opp_put(opp);
-> > +
-> > +       devfreq = devm_devfreq_add_device(dev, &lima_devfreq_profile,
-> > +                                         DEVFREQ_GOV_SIMPLE_ONDEMAND, NULL);
-> > +       if (IS_ERR(devfreq)) {
-> > +               dev_err(dev, "Couldn't initialize GPU devfreq\n");
-> > +               ret = PTR_ERR(devfreq);
-> > +               goto err_fini;
-> > +       }
-> > +
-> > +       ldevfreq->devfreq = devfreq;
-> > +
-> > +       cooling = of_devfreq_cooling_register(dev->of_node, devfreq);
-> > +       if (IS_ERR(cooling))
-> > +               dev_info(dev, "Failed to register cooling device\n");
-> > +       else
-> > +               ldevfreq->cooling = cooling;
-> > +
-> > +       return 0;
-> > +
-> > +err_fini:
-> > +       lima_devfreq_fini(ldev);
-> > +       return ret;
-> > +}
-> > +
-> > +void lima_devfreq_record_busy(struct lima_devfreq *devfreq)
-> > +{
-> > +       unsigned long irqflags;
-> > +
-> > +       if (!devfreq->devfreq)
-> > +               return;
-> > +
-> > +       spin_lock_irqsave(&devfreq->lock, irqflags);
-> > +
-> > +       lima_devfreq_update_utilization(devfreq);
-> > +
-> > +       devfreq->busy_count++;
-> > +
-> > +       spin_unlock_irqrestore(&devfreq->lock, irqflags);
-> > +}
-> > +
-> > +void lima_devfreq_record_idle(struct lima_devfreq *devfreq)
-> > +{
-> > +       unsigned long irqflags;
-> > +
-> > +       if (!devfreq->devfreq)
-> > +               return;
-> > +
-> > +       spin_lock_irqsave(&devfreq->lock, irqflags);
-> > +
-> > +       lima_devfreq_update_utilization(devfreq);
-> > +
-> > +       WARN_ON(--devfreq->busy_count < 0);
-> > +
-> > +       spin_unlock_irqrestore(&devfreq->lock, irqflags);
-> > +}
-> > diff --git a/drivers/gpu/drm/lima/lima_devfreq.h b/drivers/gpu/drm/lima/lima_devfreq.h
-> > new file mode 100644
-> > index 000000000000..8d71ba9fb22a
-> > --- /dev/null
-> > +++ b/drivers/gpu/drm/lima/lima_devfreq.h
-> > @@ -0,0 +1,41 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/* Copyright 2020 Martin Blumenstingl <martin.blumenstingl@googlemail.com> */
-> > +
-> > +#ifndef __LIMA_DEVFREQ_H__
-> > +#define __LIMA_DEVFREQ_H__
-> > +
-> > +#include <linux/spinlock.h>
-> > +#include <linux/ktime.h>
-> > +
-> > +struct devfreq;
-> > +struct opp_table;
-> > +struct thermal_cooling_device;
-> > +
-> > +struct lima_device;
-> > +
-> > +struct lima_devfreq {
-> > +       struct devfreq *devfreq;
-> > +       struct opp_table *clkname_opp_table;
-> > +       struct opp_table *regulators_opp_table;
-> > +       struct thermal_cooling_device *cooling;
-> > +       bool opp_of_table_added;
-> > +
-> > +       ktime_t busy_time;
-> > +       ktime_t idle_time;
-> > +       ktime_t time_last_update;
-> > +       int busy_count;
-> > +       /*
-> > +        * Protect busy_time, idle_time, time_last_update and busy_count
-> > +        * because these can be updated concurrently, for example by the GP
-> > +        * and PP interrupts.
-> > +        */
-> > +       spinlock_t lock;
-> > +};
-> > +
-> > +int lima_devfreq_init(struct lima_device *ldev);
-> > +void lima_devfreq_fini(struct lima_device *ldev);
-> > +
-> > +void lima_devfreq_record_busy(struct lima_devfreq *devfreq);
-> > +void lima_devfreq_record_idle(struct lima_devfreq *devfreq);
-> > +
-> > +#endif
-> > diff --git a/drivers/gpu/drm/lima/lima_device.c b/drivers/gpu/drm/lima/lima_device.c
-> > index 19829b543024..7f1f7a1c03e5 100644
-> > --- a/drivers/gpu/drm/lima/lima_device.c
-> > +++ b/drivers/gpu/drm/lima/lima_device.c
-> > @@ -214,6 +214,8 @@ static int lima_init_gp_pipe(struct lima_device *dev)
-> >         struct lima_sched_pipe *pipe = dev->pipe + lima_pipe_gp;
-> >         int err;
-> >
-> > +       pipe->ldev = dev;
-> > +
-> >         err = lima_sched_pipe_init(pipe, "gp");
-> >         if (err)
-> >                 return err;
-> > @@ -244,6 +246,8 @@ static int lima_init_pp_pipe(struct lima_device *dev)
-> >         struct lima_sched_pipe *pipe = dev->pipe + lima_pipe_pp;
-> >         int err, i;
-> >
-> > +       pipe->ldev = dev;
-> > +
-> >         err = lima_sched_pipe_init(pipe, "pp");
-> >         if (err)
-> >                 return err;
-> > diff --git a/drivers/gpu/drm/lima/lima_device.h b/drivers/gpu/drm/lima/lima_device.h
-> > index 31158d86271c..d6c0f8b8f7e8 100644
-> > --- a/drivers/gpu/drm/lima/lima_device.h
-> > +++ b/drivers/gpu/drm/lima/lima_device.h
-> > @@ -8,6 +8,7 @@
-> >  #include <linux/delay.h>
-> >
-> >  #include "lima_sched.h"
-> > +#include "lima_devfreq.h"
-> >
-> >  enum lima_gpu_id {
-> >         lima_gpu_mali400 = 0,
-> > @@ -94,6 +95,8 @@ struct lima_device {
-> >
-> >         u32 *dlbu_cpu;
-> >         dma_addr_t dlbu_dma;
-> > +
-> > +       struct lima_devfreq devfreq;
-> >  };
-> >
-> >  static inline struct lima_device *
-> > diff --git a/drivers/gpu/drm/lima/lima_drv.c b/drivers/gpu/drm/lima/lima_drv.c
-> > index 2daac64d8955..d9f64e52ae9e 100644
-> > --- a/drivers/gpu/drm/lima/lima_drv.c
-> > +++ b/drivers/gpu/drm/lima/lima_drv.c
-> > @@ -10,6 +10,7 @@
-> >  #include <drm/drm_prime.h>
-> >  #include <drm/lima_drm.h>
-> >
-> > +#include "lima_device.h"
-> >  #include "lima_drv.h"
-> >  #include "lima_gem.h"
-> >  #include "lima_vm.h"
-> > @@ -306,18 +307,26 @@ static int lima_pdev_probe(struct platform_device *pdev)
-> >         if (err)
-> >                 goto err_out1;
-> >
-> > +       err = lima_devfreq_init(ldev);
-> > +       if (err) {
-> > +               dev_err(&pdev->dev, "Fatal error during devfreq init\n");
-> > +               goto err_out2;
-> > +       }
-> > +
-> >         /*
-> >          * Register the DRM device with the core and the connectors with
-> >          * sysfs.
-> >          */
-> >         err = drm_dev_register(ddev, 0);
-> >         if (err < 0)
-> > -               goto err_out2;
-> > +               goto err_out3;
-> >
-> >         return 0;
-> >
-> > -err_out2:
-> > +err_out3:
-> >         lima_device_fini(ldev);
-> > +err_out2:
-> > +       lima_devfreq_fini(ldev);
-> >  err_out1:
-> >         drm_dev_put(ddev);
-> >  err_out0:
-> > @@ -331,6 +340,7 @@ static int lima_pdev_remove(struct platform_device *pdev)
-> >         struct drm_device *ddev = ldev->ddev;
-> >
-> >         drm_dev_unregister(ddev);
-> > +       lima_devfreq_fini(ldev);
-> >         lima_device_fini(ldev);
-> >         drm_dev_put(ddev);
-> >         lima_sched_slab_fini();
-> > diff --git a/drivers/gpu/drm/lima/lima_sched.c b/drivers/gpu/drm/lima/lima_sched.c
-> > index 3886999b4533..d937d626b892 100644
-> > --- a/drivers/gpu/drm/lima/lima_sched.c
-> > +++ b/drivers/gpu/drm/lima/lima_sched.c
-> > @@ -5,6 +5,7 @@
-> >  #include <linux/slab.h>
-> >  #include <linux/xarray.h>
-> >
-> > +#include "lima_devfreq.h"
-> >  #include "lima_drv.h"
-> >  #include "lima_sched.h"
-> >  #include "lima_vm.h"
-> > @@ -214,6 +215,8 @@ static struct dma_fence *lima_sched_run_job(struct drm_sched_job *job)
-> >          */
-> >         ret = dma_fence_get(task->fence);
-> >
-> > +       lima_devfreq_record_busy(&pipe->ldev->devfreq);
-> > +
-> >         pipe->current_task = task;
-> >
-> >         /* this is needed for MMU to work correctly, otherwise GP/PP
-> > @@ -285,6 +288,8 @@ static void lima_sched_timedout_job(struct drm_sched_job *job)
-> >         pipe->current_vm = NULL;
-> >         pipe->current_task = NULL;
-> >
-> > +       lima_devfreq_record_idle(&pipe->ldev->devfreq);
-> > +
-> >         drm_sched_resubmit_jobs(&pipe->base);
-> >         drm_sched_start(&pipe->base, true);
-> >  }
-> > @@ -364,5 +369,7 @@ void lima_sched_pipe_task_done(struct lima_sched_pipe *pipe)
-> >         } else {
-> >                 pipe->task_fini(pipe);
-> >                 dma_fence_signal(task->fence);
-> > +
-> > +               lima_devfreq_record_idle(&pipe->ldev->devfreq);
-> >         }
-> >  }
-> > diff --git a/drivers/gpu/drm/lima/lima_sched.h b/drivers/gpu/drm/lima/lima_sched.h
-> > index d64393fb50a9..19bbc5214cf2 100644
-> > --- a/drivers/gpu/drm/lima/lima_sched.h
-> > +++ b/drivers/gpu/drm/lima/lima_sched.h
-> > @@ -6,6 +6,7 @@
-> >
-> >  #include <drm/gpu_scheduler.h>
-> >
-> > +struct lima_device;
-> >  struct lima_vm;
-> >
-> >  struct lima_sched_task {
-> > @@ -44,6 +45,8 @@ struct lima_sched_pipe {
-> >         u32 fence_seqno;
-> >         spinlock_t fence_lock;
-> >
-> > +       struct lima_device *ldev;
-> > +
-> >         struct lima_sched_task *current_task;
-> >         struct lima_vm *current_vm;
-> >
-> > --
-> > 2.25.2
-> >
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 62 +++++--------------
+ 1 file changed, 17 insertions(+), 45 deletions(-)
+
+diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+index 24fe6a7888aa..01e1ff5943f1 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-capture.c
++++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+@@ -52,7 +52,6 @@ enum rkisp1_plane {
+  */
+ struct rkisp1_capture_fmt_cfg {
+ 	u32 fourcc;
+-	u8 fmt_type;
+ 	u8 uv_swap;
+ 	u32 write_format;
+ 	u32 output_format;
+@@ -83,11 +82,24 @@ struct rkisp1_capture_config {
+ 	} mi;
+ };
+ 
++static enum rkisp1_fmt_pix_type
++rkisp1_pixel_enc_to_fmt_pix(const struct v4l2_format_info *f)
++{
++	switch (f->pixel_enc) {
++	case V4L2_PIXEL_ENC_RGB:
++		return RKISP1_FMT_RGB;
++	case V4L2_PIXEL_ENC_YUV:
++		return RKISP1_FMT_YUV;
++	case V4L2_PIXEL_ENC_BAYER:
++		return RKISP1_FMT_BAYER;
++	}
++	return V4L2_PIXEL_ENC_UNKNOWN;
++}
++
+ static const struct rkisp1_capture_fmt_cfg rkisp1_mp_fmts[] = {
+ 	/* yuv422 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_YUYV,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+ 	}, {
+@@ -101,119 +113,95 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_mp_fmts[] = {
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YUV422P,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV16,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV61,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YVU422M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	},
+ 	/* yuv420 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_NV21,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV12,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV21M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV12M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YUV420,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YVU420,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	},
+ 	/* yuv444 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_YUV444M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	},
+ 	/* yuv400 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_GREY,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+ 	},
+ 	/* raw */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_SRGGB8,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGRBG8,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGBRG8,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SBGGR8,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SRGGB10,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGRBG10,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGBRG10,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SBGGR10,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SRGGB12,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGRBG12,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SGBRG12,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_SBGGR12,
+-		.fmt_type = RKISP1_FMT_BAYER,
+ 		.write_format = RKISP1_MI_CTRL_MP_WRITE_RAW12,
+ 	},
+ };
+@@ -222,7 +210,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 	/* yuv422 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_YUYV,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+@@ -240,25 +227,21 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YUV422P,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV16,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV61,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YVU422M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+@@ -266,37 +249,31 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 	/* yuv420 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_NV21,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV12,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV21M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_NV12M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_SPLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YUV420,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_YVU420,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 1,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV420,
+@@ -304,7 +281,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 	/* yuv444 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_YUV444M,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV444,
+@@ -312,7 +288,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 	/* yuv400 */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_GREY,
+-		.fmt_type = RKISP1_FMT_YUV,
+ 		.uv_swap = 0,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV400,
+@@ -320,17 +295,14 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+ 	/* rgb */
+ 	{
+ 		.fourcc = V4L2_PIX_FMT_RGB24,
+-		.fmt_type = RKISP1_FMT_RGB,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB888,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_RGB565,
+-		.fmt_type = RKISP1_FMT_RGB,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB565,
+ 	}, {
+ 		.fourcc = V4L2_PIX_FMT_BGR666,
+-		.fmt_type = RKISP1_FMT_RGB,
+ 		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+ 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB666,
+ 	},
+@@ -504,13 +476,12 @@ static void rkisp1_sp_disable(struct rkisp1_capture *cap)
+ 
+ static void rkisp1_mp_enable(struct rkisp1_capture *cap)
+ {
+-	const struct rkisp1_capture_fmt_cfg *isp_fmt = cap->pix.cfg;
+ 	u32 mi_ctrl;
+ 
+ 	rkisp1_mp_disable(cap);
+ 
+ 	mi_ctrl = rkisp1_read(cap->rkisp1, RKISP1_CIF_MI_CTRL);
+-	if (isp_fmt->fmt_type == RKISP1_FMT_BAYER)
++	if (v4l2_is_format_bayer(cap->pix.info))
+ 		mi_ctrl |= RKISP1_CIF_MI_CTRL_RAW_ENABLE;
+ 	/* YUV */
+ 	else
+@@ -1260,7 +1231,8 @@ static int rkisp1_capture_link_validate(struct media_link *link)
+ 		return -EPIPE;
+ 	}
+ 
+-	if (cap->pix.cfg->fmt_type != isp->src_fmt->fmt_type) {
++	if (rkisp1_pixel_enc_to_fmt_pix(cap->pix.info) !=
++	    isp->src_fmt->fmt_type) {
+ 		dev_err(cap->rkisp1->dev,
+ 			"format type mismatch in link '%s:%d->%s:%d'\n",
+ 			link->source->entity->name, link->source->index,
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
