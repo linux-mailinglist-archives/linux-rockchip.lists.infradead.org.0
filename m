@@ -2,47 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CA4C198347
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 20:22:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0181983F8
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 21:11:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2vKFJgP/NvqKzpA3bZtSoJ/v49CobbOGPre+hVClzKg=; b=g8DXsrtlqEN4pV
-	aTwxodIngWKiUDI73a0MtgGJUoxZ2pAv60ynF3TEb2z2qhB0QuoDRNYXbEshmXd1p4XsEd1GBFguJ
-	dEzOfbshV1uUCPzmNVTkUzHb+lRZxTn1uXQ+8XOVfWeY0x+eh0oMEkTQWpBaZTrZQZgJk8DvWN5Wh
-	K9RPuRzN1GXu30I8FowwWhTCFHUFGnsneQR+AAbia7UYCezP3M4KMsCIWIJTayeRj6b+EmHJsxEPO
-	LT/gvThp+Qgsw9vUlVfXO3Jhevh/9cXWQ6sHzRLXm2svXRVdlzawS+BRzSZxK+wd+xwSqDa360U3V
-	/2dgno72DeLg0gk7hRRA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HRW8TJ2QVnNkgHKnW0PxnU57OY9qm22oX8WGQTX1XgI=; b=NENBgQ+rIGdBesjorVohz0HXOV
+	2x54/rQD1bpOpDSPdHX851dbqTFU00xO2YZ4Mp1WvyUBeXQRLXsYmLul+U27r1qSHFG62ZJdy4QqA
+	7yeZtRGmWBsDBV/5B2CIIi0nwxN3DDqDV3TOKcKFK1k4uj4JqP03E/6azGtBAIs6ikpDMA+n10OnR
+	lK85L3y6IBdcoqhi5QzdW48mdfAxlcL7djOBFkfN5ZrAod59fg5tPs5VDQNmMJeHtR+nOaHFhNRbd
+	bQ2sbzQk+5p/gggsdiTfLVHY7h0HMzn+QUNkCaMPa2aeg3Fwmkx1pzhcSkK98Q3ooZXtz261kmGyt
+	GmFsDEzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIz3k-0003nt-06; Mon, 30 Mar 2020 18:22:52 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jIzp3-0004Et-4K; Mon, 30 Mar 2020 19:11:45 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIz3h-0003n6-6d
- for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 18:22:50 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id AB60B28D93B
-Message-ID: <9304066ca10c9ccdf8a5fd88866425a5f45a330a.camel@collabora.com>
-Subject: Re: [PATCH] media: v4l2-common: change the pixel_enc of
- V4L2_PIX_FMT_GREY to YUV
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>, 
- linux-media@vger.kernel.org, helen.koike@collabora.com, hverkuil@xs4all.nl,
- kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com, 
- linux-rockchip@lists.infradead.org, mchehab@kernel.org, 
+ id 1jIzox-00046f-6m
+ for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 19:11:40 +0000
+Received: from [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d] (unknown
+ [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: koike)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 1B18829683F;
+ Mon, 30 Mar 2020 20:11:30 +0100 (BST)
+Subject: Re: [PATCH 1/4] media: staging: rkisp1: cap: fix issues when writing
+ to uv swap register
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ linux-media@vger.kernel.org, ezequiel@collabora.com, hverkuil@xs4all.nl,
+ kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com,
+ linux-rockchip@lists.infradead.org, mchehab@kernel.org,
  laurent.pinchart@ideasonboard.com
-Date: Mon, 30 Mar 2020 15:22:38 -0300
-In-Reply-To: <20200323173618.14058-1-dafna.hirschfeld@collabora.com>
-References: <20200323173618.14058-1-dafna.hirschfeld@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+References: <20200326201610.31762-1-dafna.hirschfeld@collabora.com>
+ <20200326201610.31762-2-dafna.hirschfeld@collabora.com>
+From: Helen Koike <helen.koike@collabora.com>
+Message-ID: <0ad5cae9-e12b-fc22-dbed-886c91af4f46@collabora.com>
+Date: Mon, 30 Mar 2020 16:11:26 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
+In-Reply-To: <20200326201610.31762-2-dafna.hirschfeld@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_112249_371278_717FFD63 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200330_121139_409517_06EFD54E 
+X-CRM114-Status: GOOD (  19.43  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -50,8 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,63 +78,58 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi Dafna,
 
-Nice catch, thanks a lot.
+Thanks for your patch.
 
-On Mon, 2020-03-23 at 18:36 +0100, Dafna Hirschfeld wrote:
-> V4L2_PIX_FMT_GREY format is Ycbcr format without
+On 3/26/20 5:16 PM, Dafna Hirschfeld wrote:
+> When writing to the RKISP1_CIF_MI_XTD_FORMAT_CTRL register
+> in mainpath, a redundant mask that clears the related swap
+> flag is applied and then the flag is set again.
+> 
+> In the selfpath, a mask that clears the swap setting is applied
+> instead of adding the setting.
+> This patch fixes those issues by just adding the swap setting.
 
-A nitpick s/Ycbcr/YCbCr. Maybe Hans can amend
-this when applying.
+One is a clean-up, and the other one is a bug fix.
+Could you please split those in two separated patches?
 
-It's no big deal anyway.
+It is better for tracking bugs and bisectability to  not mix
+cleanups with fixes.
 
-Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
+Thanks
+Helen
 
-> the color data, therefore its pixel_enc should
-> set to V4L2_PIXEL_ENC_YUV.
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > ---
->  drivers/media/v4l2-core/v4l2-common.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
-> index d0e5ebc736f9..054f2e607dff 100644
-> --- a/drivers/media/v4l2-core/v4l2-common.c
-> +++ b/drivers/media/v4l2-core/v4l2-common.c
-> @@ -250,7 +250,6 @@ const struct v4l2_format_info *v4l2_format_info(u32 format)
->  		{ .format = V4L2_PIX_FMT_RGBA32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
->  		{ .format = V4L2_PIX_FMT_ABGR32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
->  		{ .format = V4L2_PIX_FMT_BGRA32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
-> -		{ .format = V4L2_PIX_FMT_GREY,    .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 1, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
->  		{ .format = V4L2_PIX_FMT_RGB565,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
->  		{ .format = V4L2_PIX_FMT_RGB555,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> index 45d237a77ca4..84a3cf565106 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> @@ -432,8 +432,7 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
+>  	if (cap->pix.cfg->uv_swap) {
+>  		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
 >  
-> @@ -274,6 +273,7 @@ const struct v4l2_format_info *v4l2_format_info(u32 format)
->  		{ .format = V4L2_PIX_FMT_YUV420,  .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv =
-> 2, .vdiv = 2 },
->  		{ .format = V4L2_PIX_FMT_YVU420,  .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv =
-> 2, .vdiv = 2 },
->  		{ .format = V4L2_PIX_FMT_YUV422P, .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv =
-> 2, .vdiv = 1 },
-> +		{ .format = V4L2_PIX_FMT_GREY,    .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 1, .bpp = { 1, 0, 0, 0 }, .hdiv =
-> 1, .vdiv = 1 },
+> -		reg = (reg & ~BIT(0)) |
+> -		      RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+> +		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+>  		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+>  	}
 >  
->  		/* YUV planar formats, non contiguous variant */
->  		{ .format = V4L2_PIX_FMT_YUV420M, .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 3, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv =
-> 2, .vdiv = 2 },
-> -- 
-> 2.17.1
+> @@ -470,8 +469,8 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
+>  	if (cap->pix.cfg->uv_swap) {
+>  		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+>  
+> -		rkisp1_write(rkisp1, reg & ~BIT(1),
+> -			     RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+> +		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+> +		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+>  	}
+>  
+>  	rkisp1_mi_config_ctrl(cap);
 > 
-> 
-
-
 
 _______________________________________________
 Linux-rockchip mailing list
