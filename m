@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54D71198513
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 22:05:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9E7319854F
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 22:19:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,45 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DLNICwSmeL6oW5Irxdv11pSSuzBrgaBRrky1Uw7NFNs=; b=gJIJa66SggfzKv+aZCYFI7R1Zm
-	fw1X2BTYaOpf2E6u+cSHTWLSO0BI1UAvJkXc/eBHMEKWYOAkYurF+wB8J0dCEDN3tEX3FbXmR+EU3
-	4MFjjanKf6UNnpddzkMYTtPicQnVwsp4dr90wcb0O9r/Z1hMi3PH4kPRqYbp5uclDpfaIMA86QP0R
-	eiWnGXsfLvmWnyZ1XsMxUydQYj1OgdpHRt5oxik2gqOoVMogNV58RBJGLGsYFMbR2o+0Fwqf6NbFk
-	u1UZktSAEIFJP208/CCoVh/xlZ/wEvRbG57YiQYuFNWFgjjZosVGJC1+TnsCWspCDLkrYWw4Xj0XF
-	CymZfrXw==;
+	bh=Op6k060u3ASIS0IfT8EbxurRpZMw8iqmBFCyGuCIJoM=; b=cHRyHDrR1QsiNy4CSti9bXhCbo
+	/Db251+kySGVgTorE3gGoW51TIRUV+CNmbQ5PCYLsZZOofnQNuRzslTZRGUadwue5J0BpY1ixfrbF
+	vCAGgRFPCANu8wP+XDu6PJisQA1ZE2tUmv7j666FZLw/CrE7kRnoURAt81cPAHVPo8Om+P87nrEMb
+	ASfGXL91L33DVhkMPVeHkabZfhQF5dGDXjS0JOC794D1FBYT2mjhwRZYHgBJAikdAqCt4nuLQBBdc
+	h+bMzigJioI9JA4yp1hB+QHVW6bapvBseczx+q2zQUL6n9KVhXoe3Hhi3+dwiYSM/hnWeISx/gLtj
+	LbL6OAxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ0eW-0002K5-MS; Mon, 30 Mar 2020 20:04:56 +0000
+	id 1jJ0sm-0000A7-Cw; Mon, 30 Mar 2020 20:19:40 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ0eT-0002Jg-QN
- for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 20:04:55 +0000
+ id 1jJ0sj-00009m-AO
+ for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 20:19:38 +0000
 Received: from [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d] (unknown
  [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 081B1293EAE;
- Mon, 30 Mar 2020 21:04:47 +0100 (BST)
-Subject: Re: [PATCH 2/3] media: staging: rkisp1: rsz: change (hv)div only if
- capture format is YUV
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C4F8B296601;
+ Mon, 30 Mar 2020 21:19:30 +0100 (BST)
+Subject: Re: [PATCH] media: staging: rkisp1: cap: change RGB24 format to XBGR32
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  linux-media@vger.kernel.org, ezequiel@collabora.com, hverkuil@xs4all.nl,
  kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com,
  linux-rockchip@lists.infradead.org, mchehab@kernel.org,
  laurent.pinchart@ideasonboard.com
-References: <20200328105606.13660-1-dafna.hirschfeld@collabora.com>
- <20200328105606.13660-3-dafna.hirschfeld@collabora.com>
+References: <20200328135311.21221-1-dafna.hirschfeld@collabora.com>
 From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <7445ddcb-75f5-7792-0807-47c0b0d0d54a@collabora.com>
-Date: Mon, 30 Mar 2020 17:04:43 -0300
+Message-ID: <7d387293-5fc8-6d6e-bc5a-03138a247d50@collabora.com>
+Date: Mon, 30 Mar 2020 17:19:25 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <20200328105606.13660-3-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200328135311.21221-1-dafna.hirschfeld@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_130453_984880_C27A2834 
-X-CRM114-Status: GOOD (  18.38  )
+X-CRM114-CacheID: sfid-20200330_131937_486396_99950AA0 
+X-CRM114-Status: GOOD (  17.24  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -78,48 +76,48 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 
 
-On 3/28/20 7:56 AM, Dafna Hirschfeld wrote:
-> RGB formats in selfpath should receive input format as YUV422.
-> The resizer input format is always YUV422 and therefore
-> if the capture format is RGB, the resizer should not change
-> the YUV rations.
+On 3/28/20 10:53 AM, Dafna Hirschfeld wrote:
+> According to the manual, the YUV->RGB conversion outputs
+
+s/manual/datasheet
+
+> "24 bit word" that means that each pixel is 4 byte but the last
+> one should be ignored. This matches format V4L2_PIX_FMT_XBGR32.
+
+I think you can re-word this a bit, since 24bits is 3 bytes, and this doesn't mean 4 bytes are used.
+
+I guess you meant that datasheet says 4 bytes are used, with 24bits for the RGB and the last byte is ignored.
+
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > ---
->  drivers/staging/media/rkisp1/rkisp1-resizer.c | 14 ++++++++++++--
->  1 file changed, 12 insertions(+), 2 deletions(-)
+> The patch rebased on to of the patch
+> "media: staging: rkisp1: cap: remove field fmt_type from struct rkisp1_capture_fmt_cfg"
 > 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> index 8704267a066f..5721eee29ecb 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> @@ -389,8 +389,18 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
->  			&rsz->rkisp1->capture_devs[rsz->id];
->  		const struct v4l2_format_info *pixfmt_info = cap->pix.info;
->  
-> -		hdiv = pixfmt_info->hdiv;
-> -		vdiv = pixfmt_info->vdiv;
-> +		/*
-> +		 * The resizer always get the input as YUV422
-> +		 * If the capture encoding is also YUV, then the resizer should
-> +		 * change the 4:2:2 sampling to the sampling of the capture
-> +		 * format (4:2:2 -> 4:2:0 for example).
-> +		 * If the capture format is RGB then the memory input should
-> +		 * be YUV422 so we don't change the default hdiv, vdiv
-> +		 */
-> +		if (v4l2_is_format_yuv(pixfmt_info)) {
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> index 3abf38362f5a..5f248b68190e 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> @@ -281,7 +281,7 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+>  	},
+>  	/* rgb */
+>  	{
+> -		.fourcc = V4L2_PIX_FMT_RGB24,
+> +		.fourcc = V4L2_PIX_FMT_XBGR32,
 
-Can't this be moved with && in the outer if statement block?
+Shouldn't it be V4L2_PIX_FMT_RGBX32 ?
+
+Or the colors are inverted as well?
 
 Regards,
 Helen
 
-> +			hdiv = pixfmt_info->hdiv;
-> +			vdiv = pixfmt_info->vdiv;
-> +		}
->  	}
->  	src_c.width = src_y.width / hdiv;
->  	src_c.height = src_y.height / vdiv;
+>  		.write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+>  		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB888,
+>  	}, {
 > 
 
 _______________________________________________
