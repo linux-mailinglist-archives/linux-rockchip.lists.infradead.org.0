@@ -2,53 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D94A9197D8A
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 15:51:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78EF219800C
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 17:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+4MyAOzN3unGXBrj5CvtXi7ZsTisTnAbnYZ031bBcS4=; b=lZ6sKvVt0k41pA
-	wuOThdKUDdMhqk39lVx0vhNLHRs7KW0PQ6ecAwKG4uyD2f5OLCm31aJIzRc1eD/V4El8CV3/XTe5f
-	bMte7Kf3ce0J9B5yRADZbBeSm+cGWOYLoIM6rtLWX4wmrNCxu8gKMf+h6D0W1BnrURFKMv2MbOwHY
-	CF61v/pVXnkRJvtzQOmn5cYFSfwMtI6mVCx5aSIunbfwWWkO8+N4OiI+GlcC7wKZdQbpgPyq9Xyk5
-	tOXdO9Qonmvvg4E6GasNs2R9JLuaWMdSNJtmCcWm5ffanRD8J6ENZm9vneH0iczAOgHiT2jZIRZ9N
-	jKSCwM3bBQ48HK4oQY9g==;
+	List-Owner; bh=H2a1gLTvj5XPq2kP6rlf5g34mBSF/PwTlKPaQPdriUw=; b=VTrzVkmK8tvEcX
+	gEj4+AwwnwAfFG/vSPNYk5buxIeEmqkO1gZG2JpN0c+0yGYoXbJeZRNKfGrE+hxIBKxW9ijffxEgP
+	LufSrRIDf8RoVSmDOfedrT6EZ20cEWxbgCRr200aUx8hFzPTm+tE8mZil+91+SgNm3TzCFckHKaLP
+	/k1a4YbDScc0m3hbf0zFshPV5x80qDlW5n6mQyDtvLalKI4oyrtSE4+EKv2RxUF6KGb2xRwgYFTnW
+	LU9mqr/Y3K8/vU7BIOnCGBJtU0EcX1mFXGujbvfHi3XtHD4LYaT1dGnm5XrXRJ4y03EjNZpXsQttm
+	uQ+s/7+8UZ6BF72BN0Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIupW-000498-9k; Mon, 30 Mar 2020 13:51:54 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jIwaI-0001dS-DV; Mon, 30 Mar 2020 15:44:18 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIupE-0003sM-5E; Mon, 30 Mar 2020 13:51:37 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 36C842965EC
-Message-ID: <4a9d2d6e5cecbe296c14119d27a8793a7dbed7b2.camel@collabora.com>
-Subject: Re: [PATCH v5 4/5] drm: imx: Add i.MX 6 MIPI DSI host platform driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Fabio Estevam <festevam@gmail.com>, Adrian Ratiu
- <adrian.ratiu@collabora.com>
-Date: Mon, 30 Mar 2020 10:51:23 -0300
-In-Reply-To: <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
+ id 1jIwa7-0001W8-DB; Mon, 30 Mar 2020 15:44:09 +0000
+Received: by mail-il1-f196.google.com with SMTP id k29so16231156ilg.0;
+ Mon, 30 Mar 2020 08:44:07 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6L0zwcu6TJpBy8ROIw82e95a8IhAis774QnwFUUDei4=;
+ b=PhjUnwer6ysG1oz9PQVaXiKkfawqnx1fD961yqsZxYsOTlcceIhqQin2g7iBFAfG6e
+ GO/9orMy4NCxQRuwVk2IU9/b2IzLAbzq1AtNVn8jWkryA8AUkeQbGSX2/8fXS/B08lRX
+ EoNavWXHIZ/ooSAc5YZohjtx9Alk+U3bJDXaWW85F4ZHELWh3bh6nk1jXzEuzprS4QGy
+ 3RRE2nWVFLcz8L5PyVlrO7ToC46ztRZrmLfW5Zv++gr6mNTyULJQ61GZ2RexCByHbo9j
+ /ritmH28tDjWb9QCD3Vb6Kg/FOwNapmSpra5FFdfuzSSKMSy9l4Z2cbeYIS8fplnXtZk
+ aIxg==
+X-Gm-Message-State: ANhLgQ0vwr9pD1VvPBnvvo6DeLc/KhHQAmwFHlesW2nktPTP9vNHPv5E
+ WBtX5Ya6yIbwkNYPwcodeQ==
+X-Google-Smtp-Source: ADFU+vtLzoK7bLF3KNLPQffJzUbWf20WdfYgGwLo68WhEGLJBcEYEu+x/FRUoIOGhBcqWrVUOHXMcg==
+X-Received: by 2002:a92:8d0e:: with SMTP id s14mr11505607ild.117.1585583046446; 
+ Mon, 30 Mar 2020 08:44:06 -0700 (PDT)
+Received: from rob-hp-laptop ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id c88sm4970096ill.15.2020.03.30.08.44.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 30 Mar 2020 08:44:05 -0700 (PDT)
+Received: (nullmailer pid 27458 invoked by uid 1000);
+ Mon, 30 Mar 2020 15:44:04 -0000
+Date: Mon, 30 Mar 2020 09:44:04 -0600
+From: Rob Herring <robh@kernel.org>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v5 5/5] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+Message-ID: <20200330154404.GA26389@bogus>
 References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
- <20200330113542.181752-5-adrian.ratiu@collabora.com>
- <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ <20200330113542.181752-6-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200330113542.181752-6-adrian.ratiu@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_065136_339950_DB312C13 
-X-CRM114-Status: GOOD (  15.50  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200330_084407_447656_0488FF50 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,75 +92,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND
- FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
  Sjoerd Simons <sjoerd.simons@collabora.com>,
  Andrzej Hajda <a.hajda@samsung.com>, Martyn Welch <martyn.welch@collabora.com>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Emil Velikov <emil.velikov@collabora.com>, linux-rockchip@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-rockchip@lists.infradead.org, linux-imx@nxp.com, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello Fabio, Adrian:
-
-On Mon, 2020-03-30 at 08:49 -0300, Fabio Estevam wrote:
-> Hi Adrian,
+On Mon, 30 Mar 2020 14:35:42 +0300, Adrian Ratiu wrote:
+> This provides an example DT binding for the MIPI DSI host controller
+> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
 > 
-> On Mon, Mar 30, 2020 at 8:34 AM Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
-> > This adds support for the Synopsis DesignWare MIPI DSI v1.01 host
-> > controller which is embedded in i.MX 6 SoCs.
-> > 
-> > Based on following patches, but updated/extended to work with existing
-> > support found in the kernel:
-> > 
-> > - drm: imx: Support Synopsys DesignWare MIPI DSI host controller
-> >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
-> > 
-> > - ARM: dtsi: imx6qdl: Add support for MIPI DSI host controller
-> >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
+> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> Changes since v4:
+>   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
+>   and addressed received binding feedback (Rob)
 > 
-> This one looks like a devicetree patch, but this patch does not touch
-> devicetree.
+> Changes since v3:
+>   - Added commit message (Neil)
+>   - Converted to yaml format (Neil)
+>   - Minor dt node + driver fixes (Rob)
+>   - Added small panel example to the host controller binding
 > 
-> > +       ret = clk_prepare_enable(dsi->pllref_clk);
-> > +       if (ret) {
-> > +               dev_err(dev, "%s: Failed to enable pllref_clk\n", __func__);
-> > +               return ret;
-> > +       }
-> > +
-> > +       dsi->mux_sel = syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr");
-> > +       if (IS_ERR(dsi->mux_sel)) {
-> > +               ret = PTR_ERR(dsi->mux_sel);
-> > +               dev_err(dev, "%s: Failed to get GPR regmap: %d\n",
-> > +                       __func__, ret);
-> > +               return ret;
-> 
-> You should disable the dsi->pllref_clk clock prior to returning the error.
+> Changes since v2:
+>   - Fixed commit tags (Emil)
+> ---
+>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 134 ++++++++++++++++++
+>  1 file changed, 134 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
 > 
 
-Another approach could be moving the clock on and off to
-to component_ops.{bind,unbind} (as rockhip driver does).
+My bot found errors running 'make dt_binding_check' on your patch:
 
-What exactly is the PLL clock needed for? Would it make sense
-to move it some of the PHY power on/off? (Maybe not, but it's worthing
-checking).
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:34.21-31: Warning (reg_format): /example-0/dsi@21e0000/ports/port@1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dt.yaml: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (avoid_default_addr_size): /example-0/dsi@21e0000/ports/port@1: Relying on default #address-cells value
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (avoid_default_addr_size): /example-0/dsi@21e0000/ports/port@1: Relying on default #size-cells value
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (graph_port): /example-0/dsi@21e0000/ports/port@1: graph node '#address-cells' is -1, must be 1
+Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.example.dts:33.24-38.19: Warning (graph_port): /example-0/dsi@21e0000/ports/port@1: graph node '#size-cells' is -1, must be 0
 
-Also, it seems the other IP blocks have this PLL clock, so maybe
-it could be moved to the dw_mipi_dsi core? This could be something
-for a follow-up, to avoid creeping this series.
+See https://patchwork.ozlabs.org/patch/1263893
 
-Thanks,
-Ezequiel
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
 
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
 
 _______________________________________________
 Linux-rockchip mailing list
