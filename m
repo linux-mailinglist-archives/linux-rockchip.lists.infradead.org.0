@@ -2,64 +2,66 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CDB21987EE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 01:18:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D482198833
+	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 01:25:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2VoKctiiP28xxB61mmvkEHVFOdU63XHUSDQK8AD1OZ0=; b=EJfIn4rAk74/Qr
-	nyJrfZ7OgX6AUjoG9EfqUwZTfoXhnTxb8Q5Nvk+lu08Pm83Lz3vdDiMGuTkp19JMpljKglW0WnKM8
-	2jp4Wzn7GPcme5G0YeDwxcyl/D9M4+0TLU9cvjeu+addme9sD7XlvnIyY6UpxmDa63oPe37RVJAdz
-	CZJhEj8aekpd7Y3vbTidLMDWFu6USd1mSViA7M7iEFxdeFuVBjzxAa9oyXm33cD+1IFhYS61Gj9NU
-	FRsKc7wBXWjyyeGl987RjfDxMcAQQuqwACIxSfv76JwvX63rS1tteb/cFY5L43KplpDwGdw2R7vPH
-	8vTaVAujYmEmDoSySRfg==;
+	List-Owner; bh=Eac7RTFHpWUt+jpc3mvc6h1HMXvdtcIOnrPGRtp59iI=; b=sAYfJ5VgKScECr
+	7gxQ2yGGgX4ldVfA371fL8myS7zeq8R6VvwYHO4PvTk3HDf14ibkV2rz4HywE+WkiOoLra/dRZ86N
+	p9qRGtW9ttbozBVv2CnjBzsS7ldKRORQbdxm0GpocHJ8FCTP6R3uyp+8USXbxcYXMFkevwUgAf//G
+	zVlsZBV7+NGdkN39ekNloPO7jeIZBG3tncG7kwmHx0Lb7OY9t03fcRExOZ9NUnWkNfpMWFapXf1Ex
+	zCsCMhd6DDF+knb6ks5dKB+T4c7RL/IMbP3h6ZOF9BCssUAKNJ6ilowwZarUCSKLwPvZrKu6Itd3D
+	CswrJEjvCrs7WWpFu+QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ3fR-0001cY-9A; Mon, 30 Mar 2020 23:18:05 +0000
+	id 1jJ3m6-0004hj-Sa; Mon, 30 Mar 2020 23:24:58 +0000
 Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ3fC-0001U5-Rj; Mon, 30 Mar 2020 23:17:52 +0000
-Received: by mail-il1-f194.google.com with SMTP id r5so17626532ilq.6;
- Mon, 30 Mar 2020 16:17:50 -0700 (PDT)
+ id 1jJ3lw-0004ZB-BF; Mon, 30 Mar 2020 23:24:49 +0000
+Received: by mail-il1-f194.google.com with SMTP id j9so17686798ilr.7;
+ Mon, 30 Mar 2020 16:24:48 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BTXjifd7ocglD8FboIBeR1N5hRHtq0vpT75Dg952cWQ=;
- b=C/voeORwlTFumL2Zz4igfYRihOT3RwgCp+zOD0Cgk2qOglD9/DOpbSxAM7+8aZHRSI
- jj3GYDK4zSKuDBbn/7h3wNgg+IkfGBdGQPUveWJksXx7DSjwJZl1bB3DFQsXVv9VSDgr
- 2qZvePdBRsjIbwVN+kLPHwsb3HFbu7Zn5TYwVMgwua+Ja6yREyJ6KfHGAzRiPzQMJ/qq
- K/IXVVG0r4OjnbJtkThtCvxQIzC7SK3927nV4YHQwmN5zrTptHbe+7YLMEH1cvljiZJw
- fmpe/u3VfobHqkSb/pb5Dz3PBT3wiT7juuyLzC5mzwdBSu85p90ko2W/JfRIr7oXm2rF
- 62vg==
-X-Gm-Message-State: ANhLgQ1uZhXoyCecV9Boh1mkWSItyzk3NlT/D6uJqVcoFkP2rje8n4Cx
- aW3FaBhP06aku4BpfdhQbfodM1o=
-X-Google-Smtp-Source: ADFU+vt94dHL8ZNH73PSwCvVDGJWSHYvQZp10YVT6AUavcgqdGX/LdcbPXO/CeDpMSVuIc6hSx48Og==
-X-Received: by 2002:a92:d0c7:: with SMTP id y7mr13779079ila.56.1585610269995; 
- Mon, 30 Mar 2020 16:17:49 -0700 (PDT)
+ bh=CC29pPEJVsj/olmXrYwrrs1WbFltwLCfY/YhyQ6LBi8=;
+ b=GEaNX1crmTvCXwoJbw4TrmhW1tndPR9o6C5Hy/7vqmYEt2u4FM2O6wJPznEDKEq6p5
+ N7SbxuSK926V/l4T+xBYWYRI0VANoVcPk8miZL5LwZyNicm576HQpVzesD2TSKml/wCl
+ PFAXJb3kAR2BPZWqZyP/65/PfeewRG+X+tKlKcVpX+icVzQXXeqWoZNyW/SaxEVPzbIi
+ R0202DJpu0/EESmzrUQVYwfa9jKuFn2yTihkPk5P0PcapcNTKqcXY1EP+sHa4RfrKnwL
+ MvTzru5vON1mQ5UCIk3Zr/Caknp7S41NrR2i4FystfnPfu9vHDOyqhMaVM2WIlc/SPVi
+ okag==
+X-Gm-Message-State: ANhLgQ0CzSaSf+YJ/PcH90TdA06ZHeoMxZRiWSBYi94CDg/JAkEkkhRA
+ zPMiLdND4eWQ1SWcjP3lv/4BaB0=
+X-Google-Smtp-Source: ADFU+vuZfs7W/SJxu9kQbH23CnLKgJC2K3wVUSRDfLJApSEDT2u2swu66HFmJR+6eW7vByOZ1Qmgxw==
+X-Received: by 2002:a92:8cc7:: with SMTP id s68mr14150833ill.268.1585610687740; 
+ Mon, 30 Mar 2020 16:24:47 -0700 (PDT)
 Received: from rob-hp-laptop ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id j1sm4600895iok.2.2020.03.30.16.17.49
+ by smtp.gmail.com with ESMTPSA id g69sm5372067ile.3.2020.03.30.16.24.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 16:17:49 -0700 (PDT)
-Received: (nullmailer pid 12466 invoked by uid 1000);
- Mon, 30 Mar 2020 23:17:48 -0000
-Date: Mon, 30 Mar 2020 17:17:48 -0600
+ Mon, 30 Mar 2020 16:24:47 -0700 (PDT)
+Received: (nullmailer pid 22917 invoked by uid 1000);
+ Mon, 30 Mar 2020 23:24:46 -0000
+Date: Mon, 30 Mar 2020 17:24:46 -0600
 From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [RFC PATCH v2 1/2] dt-bindings: sram: convert rockchip-pmu-sram
- bindings to yaml
-Message-ID: <20200330231748.GA10021@bogus>
-References: <20200319161159.24548-1-jbx6244@gmail.com>
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
+Subject: Re: [PATCH v4 2/3] dt-bindings: mtd: Describe Rockchip RK3xxx NAND
+ flash controller
+Message-ID: <20200330232446.GA22844@bogus>
+References: <20200320093342.15470-1-yifeng.zhao@rock-chips.com>
+ <20200320093342.15470-3-yifeng.zhao@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200319161159.24548-1-jbx6244@gmail.com>
+In-Reply-To: <20200320093342.15470-3-yifeng.zhao@rock-chips.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_161750_897700_164413F9 
-X-CRM114-Status: GOOD (  19.17  )
+X-CRM114-CacheID: sfid-20200330_162448_385705_76406F02 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -91,83 +93,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
+ Yifeng Zhao <yifeng.zhao@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+ heiko@sntech.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 05:11:58PM +0100, Johan Jonker wrote:
-> Current dts files with 'rockchip-pmu-sram' compatible nodes
-> are now verified with sram.yaml, although the original
-> text document still exists. Merge rockchip-pmu-sram.txt
-> with sram.yaml by adding it as description with an example.
+On Fri, 20 Mar 2020 17:33:41 +0800, Yifeng Zhao wrote:
+> Documentation support for Rockchip RK3xxx NAND flash controllers
 > 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 > ---
-> Not tested with hardware.
 > 
-> Changed v2:
->   Merge with sram.yaml
-> ---
->  .../devicetree/bindings/sram/rockchip-pmu-sram.txt       | 16 ----------------
->  Documentation/devicetree/bindings/sram/sram.yaml         | 13 +++++++++++++
->  2 files changed, 13 insertions(+), 16 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+> Changes in v4:
+> - The compatible define with rkxx_nfc
+> - Add assigned-clocks
+> - Fix some wrong define
 > 
-> diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
-> deleted file mode 100644
-> index 6b42fda30..000000000
-> --- a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
-> +++ /dev/null
-> @@ -1,16 +0,0 @@
-> -Rockchip SRAM for pmu:
-> -------------------------------
-> -
-> -The sram of pmu is used to store the function of resume from maskrom(the 1st
-> -level loader). This is a common use of the "pmu-sram" because it keeps power
-> -even in low power states in the system.
-> -
-> -Required node properties:
-> -- compatible : should be "rockchip,rk3288-pmu-sram"
-> -- reg : physical base address and the size of the registers window
-> -
-> -Example:
-> -	sram@ff720000 {
-> -		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
-> -		reg = <0xff720000 0x1000>;
-> -	};
-> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-> index 7b83cc6c9..a9b1c2b74 100644
-> --- a/Documentation/devicetree/bindings/sram/sram.yaml
-> +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-> @@ -224,6 +224,19 @@ examples:
->      };
->  
->    - |
-> +    // Rockchip's rk3288 SoC uses the sram of pmu to store the function of
-> +    // resume from maskrom(the 1st level loader). This is a common use of
-> +    // the "pmu-sram" because it keeps power even in low power states
-> +    // in the system.
-> +    sram@ff720000 {
-> +      compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+> Changes in v3:
+> - Change the title for the dt-bindings
+> 
+> Changes in v2: None
+> 
+>  .../bindings/mtd/rockchip,nand.yaml           | 101 ++++++++++++++++++
+>  1 file changed, 101 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nand.yaml
+> 
 
-You need to document the compatible.
-
-> +      reg = <0xff720000 0x1000>;
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +      ranges = <0 0xff720000 0x1000>;
-> +    };
-> +
-> +  - |
->      // Allwinner's A80 SoC uses part of the secure sram for hotplugging of the
->      // primary core (cpu0). Once the core gets powered up it checks if a magic
->      // value is set at a specific location. If it is then the BROM will jump
-> -- 
-> 2.11.0
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
