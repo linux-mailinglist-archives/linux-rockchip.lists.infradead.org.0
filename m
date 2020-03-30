@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7842B198332
-	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 20:16:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 431C2198334
+	for <lists+linux-rockchip@lfdr.de>; Mon, 30 Mar 2020 20:16:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FZPmiCGeMK3LLHM4ud9LBpZ9FjUTFqvWlKtnRn1LXyI=; b=W9xn6n54LRO4NvKXn3aGfqIV5J
-	2WHLWhJxLDg1Q2r0HPK/VBKlV7i3XZevSaJIwyv9bCK/3pzaFatbqzOTw3zpYN+ywfGdsRKrf7XXu
-	aGxWgtnA3BTYxOohsB9nomy7uq8kijT+KbKtIlVoS70V7oWDviVsAyIRFends/jHoNlr3sGuJdkHK
-	6EyzjFI7YeSiNGCirI+mWaqu1unheDIkwK/Cu3zj/IwLJaZl1o1Xa6MQhADDSjlPv2QkwpTvRtBHQ
-	NHQDLkXyA73PHxzlqU9CSzwsGYkrRdsRxCYfpVVQbkFl32ufMP0oRLqjQtdxKWDFfHRnko8nT1xeV
-	iD8LPDKQ==;
+	bh=BgdIo2VAZAnVYxRgdzdl38AmATjuLHOen/c/qgp6rh4=; b=J0XqvlwKy18fkr9gpq7MYDff8g
+	Gv7FHVt3Rnxhsd4OhmCo+bTDqKH0Dswav7xHFjVKe+N2YsBM9sBfLCGi1FmsRc5gljna4jbwQGU8C
+	OG3LzBPvGY+Pjkv3UW9dadXmSzz3/RIjv16yQxeJtXBE/JWyClPBt8UkqOysucraZ1TQlY0wWkW5Z
+	2DLYWT2RnX7A0uuE4IavNbUOKjbBXyCvuLLOFLb/4Xs1oRCtDaJDXbN4KWx1EMoK3J6I081Osxyq0
+	dA/E8lLWcFnxVfWOz0MVjLeTg0Tt5UG/KSKWKUS7Ylxi+7V2d0V6zeym5kHbIsEEc7fv+VZunlBCN
+	PsTqhbdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIyxo-00026a-CE; Mon, 30 Mar 2020 18:16:44 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jIyxr-0002Ar-Tm; Mon, 30 Mar 2020 18:16:47 +0000
+Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIyxh-00021C-4d
- for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 18:16:39 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id q16so93536pje.1
- for <linux-rockchip@lists.infradead.org>; Mon, 30 Mar 2020 11:16:36 -0700 (PDT)
+ id 1jIyxl-00024M-AC
+ for linux-rockchip@lists.infradead.org; Mon, 30 Mar 2020 18:16:43 +0000
+Received: by mail-pl1-x636.google.com with SMTP id t4so1094029plq.12
+ for <linux-rockchip@lists.infradead.org>; Mon, 30 Mar 2020 11:16:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=gvUS8A/eL7b7o1g6E1PL+fAftkvIDyBq1evUjTl0k/Q=;
- b=fRsHvCK3eCxwlchVxl+OqTDyU2fSMlNiT6P0Z3g2iayOCydVeHdOmOxiJ1MG5Kn2YO
- 5DVCgBwkzDbuKxQq/rPvKHZV0hSSWsMOtv6/UGU0/RtLUj+9qQtEZVc8USt1x+zF8l+e
- pDKvCXkjWIyJ8Cuidx49zgysGq9yYvkrEXANs=
+ bh=mbP8yTk1wDXX6Om+l/BmnhYz0CyI1FvoE9vWahYLyqA=;
+ b=G5Jb1WTO5408/JpaNLycLIGh1E153essh/4TjchItGq2cVb7l4NBl57pF5n8P+82jo
+ t98bwiDYomK1WLUvyIg+RGe6EcfKaFGtFoQmqEDiBH7Enzd1AwVhnqxRC8ZJIMOO0veE
+ /mu8AR/+qT4pFbbDFG8IUHiTTPcqO7y3yD8Rk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=gvUS8A/eL7b7o1g6E1PL+fAftkvIDyBq1evUjTl0k/Q=;
- b=tRTdSJQbP7/nsOcjg0LcbZy0rfJBcSFWxHtrxjLYzke4WHzEQ8JVcoxjj5+lalkQpn
- aCWPz4bsH8TXuhOWz3f01NmMwR2EC3vf0k00i3P5jsnMSu0mfKhy/c1iasjtGlt56Quk
- 1lhU2Nxq4j3voTdkFKmL0LXrOEH43AbG7iySZQjZaXkGE7PoJEO0GFRw5WBcpQtZQPO+
- REW0QZP3DcKlC3IHovaSu9XsXHDi7FrExHIUsv1OLTqLJ++5JHZ6yLJOos60lQ+aR9Ch
- jJGQc5VbWQbLJD5o4INesL36zLrkiAw0lx2KkUbSt17v385476gGhPT6fWq9FNI4Qd7p
- /6CA==
-X-Gm-Message-State: AGi0PubQ1jS0mpZvqTAEdtFVLlQOcKJQG3+QBV0y1IHZgC7jKZ/L8G7u
- teVYPgOVe2/9o4X+y8Vs5qpXog==
-X-Google-Smtp-Source: APiQypIbr/vUdHuVOSfoh3sDe1PUR+cXSVSIzp4Pfb3b+8NcqeoqwqX/h8P2ELoz9LJQrkt1RHRKGQ==
-X-Received: by 2002:a17:902:b682:: with SMTP id c2mr354882pls.36.1585592196301; 
- Mon, 30 Mar 2020 11:16:36 -0700 (PDT)
+ bh=mbP8yTk1wDXX6Om+l/BmnhYz0CyI1FvoE9vWahYLyqA=;
+ b=rp5GKVZ/Y4uTZTpzne+Nv6xcLv9IbqJ6uLD6jsGAZCKgrr/BPL0XZLI1Rrfv53pfhS
+ WPzNRzU8qaumXj6pNBkt3EpFVQkxwYYLYMXJ5dRy7k6jHsrKNc30v7r76k0rbNpGx7+2
+ xJvTldWNnvm0uKL45k9tYcQbkbf7FPTRt5F3vfg3E2naMxjzUhPGKZTADBLVGLLu99sl
+ FuSSnfuzwdag6sA775FM8zDQtHI8tfaMlGRZwW4Zue8bDm7eSMWOFlYDE7vkR6bsU5pg
+ X93xYkHUWodD6a1yNDOwNCXqBdpGP2YjUZTDT4XZFpGdV69Bc2V4zjU7vtViCXJYzUAd
+ 3DKg==
+X-Gm-Message-State: AGi0PubEMzZfeCZRvDHLVD+DTJaneb6gOPgHeriupXopn9pTYVP8YQPd
+ j1q8GPa3CURvZlUtoeDdKfrB7w==
+X-Google-Smtp-Source: APiQypJ81e+fixgUS2bF3LlLyuQmiIKwmBf9btwAMYYqfM1J64E5ZDmAmkiEGrol/dV7WVg/Ob05tQ==
+X-Received: by 2002:a17:90a:c583:: with SMTP id l3mr713589pjt.84.1585592200261; 
+ Mon, 30 Mar 2020 11:16:40 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b95e:3742:c972:389e])
- by smtp.gmail.com with ESMTPSA id p7sm207452pjp.1.2020.03.30.11.16.32
+ by smtp.gmail.com with ESMTPSA id p7sm207452pjp.1.2020.03.30.11.16.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Mar 2020 11:16:35 -0700 (PDT)
+ Mon, 30 Mar 2020 11:16:39 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Anatolij Gustschin <agust@denx.de>
-Subject: [PATCH v2 3/4] rockchip: Enable pre console for rk3399
-Date: Mon, 30 Mar 2020 23:46:12 +0530
-Message-Id: <20200330181613.29462-4-jagan@amarulasolutions.com>
+Subject: [PATCH v2 4/4] rockchip: Enable HDMI output on rk3399 board w/ HDMI
+Date: Mon, 30 Mar 2020 23:46:13 +0530
+Message-Id: <20200330181613.29462-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200330181613.29462-1-jagan@amarulasolutions.com>
 References: <20200330181613.29462-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_111637_233994_B32E8DBD 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20200330_111641_587699_62BCF28F 
+X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,52 +105,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable pre console buffer for rk3399 platform.
+Enable config options and console setting to respective
+rk3399 board for HDMI output.
 
-This would help to capture the console messages prior to
-the console being initialised. Enabling this would help
-to capture all the console messages on video output source
-like HDMI. So we can find the full console messages of
-U-Boot proper on HDMI display when enabled it for RK3399
-platform boards.
-
-Buffer address used for pre console is 0x0f200000 which is
-ram base plus 240MiB. right now the Allwinner SoC is using
-similar computation.
+Boards supported and tested on this patch are:
+- NanoPc T4
+- NanoPi M4
+- NanoPi Neo4
+- ROC-RK3399-PC
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v2:
-- none
+- use usbkbd in stdin
+- enable USB_KEYBOARD
 
- arch/arm/mach-rockchip/Kconfig | 1 +
- common/Kconfig                 | 1 +
- 2 files changed, 2 insertions(+)
+ configs/nanopc-t4-rk3399_defconfig   | 7 +++++++
+ configs/nanopi-m4-rk3399_defconfig   | 7 +++++++
+ configs/nanopi-neo4-rk3399_defconfig | 7 +++++++
+ configs/roc-pc-rk3399_defconfig      | 6 ++++++
+ include/configs/evb_rk3399.h         | 5 +++++
+ 5 files changed, 32 insertions(+)
 
-diff --git a/arch/arm/mach-rockchip/Kconfig b/arch/arm/mach-rockchip/Kconfig
-index ed7514ab75..0cb1f23d0f 100644
---- a/arch/arm/mach-rockchip/Kconfig
-+++ b/arch/arm/mach-rockchip/Kconfig
-@@ -229,6 +229,7 @@ config ROCKCHIP_RK3399
- 	select DM_PMIC
- 	select DM_REGULATOR_FIXED
- 	select BOARD_LATE_INIT
-+	imply PRE_CONSOLE_BUFFER
- 	imply ROCKCHIP_COMMON_BOARD
- 	imply ROCKCHIP_SDRAM_COMMON
- 	imply SPL_ROCKCHIP_COMMON_BOARD
-diff --git a/common/Kconfig b/common/Kconfig
-index 46e4193fc8..bd35de3056 100644
---- a/common/Kconfig
-+++ b/common/Kconfig
-@@ -568,6 +568,7 @@ config PRE_CON_BUF_ADDR
- 	default 0x2f000000 if ARCH_SUNXI && MACH_SUN9I
- 	default 0x4f000000 if ARCH_SUNXI && !MACH_SUN9I
- 	default 0x0f000000 if ROCKCHIP_RK3288
-+	default 0x0f200000 if ROCKCHIP_RK3399
- 	help
- 	  This sets the start address of the pre-console buffer. This must
- 	  be in available memory and is accessed before relocation and
+diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
+index 9ea9b11574..607a00dbf7 100644
+--- a/configs/nanopc-t4-rk3399_defconfig
++++ b/configs/nanopc-t4-rk3399_defconfig
+@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+ CONFIG_USB_ETHER_MCS7830=y
+ CONFIG_USB_ETHER_RTL8152=y
+ CONFIG_USB_ETHER_SMSC95XX=y
++CONFIG_USB_KEYBOARD=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
++CONFIG_DM_VIDEO=y
++CONFIG_VIDEO_BPP16=y
++CONFIG_VIDEO_BPP32=y
++CONFIG_DISPLAY=y
++CONFIG_VIDEO_ROCKCHIP=y
++CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
+index ad0e808bf6..3fcb7ac2d7 100644
+--- a/configs/nanopi-m4-rk3399_defconfig
++++ b/configs/nanopi-m4-rk3399_defconfig
+@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+ CONFIG_USB_ETHER_MCS7830=y
+ CONFIG_USB_ETHER_RTL8152=y
+ CONFIG_USB_ETHER_SMSC95XX=y
++CONFIG_USB_KEYBOARD=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
++CONFIG_DM_VIDEO=y
++CONFIG_VIDEO_BPP16=y
++CONFIG_VIDEO_BPP32=y
++CONFIG_DISPLAY=y
++CONFIG_VIDEO_ROCKCHIP=y
++CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-rk3399_defconfig
+index d038a8cab9..b9ea535e43 100644
+--- a/configs/nanopi-neo4-rk3399_defconfig
++++ b/configs/nanopi-neo4-rk3399_defconfig
+@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+ CONFIG_USB_ETHER_MCS7830=y
+ CONFIG_USB_ETHER_RTL8152=y
+ CONFIG_USB_ETHER_SMSC95XX=y
++CONFIG_USB_KEYBOARD=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
++CONFIG_DM_VIDEO=y
++CONFIG_VIDEO_BPP16=y
++CONFIG_VIDEO_BPP32=y
++CONFIG_DISPLAY=y
++CONFIG_VIDEO_ROCKCHIP=y
++CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
+index d540a17aeb..be76524cef 100644
+--- a/configs/roc-pc-rk3399_defconfig
++++ b/configs/roc-pc-rk3399_defconfig
+@@ -59,3 +59,9 @@ CONFIG_USB_ETHER_SMSC95XX=y
+ CONFIG_USB_KEYBOARD=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_ERRNO_STR=y
++CONFIG_DM_VIDEO=y
++CONFIG_VIDEO_BPP16=y
++CONFIG_VIDEO_BPP32=y
++CONFIG_DISPLAY=y
++CONFIG_VIDEO_ROCKCHIP=y
++CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
+index c0b0358893..2d3db22877 100644
+--- a/include/configs/evb_rk3399.h
++++ b/include/configs/evb_rk3399.h
+@@ -6,6 +6,11 @@
+ #ifndef __EVB_RK3399_H
+ #define __EVB_RK3399_H
+ 
++#define ROCKCHIP_DEVICE_SETTINGS \
++		"stdin=serial,usbkbd\0" \
++		"stdout=serial,vidconsole\0" \
++		"stderr=serial,vidconsole\0"
++
+ #include <configs/rk3399_common.h>
+ 
+ #if defined(CONFIG_ENV_IS_IN_MMC)
 -- 
 2.17.1
 
