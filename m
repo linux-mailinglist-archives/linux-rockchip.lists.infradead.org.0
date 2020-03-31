@@ -2,83 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D134198BFE
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 07:59:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E6DC198CCF
+	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 09:18:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uno6DdRXw920PBemEWzXeceGQU9+KQHJfkjEOZJ4xLM=; b=g8EuALLfqQD2He
-	qs9HDKQoMoZ4qFpzLCKPpIDH2DcuMskhvDPfTefIpkOfIRfkm9kPEdZTDOXP+zq7baVS9ta5oHun9
-	wEmdcmqxF96SBTOd6jfmbXhR0O1DrCsulKqvBlakpmYQit3CZ5I79Jg3X++msfxMVbHjAH3STUQGr
-	S2HepX6K3ahEGVGGUghAWQxH9iuMpvV4zFuW+IxnvD3dr/4l5ZrWhd1VkjXA6gHr3PvF3YXIRLp4m
-	eSwa5d6VxFRyMClVOCZM/XcaOCSCaj6gY43pq1G468KKzrAvbxnLRtyEVlSuRDTq3O96+vkyBf4o7
-	770bso7t3e+LYzpYn7sw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7zoX3oo+Wlt/a3V3G+7BhtaT4oFk9nQln974SkDwtdo=; b=Fv9TOmg2rMcLOd4jJRc7uhsw5
+	088DPIgB4AhIKLuouESGqBaLkhnEEnFJsWlEQ9fiL+1Ijz1oHhl9dX9Nciie/KG3eex7yVYyoUCC9
+	h+BEsTC4VLJx1YkkNTZbUCnY0yfnDDovlGs34fspe3U6ghEB8lzGl7FvlyatiFJswCmVjM7KdrWUW
+	CETirj2Cz1NUml1aUe4orUzaKazfttW7BavpuCsM6kNlwWc3Gq3lsENESDpAKtVEyyLPMEzyT3AsU
+	qQ7h8qegKsJBbI012AEYNDv170ykFqRNI+Lxv51Ug3Ayv7yjkeeiPg+8frUt48wW5KVTk2hfbrzUV
+	29gj8s26Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ9w5-0004Sq-Cs; Tue, 31 Mar 2020 05:59:41 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jJB9z-0000fh-O1; Tue, 31 Mar 2020 07:18:07 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ9w1-0004SC-Ft
- for linux-rockchip@lists.infradead.org; Tue, 31 Mar 2020 05:59:39 +0000
-Received: by mail-io1-xd42.google.com with SMTP id q128so20413979iof.9
- for <linux-rockchip@lists.infradead.org>; Mon, 30 Mar 2020 22:59:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JprfLNjDOeA1PhZYuuladmRddk52/jFtx8mvtHpjenA=;
- b=mZH0gxGPljWeAaW8TLiPZBdBWEhHTYxaj75YDyOInU7XAICesi0gl7jNo8VksPb6Ar
- ZvrK+hPFWSW3Uds6qixd6VzurqC9QYc5r4xRwuABUfR+ETOpzSNzVf5Rt2/2Z0lq0hjq
- VWX8zpKNO7+al15lqkXQQo44DOVZhsmKFOrqs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JprfLNjDOeA1PhZYuuladmRddk52/jFtx8mvtHpjenA=;
- b=eglU0Ns34nkHL59vX0eQ39GoiI3run230baiFdsXTh4nW3kzAiFYfE48zrLo2YmbdV
- xgnV5Xq6CYKz8dtBOpiVbN+xFjDWNode3EIiH4qccSV9EvlzSAM2V4Ifmiw9Pb0hdV7r
- K5IVD8V34hGilgL4GKDwREYnQSwQ9J+xg9V6+YN63WZentHduI/dJjJUYj11u/TNGr6S
- xFzoBUV8TXd0qdMe1s3VmcF6o4/yRrdV8jKJchyVNP7ueiUJ+Q7X1NITbmY8+FwUcd78
- HEM+IP+hY8RdLICpFeVwbZ4qaZryNwGOVVuu+cKr3FKH+BwEy6VIpvSseqvq/1yZzjlH
- FcSw==
-X-Gm-Message-State: ANhLgQ3KsU7UD43E5//0kMiBGZwGFcVLJQhguTxlES69hir9tmv6yhSn
- RvBwZ4DfAqBUxe1/GANa6LxwHVEhMCLC+9nEJ8GLhQ==
-X-Google-Smtp-Source: ADFU+vtKdAIWjgXHuq4P9a83zgX+assncRfzlafxkbyH/xtWpVaI6qrKG/Tt+LociGzJNvMs6PkJANCkBglzsGcTd5k=
-X-Received: by 2002:a6b:c901:: with SMTP id z1mr14168702iof.151.1585634374619; 
- Mon, 30 Mar 2020 22:59:34 -0700 (PDT)
+ id 1jJB9n-0000VF-Ue; Tue, 31 Mar 2020 07:17:57 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 867CC296952
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v5 4/5] drm: imx: Add i.MX 6 MIPI DSI host platform driver
+In-Reply-To: <246bf7c71620021258355c2fc32dd38ac6b0cc45.camel@collabora.com>
+References: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+ <20200330113542.181752-5-adrian.ratiu@collabora.com>
+ <CAOMZO5CEZSBfhb9xAdf=sDhUnmSeuWSsnUQArz=a1TPzytLAeQ@mail.gmail.com>
+ <4a9d2d6e5cecbe296c14119d27a8793a7dbed7b2.camel@collabora.com>
+ <877dz134xf.fsf@collabora.com>
+ <246bf7c71620021258355c2fc32dd38ac6b0cc45.camel@collabora.com>
+Date: Tue, 31 Mar 2020 10:19:00 +0300
+Message-ID: <874ku52dqz.fsf@collabora.com>
 MIME-Version: 1.0
-References: <20200330181613.29462-1-jagan@amarulasolutions.com>
- <20200330181613.29462-2-jagan@amarulasolutions.com>
- <016151d6786a0ea4@bloch.sibelius.xs4all.nl>
-In-Reply-To: <016151d6786a0ea4@bloch.sibelius.xs4all.nl>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 31 Mar 2020 11:29:23 +0530
-Message-ID: <CAMty3ZCHTk5H60cNmUhfq=pNwBJ9Kc1KuGGb=gQFCp2SS3_1gw@mail.gmail.com>
-Subject: Re: [PATCH v2 1/4] arm64: dts: rk3399-u-boot: Delete vop
- assigned-clocks/rates
-To: Mark Kettenis <mark.kettenis@xs4all.nl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_225938_155020_38353BD6 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200331_001756_118303_4D8ADCBE 
+X-CRM114-Status: GOOD (  22.49  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,54 +61,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
- U-Boot-Denx <u-boot@lists.denx.de>, Suniel Mahesh <sunil@amarulasolutions.com>,
- Anatolij Gustschin <agust@denx.de>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Martyn Welch <martyn.welch@collabora.com>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE
+ IMX / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Emil Velikov <emil.velikov@collabora.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 1:06 AM Mark Kettenis <mark.kettenis@xs4all.nl> wrote:
->
-> > From: Jagan Teki <jagan@amarulasolutions.com>
-> > Cc: sunil@amarulasolutions.com, u-boot@lists.denx.de,
-> >         linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
-> >         Jagan Teki <jagan@amarulasolutions.com>
-> > Date: Mon, 30 Mar 2020 23:46:10 +0530
-> > Content-Type: text/plain; charset=UTF-8
-> >
-> > Linux supporting assigned-clocks for VOP on rk3399 by assuming
-> > U-Boot not initializing it on this linux commit:
-> >
-> > commit <617f4472bdd3> ("arm64: dts: rockchip: init rk3399 vop clock rates")
-> >
-> > There is no specific need to initialize these assigned clock
-> > in U-Boot as video drivers still work with default aclk and
-> > hclk values. So, these clocks are simply not supported by rk3399
-> > clock driver.
-> >
-> > But, during stdio probe of vidconsole, the device probe
-> > will try to check whether the assigned clocks on that video
-> > console node is initialized or not? and return error if not.
-> >
-> > So, delete these property via -u-boot dtsi as there is
-> > no specific need in U-Boot.
->
-> Deleting these properties isn't very helpful as it means the U-Boot
-> device tree can no longer be used by the kernel.  Isn't it a better
-> idea to implement these clocks as stubs in the u-boot clock driver?
+On Tue, 31 Mar 2020, Ezequiel Garcia <ezequiel@collabora.com> 
+wrote:
+> On Tue, 2020-03-31 at 00:31 +0300, Adrian Ratiu wrote: 
+>> On Mon, 30 Mar 2020, Ezequiel Garcia <ezequiel@collabora.com> 
+>> wrote: 
+>> > Hello Fabio, Adrian:   On Mon, 2020-03-30 at 08:49 -0300, 
+>> > Fabio Estevam wrote:  
+>> > > Hi Adrian,  On Mon, Mar 30, 2020 at 8:34 AM Adrian Ratiu 
+>> > > <adrian.ratiu@collabora.com> wrote:  
+>> > > > This adds support for the Synopsis DesignWare MIPI DSI 
+>> > > > v1.01  host controller which is embedded in i.MX 6 SoCs. 
+>> > > > Based on  following patches, but updated/extended to work 
+>> > > > with existing  support found in the kernel:  - drm: imx: 
+>> > > > Support Synopsys  DesignWare MIPI DSI host controller  
+>> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>  
+>> > > >  - ARM: dtsi: imx6qdl: Add support for MIPI DSI host  
+>> > > > controller  
+>> > > >   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>  
+>> > >  This one looks like a devicetree patch, but this patch 
+>> > >  does  
+>> > > not touch devicetree.   
+>> > > > +       ret = clk_prepare_enable(dsi->pllref_clk); + 
+>> > > > if  (ret) { +               dev_err(dev, "%s: Failed to 
+>> > > > enable  pllref_clk\n", __func__); +               return 
+>> > > > ret; +  } + +       dsi->mux_sel = 
+>> > > > syscon_regmap_lookup_by_phandle(dev->of_node, "fsl,gpr"); 
+>> > > > +  if (IS_ERR(dsi->mux_sel)) { +               ret = 
+>> > > > PTR_ERR(dsi->mux_sel); +               dev_err(dev, "%s: 
+>> > > > Failed to get GPR regmap: %d\n", +  __func__, ret); + 
+>> > > > return ret;  
+>> > >  You should disable the dsi->pllref_clk clock prior to  
+>> > > returning the error.   
+>> >  Another approach could be moving the clock on and off to to 
+>> > component_ops.{bind,unbind} (as rockhip driver does).    What 
+>> > exactly is the PLL clock needed for? Would it make sense to 
+>> > move it some of the PHY power on/off? (Maybe not, but it's 
+>> > worthing checking).    Also, it seems the other IP blocks 
+>> > have this PLL clock, so maybe  it could be moved to the 
+>> > dw_mipi_dsi core? This could be  something for a follow-up, 
+>> > to avoid creeping this series. 
+>>  Hi Ezequiel,  pll is the video reference clock which drives 
+>> the data lanes and  yes all drivers have it as it's a basic 
+>> requirement, so moving it  to the common bridge is indeed a 
+>> good idea, however this kind of  driver refactoring is out of 
+>> scope for this specific patch series,  because, for now, I'd 
+>> like to get the regmap and the imx6 driver  in, once that is 
+>> done we can think how to further abstract away  common logic 
+>> and slim down the existing drivers further.   Basically I just 
+>> want to avoid feature creep as I expect v6 to be  ~ 8 patches 
+>> big and the series is already over 1200 lines.  
+> 
+> Oh, absolutely: if there's one thing I try to avoid is feature 
+> creep -- together with bikeshedding! 
+> 
+> Do note however, that you could move the PLL clock handling to 
+> component_ops.{bind,unbind} and maybe simplify the error 
+> handling. 
+> 
+> (BTW, great work!)
 
-I did try this before sorting out these changes, seems like it
-requires a bit more tweaking the clock wrt display code. I really
-didn't see any use case as of now for just to print u-boot log on
-display out, and more over this support has been broken since from
-releases. so bypassing these nodes can be a solutions for now.
+Thanks! I'll do the bind/unbind move for the new imx6 driver which 
+I'm
+adding in this series to make it resemble the existing rockchip 
+driver a bit more, then I'll stop short of further driver 
+refactorings.
 
-Jagan.
+>
+> Cheers,
+> Ezequiel
 
 _______________________________________________
 Linux-rockchip mailing list
