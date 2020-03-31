@@ -2,78 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FA0A199B22
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 18:15:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E45F5199B36
+	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 18:18:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gmOiEYeYP4NaXI2ptal60f30bMNkVixsYR/d0MkwN38=; b=fTW166w75e1qaw
-	vb6IDAnUghF/WwsBqSOFAOyPu1DVCe7nz4ZUMDJBeKO9UEUBVbVt0MCDb6rAANo1vqsnChF7Ghvxv
-	BjxdvE4gXbm0NDNwnMIVA0unbvHN6q2Nc/FVFdIY/EfBKYV+m/sM3Xwb9AjPDZ2IRuwblIWP7zxZW
-	miL84DwdMxpXn/5hkz7B7coyebN8Rx5ZYfPeZVIGUL3bgXPo5oaMhKfU8SWpCQMt3n666lGlamMYH
-	w0qd9JVz7luRuCopDKocbhdEadrwLd9WvVNET6aBIJs6Mdu6YsMB3UoQo5Y1cZvdFGxjEk8Dm8lni
-	bDqlYTxXBC7XtLPwIldA==;
+	List-Owner; bh=e4tWje64rlF+Gz/GTef/Z9e1LVUU34XzXVNTqPkmMV0=; b=kcyv3plqfBZwmq
+	tfD4HWuHcJMEZ3n7I+nflbRu+Bwemyo8HvcYJcvhq2clkfZfJXFYWcCrPvU9dHK6x/v6t+n8+MNzj
+	RCoW/AY31nUgyWeBV2KYA+1zyf/EIRPwJVm4nwQLRhMm/kND/pQHc7VeWfhGyyAZ4k7SHA+JdkL38
+	VqkrgmqotG5tO9690IImwsKfcbsPOIZ8/UdbzezMy3fP44zoB2Ia9JxOXfvlqYjDQBYJXcPKDFkyP
+	Nzq9cSbHH2Ag7VOTb80XnuAk+3GU0vEttl3jhf1zvlcHDYMX7QvsXlUoc1h1uPWkpKrWwbkLZeMnG
+	OMEZRuz8uVWm0atRNt0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJYB-0002gP-Of; Tue, 31 Mar 2020 16:15:39 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jJJbD-0005Lk-K0; Tue, 31 Mar 2020 16:18:47 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJXw-0002RI-7l; Tue, 31 Mar 2020 16:15:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=/HVPi64qIRdc3panPh4kpEYyIrZRCsnANG5uQPfLZv0=; b=czW5H86boYJVa/CoBl22IF6KoZ
- cMr2tIHGzypLuUvydNMB/987A1fGnouf9gDSiDf7i4EOwszAmMX6RgsoPyEOi6qMLZcDWblNpLsX2
- q/jutGhJk1/mQtmY940KMomtTqJWi+7MrNiVPUdwu0f0CEpn40n0eu6GSsHoOR2O7n+Q+2Xv2J/4y
- tMl/87i2wZniy+cEE4SmoAyKf/7dbFgIEa5Ijyh1t45ArV/5KVqxHEx8MkmTM9BEYR3OxZjAm0Afa
- G0UTmboRH2F65jqKb9lBYkoXc3g1txNUmePOKc1PHYLCqOB9KYlPWnK+GrZ0L54RYiD3Zth0yOWA4
- 9tc6eQWg==;
-Received: from mail.kernel.org ([198.145.29.99])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJFyT-0000aw-GJ; Tue, 31 Mar 2020 12:26:34 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 75304208FE;
- Tue, 31 Mar 2020 12:26:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1585657590;
- bh=blx66YChKg+gYzKEMC/qbWXbGWWkIDZF3MMoWKJ1eBs=;
+ id 1jJJaC-0004UI-Oz; Tue, 31 Mar 2020 16:17:46 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 67802999;
+ Tue, 31 Mar 2020 14:39:20 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1585658360;
+ bh=tbwJXIHNoJr98k60FTTbX816TC3Gd5IRxDKktQ2VVdo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hkw5y+kQWTNyKdIkosNGkEfWABxhGzH5a/ppqFq829ZPBlaDy5RCYDV91zOg1oJY1
- TVn2+L02XBcsrh2/Qs5dUdKrRx+B/MXJoJa0U9f9GVx3I2kH43m5N+oowO448yeNSt
- 6H4qKsrdAGtepUtpQquxFrTr9E0K/5WcXQmtdOwI=
-Date: Tue, 31 Mar 2020 14:22:09 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ b=f1VlS2f3ga3DvS+b4oT5dZqA2XEt0P7BtWTsz1Rh8OoaxqE1EOB4CoxtnoDmy4iB6
+ X5iUhOXekkGa+8ZaSHi1+2aHuVd6i4awTQurv1cdH/lNYkacF7pfIxB7GLfJZznSya
+ j4N0EW5NB1mkaPQTASiH/ozxp3qP4ZsgZza5luwE=
+Date: Tue, 31 Mar 2020 15:39:14 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Subject: Re: [PATCH v4 17/33] media: add SPDX headers on Kconfig and Makefile
  files
-Message-ID: <20200331122209.GA1627483@kroah.com>
+Message-ID: <20200331123914.GC4767@pendragon.ideasonboard.com>
 References: <cover.1585651678.git.mchehab+huawei@kernel.org>
  <981eea64742859c63d8ab88c24b1b3380ee32dd2.1585651678.git.mchehab+huawei@kernel.org>
  <20200331120608.GB4767@pendragon.ideasonboard.com>
+ <20200331122209.GA1627483@kroah.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200331120608.GB4767@pendragon.ideasonboard.com>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-5.2 points)
+In-Reply-To: <20200331122209.GA1627483@kroah.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200331_091744_971257_5B1E49E7 
+X-CRM114-Status: GOOD (  19.57  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,39 +88,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Mar 31, 2020 at 03:06:08PM +0300, Laurent Pinchart wrote:
-> Hi Mauro,
-> 
-> Thank you for the patch.
-> 
-> On Tue, Mar 31, 2020 at 01:11:53PM +0200, Mauro Carvalho Chehab wrote:
-> > Most of media Kconfig/Makefile files already has SPDX,
-> > but there are a few ones still missing. Add it to them.
-> 
-> I think it's a good idea to state the license of each source file, the
-> patch looks fine to me. I've however been thinking about licenses for
-> build system files recently, and I'll hijack this thread a bit to ask a
-> question :-)
-> 
-> For a project like the Linux kernel, and especially for subsystems that
-> are covered by a single license, the choice is easy, we can apply the
-> same license to the build files. However, for a project that contains
-> components covered by different licenses (such as, for instance, an LGPL
-> library, a GPL application and a BSD plugin), how should the license
-> covering the build system files be selected ? I searched a bit for
-> guidance on this topic, and couldn't find much.
+Hi Greg,
 
-By "default" if there is no license on a file in the kernel tree, it
-falls under the GPLv2 license and we should explicity state it, like
-this patch does.
+On Tue, Mar 31, 2020 at 02:22:09PM +0200, Greg Kroah-Hartman wrote:
+> On Tue, Mar 31, 2020 at 03:06:08PM +0300, Laurent Pinchart wrote:
+> > On Tue, Mar 31, 2020 at 01:11:53PM +0200, Mauro Carvalho Chehab wrote:
+> > > Most of media Kconfig/Makefile files already has SPDX,
+> > > but there are a few ones still missing. Add it to them.
+> > 
+> > I think it's a good idea to state the license of each source file, the
+> > patch looks fine to me. I've however been thinking about licenses for
+> > build system files recently, and I'll hijack this thread a bit to ask a
+> > question :-)
+> > 
+> > For a project like the Linux kernel, and especially for subsystems that
+> > are covered by a single license, the choice is easy, we can apply the
+> > same license to the build files. However, for a project that contains
+> > components covered by different licenses (such as, for instance, an LGPL
+> > library, a GPL application and a BSD plugin), how should the license
+> > covering the build system files be selected ? I searched a bit for
+> > guidance on this topic, and couldn't find much.
+> 
+> By "default" if there is no license on a file in the kernel tree, it
+> falls under the GPLv2 license and we should explicity state it, like
+> this patch does.
+> 
+> So this is fine, but if you want to license the build files some other
+> way, that's good too, but do so when you add them to the tree, not at
+> some later time when it could cause confusion :)
 
-So this is fine, but if you want to license the build files some other
-way, that's good too, but do so when you add them to the tree, not at
-some later time when it could cause confusion :)
+Thanks for your answer. I was hijacking the thread a little bit, the
+question wasn't related to the kernel, but in this case to libcamera.
+We've been wondering how to pick licenses for build files there, and I
+thought fellow kernel developers may have valuable input on this topic.
 
-thanks,
+-- 
+Regards,
 
-greg k-h
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
