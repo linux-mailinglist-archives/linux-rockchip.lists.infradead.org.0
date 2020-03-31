@@ -2,91 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64AEB199B10
-	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 18:12:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FA0A199B22
+	for <lists+linux-rockchip@lfdr.de>; Tue, 31 Mar 2020 18:15:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=egEPQE+a9GksfZnmnuTyADxsDJyCmOw1g1MWgLvqrQ0=; b=MIqX5mWoHBnZHTb/MErAEM437n
-	MJikKqN5IAi8CqxZEuiD/FTwqz9cxIOZr4hiWMglsaUYxYv3oxXS1dPKpUAN/aXN/O61Z7TVSjhPm
-	eZ+ukHjXmgSLk2o9BNks8K6V/9kCJ7TTqGFO6xxlEEO0U4JcEF3d6ZwgfLEb19g0XGaHfe7z/dcjS
-	JoEz+Im97DKJFMxRa9mQAKi4jrJyMlSIfBJQ94onWFT1TTZWnfOrh0YMvWHST3xM6QU4AruoKlZwy
-	fDrhL5PbV8P4yzXsqUshLiLXheD4WSO96z/JlMzlwF8SE2Z+tOWDeJMnlJrf0NMtAEMljJEonsY7v
-	OHOvWIHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gmOiEYeYP4NaXI2ptal60f30bMNkVixsYR/d0MkwN38=; b=fTW166w75e1qaw
+	vb6IDAnUghF/WwsBqSOFAOyPu1DVCe7nz4ZUMDJBeKO9UEUBVbVt0MCDb6rAANo1vqsnChF7Ghvxv
+	BjxdvE4gXbm0NDNwnMIVA0unbvHN6q2Nc/FVFdIY/EfBKYV+m/sM3Xwb9AjPDZ2IRuwblIWP7zxZW
+	miL84DwdMxpXn/5hkz7B7coyebN8Rx5ZYfPeZVIGUL3bgXPo5oaMhKfU8SWpCQMt3n666lGlamMYH
+	w0qd9JVz7luRuCopDKocbhdEadrwLd9WvVNET6aBIJs6Mdu6YsMB3UoQo5Y1cZvdFGxjEk8Dm8lni
+	bDqlYTxXBC7XtLPwIldA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJJUv-0005uv-6C; Tue, 31 Mar 2020 16:12:17 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jJJYB-0002gP-Of; Tue, 31 Mar 2020 16:15:39 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJJUW-0005bT-Ga; Tue, 31 Mar 2020 16:11:54 +0000
-Received: by mail-lf1-x143.google.com with SMTP id t16so16950349lfl.2;
- Tue, 31 Mar 2020 09:11:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=o49PLtczjrvnDvwyYGD9D+ZfmKnK23dv8VxdMQjHLQo=;
- b=GcBI+VTxX4A3aVLmPkgITDWYoC2Han02vraisjcoDy6dieWJWqK7aSepeeBupCGFgQ
- ha+cEwrNujyV0gQQIpmvWoHL8bZxiS/HVBgNLhX4JuyVLXMBlp+8Om4/GZUPb1f1rgbZ
- d+5LVd54abHb4j9SRHvr/5Zhja9h0dbPkgmCgfHWA0lL/PB4XKfJFk0StUfIO886iYxG
- wfKrwaINP5VIYI2c3gC1GhqraRZJNiaRAz4hyRIn0foos/63M0K/2ZP1+2izbIoBNh6x
- 8ZIWMZsFqGurcUbLTezggmynH/BiIPxgJDIlD/YT+KsKlPoMgh8dIX3B2gFvpntRZ2Ku
- 9nCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=o49PLtczjrvnDvwyYGD9D+ZfmKnK23dv8VxdMQjHLQo=;
- b=QaezlnvJf+nLoWE5h8oEMbv9wK49y1LSQnGb3z5dBTQJixtQUtNAtHF3D36ueOjL+M
- I9hU9WujP5/Su4ot5C8+0aZhxgvwPYLgCTpZRNOZ2fy9lEnIkmzuw23wC0+qWe557dLj
- o0youGMMSt2zMJPCx9hiSfHo2RBqqiP7lanuIiE1dGK8Ed4KV1t2td1O/iBSpfEdE+55
- L3HrZ0EIxa9kYla8MgqTIcG96AlJoE+NWQKUAGbf2W5+WsqmmTZwb35gu/+/YPnEFDzm
- CQt8jm4+c9G/NeT2FWTxMPresQvDHURuV0QqSFHOvgiB54d32rlZpj/CAjgZHJptpye0
- a1hw==
-X-Gm-Message-State: AGi0PuaHmbg221SrcJ7U/EEuCOct2SLg7vnVUlZASQJKovmaJiXcXz91
- rsEKV4rtPJzQJcvb2T00Tnx6cKjS
-X-Google-Smtp-Source: ADFU+vuz27mAc1lNVPQfLWPm/LTORsy6muqNkMdbp2qKAPkgBcrIlks83Udd1Fa6w5TPOn0as3gJjg==
-X-Received: by 2002:a5d:4cc4:: with SMTP id c4mr19884904wrt.346.1585656840655; 
- Tue, 31 Mar 2020 05:14:00 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 127sm3754936wmd.38.2020.03.31.05.13.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 31 Mar 2020 05:14:00 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [RFC PATCH v3 2/2] ARM: dts: rockchip: fix yaml warnings for
- rk3288-pmu-sram compatible nodes
-Date: Tue, 31 Mar 2020 14:13:52 +0200
-Message-Id: <20200331121352.3825-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200331121352.3825-1-jbx6244@gmail.com>
-References: <20200331121352.3825-1-jbx6244@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_091152_621016_045628D0 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ id 1jJJXw-0002RI-7l; Tue, 31 Mar 2020 16:15:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=/HVPi64qIRdc3panPh4kpEYyIrZRCsnANG5uQPfLZv0=; b=czW5H86boYJVa/CoBl22IF6KoZ
+ cMr2tIHGzypLuUvydNMB/987A1fGnouf9gDSiDf7i4EOwszAmMX6RgsoPyEOi6qMLZcDWblNpLsX2
+ q/jutGhJk1/mQtmY940KMomtTqJWi+7MrNiVPUdwu0f0CEpn40n0eu6GSsHoOR2O7n+Q+2Xv2J/4y
+ tMl/87i2wZniy+cEE4SmoAyKf/7dbFgIEa5Ijyh1t45ArV/5KVqxHEx8MkmTM9BEYR3OxZjAm0Afa
+ G0UTmboRH2F65jqKb9lBYkoXc3g1txNUmePOKc1PHYLCqOB9KYlPWnK+GrZ0L54RYiD3Zth0yOWA4
+ 9tc6eQWg==;
+Received: from mail.kernel.org ([198.145.29.99])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jJFyT-0000aw-GJ; Tue, 31 Mar 2020 12:26:34 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 75304208FE;
+ Tue, 31 Mar 2020 12:26:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585657590;
+ bh=blx66YChKg+gYzKEMC/qbWXbGWWkIDZF3MMoWKJ1eBs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=hkw5y+kQWTNyKdIkosNGkEfWABxhGzH5a/ppqFq829ZPBlaDy5RCYDV91zOg1oJY1
+ TVn2+L02XBcsrh2/Qs5dUdKrRx+B/MXJoJa0U9f9GVx3I2kH43m5N+oowO448yeNSt
+ 6H4qKsrdAGtepUtpQquxFrTr9E0K/5WcXQmtdOwI=
+Date: Tue, 31 Mar 2020 14:22:09 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v4 17/33] media: add SPDX headers on Kconfig and Makefile
+ files
+Message-ID: <20200331122209.GA1627483@kroah.com>
+References: <cover.1585651678.git.mchehab+huawei@kernel.org>
+ <981eea64742859c63d8ab88c24b1b3380ee32dd2.1585651678.git.mchehab+huawei@kernel.org>
+ <20200331120608.GB4767@pendragon.ideasonboard.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200331120608.GB4767@pendragon.ideasonboard.com>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,58 +86,51 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: devel@driverdev.osuosl.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example these warnings:
+On Tue, Mar 31, 2020 at 03:06:08PM +0300, Laurent Pinchart wrote:
+> Hi Mauro,
+> 
+> Thank you for the patch.
+> 
+> On Tue, Mar 31, 2020 at 01:11:53PM +0200, Mauro Carvalho Chehab wrote:
+> > Most of media Kconfig/Makefile files already has SPDX,
+> > but there are a few ones still missing. Add it to them.
+> 
+> I think it's a good idea to state the license of each source file, the
+> patch looks fine to me. I've however been thinking about licenses for
+> build system files recently, and I'll hijack this thread a bit to ask a
+> question :-)
+> 
+> For a project like the Linux kernel, and especially for subsystems that
+> are covered by a single license, the choice is easy, we can apply the
+> same license to the build files. However, for a project that contains
+> components covered by different licenses (such as, for instance, an LGPL
+> library, a GPL application and a BSD plugin), how should the license
+> covering the build system files be selected ? I searched a bit for
+> guidance on this topic, and couldn't find much.
 
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'#size-cells' is a required property
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml: sram@ff720000:
-'ranges' is a required property
+By "default" if there is no license on a file in the kernel tree, it
+falls under the GPLv2 license and we should explicity state it, like
+this patch does.
 
-Fix this error by adding '#address-cells', '#size-cells' and
-'ranges' to the 'rockchip,rk3288-pmu-sram' compatible node
-in rk3288.dtsi.
+So this is fine, but if you want to license the build files some other
+way, that's good too, but do so when you add them to the tree, not at
+some later time when it could cause confusion :)
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/sram.yaml
+thanks,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-Not tested with hardware.
-
-Changed v2:
-  Fix dtsi.
----
- arch/arm/boot/dts/rk3288.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 9c8741bb1..f102fec69 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -730,6 +730,9 @@
- 	pmu_sram: sram@ff720000 {
- 		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
- 		reg = <0x0 0xff720000 0x0 0x1000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0 0x0 0xff720000 0x1000>;
- 	};
- 
- 	pmu: power-management@ff730000 {
--- 
-2.11.0
-
+greg k-h
 
 _______________________________________________
 Linux-rockchip mailing list
