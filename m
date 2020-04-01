@@ -2,51 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F41519B13C
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Apr 2020 18:34:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C6FF19B425
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Apr 2020 18:57:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yuW2MmlwBLCEmVVNgcYSsBRc+uDGwoZ+bkeXEQlVvjg=; b=XdxX0FsH/o7VLE
-	dMuZfyDI/UpXm/s2xqmqxv+xlgyT+lEGyu4TTFEqhCsFVoAowhwrmPp748j3347fKr5QAqpHoLn/r
-	d7pMehwyybkKv8zPAi3BNQNIffBXHAhE0N09nu4pRe+h81D6/1O0doHuQ6w4lyxgu5stNJE4J06ru
-	ZTllgFRDtShfKZuSxfSCPD9qS3WvI5Unjvy9qTKZifTnCQNB+0FzdrD+f69SSfRz3qsSMpD+Fdyhb
-	AHkGQfVF64bhXicSgTKNxG5C5eoX8LUf1Jz4E19Z2HIHIXfA+/pHyK6uG3qfejB2Fz0BfgvMgRfn5
-	0Nij9WSmeS2wb2trpUjA==;
+	List-Owner; bh=I8bxtswpwTOlpUtQNv7eyDcmLSQDLPQIa6gzAsX2jFk=; b=EtxKa0vGYsEGpB
+	BvSPDAy1ZeJVJDV1lK7vSDlAV9AY6FuPGliC8hmUQXyi1inhMnGZQ11uvtqtEczrkFxv4Ao6JBMj/
+	tzH4g+8Whqe/z5T9v96y+UQOTy6PluzWcohm0MOTzPtbfecwZiYBVIbFxUwtwuoGBcwN/LxbHh9B5
+	1ToUcGNdiAi+FYeY/aHLOJ/cIDmEMrAE7W+HAPM77TXNKsjNPfQTUQIm0yw446PN/XcF2qaZKy6V3
+	dBXYpeKMsuxw29VpNjSAkhgW7QQ8Ko6iNLFPDWIP1pZrM4+OkAz2I6SptJnXm3C524r6o5c6UaEG/
+	PM6vIBzSCrH0nKIcdZDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJgK3-0006Xj-Kj; Wed, 01 Apr 2020 16:34:35 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jJgg4-0006cQ-03; Wed, 01 Apr 2020 16:57:20 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJgJu-0006SX-D8; Wed, 01 Apr 2020 16:34:28 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jJgJl-0003TS-Fj; Wed, 01 Apr 2020 18:34:17 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: =?ISO-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@collabora.com>
-Subject: Re: [PATCH v2 1/2] soc: rockchip: Register a soc_device to retrieve
- revision
-Date: Wed, 01 Apr 2020 18:34:16 +0200
-Message-ID: <5143930.cPWVAAQKI9@diego>
-In-Reply-To: <20200401153513.423683-2-mylene.josserand@collabora.com>
-References: <20200401153513.423683-1-mylene.josserand@collabora.com>
- <20200401153513.423683-2-mylene.josserand@collabora.com>
+ id 1jJgfs-0006VW-Kj; Wed, 01 Apr 2020 16:57:12 +0000
+Received: by mail-ot1-f67.google.com with SMTP id x11so254216otp.6;
+ Wed, 01 Apr 2020 09:57:07 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=ZyTZQ9ScLYyXr8uy25TVZM268D8wsSCH+8ypLUnJOFM=;
+ b=sYgzQdNCQQjNxCUq2c1TZ1iJXz8uMrmCPofRUj/fpXd/lw+1E/QBQ3146F86yY3zK9
+ KBP9XvgUidI2lCKNpu/+aFEW7HWwxb4C3RmS3Di0VktG6ZH0C/Sn3do8WHoMc8Camd3E
+ bk9f0k8Ljgf5hQwSVeqlPZ6BHF19G2ZxjaoQ4laEUCTFgMAsvehMGxG+FYxsPx7Ghpjq
+ L3FHAnsziVD/6/5qgAeydJdzOQBkPV357M1p5EIeLAXW4msX37ILxll11xN5sdviUVwm
+ pCNcHa0YkvoVwZV/dkku9OVz47dvfnltReKEtvC4a826iqb9L8pd5BUIhE6vFwllP/73
+ bprg==
+X-Gm-Message-State: ANhLgQ0mgTx0bjZFsamC+fjwgvCzlhIRj0OYbcJCFw5QrZ8MId9VFFM9
+ jW/tScsGPxFJad96j/Ra+ADXI3HHMIJ47fYo9gE=
+X-Google-Smtp-Source: ADFU+vufihEvibArYWJjTrCmDu7dXZgc3PqH8LVxCwqiESC/QDCUaa5LpicQzIvHFS3WT4dVXp+EAe0ygrg1OSHe3UQ=
+X-Received: by 2002:a9d:76c7:: with SMTP id p7mr6414778otl.145.1585760227154; 
+ Wed, 01 Apr 2020 09:57:07 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200401153513.423683-1-mylene.josserand@collabora.com>
+ <20200401153513.423683-3-mylene.josserand@collabora.com>
+In-Reply-To: <20200401153513.423683-3-mylene.josserand@collabora.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 1 Apr 2020 18:56:55 +0200
+Message-ID: <CAMuHMdXvFOKqmZ-MLJV4SAeLN-PDzqPvMvbVpcD=jyip9tbdnA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] clk: rockchip: rk3288: Handle clock tree for
+ rk3288w
+To: =?UTF-8?Q?Myl=C3=A8ne_Josserand?= <mylene.josserand@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_093426_595527_DC694538 
-X-CRM114-Status: GOOD (  23.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200401_095711_160185_48EE85EC 
+X-CRM114-Status: GOOD (  18.41  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,229 +83,76 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- kever.yang@rock-chips.com, linux-rockchip@lists.infradead.org,
- geert@linux-m68k.org, kernel@collabora.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Heiko Stuebner <heiko@sntech.de>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ kever.yang@rock-chips.com,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Myl=E8ne,
-
-Am Mittwoch, 1. April 2020, 17:35:12 CEST schrieb Myl=E8ne Josserand:
-> Determine which revision of rk3288 by checking the HDMI version.
-> According to the Rockchip BSP kernel/u-boot, on rk3288w, the HDMI
-> revision equals 0x1A which is not the case for the rk3288.
-> =
-
-> As these SOC have some differences, this driver will help us
-> to know on which revision we are by using 'soc_device' registration
-> to be able to use 'soc_device_match' to detect rk3288/rk3288w.
-> =
-
-> Signed-off-by: Myl=E8ne Josserand <mylene.josserand@collabora.com>
-
-I like your new approach quite a lot :-)
-
-There are some things we need to take into account though, see below.
-
-
-> ---
->  drivers/soc/rockchip/Makefile |   1 +
->  drivers/soc/rockchip/rk3288.c | 125 ++++++++++++++++++++++++++++++++++
->  2 files changed, 126 insertions(+)
->  create mode 100644 drivers/soc/rockchip/rk3288.c
-> =
-
-> diff --git a/drivers/soc/rockchip/Makefile b/drivers/soc/rockchip/Makefile
-> index afca0a4c4b72..9dbf12913512 100644
-> --- a/drivers/soc/rockchip/Makefile
-> +++ b/drivers/soc/rockchip/Makefile
-> @@ -2,5 +2,6 @@
->  #
->  # Rockchip Soc drivers
->  #
-> +obj-$(CONFIG_ARCH_ROCKCHIP) +=3D rk3288.o
->  obj-$(CONFIG_ROCKCHIP_GRF) +=3D grf.o
->  obj-$(CONFIG_ROCKCHIP_PM_DOMAINS) +=3D pm_domains.o
-> diff --git a/drivers/soc/rockchip/rk3288.c b/drivers/soc/rockchip/rk3288.c
-
-I'd really like this to be a soc.c instead of rk3288.c ;-)
-
-
-> new file mode 100644
-> index 000000000000..83379ba2b31b
-> --- /dev/null
-> +++ b/drivers/soc/rockchip/rk3288.c
-> @@ -0,0 +1,125 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2020 Collabora Ltd
-> + * Author: Mylene Josserand <mylene.josserand@collabora.com>
-> + */
-> +
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/of_address.h>
-> +#include <linux/sys_soc.h>
-> +#include <linux/slab.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of.h>
-> +
-> +#define RK3288_HDMI_REV_REG	0x04
-> +#define RK3288W_HDMI_REV	0x1A
-> +
-> +enum rk3288_soc_rev {
-> +	RK3288_SOC_REV_NOT_DETECT,
-> +	RK3288_SOC_REV_RK3288,
-> +	RK3288_SOC_REV_RK3288W,
-> +};
-> +
-> +static int rk3288_revision(void)
-> +{
-> +	static int revision =3D RK3288_SOC_REV_NOT_DETECT;
-> +	struct device_node *dn;
-> +	void __iomem *hdmi_base;
-> +
-> +	if (revision !=3D RK3288_SOC_REV_NOT_DETECT)
-> +		return revision;
-> +
-> +	dn =3D of_find_compatible_node(NULL, NULL, "rockchip,rk3288-dw-hdmi");
-> +	if (!dn) {
-> +		pr_err("%s: Couldn't find HDMI node\n", __func__);
-> +		return -EINVAL;
-> +	}
-> +
-> +	hdmi_base =3D of_iomap(dn, 0);
-> +	of_node_put(dn);
-> +
-> +	if (!hdmi_base) {
-> +		pr_err("%s: Couldn't map %pOF regs\n", __func__,
-> +		       hdmi_base);
-> +		return -ENXIO;
-> +	}
-
-The possible problem I see here is clocking and power-domain of the hdmi
-controller in corner-cases. In the past we already had a lot of fun with
-kexec, which also indicates that people actually use kexec productively.
-
-So while all clocks are ungated and all power-domains are powered on first
-boot, on a system without graphics the pclk+power-domain could be off when
-doing a kexec into a second kernel, which then would probably hang here.
-
-
-Of course with the hdmi-pclk being sourced from hclk_vio we run into a
-chicken-egg-problem, as we need pclk_hdmi_ctrl to register hclk_vio at all.
-
-So I guess one way out of this could be to
-- amend rk3288_clk_shutdown() to also ungate the hdmi-pclk on shutdown
-- add a shutdown mechanism to the power-domain driver so that it can
-  enable PD_VIO on shutdown
-
-> +
-> +	if (readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG)
-> +	    =3D=3D RK3288W_HDMI_REV)
-
-nit: a nicer look would be something like
-	val =3D readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG);
-	if (val =3D=3D RK3288W_HDMI_REV)
-
-> +		revision =3D RK3288_SOC_REV_RK3288W;
-> +	else
-> +		revision =3D RK3288_SOC_REV_RK3288;
-> +
-> +	iounmap(hdmi_base);
-> +
-> +	return revision;
-> +}
-> +
-> +static const char *rk3288_socinfo_revision(u32 rev)
-> +{
-> +	const char *soc_rev;
-> +
-> +	switch (rev) {
-> +	case RK3288_SOC_REV_RK3288:
-> +		soc_rev =3D "RK3288";
-> +		break;
-> +
-> +	case RK3288_SOC_REV_RK3288W:
-> +		soc_rev =3D "RK3288w";
-
-can we maybe use lower-case letters for all here?
-
-> +		break;
-> +
-> +	case RK3288_SOC_REV_NOT_DETECT:
-> +		soc_rev =3D "";
-> +		break;
-> +
-> +	default:
-> +		soc_rev =3D "unknown";
-> +		break;
-> +	}
-> +
-> +	return kstrdup_const(soc_rev, GFP_KERNEL);
-> +}
-> +
-> +static const struct of_device_id rk3288_soc_match[] =3D {
-> +	{ .compatible =3D "rockchip,rk3288", },
-> +	{ }
-> +};
-> +
-> +static int __init rk3288_soc_init(void)
-
-as noted at the top, I'd really like to see this more generalized so that
-other socs can just hook in there with a revision callback in a
-rockchip_soc_data struct.
-
-
-> +{
-> +	struct soc_device_attribute *soc_dev_attr;
-> +	struct soc_device *soc_dev;
-> +	struct device_node *np;
-> +
-> +	np =3D of_find_matching_node(NULL, rk3288_soc_match);
-> +	if (!np)
-> +		return -ENODEV;
-> +
-> +	soc_dev_attr =3D kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
-> +	if (!soc_dev_attr)
-> +		return -ENOMEM;
-> +
-> +	soc_dev_attr->family =3D "Rockchip";
-> +	soc_dev_attr->soc_id =3D "RK32xx";
-
-nit: rk3288 instead of "32xx" please
-
-> +
-> +	np =3D of_find_node_by_path("/");
-> +	of_property_read_string(np, "model", &soc_dev_attr->machine);
-> +	of_node_put(np);
-> +
-> +	soc_dev_attr->revision =3D rk3288_socinfo_revision(rk3288_revision());
-> +
-> +	soc_dev =3D soc_device_register(soc_dev_attr);
-> +	if (IS_ERR(soc_dev)) {
-> +		kfree_const(soc_dev_attr->revision);
-> +		kfree_const(soc_dev_attr->soc_id);
-> +		kfree(soc_dev_attr);
-> +		return PTR_ERR(soc_dev);
-> +	}
-> +
-> +	dev_info(soc_device_to_device(soc_dev), "Rockchip %s %s detected\n",
-> +		 soc_dev_attr->soc_id, soc_dev_attr->revision);
-
-nit: dev_dbg should be enough, that information doesn't really matter for
-most people, as it's only relevant to clock internals.
-
-
-Heiko
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgTXlsw6huZSwKCk9uIFdlZCwgQXByIDEsIDIwMjAgYXQgNTozNSBQTSBNeWzDqG5lIEpvc3Nl
+cmFuZAo8bXlsZW5lLmpvc3NlcmFuZEBjb2xsYWJvcmEuY29tPiB3cm90ZToKPiBUaGUgcmV2aXNp
+b24gcmszMjg4dyBoYXMgYSBkaWZmZXJlbnQgY2xvY2sgdHJlZSBhYm91dAo+ICJoY2xrX3ZpbyIg
+Y2xvY2ssIGFjY29yZGluZyB0byB0aGUgQlNQIGtlcm5lbCBjb2RlLgo+Cj4gVGhpcyBwYXRjaCBo
+YW5kbGVzIHRoaXMgZGlmZmVyZW5jZSBieSBkZXRlY3Rpbmcgd2hpY2ggU09DIGl0IGlzCj4gYW5k
+IGNyZWF0aW5nIHRoZSBkaXYgYWNjb3JkaW5nbHkuIEJlY2F1c2Ugd2UgYXJlIHVzaW5nCj4gc29j
+X2RldmljZV9tYXRjaCBmdW5jdGlvbiwgd2UgbmVlZCB0byBkZWxheSB0aGUgcmVnaXN0cmF0aW9u
+Cj4gb2YgdGhpcyBjbG9jayBsYXRlciB0aGFuIG90aGVycyB0byBoYXZlIHRpbWUgdG8gZ2V0IFNv
+QyByZXZpc2lvbi4KPgo+IE90aGVyd2lzZSwgYmVjYXVzZSBvZiBDTEtfT0ZfREVDTEFSRSB1c2Vz
+LCBjbG9jayB0cmVlIHdpbGwgYmUKPiBjcmVhdGVkIHRvbyBzb29uIHRvIGhhdmUgdGltZSB0byBk
+ZXRlY3QgU29DJ3MgcmV2aXNpb24uCj4KPiBTaWduZWQtb2ZmLWJ5OiBNeWzDqG5lIEpvc3NlcmFu
+ZCA8bXlsZW5lLmpvc3NlcmFuZEBjb2xsYWJvcmEuY29tPgoKVGhhbmtzIGZvciB5b3VyIHBhdGNo
+IQoKPiAtLS0gYS9kcml2ZXJzL2Nsay9yb2NrY2hpcC9jbGstcmszMjg4LmMKPiArKysgYi9kcml2
+ZXJzL2Nsay9yb2NrY2hpcC9jbGstcmszMjg4LmMKPiBAQCAtOTE0LDEwICs5MjMsMTUgQEAgc3Rh
+dGljIHN0cnVjdCBzeXNjb3JlX29wcyByazMyODhfY2xrX3N5c2NvcmVfb3BzID0gewo+ICAgICAg
+ICAgLnJlc3VtZSA9IHJrMzI4OF9jbGtfcmVzdW1lLAo+ICB9Owo+Cj4gK3N0YXRpYyBjb25zdCBz
+dHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgcmszMjg4d1tdID0gewo+ICsgICAgICAgeyAuc29j
+X2lkID0gIlJLMzJ4eCIsIC5yZXZpc2lvbiA9ICJSSzMyODh3IiB9LAo+ICsgICAgICAgeyAvKiBz
+ZW50aW5lbCAqLyB9Cj4gK307Cj4gKwo+ICtzdGF0aWMgc3RydWN0IHJvY2tjaGlwX2Nsa19wcm92
+aWRlciAqY3R4Owo+ICsKPiAgc3RhdGljIHZvaWQgX19pbml0IHJrMzI4OF9jbGtfaW5pdChzdHJ1
+Y3QgZGV2aWNlX25vZGUgKm5wKQo+ICB7Cj4gLSAgICAgICBzdHJ1Y3Qgcm9ja2NoaXBfY2xrX3By
+b3ZpZGVyICpjdHg7Cj4gLQo+ICAgICAgICAgcmszMjg4X2NydV9iYXNlID0gb2ZfaW9tYXAobnAs
+IDApOwo+ICAgICAgICAgaWYgKCFyazMyODhfY3J1X2Jhc2UpIHsKPiAgICAgICAgICAgICAgICAg
+cHJfZXJyKCIlczogY291bGQgbm90IG1hcCBjcnUgcmVnaW9uXG4iLCBfX2Z1bmNfXyk7Cj4gQEAg
+LTk1NSwzICs5NjksMTcgQEAgc3RhdGljIHZvaWQgX19pbml0IHJrMzI4OF9jbGtfaW5pdChzdHJ1
+Y3QgZGV2aWNlX25vZGUgKm5wKQo+ICAgICAgICAgcm9ja2NoaXBfY2xrX29mX2FkZF9wcm92aWRl
+cihucCwgY3R4KTsKPiAgfQo+ICBDTEtfT0ZfREVDTEFSRShyazMyODhfY3J1LCAicm9ja2NoaXAs
+cmszMjg4LWNydSIsIHJrMzI4OF9jbGtfaW5pdCk7Cj4gKwo+ICtzdGF0aWMgaW50IF9faW5pdCBy
+azMyODhfaGNsa3Zpb19yZWdpc3Rlcih2b2lkKQo+ICt7CgpUaGlzIGZ1bmN0aW9uIHdpbGwgYWx3
+YXlzIGJlIGNhbGxlZCwgZXZlbiB3aGVuIHJ1bm5pbmcgYSAobXVsdGktcGxhdGZvcm0pCmtlcm5l
+bCBvbiBhIG5vbi1yazMyODggcGxhdGZvcm0uICBTbyB5b3UgbmVlZCBzb21lIHByb3RlY3Rpb24g
+YWdhaW5zdAp0aGF0LgoKPiArICAgICAgIC8qIENoZWNrIGZvciB0aGUgcmszMjg4dyByZXZpc2lv
+biBhcyBjbG9jayB0cmVlIGlzIGRpZmZlcmVudCAqLwo+ICsgICAgICAgaWYgKHNvY19kZXZpY2Vf
+bWF0Y2gocmszMjg4dykpCj4gKyAgICAgICAgICAgICAgIHJvY2tjaGlwX2Nsa19yZWdpc3Rlcl9i
+cmFuY2hlcyhjdHgsIHJrMzI4OHdfaGNsa3Zpb19icmFuY2gsCj4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBBUlJBWV9TSVpFKHJrMzI4OHdfaGNsa3Zpb19i
+cmFuY2gpKTsKPiArICAgICAgIGVsc2UKPiArICAgICAgICAgICAgICAgcm9ja2NoaXBfY2xrX3Jl
+Z2lzdGVyX2JyYW5jaGVzKGN0eCwgcmszMjg4X2hjbGt2aW9fYnJhbmNoLAo+ICsgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQVJSQVlfU0laRShyazMyODhfaGNs
+a3Zpb19icmFuY2gpKTsKCk5vdGUgdGhhdCBzb2NfZGV2aWNlX21hdGNoKCkgcmV0dXJucyBhIHN0
+cnVjdCBzb2NfZGV2aWNlX2F0dHJpYnV0ZQpwb2ludGVyLiAgSWYgeW91IHdvdWxkIHN0b3JlIHRo
+ZSByb2NrY2hpcF9jbGtfYnJhbmNoIGFycmF5IHBvaW50ZXIgYW5kCnNpemUgaW4gcmszMjg4d1su
+Li5dLmRhdGEgKGkuZS4gYSBwb2ludGVyIHRvIGEgc3RydWN0IGNvbnRhaW5pbmcgdGhhdAppbmZv
+KSwgZm9yIGJvdGggdGhlIHI4MzI4OHcgYW5kIG5vcm1hbCByazMyODggdmFyaWFudHMsIHlvdSBj
+b3VsZApzaW1wbGlmeSB0aGlzIHRvOgoKICAgIGF0dHIgPSBzb2NfZGV2aWNlX21hdGNoKHJrMzI4
+OHcpOwogICAgaWYgKGF0dHIpIHsKICAgICAgICAgICAgc3RydWN0IHJrMzI4OF9icmFuY2hfYXJy
+YXkgKnAgPSBhdHRyLT5kYXRhOwogICAgICAgICAgICByb2NrY2hpcF9jbGtfcmVnaXN0ZXJfYnJh
+bmNoZXMoY3R4LCBwLT5icmFuY2hlcywgcC0+bGVuKTsKICAgIH0KClRoYXQgd291bGQgaGFuZGxl
+IHRoZSBub3QtcnVubmluZy1vbi1yazMyODggaXNzdWUgYXMgd2VsbC4KCj4gKwo+ICsgICAgICAg
+cmV0dXJuIDA7Cj4gK30KPiArc3Vic3lzX2luaXRjYWxsKHJrMzI4OF9oY2xrdmlvX3JlZ2lzdGVy
+KTsKCkdye29ldGplLGVldGluZ31zLAoKICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0t
+IApHZWVydCBVeXR0ZXJob2V2ZW4gLS0gVGhlcmUncyBsb3RzIG9mIExpbnV4IGJleW9uZCBpYTMy
+IC0tIGdlZXJ0QGxpbnV4LW02OGsub3JnCgpJbiBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGgg
+dGVjaG5pY2FsIHBlb3BsZSwgSSBjYWxsIG15c2VsZiBhIGhhY2tlci4gQnV0CndoZW4gSSdtIHRh
+bGtpbmcgdG8gam91cm5hbGlzdHMgSSBqdXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5n
+IGxpa2UgdGhhdC4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2
+YWxkcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGlu
+dXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2Nr
+Y2hpcAo=
