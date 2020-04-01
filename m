@@ -2,91 +2,64 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51B9119A65B
-	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Apr 2020 09:38:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06D4819A934
+	for <lists+linux-rockchip@lfdr.de>; Wed,  1 Apr 2020 12:10:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MXFP8wyptQ2uKAb4DL/qqdLLfwryj5TktTkwjpZNg9A=; b=FObYIoRDWxauQn3zIU0bjXUPfo
-	y9jYhkh6qEt84zT2i4FV8ApZTxdCTFe3ROYtOBezRSK290U1s1EA9zhAcKRXn/k7+dIAQolGtycct
-	eUkdgSxMdSF9O8ftIfq+Irwsx3xO207zkOWdsksLa74mF/gYQeQ/osSi6r12jPRUAsfYFlqkcaTk0
-	PY9076Tms5BG7H7Xrgplay7WIwPaslIYQzndkEZt8Q7cNs2Jv/Q18NCIlu7jll4fEPTmhzPlhOrDa
-	dderQoeEkBUw7QZPCVNMAA+V1XSQyMN4rowkw39v7WKebobVtLVEvnI58I/JLaUDNPafFWgM9EJ4S
-	/Ay0x+Ww==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vl5E9ObnIVEwVjqpsoejW1crjii0flxm5/5WTL02rPc=; b=XsuBiiRgfId210
+	Cr+Vg3JNFFBJCBECASJQj/6qBLURxjYieFGKqCuO2amAFqb2fh4YoMjDCTfMjeck1Jjqt0K708T6K
+	gTIFPM/UekMOARoDxoOrnUoeFeVo9k+8VXHtuA4jXanC/b/xW6fEESYLICRWrNUCPFqG7gKzec9U9
+	pF2pS54iHlojkq90uSHvH2HQywmdpQ+GPE84p8OGepqX7qLEmdJcTwBoYMfY4h9B2t6o6w4xeuXMF
+	XHuZ0bmuuzRiRRbhP2xgUWWyTp9CByxyP4vqfJT7AdE8l1FONQrnc1ILDuK76v+ydFhh3/GKdW+h7
+	c5fZbTgBq+kWZHDr2zeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJXwp-0006ov-Ra; Wed, 01 Apr 2020 07:38:03 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jJaK5-0001uc-Sa; Wed, 01 Apr 2020 10:10:13 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJXwP-0006ON-B1; Wed, 01 Apr 2020 07:37:38 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z7so2750607wmk.1;
- Wed, 01 Apr 2020 00:37:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0Y6Wj9TjOPkwLscHBPA5Cfe2j0fMXJtpZJ9SAqxrysY=;
- b=gLIfnCa9RtFY4bg+BQkrVUO4Rvy87KxQjWbI4NQsRQAzQL0j7izLckcgIVc92kpaIC
- xqfFVmbpVbso5u+xZy9+UrR6XKHdhiFyWltAqmDbM2rzuZLhLJVuH2NiPb5Z1MWAH88r
- i9ocprWSufx8F2X7UhYwELcDpu5DwChiP80XwBruxSesGs8H9BwuFhDO4uTL/2sRJAsO
- 2OgSzLfNkoKmgtbn5Np6X7TqKUDOmWuTNl6Ej4D9PfKmZE2wX0V3cmWoxAN4vsz0EmaK
- y8LoUpmUhQ4VOgyL7wxa0ALaHJABHW/scbpQl9TEhsNSVYHhxdd5qD9OTVmND9jgR1U7
- QAEA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=0Y6Wj9TjOPkwLscHBPA5Cfe2j0fMXJtpZJ9SAqxrysY=;
- b=iMJ7EMTLOJXrFLY3GTKJbHu5g5DGj35ao/t8Y35wEtMXga0ryZ5IBLAvrC9sb9hArv
- NuPuNzF8tiPcDiN/I55zhynRbOBsGI3RD6xaiLLef572no/Zavm7h1Rz1k97p04lNHzi
- BhFpNLU7aaNWdHDsdgswCe9YOoqpVkv0gzIx4n501f+gbjS3mvKyvgdjR3DGT3kqmuUd
- 2cRf4wUl0mB2ONcGTj4yQlLKlKcsQo5owCqyHQ7SIRi2jC8XlwEYziMqAuvNLN+nyAqa
- MS3m4IVVX8CQzvUw+DI5fq6voNdy8ElaQkx9TmE4mNNcnCOfzfS+JLa9QlIFCU2KXRHK
- n1pw==
-X-Gm-Message-State: AGi0PuaFkl2MVHevzl/3vGjY5fYnNfWkVdgz4tRxauHJ/WGB09VypGeK
- 1BValZEFNgUGuBH/cIwlZsw=
-X-Google-Smtp-Source: APiQypIo6BlXDVUAujJm5bjFl9PFx10seyVOAuO+YssZ1j2o9iXGGnPhJ3AFEfXIPfLYVm9Tx24sew==
-X-Received: by 2002:a1c:dd8b:: with SMTP id u133mr2754794wmg.109.1585726655777; 
- Wed, 01 Apr 2020 00:37:35 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g3sm1793431wrm.66.2020.04.01.00.37.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 Apr 2020 00:37:35 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v1 2/2] arm64: dts: rockchip: add #phy-cells to all usb2-phy
- nodes
-Date: Wed,  1 Apr 2020 09:37:25 +0200
-Message-Id: <20200401073725.6063-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200401073725.6063-1-jbx6244@gmail.com>
-References: <20200401073725.6063-1-jbx6244@gmail.com>
+ id 1jJaK1-00006n-R0
+ for linux-rockchip@lists.infradead.org; Wed, 01 Apr 2020 10:10:11 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1jJaJs-0003sj-Vz; Wed, 01 Apr 2020 12:10:01 +0200
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (pD9E89FA1.dip0.t-ipconnect.de
+ [217.232.159.161]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ 031A9wEm005626
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Wed, 1 Apr 2020 12:09:58 +0200
+Subject: Re: Power Key/button on rk3399-roc-pc
+To: Suniel Mahesh <sunil@amarulasolutions.com>, djw@t-chip.com.cn
+References: <CAM+7aWuR-2EYSDQLj+Sep9cu_cAsL5QD=wRrar-9vLSd_7KPyg@mail.gmail.com>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <c3f77864-ab66-e31c-e9a6-5a3c8e10b6ea@fivetechno.de>
+Date: Wed, 1 Apr 2020 12:09:58 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <CAM+7aWuR-2EYSDQLj+Sep9cu_cAsL5QD=wRrar-9vLSd_7KPyg@mail.gmail.com>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1585735809;
+ a8ad5ea1; 
+X-HE-SMSGID: 1jJaJs-0003sj-Vz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_003737_373063_7076BB96 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200401_031010_040499_57E28839 
+X-CRM114-Status: GOOD (  14.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,97 +72,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Kever Yang <kever.yang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Current dts files for Rockchip with 'usb2-phy' subnodes
-are manually verified. In order to automate this process
-phy-rockchip-inno-usb2.txt has been converted to yaml.
-'usb2-phy' nodes are now checked by:
-'phy-rockchip-inno-usb2.yaml' and 'phy-provider.yaml'.
-'#phy-cells' is now required for all usb2-phy nodes,
-so add them.
+Hi Suniel,
 
-make -k ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/
-phy/phy-rockchip-inno-usb2.yaml
+Am 01.04.20 um 06:53 schrieb Suniel Mahesh:
+> Hi Markus, Levin and all,
+> 
+> Can you guys please suggest me on my requirement.
+> 
+> rk3399-roc-pc board has a Power Key/button. As per the schematics this
+> Power Key/button
+> is connected to GPIO0_A5.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 5 +++--
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 ++-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++--
- 3 files changed, 9 insertions(+), 5 deletions(-)
+And to PWRON of RK808.
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index bd5f51d23..6f7171290 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -822,10 +822,11 @@
- 			reg = <0x100 0x20>;
- 			clocks = <&pmucru SCLK_USBPHY_REF>;
- 			clock-names = "phyclk";
--			#clock-cells = <0>;
-+			clock-output-names = "usb480m_phy";
- 			assigned-clocks = <&cru USB480M>;
- 			assigned-clock-parents = <&u2phy>;
--			clock-output-names = "usb480m_phy";
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy_host: host-port {
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 8976c869f..470783a48 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -830,9 +830,10 @@
- 			clocks = <&xin24m>;
- 			clock-names = "phyclk";
- 			clock-output-names = "usb480m_phy";
--			#clock-cells = <0>;
- 			assigned-clocks = <&cru USB480M>;
- 			assigned-clock-parents = <&u2phy>;
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy_otg: otg-port {
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 3dc8fe620..a7ee5aa65 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1391,8 +1391,9 @@
- 			reg = <0xe450 0x10>;
- 			clocks = <&cru SCLK_USB2PHY0_REF>;
- 			clock-names = "phyclk";
--			#clock-cells = <0>;
- 			clock-output-names = "clk_usbphy0_480m";
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy0_host: host-port {
-@@ -1418,8 +1419,9 @@
- 			reg = <0xe460 0x10>;
- 			clocks = <&cru SCLK_USB2PHY1_REF>;
- 			clock-names = "phyclk";
--			#clock-cells = <0>;
- 			clock-output-names = "clk_usbphy1_480m";
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
- 			status = "disabled";
- 
- 			u2phy1_host: host-port {
--- 
-2.11.0
+> 
+> My requirement is can I use this button for board powerup (especially
+> in linux when we issue
+> "poweroff" command, the board shuts down and it should power back on
+> after I press the Power Key/button).
+> 
+> For the above to happen, I think this Power Key/button be connected to
+> PMIC RK808-D IC, am i correct ?
 
+Yes, see P.16 of ROC-3399-PC-V10-A-20180804 schematic.
+> 
+> In the schematics, it is not very clear as if such arrangement is
+> there (though it says it can be an option in
+> RK3399_BOX_REF_V13_20180821.pdf). I am attaching the document.
+> 
+> Please suggest/comment on my requirement.
+
+Should work, everything is in place, just press long enough ;-).
+
+Btw. could you just revert your recent U-Boot commit
+checking GPIO0_A5 that prevents unattended booting?
+
+Thanks,
+--
+Markus
+
+> 
+> Thanks and regards
+> Suniel
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
