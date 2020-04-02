@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BE5C19C053
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 13:42:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17DF519C054
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 13:42:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NKKpJDLJ9N3m//dW0FZmEIO0AgKbDT6kqdFCKzxgrqc=; b=OkXBAd6oDfJmeJjH+m7dGiY4ch
-	tWjC908Qx8XLhza9hCA9UG7WaGYY/HDz9jDtsfDSfD7z7u2iIjEyuHItXLRJzpQ+y31tQvdU0pmZY
-	XSQEUUD4JX8nzKRIUuE9H3urFDOADk+wsh1qDrGWLksyOw9n1AaNw4bsnnu/+hG4NVGtLTgcK1o2l
-	4LECPg9fztts/ep1IjlAfa9usWNXWr10itj8O+CyP5ISiUYGP/DDoK8AWdsdrBhQrb+NjI+LnN/Di
-	2rm1uJIknV2v9xU9SWVY29BU3pqF49QcXxH6JjA4l4tURAjY5/1P+r1qAJ3ireCjHkc4FSzkMub0c
-	EJC1uB9w==;
+	bh=790hAhyE5vW8cf88wBCbqzLS1O7zErEEKfby0ywe35g=; b=gp4C67J2lO+d1Fi3QrSC319STd
+	oeH2IDq+95b+2dCh7HzCxCJSFu2S41kk21ela5P95jizJW+cOCHgqPfnH6ES9sWfieCFSmm7BtrOK
+	8X1QoE37G1XoifltXdVSnM7rJOOPE8bfgGM6pPQA28Peogv2hOC7dcNsk1z0BJfR8KUMOWN8LQ8bv
+	lQyWpSOFCe88nTYGw2uqvrZt+jn1oMAtVlcWyQDW0HYGSLHLHBZUgiVjCq1QRHyLI4SXD0WN2/kCS
+	Cu1cnL+k4OiDgKKRP61NaTn3Imv6Q7Kgzdj9wLlFPHNMAgwbYDzvbMjl/A+0F+h36AMN8tzKrG+HN
+	prXbEL5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJyEP-0002DE-Ex; Thu, 02 Apr 2020 11:41:57 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jJyEV-0002Gn-7z; Thu, 02 Apr 2020 11:42:03 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJyEM-0002Bs-GC
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 11:41:55 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c21so1635693pfo.5
- for <linux-rockchip@lists.infradead.org>; Thu, 02 Apr 2020 04:41:54 -0700 (PDT)
+ id 1jJyER-0002Ed-Re
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 11:42:01 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x7so1723145pgh.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 02 Apr 2020 04:41:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=WRZdNM0deIoSv283K07zAk/A6gBZnVda/XJNRb/2yT4=;
- b=bWrtgsQuFnnzBdXcsbFXT19wwAIx45o1LIYxVYZozD23BqMxr7nshRaZEeTUHr35h4
- OeonsYgdIX6CgL/6r2oAR419iGOunml5NvesJWzZhQvklLnRwQUbW3AtGlO8pPavISZp
- EDBXYtjtTTX6Bg+/J65fVMWZphehffql46j4g=
+ bh=oIKi2o05B3Z9cSU1NF9xH472HBvt4fwkMM8ABMXFROs=;
+ b=nB6TM8G57eVlmSYGAe4tHnLtxk114pG866EhkcmchUPHFt0LlR8Z3UCmnlEdyb/Pe4
+ i9vqqaH6ZQgmRTWj172Argghtwlimf6hMmgcXhfbNRMSji+0z+9YWZs3aK9lq+XQmDvI
+ Z6+16/b47s9EpcKhFbjeUnPJceiKgcViERFUo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=WRZdNM0deIoSv283K07zAk/A6gBZnVda/XJNRb/2yT4=;
- b=fS8ELtWFJIVbDCJ0foLJMVhcZKdhp1JaTbUM/nuZlL+4pGuWmJWAaTD5ZanDVYbf2e
- qNg09zAmjtDNDGZ/NLEQUCSSdDHs+zZ5KZhZcpGE4lhhpHnMFn+w7hUT26fEo36dem8i
- pU4dep3QC3AjGmDxq5vwyuwvYTCQKe5m1nNi5/GoqA5+B2dOvLBRW4ItdkCHwiqn1sCK
- 1GNMGaXAUP8YF3yHlQcyHL0UPEoDUwuSUgbCnE+lWP3pUox6sg/j7gfqN0fkWzx+wJEy
- ZKurYU/ABp05n6eKbSQ1wzsk2fviodS4JhrFHtsWIE1mtnvk6iNin0OrQE+56/Q8ZcO1
- qCEw==
-X-Gm-Message-State: AGi0PubjZXke0z0AkQEuCk0w/P8UEuqDPFRhMsmw8UirZLN3VWhnY765
- SyWQ5S+XJ7RnBCm2cqTcMu3W/w==
-X-Google-Smtp-Source: APiQypLE+79egu39SX50fCIUVWWCiB1/pFRIWLW9FIQ7Gt26s2I5eQxihTorqEVWJN8f3hE1RT2jsA==
-X-Received: by 2002:a05:6a00:2cb:: with SMTP id
- b11mr2732492pft.42.1585827713856; 
- Thu, 02 Apr 2020 04:41:53 -0700 (PDT)
+ bh=oIKi2o05B3Z9cSU1NF9xH472HBvt4fwkMM8ABMXFROs=;
+ b=jDCC0tc16lcXU3WvWJ4hPv67tPpDxPcFMkBL1EmQ+VLJ5vLuXnRqrvUK/pJlBh65XX
+ aH9nzN7xaNOb+eu8211yK1R6wNERWzpafsCJPagLZBcjZAlluNhGIzjTl1cb5bcAXU/F
+ EssihMicNQnOPPTjVaPuyXiYff0QZzw2KmZTgglgf8BIF+jqTZPhFSVJPgCyp/IAlT9Q
+ 7HMQNEGqKBH+VIPbW7iK9wX3RsqWtveC/aQ4sTolM+di57XeHLFQNA4mDOx0mzrae0hP
+ G7hY49mFCxHcdmCSdUqQm96knkIsHPVDjznLvuKm6PKOt0yqad9FtnsUKZwbp+4l7ZL+
+ sXNA==
+X-Gm-Message-State: AGi0PubBFx2H8vLz4MAB2qA/ru7UcJ+jBqwbO2Px2g13LrXHCCc7qL7U
+ arnL7ycjTW6i4pjnOqWPUbN4AQ==
+X-Google-Smtp-Source: APiQypKQPfM5v59ATdHn2zW07b69ZQAkS+2/ZZ0phbD/cwJ/5eVENIfLMZw84D65BWljN5lS0n55FQ==
+X-Received: by 2002:a63:cb4a:: with SMTP id m10mr3060711pgi.101.1585827717799; 
+ Thu, 02 Apr 2020 04:41:57 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:3532:519d:ba6d:25e1])
- by smtp.gmail.com with ESMTPSA id i4sm3618107pjg.4.2020.04.02.04.41.49
+ by smtp.gmail.com with ESMTPSA id i4sm3618107pjg.4.2020.04.02.04.41.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 02 Apr 2020 04:41:53 -0700 (PDT)
+ Thu, 02 Apr 2020 04:41:57 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Anatolij Gustschin <agust@denx.de>
-Subject: [PATCH v3 4/5] rockchip: Enable HDMI output on rk3399 board w/ HDMI
-Date: Thu,  2 Apr 2020 17:11:24 +0530
-Message-Id: <20200402114125.2501-5-jagan@amarulasolutions.com>
+Subject: [PATCH v3 5/5] video: rockchip: Support 4K resolution for rk3399, HDMI
+Date: Thu,  2 Apr 2020 17:11:25 +0530
+Message-Id: <20200402114125.2501-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200402114125.2501-1-jagan@amarulasolutions.com>
 References: <20200402114125.2501-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_044154_536035_2347C595 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200402_044159_888694_E2DC38B4 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,8 +95,7 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, u-boot@lists.denx.de,
+Cc: linux-rockchip@lists.infradead.org, u-boot@lists.denx.de,
  Jagan Teki <jagan@amarulasolutions.com>, sunil@amarulasolutions.com,
  linux-amarula@amarulasolutions.com, Mark Kettenis <mark.kettenis@xs4all.nl>
 MIME-Version: 1.0
@@ -107,145 +104,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable config options and console setting to respective
-rk3399 board for HDMI output.
+The default resolution for rockchip display is 1920x1080
+which failed to work on 4K HDMI out displays on rk3399.
 
-Boards supported and tested on this patch are:
-- NanoPc T4
-- NanoPi M4
-- NanoPi Neo4
-- ROC-RK3399-PC
-- Rock960
+So, mark the default resolution as 3480x2160 for rk3399
+HDMI out.
 
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+This would work all the hdmi display resolutions till
+4K.
+
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v3:
-- add rock960 hdmi out support
+- new patch
 
- configs/nanopc-t4-rk3399_defconfig   | 7 +++++++
- configs/nanopi-m4-rk3399_defconfig   | 7 +++++++
- configs/nanopi-neo4-rk3399_defconfig | 7 +++++++
- configs/roc-pc-rk3399_defconfig      | 6 ++++++
- configs/rock960-rk3399_defconfig     | 7 +++++++
- include/configs/evb_rk3399.h         | 5 +++++
- include/configs/rock960_rk3399.h     | 5 +++++
- 7 files changed, 44 insertions(+)
+ drivers/video/rockchip/Kconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
-index 9ea9b11574..607a00dbf7 100644
---- a/configs/nanopc-t4-rk3399_defconfig
-+++ b/configs/nanopc-t4-rk3399_defconfig
-@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
- CONFIG_USB_ETHER_MCS7830=y
- CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USB_KEYBOARD=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
-index ad0e808bf6..3fcb7ac2d7 100644
---- a/configs/nanopi-m4-rk3399_defconfig
-+++ b/configs/nanopi-m4-rk3399_defconfig
-@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
- CONFIG_USB_ETHER_MCS7830=y
- CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USB_KEYBOARD=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-rk3399_defconfig
-index d038a8cab9..b9ea535e43 100644
---- a/configs/nanopi-neo4-rk3399_defconfig
-+++ b/configs/nanopi-neo4-rk3399_defconfig
-@@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
- CONFIG_USB_ETHER_MCS7830=y
- CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USB_KEYBOARD=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index d540a17aeb..be76524cef 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -59,3 +59,9 @@ CONFIG_USB_ETHER_SMSC95XX=y
- CONFIG_USB_KEYBOARD=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
-index ba4226e173..c4e954731a 100644
---- a/configs/rock960-rk3399_defconfig
-+++ b/configs/rock960-rk3399_defconfig
-@@ -58,5 +58,12 @@ CONFIG_USB_ETHER_ASIX88179=y
- CONFIG_USB_ETHER_MCS7830=y
- CONFIG_USB_ETHER_RTL8152=y
- CONFIG_USB_ETHER_SMSC95XX=y
-+CONFIG_USB_KEYBOARD=y
- CONFIG_SPL_TINY_MEMSET=y
- CONFIG_ERRNO_STR=y
-+CONFIG_DM_VIDEO=y
-+CONFIG_VIDEO_BPP16=y
-+CONFIG_VIDEO_BPP32=y
-+CONFIG_DISPLAY=y
-+CONFIG_VIDEO_ROCKCHIP=y
-+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
-index c0b0358893..2d3db22877 100644
---- a/include/configs/evb_rk3399.h
-+++ b/include/configs/evb_rk3399.h
-@@ -6,6 +6,11 @@
- #ifndef __EVB_RK3399_H
- #define __EVB_RK3399_H
- 
-+#define ROCKCHIP_DEVICE_SETTINGS \
-+		"stdin=serial,usbkbd\0" \
-+		"stdout=serial,vidconsole\0" \
-+		"stderr=serial,vidconsole\0"
-+
- #include <configs/rk3399_common.h>
- 
- #if defined(CONFIG_ENV_IS_IN_MMC)
-diff --git a/include/configs/rock960_rk3399.h b/include/configs/rock960_rk3399.h
-index 746d24cbff..304ad2b7aa 100644
---- a/include/configs/rock960_rk3399.h
-+++ b/include/configs/rock960_rk3399.h
-@@ -6,6 +6,11 @@
- #ifndef __ROCK960_RK3399_H
- #define __ROCK960_RK3399_H
- 
-+#define ROCKCHIP_DEVICE_SETTINGS \
-+		"stdin=serial,usbkbd\0" \
-+		"stdout=serial,vidconsole\0" \
-+		"stderr=serial,vidconsole\0"
-+
- #include <configs/rk3399_common.h>
- 
- #define CONFIG_SYS_MMC_ENV_DEV		1
+diff --git a/drivers/video/rockchip/Kconfig b/drivers/video/rockchip/Kconfig
+index 10182d0b66..cfd774ead6 100644
+--- a/drivers/video/rockchip/Kconfig
++++ b/drivers/video/rockchip/Kconfig
+@@ -22,6 +22,7 @@ menuconfig VIDEO_ROCKCHIP
+ config VIDEO_ROCKCHIP_MAX_XRES
+         int "Maximum horizontal resolution (for memory allocation purposes)"
+ 	depends on VIDEO_ROCKCHIP
++	default 3480 if ROCKCHIP_RK3399 && DISPLAY_ROCKCHIP_HDMI
+ 	default 1920
+ 	help
+ 	  The maximum horizontal resolution to support for the framebuffer.
+@@ -31,6 +32,7 @@ config VIDEO_ROCKCHIP_MAX_XRES
+ config VIDEO_ROCKCHIP_MAX_YRES
+         int "Maximum vertical resolution (for memory allocation purposes)"
+ 	depends on VIDEO_ROCKCHIP
++	default 2160 if ROCKCHIP_RK3399 && DISPLAY_ROCKCHIP_HDMI
+ 	default 1080
+ 	help
+ 	  The maximum vertical resolution to support for the framebuffer.
 -- 
 2.17.1
 
