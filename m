@@ -2,83 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED0DF19CAC9
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 22:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 179ED19CCEA
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 00:34:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c/zrT6zGc010qBq3u1EQBVzrlOwrwmqDS1ltMWUzbdg=; b=H7B7/wP3/7b+9r
-	t1iPEP5t70HSB3D//XlSCVZA5N6Hccbr7sKUGvMFRRVT8ioeRJyRXI55qrC3Tv3CIUvI7iTMvfxvU
-	cUkh2+C8QPdC3ul1wuGiDkA3zpYZRt7sBRZfLdERRyOUXka6EmHwhGDFoYxVtymW1ZR5e29VgzTDW
-	2e6kxW3YTq8ZlLU86YsRXTk2neXP3hVfYqeaZdF+PIlfVDNVWmzZBrIKdY3rnuqOkvO1ZDSdWzl4X
-	6sPB1YwtJM39K1WS4iw61Zat4rHlkSp6zF1u+fc6cdKrOdBSdGDSKv94uQjpuhYJT03mFSE3remVy
-	zaq/obdATjK0wZslNi2A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1WgUIpwdP2smYVsY8T9lN9vW+dh4sT0zaB2lYhDwk7A=; b=ghB
+	Dgrf5cMBAxRw0aL0JLwI095vzoOCnnWMD3aTSGafJnSNbGACX72c3SmuUKc1NCcQi07kWLL78ZwQk
+	ZxFf6OUH0XieKcdT1AYAqQZMEpwmWNVhtuxoCtiJXcBrYl0EpKAQzQG8CWg/L9HMLCmEOCipZV+qg
+	mI+pMdZPYDf5aQ8zwkcsMSTN2+n2m3G0OhPLINwRx4fOZlScK+6m59dbXm8qhU3AdtDyNtGRyWok/
+	f0u8RWUmS/CAPpv4mbX7Yuu4mH9Be4ZyN8MMX9OEraA9/KI7QCex+rdRpv1czbRmauUmEvYSmc4mH
+	tz/uCX7O/eSAz0hRPRPFeHFZMNnBv9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK6AX-0003oS-5b; Thu, 02 Apr 2020 20:10:29 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jK8PN-0007Ol-SB; Thu, 02 Apr 2020 22:33:57 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK6AU-0003ny-CR
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 20:10:28 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f6so5113629wmj.3
- for <linux-rockchip@lists.infradead.org>; Thu, 02 Apr 2020 13:10:25 -0700 (PDT)
+ id 1jK8Os-0006vF-6A; Thu, 02 Apr 2020 22:33:27 +0000
+Received: by mail-wm1-x344.google.com with SMTP id t8so5177513wmi.2;
+ Thu, 02 Apr 2020 15:33:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=5UitrtcQcLyUuypDd55yvaCM6NIpqOgNi0sTpbymWqI=;
- b=jLUnozkZzk4wHj1zfjABKiOeRlA+KmFZy7xnaV7k84+hygjsJgnWCGl9rdGgKYZBLD
- EcCtl/2F/L+6SK6Nkmj7cSBZpmfEVcfaE/qebmIW6CTRo2jxjsafOZlyF0jYEup9bFUi
- KGbP6hKKwQjR8wryIky2THe219oIq9qoE2XBaUV/36TfgDLK5yNsRDQgzifAv3x+0ide
- +dXZS9T6AvOWhnXvKDqTZUIA3tBWJH6ohCIqHEGb5gqscpHUgOoqqI2D1xRjMnZ8VFkn
- kwdj5LogxrcQpwPdW6Q4ABa1wP7PSaceNqWWFLzdpN2R7BSMNvMX0ui6JP1NzEy59lPA
- WSgQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=OmDjT9copZDYM4pmPAbt/TsexMujcYzhtWf1bez84nA=;
+ b=mIuef1iE5HqYFwoNjZRieAmjV7htv0wNmJV5Nta79Yast/o20W8VW9esTccDprQhUQ
+ KD6JJtaxj1gK8iAA9S7/cyP0umJ5H3LDjtk2Oc2JvVQ7drV1Pk1CzoQ5IU90fdu6sos0
+ gQ4MuCkSaD7LFJcJ/t8V/oxEs8dC7zpifdYO6OsCU1MlCMShn6Hr8sDvcrOnmIdAEkTG
+ oCNNYzCrEYeHpQfyHK98EbApZ2PJhN7a3flWeJnwC+8hH+4p6DgKkMSiKXwz7wXVbL5C
+ OCywYSxs5/mw10ZGlFA2EWsn8JYUWoNz3n0XPeitUXL+7kxD35TNLiXnLxfnERx9hXpE
+ UGoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=5UitrtcQcLyUuypDd55yvaCM6NIpqOgNi0sTpbymWqI=;
- b=IidBjamogplNWttA8ShMe+IoiUSMAgrLfjWjRZd9pKPy6vdgKCOwSiRG9pKoigO8SS
- pkzhne2i/rmhqdR4Zk3Pt2V8M2LtfbHEgad6TXc45kzHORVmDbXFh75InhH6wTbMoKZ0
- IWu4xnGfPijGcTySm7xbp3nkqgo0aCr0MyxBzDdh7+QDA/XAZTOKO9a+8JqHUBcUVlZQ
- LXuOaS889tFWX2sX/R21O/CjdT5dIQ++2LEb6Hnf2YFuWyUfXHf+nFZWrnVGFM1Eg9XC
- RwLE7B8ydmi1odDzHqUywKVUSUiVh5EaEQYlVJRvanBPkMo++LsiEh/ALorg3JBwhi72
- 4zHQ==
-X-Gm-Message-State: AGi0PuZn8ASX9voIrxc2OEaLvaj8yB4//L/4ADmL+BcvJmmMew3HXZQX
- 6mBwQH7mZMyDSrF8i9rdEbo=
-X-Google-Smtp-Source: APiQypIbEEkJukJIMkBcjNC0Z/IpCLXYe/ZM6jvYBjXgKEX9jEuufWBxIiPSsGTTRPDqcUTlIC+mKg==
-X-Received: by 2002:a1c:c257:: with SMTP id s84mr5274398wmf.9.1585858224173;
- Thu, 02 Apr 2020 13:10:24 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id r5sm8462481wmr.15.2020.04.02.13.10.22
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 02 Apr 2020 13:10:23 -0700 (PDT)
-Subject: Re: [PATCH 4/4] arm64: dts: rockchip: add isp0 node for rk3399
-To: Helen Koike <helen.koike@collabora.com>
-References: <20200402000234.226466-5-helen.koike@collabora.com>
- <1187d28a-6fb9-fd12-a422-8a4220a11e79@gmail.com>
- <d8b05dd4-1ece-9513-b2ec-0cb58f665c5e@collabora.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=OmDjT9copZDYM4pmPAbt/TsexMujcYzhtWf1bez84nA=;
+ b=g+QCFRUvA5kzYHt0D82ppO9AlVBRXGhTObwyRg4VNRyDeFXxoJpDBsFI0dSqj9HGaq
+ jz6bgCfrTn3IPj5rfMNwpKz0MgDAND/yJpcBURbD/sCwS6M703xrv+UpBrTJKb+rEPaf
+ YslcKhGMFPJ1Va4nUZlSgOeYjY0HTqOggwITIb4vxIeyX+SC//OY6EgZXbib4z6BhYyi
+ O8e5zEboXG7pRMw83SKffK423zMuhTcXpa3FoFQpoB+pNje6SaZXvhfRwbaGYdm3ud4l
+ AaHb6nTK8NF0ekPjVVR1/pRWN7ePUIOR5/k0P5xSObjmjupINfh2i1kWUGbslS/ycGYJ
+ GJGQ==
+X-Gm-Message-State: AGi0Puaoj7gjhsHVU8JP3kjYnOP2ApZ1XJnmBLwbcsmSGyBNAgGolzqA
+ bTnZ2E7ptc1UCFSas2iigIo=
+X-Google-Smtp-Source: APiQypI6KSN4jgb1ptryf1N/48uD/v7HmEuB61QFUUzsXobb6C4PD97FmDdsZpsVoXI7Qu9xSfwqwQ==
+X-Received: by 2002:a05:600c:218d:: with SMTP id
+ e13mr5504068wme.148.1585866804335; 
+ Thu, 02 Apr 2020 15:33:24 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id g186sm9267729wmg.36.2020.04.02.15.33.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 Apr 2020 15:33:23 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <20ae21a6-74b0-ff99-80d9-1a0ce2cc1aa5@gmail.com>
-Date: Thu, 2 Apr 2020 22:10:21 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <d8b05dd4-1ece-9513-b2ec-0cb58f665c5e@collabora.com>
-Content-Language: en-US
+To: jacob-chen@iotwrt.com
+Subject: [PATCH v1 1/2] dt-bindings: media: convert rockchip rga bindings to
+ yaml
+Date: Fri,  3 Apr 2020 00:33:14 +0200
+Message-Id: <20200402223315.12260-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_131026_422887_AD053B9E 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20200402_153326_254057_EA38C068 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,100 +96,157 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, devicetree@vger.kernel.org,
- dafna.hirschfeld@collabora.com, heiko@sntech.de, karthik.poduval@gmail.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, hverkuil-cisco@xs4all.nl, mark.rutland@arm.com,
- kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 4/2/20 9:46 PM, Helen Koike wrote:
-> 
-> 
-> On 4/2/20 2:20 PM, Johan Jonker wrote:
->> Hi Helen,
->>
->>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> index fc0295d2a65a1..815099a0cd0dd 100644
->>> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> @@ -1718,6 +1718,33 @@ vopb_mmu: iommu@ff903f00 {
->>>  		status = "disabled";
->>>  	};
->>>  
->>> +	isp0: isp0@ff910000 {
->>> +		compatible = "rockchip,rk3399-cif-isp";
->>> +		reg = <0x0 0xff910000 0x0 0x4000>;
->>> +		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
->>> +		clocks = <&cru SCLK_ISP0>,
->>> +			 <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
->>> +			 <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
->>> +		clock-names = "clk_isp",
->>> +			      "aclk_isp", "aclk_isp_wrap",
->>> +			      "hclk_isp", "hclk_isp_wrap";
->>
->>> +		power-domains = <&power RK3399_PD_ISP0>;
->>> +		iommus = <&isp0_mmu>;
->>> +		phys = <&mipi_dphy_rx0>;
->>> +		phy-names = "dphy";
->>
->> Maybe a little sort? But keep rest as it is. Also in example.
->>
->> 		iommus = <&isp0_mmu>;
->> 		phys = <&mipi_dphy_rx0>;
->> 		phy-names = "dphy";
->> 		power-domains = <&power RK3399_PD_ISP0>;
-> 
-> Are you proposing only to move power-domains after phy? And keep the rest?
-> What is the main logic?
+Current dts files for Rockchip with 'rga' nodes
+are manually verified. In order to automate this process
+rockchip-rga.txt has to be converted to yaml.
 
-There is no hard rule... It mostly depend on Heiko...
+Changed:
+  Add missing reg property
 
-For nodes:
-Sort things without reg alphabetical first,
-then sort the rest by reg address.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ .../devicetree/bindings/media/rockchip-rga.txt     | 34 ----------
+ .../devicetree/bindings/media/rockchip-rga.yaml    | 78 ++++++++++++++++++++++
+ 2 files changed, 78 insertions(+), 34 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/media/rockchip-rga.txt
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip-rga.yaml
 
-Inside nodes:
-If exists on top: compatible, reg and interrupts.
-In alphabetical order the required properties.
-Then in alphabetical order the other properties.
-And as last things that start with '#' in alphabetical order.
-
-> 
-> Thanks
-> Helen
-> 
->>
->>> +
->>> +		ports {
->>> +			#address-cells = <1>;
->>> +			#size-cells = <0>;
->>> +
->>> +			port@0 {
->>
->>> +				#address-cells = <1>;
->>> +				#size-cells = <0>;
->>> +				reg = <0>;
->>
->> Move reg above #address-cells. Change that in example as well.
->>
->> 				reg = <0>;
->> 				#address-cells = <1>;
->> 				#size-cells = <0>;
->>
->>> +			};
->>> +		};
->>> +	};
->>> +
->>>  	isp0_mmu: iommu@ff914000 {
->>>  		compatible = "rockchip,iommu";
->>>  		reg = <0x0 0xff914000 0x0 0x100>, <0x0 0xff915000 0x0 0x100>;
->>> -- 
->>> 2.26.0
->>
+diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.txt b/Documentation/devicetree/bindings/media/rockchip-rga.txt
+deleted file mode 100644
+index c53a8e513..000000000
+--- a/Documentation/devicetree/bindings/media/rockchip-rga.txt
++++ /dev/null
+@@ -1,34 +0,0 @@
+-device-tree bindings for rockchip 2D raster graphic acceleration controller (RGA)
+-
+-RGA is a standalone 2D raster graphic acceleration unit. It accelerates 2D
+-graphics operations, such as point/line drawing, image scaling, rotation,
+-BitBLT, alpha blending and image blur/sharpness.
+-
+-Required properties:
+-- compatible: value should be one of the following
+-  "rockchip,rk3228-rga", "rockchip,rk3288-rga": for Rockchip RK3228
+-  "rockchip,rk3288-rga": for Rockchip RK3288
+-  "rockchip,rk3399-rga": for Rockchip RK3399
+-
+-- interrupts: RGA interrupt specifier.
+-
+-- clocks: phandle to RGA sclk/hclk/aclk clocks
+-
+-- clock-names: should be "aclk", "hclk" and "sclk"
+-
+-- resets: Must contain an entry for each entry in reset-names.
+-  See ../reset/reset.txt for details.
+-- reset-names: should be "core", "axi" and "ahb"
+-
+-Example:
+-SoC-specific DT entry:
+-	rga: rga@ff680000 {
+-		compatible = "rockchip,rk3399-rga";
+-		reg = <0xff680000 0x10000>;
+-		interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
+-		clock-names = "aclk", "hclk", "sclk";
+-
+-		resets = <&cru SRST_RGA_CORE>, <&cru SRST_A_RGA>, <&cru SRST_H_RGA>;
+-		reset-names = "core, "axi", "ahb";
+-	};
+diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+new file mode 100644
+index 000000000..3b110b574
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+@@ -0,0 +1,78 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/rockchip-rga.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip 2D raster graphic acceleration controller (RGA)
++
++description:
++  RGA is a standalone 2D raster graphic acceleration unit. It accelerates 2D
++  graphics operations, such as point/line drawing, image scaling, rotation,
++  BitBLT, alpha blending and image blur/sharpness.
++
++maintainers:
++  - Jacob Chen <jacob-chen@iotwrt.com>
++  - Ezequiel Garcia <ezequiel@collabora.com>
++
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,rk3288-rga
++      - const: rockchip,rk3399-rga
++      - items:
++          - const: rockchip,rk3228-rga
++          - const: rockchip,rk3288-rga
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 3
++
++  clock-names:
++    items:
++      - const: aclk
++      - const: hclk
++      - const: sclk
++
++  resets:
++    maxItems: 3
++
++  reset-names:
++    items:
++      - const: core
++      - const: axi
++      - const: ahb
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3399-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    rga: rga@ff680000 {
++      compatible = "rockchip,rk3399-rga";
++      reg = <0xff680000 0x10000>;
++      interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru ACLK_RGA>,
++               <&cru HCLK_RGA>,
++               <&cru SCLK_RGA_CORE>;
++      clock-names = "aclk", "hclk", "sclk";
++      resets = <&cru SRST_RGA_CORE>,
++               <&cru SRST_A_RGA>,
++               <&cru SRST_H_RGA>;
++      reset-names = "core", "axi", "ahb";
++    };
+-- 
+2.11.0
 
 
 _______________________________________________
