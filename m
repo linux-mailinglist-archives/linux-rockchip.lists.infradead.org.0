@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EB3919CA5F
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 21:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6BBB19CA63
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 21:43:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,25 +11,25 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2+rnA5osBxo1HvfIContCNDPbUEBcdGWf4je1vXNyEg=; b=EWnWf/GxRqt/lF8Xs9QkFC0+8Y
-	XSgmHJMjS8ffXa8aCODopcNhozBDujWBwHi8gqABJOCmmhVdCS7JVzzQS6zwI1jz6b3uEYKtiJ8dV
-	Wd3R7LFl1RbLUzjETFdPo5N0fteT3GlRq7EExMPUC1qciS/sVKmpIAwV4YftXFZBAFl6JRIGG6JOp
-	ck9YGOZtyQJyVDRYdLFcwXEICeaGqLrtYMAHVHpU3seUHlfpBpE78qiBL2p3+L5qdfafHDsQDNaRh
-	5Pjj+PsOgdiMCY73vcCN/V/PetrNAMswOJHQ/632T4v/SNplecsIjoD4lt2MVejt0SdPRjnibNepX
-	r/C/d0HQ==;
+	bh=naWHSn9ML6PGL3BkZdgK7a6mCC85YnV9LX47n1yci3I=; b=BH3rqHj98azicQuRhAzp0FBAxc
+	3i45YnMcoaIuP2L2ZQBnblLOmEXSmcitS9TAcfLetRc1Fgg+whtgWGK6FRagpND2LtsQkbyRg8gTR
+	Q2cf/PrrbQXvNYNSlVmfnKZDW3W5oo9Myy0LWv1od0AfJMReA+4w/fIRKu0CHh5mhvgYU3RItHrZW
+	O+62IB+a2GkwzGhKNqif8reoxDKuv+LTJKA7ZzYUbqDdM1JgkZT0Ex67mfGy8C39r2kJqyck89qLz
+	7bhNQyBcsRvdF7wOxh7kfoTKqEPte0i1PE864xZP2rxeOtibANA/nlwgw90iOHDpjCmYcgC07F+i1
+	ynCOirhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK5jx-0002d8-7l; Thu, 02 Apr 2020 19:43:01 +0000
+	id 1jK5kX-00038H-7B; Thu, 02 Apr 2020 19:43:37 +0000
 Received: from relmlor1.renesas.com ([210.160.252.171]
  helo=relmlie5.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK5h6-0006Ta-VQ; Thu, 02 Apr 2020 19:40:07 +0000
-X-IronPort-AV: E=Sophos;i="5.72,336,1580742000"; d="scan'208";a="43555716"
+ id 1jK5hD-0006Ta-DM; Thu, 02 Apr 2020 19:40:15 +0000
+X-IronPort-AV: E=Sophos;i="5.72,336,1580742000"; d="scan'208";a="43555725"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie5.idc.renesas.com with ESMTP; 03 Apr 2020 04:40:03 +0900
+ by relmlie5.idc.renesas.com with ESMTP; 03 Apr 2020 04:40:10 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id F1C9640C4F75;
- Fri,  3 Apr 2020 04:39:56 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id 251FD40C4F75;
+ Fri,  3 Apr 2020 04:40:03 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>,
@@ -40,16 +40,16 @@ To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Marek Vasut <marek.vasut+renesas@gmail.com>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  linux-pci@vger.kernel.org
-Subject: [PATCH v6 10/11] misc: pci_endpoint_test: Add Device ID for RZ/G2E
- PCIe controller
-Date: Thu,  2 Apr 2020 20:38:38 +0100
-Message-Id: <1585856319-4380-11-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v6 11/11] MAINTAINERS: Add file patterns for rcar PCI device
+ tree bindings
+Date: Thu,  2 Apr 2020 20:38:39 +0100
+Message-Id: <1585856319-4380-12-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_124005_300087_56406544 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20200402_124011_599885_B42A1CCA 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -90,27 +90,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add Renesas R8A774C0 in pci_device_id table so that pci-epf-test can be
-used for testing PCIe EP on RZ/G2E.
+Add file pattern entry for rcar PCI devicetree binding, so that when
+people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
+be listed.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 ---
- drivers/misc/pci_endpoint_test.c | 2 ++
- 1 file changed, 2 insertions(+)
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index ef5a1af6bab7..d8e1121c0464 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -942,6 +942,8 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
- 	},
-+	{ PCI_DEVICE(PCI_VENDOR_ID_RENESAS, PCI_DEVICE_ID_RENESAS_R8A774C0),
-+	},
- 	{ }
- };
- MODULE_DEVICE_TABLE(pci, pci_endpoint_test_tbl);
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3f0f2ee2af32..87df2d31a54b 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -12933,6 +12933,7 @@ L:	linux-pci@vger.kernel.org
+ L:	linux-renesas-soc@vger.kernel.org
+ S:	Maintained
+ F:	drivers/pci/controller/*rcar*
++F:	Documentation/devicetree/bindings/pci/*rcar*
+ 
+ PCI DRIVER FOR SAMSUNG EXYNOS
+ M:	Jingoo Han <jingoohan1@gmail.com>
 -- 
 2.20.1
 
