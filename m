@@ -2,56 +2,66 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0CBB19BBBD
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 08:35:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC04B19BCA9
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 09:27:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0/6qjpmxgGE04Hi29kD/hthDBz95CBse1lkwP/8jwsU=; b=tsq70PdawAXTFgh6Dnh4C/7pN
-	/K+yfXMtRZ0N7Ky5eptz23J1zYWFMDymHjGVD7YKXA9sDSlOX1wHZLNeslAAPB8E6EOEG71n8Jds5
-	jj0E3FFxyKjNKRvS4zLpDH5YC+TYfiworHHpl0fRICK/Xixn9GV7f7NqtJWkDqiwDv0O40eK46181
-	Q5Xltx1gSELCKrsZH5OSleaKxKON/6k6MTpPR9DfAe5onjAwgwgf8X8aey8DIhbD6Fq+lTueLaYPa
-	gc0DL1DkDB56jvev+/dVgzQ1jZYdJs0uSA7umwEjV5BezhPfACAVQfFu0QUYBKCrd3mndWLcl3TJG
-	8lvusORcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ldXH9PSUqnzGkrHor9pyM9k/VdzzjJep8aJcWDntGKU=; b=t8HLZQgquXy2+C
+	Td7233/1HhxCf4af9mgabNlo58B5wMdGpA6kTfRV6gmYKiAsBoGSu/U6VmAf/y2zCJkCebqMNBa7H
+	78ZMcdTaJVlW3arj8Ls7Gecw9IGQOSVq4n+dWAg1EshYpWz1r7zk/Dv00PaK2haZmu2HxthtQjchA
+	hZPkVfybU/lnzodKujS9TlpnDvHSLWr1OxsnHK6huiHVZIJyTbE/sZArVmddoNhZiqYTVkqyIm0sP
+	rOG3vD/A3qF/N7JEEF7Nb2c4fbw864EoEfXOJv3a4UxAmWD3PUWfD0sBkbdLaNhPAXBZC0nCb4kBR
+	MedKrXioUM/lLBsF2XlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJtRh-00056b-E6; Thu, 02 Apr 2020 06:35:21 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jJuGG-0001SY-NN; Thu, 02 Apr 2020 07:27:36 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJtRZ-0004zq-DJ; Thu, 02 Apr 2020 06:35:14 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: myjosserand) with ESMTPSA id AC1E528ED5B
-Subject: Re: [PATCH v2 2/2] clk: rockchip: rk3288: Handle clock tree for
- rk3288w
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-References: <20200401153513.423683-1-mylene.josserand@collabora.com>
- <20200401153513.423683-3-mylene.josserand@collabora.com>
- <CAMuHMdXvFOKqmZ-MLJV4SAeLN-PDzqPvMvbVpcD=jyip9tbdnA@mail.gmail.com>
-From: Mylene Josserand <mylene.josserand@collabora.com>
-Message-ID: <7c21a7d6-a24f-dbc6-4eaa-548ddfc0f73e@collabora.com>
-Date: Thu, 2 Apr 2020 08:35:05 +0200
+ id 1jJuGC-0001Rt-5t
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 07:27:34 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1jJuG6-0002Fs-MQ; Thu, 02 Apr 2020 09:27:26 +0200
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from dell2.five-lan.de (pD9E89FA4.dip0.t-ipconnect.de
+ [217.232.159.164]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ 0327RODp009279
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Thu, 2 Apr 2020 09:27:24 +0200
+Subject: Re: Power Key/button on rk3399-roc-pc
+To: Suniel Mahesh <sunil@amarulasolutions.com>
+References: <CAM+7aWuR-2EYSDQLj+Sep9cu_cAsL5QD=wRrar-9vLSd_7KPyg@mail.gmail.com>
+ <c3f77864-ab66-e31c-e9a6-5a3c8e10b6ea@fivetechno.de>
+ <CAM+7aWshiM3YAc9B+GADqKry7bAPapdTJAym-9Wzadtdr3cJHg@mail.gmail.com>
+From: Markus Reichl <m.reichl@fivetechno.de>
+Message-ID: <af59b7f4-7fb9-4370-9cf5-de4bfedf9e43@fivetechno.de>
+Date: Thu, 2 Apr 2020 09:27:24 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdXvFOKqmZ-MLJV4SAeLN-PDzqPvMvbVpcD=jyip9tbdnA@mail.gmail.com>
-Content-Language: en-US
+In-Reply-To: <CAM+7aWshiM3YAc9B+GADqKry7bAPapdTJAym-9Wzadtdr3cJHg@mail.gmail.com>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1585812452;
+ 50db5afd; 
+X-HE-SMSGID: 1jJuG6-0002Fs-MQ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_233513_581031_BA46DEBE 
-X-CRM114-Status: GOOD (  22.11  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200402_002732_362260_22BDEA2F 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,74 +74,89 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- kever.yang@rock-chips.com,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Kever Yang <kever.yang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ djw@t-chip.com.cn, Heiko Stuebner <heiko@sntech.de>,
+ Jagan Teki <jagan@amarulasolutions.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgR2VlcnQsCgpPbiA0LzEvMjAgNjo1NiBQTSwgR2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+
-IEhpIE15bMOobmUsCj4gCj4gT24gV2VkLCBBcHIgMSwgMjAyMCBhdCA1OjM1IFBNIE15bMOobmUg
-Sm9zc2VyYW5kCj4gPG15bGVuZS5qb3NzZXJhbmRAY29sbGFib3JhLmNvbT4gd3JvdGU6Cj4+IFRo
-ZSByZXZpc2lvbiByazMyODh3IGhhcyBhIGRpZmZlcmVudCBjbG9jayB0cmVlIGFib3V0Cj4+ICJo
-Y2xrX3ZpbyIgY2xvY2ssIGFjY29yZGluZyB0byB0aGUgQlNQIGtlcm5lbCBjb2RlLgo+Pgo+PiBU
-aGlzIHBhdGNoIGhhbmRsZXMgdGhpcyBkaWZmZXJlbmNlIGJ5IGRldGVjdGluZyB3aGljaCBTT0Mg
-aXQgaXMKPj4gYW5kIGNyZWF0aW5nIHRoZSBkaXYgYWNjb3JkaW5nbHkuIEJlY2F1c2Ugd2UgYXJl
-IHVzaW5nCj4+IHNvY19kZXZpY2VfbWF0Y2ggZnVuY3Rpb24sIHdlIG5lZWQgdG8gZGVsYXkgdGhl
-IHJlZ2lzdHJhdGlvbgo+PiBvZiB0aGlzIGNsb2NrIGxhdGVyIHRoYW4gb3RoZXJzIHRvIGhhdmUg
-dGltZSB0byBnZXQgU29DIHJldmlzaW9uLgo+Pgo+PiBPdGhlcndpc2UsIGJlY2F1c2Ugb2YgQ0xL
-X09GX0RFQ0xBUkUgdXNlcywgY2xvY2sgdHJlZSB3aWxsIGJlCj4+IGNyZWF0ZWQgdG9vIHNvb24g
-dG8gaGF2ZSB0aW1lIHRvIGRldGVjdCBTb0MncyByZXZpc2lvbi4KPj4KPj4gU2lnbmVkLW9mZi1i
-eTogTXlsw6huZSBKb3NzZXJhbmQgPG15bGVuZS5qb3NzZXJhbmRAY29sbGFib3JhLmNvbT4KPiAK
-PiBUaGFua3MgZm9yIHlvdXIgcGF0Y2ghCgpUaGFua3MgZm9yIHlvdXIgcmV2aWV3IQoKPiAKPj4g
-LS0tIGEvZHJpdmVycy9jbGsvcm9ja2NoaXAvY2xrLXJrMzI4OC5jCj4+ICsrKyBiL2RyaXZlcnMv
-Y2xrL3JvY2tjaGlwL2Nsay1yazMyODguYwo+PiBAQCAtOTE0LDEwICs5MjMsMTUgQEAgc3RhdGlj
-IHN0cnVjdCBzeXNjb3JlX29wcyByazMyODhfY2xrX3N5c2NvcmVfb3BzID0gewo+PiAgICAgICAg
-ICAucmVzdW1lID0gcmszMjg4X2Nsa19yZXN1bWUsCj4+ICAgfTsKPj4KPj4gK3N0YXRpYyBjb25z
-dCBzdHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgcmszMjg4d1tdID0gewo+PiArICAgICAgIHsg
-LnNvY19pZCA9ICJSSzMyeHgiLCAucmV2aXNpb24gPSAiUkszMjg4dyIgfSwKPj4gKyAgICAgICB7
-IC8qIHNlbnRpbmVsICovIH0KPj4gK307Cj4+ICsKPj4gK3N0YXRpYyBzdHJ1Y3Qgcm9ja2NoaXBf
-Y2xrX3Byb3ZpZGVyICpjdHg7Cj4+ICsKPj4gICBzdGF0aWMgdm9pZCBfX2luaXQgcmszMjg4X2Ns
-a19pbml0KHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnApCj4+ICAgewo+PiAtICAgICAgIHN0cnVjdCBy
-b2NrY2hpcF9jbGtfcHJvdmlkZXIgKmN0eDsKPj4gLQo+PiAgICAgICAgICByazMyODhfY3J1X2Jh
-c2UgPSBvZl9pb21hcChucCwgMCk7Cj4+ICAgICAgICAgIGlmICghcmszMjg4X2NydV9iYXNlKSB7
-Cj4+ICAgICAgICAgICAgICAgICAgcHJfZXJyKCIlczogY291bGQgbm90IG1hcCBjcnUgcmVnaW9u
-XG4iLCBfX2Z1bmNfXyk7Cj4+IEBAIC05NTUsMyArOTY5LDE3IEBAIHN0YXRpYyB2b2lkIF9faW5p
-dCByazMyODhfY2xrX2luaXQoc3RydWN0IGRldmljZV9ub2RlICpucCkKPj4gICAgICAgICAgcm9j
-a2NoaXBfY2xrX29mX2FkZF9wcm92aWRlcihucCwgY3R4KTsKPj4gICB9Cj4+ICAgQ0xLX09GX0RF
-Q0xBUkUocmszMjg4X2NydSwgInJvY2tjaGlwLHJrMzI4OC1jcnUiLCByazMyODhfY2xrX2luaXQp
-Owo+PiArCj4+ICtzdGF0aWMgaW50IF9faW5pdCByazMyODhfaGNsa3Zpb19yZWdpc3Rlcih2b2lk
-KQo+PiArewo+IAo+IFRoaXMgZnVuY3Rpb24gd2lsbCBhbHdheXMgYmUgY2FsbGVkLCBldmVuIHdo
-ZW4gcnVubmluZyBhIChtdWx0aS1wbGF0Zm9ybSkKPiBrZXJuZWwgb24gYSBub24tcmszMjg4IHBs
-YXRmb3JtLiAgU28geW91IG5lZWQgc29tZSBwcm90ZWN0aW9uIGFnYWluc3QKPiB0aGF0LgoKZXJn
-LCBnb29kIHBvaW50LCBJIGRpZG4ndCB0aGluayBhYm91dCB0aGF0LgoKPiAKPj4gKyAgICAgICAv
-KiBDaGVjayBmb3IgdGhlIHJrMzI4OHcgcmV2aXNpb24gYXMgY2xvY2sgdHJlZSBpcyBkaWZmZXJl
-bnQgKi8KPj4gKyAgICAgICBpZiAoc29jX2RldmljZV9tYXRjaChyazMyODh3KSkKPj4gKyAgICAg
-ICAgICAgICAgIHJvY2tjaGlwX2Nsa19yZWdpc3Rlcl9icmFuY2hlcyhjdHgsIHJrMzI4OHdfaGNs
-a3Zpb19icmFuY2gsCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgQVJSQVlfU0laRShyazMyODh3X2hjbGt2aW9fYnJhbmNoKSk7Cj4+ICsgICAgICAgZWxz
-ZQo+PiArICAgICAgICAgICAgICAgcm9ja2NoaXBfY2xrX3JlZ2lzdGVyX2JyYW5jaGVzKGN0eCwg
-cmszMjg4X2hjbGt2aW9fYnJhbmNoLAo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIEFSUkFZX1NJWkUocmszMjg4X2hjbGt2aW9fYnJhbmNoKSk7Cj4gCj4g
-Tm90ZSB0aGF0IHNvY19kZXZpY2VfbWF0Y2goKSByZXR1cm5zIGEgc3RydWN0IHNvY19kZXZpY2Vf
-YXR0cmlidXRlCj4gcG9pbnRlci4gIElmIHlvdSB3b3VsZCBzdG9yZSB0aGUgcm9ja2NoaXBfY2xr
-X2JyYW5jaCBhcnJheSBwb2ludGVyIGFuZAo+IHNpemUgaW4gcmszMjg4d1suLi5dLmRhdGEgKGku
-ZS4gYSBwb2ludGVyIHRvIGEgc3RydWN0IGNvbnRhaW5pbmcgdGhhdAo+IGluZm8pLCBmb3IgYm90
-aCB0aGUgcjgzMjg4dyBhbmQgbm9ybWFsIHJrMzI4OCB2YXJpYW50cywgeW91IGNvdWxkCj4gc2lt
-cGxpZnkgdGhpcyB0bzoKPiAKPiAgICAgIGF0dHIgPSBzb2NfZGV2aWNlX21hdGNoKHJrMzI4OHcp
-Owo+ICAgICAgaWYgKGF0dHIpIHsKPiAgICAgICAgICAgICAgc3RydWN0IHJrMzI4OF9icmFuY2hf
-YXJyYXkgKnAgPSBhdHRyLT5kYXRhOwo+ICAgICAgICAgICAgICByb2NrY2hpcF9jbGtfcmVnaXN0
-ZXJfYnJhbmNoZXMoY3R4LCBwLT5icmFuY2hlcywgcC0+bGVuKTsKPiAgICAgIH0KPiAKPiBUaGF0
-IHdvdWxkIGhhbmRsZSB0aGUgbm90LXJ1bm5pbmctb24tcmszMjg4IGlzc3VlIGFzIHdlbGwuCgpO
-aWNlLCB0aGFuayB5b3UgZm9yIHRoZSBleHBsYW5hdGlvbiBhbmQgdGhlIGNvZGUsIHZlcnkgdXNl
-ZnVsIDopCgpCZXN0IHJlZ2FyZHMsCgpNeWzDqG5lCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgt
-cm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+Hi Suniel,
+
+Am 02.04.20 um 06:39 schrieb Suniel Mahesh:
+> On Wed, Apr 1, 2020 at 3:40 PM Markus Reichl <m.reichl@fivetechno.de> wrote:
+>>
+>> Hi Suniel,
+>>
+>> Am 01.04.20 um 06:53 schrieb Suniel Mahesh:
+>> > Hi Markus, Levin and all,
+>> >
+>> > Can you guys please suggest me on my requirement.
+>> >
+>> > rk3399-roc-pc board has a Power Key/button. As per the schematics this
+>> > Power Key/button
+>> > is connected to GPIO0_A5.
+>>
+>> And to PWRON of RK808.
+>>
+>> >
+>> > My requirement is can I use this button for board powerup (especially
+>> > in linux when we issue
+>> > "poweroff" command, the board shuts down and it should power back on
+>> > after I press the Power Key/button).
+>> >
+>> > For the above to happen, I think this Power Key/button be connected to
+>> > PMIC RK808-D IC, am i correct ?
+>>
+>> Yes, see P.16 of ROC-3399-PC-V10-A-20180804 schematic.
+>> >
+>> > In the schematics, it is not very clear as if such arrangement is
+>> > there (though it says it can be an option in
+>> > RK3399_BOX_REF_V13_20180821.pdf). I am attaching the document.
+>> >
+>> > Please suggest/comment on my requirement.
+>>
+>> Should work, everything is in place, just press long enough ;-).
+> 
+> Thanks Markus for your help. its working.
+> 
+>>
+>> Btw. could you just revert your recent U-Boot commit
+>> checking GPIO0_A5 that prevents unattended booting?
+> 
+> we have sent a patch series(5 patches) which takes care of the above
+> issue. attaching patchwork links:
+> https://patchwork.ozlabs.org/patch/1258093/
+
+I looked at your
+[v2,2/5] roc-rk3399-pc: Set low power leds, power key only if POR [1]
+and it seems to prevent unattended boot after a power interruption
+(brown out), which is a problem for a device with a built in board
+and no access to power key or operator.
+I really would prefer straight boot without human intervention in
+all cases.
+
+Thanks,
+--
+Markus
+
+[1] https://patchwork.ozlabs.org/patch/1258094/
+
+> 
+> Suniel
+>>
+>> Thanks,
+>> --
+>> Markus
+>>
+>> >
+>> > Thanks and regards
+>> > Suniel
+>> >
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
