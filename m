@@ -2,56 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1FE019B958
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 02:03:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09DE19BB27
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 06:39:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/4sTWhgBbyDCYEP7rbBlbJJ1XHsow3Ww3uAzRHfGo78=; b=a4a9MGqGNfm6k7
-	q61idSNhz990CrExOnR86FH7p9DZb+GlxgQ/0SGZAEqdhhG1aAkg3xsUDE9cMiP/PjX3afy/kiuBl
-	IF8nyUzE335eLqnu7Wb7ZbCQRNnivZfU0U+dzycA8sOSJsZeDTyJdXhheeuGeFuPE3LVcTKHVC3Ah
-	AJQe7GGaWBvALnbv9CKEoH3jtcV9amM4mnvdU+UPBo3Q3JttduCYZ8PvlOfmyeJuGSFWADKdijHW8
-	Ckh+5YlMl2ZSDOd/SXg4oNRsb63g5+693KTzpAWWHARTzykfhZ1pdKVhenN6YkiljyzgHc2vJ5kd7
-	8STs6XwrG9m9gW2guV2w==;
+	List-Owner; bh=we7yfcyE1PlsAr3H3fV/wlZNgIcdV2SPYh0GuLU3/Xc=; b=tvAPN/imRudEg+
+	Bg9f86nPxb8glIoy/oIOPGxhBRa1UUPhpQYFVc0BH2EFHPRcRnMq4DvgbTsAsJwGRaH0z7GhNlQ1y
+	P0e9g0Q/w6y6QF0XlTmY4rE2nbE701qnUaE23rHKrNfd8dBd19GJbQVGm4LcOg+BYxpKx3GqbNj2X
+	WL4NUapgvhVHaNdGx79K1fbA4DfwUsu/YotaI1iSM4CC/iMMwti3NXqME1Rx2MM2cOCAYzNAtSeid
+	jutwmEv1jDCaShvsKC22K5RXJFLPmzwZLp/oi1cg6g4AfhGBaGkmygeAjt9wMOYijbfrr55ZJdG/A
+	B0JF2cX1RjnT5zJEr15A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJnKE-0003Ly-SM; Thu, 02 Apr 2020 00:03:14 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jJrdS-0002lB-DB; Thu, 02 Apr 2020 04:39:22 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJnKB-0003KJ-Bf
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 00:03:12 +0000
-Received: from floko.floko.floko (unknown
- [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 28894297663;
- Thu,  2 Apr 2020 01:03:05 +0100 (BST)
-From: Helen Koike <helen.koike@collabora.com>
-To: devicetree@vger.kernel.org, linux-media@vger.kernel.org,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH 4/4] arm64: dts: rockchip: add isp0 node for rk3399
-Date: Wed,  1 Apr 2020 21:02:34 -0300
-Message-Id: <20200402000234.226466-5-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200402000234.226466-1-helen.koike@collabora.com>
-References: <20200402000234.226466-1-helen.koike@collabora.com>
+ id 1jJrdO-0002kL-NV
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 04:39:20 +0000
+Received: by mail-wm1-x331.google.com with SMTP id c81so1939464wmd.4
+ for <linux-rockchip@lists.infradead.org>; Wed, 01 Apr 2020 21:39:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hFr3wJ+VHJBrjZDb9CHQvayVPJsDhaTPMB8CtbJB2y0=;
+ b=qFH5SSkWTGA0EXCwjem2R05zCqz6BagDw/XrXdzvQFA+kuaB7iAqEvXjbvstYjJeAd
+ Qta2St9mCE/UII3mDAh5bzAep0c/81yCGLMX7udqVBGq7zWPphapnL5WefWHR7Nc4Tt/
+ Lwop0mAzgXEoXsdY+4HVX72yzipvA+X2vtMr8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hFr3wJ+VHJBrjZDb9CHQvayVPJsDhaTPMB8CtbJB2y0=;
+ b=bCvMkMS+LHKMHDaN72A7K9trOKIo2QJkIhP9Wh/iFRgPkVpUseKJ/lVWeteqQiEcpU
+ VelbIpmPYoIkQoKV1ffwK+KfihPO+pf3OVI34JkkAbtG7af9W3IZVFoHsx9WxecbAv6L
+ zoIz8EFMCHaYWY30HJ+AaXw4SZ7HRw8VxW0U0GZNeJmTJ5Ai7j333bjkBh0S8UEJnl7n
+ S0byt2eOb70k5D8Pg1tWhfydl0EzEVP7+ZB/iUc7vM9DM7iB/vNPYYaVbsKCISsLj9Hi
+ OhPAOkELeU42ZxJ/DaO7R84nkoDgQ7p+2YSWZ5l+SUd1dU7ni7LnjKt9q7zi3lZB0ttP
+ EEPw==
+X-Gm-Message-State: AGi0PuaFX5uGx+dgVZ7XiPpDQMYTjwi3i7tUS9B0vWzKPM0xnvaKhTM6
+ 42clO1BqeDcV2bhAtLnhucgCekl65FAaNhviZpyNBQ==
+X-Google-Smtp-Source: APiQypIXYN/AefhReYmGvsSxgJ0ihUGaEcFb+/kwUDfrRlL7wPE5kyRxFNuO/NOoT2ApXErtnWipH7fqa0Wbh9osPz4=
+X-Received: by 2002:a1c:82:: with SMTP id 124mr1312209wma.63.1585802354559;
+ Wed, 01 Apr 2020 21:39:14 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAM+7aWuR-2EYSDQLj+Sep9cu_cAsL5QD=wRrar-9vLSd_7KPyg@mail.gmail.com>
+ <c3f77864-ab66-e31c-e9a6-5a3c8e10b6ea@fivetechno.de>
+In-Reply-To: <c3f77864-ab66-e31c-e9a6-5a3c8e10b6ea@fivetechno.de>
+From: Suniel Mahesh <sunil@amarulasolutions.com>
+Date: Thu, 2 Apr 2020 10:09:03 +0530
+Message-ID: <CAM+7aWshiM3YAc9B+GADqKry7bAPapdTJAym-9Wzadtdr3cJHg@mail.gmail.com>
+Subject: Re: Power Key/button on rk3399-roc-pc
+To: Markus Reichl <m.reichl@fivetechno.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_170311_542576_B70E81BE 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200401_213918_905997_EC7741F1 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:331 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,80 +89,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, mark.rutland@arm.com,
- dafna.hirschfeld@collabora.com, heiko@sntech.de, linux-kernel@vger.kernel.org,
- karthik.poduval@gmail.com, robh+dt@kernel.org, hverkuil-cisco@xs4all.nl,
- kernel@collabora.com, ezequiel@collabora.com
+Cc: Kever Yang <kever.yang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ djw@t-chip.com.cn, Heiko Stuebner <heiko@sntech.de>,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Shunqian Zheng <zhengsq@rock-chips.com>
+On Wed, Apr 1, 2020 at 3:40 PM Markus Reichl <m.reichl@fivetechno.de> wrote:
+>
+> Hi Suniel,
+>
+> Am 01.04.20 um 06:53 schrieb Suniel Mahesh:
+> > Hi Markus, Levin and all,
+> >
+> > Can you guys please suggest me on my requirement.
+> >
+> > rk3399-roc-pc board has a Power Key/button. As per the schematics this
+> > Power Key/button
+> > is connected to GPIO0_A5.
+>
+> And to PWRON of RK808.
+>
+> >
+> > My requirement is can I use this button for board powerup (especially
+> > in linux when we issue
+> > "poweroff" command, the board shuts down and it should power back on
+> > after I press the Power Key/button).
+> >
+> > For the above to happen, I think this Power Key/button be connected to
+> > PMIC RK808-D IC, am i correct ?
+>
+> Yes, see P.16 of ROC-3399-PC-V10-A-20180804 schematic.
+> >
+> > In the schematics, it is not very clear as if such arrangement is
+> > there (though it says it can be an option in
+> > RK3399_BOX_REF_V13_20180821.pdf). I am attaching the document.
+> >
+> > Please suggest/comment on my requirement.
+>
+> Should work, everything is in place, just press long enough ;-).
 
-RK3399 has two ISPs, but only ISP0 was tested at present.
-Add isp0 node in rk3399 dtsi
+Thanks Markus for your help. its working.
 
-Verified with:
-make ARCH=arm64 dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>
+> Btw. could you just revert your recent U-Boot commit
+> checking GPIO0_A5 that prevents unattended booting?
 
-Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
+we have sent a patch series(5 patches) which takes care of the above
+issue. attaching patchwork links:
+https://patchwork.ozlabs.org/patch/1258093/
 
----
-This patch was originally part of this patchset:
-
-    https://patchwork.kernel.org/patch/10267431/
-
-The only difference is:
-- add phy properties
-- add ports
----
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 27 ++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index fc0295d2a65a1..815099a0cd0dd 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1718,6 +1718,33 @@ vopb_mmu: iommu@ff903f00 {
- 		status = "disabled";
- 	};
- 
-+	isp0: isp0@ff910000 {
-+		compatible = "rockchip,rk3399-cif-isp";
-+		reg = <0x0 0xff910000 0x0 0x4000>;
-+		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
-+		clocks = <&cru SCLK_ISP0>,
-+			 <&cru ACLK_ISP0>, <&cru ACLK_ISP0_WRAPPER>,
-+			 <&cru HCLK_ISP0>, <&cru HCLK_ISP0_WRAPPER>;
-+		clock-names = "clk_isp",
-+			      "aclk_isp", "aclk_isp_wrap",
-+			      "hclk_isp", "hclk_isp_wrap";
-+		power-domains = <&power RK3399_PD_ISP0>;
-+		iommus = <&isp0_mmu>;
-+		phys = <&mipi_dphy_rx0>;
-+		phy-names = "dphy";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				reg = <0>;
-+			};
-+		};
-+	};
-+
- 	isp0_mmu: iommu@ff914000 {
- 		compatible = "rockchip,iommu";
- 		reg = <0x0 0xff914000 0x0 0x100>, <0x0 0xff915000 0x0 0x100>;
--- 
-2.26.0
-
+Suniel
+>
+> Thanks,
+> --
+> Markus
+>
+> >
+> > Thanks and regards
+> > Suniel
+> >
 
 _______________________________________________
 Linux-rockchip mailing list
