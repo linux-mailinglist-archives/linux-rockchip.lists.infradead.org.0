@@ -2,50 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57F8B19C3C1
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 16:15:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0362119C41A
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 16:29:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mpSfpg0PBsZLmbAJkhsaa087bDJ/87L4bAb/ka8I4Qc=; b=X1qGSHVgMrcjiG
-	2r/fMJ0K68D+NA7vb8JzOx4xxMa8gnQQxyBdeJ3TlVb3N3Xj6AbmWvprJffsNo4tl7RkTeS7hGetm
-	dEhyurLWemICMMgyq+UDzzZn39X2i5pEupdVf8G6wAARG+MvlT+IM2QauzQNNtGvcaErRZK8PQtEJ
-	AG8yCZQt3yJgC1xrLGmjvEyJy0WZZQSwmplM62VFC419/CzN5o2xh26Hj4L1ODZH7W/JoGBjLiImg
-	sOsgdzB3jz2BKUfr06WVZ/gbgUquArxmm5nQWZZdM9VzpyOT81Wp2zdtwYcXBodqQ/ZsSVoEPc+lb
-	YK3iKx9glMhCRY5dc43w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vI8BpIkKMdM2a9S4H0KWOyLfLabGS9QtpRImOolEeeg=; b=D8snTxbzFSvWpzz+3YdPizNf2
+	lYdNyBNEgSWkiqnm90jEkWorw0g3a/4qcx//oZcYsf6DwzTgglDyK7bRDeBBjK2+f4Oaay/8mOaAT
+	sfORkl0MKKH9d0BQad8XbtEJ+UU/rtvPrv5vgXZe9atf7ZCuRuVZ68bQ5E7sgRQRsDkQgbQc4fdbc
+	cjZpLF+WONMwPBbyhK9T5KNrmhRRXuSjyiFwYw+fwp06hxqkSt0Uz567Ci7gRgoA6/V5XQ2fX5SQ0
+	F+9aqKdQqEreCUAgaFpT3HDky4+jMC6kesORxBXkSvcw01JNnIxd8s/jC7CKUiegayMZ0CK+LW9AH
+	bo0MwkF6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK0cn-0005fF-Vp; Thu, 02 Apr 2020 14:15:17 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jK0qQ-0005zP-0x; Thu, 02 Apr 2020 14:29:22 +0000
+Received: from regular1.263xmail.com ([211.150.70.203])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK0ch-0004fX-Fr; Thu, 02 Apr 2020 14:15:14 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jK0cU-000843-Rk; Thu, 02 Apr 2020 16:14:58 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 1/2] soc: rockchip: Register a soc_device to retrieve
- revision
-Date: Thu, 02 Apr 2020 16:14:58 +0200
-Message-ID: <4543799.QtudHIFNrS@diego>
-In-Reply-To: <4844d3ba-87fa-51f4-0a56-3131e390589a@arm.com>
-References: <20200401153513.423683-1-mylene.josserand@collabora.com>
- <5143930.cPWVAAQKI9@diego> <4844d3ba-87fa-51f4-0a56-3131e390589a@arm.com>
+ id 1jK0qL-0005ya-Vh
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 14:29:19 +0000
+Received: from localhost (unknown [192.168.167.8])
+ by regular1.263xmail.com (Postfix) with ESMTP id 22AA13D0;
+ Thu,  2 Apr 2020 22:29:08 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED: 0
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [192.168.0.111] (unknown [112.49.233.3])
+ by smtp.263.net (postfix) whith ESMTP id
+ P23721T140235312723712S1585837737105230_; 
+ Thu, 02 Apr 2020 22:29:08 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <3b922a282013a68192532c3e873d04e8>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: linux-amarula@amarulasolutions.com
+X-SENDER-IP: 112.49.233.3
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+Subject: Re: [PATCH v3 0/5] rockchip: rk3399: Fix HDMI out
+To: Anatolij Gustschin <agust@denx.de>, Jagan Teki <jagan@amarulasolutions.com>
+References: <20200402114125.2501-1-jagan@amarulasolutions.com>
+ <20200402155616.013f6bf8@crub>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <4e11274d-b166-1e41-83a6-8bf647f96c84@rock-chips.com>
+Date: Thu, 2 Apr 2020 22:28:53 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200402155616.013f6bf8@crub>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_071511_689233_185E9449 
-X-CRM114-Status: GOOD (  29.45  )
+X-CRM114-CacheID: sfid-20200402_072918_315661_24CACF59 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.150.70.203 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -59,233 +82,44 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?ISO-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@collabora.com>,
- sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- kever.yang@rock-chips.com, linux-rockchip@lists.infradead.org,
- geert@linux-m68k.org, kernel@collabora.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: u-boot@lists.denx.de, Simon Glass <sjg@chromium.org>,
+ linux-rockchip@lists.infradead.org, sunil@amarulasolutions.com,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula@amarulasolutions.com, Mark Kettenis <mark.kettenis@xs4all.nl>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 2. April 2020, 13:45:34 CEST schrieb Robin Murphy:
-> On 2020-04-01 5:34 pm, Heiko St=FCbner wrote:
-> [...]
-> > The possible problem I see here is clocking and power-domain of the hdmi
-> > controller in corner-cases. In the past we already had a lot of fun with
-> > kexec, which also indicates that people actually use kexec productively.
-> > =
-
-> > So while all clocks are ungated and all power-domains are powered on fi=
-rst
-> > boot, on a system without graphics the pclk+power-domain could be off w=
-hen
-> > doing a kexec into a second kernel, which then would probably hang here.
-> =
-
-> Just to be that guy, how about kdump, where entry to the second kernel =
-
-> is predicated on there *not* being a nice clean shutdown? ;)
-> =
-
-> IMO relying on any particular bootloader behaviour in the kernel is =
-
-> fairly fragile - U-Boot has a lot more latitude in assuming it's running =
-
-> straight out of reset than Linux does.
-
-You'll have to take into account that there are more boot options than
-uboot ;-) ... especially the rk3288 also needs to support some ancient
-version of coreboot - that definitly won't see any updates anymore
-and isn't really user upgradeable.
-
-
-> If we're not going to trust the =
-
-> DT to correctly describe the SoC variant in the first place,
-
-I'm still all for "just put a rk3288w" into the devicetree compatible,
-but so far other participants seem to prefer a software solution ;-) .
-
-
-> then it's =
-
-> somewhat questionable whether we should trust it for indirectly =
-
-> identifying the SoC variant either - it would seem a lot more robust to =
-
-> just map the known physical addresses to run a canned sequence of =
-
-> register writes that puts things in a known-good state (on the basis =
-
-> that this has to run before the 'real' drivers for those things are up, =
-
-> and thus can't interfere with them).
-
-The problem is, the "known physical address" is part of the dw-hdmi
-controller ip block, so we'll also need to take into account clocks and
-power-domains.
-
-So that would mean the soc-"driver" would need to =
-
-- ioremap hdmi, cru and pmu
-- ungate all clocks (on reboot we don't know the hirarchy)
-- enable at least the pd_vio power-domain
-via direct register writes.
-
-Doable but definitly very ugly and I also don't really know what more
-people farther upstream would say to that.
-
-Anybody interested in just adding that new dt-compatible?
-
-
-Heiko
-
-> > Of course with the hdmi-pclk being sourced from hclk_vio we run into a
-> > chicken-egg-problem, as we need pclk_hdmi_ctrl to register hclk_vio at =
-all.
-> > =
-
-> > So I guess one way out of this could be to
-> > - amend rk3288_clk_shutdown() to also ungate the hdmi-pclk on shutdown
-> > - add a shutdown mechanism to the power-domain driver so that it can
-> >    enable PD_VIO on shutdown
-> > =
-
-> >> +
-> >> +	if (readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG)
-> >> +	    =3D=3D RK3288W_HDMI_REV)
-> > =
-
-> > nit: a nicer look would be something like
-> > 	val =3D readl_relaxed(hdmi_base + RK3288_HDMI_REV_REG);
-> > 	if (val =3D=3D RK3288W_HDMI_REV)
-> > =
-
-> >> +		revision =3D RK3288_SOC_REV_RK3288W;
-> >> +	else
-> >> +		revision =3D RK3288_SOC_REV_RK3288;
-> >> +
-> >> +	iounmap(hdmi_base);
-> >> +
-> >> +	return revision;
-> >> +}
-> >> +
-> >> +static const char *rk3288_socinfo_revision(u32 rev)
-> >> +{
-> >> +	const char *soc_rev;
-> >> +
-> >> +	switch (rev) {
-> >> +	case RK3288_SOC_REV_RK3288:
-> >> +		soc_rev =3D "RK3288";
-> >> +		break;
-> >> +
-> >> +	case RK3288_SOC_REV_RK3288W:
-> >> +		soc_rev =3D "RK3288w";
-> > =
-
-> > can we maybe use lower-case letters for all here?
-> > =
-
-> >> +		break;
-> >> +
-> >> +	case RK3288_SOC_REV_NOT_DETECT:
-> >> +		soc_rev =3D "";
-> >> +		break;
-> >> +
-> >> +	default:
-> >> +		soc_rev =3D "unknown";
-> >> +		break;
-> >> +	}
-> >> +
-> >> +	return kstrdup_const(soc_rev, GFP_KERNEL);
-> >> +}
-> >> +
-> >> +static const struct of_device_id rk3288_soc_match[] =3D {
-> >> +	{ .compatible =3D "rockchip,rk3288", },
-> >> +	{ }
-> >> +};
-> >> +
-> >> +static int __init rk3288_soc_init(void)
-> > =
-
-> > as noted at the top, I'd really like to see this more generalized so th=
-at
-> > other socs can just hook in there with a revision callback in a
-> > rockchip_soc_data struct.
-> > =
-
-> > =
-
-> >> +{
-> >> +	struct soc_device_attribute *soc_dev_attr;
-> >> +	struct soc_device *soc_dev;
-> >> +	struct device_node *np;
-> >> +
-> >> +	np =3D of_find_matching_node(NULL, rk3288_soc_match);
-> >> +	if (!np)
-> >> +		return -ENODEV;
-> >> +
-> >> +	soc_dev_attr =3D kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
-> >> +	if (!soc_dev_attr)
-> >> +		return -ENOMEM;
-> >> +
-> >> +	soc_dev_attr->family =3D "Rockchip";
-> >> +	soc_dev_attr->soc_id =3D "RK32xx";
-> > =
-
-> > nit: rk3288 instead of "32xx" please
-> > =
-
-> >> +
-> >> +	np =3D of_find_node_by_path("/");
-> >> +	of_property_read_string(np, "model", &soc_dev_attr->machine);
-> >> +	of_node_put(np);
-> >> +
-> >> +	soc_dev_attr->revision =3D rk3288_socinfo_revision(rk3288_revision()=
-);
-> >> +
-> >> +	soc_dev =3D soc_device_register(soc_dev_attr);
-> >> +	if (IS_ERR(soc_dev)) {
-> >> +		kfree_const(soc_dev_attr->revision);
-> >> +		kfree_const(soc_dev_attr->soc_id);
-> >> +		kfree(soc_dev_attr);
-> >> +		return PTR_ERR(soc_dev);
-> >> +	}
-> >> +
-> >> +	dev_info(soc_device_to_device(soc_dev), "Rockchip %s %s detected\n",
-> >> +		 soc_dev_attr->soc_id, soc_dev_attr->revision);
-> > =
-
-> > nit: dev_dbg should be enough, that information doesn't really matter f=
-or
-> > most people, as it's only relevant to clock internals.
-> > =
-
-> > =
-
-> > Heiko
-> > =
-
-> > =
-
-> > =
-
-> > _______________________________________________
-> > Linux-rockchip mailing list
-> > Linux-rockchip@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> > =
-
-> =
-
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgQW5hdG9saWosCgpPbiAyMDIwLzQvMiDkuIvljYg5OjU2LCBBbmF0b2xpaiBHdXN0c2NoaW4g
+d3JvdGU6Cj4gT24gVGh1LCAgMiBBcHIgMjAyMCAxNzoxMToyMCArMDUzMAo+IEphZ2FuIFRla2kg
+amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20gd3JvdGU6Cj4gLi4uCj4+IEphZ2FuIFRla2kgKDUp
+Ogo+PiAgICBjbGs6IHJrMzM5OTogU2V0IGVtcHR5IGZvciB2b3BsIGFzc2lnbmVkLWNsb2Nrcwo+
+PiAgICB2aWRlbzogcm9ja2NoaXA6IEZpeCB2b3AgbW9kZXMgZm9yIHJrMzM5OQo+PiAgICByb2Nr
+Y2hpcDogRW5hYmxlIHByZSBjb25zb2xlIGZvciByazMzOTkKPj4gICAgcm9ja2NoaXA6IEVuYWJs
+ZSBIRE1JIG91dHB1dCBvbiByazMzOTkgYm9hcmQgdy8gSERNSQo+PiAgICB2aWRlbzogcm9ja2No
+aXA6IFN1cHBvcnQgNEsgcmVzb2x1dGlvbiBmb3IgcmszMzk5LCBIRE1JCj4+Cj4+ICAgYXJjaC9h
+cm0vaW5jbHVkZS9hc20vYXJjaC1yb2NrY2hpcC92b3BfcmszMjg4LmggfCAxMSArKysrKysrKysr
+Kwo+PiAgIGFyY2gvYXJtL21hY2gtcm9ja2NoaXAvS2NvbmZpZyAgICAgICAgICAgICAgICAgIHwg
+IDEgKwo+PiAgIGNvbW1vbi9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IHwgIDEgKwo+PiAgIGNvbmZpZ3MvbmFub3BjLXQ0LXJrMzM5OV9kZWZjb25maWcgICAgICAgICAg
+ICAgIHwgIDcgKysrKysrKwo+PiAgIGNvbmZpZ3MvbmFub3BpLW00LXJrMzM5OV9kZWZjb25maWcg
+ICAgICAgICAgICAgIHwgIDcgKysrKysrKwo+PiAgIGNvbmZpZ3MvbmFub3BpLW5lbzQtcmszMzk5
+X2RlZmNvbmZpZyAgICAgICAgICAgIHwgIDcgKysrKysrKwo+PiAgIGNvbmZpZ3Mvcm9jLXBjLXJr
+MzM5OV9kZWZjb25maWcgICAgICAgICAgICAgICAgIHwgIDYgKysrKysrCj4+ICAgY29uZmlncy9y
+b2NrOTYwLXJrMzM5OV9kZWZjb25maWcgICAgICAgICAgICAgICAgfCAgNyArKysrKysrCj4+ICAg
+ZHJpdmVycy9jbGsvcm9ja2NoaXAvY2xrX3JrMzM5OS5jICAgICAgICAgICAgICAgfCAgNyArKysr
+KysrCj4+ICAgZHJpdmVycy92aWRlby9yb2NrY2hpcC9LY29uZmlnICAgICAgICAgICAgICAgICAg
+fCAgMiArKwo+PiAgIGRyaXZlcnMvdmlkZW8vcm9ja2NoaXAvcmszMzk5X3ZvcC5jICAgICAgICAg
+ICAgIHwgIDIgLS0KPj4gICBkcml2ZXJzL3ZpZGVvL3JvY2tjaGlwL3JrX3ZvcC5jICAgICAgICAg
+ICAgICAgICB8ICA0ICsrKysKPj4gICBpbmNsdWRlL2NvbmZpZ3MvZXZiX3JrMzM5OS5oICAgICAg
+ICAgICAgICAgICAgICB8ICA1ICsrKysrCj4+ICAgaW5jbHVkZS9jb25maWdzL3JvY2s5NjBfcmsz
+Mzk5LmggICAgICAgICAgICAgICAgfCAgNSArKysrKwo+PiAgIDE0IGZpbGVzIGNoYW5nZWQsIDcw
+IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gU2VyaWVzIGFwcGxpZWQgdG8gdS1ib290
+LXZpZGVvL3ZpZGVvLWZpeGVzLXYyMDIwLjA0LCB0aGFua3MhCgpJIHdhcyBhYm91dCB0byBhcHBs
+eSB0aGVzZSBwYXRjaGVzLCBhbmQgdW5kZXIgdHJhdmlzIGJ1aWxkIG5vdy4KCkl0J3MgYWxzbyBP
+SyBmb3IgdGhlc2UgcGF0Y2hlcyB0byBtZXJnZSBpbnRvIHUtYm9vdC12aWRlby4KCgpUaGFua3Ms
+CgotIEtldmVyCgo+Cj4gLS0KPiBBbmF0b2xpago+Cj4KCgoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Ckxp
+bnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
