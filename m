@@ -2,70 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D68BD19C488
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 16:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D1A19C48A
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 16:43:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8QxDc+8iMklsie1WweVyEWgfVOPHjTFFhvKhkYEZRBY=; b=aOG6xqHDfZ/ArS
-	3PDuaL3eqosqnz2XBb5ZdMT2ggZ49bST46TUvTx5f7HSLSaJ95Rgg0Ha8sXUv0uk74mVcwLPUBrRz
-	yw8OtX0dJ26djdCgTrlmwo9SgaVzeW/YPPkBw5Zn5RPQKFZkdPLXKvyLAaWcnpRafp5oDZFs0AJ76
-	CgaVsfD6uJJWpnjKHeBBft9Str3UbOAg4IVJMqWHYIBGIc75Jwkg9dHWOm3XEtJtzuhAiUndi3xHO
-	jC+u2aIP4jO4nu2F0epdyboUPEek4OOSAU4as/6qI8KP9uZvGJseIan3hknBZTw59jFt7EtyasPnq
-	H8ZzVoP6bP056dXz1G0Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m+L4NivJR4APR/fawkzNiQwoN1x/y7JUddmgtkEr+wg=; b=fcWwZgnW4VMSIC
+	5+gVDxtgJCYbtFySRTIec6z3PAAFQpwYmeLLT1LKUJq4WUBwwKIaV3tpEqLxhaQwqBeJZ/2hRsJWd
+	zqdYf0BX5uIbLlXFt51VbmvqwarUhmg2opAWEKiYfpQFZ5Pyu1xCD3i4SxDkC6sWIhW8inO0bVIco
+	JpLfq09L7V1y5pWPMKtHFmhixLwMDtXN9VcBOjZobaNM0Os98gWqt1soySITHBaF3ersu6vKqmn+n
+	kSR3tKGU/u5ChCmGMTyAWNegSNzlNmS6+lYFJN9nmB3ZmOCVt/y3CXEXd9YRxVzKfM6j8uZKehFdV
+	renWPgg4GcSVK5fcv5mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK13e-0007XV-61; Thu, 02 Apr 2020 14:43:02 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jK13o-0007o5-SZ; Thu, 02 Apr 2020 14:43:12 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK13a-0007QR-HH
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 14:43:00 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48tQlg72Rhz1rx8R;
- Thu,  2 Apr 2020 16:42:55 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48tQlg6GBmz1qv4M;
- Thu,  2 Apr 2020 16:42:55 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id cwsbNBYgvbon; Thu,  2 Apr 2020 16:42:54 +0200 (CEST)
-X-Auth-Info: 1RiFS1zHl81fC+DM6AhuYvak1wPZNONbNemcv10hnhQ=
-Received: from crub (pD95F11D0.dip0.t-ipconnect.de [217.95.17.208])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Thu,  2 Apr 2020 16:42:54 +0200 (CEST)
-Date: Thu, 2 Apr 2020 16:42:54 +0200
-From: Anatolij Gustschin <agust@denx.de>
-To: Kever Yang <kever.yang@rock-chips.com>
-Subject: Re: [PATCH v3 0/5] rockchip: rk3399: Fix HDMI out
-Message-ID: <20200402164254.601503b2@crub>
-In-Reply-To: <4e11274d-b166-1e41-83a6-8bf647f96c84@rock-chips.com>
-References: <20200402114125.2501-1-jagan@amarulasolutions.com>
- <20200402155616.013f6bf8@crub>
- <4e11274d-b166-1e41-83a6-8bf647f96c84@rock-chips.com>
+ id 1jK13l-0007ej-1R
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 14:43:10 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id AB09328CF7C
+Subject: Re: [PATCH 1/4] dt-bindings: phy: phy-rockchip-dphy-rx0: move
+ rockchip dphy rx0 bindings out of staging
+To: Johan Jonker <jbx6244@gmail.com>
+References: <20200402000234.226466-2-helen.koike@collabora.com>
+ <bfefe00c-5673-ddcb-4e2a-425eb4771002@gmail.com>
+From: Helen Koike <helen.koike@collabora.com>
+Message-ID: <9ed2142a-bd22-fbb6-cd65-7d727751400e@collabora.com>
+Date: Thu, 2 Apr 2020 11:42:57 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
+In-Reply-To: <bfefe00c-5673-ddcb-4e2a-425eb4771002@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_074258_721814_03F97B5D 
-X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-CacheID: sfid-20200402_074309_234790_819A0835 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,34 +65,107 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
- u-boot@lists.denx.de, Jagan Teki <jagan@amarulasolutions.com>,
- sunil@amarulasolutions.com,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula@amarulasolutions.com, Mark Kettenis <mark.kettenis@xs4all.nl>
+Cc: devel@driverdev.osuosl.org, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, karthik.poduval@gmail.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, hverkuil-cisco@xs4all.nl, mark.rutland@arm.com,
+ kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Kever,
+Hi Johan,
 
-On Thu, 2 Apr 2020 22:28:53 +0800
-Kever Yang kever.yang@rock-chips.com wrote:
-...
-> > Series applied to u-boot-video/video-fixes-v2020.04, thanks!  
+On 4/2/20 9:16 AM, Johan Jonker wrote:
+> Hi Helen,
 > 
-> I was about to apply these patches, and under travis build now.
+>> # SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> %YAML 1.2
+>> ---
+>> $id: http://devicetree.org/schemas/phy/rockchip-mipi-dphy-rx0.yaml#
+>> $schema: http://devicetree.org/meta-schemas/core.yaml#
+>>
+>> title: Rockchip SoC MIPI RX0 D-PHY Device Tree Bindings
+>>
+>> maintainers:
+>>   - Helen Koike <helen.koike@collabora.com>
+>>   - Ezequiel Garcia <ezequiel@collabora.com>
+>>
+>> description: |
+>>   The Rockchip SoC has a MIPI D-PHY bus with an RX0 entry which connects to
+>>   the ISP1 (Image Signal Processing unit v1.0) for CSI cameras.
+>>
+>> properties:
+>>   compatible:
+>>     const: rockchip,rk3399-mipi-dphy-rx0
+>>
 > 
-> It's also OK for these patches to merge into u-boot-video.
+>>   reg:
+>>     maxItems: 1
+> 
+> If 'reg' is not used => remove it.
 
-I'm build testing the series [1] and will submit a pull request to
-Tom.
+ok, I'll add a patch removing it.
 
-[1] https://gitlab.denx.de/u-boot/custodians/u-boot-video/pipelines/2606
+Thanks,
+Helen
 
---
-Anatolij
+> 
+>>
+>>   clocks:
+>>     items:
+>>       - description: MIPI D-PHY ref clock
+>>       - description: MIPI D-PHY RX0 cfg clock
+>>       - description: Video in/out general register file clock
+>>
+>>   clock-names:
+>>     items:
+>>       - const: dphy-ref
+>>       - const: dphy-cfg
+>>       - const: grf
+>>
+>>   '#phy-cells':
+>>     const: 0
+>>
+>>   power-domains:
+>>     description: Video in/out power domain.
+>>     maxItems: 1
+>>
+>> required:
+>>   - compatible
+>>   - clocks
+>>   - clock-names
+>>   - '#phy-cells'
+>>   - power-domains
+>>
+>> additionalProperties: false
+>>
+>> examples:
+>>   - |
+>>
+>>     /*
+>>      * MIPI D-PHY RX0 use registers in "general register files", it
+>>      * should be a child of the GRF.
+>>      *
+>>      * grf: syscon@ff770000 {
+>>      *  compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+>>      *  ...
+>>      * };
+>>      */
+>>
+>>     #include <dt-bindings/clock/rk3399-cru.h>
+>>     #include <dt-bindings/power/rk3399-power.h>
+>>
+>>     mipi_dphy_rx0: mipi-dphy-rx0 {
+>>         compatible = "rockchip,rk3399-mipi-dphy-rx0";
+>>         clocks = <&cru SCLK_MIPIDPHY_REF>,
+>>                  <&cru SCLK_DPHY_RX0_CFG>,
+>>                  <&cru PCLK_VIO_GRF>;
+>>         clock-names = "dphy-ref", "dphy-cfg", "grf";
+>>         power-domains = <&power RK3399_PD_VIO>;
+>>         #phy-cells = <0>;
+>>     };
 
 _______________________________________________
 Linux-rockchip mailing list
