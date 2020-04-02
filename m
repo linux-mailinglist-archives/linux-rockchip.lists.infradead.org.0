@@ -2,55 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7AC519C962
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 21:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6161D19CA27
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 21:39:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ur93tawg72/2o6GAESPo35KzHng+0fZeO0wX30M/bE=; b=uGx1galpA8XJjz
-	a9P4LcLQGZeXPkph4vYzWWoxhml7MV86VSFP3f9OaWc8FWtT35eb+cAdDO2OD5kFv1hc98dSFB4WG
-	0Ybgk6jxGAV9bs/gq1ZZcmoIiWx3N9zbJb9BKwdDpHt/aQ9f1ptVa+CPUROEATSidKLJG9LBNkogm
-	T/7lRzOB6tIyOESGjYiXY18D2Ssxq6dsTuGkd7ov6NK50eDRN3TqyoM3D3NWnfR9SCrQnUgQqc43c
-	v4aKKexkggXAW1VkUsmdZISZdNOxy7h5n5GznzD8zgNf4y6/VkKCV1aRnHJtDKsix2Ac7NeDlfxLB
-	uvJ5wlmAq7BOOdC2Lf3A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zUSiadZwApyoV1c4wW6skHKP4j3Yv6VD9gf5hwoVLCg=; b=kQV
+	SkBY7iXlpr+br0HzycXXh4roRUEBp8I4p/mro3M6XQpFqnpmoCvbQZwgNn5EFetSLAp5gGF+tQaR4
+	kWFatHzWF8EO9cg7mzRMY/gql5qfnLXxn6m55SqEHkbNRwRgXG4qent50inv9XYNBmwGF3GmBL4wu
+	a9y8Es0H6oBlgO4eOfmzUlR62LPDm11qr82DY1X2ZGxLWo8cB5HTiZro0v1cte9Luw1IyAOfS1fCe
+	9eIlW1EeC+aO9S6z3XJt6/GS22pPEL0SjH77YaDaJnjOcr64l52lCESDkl90XlgpyX9NYcFO3hSx3
+	NUJb10Ai9I04D8hqOH/clYfxKB0MsFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK58s-000216-S4; Thu, 02 Apr 2020 19:04:42 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK58k-0001sf-Dv
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 19:04:35 +0000
-Received: from localhost.localdomain (unknown
- [IPv6:2a02:810a:1140:6758:20a2:167a:3b62:26be])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: dafna)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 4704A297E7B;
- Thu,  2 Apr 2020 20:04:29 +0100 (BST)
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: linux-media@vger.kernel.org, dafna.hirschfeld@collabora.com,
- helen.koike@collabora.com, ezequiel@collabora.com, hverkuil@xs4all.nl,
- kernel@collabora.com, dafna3@gmail.com, laurent.pinchart@ideasonboard.com,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH v2 5/5] media: staging: rkisp1: cap: remove unsupported formats
-Date: Thu,  2 Apr 2020 21:04:19 +0200
-Message-Id: <20200402190419.15155-6-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
-References: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
+	id 1jK5gH-0005QC-5Y; Thu, 02 Apr 2020 19:39:14 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172]
+ helo=relmlie6.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jK5g2-0005Fs-N6; Thu, 02 Apr 2020 19:39:00 +0000
+X-IronPort-AV: E=Sophos;i="5.72,336,1580742000"; d="scan'208";a="43341491"
+Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
+ by relmlie6.idc.renesas.com with ESMTP; 03 Apr 2020 04:38:51 +0900
+Received: from localhost.localdomain (unknown [10.226.36.204])
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id 6DFF840C4F75;
+ Fri,  3 Apr 2020 04:38:44 +0900 (JST)
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org
+Subject: [PATCH v6 00/11] Add support for PCIe controller to work in endpoint
+ mode on R-Car SoCs
+Date: Thu,  2 Apr 2020 20:38:28 +0100
+Message-Id: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_120434_599771_78227090 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200402_123859_062598_15590C1E 
+X-CRM114-Status: GOOD (  15.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.160.252.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,62 +68,186 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>,
+ Jingoo Han <jingoohan1@gmail.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-For Ycbcr packed formats only YUYV can be supported by
-the driver. This patch removes the other formats.
+This patch series adds support for PCIe controller on rcar to work in
+endpoint mode, this also extends the epf framework to handle base region
+for mapping PCI address locally.
 
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Acked-by: Helen Koike <helen.koike@collabora.com>
----
- drivers/staging/media/rkisp1/rkisp1-capture.c | 21 -------------------
- 1 file changed, 21 deletions(-)
+Note:
+The cadence/rockchip/designware endpoint drivers are build tested only.
 
-diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-index 2d274e8f565b..076335193f40 100644
---- a/drivers/staging/media/rkisp1/rkisp1-capture.c
-+++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-@@ -98,15 +98,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_mp_fmts[] = {
- 		.fmt_type = RKISP1_FMT_YUV,
- 		.uv_swap = 0,
- 		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
--	}, {
--		.fourcc = V4L2_PIX_FMT_YVYU,
--		.fmt_type = RKISP1_FMT_YUV,
--		.uv_swap = 1,
--		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
--	}, {
--		.fourcc = V4L2_PIX_FMT_VYUY,
--		.fmt_type = RKISP1_FMT_YUV,
--		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
- 	}, {
- 		.fourcc = V4L2_PIX_FMT_YUV422P,
- 		.fmt_type = RKISP1_FMT_YUV,
-@@ -234,18 +225,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
- 		.uv_swap = 0,
- 		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
- 		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
--	}, {
--		.fourcc = V4L2_PIX_FMT_YVYU,
--		.fmt_type = RKISP1_FMT_YUV,
--		.uv_swap = 1,
--		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
--		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
--	}, {
--		.fourcc = V4L2_PIX_FMT_VYUY,
--		.fmt_type = RKISP1_FMT_YUV,
--		.uv_swap = 1,
--		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
--		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
- 	}, {
- 		.fourcc = V4L2_PIX_FMT_YUV422P,
- 		.fmt_type = RKISP1_FMT_YUV,
+root@salvator-x:~# ./pcitest.sh 
+BAR tests
+
+BAR0:           OKAY
+BAR1:           NOT OKAY
+BAR2:           OKAY
+BAR3:           NOT OKAY
+BAR4:           OKAY
+BAR5:           NOT OKAY
+
+Interrupt tests
+
+SET IRQ TYPE TO LEGACY:         OKAY
+LEGACY IRQ:     OKAY
+SET IRQ TYPE TO MSI:            OKAY
+MSI1:           OKAY
+MSI2:           OKAY
+MSI3:           OKAY
+MSI4:           OKAY
+MSI5:           OKAY
+MSI6:           OKAY
+MSI7:           OKAY
+MSI8:           OKAY
+MSI9:           OKAY
+MSI10:          OKAY
+MSI11:          OKAY
+MSI12:          OKAY
+MSI13:          OKAY
+MSI14:          OKAY
+MSI15:          OKAY
+MSI16:          OKAY
+MSI17:          NOT OKAY
+MSI18:          NOT OKAY
+MSI19:          NOT OKAY
+MSI20:          NOT OKAY
+MSI21:          NOT OKAY
+MSI22:          NOT OKAY
+MSI23:          NOT OKAY
+MSI24:          NOT OKAY
+MSI25:          NOT OKAY
+MSI26:          NOT OKAY
+MSI27:          NOT OKAY
+MSI28:          NOT OKAY
+MSI29:          NOT OKAY
+MSI30:          NOT OKAY
+MSI31:          NOT OKAY
+MSI32:          NOT OKAY
+
+
+Read Tests
+
+SET IRQ TYPE TO MSI:            OKAY
+READ (      1 bytes):           OKAY
+READ (   1024 bytes):           OKAY
+READ (   1025 bytes):           OKAY
+READ (1024000 bytes):           OKAY
+READ (1024001 bytes):           OKAY
+
+Write Tests
+
+WRITE (      1 bytes):          OKAY
+WRITE (   1024 bytes):          OKAY
+WRITE (   1025 bytes):          OKAY
+WRITE (1024000 bytes):          OKAY
+WRITE (1024001 bytes):          OKAY
+
+Copy Tests
+
+COPY (      1 bytes):           OKAY
+COPY (   1024 bytes):           OKAY
+COPY (   1025 bytes):           OKAY
+COPY (1024000 bytes):           OKAY
+COPY (1024001 bytes):           OKAY
+
+
+Changes for v6:
+1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
+   scm/linux/kernel/git/lpieralisi/pci.git/
+2] Fixed review comments from Shimoda-san
+   a] Made sure defconfig changes were in seprate patch
+   b] Created rcar_pcie_host/rcar_pcie_ep structures
+   c] Added pci-id for R8A774C0
+   d] Added entry in MAINTAINERS for dt-binding
+   e] Dropped unnecessary braces
+3] Added support for msi.
+
+Changes for v5:
+1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
+   linux/kernel/git/helgaas/pci.git
+2] Fixed review comments reported by Kishon while fetching the matching
+   window in function pci_epc_get_matching_window()
+3] Fixed review comments reported by Bjorn
+   a] Split patch up first patch so that its easier to review and incremental
+   b] Fixed typos
+4] Included Reviewed tag from Rob for the dt-binding patch
+5] Fixed issue reported by Nathan for assigning variable to itself
+
+Changes for v4:
+1] Fixed dtb_check error reported by Rob
+2] Fixed review comments reported by Kishon
+   a] Dropped pci_epc_find_best_fit_window()
+   b] Fixed initializing mem ptr in __pci_epc_mem_init()
+   c] Dropped map_size from pci_epc_mem_window structure
+
+Changes for v3:
+1] Fixed review comments from Bjorn and Kishon.
+3] Converted to DT schema
+
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
+
+Lad Prabhakar (11):
+  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+  arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
+  PCI: drop PCIE_RCAR config option
+  PCI: rcar: Move shareable code to a common file
+  PCI: rcar: Fix calculating mask for PCIEPAMR register
+  PCI: endpoint: Add support to handle multiple base for mapping
+    outbound memory
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  PCI: rcar: Add support for rcar PCIe controller in endpoint mode
+  PCI: Add Renesas R8A774C0 device ID
+  misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
+  MAINTAINERS: Add file patterns for rcar PCI device tree bindings
+
+ .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   76 ++
+ MAINTAINERS                                   |    1 +
+ arch/arm64/configs/defconfig                  |    2 +-
+ drivers/misc/pci_endpoint_test.c              |    2 +
+ drivers/pci/controller/Kconfig                |   15 +-
+ drivers/pci/controller/Makefile               |    3 +-
+ .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
+ .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
+ drivers/pci/controller/pcie-rcar-ep.c         |  556 ++++++++
+ drivers/pci/controller/pcie-rcar-host.c       | 1065 +++++++++++++++
+ drivers/pci/controller/pcie-rcar.c            | 1206 +----------------
+ drivers/pci/controller/pcie-rcar.h            |  140 ++
+ drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
+ drivers/pci/endpoint/pci-epc-mem.c            |  195 ++-
+ include/linux/pci-epc.h                       |   39 +-
+ include/linux/pci_ids.h                       |    1 +
+ 16 files changed, 2068 insertions(+), 1254 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
