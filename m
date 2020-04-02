@@ -2,46 +2,45 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EAF919C36D
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 15:59:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D30ED19C370
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 15:59:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTD/H/Mop5DlZrKkit5xgjT4G+c5ax7nck+cb5AIO/E=; b=aQFqH+WT3CLorW
-	uY81ImaiBLvdGpBwXjRRh0+G3dUeoOpdcxU+8OnqH5Nhb60lWDZ5llb/qu9tyQfFpTON0MKJacoGT
-	19ByiYDoKs/+gIuh5rhDunoSDaYVd3f44UEtr9WKSgLG6lH9wAPUifDL0ApszIKAm0F3Gworvylup
-	Z9xYIjnulkr/+Y/fDGnNLq1YYRGZll1ZeChnx7qS9lvobdDPkhlNntQiAfe5JfksG3Qdesse4anrw
-	79o95xdj7fkNzSmPFa+5JhIpFwrPul7dkmRmCqV0zvGb4FPNHJ70Dg5Q//MM24jwaUolyDcpZO/RJ
-	OTyucuh33iWqjhzB5VOw==;
+	List-Owner; bh=szMPk/mbh29XiPbLyO5yZM50T7IOJ7hVZbkVsStD2YI=; b=mkue/h9nA28pEZ
+	OvzSqPtekh0Xf5xFHb7ih1sfWrlmP5Mfd1wQnkad3pFr5vD390M9J68muqj+Kunh0tcdgeAIJYfom
+	Ycnu/pKoz50aaYiCijodsn6IP/3DELKcd0SH79A06QgVYG3hlw7MDqPbUdNebau2rJkkLnAVPeS9N
+	Z5zXvb7PCJMDkTVw+rF05caDYpZrxFhKVLOh0ISf5Sl8DDdq4AYVMLwKPirLbClrUbWfdXUqZnTSg
+	KI3+m7eGS1kxHQw/OgiLNJkdn18kcZfOu9GqoAT4msOMR3jcXctpfch0I1K/5W0WQeXlRVywyw5Gv
+	teCXS0AAiICRgdhNugqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jK0NW-0003IK-Mo; Thu, 02 Apr 2020 13:59:30 +0000
+	id 1jK0Ni-0003Ox-Ic; Thu, 02 Apr 2020 13:59:42 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jK0NQ-0003Aq-1d
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 13:59:25 +0000
+ id 1jK0Ne-0003Nd-An
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 13:59:41 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 91248280125
-Subject: Re: [PATCH 2/3] phy-rockchip-dphy-rx0: Drop unneeded CONFIG_OF
- dependency
+ (Authenticated sender: koike) with ESMTPSA id BE597280125
+Subject: Re: [PATCH 3/3] rkisp1: Fix wrong PHY config dependency
 To: Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20200401213721.24173-1-ezequiel@collabora.com>
- <20200401213721.24173-3-ezequiel@collabora.com>
+ <20200401213721.24173-4-ezequiel@collabora.com>
 From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <7ced1203-cdea-ad26-f46b-8873bfb85043@collabora.com>
-Date: Thu, 2 Apr 2020 10:59:12 -0300
+Message-ID: <b0c9e734-7302-08e6-7bbf-79699d1d305e@collabora.com>
+Date: Thu, 2 Apr 2020 10:59:29 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <20200401213721.24173-3-ezequiel@collabora.com>
+In-Reply-To: <20200401213721.24173-4-ezequiel@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_065924_323249_643063F4 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20200402_065938_516991_49879210 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -74,30 +73,33 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 
 On 4/1/20 6:37 PM, Ezequiel Garcia wrote:
-> The driver is perfectly capable of being built without CONFIG_OF.
-> Remove this dependency, which is useful for compile-only tests.
+> Instead of depending on the Rockchip PHY driver the ISP driver
+> should really depend on CONFIG_GENERIC_PHY_MIPI_DPHY,
+> given all it needs is the phy_mipi_dphy_get_default_config() symbol.
+> 
+> Fix it.
 > 
 > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
 
 Acked-by: Helen Koike <helen.koike@collabora.com>
 
 > ---
->  drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig | 2 +-
+>  drivers/staging/media/rkisp1/Kconfig | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig b/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-> index bd0147624de1..fb74df829371 100644
-> --- a/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-> +++ b/drivers/staging/media/phy-rockchip-dphy-rx0/Kconfig
-> @@ -2,7 +2,7 @@
->  
->  config PHY_ROCKCHIP_DPHY_RX0
->  	tristate "Rockchip MIPI Synopsys DPHY RX0 driver"
-> -	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> +	depends on ARCH_ROCKCHIP || COMPILE_TEST
->  	select GENERIC_PHY_MIPI_DPHY
->  	select GENERIC_PHY
+> diff --git a/drivers/staging/media/rkisp1/Kconfig b/drivers/staging/media/rkisp1/Kconfig
+> index b859a493caba..e3ba6826fbb0 100644
+> --- a/drivers/staging/media/rkisp1/Kconfig
+> +++ b/drivers/staging/media/rkisp1/Kconfig
+> @@ -7,7 +7,7 @@ config VIDEO_ROCKCHIP_ISP1
+>  	select VIDEOBUF2_DMA_CONTIG
+>  	select VIDEOBUF2_VMALLOC
+>  	select V4L2_FWNODE
+> -	select PHY_ROCKCHIP_DPHY_RX0
+> +	select GENERIC_PHY_MIPI_DPHY
+>  	default n
 >  	help
+>  	  Enable this to support the Image Signal Processing (ISP) module
 > 
 
 _______________________________________________
