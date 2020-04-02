@@ -2,77 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4073919C16B
-	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 14:49:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD9FF19C2FE
+	for <lists+linux-rockchip@lfdr.de>; Thu,  2 Apr 2020 15:48:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IgaE2ltrQm+03oEeZEJZ5wKNZLyjisbB5gnmyWpMNzI=; b=Hh6ktHBYvjnx58KZ7scEEnVDC
-	69VhuTzRzDcEX7jRVFR4bP3CdkB0RlpwC0NKZGS9mbEmEQa5b1TgG5MOQH95GSslxKr6RHQmqepMb
-	YpU7uiEy/o+7gbIl/E76Vpk/OJxTOFAP8jCWfJxp4GgopCB7NgJe4DSpaNbIuoiJJOrF7hei0w4HN
-	74sD96FeWjyeLJ4L5A5EMA9gsBqmhKCcGPzUg8lnvhrlMwiHnoIOhX7i4+vbUo0jFevmUXiF6yhdU
-	Y5rS52pi4GdnvWa5CRd3V7gIC96rd46YPFGm94XzyM/vEgcrS2L/bRRxJ3g4eCrZusQjjC415tEMu
-	pziWFd3dw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XeW55BzCzoHIldNT4gnsQN6Kol3M5De+lFZjV6AkFNE=; b=SazIh8Jxo8YLZD
+	XI8RsvyexQNqxdUng/HwYx4B8QQu5v+36HBuj6dytRak0OuVzHXNhzvwc+58+ASFlp/BAcQ+kJt6/
+	NcZ9O3jehMW8jIDEoPHnkyxZIoH0LBt3Xyn3Rx+24AQr084vIwq/7B+3ElsqjBiqgLoNJJMnIM3Ze
+	Vm4QBmdRkwBG+WQdYszOPBZoWusx20Q82r6ViI2z4SkMcAnUA75UndOG+Yr+XjRoiPEREKnk2UhMa
+	p1olTjj9gOC6eI+sNdHJfWQsZ5mEwVcO3idquXM3oVwGmRhiU0aFHl9H9gl2QpypxfLDPmQrg/8zN
+	gh7B6veXwDxDmyRFqEVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJzHR-0001gI-Cr; Thu, 02 Apr 2020 12:49:09 +0000
-Received: from regular1.263xmail.com ([211.150.70.196])
+	id 1jK0Ca-0003gq-9S; Thu, 02 Apr 2020 13:48:12 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJzHN-0001fi-LX
- for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 12:49:07 +0000
-Received: from localhost (unknown [192.168.167.209])
- by regular1.263xmail.com (Postfix) with ESMTP id 8637E1058;
- Thu,  2 Apr 2020 20:49:00 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED: 0
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [192.168.0.111] (unknown [112.49.233.3])
- by smtp.263.net (postfix) whith ESMTP id
- P21715T140275355735808S1585831738705298_; 
- Thu, 02 Apr 2020 20:49:00 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <e9905572d62c18a9812f59396c348a34>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-amarula@amarulasolutions.com
-X-SENDER-IP: 112.49.233.3
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-Subject: Re: [PATCH v3 5/5] video: rockchip: Support 4K resolution for rk3399, 
- HDMI
-To: Jagan Teki <jagan@amarulasolutions.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Anatolij Gustschin <agust@denx.de>
-References: <20200402114125.2501-1-jagan@amarulasolutions.com>
- <20200402114125.2501-6-jagan@amarulasolutions.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <d53471a2-80ee-7154-337d-da9b04d89732@rock-chips.com>
-Date: Thu, 2 Apr 2020 20:48:58 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jK0CX-0003gB-QS
+ for linux-rockchip@lists.infradead.org; Thu, 02 Apr 2020 13:48:11 +0000
+Received: by mail-wm1-x341.google.com with SMTP id r16so3448535wmg.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 02 Apr 2020 06:48:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=JdEZdR8yjtlVoMZNQrbxmUtK0B2+Djm4LLppLoO//ag=;
+ b=UTJlCycdxWzo8SkwC++itw0GwatKMfwLvoM8hEz5hz0itKOrDAtfARRjd08KAo/YlH
+ iYT7miwWVvjXGIMOVY3OjO3n0Mn8Ksa9rY5az4HK5BUJ68HWuftxPfKhAEhGYA4Yn2Dx
+ La5wev2ZBzXN90dpwna9UbVHyMHP4wB2LvKgVYRbqg7U00y7LfYpOp1n+6KQfV2sld/l
+ yav91x+sISP54xu2tPy0MbVaptxe9HBydeIqtNP10Zc2zcyTUnXn/ANeO5KMYsdqlk66
+ bfclrPNbmCjER1axdhz0RvwvbhQm2h+TcIw1ChSyayEzTqXtXCokTwUd8+MfFtI9EATW
+ Qkyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=JdEZdR8yjtlVoMZNQrbxmUtK0B2+Djm4LLppLoO//ag=;
+ b=GnOwANYTGsF9SdH7ver3uPhxpvDljxSEUf0BUiVWiil92Raf4dzIcFXwEcIAZlXilx
+ DrLo2AjLuWOABkykCnzPdY3ShZUD1vN7orqGzIbuZa3rsVKhZY6hpCMWUFf0+FNg+LNW
+ onpd/LQWsp+peHQfR6jZ0FwErQXcV3/XUFDIfa9T7i+5ikfIRcTlA3+3CvSVdAfWiDlL
+ 1Z2YxXeri5wwUHnu+KbM11nwWWlKnTAWGKtKsITph0fBw54CeeE4aB21FUvr4HHrCFxc
+ CjjfxfqqISNoYMvFQfb35MbXDulkvd58gTlupr30bUOA51EmvoRj7O/qrsn/0luKl3R4
+ 4Eyg==
+X-Gm-Message-State: AGi0PubV3vGnGBEady/GieTCx6gR/BsEbo+gzABD3IwN7LoAuYg1LCeG
+ bpRcElOG3pID0Iyru2Zgn7I=
+X-Google-Smtp-Source: APiQypKpdlsAkbdIzYdLmLeSVwA00to9hBXvBdZjAZl5uSzVZ+jldunwGUNL5wE1hbN9a3RTQzrH8g==
+X-Received: by 2002:a7b:c185:: with SMTP id y5mr3723403wmi.90.1585835285227;
+ Thu, 02 Apr 2020 06:48:05 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id u13sm7008313wmm.32.2020.04.02.06.48.03
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 02 Apr 2020 06:48:04 -0700 (PDT)
+To: helen.koike@collabora.com
+References: <20200402000234.226466-4-helen.koike@collabora.com>
+Subject: Re: [PATCH 3/4] arm64: dts: rockchip: add rx0 mipi-phy for rk3399
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <970b9e48-e38f-7e7a-3472-7dc5a4737e58@gmail.com>
+Date: Thu, 2 Apr 2020 15:48:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200402114125.2501-6-jagan@amarulasolutions.com>
+In-Reply-To: <20200402000234.226466-4-helen.koike@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200402_054905_870837_29340DD1 
-X-CRM114-Status: GOOD (  13.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200402_064809_850299_91DDBC4C 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.196 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,40 +103,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, linux-rockchip@lists.infradead.org,
- sunil@amarulasolutions.com, linux-amarula@amarulasolutions.com,
- Mark Kettenis <mark.kettenis@xs4all.nl>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devel@driverdev.osuosl.org, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, karthik.poduval@gmail.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, hverkuil-cisco@xs4all.nl, mark.rutland@arm.com,
+ kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAvNC8yIOS4i+WNiDc6NDEsIEphZ2FuIFRla2kgd3JvdGU6Cj4gVGhlIGRlZmF1bHQg
-cmVzb2x1dGlvbiBmb3Igcm9ja2NoaXAgZGlzcGxheSBpcyAxOTIweDEwODAKPiB3aGljaCBmYWls
-ZWQgdG8gd29yayBvbiA0SyBIRE1JIG91dCBkaXNwbGF5cyBvbiByazMzOTkuCj4KPiBTbywgbWFy
-ayB0aGUgZGVmYXVsdCByZXNvbHV0aW9uIGFzIDM0ODB4MjE2MCBmb3IgcmszMzk5Cj4gSERNSSBv
-dXQuCj4KPiBUaGlzIHdvdWxkIHdvcmsgYWxsIHRoZSBoZG1pIGRpc3BsYXkgcmVzb2x1dGlvbnMg
-dGlsbAo+IDRLLgo+Cj4gU2lnbmVkLW9mZi1ieTogSmFnYW4gVGVraSA8amFnYW5AYW1hcnVsYXNv
-bHV0aW9ucy5jb20+CgoKClJldmlld2VkLWJ5OiBLZXZlciBZYW5nIDxrZXZlci55YW5nQHJvY2st
-Y2hpcHMuY29tPgoKVGhhbmtzLAotIEtldmVyCj4gLS0tCj4gQ2hhbmdlcyBmb3IgdjM6Cj4gLSBu
-ZXcgcGF0Y2gKPgo+ICAgZHJpdmVycy92aWRlby9yb2NrY2hpcC9LY29uZmlnIHwgMiArKwo+ICAg
-MSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-dmlkZW8vcm9ja2NoaXAvS2NvbmZpZyBiL2RyaXZlcnMvdmlkZW8vcm9ja2NoaXAvS2NvbmZpZwo+
-IGluZGV4IDEwMTgyZDBiNjYuLmNmZDc3NGVhZDYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy92aWRl
-by9yb2NrY2hpcC9LY29uZmlnCj4gKysrIGIvZHJpdmVycy92aWRlby9yb2NrY2hpcC9LY29uZmln
-Cj4gQEAgLTIyLDYgKzIyLDcgQEAgbWVudWNvbmZpZyBWSURFT19ST0NLQ0hJUAo+ICAgY29uZmln
-IFZJREVPX1JPQ0tDSElQX01BWF9YUkVTCj4gICAgICAgICAgIGludCAiTWF4aW11bSBob3Jpem9u
-dGFsIHJlc29sdXRpb24gKGZvciBtZW1vcnkgYWxsb2NhdGlvbiBwdXJwb3NlcykiCj4gICAJZGVw
-ZW5kcyBvbiBWSURFT19ST0NLQ0hJUAo+ICsJZGVmYXVsdCAzNDgwIGlmIFJPQ0tDSElQX1JLMzM5
-OSAmJiBESVNQTEFZX1JPQ0tDSElQX0hETUkKPiAgIAlkZWZhdWx0IDE5MjAKPiAgIAloZWxwCj4g
-ICAJICBUaGUgbWF4aW11bSBob3Jpem9udGFsIHJlc29sdXRpb24gdG8gc3VwcG9ydCBmb3IgdGhl
-IGZyYW1lYnVmZmVyLgo+IEBAIC0zMSw2ICszMiw3IEBAIGNvbmZpZyBWSURFT19ST0NLQ0hJUF9N
-QVhfWFJFUwo+ICAgY29uZmlnIFZJREVPX1JPQ0tDSElQX01BWF9ZUkVTCj4gICAgICAgICAgIGlu
-dCAiTWF4aW11bSB2ZXJ0aWNhbCByZXNvbHV0aW9uIChmb3IgbWVtb3J5IGFsbG9jYXRpb24gcHVy
-cG9zZXMpIgo+ICAgCWRlcGVuZHMgb24gVklERU9fUk9DS0NISVAKPiArCWRlZmF1bHQgMjE2MCBp
-ZiBST0NLQ0hJUF9SSzMzOTkgJiYgRElTUExBWV9ST0NLQ0hJUF9IRE1JCj4gICAJZGVmYXVsdCAx
-MDgwCj4gICAJaGVscAo+ICAgCSAgVGhlIG1heGltdW0gdmVydGljYWwgcmVzb2x1dGlvbiB0byBz
-dXBwb3J0IGZvciB0aGUgZnJhbWVidWZmZXIuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1y
-b2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi Helen,
+
+> From: Helen Koike <helen.koike@collabora.com>
+
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index 33cc21fcf4c10..fc0295d2a65a1 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -1394,6 +1394,17 @@ io_domains: io-domains {
+>  			status = "disabled";
+>  		};
+>  
+
+> +		mipi_dphy_rx0: mipi-dphy-rx0 {
+
+For Heiko sort syscon@ff770000 subnodes alphabetical or reg value first?
+
+> +			compatible = "rockchip,rk3399-mipi-dphy-rx0";
+> +			clocks = <&cru SCLK_MIPIDPHY_REF>,
+
+> +				<&cru SCLK_DPHY_RX0_CFG>,
+> +				<&cru PCLK_VIO_GRF>;
+
+Align                            ^
+
+> +			clock-names = "dphy-ref", "dphy-cfg", "grf";
+> +			power-domains = <&power RK3399_PD_VIO>;
+> +			#phy-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+>  		u2phy0: usb2-phy@e450 {
+>  			compatible = "rockchip,rk3399-usb2phy";
+>  			reg = <0xe450 0x10>;
+> -- 
+> 2.26.0
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
