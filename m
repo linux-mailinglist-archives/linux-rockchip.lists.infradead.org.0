@@ -2,109 +2,115 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DC7E19D3BE
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 11:32:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9CF719D3CA
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 11:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=op3hX72LVgLHR2Z7SVkjtdz+gL4DeoS0fKXB0dgE9Ko=; b=Bsg3eU73+xhW5u
-	K2J9gR+royKgEs9LBhAhgmTAOzyLBT/azUAv2AeTtcLQ39N3a0lQTtaF+FAzLyxiwRDf4Ljh4+JL0
-	W2lfj7T+EK4xMw1rM8v7HAtxPSAXliyMmrIi3Tt2ULp7R9vcyW0bPKxnrV7fQZsQxTRVC+fXL3Lgo
-	ivS+SQ8E8VQIjRdSCCv1k+Xe2vBECDU7n8VNkWla3Zdtqxae/WikSuVVm6ukF0FQVVXcdgTRbHYhN
-	k2RRFxqCrNA1nNYJvGMYODp1Qo3JYbWsnxLYR6jpOZHGplh9/beS8SmSwnWjXBdBCJWBkxI/HkNlK
-	hi+RH0IFdWiZeRAmcF5g==;
+	List-Owner; bh=j9DjEsWvUZJ68qRsCxxrMs4iv5zq3g9lSmxywDb1dt8=; b=DNft4REqa+K67b
+	9KPbC+MfXDALZfbi0/hIpk8ZIya9ohO5ar4p8k3YmrOUxgQ9avEOZYNTu+SImJ88jsf1SXSBDoa/w
+	yDkyQ++8XUSaj6iOS68pttAwTzDpb4cP7FkEKralkpNJ8E45gE4taVRhhXNRe8v3AWpsOJ4lMthfh
+	p7qtNDFycAd3wIKB6CMh0kRsQ1Foh1YJpaHVO+2TGPtXnXN6R6UPJ7qcmir78n/+dontp6Bht+oC6
+	kosgFFKEqdcgBHy1rvKnaWdnRQiC0EddKOPdY/MXNqyxZUiK27jwp20YqvbuVw1MEGTR+k0phKw/r
+	yjvphJqU7U3BWGhZdJMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKIgA-0001Zz-UK; Fri, 03 Apr 2020 09:31:58 +0000
-Received: from mail-eopbgr1400100.outbound.protection.outlook.com
- ([40.107.140.100] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1jKIiW-0002Ub-GQ; Fri, 03 Apr 2020 09:34:24 +0000
+Received: from mail-eopbgr1400099.outbound.protection.outlook.com
+ ([40.107.140.99] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKIg1-0001Si-QG; Fri, 03 Apr 2020 09:31:51 +0000
+ id 1jKIiH-0002IY-Uu; Fri, 03 Apr 2020 09:34:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=n/KPhnHymyFddQxjfmGr+9yvWKQUhLxOXoIGc855DEV0j67f3Sz3sB16Mz0+ewsAWGv1MwWyk4THYDORW90uqElqtKUpIFlIRtu5lq53DpNM6Vmoni0oA1dAptDt8KN7rYM8FIRvTLt5KdwFU5nZTIMI2RHQbPejJmbWgJAgQE5P5EocExO6ZgnVRT31/am2ITQPWqhiBDMx9QFAnzhB+ZajP5ssvzGSitYbuSWoRkAc4AoW08jReKORQ8a1qhCJQYE6bARQGTmKf28GEV8tlCCzcc9UWsFU8dp3psH3+vuWF6lrRhLpjEgIcImdHeUQVPTXdGB8vMjer9lEMTIk9g==
+ b=FkQNtG8FFJH3j6wmtXv3f76b4+Sa7DuEFw4FmAafRWBzctB/MNwmWMNQp0Ov9SH4UZC6fVY2jCu+4YEQ28AQSQSH9R+yhO3S+OlteeaPiL6c7oH2I4B6C59U1qKffzDJnMSie7pb1YaVerVJLxo9XNmVCzr/HWl1D+cKs6tsTz4ljAAc+rI4rFjCIh8pXKS2fmdlhVgY2NvHRhu/Vx53JbPG00WQPO1QNdtVfQ2pjkLtMKyH41GI02IHQv98H/YLZ1xpReR0R8cGsRPbr/CdwQ24o1JvDUehxaH6xsIXfdlHyEBegVhLeY9JzzVOPhVQjTVps4gfa/leukI0kefrCQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V70GJYUbz1GXDV9y0hvhxp7NDdSQX8iO22oWTYjEBWA=;
- b=Yima1TKPg7DF8EJQsCFtwjUanjgCRUTwYW8wfEPxVOHOGY6mnuPJ4waYrho3EHhFJ6NVF5t7nSDuVUB6VOM+9isAA5ZIl1ZDVBNcwOjxogeNzrg9yvDyvmlk+f7CMNpHDO8t8Yx0qMYMQhrC2iyCAJ4IawijewcBcZkR8Y6dZWzYyFMSWKh7eowkUEIxOAhUokglMpUptCbmkw2TAUjrSE7TM9v5IAVvUjYwi3pRn3PTRFndA0aTiDQj9pcyvvjYKAw5mKxZNHFYsVOs8gOdWcKkfD/bkqFmoQd/LryoiGQtaHgj1SEQvDdUSzjO1I4lSkoNU/FToi5OVHVRHwlmtQ==
+ bh=5Q0ZZNr4DLzS67OgT1NktvakbNWvY8eyFbLlNpoRT74=;
+ b=ZdeP5i87w/0NK4Ln2DuKaXyKiceOmzUROptkfBLYH4DUHqBfR17svm04ybyrNOzy4Nbcs30Y7nD366k7QNKGn0qZEJOaWSknGA044E9bBW7lLw9ugAdnURr0omO5r9IemMHnS1dW9Jur/RhSmtqUcF1qhcR8G/5v7ftEId0A43jtcj2VwVFj3s2dwaOwxNtdYq73V86tRNENZ3vuN+UEBSeR/wivFMPsQ6ufxlUsltsb4cdVkFg8f3yNqV2wL/0XcYCL74HVdIPuXe4L1ollijxOT93pl/l8BUW5+gbjeiE9jh/bgq49Jc63/FCcMl9CcYtHkiuEg9ZiMUx/0fSlyw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V70GJYUbz1GXDV9y0hvhxp7NDdSQX8iO22oWTYjEBWA=;
- b=Kq36H25bq7M28e6lx3Ic7PravnCHP7I0infMVVPS7z0CPwyxU6SHJLAo23GB53NKjuW2jvYW0DuXOffXT/04Ad4kXpzZCfwQ5f37bWuafd4zU3SYu9FUBnqT4S8vK6b6JUQ7xqCkams0jQ0t66n91pRdxyijiu82Pe1iLHOugzE=
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
- OSBPR01MB2021.jpnprd01.prod.outlook.com (52.134.242.140) with Microsoft SMTP
+ bh=5Q0ZZNr4DLzS67OgT1NktvakbNWvY8eyFbLlNpoRT74=;
+ b=pFKc3PVL+e7U7841I8KRY4QY+kqJblygoEEIJOMTzBCW4ynoN3gn4OIZihEl8Lmi+QWnrvEJKHKmteeApQRvb/YPmCA+l57lP8n6YihO0LJObu6X+GwdTfGM4AejZm8U9LOvJ5J97RrFdCOboHTu/Ms0rnRAcK/qnDOZYtgrLEY=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB4192.jpnprd01.prod.outlook.com (20.178.136.145) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2856.20; Fri, 3 Apr 2020 09:31:44 +0000
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::490:aa83:2d09:3a0b%5]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
- 09:31:44 +0000
-From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Geert Uytterhoeven
- <geert@linux-m68k.org>
-Subject: RE: [PATCH v6 02/11] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
-Thread-Topic: [PATCH v6 02/11] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
-Thread-Index: AQHWCSZhFu4QxmekC0qbQMp4EyLiHqhnCn8AgAAG1YCAAAopgIAABS5g
-Date: Fri, 3 Apr 2020 09:31:43 +0000
-Message-ID: <OSBPR01MB35905B0D9DB55E8FBA340341AAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+ 15.20.2878.15; Fri, 3 Apr 2020 09:34:07 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2878.017; Fri, 3 Apr 2020
+ 09:34:07 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, Bjorn
+ Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
+ Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Marek Vasut
+ <marek.vasut+renesas@gmail.com>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>
+Subject: RE: [PATCH v6 06/11] PCI: endpoint: Add support to handle multiple
+ base for mapping outbound memory
+Thread-Topic: [PATCH v6 06/11] PCI: endpoint: Add support to handle multiple
+ base for mapping outbound memory
+Thread-Index: AQHWCSZxsnMUaMwx50Sb61CF2skZ+6hnC2TAgAASGQCAAABowA==
+Date: Fri, 3 Apr 2020 09:34:06 +0000
+Message-ID: <TYAPR01MB4544D205BE659CE74205737CD8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
 References: <1585856319-4380-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1585856319-4380-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB454403D69A74036B74CC8220D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
- <CAMuHMdVWn=U82k5RJnBaRUgRHh3bRfdncOupmX67-u-nbwsG9w@mail.gmail.com>
- <TYAPR01MB4544B6B749588A7390323D28D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB4544B6B749588A7390323D28D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
+ <1585856319-4380-7-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <TYAPR01MB45442959B9FD7299D2CB8D73D8C70@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+ <OSBPR01MB3590260FDE8EA7D3701EAE2FAAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+In-Reply-To: <OSBPR01MB3590260FDE8EA7D3701EAE2FAAC70@OSBPR01MB3590.jpnprd01.prod.outlook.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
-x-originating-ip: [193.141.220.21]
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c96b77a3-e098-464b-2924-08d7d7b1d2c7
-x-ms-traffictypediagnostic: OSBPR01MB2021:|OSBPR01MB2021:
+x-ms-office365-filtering-correlation-id: 14c564ea-5d2a-4caf-e03e-08d7d7b227fc
+x-ms-traffictypediagnostic: TYAPR01MB4192:|TYAPR01MB4192:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSBPR01MB2021078E9DCA28E57CAA542DAAC70@OSBPR01MB2021.jpnprd01.prod.outlook.com>
+x-microsoft-antispam-prvs: <TYAPR01MB419216F99C3AF786DD4C9051D8C70@TYAPR01MB4192.jpnprd01.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0362BF9FDB
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OSBPR01MB3590.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:TYAPR01MB4544.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(10019020)(4636009)(136003)(376002)(396003)(39860400002)(366004)(346002)(26005)(81166006)(81156014)(71200400001)(66446008)(478600001)(186003)(54906003)(316002)(86362001)(110136005)(53546011)(6506007)(7696005)(76116006)(33656002)(55016002)(7416002)(4326008)(8676002)(5660300002)(9686003)(8936002)(2906002)(66946007)(52536014)(66556008)(66476007)(64756008);
+ SFS:(10019020)(4636009)(39860400002)(376002)(136003)(396003)(366004)(346002)(55236004)(71200400001)(8676002)(316002)(33656002)(110136005)(54906003)(4326008)(6506007)(52536014)(2906002)(7416002)(478600001)(64756008)(81166006)(186003)(76116006)(66556008)(7696005)(8936002)(86362001)(81156014)(55016002)(5660300002)(66946007)(66446008)(9686003)(26005)(66476007)(921003)(1121003);
  DIR:OUT; SFP:1102; 
-received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+received-spf: None (protection.outlook.com: renesas.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: YeIsbFxwYIWRZM0FB7AH+zKdPT9mRcjSROP04dxv+BiO2aZpZTICkU09LazdEPmvcWVHJ1ZvVUMnjP5mhG+MmVq8vpUk/EQtXW5Mvjhauj+OHOJvn4XObtyjWjEeFeyM4Zx60IJis4A4/0pLCkOd5t99jiQdWLZYf23qwXtO2aj6UxzV1H25se1hqB9LCtqNErxIsXFLSYyKgoUc2sm3a3AJBRfVZqRDs3mbIufzw3P7jJ/n2t5ZNl0ClT6dOnDURsow78fdufyiIWAimJg2QmdLfIr0Kq3UrMlX5o5E4c9keZtQHMdToGe5hbMKWiGi23uavNJc5b93eDAk/SsKaOkcjjkniqKyx/C1A2HKVmNlGV+qhINg5ewdIIZPLVbfDl6w9ya1+TzlYPWh/Rdjy9iharPczbo3PXo3SGP29Xrpa3gRy1vDGy936tsEuBPc
-x-ms-exchange-antispam-messagedata: GVV7CB3PNuk9Bamfa+ZPVQgqgWZRYhj2qLqU1GRNpL/Mep0LXkMedzGVEzgH8wgIGVGsrpQllfv02fkHsAsRiwnA5/Znks1wXP9A9c/Eny5gYq5eySfdZ4mJFliiWKBB6cNNy09X/gwsVaYr07by7A==
+x-microsoft-antispam-message-info: oABY1w/+on73vfTxhWJtSAT0zQQsC0vBaumCRukPnbzJx0YreBUFWzVIhRe3YipqGTjoSff6by6FuvHh4yJcYMyyCqjFNfOYKJ5rjWxqe7j4FT4h7d9ESefDe9Xtos/YZnjI2uf7OWWJ4dfT434AlOKGVhXS4LKbW0LKzuEnVoR5JDKxMXtxCTKoKGL21IhOxQO/l2eWInF5gwx1oSD1ssn6Rb9ACPhM/D74VQAQA1ky9qr9I+sabln9btbcn/Hw9trkihHETEpqGinxbkwwY/js2zF9uezuhQL5CJ04jrFcUjtwrOe+gJlrDU6uBu5eeaGW3I/6lTjd4kMxfcVt1HOdyDJ3U+dBHIC4MONylMckoVC0JnFDruSDdLMxsHoM1kYn1j1mBb97aRCe1/sa4wdT8LesGT8OZ3fACxlTTAGFeUyKANsBMHnSRM27cUgfEjnvUpERn6/HOTCg4xjsC0J1eJJHSnMMGXvve9pXaVEHwfPNopv3VZhg6uYviKF8
+x-ms-exchange-antispam-messagedata: EbUYOefpxeYBXHJ5qmX3DHhGrY6PNzTmYTmZRq+Ipd2d+wJicWmuIcfKherpaFg+Ts2aDjeF2kzXkJuNQhXZKJWwrIvPpfHSsaxckgL8s8b4HT7Z0DVGykmoxzyOhCI7X3ZVG+HYu+WTFeaCf2Jfkw==
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c96b77a3-e098-464b-2924-08d7d7b1d2c7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 09:31:43.8577 (UTC)
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 14c564ea-5d2a-4caf-e03e-08d7d7b227fc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Apr 2020 09:34:06.9290 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4VMvEqtGHKer2dhPJECeDBN4X+JioRP7vXuM6mrdsUWYF6NkRuu9hMwxUW3cm+CzHatRRKYb3qQZQp1Jw/BfWGzmg/KlQE2zgi/tFqTM23653gDTNxvGIXXTdLw0ngmv
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2021
+X-MS-Exchange-CrossTenant-userprincipalname: js1mjLIwWph3fzEtKcmfH6LyGwc/tJ20CN+iahlX+MkGZWQ51Lvj1X1Fgg/8ExsVxopTszQoTz+WP5Q8wE70ArFwjWQxsP3hZk4IX+5cCYs4rNN4aFEHh/Rw2BGaSqNR
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB4192
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_023149_854705_8093CE4D 
-X-CRM114-Status: GOOD (  27.20  )
+X-CRM114-CacheID: sfid-20200403_023410_002944_91CFA687 
+X-CRM114-Status: GOOD (  29.04  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.100 listed in list.dnswl.org]
+ no trust [40.107.140.99 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -122,103 +128,213 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Heiko Stuebner <heiko@sntech.de>,
+ Arnd Bergmann <arnd@arndb.de>, Jingoo Han <jingoohan1@gmail.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>, Arnd Bergmann <arnd@arndb.de>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jingoo Han <jingoohan1@gmail.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Shimoda-san/Geert-san,
+Hi Prabhakar-san,
 
-> -----Original Message-----
-> From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-> Sent: 03 April 2020 10:05
-> To: Geert Uytterhoeven <geert@linux-m68k.org>; Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Cc: Will Deacon <will@kernel.org>; Geert Uytterhoeven <geert+renesas@glider.be>; Catalin Marinas <catalin.marinas@arm.com>; Arnd
-> Bergmann <arnd@arndb.de>; Greg Kroah-Hartman <gregkh@linuxfoundation.org>; Andrew Murray <andrew.murray@arm.com>;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-renesas-soc@vger.kernel.org; Chris
-> Paterson <Chris.Paterson2@renesas.com>; Frank Rowand <frowand.list@gmail.com>; Gustavo Pimentel
-> <gustavo.pimentel@synopsys.com>; Jingoo Han <jingoohan1@gmail.com>; Simon Horman <horms@verge.net.au>; Shawn Lin
-> <shawn.lin@rock-chips.com>; Tom Joseph <tjoseph@cadence.com>; Heiko Stuebner <heiko@sntech.de>; linux-
-> rockchip@lists.infradead.org; Lad Prabhakar <prabhakar.csengg@gmail.com>; Magnus Damm <magnus.damm@gmail.com>; Kishon Vijay
-> Abraham I <kishon@ti.com>; Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>; Marek Vasut <marek.vasut+renesas@gmail.com>; linux-
-> pci@vger.kernel.org; Bjorn Helgaas <bhelgaas@google.com>; Rob Herring <robh+dt@kernel.org>; Mark Rutland
-> <mark.rutland@arm.com>
-> Subject: RE: [PATCH v6 02/11] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
->
-> Hi Geert-san,
->
-> Thank you for your comments!
->
-> > From: Geert Uytterhoeven, Sent: Friday, April 3, 2020 5:28 PM
-> <snip>
-> > > But, I'm thinking this patch (and patch 03/11) should be separated
-> > > from this patch series for arm64 subsystem to ease maintenance.
-> > > My scenario is:
-> > >  1) patch series 1: R-Car PCIe endpoint support.
-> > >  -- This means: patch 1, 4 - 9, 11
+> From: Prabhakar Mahadev Lad, Sent: Friday, April 3, 2020 6:12 PM
+<snip>
+> > > @@ -122,31 +167,56 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
+> > >  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
+> > >  				     phys_addr_t *phys_addr, size_t size)
+> > >  {
+> > > -	int pageno;
+> > >  	void __iomem *virt_addr = NULL;
+> > > -	struct pci_epc_mem *mem = epc->mem;
+> > > -	unsigned int page_shift = ilog2(mem->page_size);
+> > > +	struct pci_epc_mem *mem;
+> > > +	unsigned int page_shift;
+> > > +	int pageno = -EINVAL;
+> > >  	int order;
+> > > +	int i;
 > > >
-> > >  2) After the patch series 1 is merged, submit this patch 2/11 to arm subsystem
-> > >    and submit the patch 10/11 to misc subsystem.
-> > >
-> > >  3) At last, submit patch 3/11 after the patch 2/11 is merged.
-> > >
-> > > Geert-san, what do you think?
+> > > -	size = ALIGN(size, mem->page_size);
+> > > -	order = pci_epc_mem_get_order(mem, size);
+> > > -
+> > > -	mutex_lock(&mem->lock);
+> > > -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
+> > > -	if (pageno < 0)
+> > > -		goto ret;
+> > > +	for (i = 0; i < epc->num_windows; i++) {
+> > > +		mem = epc->windows[i];
+> > > +		mutex_lock(&mem->lock);
 > >
-> > Thanks, I agree with your summary.
+> > This is my feeling though, calling mutex_lock() in the loop seems
+> > to cause overhead. And, if we call mutex_lock() at out-of the loop,
+> > I think we can write single mutex_unlock() calling.
 > >
-> > I can take patch 2/11 through renesas-devel.
-> > Probably it's best if I submit it to arm-soc as a fix for v5.8, after
-> > the driver part
-> > has been merged into v5.8-rc1, so 3/11 can be submitted for v5.9.
->
-> Thank you! I got it.
->
-Thank you, Ill split the patches accordingly and post a v7.
+> But the mutex is for each window, are you suggesting to add a global mutex ?
 
-> > BTW, I'm wondering about "[PATCH v6 05/11] PCI: rcar: Fix calculating
-> > mask for PCIEPAMR register". Can the issue fixed by this patch happen with
-> > the current driver in host mode, or is that limited to ep mode?
-> > In case of the former, please submit it to the PCI maintainer as a separate
-> > fix.
->
-> Thank you for pointed it out. I think this is the case of the former.
-> IIUC, if such a small window PCIe device exists, the issue happens.
->
-> Prabhakar-san, is my understanding correct?
->
-This issue will only be hit on EP, when in host mode the sizes will be fixed to 1 Mbytes /2 Mbytes /128 Mbytes
+Oops, that's right. So, I'd like to recall.
 
-Cheers,
---Prabhakar
+> > > +		size = ALIGN(size, mem->window.page_size);
+> >
+> > I'm sorry I should have realized this in the previous review,
+> > but overwriting this size is possible to cause an issue at second time or more loops.
+> > So, the first argument of ALIGN should be kept for the loop.
+> >
+> Could you please elaborate on this.
 
-> Best regards,
-> Yoshihiro Shimoda
+My concern is the following.
+
+For example, the size of argument of pci_epc_mem_alloc_addr() is 4096.
+epc->windows[0].window.page_size = 8192
+ --> then the size will be changed to 0.
+
+epc->windows[1].window.page_size = 4096
+ --> since the size was changed to 0 on the first loop, the result is 0.
+     But, this should be 4096.
+
+Does such a case never happen?
+(Or, is my understanding incorrect?)
+
+Best regards,
+Yoshihiro Shimoda
 
 
+> > > +		order = pci_epc_mem_get_order(mem, size);
+> > >
+> > > -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
+> > > -	virt_addr = ioremap(*phys_addr, size);
+> > > -	if (!virt_addr)
+> > > -		bitmap_release_region(mem->bitmap, pageno, order);
+> > > +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
+> > > +						 order);
+> > > +		if (pageno >= 0) {
+> > > +			page_shift = ilog2(mem->window.page_size);
+> > > +			*phys_addr = mem->window.phys_base +
+> > > +				((phys_addr_t)pageno << page_shift);
+> > > +			virt_addr = ioremap(*phys_addr, size);
+> > > +			if (!virt_addr)
+> > > +				bitmap_release_region(mem->bitmap,
+> > > +						      pageno, order);
+> > > +			mutex_unlock(&mem->lock);
+> > > +			return virt_addr;
+> >
+> > As I mentioned above, if mutex_lock() is called at out-of-loop,
+> > we can use "goto ret;" here like the original code,
+> >
+> > > +		}
+> > > +		mutex_unlock(&mem->lock);
+> >
+> > and we can remove this.
+> >
+> > > +	}
+> > >
+> > > -ret:
+> > > -	mutex_unlock(&mem->lock);
+> > >  	return virt_addr;
+> > >  }
+> > >  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
+> > >
+> > > +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
+> > > +						phys_addr_t phys_addr)
+> > > +{
+> > > +	struct pci_epc_mem *mem;
+> > > +	int i;
+> > > +
+> > > +	for (i = 0; i < epc->num_windows; i++) {
+> > > +		mem = epc->windows[i];
+> > > +
+> > > +		if (phys_addr >= mem->window.phys_base &&
+> > > +		    phys_addr < (mem->window.phys_base + mem->window.size))
+> > > +			return mem;
+> > > +	}
+> > > +
+> > > +	return NULL;
+> > > +}
+> > > +
+> > >  /**
+> > >   * pci_epc_mem_free_addr() - free the allocated memory address
+> > >   * @epc: the EPC device on which memory was allocated
+> > > @@ -159,14 +229,23 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
+> > >  void pci_epc_mem_free_addr(struct pci_epc *epc, phys_addr_t phys_addr,
+> > >  			   void __iomem *virt_addr, size_t size)
+> > >  {
+> > > +	struct pci_epc_mem *mem;
+> > > +	unsigned int page_shift;
+> > > +	size_t page_size;
+> > >  	int pageno;
+> > > -	struct pci_epc_mem *mem = epc->mem;
+> > > -	unsigned int page_shift = ilog2(mem->page_size);
+> > >  	int order;
+> > >
+> > > +	mem = pci_epc_get_matching_window(epc, phys_addr);
+> > > +	if (!mem) {
+> > > +		pr_err("failed to get matching window\n");
+> > > +		return;
+> > > +	}
+> > > +
+> > > +	page_size = mem->window.page_size;
+> > > +	page_shift = ilog2(page_size);
+> > >  	iounmap(virt_addr);
+> > > -	pageno = (phys_addr - mem->phys_base) >> page_shift;
+> > > -	size = ALIGN(size, mem->page_size);
+> > > +	pageno = (phys_addr - mem->window.phys_base) >> page_shift;
+> > > +	size = ALIGN(size, page_size);
+> > >  	order = pci_epc_mem_get_order(mem, size);
+> > >  	mutex_lock(&mem->lock);
+> > >  	bitmap_release_region(mem->bitmap, pageno, order);
+> > > diff --git a/include/linux/pci-epc.h b/include/linux/pci-epc.h
+> > > index e0ed9d01f6e5..d5da11cf0f2a 100644
+> > > --- a/include/linux/pci-epc.h
+> > > +++ b/include/linux/pci-epc.h
+> > > @@ -65,20 +65,28 @@ struct pci_epc_ops {
+> > >  	struct module *owner;
+> > >  };
+> > >
+> > > +/**
+> > > + * struct pci_epc_mem_window - address window of the endpoint controller
+> > > + * @phys_base: physical base address of the PCI address window
+> > > + * @size: the size of the PCI address window
+> > > + * @page_size: size of each page
+> > > + */
+> > > +struct pci_epc_mem_window {
+> > > +	phys_addr_t	phys_base;
+> > > +	size_t		size;
+> > > +	size_t		page_size;
+> > > +};
+> > > +
+> > >  /**
+> > >   * struct pci_epc_mem - address space of the endpoint controller
+> > > - * @phys_base: physical base address of the PCI address space
+> > > - * @size: the size of the PCI address space
+> > > + * @window: address window of the endpoint controller
+> > >   * @bitmap: bitmap to manage the PCI address space
+> > > - * @pages: number of bits representing the address region
+> > > - * @page_size: size of each page
+> > >   * @lock: mutex to protect bitmap
+> > > + * @pages: number of bits representing the address region
+> >
+> > Perhaps, we should not change the "@pages" line.
+> >
+> OK will drop this change.
+> 
+> Cheers,
+> --Prabhakar
+> 
+> > Best regards,
+> > Yoshihiro Shimoda
 
-Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
+
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
