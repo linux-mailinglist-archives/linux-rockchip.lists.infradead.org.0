@@ -2,77 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3F419D731
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 15:06:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DEC119D7BA
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 15:37:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1KHdZ11QlM20qvu61SF7rm4gxQOZOrxDh1xCEYiTf98=; b=uDyOXZwbw4BX7rSs+KFiTXWvke
-	tAPOriePRozikifBKK8eSCg0d4R9ASav2LDj8D0LZPzxqojFFlNnJPsHgHr8WalV8CNDmaudbdM43
-	SH6mQIID8RpX0pE+y0AdCLy9Fy5uSr23KofS5FWGjAauUAMZ1t+VTFEEPRE/go6GkVMCiNNek4UWE
-	OtxlIkCrTpbqBbprapfoJcj9pF43kBBQ/rM9TPm+tbYIQYBzA1Co8Fl9iq86cp0/Ao74K1zaKVoyS
-	HPV+gZA1n73qyhorecWiiZ2psf7lSGSUa5xQD7RKCHyqIUnFgQdjBrs60DWRKdtKx6VioUxiz7rjC
-	M1ZC8nbg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Q07z+QDxDAaCQxkDi0Hd6eyj7/C44A4Pkw6gpp0A/rk=; b=Gwx
+	1a97RfTNUyFsYH7+L0u9pNhBzt3aovcgrg7dMTl3vIvRqDYVaeYAJVgBJ5Xv+mELbI/GzZGDgDvxu
+	WY1f0JWnmOjsISCq82kgk60GSy+6xfJBygyvnkScnIp4pnr1RlQCJj8agDSEe/hliaB/xV2BJZaHt
+	nZXV17uOAr4liXHIyz8Mf5yM2rkw0Jz5bCCYouHMm4VurJfYQMb4wV+hRMidPHINHlWcQHLb5BiuL
+	TjDwzuDmj3buMGc/XTJRP+1fbaly9Jw476vAnc9kALxMfsu6/h8M/0KzRL9f5u6wx4r8g6mzioZEu
+	4Y8NkLvkRKEYow+5Vn/JqMhLFqzzWgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKM1x-0001Wn-Go; Fri, 03 Apr 2020 13:06:41 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jKMVS-0004Cp-Mb; Fri, 03 Apr 2020 13:37:10 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKM1Z-00017G-Te; Fri, 03 Apr 2020 13:06:19 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h15so8425410wrx.9;
- Fri, 03 Apr 2020 06:06:17 -0700 (PDT)
+ id 1jKMV1-0003nl-Rg; Fri, 03 Apr 2020 13:36:45 +0000
+Received: by mail-wm1-x342.google.com with SMTP id e9so7735985wme.4;
+ Fri, 03 Apr 2020 06:36:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4SOzz1DmBA7mljFUWMggCDnfrvoqqdJY//N8mPAQhYE=;
- b=n4oq1vKlwlBna9oy0F1xJ+XJqlPWCBvFuIV8OwA5dMCdovlp8WWH0qxUaXFHiG3Ba7
- EgbdcftsRMgnpFruqG84PWe1JpwfrIIvSLVW4UNQ8eeBGKW5gqoKKqGZYQBgtLiSr9aq
- foQFVK4H7/mFGwRnMANlYBdNaEIFemBMpybVAi5Ab4Kz3d5caXNgwI9nnMkK/iZz9s+q
- 7TNJAa+qMqptwzD+DGoeI7lTSPGT0m1aXgomOFlMgYBBs7oEeH4E3fN+xUOt6DolnTUk
- eV9IxiJe917H3X51DhnnlvpcUhIx7Pi0tsntSf3mGfdj8gTlMPgMoccczujiLOcfREtD
- 7hUg==
+ h=from:to:cc:subject:date:message-id;
+ bh=V495F/LWz4DvLP06Qim1MuItKKlrnJlu4+4yHQQXN3g=;
+ b=nfWfM9MxWzYxib7CCdOhh1sz088O06aWnkrNfYybv1cChjuel6N+MlMUZK+kravUOb
+ zmEYj8LLYMq5DwhpWpdzgqEK2OyiIz5deuMd48f6GJtb4FG4Da0lUD2/M0E98g6cTZ1E
+ 7ece6rJUpQq7T+1uRuNrYSUkfPMPyl8cLFWwGbFhZG+pgPHHIwJkrhlWIjOVB/EIVNYK
+ QO/1rOwNCCUetIeI765+tV5Cz8iFcYqd8pcvKxShzWTuwhTb07YVmKV/Ly1Hp7jkgPid
+ uKFHoVKsyrFBg7l7GIB+ZmovNf5DroJQE1CUZT+oDKsxoOlbN5tnMv1ZuymiL4W5KA7o
+ agww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=4SOzz1DmBA7mljFUWMggCDnfrvoqqdJY//N8mPAQhYE=;
- b=V0wqKPFSuO7Af6gLxqM5JHZG/0xHIHoKFexy1WJCvOTjlwJddQU0J+VzT6YulnKTql
- fIqKdE1WMFANdmoEeYuqpvEuhhDsQ1+BHPcZjCT556YeIqb0l6ZMFjkmz6+kGbL8KXfF
- KUwJnGjMks9yHZIea9kkge5lGPzUBgJkVSUcQCStbSBxfhntHkl46f9bdey/wUMOyqQS
- 4U9X+FLB+Jf94EzuujsVVJsPYQFmdFUTA/7ThGo9KsYT6KXmQzWmw0hcyXtIe7yWZ2h4
- DGfdcX0Kau++MZ2Ldfz2tghr58Wz0wqU1cLiU2giLkqC4u6BuI9bnqTlJT5JvrpAUIYv
- ZOXg==
-X-Gm-Message-State: AGi0PuZOl0v8wLIsJkSSTHNIllkRVvNz0xsAa6LM93qgUD57CWFxxihL
- ktHJc/BByqRoI04CGzmYLUpkqJDv
-X-Google-Smtp-Source: APiQypJxcRsi2W0wZr2Apx763AJcizS2Tq6i4fWAc5H1frqyVroHXfPYrCZUbCFO4LE17/gl19G4Tg==
-X-Received: by 2002:a5d:470b:: with SMTP id y11mr8767392wrq.282.1585919176335; 
- Fri, 03 Apr 2020 06:06:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=V495F/LWz4DvLP06Qim1MuItKKlrnJlu4+4yHQQXN3g=;
+ b=Ko921sWpQ3XzlENlK2Ik1jPKbhT70m5xKy8AFN6haUhDByvvxSXN9NhLV7kCO+MUUZ
+ tFk8GMHa7bxHWIpILzh9b2j7/WnrpXFsP2pz1t8NirhZVDZkaJPkHk+CJzfY4g2VEJMA
+ QL8eRjuE2VYCxKbOhjsB/9zlbXTO+zQ2PlJbak8x//7GdQnWg6ffmZt1Oi+OzSaEV30p
+ vC7+3PaujP8M34yZvhtoke7s9PeDhcf+Uw9bbHlLhMaRjXuIzOXEJ3b4JXbKe7mwdySg
+ Xy+qZSfLlJu9Gg+fC1cPJnY8jNJMS9cUp+1AtKS14CwNGTLERT9UT+JKz3RusXygXomb
+ n4mA==
+X-Gm-Message-State: AGi0Puaasv+H9Y4mxNUSCCunOx6G4rdP/fEeXTFrYt04Wc4ygQslqmLc
+ 38TsSwIHxV2Bhk+lMtB2DIE=
+X-Google-Smtp-Source: APiQypIVKv/R7Hs97n0mr3aADn8sArWU07D3Vlz8dk6qnR8PcirGlBx8cyH2W7SgaAGeSZ6z9BCpqg==
+X-Received: by 2002:a05:600c:54d:: with SMTP id
+ k13mr8587182wmc.81.1585921002311; 
+ Fri, 03 Apr 2020 06:36:42 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o9sm7036093wru.29.2020.04.03.06.06.15
+ by smtp.gmail.com with ESMTPSA id r11sm12523729wrn.24.2020.04.03.06.36.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 Apr 2020 06:06:15 -0700 (PDT)
+ Fri, 03 Apr 2020 06:36:41 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
-To: jacob-chen@iotwrt.com
-Subject: [PATCH v2 2/2] dt-bindings: media: rockchip-rga: add power-domains
- property
-Date: Fri,  3 Apr 2020 15:06:07 +0200
-Message-Id: <20200403130607.6138-2-jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v2] dt-bindings: display: convert rockchip rk3066 hdmi
+ bindings to yaml
+Date: Fri,  3 Apr 2020 15:36:30 +0200
+Message-Id: <20200403133630.7377-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200403130607.6138-1-jbx6244@gmail.com>
-References: <20200403130607.6138-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_060617_953046_2AB17D9F 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20200403_063643_904352_049C5639 
+X-CRM114-Status: GOOD (  16.50  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,56 +96,255 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, mchehab@kernel.org,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In the old txt situation we add/describe only properties that are used
-by the driver/hardware itself. With yaml it also filters things in a
-node that are used by other drivers like 'power-domains' for rk3399,
-so add it to 'rockchip-rga.yaml'.
+Current dts files with 'hdmi' nodes for rk3066 are manually verified.
+In order to automate this process rockchip,rk3066-hdmi.txt
+has to be converted to yaml.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/media/rockchip-rga.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+Changes v2:
+  Fix irq.h already included in arm-gic.h
+---
+ .../display/rockchip/rockchip,rk3066-hdmi.txt      |  72 -----------
+ .../display/rockchip/rockchip,rk3066-hdmi.yaml     | 140 +++++++++++++++++++++
+ 2 files changed, 140 insertions(+), 72 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
 
-diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-index 3b110b574..dd645ddcc 100644
---- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-+++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-@@ -39,6 +39,9 @@ properties:
-       - const: hclk
-       - const: sclk
- 
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
+deleted file mode 100644
+index d1ad31bca..000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.txt
++++ /dev/null
+@@ -1,72 +0,0 @@
+-Rockchip specific extensions for rk3066 HDMI
+-============================================
+-
+-Required properties:
+-- compatible:
+-	"rockchip,rk3066-hdmi";
+-- reg:
+-	Physical base address and length of the controller's registers.
+-- clocks, clock-names:
+-	Phandle to HDMI controller clock, name should be "hclk".
+-- interrupts:
+-	HDMI interrupt number.
+-- power-domains:
+-	Phandle to the RK3066_PD_VIO power domain.
+-- rockchip,grf:
+-	This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
+-- ports:
+-	Contains one port node with two endpoints, numbered 0 and 1,
+-	connected respectively to vop0 and vop1.
+-	Contains one port node with one endpoint
+-	connected to a hdmi-connector node.
+-- pinctrl-0, pinctrl-name:
+-	Switch the iomux for the HPD/I2C pins to HDMI function.
+-
+-Example:
+-	hdmi: hdmi@10116000 {
+-		compatible = "rockchip,rk3066-hdmi";
+-		reg = <0x10116000 0x2000>;
+-		interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru HCLK_HDMI>;
+-		clock-names = "hclk";
+-		power-domains = <&power RK3066_PD_VIO>;
+-		rockchip,grf = <&grf>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
+-
+-		ports {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			hdmi_in: port@0 {
+-				reg = <0>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-				hdmi_in_vop0: endpoint@0 {
+-					reg = <0>;
+-					remote-endpoint = <&vop0_out_hdmi>;
+-				};
+-				hdmi_in_vop1: endpoint@1 {
+-					reg = <1>;
+-					remote-endpoint = <&vop1_out_hdmi>;
+-				};
+-			};
+-			hdmi_out: port@1 {
+-				reg = <1>;
+-				hdmi_out_con: endpoint {
+-					remote-endpoint = <&hdmi_con_in>;
+-				};
+-			};
+-		};
+-	};
+-
+-&pinctrl {
+-		hdmi {
+-			hdmi_hpd: hdmi-hpd {
+-				rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
+-			};
+-			hdmii2c_xfer: hdmii2c-xfer {
+-				rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
+-						<0 RK_PA2 1 &pcfg_pull_none>;
+-			};
+-		};
+-};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
+new file mode 100644
+index 000000000..4110d003c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3066-hdmi.yaml
+@@ -0,0 +1,140 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/rockchip/rockchip,rk3066-hdmi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip rk3066 HDMI controller
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com>
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3066-hdmi
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: hclk
++
++  pinctrl-0:
++    maxItems: 2
++
++  pinctrl-names:
++    const: default
++    description:
++      Switch the iomux for the HPD/I2C pins to HDMI function.
++
 +  power-domains:
 +    maxItems: 1
 +
-   resets:
-     maxItems: 3
- 
-@@ -63,6 +66,7 @@ examples:
-   - |
-     #include <dt-bindings/clock/rk3399-cru.h>
-     #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/power/rk3399-power.h>
-     rga: rga@ff680000 {
-       compatible = "rockchip,rk3399-rga";
-       reg = <0xff680000 0x10000>;
-@@ -71,6 +75,7 @@ examples:
-                <&cru HCLK_RGA>,
-                <&cru SCLK_RGA_CORE>;
-       clock-names = "aclk", "hclk", "sclk";
-+      power-domains = <&power RK3399_PD_RGA>;
-       resets = <&cru SRST_RGA_CORE>,
-                <&cru SRST_A_RGA>,
-                <&cru SRST_H_RGA>;
++  rockchip,grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      This soc uses GRF regs to switch the HDMI TX input between vop0 and vop1.
++
++  ports:
++    type: object
++
++    properties:
++      "#address-cells":
++        const: 1
++
++      "#size-cells":
++        const: 0
++
++      port@0:
++        type: object
++        description:
++          Port node with two endpoints, numbered 0 and 1,
++          connected respectively to vop0 and vop1.
++
++      port@1:
++        type: object
++        description:
++          Port node with one endpoint connected to a hdmi-connector node.
++
++    required:
++      - "#address-cells"
++      - "#size-cells"
++      - port@0
++      - port@1
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - pinctrl-0
++  - pinctrl-names
++  - power-domains
++  - rockchip,grf
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3066a-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/pinctrl/rockchip.h>
++    #include <dt-bindings/power/rk3066-power.h>
++    hdmi: hdmi@10116000 {
++      compatible = "rockchip,rk3066-hdmi";
++      reg = <0x10116000 0x2000>;
++      interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru HCLK_HDMI>;
++      clock-names = "hclk";
++      pinctrl-0 = <&hdmii2c_xfer>, <&hdmi_hpd>;
++      pinctrl-names = "default";
++      power-domains = <&power RK3066_PD_VIO>;
++      rockchip,grf = <&grf>;
++
++      ports {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        hdmi_in: port@0 {
++          reg = <0>;
++          #address-cells = <1>;
++          #size-cells = <0>;
++          hdmi_in_vop0: endpoint@0 {
++            reg = <0>;
++            remote-endpoint = <&vop0_out_hdmi>;
++          };
++          hdmi_in_vop1: endpoint@1 {
++            reg = <1>;
++            remote-endpoint = <&vop1_out_hdmi>;
++          };
++        };
++        hdmi_out: port@1 {
++          reg = <1>;
++          hdmi_out_con: endpoint {
++            remote-endpoint = <&hdmi_con_in>;
++          };
++        };
++      };
++    };
++
++    pinctrl {
++      hdmi {
++        hdmi_hpd: hdmi-hpd {
++          rockchip,pins = <0 RK_PA0 1 &pcfg_pull_default>;
++        };
++        hdmii2c_xfer: hdmii2c-xfer {
++          rockchip,pins = <0 RK_PA1 1 &pcfg_pull_none>,
++                          <0 RK_PA2 1 &pcfg_pull_none>;
++        };
++      };
++    };
 -- 
 2.11.0
 
