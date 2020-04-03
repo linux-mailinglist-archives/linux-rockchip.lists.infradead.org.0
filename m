@@ -2,90 +2,50 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CE1819DA72
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 17:44:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54EE019DADF
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:08:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EWkHBvYd06IDFVIi+9VeBDnLD8HIYkhypZLyXohhM7Q=; b=QE8N+kU6jFdarcH/2pqKc0Eu/8
-	ROKoZqFo0i5WR6G27mZy5qpMZ0brWqaePDSygKLWjWUs71Owr9VmBOCG9lXGWKNFi1lXEKvgdS6zG
-	1Dcg2I/gYEWCbEXtjVz0qHX8QO9r7Xtfs8pq7o7gnCH16rBLwJEK8YREpJ8cL5lKYkP2vVaME7h4e
-	8vtM1O0sIZt1lg1wsobOG0L0Y8pTN9DhPq2agEOg1xYMUawaiFh95yBkvP+sgRYa2A3hwBYaFPqi3
-	l4Hd0IhTCBVPyAgiyu034WGv3DJEttpD9R8PsgK5XWchXlVSWoGP6ExVXaOElrnVBFKzcUPVrcmNg
-	vWHITOIA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fhFD4Um0mEyK1fB313Uodw5TNqbhxKiAbIEO1Gu9ryU=; b=S0ujiXsMQTqg4c
+	Gw4vAhtrxxtQaNr8W3ugskZ4zgoZtc6uae9GZzp+wgWZCe2WQMoqwShFd1euxmCsGbG1ESrIy+qSb
+	v3otGSG2woclTlwGuCSRj/wgHwCz+eJM5R85i2IhFvXuR/AYw04YU2G22h7IHRorXtjIkCyDD0wzj
+	4IR4YdRqXVjDaY2emP5VDG+MHIOCzJUM6+KfpNTEWEuN8Thq4q+1rbR6uJRTkDwLK8hCjmrMVfM6h
+	7P9gUDoUV1KFtKFpVK1DLEuxPEBp0EYr6TTp1dnObAUoN+BRaT5AmUclQeXwRY2vhdkcqPB3mmnZ4
+	p3BvNUmr8HN1Kxa1r7jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKOUb-00008i-BU; Fri, 03 Apr 2020 15:44:25 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jKOrj-0000Rm-Nx; Fri, 03 Apr 2020 16:08:19 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKOTs-0007jo-PJ; Fri, 03 Apr 2020 15:43:42 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w15so2825758wrv.10;
- Fri, 03 Apr 2020 08:43:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pJW7G8+AK7on97oQRodU2eKPtvCqhsk+Q2DcdPPDzz8=;
- b=YsStG8A5lTrfMhCobWLibPDOdgx7uaUkrcKnsgoZ6m7l4uQKiLSkVr7SNnjTh7ecSt
- c4+TngxLVPmQglZ1Os/5j9gQBypVYtZ3B4/Oi0xRLiheN80JUNfcmEcNhynM+q8vU4gV
- r5p9XvbMzKunWGUcQ/Mx8p2OH/2RQj5AaEwZb2VoRT53S9f7HEv9eEivyAofhl1iEQ6n
- s7p+E+blwpKcNAAVjWRu2enj/x9u5i1wjM3x0l4XXLfS42A+jSpUj8/eYJTxQe/eYSDb
- bEIOCC75N0Pjqcvcs0DDGWoJ94L/JB7TyVkbjOV1THRjzFdxPW9zFTp1aE6/YHdHppu1
- MccA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pJW7G8+AK7on97oQRodU2eKPtvCqhsk+Q2DcdPPDzz8=;
- b=SFs8dNGeRR48Ehh1SKYXBaZnkcprdMVJYSYAfB4KN1/aTjS4nWmiL5YNjCtN1Wh5BQ
- IlsIg69Gh1WSSOnZMgxt7DgelFan5GEzZXTEZAN1wAFUE7vCDFFVBvAEVfJqeVWLaZHz
- 3jKjJ4LLZfl6XSJCd9eXy+e5eqGF+fnZ+BfgtZ7rePViCJ211a9+hij1E47ZxBcVvQBw
- dM1ojQ0xkjIGajFLYFS5qe8My2Aldi81IA/ax2OM10RBeV8ST3HMQ7grbZYxUT4XQ93h
- 4/QqoDTjdyv3Z0eNllcSxJH1/EJdFhbh6iZeV1PYp6t6POoMgw7HjNd0dMSkl0esV45x
- 4jZw==
-X-Gm-Message-State: AGi0PubiCXiDB46Xtx9qjywE+MlcSnLvgdNcDAA+pRdyIFiibmaKy2FU
- T/q6fuRQe6RAHQy6C7e9DA8=
-X-Google-Smtp-Source: APiQypJXUfhLnIeJDO6myvWEkdL4J0QdDbMurE0ImmLwTOsJPOpdKOfj5Ot5kldFmQDBTflYB+Q5fA==
-X-Received: by 2002:adf:fc05:: with SMTP id i5mr9491160wrr.127.1585928619208; 
- Fri, 03 Apr 2020 08:43:39 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id h2sm11701580wmb.16.2020.04.03.08.43.37
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 Apr 2020 08:43:38 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 3/3] arm64: dts: rockchip: remove include for irq.h
-Date: Fri,  3 Apr 2020 17:43:29 +0200
-Message-Id: <20200403154329.11256-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200403154329.11256-1-jbx6244@gmail.com>
+ id 1jKOrb-0000Jd-1i; Fri, 03 Apr 2020 16:08:13 +0000
+Received: from p5b127fb0.dip0.t-ipconnect.de ([91.18.127.176]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jKOrV-0005vZ-5e; Fri, 03 Apr 2020 18:08:05 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 2/3] ARM: dts: rockchip: remove include for irq.h
+Date: Fri, 03 Apr 2020 18:08:04 +0200
+Message-ID: <2606579.xTHnjFkxbI@phil>
+In-Reply-To: <20200403154329.11256-2-jbx6244@gmail.com>
 References: <20200403154329.11256-1-jbx6244@gmail.com>
+ <20200403154329.11256-2-jbx6244@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_084340_822541_DE4CFBE6 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200403_090811_239397_28FCECC5 
+X-CRM114-Status: GOOD (  14.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,86 +61,49 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The 'irq.h' file is already included through 'arm-gic.h',
-so remove them from all Rockchip dtsi files.
+Hi Johan,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 1 -
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 1 -
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 1 -
- arch/arm64/boot/dts/rockchip/rk3368.dtsi | 1 -
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 1 -
- 5 files changed, 5 deletions(-)
+Am Freitag, 3. April 2020, 17:43:28 CEST schrieb Johan Jonker:
+> The 'irq.h' file is already included through 'arm-gic.h',
+> so remove them from all Rockchip dtsi files.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  arch/arm/boot/dts/rk3036.dtsi | 3 +--
+>  arch/arm/boot/dts/rk322x.dtsi | 3 +--
+>  arch/arm/boot/dts/rk3288.dtsi | 5 ++---
+>  arch/arm/boot/dts/rk3xxx.dtsi | 1 -
+>  arch/arm/boot/dts/rv1108.dtsi | 4 ++--
+>  5 files changed, 6 insertions(+), 10 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+> index 781ac7583..55f3838b2 100644
+> --- a/arch/arm/boot/dts/rk3036.dtsi
+> +++ b/arch/arm/boot/dts/rk3036.dtsi
+> @@ -1,10 +1,9 @@
+>  // SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>  
+> +#include <dt-bindings/clock/rk3036-cru.h>
+>  #include <dt-bindings/gpio/gpio.h>
+> -#include <dt-bindings/interrupt-controller/irq.h>
+>  #include <dt-bindings/interrupt-controller/arm-gic.h>
+>  #include <dt-bindings/pinctrl/rockchip.h>
+> -#include <dt-bindings/clock/rk3036-cru.h>
+>  #include <dt-bindings/soc/rockchip,boot-mode.h>
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 6f7171290..4820edc7f 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -6,7 +6,6 @@
- #include <dt-bindings/clock/px30-cru.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
--#include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/power/px30-power.h>
- #include <dt-bindings/soc/rockchip,boot-mode.h>
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index ac43bc3f7..a9b98555d 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -7,7 +7,6 @@
- #include <dt-bindings/clock/rk3308-cru.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
--#include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/soc/rockchip,boot-mode.h>
- #include <dt-bindings/thermal/thermal.h>
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 470783a48..175060695 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -6,7 +6,6 @@
- #include <dt-bindings/clock/rk3328-cru.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
--#include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/power/rk3328-power.h>
- #include <dt-bindings/soc/rockchip,boot-mode.h>
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-index 1ebb0eef4..f22475016 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-@@ -5,7 +5,6 @@
- 
- #include <dt-bindings/clock/rk3368-cru.h>
- #include <dt-bindings/gpio/gpio.h>
--#include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/soc/rockchip,boot-mode.h>
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 0d895cff5..123b7402a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -6,7 +6,6 @@
- #include <dt-bindings/clock/rk3399-cru.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
--#include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/pinctrl/rockchip.h>
- #include <dt-bindings/power/rk3399-power.h>
- #include <dt-bindings/thermal/thermal.h>
--- 
-2.11.0
+that movement of the *-cru.h files are unrelated changes,
+as they're not described in the commit message.
+
+If you really want to move these this should be a separate commit.
+
+
+Heiko
+
 
 
 _______________________________________________
