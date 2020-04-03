@@ -2,47 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD3CA19DB2C
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:16:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5915519DB37
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:16:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wsBgVV38tIHXPmRJlyLbBs7Zl99Zt8j9RjZmIO2ojUw=; b=igaY8wuTjGb3WO
-	l/MEsvEhnPNRkMMwK/vUIzxr6Xv9IBLJStsAaYMu6p9CI8OffUyXn8Why2sdmuut4Tht4+O5bD1Fs
-	HndBcPanfvx+eL28LFTp3cafJid+eVtxpGwsJv1hMVk4cX5y1ZpCzVLVqikbde72QU07a5mF3GyBW
-	6FL5/j5fWDtsMsIO0Es38ST8rbPpnXrjfNMUM5Yf7O2+3+xEI/NfRg33+Bkmq0LxksqMWq/WpAnnA
-	y+sNxNQbRhxSVS6UkJxXyqen251HwTFmkfe9vByEiR58w/d6Z1s2AJ//kh8UDMfXG9NX+TeyDXBlJ
-	/2dJR9aIZywpQ2uQhNng==;
+	List-Owner; bh=JR29xBcf9o9GbLcxgKCAUG05rgbEXlArOWTLiIlT4Gg=; b=NgdVgIUB7LetzQ
+	Z/uXos2fkf7xv1nAAO+3e+ePxsxLpFf8UhcGWzLKYDROzeOG+EB6oQ5zygHIqqVZpMWfGYxvhJu+n
+	zVFyG2kvvn3FiPpzdh35GMavjWAoo0cfp1urGzL8+qK8Oq5Etsy5+3F2E5a2e6MP94dcEWyS/5YRg
+	eWPy17Sk7+SuL1JtBRaIZjXKWEfVhmveK8dEemgf5UpPM+pP7dBwxj9AZST2f5ox1HHYkbTFwxWkH
+	MdQFGrygC6Yka1WM4aJJYW8vI4F2rVHv/OPtFXQWYX1DB3cd+XFHNp5u3IMKbsLO70NSUdW925toR
+	/QzwOhbJiSMZ31wqTcWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKOzq-0006nJ-Sn; Fri, 03 Apr 2020 16:16:42 +0000
+	id 1jKOzx-0006rq-HP; Fri, 03 Apr 2020 16:16:49 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKOzo-0006m6-2D
- for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 16:16:41 +0000
+ id 1jKOzt-0006pq-U8
+ for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 16:16:47 +0000
 Received: from floko.floko.floko (unknown
  [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6CEEC29868A;
- Fri,  3 Apr 2020 17:16:33 +0100 (BST)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 7BA2429868E;
+ Fri,  3 Apr 2020 17:16:39 +0100 (BST)
 From: Helen Koike <helen.koike@collabora.com>
 To: devicetree@vger.kernel.org, linux-media@vger.kernel.org,
  linux-rockchip@lists.infradead.org
-Subject: [PATCH v2 7/9] media: MAINTAINERS: rkisp1: add path to dt-bindings
-Date: Fri,  3 Apr 2020 13:15:36 -0300
-Message-Id: <20200403161538.1375908-8-helen.koike@collabora.com>
+Subject: [PATCH v2 8/9] arm64: dts: rockchip: add rx0 mipi-phy for rk3399
+Date: Fri,  3 Apr 2020 13:15:37 -0300
+Message-Id: <20200403161538.1375908-9-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200403161538.1375908-1-helen.koike@collabora.com>
 References: <20200403161538.1375908-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_091640_462315_1875A4EA 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200403_091646_105865_A7D8EE53 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -74,31 +73,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Rockchip ISP bindings was moved out of staging.
-Update MAINTAINERS file with the new path.
+From: Shunqian Zheng <zhengsq@rock-chips.com>
 
-Suggested-by: Johan Jonker <jbx6244@gmail.com>
+Designware MIPI D-PHY, used for ISP0 in rk3399.
+
+Verified with:
+make ARCH=arm64 dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy-rx0.yaml
+
+Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
+
 ---
 
-V2:
-- This is a new patch in the series
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+Changes in v2:
+- fix alignment of clocks
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index d66ac41ef5872..726044b84cf23 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -14303,6 +14303,7 @@ M:	Helen Koike <helen.koike@collabora.com>
- L:	linux-media@vger.kernel.org
- S:	Maintained
- F:	drivers/staging/media/rkisp1/
-+F:	Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+V1:
+This patchset came from the original ISP series from Rockchip:
+
+    https://patchwork.kernel.org/patch/10267409/
+
+The only difference is:
+- add phy-cells
+- update compatible to "rockchip,rk3399-mipi-dphy-rx0"
+- commit message
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 33cc21fcf4c10..6b3380b10e596 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1394,6 +1394,17 @@ io_domains: io-domains {
+ 			status = "disabled";
+ 		};
  
- ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
- M:	Jacob Chen <jacob-chen@iotwrt.com>
++		mipi_dphy_rx0: mipi-dphy-rx0 {
++			compatible = "rockchip,rk3399-mipi-dphy-rx0";
++			clocks = <&cru SCLK_MIPIDPHY_REF>,
++				 <&cru SCLK_DPHY_RX0_CFG>,
++				 <&cru PCLK_VIO_GRF>;
++			clock-names = "dphy-ref", "dphy-cfg", "grf";
++			power-domains = <&power RK3399_PD_VIO>;
++			#phy-cells = <0>;
++			status = "disabled";
++		};
++
+ 		u2phy0: usb2-phy@e450 {
+ 			compatible = "rockchip,rk3399-usb2phy";
+ 			reg = <0xe450 0x10>;
 -- 
 2.26.0
 
