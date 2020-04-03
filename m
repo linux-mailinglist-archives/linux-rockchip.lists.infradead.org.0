@@ -2,44 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A6D019DB95
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:25:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33EA619DBA0
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:27:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uSFi4TPShpFUgF3De2+6gOhC8SdLw8D9+//8sGIUlDc=; b=e8+rYfsRS0FhNy
-	XxDjmaUbN9v4Frk5mLZ7z3UYimwDDH4n3vYoy9ORa6munVYF1JykP+xxc4eDatr7tafCuHia4fRnm
-	IHHEFbIG2fQsfHdqJ8hOMFAyL9VmOF/zeXbGqKuD6MVR3GUvbe57ZXGzirGjas8N32WWE1bhREeCN
-	X/qjDw1SPSy8uEvNzWDQhS+Aycco+uFwqAvkRxdyax+gQ16ZNNPVzVP8j+wzvaNvkxpg32zSJ584c
-	eEBUt6s/Gq0ybLaO9bsGwmE5jc54gicwGLTdVX+1EGk4mN1LLLqtuZbB38sX7ecP5nWKXOT4vgGVS
-	pgUUFkts5rymXj2lKn1Q==;
+	List-Owner; bh=HPu1bv0+fcz2NqnWiI5RqU5cbmK8tMdz+kvMh6XW+BU=; b=eX0qZ763xQU7dN
+	VCSl0Uc/e3ZphEUgEbwm421oicx/eVGaK/arxPXXpM3wPY7wF7WYBvmFwvDd+mmM3yRj/PoOUAeH4
+	Rt/GKLsi1fSPEqhl/yqkMHaJGQkTJqMPb7ADitQi2UMPb6O6AfLkA+S/t9Z897BJ5jTiTkIH2KeEm
+	ahSnN1xSS5OGnBt3IcgPa9568lR7Yi7u1JHHjKgb7zQ/BO2Cyl9eGvUE1Z8llVmp4acgihU/WVfml
+	AnU8geEDPOEjePfHDC1yOc5eihV4cC8LZW+HUWfxxvE0cZH32YYKangCm39jAP8TKjgTuxeQaEM3C
+	7SzLmZFFyj+B5ho7hbNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKP8J-00060k-0u; Fri, 03 Apr 2020 16:25:27 +0000
+	id 1jKPAT-0006MI-2B; Fri, 03 Apr 2020 16:27:41 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKP81-0003TW-ST; Fri, 03 Apr 2020 16:25:11 +0000
+ id 1jKPAJ-0006Ds-0s; Fri, 03 Apr 2020 16:27:32 +0000
 Received: from p5b127fb0.dip0.t-ipconnect.de ([91.18.127.176]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jKP7y-000641-2O; Fri, 03 Apr 2020 18:25:06 +0200
+ id 1jKPAF-00065N-VY; Fri, 03 Apr 2020 18:27:27 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: Re: [PATCH 1/3] media: dt-bindings: media: Document Rockchip CIF
- bindings
-Date: Fri, 03 Apr 2020 18:25:05 +0200
-Message-ID: <1766530.2SdDkCQg1P@phil>
-In-Reply-To: <20200403142122.297283-2-maxime.chevallier@bootlin.com>
+Subject: Re: [PATCH 3/3] arm64: dts: rockchip: Add the camera interface
+ description of the PX30
+Date: Fri, 03 Apr 2020 18:27:27 +0200
+Message-ID: <4068915.k80quj1ed4@phil>
+In-Reply-To: <20200403142122.297283-4-maxime.chevallier@bootlin.com>
 References: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
- <20200403142122.297283-2-maxime.chevallier@bootlin.com>
+ <20200403142122.297283-4-maxime.chevallier@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_092510_071073_4C32F11E 
-X-CRM114-Status: GOOD (  18.91  )
+X-CRM114-CacheID: sfid-20200403_092731_214519_A5F128B5 
+X-CRM114-Status: GOOD (  16.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,99 +73,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Maxime,
-
-Am Freitag, 3. April 2020, 16:21:20 CEST schrieb Maxime Chevallier:
-> Add a documentation for the Rockchip Camera Interface controller
-> binding.
-> 
-> This controller can be found on platforms such as the PX30 or the
-> RK3288, the PX30 being the only platform supported so far.
+Am Freitag, 3. April 2020, 16:21:22 CEST schrieb Maxime Chevallier:
+> The PX30 has a camera interface, supporting CSI2, BT656 and Parallel
+> modes. Add a DT description for this interface.
 > 
 > Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
 > ---
->  .../bindings/media/rockchip-cif.yaml          | 98 +++++++++++++++++++
->  1 file changed, 98 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip-cif.yaml
+>  arch/arm64/boot/dts/rockchip/px30.dtsi | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/media/rockchip-cif.yaml b/Documentation/devicetree/bindings/media/rockchip-cif.yaml
-> new file mode 100644
-> index 000000000000..87fb5e136edd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/rockchip-cif.yaml
-> @@ -0,0 +1,98 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/rockchip-cif.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip Camera Interface (CIF)
-> +
-> +maintainers:
-> +  - Maxime Chevallier <maxime.chevallier@bootlin.com>
-> +
-> +description: |-
-> +Camera Interface for Rockcip platforms
-> +
-> +properties:
-> +  compatible:
-> +    const: rockchip,px30-cif
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: ACLK
-> +      - description: HCLK
-> +      - description: PCLK
-> +      - description: CIF_OUT
-> +
-> +  clock-names:
-> +    items:
-> +      - const: aclk_cif
-> +      - const: hclk_cif
-> +      - const: pclk_cif
-> +      - const: cif_out
+> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> index 3e1f51a66daf..38ed35bc9b7a 100644
+> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> @@ -1058,6 +1058,18 @@ dsi_in_vopl: endpoint@1 {
+>  		};
+>  	};
+>  
+> +	cif: cif@ff490000 {
 
-names for clocks / reset are always local to the node/ip-block
-so there is no need to have that _cif in them.
+nit: please sort by register address, so @ff490000 is definitly
+somewhere after that ff460000 of the vopb ;-)
 
-Also the pclk isn't coming from the cru but from some external source
-at least on px30 and rk3288 (and I guess others as well), so maybe
-that deserves a distinct name.
+> +		compatible = "rockchip,px30-cif";
+> +		reg = <0x0 0xff490000 0x0 0x200>;
+> +		interrupts = <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&cru ACLK_CIF>, <&cru HCLK_CIF>, <&cru PCLK_CIF>, <&cru SCLK_CIF_OUT>;
+> +		clock-names = "aclk_cif", "hclk_cif", "pclk_cif", "cif_out";
+> +		resets = <&cru SRST_CIF_A>, <&cru SRST_CIF_H>, <&cru SRST_CIF_PCLKIN>;
+> +		reset-names = "rst_cif_a", "rst_cif_h", "rst_cif_pclkin";
+> +		power-domains = <&power PX30_PD_VI>;
 
-Maybe something like aclk, hclk, pclkin or so?
-
-Also the cif_out clock is not actual part of the CIF block, on both
-the rk3288 and px30 (and probably the others too) it is generated
-in the SoC's clock controller and then just led to an output-pin on
-the soc, so I'd assume a peripheral wanting to use that would take
-care of setting+enabling that clock (similar to the i2s mclk)?
+nit: while doing the above, ideally just move the power-domains above resets
+everthing else is sorted nicely.
 
 
-> +
-> +  resets:
-> +    items:
-> +      - description: Reset CIF A
-> +      - description: Reset CIF H
-> +      - description: Reset CIF PCLK IN
-> +
-> +  reset-names:
-> +    items:
-> +      - const: rst_cif_a
-> +      - const: rst_cif_h
-> +      - const: rst_cif_pclkin
-
-Same here, maybe just "axi", "ahb", "pclkin" like the
-vop resets do?
-
-
+Thanks
 Heiko
+
+> +		status = "disabled";
+> +	};
+> +
+>  	vopb: vop@ff460000 {
+>  		compatible = "rockchip,px30-vop-big";
+>  		reg = <0x0 0xff460000 0x0 0xefc>;
+> 
+
 
 
 
