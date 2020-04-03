@@ -2,51 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EA619DBA0
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:27:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F87319DD63
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 20:02:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HPu1bv0+fcz2NqnWiI5RqU5cbmK8tMdz+kvMh6XW+BU=; b=eX0qZ763xQU7dN
-	VCSl0Uc/e3ZphEUgEbwm421oicx/eVGaK/arxPXXpM3wPY7wF7WYBvmFwvDd+mmM3yRj/PoOUAeH4
-	Rt/GKLsi1fSPEqhl/yqkMHaJGQkTJqMPb7ADitQi2UMPb6O6AfLkA+S/t9Z897BJ5jTiTkIH2KeEm
-	ahSnN1xSS5OGnBt3IcgPa9568lR7Yi7u1JHHjKgb7zQ/BO2Cyl9eGvUE1Z8llVmp4acgihU/WVfml
-	AnU8geEDPOEjePfHDC1yOc5eihV4cC8LZW+HUWfxxvE0cZH32YYKangCm39jAP8TKjgTuxeQaEM3C
-	7SzLmZFFyj+B5ho7hbNA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ok3AtFAykACVChVb0FXsxLnc0y/Hcimpab1yGMlitrs=; b=W2G
+	1OeiOB0NMu9I55k90KTSXdj/GIFD7ui4ukgwCzTwxBTP7uGlqNVpHFuDfesqWfPibjx+Eorh5hwqY
+	rbdFvcq27zArkF22B6tIu2Hvkt10K8LJyxSv0NkR8bHIJDwIIsRm6rR9bf5jgjIyiNNVMSOuR7Cpx
+	0udVvqdOC6t+69cx7pWn7utB0Q9ROm3AU1WytQCMAtpObvfGzaKDklsVqb35ObXRTvZOJN5WjKf9e
+	hgwl9G04j6cxSVuWv2jjTwwFwFGBzmzaYXwlvbmr2QuKeqgdOsUtDrQoPxlkx8WUJI/y0RVdQ1KMy
+	fMA5PEhrkoOy4NTsTY020XK/1cA/VJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKPAT-0006MI-2B; Fri, 03 Apr 2020 16:27:41 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jKQe7-0005DG-BE; Fri, 03 Apr 2020 18:02:23 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKPAJ-0006Ds-0s; Fri, 03 Apr 2020 16:27:32 +0000
-Received: from p5b127fb0.dip0.t-ipconnect.de ([91.18.127.176]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jKPAF-00065N-VY; Fri, 03 Apr 2020 18:27:27 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: Re: [PATCH 3/3] arm64: dts: rockchip: Add the camera interface
- description of the PX30
-Date: Fri, 03 Apr 2020 18:27:27 +0200
-Message-ID: <4068915.k80quj1ed4@phil>
-In-Reply-To: <20200403142122.297283-4-maxime.chevallier@bootlin.com>
-References: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
- <20200403142122.297283-4-maxime.chevallier@bootlin.com>
-MIME-Version: 1.0
+ id 1jKQdw-00055F-B4; Fri, 03 Apr 2020 18:02:13 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w10so9623755wrm.4;
+ Fri, 03 Apr 2020 11:02:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=LK/63VpRTinhiS72eGFe8hpGS9Ib9592eNpC47zP9eg=;
+ b=gECGj7gco55CQi8eVKo1AAsMyzI0Y0o7rmDW5QCJXbr5LCVDnHUz/qtiOz9HHljK9T
+ u9pdBmKtyx175zDh0dSSJuFkNmrR/NQ0gMX1nMxBD7a+bRWQ/Yjlxsa+7k4njHtxJDFs
+ VxVe3xlwewOPBdJ6Q3mAV6CzGsrFDwVVuleFj7uruyY4cigK+mToq1Ef9rmOSJpMKORu
+ vno9S9n95Ue7BiIwgIRV5fS9wBKJp6kWKwNyvNQ9bBDuL1erUi+VSboMHYBpquB1LgcU
+ 6XiHGEBC+V/siyW7Q/sXeeWBDxsoTgNbi6suhqpuri0rcQS16rFrSfmVmAn/7aT+I5o+
+ AZgg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=LK/63VpRTinhiS72eGFe8hpGS9Ib9592eNpC47zP9eg=;
+ b=dgjdYV640racQ0oESBSue0UXHWdI5agX9p/Njd/lLjUsn8GBbuNhA6L9f0DljG7sE8
+ kwvOvVAoJmc7cbAuhyv74TktGDRDg4NA4IZ81Vp7dF6qgrDKMGBo9at74HfhoVW211dZ
+ frZrGNcRI0sOfBbW/cXLS2ykE01vv0cVtnAzRVb93Yc+ItOKjWd58lWwkttq03OA83b7
+ STvWLiLjfFMP0tPShHX8jofghJqd9L/qO68MHv8BRpo5lRt5/3lEmTQFvcHIkTQgvtvN
+ qSSVckflKLE42eON7gUanLgtUyuDBjfUaofRwrZqfvZfHTXTLRpurar34DiRgItJ0Adz
+ OT2g==
+X-Gm-Message-State: AGi0PuYXDL/zHRJn8ekeFNOAPShI5zFidIR9v52uLPvCqFQ/CquRtEUg
+ Fkzvkb2dJIQ/J9iA6YaTJ7tDw6Qe
+X-Google-Smtp-Source: APiQypKVCRnue8W4nhBRXSD3dBoOHLKYUZYejfQvBtxGqmi0wdjXQIZrIC9WjOlCYfbVLWup7ZCNgA==
+X-Received: by 2002:adf:f68b:: with SMTP id v11mr9853798wrp.270.1585936930550; 
+ Fri, 03 Apr 2020 11:02:10 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id j11sm13005492wrt.14.2020.04.03.11.02.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 Apr 2020 11:02:09 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v3 1/4] ARM: dts: rockchip: remove identical #include from
+ rk3288.dtsi
+Date: Fri,  3 Apr 2020 20:01:56 +0200
+Message-Id: <20200403180159.13387-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_092731_214519_A5F128B5 
-X-CRM114-Status: GOOD (  16.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200403_110212_378717_5D3CC193 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,68 +96,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Freitag, 3. April 2020, 16:21:22 CEST schrieb Maxime Chevallier:
-> The PX30 has a camera interface, supporting CSI2, BT656 and Parallel
-> modes. Add a DT description for this interface.
-> 
-> Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
-> ---
->  arch/arm64/boot/dts/rockchip/px30.dtsi | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index 3e1f51a66daf..38ed35bc9b7a 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -1058,6 +1058,18 @@ dsi_in_vopl: endpoint@1 {
->  		};
->  	};
->  
-> +	cif: cif@ff490000 {
+There are 2 identical '#include' for 'rk3288-power.h',
+so remove one of them.
 
-nit: please sort by register address, so @ff490000 is definitly
-somewhere after that ff460000 of the vopb ;-)
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rk3288.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-> +		compatible = "rockchip,px30-cif";
-> +		reg = <0x0 0xff490000 0x0 0x200>;
-> +		interrupts = <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
-> +		clocks = <&cru ACLK_CIF>, <&cru HCLK_CIF>, <&cru PCLK_CIF>, <&cru SCLK_CIF_OUT>;
-> +		clock-names = "aclk_cif", "hclk_cif", "pclk_cif", "cif_out";
-> +		resets = <&cru SRST_CIF_A>, <&cru SRST_CIF_H>, <&cru SRST_CIF_PCLKIN>;
-> +		reset-names = "rst_cif_a", "rst_cif_h", "rst_cif_pclkin";
-> +		power-domains = <&power PX30_PD_VI>;
-
-nit: while doing the above, ideally just move the power-domains above resets
-everthing else is sorted nicely.
-
-
-Thanks
-Heiko
-
-> +		status = "disabled";
-> +	};
-> +
->  	vopb: vop@ff460000 {
->  		compatible = "rockchip,px30-vop-big";
->  		reg = <0x0 0xff460000 0x0 0xefc>;
-> 
-
-
-
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index e72368a7a..f102fec69 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -7,7 +7,6 @@
+ #include <dt-bindings/clock/rk3288-cru.h>
+ #include <dt-bindings/power/rk3288-power.h>
+ #include <dt-bindings/thermal/thermal.h>
+-#include <dt-bindings/power/rk3288-power.h>
+ #include <dt-bindings/soc/rockchip,boot-mode.h>
+ 
+ / {
+-- 
+2.11.0
 
 
 _______________________________________________
