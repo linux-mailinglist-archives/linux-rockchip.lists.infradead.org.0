@@ -2,53 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C18F19DB0F
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:16:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A083019DB15
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 18:16:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Ba/zEBjSuIoP5unCd12ZXv7a3FGC5NJFwVFByGgpKs=; b=awViFyWJUgMQb5
-	yFhxF4yVXMHf2UIVfxfmLcbVYBC4MQNtGCMTgP/pfghGw99z5IyEwPOQCCP/Z0BHeVdbQjCZbVKOG
-	6ltblEAuBN8Kk/l6kBKsqOVds/Cksh+hPR0t56uzrDvYDxC4+mVFnazwAv2cehSNHP2W8iYALJaVP
-	e//JzvQpFqnbcTtjbNouGyTd6VNYfUOP9qsHIXe12fhY4O3+z7rMoNhGXvUhBJFx7K9SOxYuaLamy
-	0TZx1JjHYQePLGBAZSWa1eUfLGf/I7P4TzwKWITqZwW/CHtKue3MzwP9/cFv+jh+sp8bJ8T+z30FY
-	kQ3NDAa7S5wnL4AQ7Rkw==;
+	List-Owner; bh=G386YXETvEp0uaBCFBbA7UrYz3BMNI1jIE+jG6T/gxE=; b=Elyp5GYzqo5nz4
+	jm6tUPhWa4WQRRiZw1rsfL4cdkUl73elD64mcuoYjrYja/3bw7wZfwowh2deFwBEE8PSuEIRhDlFs
+	zBkm1PkyLgYAo9hgKAtKz7StD71hP06fuxyCdotABY2DAXW0M4baRddhT5wbTWbjd+tzRpNza+nIT
+	fFvasHU+hhe7H9hM967OgIayD7sXyrQGZvoP0JCyy+zZZTAvYVfADPpAHdH4b7NI8acf6TZ0C8as5
+	ajzpRciYmBuFlbfQR9ouVLn8uyQMHKm6oBwI7VQICvC/WEP17ZXcP+HrwP0dTTylAWlxrTuuMyfJ/
+	9T+N+3+Apa8Cj5Omx8Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKOzG-0006T8-BX; Fri, 03 Apr 2020 16:16:06 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jKOzL-0006WD-RM; Fri, 03 Apr 2020 16:16:11 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKOzD-0006SD-FX
- for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 16:16:04 +0000
+ id 1jKOzJ-0006VF-5K
+ for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 16:16:10 +0000
 Received: from floko.floko.floko (unknown
  [IPv6:2804:431:e7cc:11ff:4f80:3de:e2b2:5c1d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8C382260560;
- Fri,  3 Apr 2020 17:15:54 +0100 (BST)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id A600C2983F0;
+ Fri,  3 Apr 2020 17:16:02 +0100 (BST)
 From: Helen Koike <helen.koike@collabora.com>
 To: devicetree@vger.kernel.org, linux-media@vger.kernel.org,
  linux-rockchip@lists.infradead.org
-Subject: [PATCH v2 1/9] media: staging: dt-bindings: rkisp1: add missing
- required nodes
-Date: Fri,  3 Apr 2020 13:15:30 -0300
-Message-Id: <20200403161538.1375908-2-helen.koike@collabora.com>
+Subject: [PATCH v2 2/9] media: staging: dt-bindings: rkisp1: add required
+ items in i2c example
+Date: Fri,  3 Apr 2020 13:15:31 -0300
+Message-Id: <20200403161538.1375908-3-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200403161538.1375908-1-helen.koike@collabora.com>
 References: <20200403161538.1375908-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_091603_646736_B34F7416 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20200403_091609_337687_03C51D32 
+X-CRM114-Status: UNSURE (   9.48  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -73,43 +75,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add missing required nodes in json-schema yaml file for
-Rockchip ISP1 dt-bindings.
+Add missing required items in Rockchip ISP1 dt-bindings example for
+a complete i2c node.
 
 Suggested-by: Johan Jonker <jbx6244@gmail.com>
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
 ---
 
 Changes in v2:
-- New patch in the series
+- new patch in the series
 ---
- .../devicetree/bindings/media/rockchip-isp1.yaml          | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ .../devicetree/bindings/media/rockchip-isp1.yaml             | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-index af246b71eac6b..a77b6ec500c95 100644
+index a77b6ec500c95..8c7904845788d 100644
 --- a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 +++ b/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-@@ -94,11 +94,19 @@ properties:
+@@ -169,6 +169,11 @@ examples:
+         };
  
-               remote-endpoint: true
- 
-+        required:
-+          - reg
-+          - "#address-cells"
-+          - "#size-cells"
-+
-     required:
-+      - "#address-cells"
-+      - "#size-cells"
-       - port@0
- 
- required:
-   - compatible
-+  - reg
-   - interrupts
-   - clocks
-   - clock-names
+         i2c7: i2c@ff160000 {
++            compatible = "rockchip,rk3399-i2c";
++            reg = <0x0 0xff160000 0x0 0x1000>;
++            interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH 0>;
++            clocks = <&cru SCLK_I2C7>, <&cru PCLK_I2C7>;
++            clock-names = "i2c", "pclk";
+             clock-frequency = <400000>;
+             #address-cells = <1>;
+             #size-cells = <0>;
 -- 
 2.26.0
 
