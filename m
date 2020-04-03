@@ -2,84 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4937619D8A6
-	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 16:06:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 948A919D8EE
+	for <lists+linux-rockchip@lfdr.de>; Fri,  3 Apr 2020 16:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=78rAtZj25sf8oVCWVayj7Prl+Vsc7wGaL3D3W6s3tpE=; b=tDZ
-	D452StBl/n91ZpyWShfu2xqIiCfktwgnSbGAjJjfC54IjmVepVWXQynvdRP83b1W7CeRIK3cZ70JO
-	sQyB3LtIe8u9kJNloAs1L7CwUyAtaXJ9FPL8DuSOxVvsuyHAjEKz0pK/EZNECNbHbkG3lhCD9ENuV
-	1lHE1s7i680rI89TmXy/Hb8diC6B4IdvdtfPSEafU/GWuLyZMlBYGqffD/dz+Nhb5Kse/STdjm88Y
-	D1T1Xjmer+p59KrWNJdH81XopbFfRWRTP3b4R1kYIVqS0TjLreJ2GuOqTJMiPim5gbFNIgDr5pNAV
-	mFQce2a8FoJtWbvCJR0ZDT10NnaU/sg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5gP0Mam7WJLoR5e768CSceRZBa55d4jyZGcKkNMnwcM=; b=ci16q5fXuNbBqP
+	FCn573hZdm7SyeuCh46pEhyBXM79sQHuoZ6HXmV4W0IcYBA+ZNlo6K4xtOrj9hJXaARlDYhvbU2FJ
+	xyySgzeffPSdODQsK+by4W9wYSTdfTmQtKP+Yc2zlDhkxbbyxkJe4L3hUxtvQgMDoYsozzKKNRFEC
+	l1A6F95mHY0q13fFCh5UD9wOifTwdr+Me4qbKSVBQ5gMsk2PjDgFISMHNt4sb4XNnIX7btE60RVGg
+	J7ha1RZDKQTptmVARb8JvAWDnGbT2bVaG2u7IikLHzfPajoEdl3aNic/AcVZ1j4CEngyQ83DEdZWJ
+	OilmFSrB8fMLl8hb/ptQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKMxt-0008P0-Gm; Fri, 03 Apr 2020 14:06:33 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jKNCr-000133-EB; Fri, 03 Apr 2020 14:22:01 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKMxq-0008OO-52
- for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 14:06:31 +0000
-Received: by mail-pf1-x444.google.com with SMTP id u65so3532964pfb.4
- for <linux-rockchip@lists.infradead.org>; Fri, 03 Apr 2020 07:06:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=5beh3tYBqXYsZM9WkHB84nsN0JayVNaqbU3KDCMIMkE=;
- b=HPTz22GX3PhyK0svSjiEAa/EYEoKl/3lYZ9PR0vxCRKC/FaCBtpqA6WeerrESZJ7JX
- tv88xM4eXiEciGzJFjYcoTO1WGy9MLzExMNNdTNTnZgv93V6bWIZBfitczga7J/i1i+L
- YzrahOiLRIPg7Knf2fAHPdx0qCj29Vs0t7f2Q=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=5beh3tYBqXYsZM9WkHB84nsN0JayVNaqbU3KDCMIMkE=;
- b=AvHiROECz3XXaWYbx2afm80g6zzeF1yWObTMn2M6V1ftMqYVnL0hUDc0URCnjt8Lwq
- i6Ub88WdVkysuQdBwTeXKx/5SbdC0bTQpyimf4s93Dk/bfTK6ExvvYxwlZFpEU4EoXka
- CAxIUQlbhs1s35C6KrpEZ35AH2MKQi7bzcc6nueUPHTydHAXSkDkuMRjRZsIoRHInakX
- yO8Xtf3zITrmA1JGMUqh8rrdPkzP9IqiXYPqbgq0Fq3EalfTA4njXhqkUnCwT9TgVVFY
- gwqnGW18A9hLvNZh4lfQdoHWzhlE+FDjqtmpc5P12EjkCntm8W1IUG1KHuZKSgrHpyiW
- o5wg==
-X-Gm-Message-State: AGi0PuaSVESBS+N2qAui4N13TeCmilqKv6VMdYRWS/3RUeng93VlYtUq
- d1winqtMOzJ1mGTnP47S9ucNqw==
-X-Google-Smtp-Source: APiQypLnyuaCfrMJVbi/1HEIwuHyrJ1Hs76x+x1jPDIZ54zuDRt5bMB+wdkOemO/y1W+MQTIm1IjZw==
-X-Received: by 2002:a62:92:: with SMTP id 140mr8187984pfa.186.1585922788771;
- Fri, 03 Apr 2020 07:06:28 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:9cd7:b821:2c84:e325])
- by smtp.gmail.com with ESMTPSA id q200sm5368935pgq.68.2020.04.03.07.06.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 03 Apr 2020 07:06:28 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: heiko@sntech.de,
-	catalin.marinas@arm.com,
-	will@kernel.org
-Subject: [PATCH] arm64: defconfig: Enable GPIO_SYSCON
-Date: Fri,  3 Apr 2020 19:36:16 +0530
-Message-Id: <20200403140616.19505-1-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jKNCh-0000ul-85; Fri, 03 Apr 2020 14:21:53 +0000
+X-Originating-IP: 77.205.41.241
+Received: from localhost.localdomain (241.41.205.77.rev.sfr.net
+ [77.205.41.241])
+ (Authenticated sender: maxime.chevallier@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 1D96C1BF22A;
+ Fri,  3 Apr 2020 14:21:41 +0000 (UTC)
+From: Maxime Chevallier <maxime.chevallier@bootlin.com>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Subject: [PATCH 0/3] media: rockchip: Introduce driver for the camera
+ interface on PX30
+Date: Fri,  3 Apr 2020 16:21:19 +0200
+Message-Id: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_070630_628697_193ADD63 
-X-CRM114-Status: UNSURE (   8.03  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200403_072151_421917_1D8156E2 
+X-CRM114-Status: GOOD (  14.22  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,45 +62,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Levin Du <djw@t-chip.com.cn>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jagan Teki <jagan@amarulasolutions.com>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-roc-rk3328-cc board has vcc_sdio regulator controlled
-by a special output only gpio pin. This special pin can
-now be reference as <&grf_gpio 0> via gpio-syscon driver,
-as mentioned in below commit.
+Hello everyone,
 
-commit <99165b93dafe4f2a821b5dae106f2ef6b4ceff7e> "arm64: dts: rockchip:
-add sdmmc UHS support for roc-rk3328-cc"
+Here's a series to add very basic support for the camera interface on
+the Rockchip PX30 SoC.
 
-So, enable bydefault on the defconfig.
+This Camera Interface is also supported on other Rockchip SoC such as
+the RK1808, RK3128, RK3288 and RK3288, but for now I've only been able to
+test it on the PX30, using a PAL format.
 
-Cc: Levin Du <djw@t-chip.com.cn>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+This driver is mostly based on the driver found in Rockchip's BSP, that
+has been trimmed down to support the set of features that I was able to test,
+that is pretty much a very basic one-frame capture and video streaming
+with GStreamer. 
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 0f212889c931..0a38f0833cf7 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -433,6 +433,7 @@ CONFIG_GPIO_MAX732X=y
- CONFIG_GPIO_PCA953X=y
- CONFIG_GPIO_PCA953X_IRQ=y
- CONFIG_GPIO_MAX77620=y
-+CONFIG_GPIO_SYSCON=y
- CONFIG_POWER_AVS=y
- CONFIG_QCOM_CPR=y
- CONFIG_ROCKCHIP_IODOMAIN=y
+This first draft only supports the Parallel interface, although the
+controller has support for BT656 and CSI2.
+
+Finally, this controller has an iommu that could be used in this driver,
+but as of today I've not been able to get it to work.
+
+Any review is welcome.
+
+Thanks,
+
+Maxime
+
+Maxime Chevallier (3):
+  media: dt-bindings: media: Document Rockchip CIF bindings
+  media: rockchip: Introduce driver for Rockhip's camera interface
+  arm64: dts: rockchip: Add the camera interface description of the PX30
+
+ .../bindings/media/rockchip-cif.yaml          |   98 ++
+ arch/arm64/boot/dts/rockchip/px30.dtsi        |   12 +
+ drivers/media/platform/Kconfig                |   13 +
+ drivers/media/platform/Makefile               |    1 +
+ drivers/media/platform/rockchip/cif/Makefile  |    3 +
+ drivers/media/platform/rockchip/cif/capture.c | 1170 +++++++++++++++++
+ drivers/media/platform/rockchip/cif/dev.c     |  407 ++++++
+ drivers/media/platform/rockchip/cif/dev.h     |  208 +++
+ drivers/media/platform/rockchip/cif/regs.h    |  256 ++++
+ 9 files changed, 2168 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/rockchip-cif.yaml
+ create mode 100644 drivers/media/platform/rockchip/cif/Makefile
+ create mode 100644 drivers/media/platform/rockchip/cif/capture.c
+ create mode 100644 drivers/media/platform/rockchip/cif/dev.c
+ create mode 100644 drivers/media/platform/rockchip/cif/dev.h
+ create mode 100644 drivers/media/platform/rockchip/cif/regs.h
+
 -- 
-2.17.1
+2.24.1
 
 
 _______________________________________________
