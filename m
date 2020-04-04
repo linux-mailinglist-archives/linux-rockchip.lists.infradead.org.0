@@ -2,53 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F362C19E0F4
-	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Apr 2020 00:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A82F819E47A
+	for <lists+linux-rockchip@lfdr.de>; Sat,  4 Apr 2020 12:28:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ev0+scz6tKcY1XFmu7Zs67sPK48A+rJRa7UiAWEcKT8=; b=oKNfsGTLK6Oo53
-	oxj4/i7GbmYhe7UCzwib9br1OMxJtGMv1o0ky5DFQwbNJn9bgmPZk5qtX7V4UTXq/clR3vfPx7mLH
-	AfYTrB4jTtXs+3E9xeAWspoL03waW5OlJ+jdL98g7oOHqxf53+UDfTqCgNXKNOT8GJiFzJjm1Sk85
-	5Ve8GY/9ThfSsJ95IqsHrFUQKOfR39TcRQeqDLt2CbWpIi5FSLUcneirHYsd/gQQsZtDBcv02z6EL
-	NiuuApM5LMN4rvXbgDjipVtwPpYJ1XoaXFqvrVwjXqf31G2y/NscT4V6JJ9rwqw61w2V+glrjZy43
-	hWVzfY8t6ys4FNUXnfxg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vV4iy/gvC+sCtRcyARgxgiYR/PSh0OQXJfm+9Psefmg=; b=cHs
+	zw7Juu1W+vdECrg3Tscr9yS/R43JbiFvahb+1mwbdUqhNL1cld8ifURoipNcZqr2rSh4LAkYnuc0Z
+	hIRRVDCBuH9e/eylPn0h2oBPBXygNbbpyOj22pJabWScod/CkaX1JNBE1RMirUvHcx4z0zvZ0ulVl
+	I5njS1QOFnW316pN+Dc86X2fkP3wFjH5KfXPyiSE82kFrnMIEoXdce4GUSMkH+6L1pfOhCBZXP8g2
+	KnNALefJFsJkWvrNHp3as65opdOwmXHeL9iomrlQsZi9MwfN7UB8kJo3OouCpailI2EBSo1X6heLM
+	Or26aGM0skFY9yqv4cQ1DntR2N1z5uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jKUa8-0004eL-5Y; Fri, 03 Apr 2020 22:14:32 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jKg2A-0004T8-Tl; Sat, 04 Apr 2020 10:28:14 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jKUa3-0004as-GU
- for linux-rockchip@lists.infradead.org; Fri, 03 Apr 2020 22:14:28 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 4017E2986B2
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v8 5/5] arm64: dts: rockchip: rk3399: Define the rockchip
- Video Decoder node
-Date: Fri,  3 Apr 2020 19:13:45 -0300
-Message-Id: <20200403221345.16702-6-ezequiel@collabora.com>
-X-Mailer: git-send-email 2.26.0.rc2
-In-Reply-To: <20200403221345.16702-1-ezequiel@collabora.com>
-References: <20200403221345.16702-1-ezequiel@collabora.com>
-MIME-Version: 1.0
+ id 1jKg1h-00043L-LM; Sat, 04 Apr 2020 10:27:47 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c7so11497359wrx.5;
+ Sat, 04 Apr 2020 03:27:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=eKih6FjvS7COYO30o3HFfIvnq7gBGzr/Z5TRQxkk1Js=;
+ b=T4fs6URfTMMkZ58nZbKvih/9LwZ3LhYCyRbXeAohMQQ4T9dYz2r3ZiWknVAqSckEh/
+ hQ3qIfXtZwqtL6KxsboiAi82o+DUnLkBMzRYRnT3JiRu+GRoxUQnRZZOUfPqRqavDUP1
+ aarSCiwr2AxzJjHcDD5a3xJPhDVsDrz4fBo1s3ZQE2KHLQH0ZAU4CLZNfsCnbwk19CXg
+ L4lLtUbGMIdQiwGShlJJaoOrImdJP37x40YxlbpmURRG2ggd6mdlEqeIQ1DbjmoisC6l
+ h+8vatFLuBzt0IB9J/K/EOHFYIGpwS34d9iSxoNB3H0aaQD9LbAXif6F4VSDiuUUtr2j
+ 5Ewg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=eKih6FjvS7COYO30o3HFfIvnq7gBGzr/Z5TRQxkk1Js=;
+ b=loFz0TfevrAoMteRnOg/w5Y8R+Eqm+/jyeGooO5G0j1HxcZMhAoR4ay2nPGATqOdUJ
+ H6b90FsU3u0FGr0nS2pxgfzreF0Gwx/lwlyCY77bH0xxAve6+vpYGxwmMeOMHrXNrt/u
+ m7mJHAfaeZDdFXK/PE3Nt6rc8R/3jB6M/x1JlOFHERmfX5SuykdcVl2RM679Mfb8Evqk
+ lpTmPQ2he6g6K9LeHcHUYwLOCxvTZr2K35GLPds1De7fczIkm1wJI3xX1EBrGi02AIdW
+ ESJePg6+tOJPUqmS7erlhmuGK4slj+KOK+7jWXr6vz6GBvmnYxo6S/YkX7kE6+EqIvNz
+ oKYA==
+X-Gm-Message-State: AGi0Pubn70bvUCHXKy77CLBq7ADpGIrILNsplx1O8wbEtOHrfNQyI1b9
+ 8ZEb21vuibthfWkYTPjKZRA=
+X-Google-Smtp-Source: APiQypK6M5sqe1F1zgunzHFxzuhblxRRlmJsO1vLTsy5WHG5SCE4pD/ApQ3p4mlNoz43NETzsUdbkg==
+X-Received: by 2002:adf:f9c6:: with SMTP id w6mr14222500wrr.10.1585996063988; 
+ Sat, 04 Apr 2020 03:27:43 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id c18sm15833178wrx.5.2020.04.04.03.27.42
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 04 Apr 2020 03:27:43 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: jic23@kernel.org
+Subject: [PATCH v2 1/3] dt-bindings: iio: adc: convert rockchip saradc
+ bindings to yaml
+Date: Sat,  4 Apr 2020 12:27:28 +0200
+Message-Id: <20200404102730.3295-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200403_151427_674676_D88BEECC 
-X-CRM114-Status: UNSURE (   8.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200404_032745_724627_BE1A7A8A 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,68 +95,162 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
- Hans Verkuil <hverkuil@xs4all.nl>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: devicetree@vger.kernel.org, lars@metafoo.de, heiko@sntech.de,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, pmeerw@pmeerw.net,
+ knaack.h@gmx.de, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Boris Brezillon <boris.brezillon@collabora.com>
+Current dts files with 'saradc' nodes are manually verified.
+In order to automate this process rockchip-saradc.txt
+has to be converted to yaml.
 
-RK3399 has a Video decoder, define the node in the dtsi. We also add
-the missing power-domain in mmu node and enable the block.
-
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
---
-v8:
-* None.
-v7:
-* As noted by Johan Jonker, fix node order.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 14 +++++++++++++-
- 1 file changed, 13 insertions(+), 1 deletion(-)
+Changes v2:
+  Add reviewed by
+  Fix irq.h already included in arm-gic.h
+---
+ .../bindings/iio/adc/rockchip-saradc.txt           | 37 ----------
+ .../bindings/iio/adc/rockchip-saradc.yaml          | 78 ++++++++++++++++++++++
+ 2 files changed, 78 insertions(+), 37 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+ create mode 100644 Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 33cc21fcf4c1..dfb737e8ff31 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1278,6 +1278,18 @@ vpu_mmu: iommu@ff650800 {
- 		power-domains = <&power RK3399_PD_VCODEC>;
- 	};
- 
-+	vdec: video-codec@ff660000 {
-+		compatible = "rockchip,rk3399-vdec";
-+		reg = <0x0 0xff660000 0x0 0x400>;
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "vdpu";
-+		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>,
-+			 <&cru SCLK_VDU_CA>, <&cru SCLK_VDU_CORE>;
-+		clock-names = "axi", "ahb", "cabac", "core";
-+		power-domains = <&power RK3399_PD_VDU>;
-+		iommus = <&vdec_mmu>;
-+	};
+diff --git a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
+deleted file mode 100644
+index c2c50b598..000000000
+--- a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
++++ /dev/null
+@@ -1,37 +0,0 @@
+-Rockchip Successive Approximation Register (SAR) A/D Converter bindings
+-
+-Required properties:
+-- compatible: should be "rockchip,<name>-saradc" or "rockchip,rk3066-tsadc"
+-   - "rockchip,saradc": for rk3188, rk3288
+-   - "rockchip,rk3066-tsadc": for rk3036
+-   - "rockchip,rk3328-saradc", "rockchip,rk3399-saradc": for rk3328
+-   - "rockchip,rk3399-saradc": for rk3399
+-   - "rockchip,rv1108-saradc", "rockchip,rk3399-saradc": for rv1108
+-
+-- reg: physical base address of the controller and length of memory mapped
+-       region.
+-- interrupts: The interrupt number to the cpu. The interrupt specifier format
+-              depends on the interrupt controller.
+-- clocks: Must contain an entry for each entry in clock-names.
+-- clock-names: Shall be "saradc" for the converter-clock, and "apb_pclk" for
+-               the peripheral clock.
+-- vref-supply: The regulator supply ADC reference voltage.
+-- #io-channel-cells: Should be 1, see ../iio-bindings.txt
+-
+-Optional properties:
+-- resets: Must contain an entry for each entry in reset-names if need support
+-	  this option. See ../reset/reset.txt for details.
+-- reset-names: Must include the name "saradc-apb".
+-
+-Example:
+-	saradc: saradc@2006c000 {
+-		compatible = "rockchip,saradc";
+-		reg = <0x2006c000 0x100>;
+-		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
+-		clock-names = "saradc", "apb_pclk";
+-		resets = <&cru SRST_SARADC>;
+-		reset-names = "saradc-apb";
+-		#io-channel-cells = <1>;
+-		vref-supply = <&vcc18>;
+-	};
+diff --git a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+new file mode 100644
+index 000000000..9b9882323
+--- /dev/null
++++ b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
+@@ -0,0 +1,78 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/iio/adc/rockchip-saradc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- 	vdec_mmu: iommu@ff660480 {
- 		compatible = "rockchip,iommu";
- 		reg = <0x0 0xff660480 0x0 0x40>, <0x0 0xff6604c0 0x0 0x40>;
-@@ -1285,8 +1297,8 @@ vdec_mmu: iommu@ff660480 {
- 		interrupt-names = "vdec_mmu";
- 		clocks = <&cru ACLK_VDU>, <&cru HCLK_VDU>;
- 		clock-names = "aclk", "iface";
-+		power-domains = <&power RK3399_PD_VDU>;
- 		#iommu-cells = <0>;
--		status = "disabled";
- 	};
- 
- 	iep_mmu: iommu@ff670800 {
++title: Rockchip Successive Approximation Register (SAR) A/D Converter
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,saradc
++      - const: rockchip,rk3066-tsadc
++      - const: rockchip,rk3399-saradc
++      - items:
++          - enum:
++            - rockchip,rk3328-saradc
++            - rockchip,rv1108-saradc
++          - const: rockchip,rk3399-saradc
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: converter clock
++      - description: peripheral clock
++
++  clock-names:
++    items:
++      - const: saradc
++      - const: apb_pclk
++
++  resets:
++    maxItems: 1
++
++  reset-names:
++    const: saradc-apb
++
++  vref-supply:
++    description:
++      The regulator supply for the ADC reference voltage.
++
++  "#io-channel-cells":
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - vref-supply
++  - "#io-channel-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    saradc: saradc@2006c000 {
++      compatible = "rockchip,saradc";
++      reg = <0x2006c000 0x100>;
++      interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
++      clock-names = "saradc", "apb_pclk";
++      resets = <&cru SRST_SARADC>;
++      reset-names = "saradc-apb";
++      vref-supply = <&vcc18>;
++      #io-channel-cells = <1>;
++    };
 -- 
-2.26.0.rc2
+2.11.0
 
 
 _______________________________________________
