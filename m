@@ -2,52 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C1819ED51
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 20:14:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A13C19ED53
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 20:16:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KetmZekIYgcMRiflgWwVzCeGw/p56e6gFNcLfV+CHQw=; b=MEi3hIWjBHL/TG
-	z0f89dqUnSpDc/y7Ficnx2nc61oDwz0iLza/YDHug4eU0gqodl9qW6iyxr7wIGOqZWz+2Ao4uzx3r
-	xmJnhm08ghz/5UsP86piYzI05b2Z/7FljyhQiYe3+wmC0IRa1WZyxTGRlkpNhStqZW2iPHzc2pYJJ
-	NDUZJ7BUhDaBUnnWO4MbQXcMgFilAH5AB5HUVFvwlnrIQufWgGUL0ywRLrziKcA+7zDbQKwE45Yck
-	YyOts3Hi/JJBL/gD/OZxVMs9CO+kmtBHy+wtHijbUjyzp6AzLJrNB9NmNxnLas3tBXk5zZy2Exleh
-	jnDWXseVjL9MbujN9lag==;
+	List-Owner; bh=mz20+HaBcSopKonmPukb7C4L7k2tGFSqaTWqob8SP9g=; b=OXTFcx8UQ/5qAd
+	qZDG/7D27kZ2JG0805WeyFDfkZm1PJr1YMTuk26YoOq/PGoZBghj7dbysdD2RtiLKIekwlIyyqfjw
+	9XbsXKD/RLKkry3fMf0LX/cdwdGfN7aAlLnyEf6J2UT8zEMiXRJsqPQ+wG4VIHYL/TLw+fZKCKVsM
+	SQn0jvSzUVAf0POQjOQYF5Rn1Hwc/9fyE9Tl4ChOXxdCOV+2JcWiH47UJ5PoNVQpoD5JT2I7Xz7Ev
+	yqrEmTPqn7NGEEX0Z/8wEkt2g5TdFBG5XMruyrTI7tcq9nt95WGvnLhydFfUxveu8+5P80fKmqMsr
+	H4oPUX7Ot4wGHDsfKKWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL9mj-0003Iu-Nv; Sun, 05 Apr 2020 18:14:17 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jL9oz-0006LX-Om; Sun, 05 Apr 2020 18:16:37 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL9mh-0003IC-HE
- for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 18:14:17 +0000
+ id 1jL9ow-0006KP-6F
+ for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 18:16:35 +0000
 Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
  [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 14037312;
- Sun,  5 Apr 2020 20:14:14 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 90736312;
+ Sun,  5 Apr 2020 20:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586110454;
- bh=G41icyBabNRTmDS6CFNDpAEc45C/INYfp/YvDRzSkw0=;
+ s=mail; t=1586110592;
+ bh=6I2KujTbCZll3Yyt2ypPUSXE5uM18DZss0se4L4MeJo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jCe6ySqEGsO4may90v4XhqcnR4QM9xrU6RPstysUg54fxR360KBjuGCE1MgBFwZ07
- cTbfcpg/iekio/h7MCruwsBB51Wm+CNlKeoup3GafEfJopBh49fdx/LTlI73xiF8Ev
- MlIivkRnQz9jMlCLY1RRSAVpNMLFr06L/DOezqK0=
-Date: Sun, 5 Apr 2020 21:14:05 +0300
+ b=XSVo29Ai+DigFoYHI7nfEyYeNrFVHAmfXXIIB7JPbAnIFaBRp9qtQf+0S8PHz/Nxf
+ az4tp+PTjRVyx57MKWfNAz7qI9238Lzrm0jEmBS2xP5a9m/E1AOWuTl13NRj04W6+k
+ Wk60nGHqBamJOv/pE6XGwGir1vGMXQ7hmQNx+FH8=
+Date: Sun, 5 Apr 2020 21:16:23 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v2 3/5] media: staging: rkisp1: cap: support uv swap only
- for semiplanar formats
-Message-ID: <20200405181405.GP5846@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v2 4/5] media: staging: rkisp1: cap: support uv swapped
+ plane formats
+Message-ID: <20200405181623.GQ5846@pendragon.ideasonboard.com>
 References: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
- <20200402190419.15155-4-dafna.hirschfeld@collabora.com>
+ <20200402190419.15155-5-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200402190419.15155-4-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200402190419.15155-5-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_111415_809461_948C7C37 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20200405_111634_385062_5B0A32D4 
+X-CRM114-Status: GOOD (  14.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,64 +87,64 @@ Hi Dafna,
 
 Thank you for the patch.
 
-On Thu, Apr 02, 2020 at 09:04:17PM +0200, Dafna Hirschfeld wrote:
-> The register RKISP1_CIF_MI_XTD_FORMAT_CTRL is relevant only
-> for semiplanar formats, therefore the uv swap can be supported
-> through this register only for semiplanar formats.
+On Thu, Apr 02, 2020 at 09:04:18PM +0200, Dafna Hirschfeld wrote:
+> Plane formats with the u and v planes swapped can be
+> supported by changing the address of the cb and cr in
+> the buffer.
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > Acked-by: Helen Koike <helen.koike@collabora.com>
 > ---
->  drivers/staging/media/rkisp1/rkisp1-capture.c | 10 ++++++++--
->  1 file changed, 8 insertions(+), 2 deletions(-)
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 17 +++++++++++++++++
+>  1 file changed, 17 insertions(+)
 > 
 > diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> index 84a3cf565106..fa2849209433 100644
+> index fa2849209433..2d274e8f565b 100644
 > --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
 > +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> @@ -37,6 +37,10 @@
+> @@ -41,6 +41,10 @@
+>  	(((write_format) == RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA) ||	\
+>  	 ((write_format) == RKISP1_MI_CTRL_SP_WRITE_SPLA))
 >  
->  #define RKISP1_MIN_BUFFERS_NEEDED 3
->  
-> +#define RKISP1_IS_SEMI_PLANAR(write_format)				\
-> +	(((write_format) == RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA) ||	\
-> +	 ((write_format) == RKISP1_MI_CTRL_SP_WRITE_SPLA))
+> +#define RKISP1_IS_PLANAR(write_format)					\
+> +	(((write_format) == RKISP1_MI_CTRL_SP_WRITE_PLA) ||		\
+> +	 ((write_format) == RKISP1_MI_CTRL_MP_WRITE_YUV_PLA_OR_RAW8))
 > +
 >  enum rkisp1_plane {
 >  	RKISP1_PLANE_Y	= 0,
 >  	RKISP1_PLANE_CB	= 1,
-> @@ -429,7 +433,8 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
->  		     cap->config->mi.cr_size_init);
+> @@ -788,6 +792,19 @@ static void rkisp1_vb2_buf_queue(struct vb2_buffer *vb)
+>  			rkisp1_pixfmt_comp_size(pixm, RKISP1_PLANE_CB);
+>  	}
 >  
->  	rkisp1_irq_frame_end_enable(cap);
-> -	if (cap->pix.cfg->uv_swap) {
-> +	if (RKISP1_IS_SEMI_PLANAR(cap->pix.cfg->write_format) &&
+> +	/*
+> +	 * uv swap can be supported for plane formats by switching
+> +	 * the address of cb and cr
+> +	 */
+> +	if (RKISP1_IS_PLANAR(cap->pix.cfg->write_format) &&
 
-As this is the mp config path, I suppose write_format can only be
-RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA, right ? You could then write
-
-	if (cap->pix.cfg->write_format == RKISP1_MI_CTRL_MP_WRITE_YUV_SPLA &&
+As commented on patch 3/5, could this be checked from the data in
+v4l2_format_info ?
 
 > +	    cap->pix.cfg->uv_swap) {
->  		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->  
->  		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
-> @@ -466,7 +471,8 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
->  	rkisp1_write(rkisp1, cap->sp_y_stride, RKISP1_CIF_MI_SP_Y_LLENGTH);
->  
->  	rkisp1_irq_frame_end_enable(cap);
-> -	if (cap->pix.cfg->uv_swap) {
-> +	if (RKISP1_IS_SEMI_PLANAR(cap->pix.cfg->write_format) &&
+> +		ispbuf->buff_addr[RKISP1_PLANE_CR] =
+> +			ispbuf->buff_addr[RKISP1_PLANE_CB];
+> +		ispbuf->buff_addr[RKISP1_PLANE_CB] =
+> +			ispbuf->buff_addr[RKISP1_PLANE_CR] +
+> +			rkisp1_pixfmt_comp_size(pixm, RKISP1_PLANE_CR);
 
-Same here with RKISP1_MI_CTRL_SP_WRITE_SPLA.
+How about
 
-Another option would be to check the number of planes from
-v4l2_format_info, which could lead to simpler to read code.
+		swap(ispbuf->buff_addr[RKISP1_PLANE_CR],
+		     ispbuf->buff_addr[RKISP1_PLANE_CB]);
 
-> +	    cap->pix.cfg->uv_swap) {
->  		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+?
+
+> +	}
+> +
+>  	spin_lock_irqsave(&cap->buf.lock, flags);
 >  
->  		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+>  	/*
 
 -- 
 Regards,
