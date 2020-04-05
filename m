@@ -2,87 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1897519EB8A
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 15:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5956A19EBDE
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 16:07:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l9uI/Jd3AmQmxJ1cMj74VF1Ho03hkH8YSEeZP0ojyOY=; b=sXxI6MA7obC1QW
-	DX3UdmOnGqJn/OBVN+NPK6a76C/zqvd+tc9mqzsKYQJzzhGQ08aw5PjC3tT1F71irhJN0Wmv4+rXX
-	K+5s/rNJUIWFh4Al4zgcdJNDHDimOl57SDQQBsDXoVcF29/Cel8EcCyw4Ty1MjKCpFxz13Lg2ws0N
-	f6dJt33Er0EVJhDv14H1nQYWzy/0u/+fJR2Csp3zerUi7ejOx8br5Ns5qa8wFaQ6ZYORY+rA0008W
-	X/KWATbZpJMFpGO5XAeXWpqYcEcF24mO3XSsHUZPRKHZlOj0o1b7CBN6O6HVEGbUL0Brk+yaEB4OQ
-	AlF/mR/w34ElWZQoKeCQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DFMQ9i+YUjpV/YU9AJWZ/1NOYZXkKvmaRrA1GXDxfrQ=; b=cADWSOfGPtba60
+	K9h7vBug0zIQD5IWltul3mbEB1E8aYU7nIGQC+Y5XqDmJCExCx5TZp/N/K1pyxb/AOiWMAFEjZMDL
+	ZZo8RMFqaX810qPx9btEJ59vAVdUvwZngNbMVjuW6CU5X6VIQCKs99hjIUL8hTYpmpkCMMjwPy1fS
+	lYlOpzaUrWJ4jkWPmAN1dUf3DRgOSwaV3pcw3TckMWY7OzfwUNMrII1mt655tH4QjUEjztEQk1bzp
+	waXGK6RwGfThwc3wjvhpJXt/vojOeuzBgA0HvvwU2oi7vuSiAOgSIr9l/RptNwPeW3YotIXLAO+lg
+	7lLezIv+DKIXO6hWWIhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL5YB-0005Mx-Qs; Sun, 05 Apr 2020 13:42:59 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jL5vt-0003Jt-SR; Sun, 05 Apr 2020 14:07:29 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL5Y8-0005LJ-5n; Sun, 05 Apr 2020 13:42:57 +0000
-Received: by mail-wr1-x443.google.com with SMTP id k1so4746236wrm.3;
- Sun, 05 Apr 2020 06:42:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=pYq5Ac37hqwzjRVuCDfokJB6SHNuA0PpWl4//5Tmdpo=;
- b=Wqn74vjV4BB8Cecnb8lCadPxosvu/HPRbtAuIdzz1pLSaY1R2XZz0p4+yGOlL2ogHx
- 6eOZDPMKSxI03bHUA81tCci+O1O04BylnW6AFu84jQ8oLHkZ2i7WP2kBeVDxi8qzVSpK
- dfMfOL+reJugaHE69yJnniLrUh1Za/ketLTacst79oFS83sH2N7QX7nZmemEKPx3oBPP
- YqRYGHCY70Gy1Htubzgj0OziRXJxIicG4TvU9RPiA6kwKTDenSDUzCRjyCF/xvyrHaid
- NSUV3QLrQHH8n9P+v/yYeMYA+DCbCkN+0hz8Fs4SHLgPxIn17ZrbMr2lSYd4/62t/k5O
- KOtg==
+ id 1jL5vq-0003JL-9B
+ for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 14:07:27 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id kx8so5274069pjb.5
+ for <linux-rockchip@lists.infradead.org>; Sun, 05 Apr 2020 07:07:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=DaGUMjiO33yRPedgPfXTpsd1WYQQwnPU02b1zLvQ1I8=;
+ b=X/UxUBI5xfYrzIgDb83FVMlbHZLntE9UrQTTG2bboWU76/yoaKgYibC+lhEjTSn59v
+ jal0ztrYnnslRxLGYVG0CkOgZpBk8V66uw/E1aGXINW0G0fckgHV/GO6/W9bDyQ38/eH
+ l+PEfZcIM38Vi0cmSya8eFCFi4bHeoF9kBQOMTqg2gOTD6Xw7uh+t/V/wJEHXw+sEL18
+ ME0PAsfRNKcDqf3yM4npYheUbcy/1prBkzeeXWuvRQeRScR6hgXwQoRLXisaXUCfQUTR
+ td5FJqFE8eKqtLqs9wbtll+GCDnveXi+HRocV2JyQO4euQ2lxD4gQ2GlyGLOiXQHnMeu
+ KMtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=pYq5Ac37hqwzjRVuCDfokJB6SHNuA0PpWl4//5Tmdpo=;
- b=b/acqTmLVVgVDclok4WRgMZULyQhJrXcyLwwEuKcv8CUi5mNTXV613MWXwn3HZaGYf
- T2UUlnVNJv2avzpkDKENi3O8jmxv8YBHnn2jCiIUoWdz+36Ee7iusY3d8kNaZOZgoNH6
- PPs6i6PhEYaKUeIpHYBoyy25YuVr66rLwl2OoCkhGD8oOk5zYv2E/xvdjoLD79ehL06g
- RG8BPjWKxZB4xJe0SH3ggiQ93aOeXnUSMfmBzgxH1vXpQFYDAXVerliE/w2EjzSLJAQx
- oQDkuSy2p3zSnkl3yZfAGUs8muWa0GNnmcGG8q0WqB83YrVQXNBBKzmcv+RlJUNt57i9
- Gm8A==
-X-Gm-Message-State: AGi0PuYw9wWEyqFlZICe6PsRaX5rP9pZZFDrb9N0JCgK3OaX/mQr68vN
- E/f+WjMn7xv9I08B52/Oiwv49ucV
-X-Google-Smtp-Source: APiQypKl9GRvIyv858C82f0tD7OhPqj/2TSvRADObcTMzQWNfvqqDXHOVfsIjuHuld/zf6AIDyol8w==
-X-Received: by 2002:adf:92a3:: with SMTP id 32mr11438386wrn.254.1586094171257; 
- Sun, 05 Apr 2020 06:42:51 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id a7sm19391741wmm.34.2020.04.05.06.42.50
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 05 Apr 2020 06:42:50 -0700 (PDT)
-Subject: Re: [PATCH v2 1/3] dt-bindings: iio: adc: convert rockchip saradc
- bindings to yaml
-To: Jonathan Cameron <jic23@kernel.org>
-References: <20200404102730.3295-1-jbx6244@gmail.com>
- <20200405130621.252578e8@archlinux>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <c5072f74-695f-0554-ab3f-bd5155c356b2@gmail.com>
-Date: Sun, 5 Apr 2020 15:42:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=DaGUMjiO33yRPedgPfXTpsd1WYQQwnPU02b1zLvQ1I8=;
+ b=BQjmTvLQm7h3mo6ux8G5fTKPy06tZ1Lt2ijDy1/TRil5lb1HeJ/Anx51ZASJgtEmI/
+ KYdj6N4PdTKiV0SSRSZXKxCFuWqAmEWINWQn5NuhhyDA5eMVxNTNfY7ekAuYLWWaxnTS
+ 2Dw+n3O481uLVIPdOD1a5cnBIg4mvrFEj0GZBAJCLWs1et2lHpqmWfnDEX9zBSLQtXhB
+ J/3pzjjl0GRUiFf80eafEXBY1FfJ/bhfyOB98+/wJli5/90XsECahCj88exSqmNxfo0q
+ IB3z16WsIWKs8STkc/AUxtRSoqtSgBBLKX9gXOAzVajPv0d1G0NKu9sgFdNMwxCjqF+S
+ wKiA==
+X-Gm-Message-State: AGi0Pua5xtBy0WXc6PEF1Uq9JHt48vcf2UBjlxz907CK6VtdZ0uEA0s4
+ cHzZCM1J5QjbBuR3F/KhVzkG
+X-Google-Smtp-Source: APiQypJRd2r5o+vQ9VXXxlOCwBCkGTttGJzznw1DoFR3pe9htSFjBkvTlOjxOpMhysVIgrxzGulZyA==
+X-Received: by 2002:a17:902:d70d:: with SMTP id
+ w13mr16897787ply.322.1586095645418; 
+ Sun, 05 Apr 2020 07:07:25 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:6e83:b2ab:75aa:fbdc:e9da:9d96])
+ by smtp.gmail.com with ESMTPSA id k1sm951730pgh.72.2020.04.05.07.07.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 05 Apr 2020 07:07:24 -0700 (PDT)
+Date: Sun, 5 Apr 2020 19:37:16 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v3 4/5] rockchip: Enable HDMI output on rk3399 board w/
+ HDMI
+Message-ID: <20200405140716.GS8912@Mani-XPS-13-9360>
+References: <20200402114125.2501-1-jagan@amarulasolutions.com>
+ <20200402114125.2501-5-jagan@amarulasolutions.com>
 MIME-Version: 1.0
-In-Reply-To: <20200405130621.252578e8@archlinux>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200402114125.2501-5-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_064256_243473_E311055F 
-X-CRM114-Status: GOOD (  19.66  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200405_070726_414118_6EEF89C0 
+X-CRM114-Status: GOOD (  14.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,153 +100,167 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lars@metafoo.de, heiko@sntech.de,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, pmeerw@pmeerw.net,
- knaack.h@gmx.de, linux-arm-kernel@lists.infradead.org
+Cc: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
+ sunil@amarulasolutions.com, Anatolij Gustschin <agust@denx.de>,
+ linux-amarula@amarulasolutions.com, Mark Kettenis <mark.kettenis@xs4all.nl>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jonathan,
+On Thu, Apr 02, 2020 at 05:11:24PM +0530, Jagan Teki wrote:
+> Enable config options and console setting to respective
+> rk3399 board for HDMI output.
+> 
+> Boards supported and tested on this patch are:
+> - NanoPc T4
+> - NanoPi M4
+> - NanoPi Neo4
+> - ROC-RK3399-PC
+> - Rock960
+> 
+> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
-Originally I just followed 'rk3288.dtsi' till I saw someone posting a
-patch with only 'arm-gic.h' included that made me to have a closer look
-at it.
-Due to the #ifndef construction it doesn't rise any warnings I think.
-Apply the version that fits best.
+For Rock960,
 
-Kind regards,
+Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-Johan Jonker
+Thanks,
+Mani
 
-
-
-#ifndef _DT_BINDINGS_INTERRUPT_CONTROLLER_IRQ_H
-#define _DT_BINDINGS_INTERRUPT_CONTROLLER_IRQ_H
-[..]
-#endif
-
-Something else...
-With 2 examples it gives a warning that 2 identical defines are used.
-Yaml doesn't separately compile the examples. Must use the same SoC.
-
-This doesn't work. One example for rk3288 and one for rk3399.
-examples:
-  - |
-    #include <dt-bindings/clock/rk3288-cru.h>
-    #include <dt-bindings/interrupt-controller/arm-gic.h>
-[..]
-  - |
-    #include <dt-bindings/clock/rk3399-cru.h>
-    #include <dt-bindings/interrupt-controller/arm-gic.h>
-[..]
-
-From 'rk3288.dtsi':
-
-> // SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->
-> #include <dt-bindings/gpio/gpio.h>
-> #include <dt-bindings/interrupt-controller/irq.h>
-> #include <dt-bindings/interrupt-controller/arm-gic.h>
-> #include <dt-bindings/pinctrl/rockchip.h>
-> #include <dt-bindings/clock/rk3288-cru.h>
-> #include <dt-bindings/power/rk3288-power.h>
-> #include <dt-bindings/thermal/thermal.h>
-> #include <dt-bindings/power/rk3288-power.h>
-> #include <dt-bindings/soc/rockchip,boot-mode.h>
->
-> / {
-> 	#address-cells = <2>;
-> 	#size-cells = <2>;
->
-> 	compatible = "rockchip,rk3288";
-
-[..]
-
-On 4/5/20 2:06 PM, Jonathan Cameron wrote:
-> On Sat,  4 Apr 2020 12:27:28 +0200
-> Johan Jonker <jbx6244@gmail.com> wrote:
->
->> Current dts files with 'saradc' nodes are manually verified.
->> In order to automate this process rockchip-saradc.txt
->> has to be converted to yaml.
->>
->> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
->> Reviewed-by: Rob Herring <robh@kernel.org>
-> Hi Johan
->
-> As I'd already applied these I'd have preferred a fix patch and I'm
-not actually
-> sure it's really worth making the change.  I don't think we have any rules
-> about minimal includes or anything in DT bindings.  Was there an error or
-> warning as a result of this?
->
-> Still as I hadn't pushed out as non rebasing yet I've picked this
-version up
-> and dropped the previous.
->
-> Thanks,
->
-> Jonathan
->
->> ---
->> Changes v2:
->>   Add reviewed by
->>   Fix irq.h already included in arm-gic.h
->> ---
->>  .../bindings/iio/adc/rockchip-saradc.txt           | 37 ----------
->>  .../bindings/iio/adc/rockchip-saradc.yaml          | 78
-++++++++++++++++++++++
->>  2 files changed, 78 insertions(+), 37 deletions(-)
->>  delete mode 100644
-Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
->>  create mode 100644
-Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
->>
->> diff --git
-a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
-b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
->> deleted file mode 100644
->> index c2c50b598..000000000
->> --- a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.txt
-
-[..]
-
->> diff --git
-a/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
-b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
->> new file mode 100644
->> index 000000000..9b9882323
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/iio/adc/rockchip-saradc.yaml
->> @@ -0,0 +1,78 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/iio/adc/rockchip-saradc.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-
-[..]
-
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/rk3288-cru.h>
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    saradc: saradc@2006c000 {
->> +      compatible = "rockchip,saradc";
->> +      reg = <0x2006c000 0x100>;
->> +      interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
->> +      clocks = <&cru SCLK_SARADC>, <&cru PCLK_SARADC>;
->> +      clock-names = "saradc", "apb_pclk";
->> +      resets = <&cru SRST_SARADC>;
->> +      reset-names = "saradc-apb";
->> +      vref-supply = <&vcc18>;
->> +      #io-channel-cells = <1>;
->> +    };
->
+> ---
+> Changes for v3:
+> - add rock960 hdmi out support
+> 
+>  configs/nanopc-t4-rk3399_defconfig   | 7 +++++++
+>  configs/nanopi-m4-rk3399_defconfig   | 7 +++++++
+>  configs/nanopi-neo4-rk3399_defconfig | 7 +++++++
+>  configs/roc-pc-rk3399_defconfig      | 6 ++++++
+>  configs/rock960-rk3399_defconfig     | 7 +++++++
+>  include/configs/evb_rk3399.h         | 5 +++++
+>  include/configs/rock960_rk3399.h     | 5 +++++
+>  7 files changed, 44 insertions(+)
+> 
+> diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
+> index 9ea9b11574..607a00dbf7 100644
+> --- a/configs/nanopc-t4-rk3399_defconfig
+> +++ b/configs/nanopc-t4-rk3399_defconfig
+> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+>  CONFIG_USB_ETHER_MCS7830=y
+>  CONFIG_USB_ETHER_RTL8152=y
+>  CONFIG_USB_ETHER_SMSC95XX=y
+> +CONFIG_USB_KEYBOARD=y
+>  CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
+> +CONFIG_DM_VIDEO=y
+> +CONFIG_VIDEO_BPP16=y
+> +CONFIG_VIDEO_BPP32=y
+> +CONFIG_DISPLAY=y
+> +CONFIG_VIDEO_ROCKCHIP=y
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+> diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
+> index ad0e808bf6..3fcb7ac2d7 100644
+> --- a/configs/nanopi-m4-rk3399_defconfig
+> +++ b/configs/nanopi-m4-rk3399_defconfig
+> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+>  CONFIG_USB_ETHER_MCS7830=y
+>  CONFIG_USB_ETHER_RTL8152=y
+>  CONFIG_USB_ETHER_SMSC95XX=y
+> +CONFIG_USB_KEYBOARD=y
+>  CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
+> +CONFIG_DM_VIDEO=y
+> +CONFIG_VIDEO_BPP16=y
+> +CONFIG_VIDEO_BPP32=y
+> +CONFIG_DISPLAY=y
+> +CONFIG_VIDEO_ROCKCHIP=y
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+> diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-rk3399_defconfig
+> index d038a8cab9..b9ea535e43 100644
+> --- a/configs/nanopi-neo4-rk3399_defconfig
+> +++ b/configs/nanopi-neo4-rk3399_defconfig
+> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+>  CONFIG_USB_ETHER_MCS7830=y
+>  CONFIG_USB_ETHER_RTL8152=y
+>  CONFIG_USB_ETHER_SMSC95XX=y
+> +CONFIG_USB_KEYBOARD=y
+>  CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
+> +CONFIG_DM_VIDEO=y
+> +CONFIG_VIDEO_BPP16=y
+> +CONFIG_VIDEO_BPP32=y
+> +CONFIG_DISPLAY=y
+> +CONFIG_VIDEO_ROCKCHIP=y
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+> diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
+> index d540a17aeb..be76524cef 100644
+> --- a/configs/roc-pc-rk3399_defconfig
+> +++ b/configs/roc-pc-rk3399_defconfig
+> @@ -59,3 +59,9 @@ CONFIG_USB_ETHER_SMSC95XX=y
+>  CONFIG_USB_KEYBOARD=y
+>  CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
+> +CONFIG_DM_VIDEO=y
+> +CONFIG_VIDEO_BPP16=y
+> +CONFIG_VIDEO_BPP32=y
+> +CONFIG_DISPLAY=y
+> +CONFIG_VIDEO_ROCKCHIP=y
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+> diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
+> index ba4226e173..c4e954731a 100644
+> --- a/configs/rock960-rk3399_defconfig
+> +++ b/configs/rock960-rk3399_defconfig
+> @@ -58,5 +58,12 @@ CONFIG_USB_ETHER_ASIX88179=y
+>  CONFIG_USB_ETHER_MCS7830=y
+>  CONFIG_USB_ETHER_RTL8152=y
+>  CONFIG_USB_ETHER_SMSC95XX=y
+> +CONFIG_USB_KEYBOARD=y
+>  CONFIG_SPL_TINY_MEMSET=y
+>  CONFIG_ERRNO_STR=y
+> +CONFIG_DM_VIDEO=y
+> +CONFIG_VIDEO_BPP16=y
+> +CONFIG_VIDEO_BPP32=y
+> +CONFIG_DISPLAY=y
+> +CONFIG_VIDEO_ROCKCHIP=y
+> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+> diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
+> index c0b0358893..2d3db22877 100644
+> --- a/include/configs/evb_rk3399.h
+> +++ b/include/configs/evb_rk3399.h
+> @@ -6,6 +6,11 @@
+>  #ifndef __EVB_RK3399_H
+>  #define __EVB_RK3399_H
+>  
+> +#define ROCKCHIP_DEVICE_SETTINGS \
+> +		"stdin=serial,usbkbd\0" \
+> +		"stdout=serial,vidconsole\0" \
+> +		"stderr=serial,vidconsole\0"
+> +
+>  #include <configs/rk3399_common.h>
+>  
+>  #if defined(CONFIG_ENV_IS_IN_MMC)
+> diff --git a/include/configs/rock960_rk3399.h b/include/configs/rock960_rk3399.h
+> index 746d24cbff..304ad2b7aa 100644
+> --- a/include/configs/rock960_rk3399.h
+> +++ b/include/configs/rock960_rk3399.h
+> @@ -6,6 +6,11 @@
+>  #ifndef __ROCK960_RK3399_H
+>  #define __ROCK960_RK3399_H
+>  
+> +#define ROCKCHIP_DEVICE_SETTINGS \
+> +		"stdin=serial,usbkbd\0" \
+> +		"stdout=serial,vidconsole\0" \
+> +		"stderr=serial,vidconsole\0"
+> +
+>  #include <configs/rk3399_common.h>
+>  
+>  #define CONFIG_SYS_MMC_ENV_DEV		1
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
