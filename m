@@ -2,52 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FBBA19ED33
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 19:57:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7131F19ED4D
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 20:11:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xbWJe9v7li+DYzgY5NEzmo7jQupATQbzMvMv0z3TEZI=; b=VOH/6Ugw46LQ5F
-	VN4BM8GmWrKaj90gSQ+TfpsJaP4wnF6XghbPw84wF6Z4SH9kaIXeSZ5wVP+PAhCqBzp8IUV40eHDX
-	VE2XdX0lW2i5xwPV8ZJoRfjymdVm/GIILidJ08VG6f9zh16/HKDK9RRV/bzvyEUMn47xMX5xEKmY5
-	2DS9xvLSRAV/o3bMrxwaTm/ng64+EC+jjl46W9IcF+7pAkAG20aJI1DRxjdI53Crap79oy0Gu4hYj
-	Gywbcz+OyLbtE/HkP4NO42b3mhgMxqyZ7idhcuJipkDYHcckoy1z9iw6IroJO/KwdnZ1fi7rmpYqT
-	8IccGRa/NXDS5+18LJsw==;
+	List-Owner; bh=gKiifjZmg6AyGJXg7LLZjPp+FBYA8wJoeYqaBtWGnhM=; b=LqkK8YEQdw1WhS
+	N7jBAcpwr1A8Zz03zLO7PCAK38rsCnx2BzkzUeIJESchhvXWchBT3nRofsjsRX72br/ff+AKkhH3f
+	6E1UuhaIQviERrMd48AkHb7xesoQAYvWV6TXDqzEFwQeS8Xw4+zjVjpkNA2d5Lf72zKuOC6Fc8oXH
+	K8Zsx15aLYYFE3/tPMxsLXZgr/yTu/MoH5GFCrHP5XR9NDtxx+aTTilW7WibDfYGBHPHS+vALoQLp
+	hox/aljgD93EGtw0p33Dm9cCBEZPLzDs5GREf40izfKghPvb3Cr0hF8YBgVgY7xBgCP1zCIQ+07eQ
+	0rcvSM1JkK661yTMgFvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL9Wp-0001KB-E8; Sun, 05 Apr 2020 17:57:51 +0000
+	id 1jL9jW-0002jN-15; Sun, 05 Apr 2020 18:10:58 +0000
 Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL9Wm-0001JK-MC
- for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 17:57:50 +0000
+ id 1jL9jT-0002iY-77
+ for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 18:10:56 +0000
 Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
  [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 1A0A1312;
- Sun,  5 Apr 2020 19:57:47 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6F9E5312;
+ Sun,  5 Apr 2020 20:10:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586109467;
- bh=3riq+UGIDUwaB3bskq6W163D9liaizhjELFGstR3Z/o=;
+ s=mail; t=1586110253;
+ bh=+lR0IcKKhe1sfU9YYKeeibLNhH3C1DjLrhJ7I6zdJNs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jvhv0pkrbAHeinT/xpWw1eXsmTZSG5bqFJr1Xtcjkb+maVp9gsAq12m4lJ5R44UTs
- LO0CWQADNqgcFudTW6WXqJ7QULClkW2Cp4pDCniCWVJ2JIaPZV8W32WtzgaGmJ4YiW
- EY5aCIzBxet8oRmdohUteZ3kjtWFzl/n+B2Woh8o=
-Date: Sun, 5 Apr 2020 20:57:38 +0300
+ b=MYIf/GTIX4ORyvFtC6ykKBYXZw6V0kP8KdGI8FVVTj6WcNsMEjMwThuIImwgNLSmY
+ 6OGpO9o7SU9neqD0Z/Sh5PbI8HoRGI7OT45hrrw+QgbJgUd9E9qlV9COJmQK4IQVm+
+ sl010dYYoJUrc03YSnnOl7TlBweLvrVh5j72VrBU=
+Date: Sun, 5 Apr 2020 21:10:44 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v2 1/5] media: staging: rkisp1: cap: cleanup in mainpath
- config for uv swap format
-Message-ID: <20200405175738.GN5846@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v2 2/5] media: staging: rkisp1: cap: fix value written to
+ uv swap register in selfpath
+Message-ID: <20200405181044.GO5846@pendragon.ideasonboard.com>
 References: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
- <20200402190419.15155-2-dafna.hirschfeld@collabora.com>
+ <20200402190419.15155-3-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200402190419.15155-2-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200402190419.15155-3-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_105748_870643_97076035 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20200405_111055_402438_2EA84EA5 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,37 +86,43 @@ Hi Dafna,
 
 Thank you for the patch.
 
-On Thu, Apr 02, 2020 at 09:04:15PM +0200, Dafna Hirschfeld wrote:
-> The value RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP equals BIT(0),
-> Therefore when writing it to the register there is no need to mask
-> it first with ~BIT(0).
+On Thu, Apr 02, 2020 at 09:04:16PM +0200, Dafna Hirschfeld wrote:
+> The value RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP should be
+> set to the register instead of masking with ~BIT(1)
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > ---
->  drivers/staging/media/rkisp1/rkisp1-capture.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
 > diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> index 45d237a77ca4..5700d7be2819 100644
+> index 5700d7be2819..84a3cf565106 100644
 > --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
 > +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> @@ -432,8 +432,7 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
+> @@ -469,8 +469,8 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
 >  	if (cap->pix.cfg->uv_swap) {
->  		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+>  		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
 >  
-> -		reg = (reg & ~BIT(0)) |
-> -		      RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
-> +		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+> -		rkisp1_write(rkisp1, reg & ~BIT(1),
+> -			     RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+> +		reg = reg | RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+> +		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
 
-I'd write this
+This indeed simplifies the code, but I think the logic is wrong in the
+first place. Shouldn't this be
 
-		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+	if (cap->pix.cfg->uv_swap)
+		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+	else
+		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+? Same for patch 1/5.
 
->  		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
 >  	}
 >  
+>  	rkisp1_mi_config_ctrl(cap);
 
 -- 
 Regards,
