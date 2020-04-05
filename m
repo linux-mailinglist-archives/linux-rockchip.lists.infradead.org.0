@@ -2,106 +2,112 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B81B419ED89
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 21:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5AEE19ED9B
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 21:24:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PQWIabPrJeWNZsfkKn4/PVSbgjv6n+9nDNf8fFZcUeU=; b=kl0wbuVV0alT+F
-	Dr9/Aedc26T4muMlEo6zr4+C7FMwtlaMBnE5djWN/JoAudte6cxXDmPr1uVuvhGQI9OLYdjbqAPqo
-	Hcf0MFzrvaUlzaA+cY9kiY7fsqsOsccbK8I6TMlnfA5AGYjTdKPpP531k6KC64kBdGPmVvuQ/U6cU
-	z2fV4JXSsayrg8gWUr0A9IJRxZIxZTzP5xMkP6e69SLL6puP3WDWkHRlFWeN58k8cT2xIuVCW6Eqe
-	BKwTisZEJOZ0J8NO9MToQSto1qw1XbgaVI8ODdrd/XpsdcF50npV7GF+cgGrBRMwh7mhiaVS6WDq7
-	vJc3IIYJL43pbI10CWPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JK55q/6LIazCFfaUr+PM/EhFpfzDKyvc26gn9MjMosc=; b=jKf5YGvz4ASvsh
+	8m5EOL0WNUn/c/402mSTcSiwelBSuv4fbFCg7+2CStFNEzyxjiqQALDIIOq4vO8LE/YX7jihSEsTR
+	3v5UbxGeILuPbz1eLFF2ssR6MfqFz/YNoKYvj5W3Sbie1uTJMRhiIqX4u+F1aZ5ZlexAOCSAT8OPb
+	UuZVFNSbY+4LZQrsDKlFRkBFJVcZpc0pk9LE/VRQ8kB2GoeQS6FK/8CmREAQxC/MSlR8Vq9QtjVfK
+	RahlnaR/Iq62z1k4gyxCp2gYwunyHkoySA3dadLGtm5ia6DBhpdDidIjj59s1qQsJjoBGdDzGUStT
+	JuLU7nZz93HMgThXUHfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLArN-0000jS-KN; Sun, 05 Apr 2020 19:23:09 +0000
-Received: from mail-eopbgr00133.outbound.protection.outlook.com
- ([40.107.0.133] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1jLAsV-0001mw-Cb; Sun, 05 Apr 2020 19:24:19 +0000
+Received: from mail-bgr052101131072.outbound.protection.outlook.com
+ ([52.101.131.72] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLArI-0000fY-Hd; Sun, 05 Apr 2020 19:23:06 +0000
+ id 1jLArQ-0000kb-W6; Sun, 05 Apr 2020 19:23:14 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RlN3sHJwq6Qe2EJB9ylKGdMFI0/tX3PmnrlJRJ8BlpcZ6j5FvrH0M7d0v57C3YVF5UBaG7lpVOTvOJdlpvqZ65/wj1e6iYNFaBuLfhrS5jRYc4ovCpDLlHDYbu6VlDAIRTO0bZYhdkFyrLfSuZ8dqDpTT0mxim4OGjX76wYELFelmADrqrQswdLJevkjA3iIl1LR6mCbyjFWOKmJu0nxu8VqS/NjWyPjesQAoM8vlGuHwU5+GE2vCMsPxlqvB1AknmyzHpZnMQV9TpVgMRRWMbnFmAywEZrrpUBbL/LzE8MJRGSmvBLI469D5heH5vZrYUnGq1KEiJXqXefcCJ4DQQ==
+ b=GlprnCBFTCbGN6nvOLdRXb4W/gzkx8MjUad/gX5CKRpTM0IbT39HRspdE18EMIKJnzHDeKqpHD0kU9U2ZWjBv50hIICKhADh8s3pZwsFmNe+VpzveWSg9zTBzO3NLwxpYD5rO9g2mIGX6dmiM0aljOWAYDXxyf5JLdFAk4ffgmC9n5cFsa8Jyt7aoDc4Xcrw89wuHJQzIff3oTmcoX+2Mu1Wxxa60YncVLuH28FSDf2OjxtgrMTfQ4rXf0XuEdvr6MMp23/bk5xB2UmiVCwgo1OAT3J7pkWgp7V1JTT8lgSDrkx+6LPhwFt9QSX1LDvmSkrK7Tnu6GuMhvdPtRb4xw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=18OcAKEDa7ojfxMhPBEjG7Pe7X9KMR5ikVnvXf50RDY=;
- b=N203R3WvoHU8BIrmwAG29Rm6+MDbg8ylnG+1ABA3+gyDr+0yCkuMr3d4FXZHaEGAPRV6EhnAccYqgyw+SpXjenU/oY/zTe5E0n4Wu0jESPGymB1NAH3fwjiHk3jFivCg7sNS65vQYV7S/ddKkgjNUhvaKc2VeMQZUinuyRgVpg1/6v292gKDSd8fNbBsh64hkrjCifSJrg2+JcRwzYIUvNmGCr4lRV/n5TG8zLH7JGp9PY3CfC3alE+kIlRJN4tahpLwuG00VY1qx/TRjw3pSz294mqo250ck5BTA5y37BqbfhsrvCL3cXLwpWPoQ5zgVvD7i2Lm9Rb0xC12/qQLuQ==
+ bh=iOkPSnLpEY3RV6H3sW5ScnsoPQ0jQtXmv5Rbt1I9oY0=;
+ b=SkWFkSoJZ1wQ9L/5C/Bxkzme9IHu3L8jbtyPLAexgnN50y/1SKWVcTu8Ye6LGf1bwLsN544hVkJRekLrcCacZFPaf1okzEPervCanYsBwCMdXUL4/+1rc0W0yWvpaMwND4c4g+aRCJKKZ5vaxn9TQ6Tvp4QyL8RUsABcwev7kG2LMLMZGJdcKOPE7+BeXkYhmSQyOk5z4S+luqfPzdqMRrDDNA/QayDthQPZHW1K57tODIyBY/fch64AEhdBLY9458t1df01HYfFIoycnTzaTCSruUNXQaSw1QH7iOX94LcarW93ZamaS80Mk03ofr5EvriifCUiJhCZ6O6laAIZig==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
  dkim=pass header.d=toradex.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=18OcAKEDa7ojfxMhPBEjG7Pe7X9KMR5ikVnvXf50RDY=;
- b=cltb8BbV28QSNU+ip/QY8M/Uz5/6/QRQhwkxCur8oXjvx+0ctct4sEGoC3EPe+xA/kWIz5pvREexJdTKkeM9ywqB5jRGVLwqj5i7jFavlh/0tLEK7u5ZysJOXagh22KvBmDJeA4wZWHnuisF0+Cmv5sWIWTKNKZotXH0M8cU9co=
+ bh=iOkPSnLpEY3RV6H3sW5ScnsoPQ0jQtXmv5Rbt1I9oY0=;
+ b=Y78B8K7qLBxERzkx/HyPgyjhnKp6FKEf5unM/1d8GRVUjkDgy7d1x3adMgi7mV6aI+uIbgYsYUkoje/DSZ4a35sXPk4Oj+d1wAJM2Frh9D6G5A6bFtw+XUoymCo15xtR25wkSh0WD0w/I/rHbR80ljg4Cuv12dvm6pZWhwgzM90=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=oleksandr.suvorov@toradex.com; 
 Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (2603:10a6:802:1c::24)
  by VI1PR05MB5373.eurprd05.prod.outlook.com (2603:10a6:803:b1::15)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2878.20; Sun, 5 Apr
- 2020 19:22:52 +0000
+ 2020 19:22:59 +0000
 Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
  ([fe80::7cdd:4feb:a8b6:a6d2]) by VI1PR05MB3279.eurprd05.prod.outlook.com
  ([fe80::7cdd:4feb:a8b6:a6d2%7]) with mapi id 15.20.2878.018; Sun, 5 Apr 2020
- 19:22:51 +0000
+ 19:22:58 +0000
 From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
 To: devicetree@vger.kernel.org
-Subject: [RFC PATCH v2 0/6] Add PWM_NOFLAGS property flag
-Date: Sun,  5 Apr 2020 22:22:40 +0300
-Message-Id: <20200405192246.3741784-1-oleksandr.suvorov@toradex.com>
+Subject: [RFC PATCH v2 3/6] arm64: dts: pwm: replace flag 1 with
+ PWM_POLARITY_INVERTED
+Date: Sun,  5 Apr 2020 22:22:43 +0300
+Message-Id: <20200405192246.3741784-4-oleksandr.suvorov@toradex.com>
 X-Mailer: git-send-email 2.24.1
-X-ClientProxiedBy: GV0P278CA0018.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:710:26::28) To VI1PR05MB3279.eurprd05.prod.outlook.com
+In-Reply-To: <20200405192246.3741784-1-oleksandr.suvorov@toradex.com>
+References: <20200405192246.3741784-1-oleksandr.suvorov@toradex.com>
+X-ClientProxiedBy: GV0P278CA0046.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:710:29::15) To VI1PR05MB3279.eurprd05.prod.outlook.com
  (2603:10a6:802:1c::24)
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost (82.193.109.226) by
- GV0P278CA0018.CHEP278.PROD.OUTLOOK.COM (2603:10a6:710:26::28) with Microsoft
+ GV0P278CA0046.CHEP278.PROD.OUTLOOK.COM (2603:10a6:710:29::15) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2878.15 via Frontend Transport; Sun, 5 Apr 2020 19:22:51 +0000
+ 15.20.2878.15 via Frontend Transport; Sun, 5 Apr 2020 19:22:58 +0000
 X-Mailer: git-send-email 2.24.1
 X-Originating-IP: [82.193.109.226]
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 80898717-2240-49df-511c-08d7d996bbaf
-X-MS-TrafficTypeDiagnostic: VI1PR05MB5373:
+X-MS-Office365-Filtering-Correlation-Id: 60734f8b-7b30-414f-1e4f-08d7d996c00f
+X-MS-TrafficTypeDiagnostic: VI1PR05MB5373:|VI1PR05MB5373:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR05MB5373EBF367F3816B0A0B7115F9C50@VI1PR05MB5373.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Microsoft-Antispam-PRVS: <VI1PR05MB53738EEB362BF1F9A5B9E13CF9C50@VI1PR05MB5373.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4125;
 X-Forefront-PRVS: 03648EFF89
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VI1PR05MB3279.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:5; SRV:;
+ IPV:NLI; SFV:SPM; H:VI1PR05MB3279.eurprd05.prod.outlook.com; PTR:; CAT:OSPM;
  SFTY:;
- SFS:(10019020)(4636009)(346002)(376002)(366004)(396003)(39840400004)(136003)(54906003)(6486002)(55236004)(81156014)(2906002)(8676002)(508600001)(86362001)(52116002)(6496006)(26005)(81166006)(316002)(8936002)(36756003)(6666004)(956004)(66946007)(2616005)(7406005)(7366002)(7416002)(1076003)(186003)(16526019)(66556008)(66476007)(44832011)(6916009)(5660300002)(4326008);
- DIR:OUT; SFP:1102; 
+ SFS:(10019020)(4636009)(346002)(376002)(366004)(396003)(39840400004)(136003)(54906003)(6486002)(55236004)(81156014)(2906002)(8676002)(508600001)(86362001)(52116002)(6496006)(26005)(81166006)(316002)(8936002)(36756003)(6666004)(956004)(66946007)(2616005)(7416002)(1076003)(186003)(16526019)(66556008)(66476007)(44832011)(6916009)(5660300002)(4326008)(23200700001);
+ DIR:OUT; SFP:1501; 
 Received-SPF: None (protection.outlook.com: toradex.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: OhtQDLCwJRCaOiEvFpZvTB/BwVKulkfsJKt2ovRmPN/g7U0OBW6eOGlcxV25kXlNLEfhTO55QqbhzqQBHelXeHWNy2m0zsQet7uFvTD4YtzAxAxSJfUe20dEeFQXh0KtRMIxoI1tFwNwSQZ5d8OyShbteVMIPeaQI9JIi3+VggnCRIcUpCWxLuUDaIHKUFU2zPxeZsy/En8cA0u017TwkY8/O0PVQH1eQojUT1t83n0c37JRmBltngm9M5+RsPvSQTR3u8IEdRVXu46cXBkzN1SZ9scGdF0tgXqqOL0AA5VYpVo+Cl7yCnMM4+GEJFXfWz5ErdXl3YdB76aZPkGSnMeam9UjDfLrWhJn1e3ufHVH1HVDNh23yMrV+Ye0o8v3Z4gNLZjsf5zFotqF+s4FMd333rJBy0nTQJJxSEIGasGvs7LDMgT/gPJyPD0GpZdb
-X-MS-Exchange-AntiSpam-MessageData: MzUrI4Wd26RPuJbnJWsu7LYHUN+xtJ5G7U4E1p5eUqYt16Ez0h/OOvLPgQUrbJxp1wgzHWcWasBEqfPr6uWaFPIGLQvgEK6jeNNzmuxamW5FvEtrIHLWBQiXEgzbpFiPSs3bCZSumtRtyDXz7XLEmQ==
+X-Microsoft-Antispam-Message-Info: ZrgeAKfj9VjdcQTH47lH95FtpIrF6naza8D4bQutKa1cLqsgqqN/zkl1WCP1sujELglaon3tyRSgjH6bdlZsO8iPNicw/UC55qzeAzD/DZ9lx44731RKDghOEUvygQrPIuh5uQK/28+y7bDIzHvl3Hdb30QQvT/NUj0MrLY4xiDxV0Nwrw5+PNhOztvcCrPTF9VU9kF9pFmlx9LzQ+6PPELB5Sdbv8Sge2heEDt5iVFPW4E3ToSgXB/OiA9I/cSlbBC825NBAfpb1HpaYBNtOD9ZRKhv8rboILoLgWl7eES0w5JETZEiGYZFuaq1mQBDGgmakQUhvBUJopmN3nKCphxQEatRnrUL28IopaQqfD2vBzHK+hijxdMn1HALCD64t5ozArDEXUJ8nJ+8ObbogJrhLWk2Tz4H0G2bnaIRQDCSGdyuLJ3rjGaQ/gT5qkyl5oeFS2/vbuIk5TyGy/9rcWT3HU0cPqS/jkfF6bcX+WWA7QwKf5CCpd/hxg40i4n/YBtdEIk20htlDtXFqQbwJiJyiC+c4ZZG7kjVy70P907c68042SZ35m7yZXY8AoTVBfxu4BQylsA9WusK1FCiBbTXejuw9SL382HOyYJCbhtaxazh1u6wLO8tDP3W95vbERjoiFxUMP5P3wTlb4OI9srYbtfGNQIc/3B/Q8lxdgLKkLH9MgIFyYtuNch5dzkOwPtLN5F86AL/GcIYPFzdeZjemQBGfzUXU+SxxfFT8Jl+Mn9ogxdXCbe3L+Ogh3PZ7hwmWpq8Xp+XnlbElzzfxQ==
+X-MS-Exchange-AntiSpam-MessageData: vNZVWWOoJybCB/djMZ4Tm1Ey+YYyNEj/eLDzZJjwqihfyQ9KtU4UI/NKyNMJo4fapF8uTs5Ixjrs0Fx2LxJpH238MHueIyixKo9pUCvbwsLJhKu3uDJSedvAQ0/75oxg4lURFsq48gfDbNBEGvcxDQ==
 X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80898717-2240-49df-511c-08d7d996bbaf
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Apr 2020 19:22:51.8342 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60734f8b-7b30-414f-1e4f-08d7d996c00f
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Apr 2020 19:22:58.9341 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dFsPxf7Zp8Rnb2am3DSo0yyas9Dme9dyxX6gaV0ZTRfqdjjltDGvfr/Jl9+MXiFJoAjuRwYb2uR3q3ih8/pqnIrl3xa0GdfKFSM0a+q6uW8=
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6OzTja0fYmNiI/T3J1P0udUwhIjIgbNMUySXokrkPupkspV9jQQRKvKca4lPLVgbhggiFv1JBJfqiourdnkobanHMywnvsc7WnfSKmqxJ9o=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5373
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_122304_758101_5B9A5E08 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20200405_122313_079882_59E107D1 
+X-CRM114-Status: UNSURE (   7.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.133 listed in list.dnswl.org]
+ no trust [52.101.131.72 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [52.101.131.72 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -124,186 +130,211 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Alexis Ballier <aballier@gentoo.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, Sekhar Nori <nsekhar@ti.com>,
- Kever Yang <kever.yang@rock-chips.com>, Stefan Agner <stefan@agner.ch>,
- linux-kernel@vger.kernel.org,
+Cc: Alexis Ballier <aballier@gentoo.org>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Kever Yang <kever.yang@rock-chips.com>,
  Oleksandr Suvorov <oleksandr.suvorov@toradex.com>, Soeren Moch <smoch@web.de>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Fabio Estevam <festevam@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-samsung-soc@vger.kernel.org,
- Tobias Schramm <t.schramm@manjaro.org>, linux-rockchip@lists.infradead.org,
+ Hugh Cole-Baker <sigmaris@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
+ Tobias Schramm <t.schramm@manjaro.org>,
  Katsuhiro Suzuki <katsuhiro@katsuster.net>,
- Hugh Cole-Baker <sigmaris@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Magnus Damm <magnus.damm@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Markus Reichl <m.reichl@fivetechno.de>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Markus Reichl <m.reichl@fivetechno.de>, linux-rockchip@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>, linux-pwm@vger.kernel.org,
- David Lechner <david@lechnology.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Nick Xie <nick@khadas.com>, Maxime Ripard <mripard@kernel.org>,
+ Vicente Bergas <vicencb@gmail.com>,
  Philippe Schenker <philippe.schenker@toradex.com>,
  Paul Barker <pbarker@konsulko.com>, Rob Herring <robh+dt@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Akash Gajjar <akash@openedev.com>,
- linux-amlogic@lists.infradead.org, Johan Jonker <jbx6244@gmail.com>,
- linux-omap@vger.kernel.org, Ezequiel Garcia <ezequiel@collabora.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>, Johan Jonker <jbx6244@gmail.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
  =?UTF-8?q?Andrius=20=C5=A0tikonas?= <andrius@stikonas.eu>,
- Igor Opaniuk <igor.opaniuk@toradex.com>, Vicente Bergas <vicencb@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, Nicolas Ferre <nicolas.ferre@microchip.com>,
- "Matwey V. Kornilov" <matwey@sai.msu.ru>, linux-renesas-soc@vger.kernel.org,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, Peter Rosin <peda@axentia.se>,
- Vivek Unune <npcomplete13@gmail.com>
+ Igor Opaniuk <igor.opaniuk@toradex.com>, linux-kernel@vger.kernel.org,
+ "Matwey V. Kornilov" <matwey@sai.msu.ru>, Andy Yan <andy.yan@rock-chips.com>,
+ Robin Murphy <robin.murphy@arm.com>, Vivek Unune <npcomplete13@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Flag '1' in the 3rd cell of the "pwms" property means the inverted
+polarity.
 
-This patchset introduces the PWM_NOFLAGS flag instead of '0' raw value
-in the optional cell "flags" of "pwms" property, if it is required to be
-used but don't need to set any flag.
+This patch converts '1' flag into macro PWM_POLARITY_INVERTED.
 
-Also, replace '1' raw value of "flags" cell with the existing macro
-PWM_POLARITY_INVERTED where it has not been done before.
+Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+---
 
-Changes in v2:
-- remove the driver part of patchset as dangerous and senseless.
-- Use PWM_NOFLAGS instead of PWM_POLARITY_NORMAL to avoid possible
-  conflict with enum pwm_polarity in <linux/pwm.h>. Also, this name
-  reflects the sense of this value more precisely.
-- add the example of PWM_NOFLAGS usage;
+Changes in v2: None
 
-Oleksandr Suvorov (6):
-  dt-bindings: pwm: add PWM_NOFLAGS definition
-  dt-bindings: pwm: document the PWM no-flag
-  arm64: dts: pwm: replace flag 1 with PWM_POLARITY_INVERTED
-  arm64: dts: pwm: replace flag 0 with PWM_NOFLAGS
-  arm: dts: pwm: replace flag 1 with PWM_POLARITY_INVERTED
-  arm: dts: pwm: replace flag 0 with PWM_NOFLAGS
+ arch/arm64/boot/dts/rockchip/rk3308-evb.dts          | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts       | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts   | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts    | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi      | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts    | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi   | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi    | 2 +-
+ 12 files changed, 12 insertions(+), 12 deletions(-)
 
- Documentation/devicetree/bindings/pwm/pwm.txt         | 11 ++++++++++-
- arch/arm/boot/dts/am335x-cm-t335.dts                  |  2 +-
- arch/arm/boot/dts/am335x-evm.dts                      |  2 +-
- arch/arm/boot/dts/am3517-evm.dts                      |  2 +-
- arch/arm/boot/dts/at91-dvk_su60_somc_lcm.dtsi         |  2 +-
- arch/arm/boot/dts/at91-kizbox2-common.dtsi            |  6 +++---
- arch/arm/boot/dts/at91-kizbox3_common.dtsi            |  8 ++++----
- arch/arm/boot/dts/at91-kizboxmini-common.dtsi         |  6 +++---
- arch/arm/boot/dts/at91-nattis-2-natte-2.dts           |  2 +-
- arch/arm/boot/dts/at91-sama5d4_ma5d4evk.dts           |  2 +-
- arch/arm/boot/dts/at91sam9n12ek.dts                   |  2 +-
- arch/arm/boot/dts/at91sam9x5dm.dtsi                   |  2 +-
- arch/arm/boot/dts/berlin2cd-google-chromecast.dts     |  4 ++--
- arch/arm/boot/dts/da850-evm.dts                       |  2 +-
- arch/arm/boot/dts/da850-lego-ev3.dts                  |  4 ++--
- arch/arm/boot/dts/exynos4412-midas.dtsi               |  2 +-
- arch/arm/boot/dts/exynos4412-odroidu3.dts             |  2 +-
- arch/arm/boot/dts/exynos5250-snow-common.dtsi         |  2 +-
- arch/arm/boot/dts/exynos5410-odroidxu.dts             |  2 +-
- arch/arm/boot/dts/exynos5420-peach-pit.dts            |  2 +-
- arch/arm/boot/dts/exynos5422-odroidhc1.dts            |  2 +-
- arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi    |  2 +-
- arch/arm/boot/dts/exynos5422-odroidxu4.dts            |  2 +-
- arch/arm/boot/dts/exynos54xx-odroidxu-leds.dtsi       |  4 ++--
- arch/arm/boot/dts/exynos5800-peach-pi.dts             |  2 +-
- arch/arm/boot/dts/imx53-tx53-x13x.dts                 |  5 +++--
- arch/arm/boot/dts/imx6dl-tx6dl-comtft.dts             |  2 +-
- arch/arm/boot/dts/imx6q-display5.dtsi                 |  2 +-
- arch/arm/boot/dts/imx6q-tx6q-1010-comtft.dts          |  2 +-
- arch/arm/boot/dts/imx6q-tx6q-1020-comtft.dts          |  2 +-
- arch/arm/boot/dts/imx6qdl-tx6-lvds.dtsi               |  4 ++--
- arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi        |  4 +++-
- arch/arm/boot/dts/imx7-colibri.dtsi                   |  4 +++-
- arch/arm/boot/dts/imx7d-nitrogen7.dts                 |  3 ++-
- arch/arm/boot/dts/imx7d-pico.dtsi                     |  3 ++-
- arch/arm/boot/dts/imx7d-sdb.dts                       |  3 ++-
- arch/arm/boot/dts/imx7ulp-evk.dts                     |  3 ++-
- arch/arm/boot/dts/iwg20d-q7-common.dtsi               |  2 +-
- arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi      |  2 +-
- arch/arm/boot/dts/meson8b-ec100.dts                   |  4 ++--
- arch/arm/boot/dts/meson8b-mxq.dts                     |  4 ++--
- arch/arm/boot/dts/meson8b-odroidc1.dts                |  4 ++--
- arch/arm/boot/dts/motorola-mapphone-common.dtsi       |  3 ++-
- arch/arm/boot/dts/omap3-gta04.dtsi                    |  2 +-
- arch/arm/boot/dts/omap3-n900.dts                      |  2 +-
- arch/arm/boot/dts/rk3229-evb.dts                      |  4 ++--
- arch/arm/boot/dts/rk3229-xms6.dts                     |  4 ++--
- arch/arm/boot/dts/rk3288-veyron-edp.dtsi              |  2 +-
- arch/arm/boot/dts/rk3288-veyron.dtsi                  |  2 +-
- arch/arm/boot/dts/rv1108-evb.dts                      |  2 +-
- arch/arm/boot/dts/s3c6410-mini6410.dts                |  2 +-
- arch/arm/boot/dts/s5pv210-aries.dtsi                  |  2 +-
- arch/arm/boot/dts/s5pv210-smdkv210.dts                |  2 +-
- arch/arm/boot/dts/sun5i-gr8-evb.dts                   |  2 +-
- arch/arm/boot/dts/vf-colibri.dtsi                     |  4 +++-
- arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts |  2 +-
- arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts  |  2 +-
- arch/arm64/boot/dts/amlogic/meson-axg-s400.dts        |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-axg.dtsi            |  1 +
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi     |  1 +
- arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts     |  5 +++--
- arch/arm64/boot/dts/amlogic/meson-g12a-u200.dts       |  2 +-
- arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts    |  5 +++--
- .../boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi      |  4 ++--
- arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts  |  4 ++--
- arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts  |  7 ++++---
- arch/arm64/boot/dts/amlogic/meson-gx-p23x-q20x.dtsi   |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi             |  1 +
- arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts  |  3 ++-
- .../arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi      |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi  |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi     |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxl-s805x-p241.dts  |  3 ++-
- .../dts/amlogic/meson-gxl-s905x-hwacom-amazetv.dts    |  3 ++-
- .../boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts   |  2 +-
- .../boot/dts/amlogic/meson-gxl-s905x-nexbox-a95x.dts  |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxl-s905x-p212.dtsi |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts |  5 +++--
- arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts    |  3 ++-
- arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi    |  4 +++-
- .../arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts |  2 +-
- arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts      |  7 ++++---
- arch/arm64/boot/dts/exynos/exynos5433-tm2-common.dtsi |  3 ++-
- arch/arm64/boot/dts/rockchip/px30-evb.dts             |  2 +-
- arch/arm64/boot/dts/rockchip/px30.dtsi                |  1 +
- arch/arm64/boot/dts/rockchip/rk3308-evb.dts           |  2 +-
- arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts        |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3308.dtsi              |  1 +
- arch/arm64/boot/dts/rockchip/rk3399-evb.dts           |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3399-firefly.dts       |  4 ++--
- .../boot/dts/rockchip/rk3399-gru-chromebook.dtsi      |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi  |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3399-gru.dtsi          |  6 +++---
- arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts    |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi  |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts     |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts     |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts      |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts  |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi       |  4 ++--
- arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts     |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi    |  4 ++--
- .../boot/dts/rockchip/rk3399-sapphire-excavator.dts   |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi     |  2 +-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi              |  1 +
- include/dt-bindings/pwm/pwm.h                         |  1 +
- 107 files changed, 183 insertions(+), 135 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-evb.dts b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+index 9b4f855ea5d4..8a198676cef3 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+@@ -155,7 +155,7 @@ vcc5v0_host: vcc5v0-host {
+ 
+ 	vdd_core: vdd-core {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm0 0 5000 1>;
++		pwms = <&pwm0 0 5000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_core";
+ 		regulator-min-microvolt = <827000>;
+ 		regulator-max-microvolt = <1340000>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+index aa256350b18f..6ef851e7e16a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+@@ -96,7 +96,7 @@ vcc_sd: vcc-sd {
+ 
+ 	vdd_core: vdd-core {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm0 0 5000 1>;
++		pwms = <&pwm0 0 5000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_core";
+ 		regulator-min-microvolt = <827000>;
+ 		regulator-max-microvolt = <1340000>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+index d63faf38cc81..5617a441e141 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+@@ -202,7 +202,7 @@ vcc_sys: vcc-sys {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+index aee484a05181..5c590f99d80e 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+@@ -115,7 +115,7 @@ vcc5v0_usb: vcc5v0-usb {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		pwm-supply = <&vcc_sys>;
+ 		regulator-name = "vdd_log";
+ 		regulator-min-microvolt = <800000>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+index e87a04477440..47890757e866 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+@@ -73,7 +73,7 @@ vcc5v0_host: vcc5v0-host-regulator {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+index 73be38a53796..d6c069c6e195 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+@@ -95,7 +95,7 @@ vcc5v0_sys: vcc5v0-sys {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+index f9f7246d4d2f..bf9976346c0b 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+@@ -158,7 +158,7 @@ vcc_sys: vcc-sys {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+index 5ea281b55fe2..5884968cd5b4 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
+@@ -228,7 +228,7 @@ regulator-state-mem {
+ 	/* RK3399 logic supply */
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index 9f225e9c3d54..d9dad0f45564 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -191,7 +191,7 @@ vcc_sys: vcc-sys {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+index 3923ec01ef66..5e4f535ef607 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+@@ -122,7 +122,7 @@ regulator-state-mem {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+index 9bca25801260..5eedeae21189 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+@@ -163,7 +163,7 @@ vcc5v0_usb: vcc5v0-usb {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+index 1bc1579674e5..9391110b788f 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+@@ -127,7 +127,7 @@ vcc_sys: vcc-sys {
+ 
+ 	vdd_log: vdd-log {
+ 		compatible = "pwm-regulator";
+-		pwms = <&pwm2 0 25000 1>;
++		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
+ 		regulator-name = "vdd_log";
+ 		regulator-always-on;
+ 		regulator-boot-on;
 -- 
 2.24.1
 
