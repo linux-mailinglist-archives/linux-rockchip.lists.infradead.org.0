@@ -2,53 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99F5E19EE6E
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 00:44:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6461A19EE78
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 01:00:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/cWiLC29hsnieDKBZM+Fm9bRuQGilQ2qZssJ/Of2hc=; b=HZw58B9QksDW7n
-	cdLnpH0gOPPP7lVjElVayXu1ZH5I+WQtErs77jQZTKbG91IlSyII79zNKcw3OlIfgRn/i7Nkncrh4
-	bpcQuLpY3N7isuujxdvC+Jbe2ZzdvK24/D5KSCxtB8eunV2C8sH6KqaUX/DV0XUbfIR85FXFjM8f2
-	GFCfruStjSgMZOco/3p/zeUWQ/rdmAvFArvCgke7mtghP1Qtcw2Tl9Fvsf/Ii30kJeeLvHLG6Zmi2
-	bZUGtykI1TFUUHgQ6tV564b4aD8OtIbd1dILvk55mwdJrSW1OlSB7s1wdOQlq8Uvlxkrg21U89RFS
-	Vab9OEgK10jV1ArQM/aw==;
+	List-Owner; bh=E0I0sA33dkqpiq8zfSRsi1sCu1uopcG/WW6J45Q0u90=; b=nWH1mg7FVCAQhD
+	ZZCqiaFF8suutNp3L5FO1kEpa8ADzCWJo+dpz34CG+TFWejngCHWDw1YovayPTlDBnqubs60tglvB
+	T+F7BQj5tcOgnFvfL0sQ4+Q2ouLOKNHwAKaN45hQMDcidsaWAejKCq3jTbwpVjofTx+ZHDKmQnEyR
+	Bc2oG0Af76uB3xCHZbZO3GRkXARJgfzAV05y7pAbyPgraU9QXLdfu/IV8hLXGrJQyxWJHCL9cqnKl
+	GPcbgkDEc4qJRSo7hwtWAoM3HPvkyPMTcPi7FfpGnTvQJYtGGeWx2kd0kJ4nCRlFqjCvhpD1DmckH
+	07iEJYXAOwWAuuijk5iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLE02-0007Ug-89; Sun, 05 Apr 2020 22:44:18 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jLEG6-0002DO-AL; Sun, 05 Apr 2020 23:00:54 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLDzy-0007Tg-EU
- for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 22:44:15 +0000
+ id 1jLEG2-0002CT-CV
+ for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 23:00:51 +0000
 Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
  [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id B02C8312;
- Mon,  6 Apr 2020 00:44:06 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 73B45312;
+ Mon,  6 Apr 2020 01:00:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1586126647;
- bh=sz6sqvto6+1dBFatlRj/VFmY3Pq8kv/LPs6U42sWQ74=;
+ s=mail; t=1586127646;
+ bh=1nm8g4uUajHc8yxwMII80sm9goTSuR4xERYLGYq2eas=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TJrr43fzbJFp83xPbtD+U9PhBk5bKqIW89NC0wNh0CN6Lck4mt3UyObbr1hzAOGfz
- +Eb+Pat0IUb2xoQXpG7pEhXaD86YS+T6B2BwgTN9LTjzx2phoSINXwZmYGRBypf4Tx
- KIXd6OImhD3g0mEHWZQkz9rj88mnb6uRFaO8cMv8=
-Date: Mon, 6 Apr 2020 01:43:57 +0300
+ b=J1lZPDIMsu5G/T1p0GvHo0jbk1SM3WHZVlUZu9tbgLv5tJGLVrPrCi8GfOlyNa1Ix
+ cgcJBvbCdibWv62ZT7QY+trmvMymKSi0e/uEuRMogyEZDrFmQnvvA4mYVj4AyP0wbb
+ Zz1nqSgGrwwG9WUzAG89x5ifGu73vIwTqHXJcO/U=
+Date: Mon, 6 Apr 2020 02:00:37 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v2 5/5] media: staging: rkisp1: cap: remove unsupported
- formats
-Message-ID: <20200405224357.GR5846@pendragon.ideasonboard.com>
-References: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
- <20200402190419.15155-6-dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH] media: v4l2-common: change the pixel_enc of
+ V4L2_PIX_FMT_GREY to YUV
+Message-ID: <20200405230037.GT5846@pendragon.ideasonboard.com>
+References: <20200323173618.14058-1-dafna.hirschfeld@collabora.com>
+ <9304066ca10c9ccdf8a5fd88866425a5f45a330a.camel@collabora.com>
+ <ef6fd691-c8ca-9408-76b4-e47aca0fc9b4@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200402190419.15155-6-dafna.hirschfeld@collabora.com>
+In-Reply-To: <ef6fd691-c8ca-9408-76b4-e47aca0fc9b4@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_154414_640848_402E4AF0 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20200405_160050_573908_9BA2073E 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -75,9 +75,10 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: dafna3@gmail.com, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
- helen.koike@collabora.com, kernel@collabora.com, ezequiel@collabora.com,
- linux-media@vger.kernel.org
+Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ sakari.ailus@linux.intel.com, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
@@ -87,64 +88,57 @@ Hi Dafna,
 
 Thank you for the patch.
 
-On Thu, Apr 02, 2020 at 09:04:19PM +0200, Dafna Hirschfeld wrote:
-> For Ycbcr packed formats only YUYV can be supported by
-> the driver. This patch removes the other formats.
-
-The RKISP1_CIF_MI_BYTE_SWAP bit could possibly help achieving other YUV
-orders, but as far as I can tell, it would affect both the main path and
-the self path, so it wouldn't be very convenient. At a quick glance I
-haven't found a way to support those formats, but just to make sure,
-have you double-checked that the nv21_self and nv21_main bits of
-MI_XTD_FORMAT_CTRL don't also affect packed mode ? If they don't,
+On Tue, Mar 31, 2020 at 09:20:49AM +0200, Dafna Hirschfeld wrote:
+> On 30.03.20 20:22, Ezequiel Garcia wrote:
+> > Hi Dafna,
+> > 
+> > Nice catch, thanks a lot.
+>
+> Hi, It was actually Helen's idea,
+> 
+> > On Mon, 2020-03-23 at 18:36 +0100, Dafna Hirschfeld wrote:
+> >> V4L2_PIX_FMT_GREY format is Ycbcr format without
+> > 
+> > A nitpick s/Ycbcr/YCbCr. Maybe Hans can amend
+> > this when applying.
+> > 
+> > It's no big deal anyway.
+> > 
+> > Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > 
+> >> the color data, therefore its pixel_enc should
+> >> set to V4L2_PIXEL_ENC_YUV.
+> >>
+> >> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>
+> Suggested-by: Helen Koike <helen.koike@collabora.com>
 
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> Acked-by: Helen Koike <helen.koike@collabora.com>
-> ---
->  drivers/staging/media/rkisp1/rkisp1-capture.c | 21 -------------------
->  1 file changed, 21 deletions(-)
-> 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> index 2d274e8f565b..076335193f40 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> @@ -98,15 +98,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_mp_fmts[] = {
->  		.fmt_type = RKISP1_FMT_YUV,
->  		.uv_swap = 0,
->  		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
-> -	}, {
-> -		.fourcc = V4L2_PIX_FMT_YVYU,
-> -		.fmt_type = RKISP1_FMT_YUV,
-> -		.uv_swap = 1,
-> -		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
-> -	}, {
-> -		.fourcc = V4L2_PIX_FMT_VYUY,
-> -		.fmt_type = RKISP1_FMT_YUV,
-> -		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
->  	}, {
->  		.fourcc = V4L2_PIX_FMT_YUV422P,
->  		.fmt_type = RKISP1_FMT_YUV,
-> @@ -234,18 +225,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
->  		.uv_swap = 0,
->  		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
->  		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
-> -	}, {
-> -		.fourcc = V4L2_PIX_FMT_YVYU,
-> -		.fmt_type = RKISP1_FMT_YUV,
-> -		.uv_swap = 1,
-> -		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
-> -		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
-> -	}, {
-> -		.fourcc = V4L2_PIX_FMT_VYUY,
-> -		.fmt_type = RKISP1_FMT_YUV,
-> -		.uv_swap = 1,
-> -		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
-> -		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
->  	}, {
->  		.fourcc = V4L2_PIX_FMT_YUV422P,
->  		.fmt_type = RKISP1_FMT_YUV,
+> >> ---
+> >>   drivers/media/v4l2-core/v4l2-common.c | 2 +-
+> >>   1 file changed, 1 insertion(+), 1 deletion(-)
+> >>
+> >> diff --git a/drivers/media/v4l2-core/v4l2-common.c b/drivers/media/v4l2-core/v4l2-common.c
+> >> index d0e5ebc736f9..054f2e607dff 100644
+> >> --- a/drivers/media/v4l2-core/v4l2-common.c
+> >> +++ b/drivers/media/v4l2-core/v4l2-common.c
+> >> @@ -250,7 +250,6 @@ const struct v4l2_format_info *v4l2_format_info(u32 format)
+> >>   		{ .format = V4L2_PIX_FMT_RGBA32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   		{ .format = V4L2_PIX_FMT_ABGR32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   		{ .format = V4L2_PIX_FMT_BGRA32,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 4, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >> -		{ .format = V4L2_PIX_FMT_GREY,    .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 1, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   		{ .format = V4L2_PIX_FMT_RGB565,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   		{ .format = V4L2_PIX_FMT_RGB555,  .pixel_enc = V4L2_PIXEL_ENC_RGB, .mem_planes = 1, .comp_planes = 1, .bpp = { 2, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   
+> >> @@ -274,6 +273,7 @@ const struct v4l2_format_info *v4l2_format_info(u32 format)
+> >>   		{ .format = V4L2_PIX_FMT_YUV420,  .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv = 2, .vdiv = 2 },
+> >>   		{ .format = V4L2_PIX_FMT_YVU420,  .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv = 2, .vdiv = 2 },
+> >>   		{ .format = V4L2_PIX_FMT_YUV422P, .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv = 2, .vdiv = 1 },
+> >> +		{ .format = V4L2_PIX_FMT_GREY,    .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 1, .comp_planes = 1, .bpp = { 1, 0, 0, 0 }, .hdiv = 1, .vdiv = 1 },
+> >>   
+> >>   		/* YUV planar formats, non contiguous variant */
+> >>   		{ .format = V4L2_PIX_FMT_YUV420M, .pixel_enc = V4L2_PIXEL_ENC_YUV, .mem_planes = 3, .comp_planes = 3, .bpp = { 1, 1, 1, 0 }, .hdiv = 2, .vdiv = 2 },
 
 -- 
 Regards,
