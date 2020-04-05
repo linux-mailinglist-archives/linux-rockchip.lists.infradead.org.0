@@ -2,85 +2,144 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5956A19EBDE
-	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 16:07:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5DBA19ECBF
+	for <lists+linux-rockchip@lfdr.de>; Sun,  5 Apr 2020 18:51:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DFMQ9i+YUjpV/YU9AJWZ/1NOYZXkKvmaRrA1GXDxfrQ=; b=cADWSOfGPtba60
-	K9h7vBug0zIQD5IWltul3mbEB1E8aYU7nIGQC+Y5XqDmJCExCx5TZp/N/K1pyxb/AOiWMAFEjZMDL
-	ZZo8RMFqaX810qPx9btEJ59vAVdUvwZngNbMVjuW6CU5X6VIQCKs99hjIUL8hTYpmpkCMMjwPy1fS
-	lYlOpzaUrWJ4jkWPmAN1dUf3DRgOSwaV3pcw3TckMWY7OzfwUNMrII1mt655tH4QjUEjztEQk1bzp
-	waXGK6RwGfThwc3wjvhpJXt/vojOeuzBgA0HvvwU2oi7vuSiAOgSIr9l/RptNwPeW3YotIXLAO+lg
-	7lLezIv+DKIXO6hWWIhw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Kz1vxNo/hi+0bKJ/6UX7tZ0VqHZYPl6e7fpHZvFkXEA=; b=i17HCKKSrnEzLK
+	BRjsiK7st7yKf8HALcovI1+4iLZ2jIyh6wcq+ib25mbH1aKB502AgWMRkTvEpvfD1hfdw3xldUidC
+	zBRHP6s3NKjn+6QDPgxT9rsLqHUKqZAlDEXrN/Y0ZR4QQP1CTuNzTDAhPtpjHGM+zsk/pUt7z1Htm
+	4vI7YGl0ijpq7TnICszwi5LCGRgiexYrd5+5+bQBSXCbs9dZRvLhqLqhJUgi0JFXG1UN+nuPaAeqS
+	6viRvibuytnx9Oz1va1KkeNqpJhvwXQqsHTqNNewrGrNkM4yYiSwd/pzmvdqvXrCDq2M8y10VlF/t
+	PWbJ22OyXcTVa3zV1sTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jL5vt-0003Jt-SR; Sun, 05 Apr 2020 14:07:29 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jL8Up-000091-Ri; Sun, 05 Apr 2020 16:51:43 +0000
+Received: from mout.web.de ([212.227.17.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jL5vq-0003JL-9B
- for linux-rockchip@lists.infradead.org; Sun, 05 Apr 2020 14:07:27 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id kx8so5274069pjb.5
- for <linux-rockchip@lists.infradead.org>; Sun, 05 Apr 2020 07:07:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DaGUMjiO33yRPedgPfXTpsd1WYQQwnPU02b1zLvQ1I8=;
- b=X/UxUBI5xfYrzIgDb83FVMlbHZLntE9UrQTTG2bboWU76/yoaKgYibC+lhEjTSn59v
- jal0ztrYnnslRxLGYVG0CkOgZpBk8V66uw/E1aGXINW0G0fckgHV/GO6/W9bDyQ38/eH
- l+PEfZcIM38Vi0cmSya8eFCFi4bHeoF9kBQOMTqg2gOTD6Xw7uh+t/V/wJEHXw+sEL18
- ME0PAsfRNKcDqf3yM4npYheUbcy/1prBkzeeXWuvRQeRScR6hgXwQoRLXisaXUCfQUTR
- td5FJqFE8eKqtLqs9wbtll+GCDnveXi+HRocV2JyQO4euQ2lxD4gQ2GlyGLOiXQHnMeu
- KMtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DaGUMjiO33yRPedgPfXTpsd1WYQQwnPU02b1zLvQ1I8=;
- b=BQjmTvLQm7h3mo6ux8G5fTKPy06tZ1Lt2ijDy1/TRil5lb1HeJ/Anx51ZASJgtEmI/
- KYdj6N4PdTKiV0SSRSZXKxCFuWqAmEWINWQn5NuhhyDA5eMVxNTNfY7ekAuYLWWaxnTS
- 2Dw+n3O481uLVIPdOD1a5cnBIg4mvrFEj0GZBAJCLWs1et2lHpqmWfnDEX9zBSLQtXhB
- J/3pzjjl0GRUiFf80eafEXBY1FfJ/bhfyOB98+/wJli5/90XsECahCj88exSqmNxfo0q
- IB3z16WsIWKs8STkc/AUxtRSoqtSgBBLKX9gXOAzVajPv0d1G0NKu9sgFdNMwxCjqF+S
- wKiA==
-X-Gm-Message-State: AGi0Pua5xtBy0WXc6PEF1Uq9JHt48vcf2UBjlxz907CK6VtdZ0uEA0s4
- cHzZCM1J5QjbBuR3F/KhVzkG
-X-Google-Smtp-Source: APiQypJRd2r5o+vQ9VXXxlOCwBCkGTttGJzznw1DoFR3pe9htSFjBkvTlOjxOpMhysVIgrxzGulZyA==
-X-Received: by 2002:a17:902:d70d:: with SMTP id
- w13mr16897787ply.322.1586095645418; 
- Sun, 05 Apr 2020 07:07:25 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2409:4072:6e83:b2ab:75aa:fbdc:e9da:9d96])
- by smtp.gmail.com with ESMTPSA id k1sm951730pgh.72.2020.04.05.07.07.19
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 05 Apr 2020 07:07:24 -0700 (PDT)
-Date: Sun, 5 Apr 2020 19:37:16 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v3 4/5] rockchip: Enable HDMI output on rk3399 board w/
- HDMI
-Message-ID: <20200405140716.GS8912@Mani-XPS-13-9360>
-References: <20200402114125.2501-1-jagan@amarulasolutions.com>
- <20200402114125.2501-5-jagan@amarulasolutions.com>
+ id 1jL8Uh-0008UE-GN; Sun, 05 Apr 2020 16:51:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1586105441;
+ bh=0YkSt5BcPX9ZJY8/TNdXEE7Js5ClyUIYnLeTWxyJu/Y=;
+ h=X-UI-Sender-Class:To:From:Subject:Cc:Date;
+ b=H6dpbL4NJlpbw1+XZb+6L/eGOman52ihDO/AIarLK0MtETnB8q5WFWzHHImwj0WSk
+ Ih26agawpGTRQFDoKCZ14NYfjK4xK31f+jaGdkWOuettOhLJYYi7gA2eRt1EfHaKqU
+ pNeq29ypL2mvTSX/Jbtos5WFq/+ela1HeknA6nbA=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.3] ([93.131.99.70]) by smtp.web.de (mrweb103
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0MPHKO-1jPYKf28rg-004Vck; Sun, 05
+ Apr 2020 18:50:41 +0200
+To: linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-omap@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Allison Randal <allison@lohutok.net>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Clark Williams <williams@redhat.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>, Keerthy
+ <j-keerthy@ti.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Pascal Paillet <p.paillet@st.com>,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Zhang Rui <rui.zhang@intel.com>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] thermal: Delete an error message in four functions
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ mQINBFg2+xABEADBJW2hoUoFXVFWTeKbqqif8VjszdMkriilx90WB5c0ddWQX14h6w5bT/A8
+ +v43YoGpDNyhgA0w9CEhuwfZrE91GocMtjLO67TAc2i2nxMc/FJRDI0OemO4VJ9RwID6ltwt
+ mpVJgXGKkNJ1ey+QOXouzlErVvE2fRh+KXXN1Q7fSmTJlAW9XJYHS3BDHb0uRpymRSX3O+E2
+ lA87C7R8qAigPDZi6Z7UmwIA83ZMKXQ5stA0lhPyYgQcM7fh7V4ZYhnR0I5/qkUoxKpqaYLp
+ YHBczVP+Zx/zHOM0KQphOMbU7X3c1pmMruoe6ti9uZzqZSLsF+NKXFEPBS665tQr66HJvZvY
+ GMDlntZFAZ6xQvCC1r3MGoxEC1tuEa24vPCC9RZ9wk2sY5Csbva0WwYv3WKRZZBv8eIhGMxs
+ rcpeGShRFyZ/0BYO53wZAPV1pEhGLLxd8eLN/nEWjJE0ejakPC1H/mt5F+yQBJAzz9JzbToU
+ 5jKLu0SugNI18MspJut8AiA1M44CIWrNHXvWsQ+nnBKHDHHYZu7MoXlOmB32ndsfPthR3GSv
+ jN7YD4Ad724H8fhRijmC1+RpuSce7w2JLj5cYj4MlccmNb8YUxsE8brY2WkXQYS8Ivse39MX
+ BE66MQN0r5DQ6oqgoJ4gHIVBUv/ZwgcmUNS5gQkNCFA0dWXznQARAQABtCZNYXJrdXMgRWxm
+ cmluZyA8TWFya3VzLkVsZnJpbmdAd2ViLmRlPokCVAQTAQgAPhYhBHDP0hzibeXjwQ/ITuU9
+ Figxg9azBQJYNvsQAhsjBQkJZgGABQsJCAcCBhUICQoLAgQWAgMBAh4BAheAAAoJEOU9Figx
+ g9azcyMP/iVihZkZ4VyH3/wlV3nRiXvSreqg+pGPI3c8J6DjP9zvz7QHN35zWM++1yNek7Ar
+ OVXwuKBo18ASlYzZPTFJZwQQdkZSV+atwIzG3US50ZZ4p7VyUuDuQQVVqFlaf6qZOkwHSnk+
+ CeGxlDz1POSHY17VbJG2CzPuqMfgBtqIU1dODFLpFq4oIAwEOG6fxRa59qbsTLXxyw+PzRaR
+ LIjVOit28raM83Efk07JKow8URb4u1n7k9RGAcnsM5/WMLRbDYjWTx0lJ2WO9zYwPgRykhn2
+ sOyJVXk9xVESGTwEPbTtfHM+4x0n0gC6GzfTMvwvZ9G6xoM0S4/+lgbaaa9t5tT/PrsvJiob
+ kfqDrPbmSwr2G5mHnSM9M7B+w8odjmQFOwAjfcxoVIHxC4Cl/GAAKsX3KNKTspCHR0Yag78w
+ i8duH/eEd4tB8twcqCi3aCgWoIrhjNS0myusmuA89kAWFFW5z26qNCOefovCx8drdMXQfMYv
+ g5lRk821ZCNBosfRUvcMXoY6lTwHLIDrEfkJQtjxfdTlWQdwr0mM5ye7vd83AManSQwutgpI
+ q+wE8CNY2VN9xAlE7OhcmWXlnAw3MJLW863SXdGlnkA3N+U4BoKQSIToGuXARQ14IMNvfeKX
+ NphLPpUUnUNdfxAHu/S3tPTc/E/oePbHo794dnEm57LuuQINBFg2+xABEADZg/T+4o5qj4cw
+ nd0G5pFy7ACxk28mSrLuva9tyzqPgRZ2bdPiwNXJUvBg1es2u81urekeUvGvnERB/TKekp25
+ 4wU3I2lEhIXj5NVdLc6eU5czZQs4YEZbu1U5iqhhZmKhlLrhLlZv2whLOXRlLwi4jAzXIZAu
+ 76mT813jbczl2dwxFxcT8XRzk9+dwzNTdOg75683uinMgskiiul+dzd6sumdOhRZR7YBT+xC
+ wzfykOgBKnzfFscMwKR0iuHNB+VdEnZw80XGZi4N1ku81DHxmo2HG3icg7CwO1ih2jx8ik0r
+ riIyMhJrTXgR1hF6kQnX7p2mXe6K0s8tQFK0ZZmYpZuGYYsV05OvU8yqrRVL/GYvy4Xgplm3
+ DuMuC7/A9/BfmxZVEPAS1gW6QQ8vSO4zf60zREKoSNYeiv+tURM2KOEj8tCMZN3k3sNASfoG
+ fMvTvOjT0yzMbJsI1jwLwy5uA2JVdSLoWzBD8awZ2X/eCU9YDZeGuWmxzIHvkuMj8FfX8cK/
+ 2m437UA877eqmcgiEy/3B7XeHUipOL83gjfq4ETzVmxVswkVvZvR6j2blQVr+MhCZPq83Ota
+ xNB7QptPxJuNRZ49gtT6uQkyGI+2daXqkj/Mot5tKxNKtM1Vbr/3b+AEMA7qLz7QjhgGJcie
+ qp4b0gELjY1Oe9dBAXMiDwARAQABiQI8BBgBCAAmFiEEcM/SHOJt5ePBD8hO5T0WKDGD1rMF
+ Alg2+xACGwwFCQlmAYAACgkQ5T0WKDGD1rOYSw/+P6fYSZjTJDAl9XNfXRjRRyJSfaw6N1pA
+ Ahuu0MIa3djFRuFCrAHUaaFZf5V2iW5xhGnrhDwE1Ksf7tlstSne/G0a+Ef7vhUyeTn6U/0m
+ +/BrsCsBUXhqeNuraGUtaleatQijXfuemUwgB+mE3B0SobE601XLo6MYIhPh8MG32MKO5kOY
+ hB5jzyor7WoN3ETVNQoGgMzPVWIRElwpcXr+yGoTLAOpG7nkAUBBj9n9TPpSdt/npfok9ZfL
+ /Q+ranrxb2Cy4tvOPxeVfR58XveX85ICrW9VHPVq9sJf/a24bMm6+qEg1V/G7u/AM3fM8U2m
+ tdrTqOrfxklZ7beppGKzC1/WLrcr072vrdiN0icyOHQlfWmaPv0pUnW3AwtiMYngT96BevfA
+ qlwaymjPTvH+cTXScnbydfOQW8220JQwykUe+sHRZfAF5TS2YCkQvsyf7vIpSqo/ttDk4+xc
+ Z/wsLiWTgKlih2QYULvW61XU+mWsK8+ZlYUrRMpkauN4CJ5yTpvp+Orcz5KixHQmc5tbkLWf
+ x0n1QFc1xxJhbzN+r9djSGGN/5IBDfUqSANC8cWzHpWaHmSuU3JSAMB/N+yQjIad2ztTckZY
+ pwT6oxng29LzZspTYUEzMz3wK2jQHw+U66qBFk8whA7B2uAU1QdGyPgahLYSOa4XAEGb6wbI FEE=
+Message-ID: <05f49ae7-5cc7-d6a0-fc3d-abaf2a0b373c@web.de>
+Date: Sun, 5 Apr 2020 18:50:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200402114125.2501-5-jagan@amarulasolutions.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Content-Language: en-US
+X-Provags-ID: V03:K1:9ZhlZktT91pfbtbXRm+mTr0dzyW0rFCf8ipUz74Hg6LrC70wyT3
+ lgjget/+5B+v9e+XtCQhsiEWa3oYKGUxLwy/+16UFw9QBT7VDwPxyM6dCiB1jioWi3d4Dun
+ ML0SUPIN7MIt4nv1gt3EZ8XCxPkEg46lkgVeLOb6MWzJTeAhBrn8nYSpEZW5GnakmEhF5Yp
+ huyo983s7iSI3UbIrdpJw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:m0U7kNMqr14=:dv3CgYtVpGQVFYuC0r/Vx5
+ YNeBV5WDA756pnx2kjt5nIWU8boJcoOjypBLmzLgJTpy9mXm4PEJRAG4QN6/pxXQyRnTbZSbI
+ A0NSZmwTFCfOnYC5iYQSnZWrbaEpzfjZhgUf/SZ0mDMXS4ftkKTTuatf2RSzQCZFoejdz9Hw8
+ cm6OaB28hgMvLG4tUDaMEMutfixS6P/ohSg7ugLasRdUx8kzm/Qrg3soCoPVwSTIXgo2iKwHi
+ F8VRVy11ZkhsPDlAjl0ERPVu/YuAcvrs3kT9PbnJ7lyeHyuc9vOwXoEbAR0fgA429xEpM7pT3
+ oTRQbKPsbkhQzwj0k7dsk9Wz16j4qoG9QbkEiMg/h9WuP16Nm4j852KFaCSCKia4GdEbwVbeE
+ 7N6ZUupaAuDHaFevdBcdsg8tJviighjDxUA96PREW8pypalaTO1nUACHvnnpDdHH1W6POTp+o
+ r6Cjyqc9Twwm58iRfnlhU366rzje1enGS4siPXJszpwIlNry/qatNplAW+2evmNgtQBSIOT9B
+ B4uqQ11pfJMX/1ROnA93I247aT/Kdktt9Vc2DJG3CK9yGV0kfvkeDCKjfdmR7cfpglWmysTKv
+ xeIaEVjFjvXRdVtRRkEl4Riqh24X01nSyLTFfmklc6e6JeE0qAe9wzNHxZbFKG8UJk9wLDc0R
+ dMO/hDizFjqHSLvI19DJhyuxEpP83mXnL78A92I26CE4vNimkhLgN+8tfJUyGpYA8TPxU08bH
+ bHlenCrSNcdXdsKJxb/stLj7AX5SW17uIGmUY3ItFgPtX/2STeKclMhWil+oPbWNVQqtJPpwJ
+ guIxLqK89gBeAOme1CdIksGr5p96h8EBBJh0KKLhfu7MhwRaodqgMW3hluCGas/J+aTEE3ktM
+ G1acyNfb7eYn7tA6M56GOEVNqLaelktdgauk+cioS9P84pnjpI1YvktbcWUk9h8ke6izj+3RU
+ SmAc4OCmJXgIy0fLtxrJQ2Nr/TTJnV2sTWTLV6XJwpxtpbKGwmP2I+65/T+OLVteWFzOqFTaP
+ JnrI6EoSiuyIQvefCzps9lmScsgMoYBfJ/S206lHv+yGItg20lsqCBlN1h+neJANSlWNdlwug
+ ALnBiWq29KkDZZkosMSV2GIdN/k45SSWZ96K7cj+JNsF0+WJHI1nVzHAKHdkL3TSPejo6s9Ig
+ RdWFZvEaXDMhGoiYr9Xt7O0bDcrkWglBcPV/Em/29BmGbYm+uRs25qy3T7eW1nZQfz3lUYmMg
+ EuHOTflLBO5PdtXHm
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_070726_414118_6EEF89C0 
-X-CRM114-Status: GOOD (  14.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200405_095135_841722_8ABDC7B4 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.12 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [markus.elfring[at]web.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.17.12 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,6 +147,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,169 +160,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-rockchip@lists.infradead.org, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, u-boot@lists.denx.de,
- sunil@amarulasolutions.com, Anatolij Gustschin <agust@denx.de>,
- linux-amarula@amarulasolutions.com, Mark Kettenis <mark.kettenis@xs4all.nl>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Tang Bin <tangbin@cmss.chinamobile.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Apr 02, 2020 at 05:11:24PM +0530, Jagan Teki wrote:
-> Enable config options and console setting to respective
-> rk3399 board for HDMI output.
-> 
-> Boards supported and tested on this patch are:
-> - NanoPc T4
-> - NanoPi M4
-> - NanoPi Neo4
-> - ROC-RK3399-PC
-> - Rock960
-> 
-> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-
-For Rock960,
-
-Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-
-Thanks,
-Mani
-
-> ---
-> Changes for v3:
-> - add rock960 hdmi out support
-> 
->  configs/nanopc-t4-rk3399_defconfig   | 7 +++++++
->  configs/nanopi-m4-rk3399_defconfig   | 7 +++++++
->  configs/nanopi-neo4-rk3399_defconfig | 7 +++++++
->  configs/roc-pc-rk3399_defconfig      | 6 ++++++
->  configs/rock960-rk3399_defconfig     | 7 +++++++
->  include/configs/evb_rk3399.h         | 5 +++++
->  include/configs/rock960_rk3399.h     | 5 +++++
->  7 files changed, 44 insertions(+)
-> 
-> diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
-> index 9ea9b11574..607a00dbf7 100644
-> --- a/configs/nanopc-t4-rk3399_defconfig
-> +++ b/configs/nanopc-t4-rk3399_defconfig
-> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
->  CONFIG_USB_ETHER_MCS7830=y
->  CONFIG_USB_ETHER_RTL8152=y
->  CONFIG_USB_ETHER_SMSC95XX=y
-> +CONFIG_USB_KEYBOARD=y
->  CONFIG_SPL_TINY_MEMSET=y
->  CONFIG_ERRNO_STR=y
-> +CONFIG_DM_VIDEO=y
-> +CONFIG_VIDEO_BPP16=y
-> +CONFIG_VIDEO_BPP32=y
-> +CONFIG_DISPLAY=y
-> +CONFIG_VIDEO_ROCKCHIP=y
-> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-> diff --git a/configs/nanopi-m4-rk3399_defconfig b/configs/nanopi-m4-rk3399_defconfig
-> index ad0e808bf6..3fcb7ac2d7 100644
-> --- a/configs/nanopi-m4-rk3399_defconfig
-> +++ b/configs/nanopi-m4-rk3399_defconfig
-> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
->  CONFIG_USB_ETHER_MCS7830=y
->  CONFIG_USB_ETHER_RTL8152=y
->  CONFIG_USB_ETHER_SMSC95XX=y
-> +CONFIG_USB_KEYBOARD=y
->  CONFIG_SPL_TINY_MEMSET=y
->  CONFIG_ERRNO_STR=y
-> +CONFIG_DM_VIDEO=y
-> +CONFIG_VIDEO_BPP16=y
-> +CONFIG_VIDEO_BPP32=y
-> +CONFIG_DISPLAY=y
-> +CONFIG_VIDEO_ROCKCHIP=y
-> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-> diff --git a/configs/nanopi-neo4-rk3399_defconfig b/configs/nanopi-neo4-rk3399_defconfig
-> index d038a8cab9..b9ea535e43 100644
-> --- a/configs/nanopi-neo4-rk3399_defconfig
-> +++ b/configs/nanopi-neo4-rk3399_defconfig
-> @@ -52,5 +52,12 @@ CONFIG_USB_ETHER_ASIX88179=y
->  CONFIG_USB_ETHER_MCS7830=y
->  CONFIG_USB_ETHER_RTL8152=y
->  CONFIG_USB_ETHER_SMSC95XX=y
-> +CONFIG_USB_KEYBOARD=y
->  CONFIG_SPL_TINY_MEMSET=y
->  CONFIG_ERRNO_STR=y
-> +CONFIG_DM_VIDEO=y
-> +CONFIG_VIDEO_BPP16=y
-> +CONFIG_VIDEO_BPP32=y
-> +CONFIG_DISPLAY=y
-> +CONFIG_VIDEO_ROCKCHIP=y
-> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-> diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-> index d540a17aeb..be76524cef 100644
-> --- a/configs/roc-pc-rk3399_defconfig
-> +++ b/configs/roc-pc-rk3399_defconfig
-> @@ -59,3 +59,9 @@ CONFIG_USB_ETHER_SMSC95XX=y
->  CONFIG_USB_KEYBOARD=y
->  CONFIG_SPL_TINY_MEMSET=y
->  CONFIG_ERRNO_STR=y
-> +CONFIG_DM_VIDEO=y
-> +CONFIG_VIDEO_BPP16=y
-> +CONFIG_VIDEO_BPP32=y
-> +CONFIG_DISPLAY=y
-> +CONFIG_VIDEO_ROCKCHIP=y
-> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-> diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
-> index ba4226e173..c4e954731a 100644
-> --- a/configs/rock960-rk3399_defconfig
-> +++ b/configs/rock960-rk3399_defconfig
-> @@ -58,5 +58,12 @@ CONFIG_USB_ETHER_ASIX88179=y
->  CONFIG_USB_ETHER_MCS7830=y
->  CONFIG_USB_ETHER_RTL8152=y
->  CONFIG_USB_ETHER_SMSC95XX=y
-> +CONFIG_USB_KEYBOARD=y
->  CONFIG_SPL_TINY_MEMSET=y
->  CONFIG_ERRNO_STR=y
-> +CONFIG_DM_VIDEO=y
-> +CONFIG_VIDEO_BPP16=y
-> +CONFIG_VIDEO_BPP32=y
-> +CONFIG_DISPLAY=y
-> +CONFIG_VIDEO_ROCKCHIP=y
-> +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
-> diff --git a/include/configs/evb_rk3399.h b/include/configs/evb_rk3399.h
-> index c0b0358893..2d3db22877 100644
-> --- a/include/configs/evb_rk3399.h
-> +++ b/include/configs/evb_rk3399.h
-> @@ -6,6 +6,11 @@
->  #ifndef __EVB_RK3399_H
->  #define __EVB_RK3399_H
->  
-> +#define ROCKCHIP_DEVICE_SETTINGS \
-> +		"stdin=serial,usbkbd\0" \
-> +		"stdout=serial,vidconsole\0" \
-> +		"stderr=serial,vidconsole\0"
-> +
->  #include <configs/rk3399_common.h>
->  
->  #if defined(CONFIG_ENV_IS_IN_MMC)
-> diff --git a/include/configs/rock960_rk3399.h b/include/configs/rock960_rk3399.h
-> index 746d24cbff..304ad2b7aa 100644
-> --- a/include/configs/rock960_rk3399.h
-> +++ b/include/configs/rock960_rk3399.h
-> @@ -6,6 +6,11 @@
->  #ifndef __ROCK960_RK3399_H
->  #define __ROCK960_RK3399_H
->  
-> +#define ROCKCHIP_DEVICE_SETTINGS \
-> +		"stdin=serial,usbkbd\0" \
-> +		"stdout=serial,vidconsole\0" \
-> +		"stderr=serial,vidconsole\0"
-> +
->  #include <configs/rk3399_common.h>
->  
->  #define CONFIG_SYS_MMC_ENV_DEV		1
-> -- 
-> 2.17.1
-> 
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+RnJvbTogTWFya3VzIEVsZnJpbmcgPGVsZnJpbmdAdXNlcnMuc291cmNlZm9yZ2UubmV0PgpEYXRl
+OiBTdW4sIDUgQXByIDIwMjAgMTg6MzU6MTYgKzAyMDAKClRoZSBmdW5jdGlvbiDigJxwbGF0Zm9y
+bV9nZXRfaXJx4oCdIGNhbiBsb2cgYW4gZXJyb3IgYWxyZWFkeS4KVGh1cyBvbWl0IHJlZHVuZGFu
+dCBtZXNzYWdlcyBmb3IgdGhlIGV4Y2VwdGlvbiBoYW5kbGluZyBpbiB0aGUKY2FsbGluZyBmdW5j
+dGlvbnMuCgpUaGlzIGlzc3VlIHdhcyBkZXRlY3RlZCBieSB1c2luZyB0aGUgQ29jY2luZWxsZSBz
+b2Z0d2FyZS4KClNpZ25lZC1vZmYtYnk6IE1hcmt1cyBFbGZyaW5nIDxlbGZyaW5nQHVzZXJzLnNv
+dXJjZWZvcmdlLm5ldD4KLS0tCiBkcml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jICAg
+ICAgICAgIHwgNCArLS0tCiBkcml2ZXJzL3RoZXJtYWwvc3Qvc3RfdGhlcm1hbF9tZW1tYXAuYyAg
+ICAgIHwgNCArLS0tCiBkcml2ZXJzL3RoZXJtYWwvc3Qvc3RtX3RoZXJtYWwuYyAgICAgICAgICAg
+IHwgNCArLS0tCiBkcml2ZXJzL3RoZXJtYWwvdGktc29jLXRoZXJtYWwvdGktYmFuZGdhcC5jIHwg
+NSArKy0tLQogNCBmaWxlcyBjaGFuZ2VkLCA1IGluc2VydGlvbnMoKyksIDEyIGRlbGV0aW9ucygt
+KQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVybWFsLmMgYi9kcml2
+ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jCmluZGV4IDdjMWE4YmNjZGNiYS4uMTVhNzFl
+Y2M5MTZjIDEwMDY0NAotLS0gYS9kcml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1hbC5jCisr
+KyBiL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVybWFsLmMKQEAgLTEyNDEsMTAgKzEyNDEs
+OCBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3RoZXJtYWxfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rl
+dmljZSAqcGRldikKIAkJcmV0dXJuIC1FTlhJTzsKCiAJaXJxID0gcGxhdGZvcm1fZ2V0X2lycShw
+ZGV2LCAwKTsKLQlpZiAoaXJxIDwgMCkgewotCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJubyBpcnEg
+cmVzb3VyY2U/XG4iKTsKKwlpZiAoaXJxIDwgMCkKIAkJcmV0dXJuIC1FSU5WQUw7Ci0JfQoKIAl0
+aGVybWFsID0gZGV2bV9remFsbG9jKCZwZGV2LT5kZXYsIHNpemVvZihzdHJ1Y3Qgcm9ja2NoaXBf
+dGhlcm1hbF9kYXRhKSwKIAkJCSAgICAgICBHRlBfS0VSTkVMKTsKZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvdGhlcm1hbC9zdC9zdF90aGVybWFsX21lbW1hcC5jIGIvZHJpdmVycy90aGVybWFsL3N0L3N0
+X3RoZXJtYWxfbWVtbWFwLmMKaW5kZXggYTgyNGI3OGRhYmY4Li5hMDExNDQ1MmQxMWYgMTAwNjQ0
+Ci0tLSBhL2RyaXZlcnMvdGhlcm1hbC9zdC9zdF90aGVybWFsX21lbW1hcC5jCisrKyBiL2RyaXZl
+cnMvdGhlcm1hbC9zdC9zdF90aGVybWFsX21lbW1hcC5jCkBAIC05NCwxMCArOTQsOCBAQCBzdGF0
+aWMgaW50IHN0X21tYXBfcmVnaXN0ZXJfZW5hYmxlX2lycShzdHJ1Y3Qgc3RfdGhlcm1hbF9zZW5z
+b3IgKnNlbnNvcikKIAlpbnQgcmV0OwoKIAlzZW5zb3ItPmlycSA9IHBsYXRmb3JtX2dldF9pcnEo
+cGRldiwgMCk7Ci0JaWYgKHNlbnNvci0+aXJxIDwgMCkgewotCQlkZXZfZXJyKGRldiwgImZhaWxl
+ZCB0byByZWdpc3RlciBJUlFcbiIpOworCWlmIChzZW5zb3ItPmlycSA8IDApCiAJCXJldHVybiBz
+ZW5zb3ItPmlycTsKLQl9CgogCXJldCA9IGRldm1fcmVxdWVzdF90aHJlYWRlZF9pcnEoZGV2LCBz
+ZW5zb3ItPmlycSwKIAkJCQkJTlVMTCwgc3RfbW1hcF90aGVybWFsX3RyaXBfaGFuZGxlciwKZGlm
+ZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9zdC9zdG1fdGhlcm1hbC5jIGIvZHJpdmVycy90aGVy
+bWFsL3N0L3N0bV90aGVybWFsLmMKaW5kZXggOTMxNGUzZGY2YTQyLi4zMzFlMmI3NjhkZjUgMTAw
+NjQ0Ci0tLSBhL2RyaXZlcnMvdGhlcm1hbC9zdC9zdG1fdGhlcm1hbC5jCisrKyBiL2RyaXZlcnMv
+dGhlcm1hbC9zdC9zdG1fdGhlcm1hbC5jCkBAIC0zODUsMTAgKzM4NSw4IEBAIHN0YXRpYyBpbnQg
+c3RtX3JlZ2lzdGVyX2lycShzdHJ1Y3Qgc3RtX3RoZXJtYWxfc2Vuc29yICpzZW5zb3IpCiAJaW50
+IHJldDsKCiAJc2Vuc29yLT5pcnEgPSBwbGF0Zm9ybV9nZXRfaXJxKHBkZXYsIDApOwotCWlmIChz
+ZW5zb3ItPmlycSA8IDApIHsKLQkJZGV2X2VycihkZXYsICIlczogVW5hYmxlIHRvIGZpbmQgSVJR
+XG4iLCBfX2Z1bmNfXyk7CisJaWYgKHNlbnNvci0+aXJxIDwgMCkKIAkJcmV0dXJuIHNlbnNvci0+
+aXJxOwotCX0KCiAJcmV0ID0gZGV2bV9yZXF1ZXN0X3RocmVhZGVkX2lycShkZXYsIHNlbnNvci0+
+aXJxLAogCQkJCQlOVUxMLApkaWZmIC0tZ2l0IGEvZHJpdmVycy90aGVybWFsL3RpLXNvYy10aGVy
+bWFsL3RpLWJhbmRnYXAuYyBiL2RyaXZlcnMvdGhlcm1hbC90aS1zb2MtdGhlcm1hbC90aS1iYW5k
+Z2FwLmMKaW5kZXggMjYzYjA0MjBmYmU0Li5hYjE5Y2VmZjZlMmEgMTAwNjQ0Ci0tLSBhL2RyaXZl
+cnMvdGhlcm1hbC90aS1zb2MtdGhlcm1hbC90aS1iYW5kZ2FwLmMKKysrIGIvZHJpdmVycy90aGVy
+bWFsL3RpLXNvYy10aGVybWFsL3RpLWJhbmRnYXAuYwpAQCAtNzcyLDEwICs3NzIsOSBAQCBzdGF0
+aWMgaW50IHRpX2JhbmRnYXBfdGFsZXJ0X2luaXQoc3RydWN0IHRpX2JhbmRnYXAgKmJncCwKIAlp
+bnQgcmV0OwoKIAliZ3AtPmlycSA9IHBsYXRmb3JtX2dldF9pcnEocGRldiwgMCk7Ci0JaWYgKGJn
+cC0+aXJxIDwgMCkgewotCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJnZXRfaXJxIGZhaWxlZFxuIik7
+CisJaWYgKGJncC0+aXJxIDwgMCkKIAkJcmV0dXJuIGJncC0+aXJxOwotCX0KKwogCXJldCA9IHJl
+cXVlc3RfdGhyZWFkZWRfaXJxKGJncC0+aXJxLCBOVUxMLAogCQkJCSAgIHRpX2JhbmRnYXBfdGFs
+ZXJ0X2lycV9oYW5kbGVyLAogCQkJCSAgIElSUUZfVFJJR0dFUl9ISUdIIHwgSVJRRl9PTkVTSE9U
+LAotLQoyLjI2LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LXJvY2tjaGlwCg==
