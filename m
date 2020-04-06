@@ -2,49 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85B3519F5F0
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 14:40:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5488A19F5F7
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 14:42:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8ijKnZ55RRSE9To0WMO2ObcpvoQqi8WsJw4mge0Te/I=; b=YEdI2YzUPEo5DC9areTc5rLog
-	CWnxOdkA/4JZyZUMf9jBAt9F2Q7ExxS3AZXKc7scBqKHgegWgFaJaHVXBzVajRqYNpKAhoNedZteE
-	CQkVb28780MBfCQYoWgAvflMOVf+wa08ZIzKNW7vC9go7PqkLcFlFzV0S/w+35zhCitwi9ALWUaAE
-	BbcX9KeaFD8hvtqZrwU9OTID/q5KguLI84WrJOqWWUY85T0q/ToKE5xmK2UIpGEFgj5YGVb5zUEAL
-	1EhUnL1ve7WePLzwaiPzaAyZI2ZuVkcikWYJGhnzJnqcBSWdgLdbD/nLf4jeeOSu5eWi1nzd0Ys7w
-	v0ApI4Sug==;
+	 bh=YxJOQpvFFgmVkNsEwF7KnA6mgnRYPmKezB9iphIXx+0=; b=ZIDWHk6cA50f1gDUO8SuN9l1N
+	B4Dc/KRFZS1iEOXVtmH9Fv3Cu963iyNewc4RlZFXbTOp1LLwIqFzulkJtJwKX9b4gUQEzhYJYWOZw
+	KjvSnD8zhZW9fcf8Qb4FBIGZuLvAGlx8IO/mv/oCB+GQZI5ZqfkEvapd/NnR1zxuQrP5c0n/eLfkv
+	vg+d4HryFaY0bIqE4bmWuXwKvL+8Vt/GDv2QONZJHiekpQhRDopAJdRGieKR2LPE7NF4hb7dJeEpe
+	EKakL+SXTrGzIEPU86JLbpOFEF47E0msGjq88NszDYsSomZKCCMjFjowYpTxfMAPLbafNWszKoAQk
+	VlkzM1gVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLR3K-0007BV-LJ; Mon, 06 Apr 2020 12:40:34 +0000
+	id 1jLR5G-0007MJ-Es; Mon, 06 Apr 2020 12:42:34 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLR3H-0007Ar-JO
- for linux-rockchip@lists.infradead.org; Mon, 06 Apr 2020 12:40:33 +0000
+ id 1jLR5D-0007Ll-4a
+ for linux-rockchip@lists.infradead.org; Mon, 06 Apr 2020 12:42:32 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 961B428BDAC
-Subject: Re: [PATCH v2 4/5] media: staging: rkisp1: cap: support uv swapped
- plane formats
-To: Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+ (Authenticated sender: dafna) with ESMTPSA id 645C2295AC3
+Subject: Re: [PATCH v2 5/5] media: staging: rkisp1: cap: remove unsupported
+ formats
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 References: <20200402190419.15155-1-dafna.hirschfeld@collabora.com>
- <20200402190419.15155-5-dafna.hirschfeld@collabora.com>
- <20200405181623.GQ5846@pendragon.ideasonboard.com>
- <e3b8728b-7146-30b5-2312-1b4cbac52c27@collabora.com>
- <bd60332d-ceea-1ba9-5ab9-b9dc4883a7cd@collabora.com>
+ <20200402190419.15155-6-dafna.hirschfeld@collabora.com>
+ <20200405224357.GR5846@pendragon.ideasonboard.com>
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Message-ID: <1904e107-536b-799a-3196-1a3b403dbe13@collabora.com>
-Date: Mon, 6 Apr 2020 14:40:27 +0200
+Message-ID: <a6ec9713-77e8-05e1-2a55-f58bca1dc853@collabora.com>
+Date: Mon, 6 Apr 2020 14:42:27 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <bd60332d-ceea-1ba9-5ab9-b9dc4883a7cd@collabora.com>
+In-Reply-To: <20200405224357.GR5846@pendragon.ideasonboard.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_054031_763455_A390083A 
-X-CRM114-Status: GOOD (  17.77  )
+X-CRM114-CacheID: sfid-20200406_054231_307570_F36993F5 
+X-CRM114-Status: GOOD (  18.20  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -67,68 +64,84 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: dafna3@gmail.com, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
- kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+ helen.koike@collabora.com, kernel@collabora.com, ezequiel@collabora.com,
+ linux-media@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-CgpPbiA0LzYvMjAgMjoyNyBQTSwgSGVsZW4gS29pa2Ugd3JvdGU6Cj4gSGksCj4gCj4gT24gNC82
-LzIwIDg6NTYgQU0sIERhZm5hIEhpcnNjaGZlbGQgd3JvdGU6Cj4+Cj4+Cj4+IE9uIDQvNS8yMCA4
-OjE2IFBNLCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+Pj4gSGkgRGFmbmEsCj4+Pgo+Pj4gVGhh
-bmsgeW91IGZvciB0aGUgcGF0Y2guCj4+Pgo+Pj4gT24gVGh1LCBBcHIgMDIsIDIwMjAgYXQgMDk6
-MDQ6MThQTSArMDIwMCwgRGFmbmEgSGlyc2NoZmVsZCB3cm90ZToKPj4+PiBQbGFuZSBmb3JtYXRz
-IHdpdGggdGhlIHUgYW5kIHYgcGxhbmVzIHN3YXBwZWQgY2FuIGJlCj4+Pj4gc3VwcG9ydGVkIGJ5
-IGNoYW5naW5nIHRoZSBhZGRyZXNzIG9mIHRoZSBjYiBhbmQgY3IgaW4KPj4+PiB0aGUgYnVmZmVy
-Lgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogRGFmbmEgSGlyc2NoZmVsZCA8ZGFmbmEuaGlyc2No
-ZmVsZEBjb2xsYWJvcmEuY29tPgo+Pj4+IEFja2VkLWJ5OiBIZWxlbiBLb2lrZSA8aGVsZW4ua29p
-a2VAY29sbGFib3JhLmNvbT4KPj4+PiAtLS0KPj4+PiAgwqAgZHJpdmVycy9zdGFnaW5nL21lZGlh
-L3JraXNwMS9ya2lzcDEtY2FwdHVyZS5jIHwgMTcgKysrKysrKysrKysrKysrKysKPj4+PiAgwqAg
-MSBmaWxlIGNoYW5nZWQsIDE3IGluc2VydGlvbnMoKykKPj4+Pgo+Pj4+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL3N0YWdpbmcvbWVkaWEvcmtpc3AxL3JraXNwMS1jYXB0dXJlLmMgYi9kcml2ZXJzL3N0
-YWdpbmcvbWVkaWEvcmtpc3AxL3JraXNwMS1jYXB0dXJlLmMKPj4+PiBpbmRleCBmYTI4NDkyMDk0
-MzMuLjJkMjc0ZThmNTY1YiAxMDA2NDQKPj4+PiAtLS0gYS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEv
-cmtpc3AxL3JraXNwMS1jYXB0dXJlLmMKPj4+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEv
-cmtpc3AxL3JraXNwMS1jYXB0dXJlLmMKPj4+PiBAQCAtNDEsNiArNDEsMTAgQEAKPj4+PiAgwqDC
-oMKgwqDCoCAoKCh3cml0ZV9mb3JtYXQpID09IFJLSVNQMV9NSV9DVFJMX01QX1dSSVRFX1lVVl9T
-UExBKSB8fMKgwqDCoCBcCj4+Pj4gIMKgwqDCoMKgwqDCoCAoKHdyaXRlX2Zvcm1hdCkgPT0gUktJ
-U1AxX01JX0NUUkxfU1BfV1JJVEVfU1BMQSkpCj4+Pj4gIMKgICsjZGVmaW5lIFJLSVNQMV9JU19Q
-TEFOQVIod3JpdGVfZm9ybWF0KcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IFwKPj4+PiArwqDCoMKgICgoKHdyaXRlX2Zvcm1hdCkgPT0gUktJU1AxX01JX0NUUkxfU1BfV1JJ
-VEVfUExBKSB8fMKgwqDCoMKgwqDCoMKgIFwKPj4+PiArwqDCoMKgwqAgKCh3cml0ZV9mb3JtYXQp
-ID09IFJLSVNQMV9NSV9DVFJMX01QX1dSSVRFX1lVVl9QTEFfT1JfUkFXOCkpCj4+Pj4gKwo+Pj4+
-ICDCoCBlbnVtIHJraXNwMV9wbGFuZSB7Cj4+Pj4gIMKgwqDCoMKgwqAgUktJU1AxX1BMQU5FX1nC
-oMKgwqAgPSAwLAo+Pj4+ICDCoMKgwqDCoMKgIFJLSVNQMV9QTEFORV9DQsKgwqDCoCA9IDEsCj4+
-Pj4gQEAgLTc4OCw2ICs3OTIsMTkgQEAgc3RhdGljIHZvaWQgcmtpc3AxX3ZiMl9idWZfcXVldWUo
-c3RydWN0IHZiMl9idWZmZXIgKnZiKQo+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBy
-a2lzcDFfcGl4Zm10X2NvbXBfc2l6ZShwaXhtLCBSS0lTUDFfUExBTkVfQ0IpOwo+Pj4+ICDCoMKg
-wqDCoMKgIH0KPj4+PiAgwqAgK8KgwqDCoCAvKgo+Pj4+ICvCoMKgwqDCoCAqIHV2IHN3YXAgY2Fu
-IGJlIHN1cHBvcnRlZCBmb3IgcGxhbmUgZm9ybWF0cyBieSBzd2l0Y2hpbmcKPj4+PiArwqDCoMKg
-wqAgKiB0aGUgYWRkcmVzcyBvZiBjYiBhbmQgY3IKPj4+PiArwqDCoMKgwqAgKi8KPj4+PiArwqDC
-oMKgIGlmIChSS0lTUDFfSVNfUExBTkFSKGNhcC0+cGl4LmNmZy0+d3JpdGVfZm9ybWF0KSAmJgo+
-Pj4KPj4+IEFzIGNvbW1lbnRlZCBvbiBwYXRjaCAzLzUsIGNvdWxkIHRoaXMgYmUgY2hlY2tlZCBm
-cm9tIHRoZSBkYXRhIGluCj4+PiB2NGwyX2Zvcm1hdF9pbmZvID8KPj4geWVzCj4+Pgo+Pj4+ICvC
-oMKgwqDCoMKgwqDCoCBjYXAtPnBpeC5jZmctPnV2X3N3YXApIHsKPj4+PiArwqDCoMKgwqDCoMKg
-wqAgaXNwYnVmLT5idWZmX2FkZHJbUktJU1AxX1BMQU5FX0NSXSA9Cj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgaXNwYnVmLT5idWZmX2FkZHJbUktJU1AxX1BMQU5FX0NCXTsKPj4+PiArwqDC
-oMKgwqDCoMKgwqAgaXNwYnVmLT5idWZmX2FkZHJbUktJU1AxX1BMQU5FX0NCXSA9Cj4+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgaXNwYnVmLT5idWZmX2FkZHJbUktJU1AxX1BMQU5FX0NSXSAr
-Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmtpc3AxX3BpeGZtdF9jb21wX3NpemUocGl4
-bSwgUktJU1AxX1BMQU5FX0NSKTsKPiAKPiBBY3R1YWxseSB0aGlzIGlzIHdyb25nIGlmIHBpeG0t
-Pm51bV9wbGFuZXMgIT0gMSwgc2luY2UgdGhleSBhcmUgZGlmZmVyZW50IGJ1ZmZlcnMuCkhpLCBy
-aWdodCwgSSB3aWxsIGNoYW5nZSB0byBzd2FwCgpUaGFua3MsCkRhZm5hCj4gCj4+Pgo+Pj4gSG93
-IGFib3V0Cj4+Pgo+Pj4gIMKgwqDCoMKgwqDCoMKgIHN3YXAoaXNwYnVmLT5idWZmX2FkZHJbUktJ
-U1AxX1BMQU5FX0NSXSwKPj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaXNwYnVmLT5idWZm
-X2FkZHJbUktJU1AxX1BMQU5FX0NCXSk7Cj4+Pgo+Pj4gPwo+PiBUaGlzIGFsc28gd29ya3MsIHRo
-ZW9yZXRpY2FsbHkgaWYgdGhlcmUgd2FzIGEgZm9ybWF0IHdoZXJlIHRoZSBDYiwgQ3IgcGxhbmVz
-Cj4+IGFyZSBub3QgZXF1YWwgc2l6ZSB0aGVuIGEgc3dhcCB3aWxsIG5vdCB3b3JrLgo+IAo+IElm
-IHlvdSBjaGVjayBya2lzcDFfZmlsbF9waXhmbXQoKSwgeW91J2xsIHNlZSB0aGF0IHRoZXkgYXJl
-IGVxdWFsIHNpemUuCj4gaGRpdiBhbmQgdmRpdiBhcHBsaWVzIHRvIGJvdGguCj4gCj4gVGhhbmsg
-eW91IExhdXJlbnQgZm9yIHRoZSByZXZpZXcgYW5kIHRoYW5rIHlvdSBEYWZuYSBmb3Igd29ya2lu
-ZyBvbiB0aGlzLgo+IAo+IFJlZ2FyZHMsCj4gSGVsZW4KPiAKPj4KPj4gVGhhbmtzLAo+PiBEYWZu
-YQo+Pj4KPj4+PiArwqDCoMKgIH0KPj4+PiArCj4+Pj4gIMKgwqDCoMKgwqAgc3Bpbl9sb2NrX2ly
-cXNhdmUoJmNhcC0+YnVmLmxvY2ssIGZsYWdzKTsKPj4+PiAgwqAgwqDCoMKgwqDCoCAvKgo+Pj4K
-Pj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4
-LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2No
-aXAK
+
+
+On 4/6/20 12:43 AM, Laurent Pinchart wrote:
+> Hi Dafna,
+> 
+> Thank you for the patch.
+> 
+> On Thu, Apr 02, 2020 at 09:04:19PM +0200, Dafna Hirschfeld wrote:
+>> For Ycbcr packed formats only YUYV can be supported by
+>> the driver. This patch removes the other formats.
+> 
+> The RKISP1_CIF_MI_BYTE_SWAP bit could possibly help achieving other YUV
+> orders, but as far as I can tell, it would affect both the main path and
+> the self path, so it wouldn't be very convenient. At a quick glance I
+> haven't found a way to support those formats, but just to make sure,
+> have you double-checked that the nv21_self and nv21_main bits of
+> MI_XTD_FORMAT_CTRL don't also affect packed mode ? If they don't,
+Hi, thanks a lot for the reviews, I'll check that.
+
+Dafna
+> 
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> 
+>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>> Acked-by: Helen Koike <helen.koike@collabora.com>
+>> ---
+>>   drivers/staging/media/rkisp1/rkisp1-capture.c | 21 -------------------
+>>   1 file changed, 21 deletions(-)
+>>
+>> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+>> index 2d274e8f565b..076335193f40 100644
+>> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
+>> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+>> @@ -98,15 +98,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_mp_fmts[] = {
+>>   		.fmt_type = RKISP1_FMT_YUV,
+>>   		.uv_swap = 0,
+>>   		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+>> -	}, {
+>> -		.fourcc = V4L2_PIX_FMT_YVYU,
+>> -		.fmt_type = RKISP1_FMT_YUV,
+>> -		.uv_swap = 1,
+>> -		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+>> -	}, {
+>> -		.fourcc = V4L2_PIX_FMT_VYUY,
+>> -		.fmt_type = RKISP1_FMT_YUV,
+>> -		.write_format = RKISP1_MI_CTRL_MP_WRITE_YUVINT,
+>>   	}, {
+>>   		.fourcc = V4L2_PIX_FMT_YUV422P,
+>>   		.fmt_type = RKISP1_FMT_YUV,
+>> @@ -234,18 +225,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+>>   		.uv_swap = 0,
+>>   		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
+>>   		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+>> -	}, {
+>> -		.fourcc = V4L2_PIX_FMT_YVYU,
+>> -		.fmt_type = RKISP1_FMT_YUV,
+>> -		.uv_swap = 1,
+>> -		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
+>> -		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+>> -	}, {
+>> -		.fourcc = V4L2_PIX_FMT_VYUY,
+>> -		.fmt_type = RKISP1_FMT_YUV,
+>> -		.uv_swap = 1,
+>> -		.write_format = RKISP1_MI_CTRL_SP_WRITE_INT,
+>> -		.output_format = RKISP1_MI_CTRL_SP_OUTPUT_YUV422,
+>>   	}, {
+>>   		.fourcc = V4L2_PIX_FMT_YUV422P,
+>>   		.fmt_type = RKISP1_FMT_YUV,
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
