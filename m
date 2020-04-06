@@ -2,87 +2,134 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01E7319F742
-	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 15:54:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC97F19F7D8
+	for <lists+linux-rockchip@lfdr.de>; Mon,  6 Apr 2020 16:24:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=q/LSujCWlXK9ncZ3+xdoCngBCdSgMZtXvC8l0EJ+/u8=; b=c3CQelNoeydTs4sk6aNf9jCkgS
-	PSoM+CJ/i/C6JfXuDvQl+qk92THE6/B84L0jlH024Lx3BmuKcw7VYjkQZw0MrCWmXUd53EqjRq5B1
-	/F0rILNaaa41yhd1LKmPlqphBfhIo9qBG44Q+mYmxscxenuc1dp6s1hUk1Fr4+2SU7kH1SgHhZiT9
-	5TpRWPVlvBQMtamDakvIUlpujJ3h6TTTKUuTyKmdhF2oGMFewoWhh1dYq8SoSaW11Tg1Jvnp4Ha19
-	dmdUkgjPH/SqInNQiWCL64evWX3VQGpUSG9immhKTIgxuXSQEUY6UeOn1RNOCdGkVkgnUH8GyrnwZ
-	TXKb4IUw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8Tsz2fJQ0BKkh8YDI8Qbb2hknd9KfmJ0O69kZvfjMH0=; b=K88vGXQbyBLlzF
+	KeJBxpKkIBOJvto7w6x931E0f7/jSL6wFfqyPyVBx52JuWFnKIKnsT5SUgLZh8MCINwIhl+9hqDvX
+	bqmmE53G90V0QEhA48Wh7+7Ut/I5owzSkBLCfX32erUzK2qsEtaMJlxF2O50veJs6VdKDiQ6lw20q
+	Rv1BeKP6EYM5lQm/4H48FLRm1qgxmhLDTnWCpnWBEpOKWQq0nW7o5jElQwodYLZ7TxW/hKKxvrbD0
+	52xqzQqkclAdx1NRMzzLABijIJ8nT2nfIhsxBXIwQd8QuEAAW/ciagqU/yp3FGzz6OnmDoXgUFev9
+	zm8DkUcUwrmbZUGftiOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLSCy-00072I-OO; Mon, 06 Apr 2020 13:54:36 +0000
-Received: from outgoing15.flk.host-h.net ([197.242.87.49])
+	id 1jLSfO-0002hb-3D; Mon, 06 Apr 2020 14:23:58 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLSCu-00070L-Ik; Mon, 06 Apr 2020 13:54:34 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam4-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1jLSCk-0002PP-Tr; Mon, 06 Apr 2020 15:54:24 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1jLSCh-0003gd-WD; Mon, 06 Apr 2020 15:54:20 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] ARM: dts: remove disable-wp from rk3229-xms6 emmc
-Date: Mon,  6 Apr 2020 13:50:05 +0000
-Message-Id: <20200406135006.23759-2-justin.swartz@risingedge.co.za>
-In-Reply-To: <e602c1b8-3606-a8d3-c64c-ec9e58315974@gmail.com>
-References: <e602c1b8-3606-a8d3-c64c-ec9e58315974@gmail.com>
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.02)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0VxB0mWeGZk2wSOLROvd+japSDasLI4SayDByyq9LIhVMzIT/cdpaPXn
- 8mlmYDKPTUTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
- f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
- qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
- E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18acGxkU6APd/2A0Kw7VphYofAVXirbLu
- Jjy3NtnGWLbnBGfrUBEXB2fYGLNieGQuoHtJvp0r29Rf3ZjFwL+MhHEWw/0qBlNDp8uABz3dkWV+
- tnlsqEID1rwhWix/EYFNtp1TycYLFeAN4+MGwnsp7SkU6CLbyF0Zq4b1/7rjUzETJrWks4pbbQJq
- 6gWopI3ep45X19ZysgQ+31LcAX8eoFXAhohfegXGH2GIVQVglJFbK771YV8YbC29CtmpcTqTfSIf
- CWq9oj7OiT8GwpAriB+3/81I3rvR8KJ2fK9jiDYgijyqqY0rATpzHKGfmtNsYTr4SmDZ/bGW8xZC
- RRs6ZD24UhFcZZEpLhnBCwImTQNvxaLyCc35VA7RvW/HGiGqxL09Cymermt8NAa/gGopT3kKfO4C
- gvcKmV0o9jYzsFpuc43pp/LzIs3ornuRuAAdgrkq+6l7ZLNYJcf7Z6PCydDzoYZgInuDxgFOs7AZ
- TwbwMdGiAezOfJNnrbxp9qi+/W68d5545dki9+vnsnnTQ8Wq38NrFoXSENXH6UXfnav35JPA4YfM
- 6tBkXsqvKY6zoLLTPpuFqUUQz+mM8JAD4ECWNo09vb0YLIRnK477e9Xake5PIWKjIXX7qe2zOXoS
- foz/k0KmhMm/d7m9QAUl+M6tQhYDNj8G8czrGYe1tD5Uy2bjO41FyBEqIaDudcVplPE6wCr6GXU1
- lCw88ijyus1sGnWknJqS8gGhNQxpB5P3qu7c1xMljx2PG/R+pKBSKy8hXOgvE1zSS7XUhkYEQYeb
- 3jR5NeVaJQBh0uawl0Cg8j+knAzOA9mmoJvkuhKHiekUuskYaI6ERCKp8gXWqnT9kLHhStr5fiGK
- 7KncpWELuTEvuGslKTrRIXcXpFg5ivY=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1jLSfK-0002g2-5y
+ for linux-rockchip@lists.infradead.org; Mon, 06 Apr 2020 14:23:56 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200406142351euoutp02dda9a227476fea685a8c0173254e93e2~DQRAtIrpU0126401264euoutp02I
+ for <linux-rockchip@lists.infradead.org>; Mon,  6 Apr 2020 14:23:51 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200406142351euoutp02dda9a227476fea685a8c0173254e93e2~DQRAtIrpU0126401264euoutp02I
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586183031;
+ bh=80HiovpSACSa5iKWuDtXEGNMjiGgvGqhBPfk2+6zg2I=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Y9S1R0tpk3yqYW2uH+9884TfpcTEYO2pF84lZFKPXhwoYBc3gkBFO6OqyCH1+jTGC
+ T20P0WZ5F0EYNMBJc42m//fPODIqTgx52+aa81BSoufpKyfLnK3pQQn9XNc+MECcpD
+ i1iSdMn2lfk0sAkq6grWcDGvAnsDJGNU5oTk1MkY=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200406142351eucas1p176e16341c0ae5cba40259b3b3b64279e~DQRAfqxZE2343723437eucas1p1r;
+ Mon,  6 Apr 2020 14:23:51 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id F5.1A.61286.77B3B8E5; Mon,  6
+ Apr 2020 15:23:51 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200406142350eucas1p2524f266941cfedd66c0181f2fedcf388~DQRAJGFE81495514955eucas1p2N;
+ Mon,  6 Apr 2020 14:23:50 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200406142350eusmtrp1d2e992634175bcb2ae0fea4a3e778668~DQRAIQ9ax0348903489eusmtrp1a;
+ Mon,  6 Apr 2020 14:23:50 +0000 (GMT)
+X-AuditID: cbfec7f2-f0bff7000001ef66-ea-5e8b3b77753e
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 01.CF.08375.67B3B8E5; Mon,  6
+ Apr 2020 15:23:50 +0100 (BST)
+Received: from [106.210.85.205] (unknown [106.210.85.205]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200406142350eusmtip1eccb47d1871edabd5397fc2de3e805dc~DQQ-biU9_1810518105eusmtip1e;
+ Mon,  6 Apr 2020 14:23:50 +0000 (GMT)
+Subject: Re: [PATCH v5 0/5] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+To: Adrian Ratiu <adrian.ratiu@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+From: Andrzej Hajda <a.hajda@samsung.com>
+Message-ID: <7b95e129-8035-df7f-3d50-2ae3c2e8af8d@samsung.com>
+Date: Mon, 6 Apr 2020 16:23:49 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <20200330113542.181752-1-adrian.ratiu@collabora.com>
+Content-Language: pl
+X-Brightmail-Tracker: H4sIAAAAAAAAA02SWUwTYRDH83V3y7ahuBSQEYxiY6JouIIxm6Aoxod9EKM+qQlHkQ0Q21Ja
+ DlEjBJBAOUTw4jAQjoggqFQQiCFQCEiQIkcJJDQQqA8QDsuloIi0i5G338z855v5Tz4SExsI
+ FzJKEcuqFFKZhC/Em7o3BjwS/LKCvUsfiuiNvCaCLu3SE/TI2hKfNvyYxejeeQNOa/XZBJ35
+ uNKGbpgZJWjN5muMHm4t4dPLU9sYrRk1EedtmWZjJWKKMwoJ5nPeEI+ZzOrhMdrKJOb9YjOP
+ ac8pwJmONh9mpeHQFcFN4ZlwVhYVz6q8/EOFkbpOQmnad2ep7SeRjKpsNYgkgToFXYMyDRKS
+ YqoawcJ8H48LVhF8+j2Oc8EKguWhZzYaJLB2mKe6Ma7wCsGX7dJd1RICY043z6JyoK6CfjCd
+ b2FHKgb0jTWERYRRnTxYSa+3iviUO2xpx60iEeUPQ+W1yMI4dRTq5zKt7EQFgX56jOA09tBb
+ aMItLKACYD3dbGWMOgypjcUYx44wNp2GLMOAMtvA8PYIj9v7IhjNjwiOHWCu58Oun4PQV5CN
+ c5wEk9VpGNecgaDxXQvGFfxgQr/Jt5wM29n6basXlw6Aj4YKxF3SDsYW7Lkd7CC/6TnGpUWQ
+ kS7m1Edgsr9x90FnqPq6xs9DkqI9zor2uCna46bo/9wyhNcgZzZOLY9g1T4KNsFTLZWr4xQR
+ nrei5Q1o57P1/elZbkZrQ2E6RJFIYiu6LsgKFhPSeHWiXIeAxCSOIpeczGCxKFyaeJdVRYeo
+ 4mSsWodcSVziLPItnw0SUxHSWPY2yypZ1b8qjxS4JKPSXMPZurGZGGX9E8Elj7Jjvxbvvfwu
+ 7ovq/+bqWvGipeTCcZt2U8KD0yMzymKnXreClIYws/vTrRSTW5VyK1cwkqqr0cqlvuc2t94I
+ BxbTah0TT3a4pdi1hOYYPZxv3J+A6fzlJEVI3eV1o2v0ag+L9N4Z+xXa1c5A3YGga4GTElwd
+ KfU5ganU0r9uZjfdaAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrBIsWRmVeSWpSXmKPExsVy+t/xu7pl1t1xBr82mFj8nLCN1WL+kXOs
+ Fle+vmezuPr9JbPFyTdXWSw2n+thteicuITdYtPja6wWXb9WMltc3jWHzeLTg//MFl3XnrA6
+ 8HjsuLuE0WN2x0xWjxMTLjF53O8+zuSxeUm9x8Z3O5g8DvROZvE4uM/Q4/MmuQDOKD2bovzS
+ klSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27BL2MQ4dZC57wV7zf
+ 94O1gXEpTxcjJ4eEgInExwfHmEFsIYGljBKXe70g4uISu+e/ZYawhSX+XOti62LkAqp5yyix
+ /fE2JpCEsECgxLmLbWwgtohAocSX6xvAipgFDjNJ7F02lR2iYwqjxIemVkaQKjYBTYm/m2+C
+ dfAK2ElcWrQaLM4ioCKx7lUnmC0qECvR37ybEaJGUOLkzCcsIDangKPEt7aPYDazgJnEvM0P
+ mSFseYnmrbOhbBGJG49aGCcwCs1C0j4LScssJC2zkLQsYGRZxSiSWlqcm55bbKhXnJhbXJqX
+ rpecn7uJERjL24793LyD8dLG4EOMAhyMSjy8EZzdcUKsiWXFlbmHGCU4mJVEeKV6O+OEeFMS
+ K6tSi/Lji0pzUosPMZoCPTeRWUo0OR+YZvJK4g1NDc0tLA3Njc2NzSyUxHk7BA7GCAmkJ5ak
+ ZqemFqQWwfQxcXBKNTD61jyd80V46Z2jM0M1Xwufq2LR3dcptittXrc7I3PXbcnnSk/cNvfs
+ 2nfkusDU3Q2GcdN7TlxxK7h1Pd3Tr6rmu0+44+9ZftXHtjwISiu3SQ5u99vductMaBWn3p5V
+ pfKLprBp7P9fo2Z2Ri786nqLb0vL3QVPcM0wb1i1z9/7LfPF68+514orsRRnJBpqMRcVJwIA
+ Q/GjXvsCAAA=
+X-CMS-MailID: 20200406142350eucas1p2524f266941cfedd66c0181f2fedcf388
+X-Msg-Generator: CA
+X-RootMTR: 20200330113455eucas1p1441dc79d44de5081e9d90079e2020ca0
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200330113455eucas1p1441dc79d44de5081e9d90079e2020ca0
+References: <CGME20200330113455eucas1p1441dc79d44de5081e9d90079e2020ca0@eucas1p1.samsung.com>
+ <20200330113542.181752-1-adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_065432_613760_8C504278 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200406_072354_428689_463EA360 
+X-CRM114-Status: GOOD (  15.63  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.49 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,43 +142,51 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, linux-imx@nxp.com, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Remove the disable-wp attribute from &emmc as it is, according to
-Documentation/devicetree/bindings/mmc/mmc-controller.yaml:
-
-    "Not used in combination with eMMC or SDIO."
-
-Suggested-by: Johan Jonker <jbx6244@gmail.com>
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- arch/arm/boot/dts/rk3229-xms6.dts | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
-index 6890af0b7..e75624d46 100644
---- a/arch/arm/boot/dts/rk3229-xms6.dts
-+++ b/arch/arm/boot/dts/rk3229-xms6.dts
-@@ -137,7 +137,6 @@
- 
- &emmc {
- 	cap-mmc-highspeed;
--	disable-wp;
- 	non-removable;
- 	status = "okay";
- };
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgQWRyaWFuLAoKRHVlIHRvIGRpZmZlcmVudCB3YXlzIG9mIHdvcmsgSSB1c2UgZGlmZmVyZW50
+IG1haWwgY2xpZW50LCBzbyBmb3JnaXZlIG1lIAppZiB0aGVyZSBhcmUgc29tZSBtaXNjb25mdWdy
+YXRpb25zLgoKClcgZG5pdSAzMC4wMy4yMDIwIG/CoDEzOjM1LCBBZHJpYW4gUmF0aXUgcGlzemU6
+Cj4gSGVsbG8gZXZlcnlvbmUsCj4KPiBUaGUgdjUgc2VyaWVzIGlzIGEgc2lnbmlmaWNhbnRseSBj
+bGVhbmVkIHVwIHZlcnNpb24gZnJvbSB2NCwKPiBzdGFydGVkIGJ5IEV6ZXF1aWVsIEdhcmNpYSdz
+IHN1Z2dlc3Rpb24gb2Ygc3BsaXR0aW5nIG91dCB0aGUKPiByZWdtYXAgaW5mcmFzdHJ1Y3R1cmUg
+ZnJvbSB0aGUgZHJpdmVycyAodGhhbmsgeW91ISkuCj4KPiBUdXJucyBvdXQgbm8gY2hhbmdlcyBh
+cmUgcmVxdWlyZWQgdG8gdGhlIGV4aXN0aW5nIGRyaXZlcnMgYW5kCj4gdGhlIGJyaWRnZSBjYW4g
+dHJhbnNwYXJlbnRseSB0YWtlIGNhcmUgb2YgdGhlIGxheW91dCBsb2dpYywKPiBzbyB0aGVyZSdz
+IG5vIG5lZWQgdG8gZXhwb3NlIHRoZSByZWdtYXAgdmlhIHBsYXRfZGF0YSBhbnltb3JlLgo+Cj4g
+U3RhcnRpbmcgZnJvbSB0aGlzIHZlcnNpb24gSSBhbHNvIG9wdGVkIHRvIGFkZCBwZXItcGF0Y2gK
+PiBjaGFuZ2Vsb2dzLiBBbGwgcmV2aWV3IGNvbW1lbnRzIHVwIHRvIG5vdyBoYXZlIGJlZW4gYWRk
+cmVzc2VkLgo+Cj4gVGVzdGVkIG9uIElNWDZETC4KPgo+IEFkcmlhbiBSYXRpdSAoNSk6Cj4gICAg
+ZHJtOiBicmlkZ2U6IGR3X21pcGlfZHNpOiBhZGQgaW5pdGlhbCByZWdtYXAgaW5mcmFzdHJ1Y3R1
+cmUKPiAgICBkcm06IGJyaWRnZTogZHdfbWlwaV9kc2k6IGFic3RyYWN0IHJlZ2lzdGVyIGFjY2Vz
+cyB1c2luZyByZWdfZmllbGRzCj4gICAgZHJtOiBicmlkZ2U6IHN5bm9wc2lzOiBhZGQgZHNpIHYx
+LjAxIHN1cHBvcnQKPiAgICBkcm06IGlteDogQWRkIGkuTVggNiBNSVBJIERTSSBob3N0IHBsYXRm
+b3JtIGRyaXZlcgo+ICAgIGR0LWJpbmRpbmdzOiBkaXNwbGF5OiBhZGQgaS5NWDYgTUlQSSBEU0kg
+aG9zdCBjb250cm9sbGVyIGRvYwo+Cj4gICAuLi4vZGlzcGxheS9pbXgvZnNsLG1pcGktZHNpLWlt
+eDYueWFtbCAgICAgICAgfCAxMzQgKysrKwo+ICAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9zeW5v
+cHN5cy9kdy1taXBpLWRzaS5jIHwgNjgzICsrKysrKysrKysrKystLS0tLQoKClNvIHdlIGhhdmUg
+YWJvdmUgNDAwIGxpbmVzIG1vcmUganVzdCB0byBhZGQgc2xpZ2h0bHkgZGlmZmVyZW50IHJlZ2lz
+dGVyIApsYXlvdXQgb2YgdjEuMDEuCgpRdWl0ZSBiaWcgbGluZWNvdW50IGZvciBhcHBhcmVudGx5
+IHNtYWxsICg/KSBmdW5jdGlvbmFsIGNoYW5nZSAtIEkgd2FzIAp0b28gbGF6eSB0byBjaGVjayBo
+b3cgbWFueSByZWcgZmllbGRzIGFyZSByZWFsbHkgdXNlZCAoc29tZSBhcmUgbm90IHVzZWQgCmF0
+IGFsbCksIGJ1dCBpdCBkb2VzIG5vdCBzZWVtIHRvIGJlIGJpZyBlbm91Z2ggdG8ganVzdHlmeSBz
+byBiaWcgY2hhbmdlIElNTy4KCkkgd2lsbCBhZGQgbW9yZSBjb21tZW50cyBpbiBzcGVjaWZpYyBw
+YXRjaGVzLgoKClJlZ2FyZHMKCkFuZHJ6ZWoKCgo+ICAgZHJpdmVycy9ncHUvZHJtL2lteC9LY29u
+ZmlnICAgICAgICAgICAgICAgICAgIHwgICA3ICsKPiAgIGRyaXZlcnMvZ3B1L2RybS9pbXgvTWFr
+ZWZpbGUgICAgICAgICAgICAgICAgICB8ICAgMSArCj4gICBkcml2ZXJzL2dwdS9kcm0vaW14L2R3
+X21pcGlfZHNpLWlteDYuYyAgICAgICAgfCAzOTkgKysrKysrKysrKwo+ICAgNSBmaWxlcyBjaGFu
+Z2VkLCAxMDQ5IGluc2VydGlvbnMoKyksIDE3NSBkZWxldGlvbnMoLSkKPiAgIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9pbXgvZnNs
+LG1pcGktZHNpLWlteDYueWFtbAo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvZ3B1L2Ry
+bS9pbXgvZHdfbWlwaV9kc2ktaW14Ni5jCj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2Nr
+Y2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
