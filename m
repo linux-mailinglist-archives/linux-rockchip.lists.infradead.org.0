@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FD661A143B
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:38:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13DF01A147F
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:39:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jRdiiToL7O18tu7kBaK9SVr+WrxIahoQ1nZCOXtmt5w=; b=FILAiHqU3PrNw7o7LAfFIP+Q5b
-	hnMp2jX1aSupOiHX71O8h+uYzS7GLM+V/A/j4Yv1NjhBBDtF2EusWLKJgLF4F7jgnDo12DM2LqUNb
-	mIs7A4w7VPGrVuEG3psIy9wW/0eVqIBK2IYKRgYw0p5xA4zCUVMaxIZUxOzSOy7epUNzRAP2LwuWd
-	seP6I+rC2pZJ/loIDDF+YYbOXENQmEy54mo/zae1lIdvwfh7xpoVQxqB4+BfSzCIIxaDliN7Khqqd
-	Xqp/dEwXqxR8TZcGOC2vFFvQospNbytchRfiqnOuU4f4b8HJeH3z+hfhiv2A+78uRAgg3C2AX4F4s
-	ba09FX0A==;
+	bh=FUNFG+ZYEQN7YvaoKP6Q2v3ezjj1FdJnIT0ausi18qo=; b=I993BD1FOAL+beoX8pw/Hn4GvX
+	2n7WLLxvVuEZIuoMk8k2zVE2R2/NhEHjcCHtkhfGpXd67fyfYYWQo4tOaULdokcjLGRT+OsFl/6De
+	wvnyKhkVect+xV7FWHYbFA5QMQla9dJcJan8is2yWnhtN/it/t/vdwKVnvi1p+pT+TJ+HzO48aCCV
+	RyctHIx1h6hXIb2oYHwXu4GNq8U8vITcKajX2sm6EyXNy4wwwEK0z8pBC84hGjbJdHWbYDrXXvJJY
+	oQ1sc79+UGEx0Y8m1kWI4lVVBQ7CwjszjcEFkVGeL4DTGexhXh+S1Xr3LB9umBmbcoqQaLpbmNSZ7
+	NdCaF7cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLt7Y-0007Tw-AY; Tue, 07 Apr 2020 18:38:48 +0000
+	id 1jLt83-0008EQ-Dg; Tue, 07 Apr 2020 18:39:19 +0000
 Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
  helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLt6l-0006aK-7g; Tue, 07 Apr 2020 18:38:03 +0000
+ id 1jLt6l-0006aI-8b; Tue, 07 Apr 2020 18:38:03 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 85F6CB0; Tue,  7 Apr 2020 20:37:48 +0200 (CEST)
+ id A093293; Tue,  7 Apr 2020 20:37:48 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -40,16 +40,15 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [RFC PATCH 01/34] iommu: Move default domain allocation to separate
- function
-Date: Tue,  7 Apr 2020 20:37:09 +0200
-Message-Id: <20200407183742.4344-2-joro@8bytes.org>
+Subject: [RFC PATCH 02/34] iommu: Add def_domain_type() callback in iommu_ops
+Date: Tue,  7 Apr 2020 20:37:10 +0200
+Message-Id: <20200407183742.4344-3-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407183742.4344-1-joro@8bytes.org>
 References: <20200407183742.4344-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_113759_627645_0DCD8F12 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20200407_113759_639058_8A69816C 
+X-CRM114-Status: GOOD (  16.28  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -70,6 +69,7 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Sai Praneeth Prakhya <sai.praneeth.prakhya@intel.com>,
  linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  virtualization@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
  iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
@@ -80,113 +80,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Joerg Roedel <jroedel@suse.de>
+From: Sai Praneeth Prakhya <sai.praneeth.prakhya@intel.com>
 
-Move the code out of iommu_group_get_for_dev() into a separate
-function.
+Some devices are reqired to use a specific type (identity or dma)
+of default domain when they are used with a vendor iommu. When the
+system level default domain type is different from it, the vendor
+iommu driver has to request a new default domain with
+iommu_request_dma_domain_for_dev() and iommu_request_dm_for_dev()
+in the add_dev() callback. Unfortunately, these two helpers only
+work when the group hasn't been assigned to any other devices,
+hence, some vendor iommu driver has to use a private domain if
+it fails to request a new default one.
 
+This adds def_domain_type() callback in the iommu_ops, so that
+any special requirement of default domain for a device could be
+aware by the iommu generic layer.
+
+Signed-off-by: Sai Praneeth Prakhya <sai.praneeth.prakhya@intel.com>
+Signed-off-by: Lu Baolu <baolu.lu@linux.intel.com>
+[ jroedel@suse.de: Added iommu_get_def_domain_type() function and use
+                   it to allocate the default domain ]
+Co-developed-by: Joerg Roedel <jroedel@suse.de>
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/iommu.c | 74 ++++++++++++++++++++++++++-----------------
- 1 file changed, 45 insertions(+), 29 deletions(-)
+ drivers/iommu/iommu.c | 20 +++++++++++++++++---
+ include/linux/iommu.h |  6 ++++++
+ 2 files changed, 23 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 2b471419e26c..bfe011760ed1 100644
+index bfe011760ed1..5877abd9b693 100644
 --- a/drivers/iommu/iommu.c
 +++ b/drivers/iommu/iommu.c
-@@ -1361,6 +1361,41 @@ struct iommu_group *fsl_mc_device_group(struct device *dev)
+@@ -1361,21 +1361,35 @@ struct iommu_group *fsl_mc_device_group(struct device *dev)
  }
  EXPORT_SYMBOL_GPL(fsl_mc_device_group);
  
-+static int iommu_alloc_default_domain(struct device *dev,
-+				      struct iommu_group *group)
++static int iommu_get_def_domain_type(struct device *dev)
 +{
-+	struct iommu_domain *dom;
++	const struct iommu_ops *ops = dev->bus->iommu_ops;
++	unsigned int type = 0;
 +
-+	if (group->default_domain)
-+		return 0;
++	if (ops->def_domain_type)
++		type = ops->def_domain_type(dev);
 +
-+	dom = __iommu_domain_alloc(dev->bus, iommu_def_domain_type);
-+	if (!dom && iommu_def_domain_type != IOMMU_DOMAIN_DMA) {
-+		dom = __iommu_domain_alloc(dev->bus, IOMMU_DOMAIN_DMA);
-+		if (dom) {
-+			dev_warn(dev,
-+				 "failed to allocate default IOMMU domain of type %u; falling back to IOMMU_DOMAIN_DMA",
-+				 iommu_def_domain_type);
-+		}
-+	}
-+
-+	if (!dom)
-+		return -ENOMEM;
-+
-+	group->default_domain = dom;
-+	if (!group->domain)
-+		group->domain = dom;
-+
-+	if (!iommu_dma_strict) {
-+		int attr = 1;
-+		iommu_domain_set_attr(dom,
-+				      DOMAIN_ATTR_DMA_USE_FLUSH_QUEUE,
-+				      &attr);
-+	}
-+
-+	return 0;
++	return (type == 0) ? iommu_def_domain_type : type;
 +}
 +
- /**
-  * iommu_group_get_for_dev - Find or create the IOMMU group for a device
-  * @dev: target device
-@@ -1393,40 +1428,21 @@ struct iommu_group *iommu_group_get_for_dev(struct device *dev)
+ static int iommu_alloc_default_domain(struct device *dev,
+ 				      struct iommu_group *group)
+ {
+ 	struct iommu_domain *dom;
++	unsigned int type;
  
- 	/*
- 	 * Try to allocate a default domain - needs support from the
--	 * IOMMU driver.
-+	 * IOMMU driver. There are still some drivers which don't support
-+	 * default domains, so the return value is not yet checked.
- 	 */
--	if (!group->default_domain) {
--		struct iommu_domain *dom;
--
--		dom = __iommu_domain_alloc(dev->bus, iommu_def_domain_type);
--		if (!dom && iommu_def_domain_type != IOMMU_DOMAIN_DMA) {
--			dom = __iommu_domain_alloc(dev->bus, IOMMU_DOMAIN_DMA);
--			if (dom) {
--				dev_warn(dev,
--					 "failed to allocate default IOMMU domain of type %u; falling back to IOMMU_DOMAIN_DMA",
--					 iommu_def_domain_type);
--			}
--		}
--
--		group->default_domain = dom;
--		if (!group->domain)
--			group->domain = dom;
--
--		if (dom && !iommu_dma_strict) {
--			int attr = 1;
--			iommu_domain_set_attr(dom,
--					      DOMAIN_ATTR_DMA_USE_FLUSH_QUEUE,
--					      &attr);
--		}
--	}
-+	iommu_alloc_default_domain(dev, group);
+ 	if (group->default_domain)
+ 		return 0;
  
- 	ret = iommu_group_add_device(group, dev);
--	if (ret) {
--		iommu_group_put(group);
--		return ERR_PTR(ret);
--	}
-+	if (ret)
-+		goto out_put_group;
- 
- 	return group;
+-	dom = __iommu_domain_alloc(dev->bus, iommu_def_domain_type);
+-	if (!dom && iommu_def_domain_type != IOMMU_DOMAIN_DMA) {
++	type = iommu_get_def_domain_type(dev);
 +
-+out_put_group:
-+	iommu_group_put(group);
-+
-+	return ERR_PTR(ret);
- }
- EXPORT_SYMBOL(iommu_group_get_for_dev);
++	dom = __iommu_domain_alloc(dev->bus, type);
++	if (!dom && type != IOMMU_DOMAIN_DMA) {
+ 		dom = __iommu_domain_alloc(dev->bus, IOMMU_DOMAIN_DMA);
+ 		if (dom) {
+ 			dev_warn(dev,
+ 				 "failed to allocate default IOMMU domain of type %u; falling back to IOMMU_DOMAIN_DMA",
+-				 iommu_def_domain_type);
++				 type);
+ 		}
+ 	}
  
+diff --git a/include/linux/iommu.h b/include/linux/iommu.h
+index 7ef8b0bda695..1f027b07e499 100644
+--- a/include/linux/iommu.h
++++ b/include/linux/iommu.h
+@@ -248,6 +248,10 @@ struct iommu_iotlb_gather {
+  * @cache_invalidate: invalidate translation caches
+  * @sva_bind_gpasid: bind guest pasid and mm
+  * @sva_unbind_gpasid: unbind guest pasid and mm
++ * @def_domain_type: device default domain type, return value:
++ *		- IOMMU_DOMAIN_IDENTITY: must use an identity domain
++ *		- IOMMU_DOMAIN_DMA: must use a dma domain
++ *		- 0: use the default setting
+  * @pgsize_bitmap: bitmap of all possible supported page sizes
+  * @owner: Driver module providing these ops
+  */
+@@ -318,6 +322,8 @@ struct iommu_ops {
+ 
+ 	int (*sva_unbind_gpasid)(struct device *dev, int pasid);
+ 
++	int (*def_domain_type)(struct device *dev);
++
+ 	unsigned long pgsize_bitmap;
+ 	struct module *owner;
+ };
 -- 
 2.17.1
 
