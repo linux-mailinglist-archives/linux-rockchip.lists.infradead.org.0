@@ -2,52 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEC891A12A5
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 19:25:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 911721A143C
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FDF3u7jSPY+P0Gfax6VcqrfPH8n5/G7+fPkOLgOA7+I=; b=okhJEA/OX5jVlQ
-	RB1To+59luEtNnzh/wFrjdN8BBNxmdyiRbZAkJILPhGXqdiXdqY8lfxn0eu7pN228ot6LegJyp9KD
-	72X64yyxS/eyRbBwMKbdXEoJQwV2z+QhsLRCtUNyPt4u8RpVz4GnCcRqcZCxffzv0gStp8Vg02p2B
-	OCnZliXkwXkFNNuunddllPiZXFyISEeu3AAburcuVftU8P0ek1p4x2ZRGwiUWu5bFSnnjxQi7e8nO
-	qBrWXD6hbskg3x+U7cIrqROdNTESFFnHLAqzN8IMNj5lKAan05nkDSd5VOJTx2308CzHUMRUnLjm7
-	DSDeszP4AUBDHUlI2lRQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tqut8HZbwsU9t2OB+6XeerlkDLzx/XWz5CaCwKdlzck=; b=Zhw
+	BLI0Upuc5a26LbNy/B/G+YIH+L4JfbzPPRkZkDmyrsH5d6PdMBOs3zA5lytnviUk7xydB8XBS/q3v
+	rTHN2cAAbJzuSx3WT2h8rpLVkGnKr3KVTS32npW0o20CuSqq8xzclVcy4U0BhLCHT5MVu94eTKHuk
+	EeUixaz9YLmGE+ch1J1xkrMFnxI5MZ4nKUxUCoIc4Q76GIMDZD4rkg4krU9xAgdXMPKlbC9BDo5L+
+	a35sQ1uYD7JV6xkghow+T44YXoEfKVdmaPwZf8H8RLA+aK6Cu6ef8BzPGIhsQwvVG+ZxxD0NUSks8
+	t1qtiKyP8xtzpDr3oU5F61sVbjH5U6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLryh-0004Md-Ok; Tue, 07 Apr 2020 17:25:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jLt7a-0007WF-9g; Tue, 07 Apr 2020 18:38:50 +0000
+Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
+ helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLryf-0004M4-5B
- for linux-rockchip@lists.infradead.org; Tue, 07 Apr 2020 17:25:34 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id E3CA929677F
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: linux-media@vger.kernel.org
-Subject: [PATCH] media: staging: rkisp1: remove TODO item - uapi structs
- compatibility
-Date: Tue,  7 Apr 2020 19:25:22 +0200
-Message-Id: <20200407172522.20340-1-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+ id 1jLt6l-0006aJ-9l; Tue, 07 Apr 2020 18:38:03 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 49F26A5; Tue,  7 Apr 2020 20:37:48 +0200 (CEST)
+From: Joerg Roedel <joro@8bytes.org>
+To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>,
+ Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: [RFC PATCH 00/34] iommu: Move iommu_group setup to IOMMU core code
+Date: Tue,  7 Apr 2020 20:37:08 +0200
+Message-Id: <20200407183742.4344-1-joro@8bytes.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_102533_329226_55D027D0 
-X-CRM114-Status: UNSURE (   6.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200407_113759_705164_09E7EDA7 
+X-CRM114-Status: GOOD (  18.16  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,50 +65,146 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
- hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
- helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com
+Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ virtualization@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
+ iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-remove the TODO item:
+Hi,
 
-* Make sure uapi structs have the same size and layout in 32 and 62 bits,
-and that there are no holes in the structures (pahole is a utility that
-can be used to test this).
+here is a patch-set to remove all calls of iommu_group_get_for_dev() from
+the IOMMU drivers and move the per-device group setup and default domain
+allocation into the IOMMU core code.
 
-It was tested with pahole and found compatible.
+This eliminates some ugly back and forth between IOMMU core code and the
+IOMMU drivers, where the driver called iommu_group_get_for_dev() which itself
+called back into the driver.
 
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
----
-I tested it using a script that compiles a code that includes the header
-both for arm and arm64 and compare the sha1 of the pahole results:
+The patch-set started as a "quick" Friday afternoon project to split the
+IOMMU group creation and the allocation of the default domain, so that the
+default domain is not allocated before all devices are added to the group.
+In the end it took 1.5 weeks to get this in a reasonable shape, but now the
+code (during bus probing) first adds all devices to their respective IOMMU
+group before it determines the default domain type and then allocates it for
+the group.
 
-git clone --single-branch --branch rkisp1 git@gitlab.collabora.com:dafna/v4l2-ctrl-abi-check.git
-./run-rkisp1.sh
+It turned out that this required to remove the calls of
+iommu_group_get_for_dev() from the IOMMU drivers. While at it, the calls to
+iommu_device_link()/unlink() where also moved out of the drivers, which
+required a different interface than add_device()/remove_device(). The result
+is the new probe_device()/release_device() interface, where the driver just
+does its own setup and then returns the iommu_device which belongs to the
+device being probed.
 
- drivers/staging/media/rkisp1/TODO | 3 ---
- 1 file changed, 3 deletions(-)
+There is certainly more room for cleanups, but I think this is a good start
+to simplify the code flow during IOMMU device probing.  It is also a more
+robust base for the pending patch-sets which implement per-group default
+domain types and the removal of the private domains from the Intel VT-d
+driver.
 
-diff --git a/drivers/staging/media/rkisp1/TODO b/drivers/staging/media/rkisp1/TODO
-index 0aa9877dd64a..f495b8177767 100644
---- a/drivers/staging/media/rkisp1/TODO
-+++ b/drivers/staging/media/rkisp1/TODO
-@@ -4,9 +4,6 @@ cio2_parse_firmware in drivers/media/pci/intel/ipu3/ipu3-cio2.c.
- * Fix pad format size for statistics and parameters entities.
- * Use threaded interrupt for rkisp1_stats_isr(), remove work queue.
- * Fix checkpatch errors.
--* Make sure uapi structs have the same size and layout in 32 and 62 bits,
--and that there are no holes in the structures (pahole is a utility that
--can be used to test this).
- * Review and comment every lock
- * Handle quantization
- * Document rkisp1-common.h
+With regards to testing, I verified this code works on three IOMMUs:
+
+	- AMD-Vi
+	- Intel VT-d (but there might be breakages on some hardware, the
+	  patches to remove the private domain handling from the VT-d driver
+	  should be rebased to these patches)
+	- ARM-SMMU-v3 (as emulated by QEMU)
+
+Most driver conversions to the probe_device()/release_device() interface
+were trivial, but there were also some hard nuts, which I am not sure still
+work. The more difficult drivers were:
+
+	- ARM-SMMU-v2
+	- OMAP
+	- Renesas
+	- Mediatek IOMMU v1
+	- Exynos
+
+It would be great if the changes could be tested (and possibly fixed) on
+those IOMMUs, as I can't do testing on them.
+
+The patches are based on the current iommu/next branch, I will rebase them
+to v5.7-rc1 when it comes out. A branch with these patches applied can be
+found here:
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/joro/linux.git/log/?h=iommu-probe-device
+
+Please review and test these changes and let me know what breaks.
+
+Thanks,
+
+	Joerg
+
+Joerg Roedel (33):
+  iommu: Move default domain allocation to separate function
+  iommu/amd: Implement iommu_ops->def_domain_type call-back
+  iommu/vt-d: Wire up iommu_ops->def_domain_type
+  iommu/amd: Remove dma_mask check from check_device()
+  iommu/amd: Return -ENODEV in add_device when device is not handled by
+    IOMMU
+  iommu: Add probe_device() and remove_device() call-backs
+  iommu: Move default domain allocation to iommu_probe_device()
+  iommu: Keep a list of allocated groups in __iommu_probe_device()
+  iommu: Move new probe_device path to separate function
+  iommu: Split off default domain allocation from group assignment
+  iommu: Move iommu_group_create_direct_mappings() out of
+    iommu_group_add_device()
+  iommu: Export bus_iommu_probe() and make is safe for re-probing
+  iommu/amd: Remove dev_data->passthrough
+  iommu/amd: Convert to probe/release_device() call-backs
+  iommu/vt-d: Convert to probe/release_device() call-backs
+  iommu/arm-smmu: Store device instead of group in arm_smmu_s2cr
+  iommu/arm-smmu: Convert to probe/release_device() call-backs
+  iommu/pamu: Convert to probe/release_device() call-backs
+  iommu/s390: Convert to probe/release_device() call-backs
+  iommu/virtio: Convert to probe/release_device() call-backs
+  iommu/msm: Convert to probe/release_device() call-backs
+  iommu/mediatek: Convert to probe/release_device() call-backs
+  iommu/mediatek-v1 Convert to probe/release_device() call-backs
+  iommu/qcom: Convert to probe/release_device() call-backs
+  iommu/rockchip: Convert to probe/release_device() call-backs
+  iommu/tegra: Convert to probe/release_device() call-backs
+  iommu/renesas: Convert to probe/release_device() call-backs
+  iommu/omap: Remove orphan_dev tracking
+  iommu/omap: Convert to probe/release_device() call-backs
+  iommu/exynos: Create iommu_device in struct exynos_iommu_owner
+  iommu/exynos: Convert to probe/release_device() call-backs
+  iommu: Remove add_device()/remove_device() code-paths
+  iommu: Unexport iommu_group_get_for_dev()
+
+Sai Praneeth Prakhya (1):
+  iommu: Add def_domain_type() callback in iommu_ops
+
+ drivers/iommu/amd_iommu.c       |  97 ++++----
+ drivers/iommu/amd_iommu_types.h |   1 -
+ drivers/iommu/arm-smmu-v3.c     |  42 +---
+ drivers/iommu/arm-smmu.c        |  44 ++--
+ drivers/iommu/exynos-iommu.c    | 113 ++++++---
+ drivers/iommu/fsl_pamu_domain.c |  22 +-
+ drivers/iommu/intel-iommu.c     |  68 +-----
+ drivers/iommu/iommu.c           | 391 +++++++++++++++++++++++++-------
+ drivers/iommu/ipmmu-vmsa.c      |  60 ++---
+ drivers/iommu/msm_iommu.c       |  34 +--
+ drivers/iommu/mtk_iommu.c       |  24 +-
+ drivers/iommu/mtk_iommu_v1.c    |  50 ++--
+ drivers/iommu/omap-iommu.c      |  99 ++------
+ drivers/iommu/qcom_iommu.c      |  24 +-
+ drivers/iommu/rockchip-iommu.c  |  26 +--
+ drivers/iommu/s390-iommu.c      |  22 +-
+ drivers/iommu/tegra-gart.c      |  24 +-
+ drivers/iommu/tegra-smmu.c      |  31 +--
+ drivers/iommu/virtio-iommu.c    |  41 +---
+ include/linux/iommu.h           |  21 +-
+ 20 files changed, 600 insertions(+), 634 deletions(-)
+
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
