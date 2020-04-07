@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 860971A149F
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:39:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB23C1A146A
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,20 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sBExY2nk3fJunGVZBwMPqTqKrYQ5eozASq6+94uXYi0=; b=TQybe0pDoQfM9AS/G1DKS9vm8w
-	Q/W6KOrPse6fH80Bqv0wk3dB8SlrsAaa0dOAJDWxSbilYEFxCzWWCAEvxYbg2jloSBfT4R21OkFbO
-	/dnES+n5108O1S182gRJ44U5EUTe3H1p3CXbjL17zNnEcjbax2uJxb56aKHPWUY+A0tebqLhJCc3x
-	a7HaZsiKXyXS7oQnlfOZyeCpEcQW5QY3r6sa1pgKYnCGqrf3NrKvi4Fpm0Anvg11AxI4mn8N83oew
-	xAXZ7H/Rz7Iu0PZ8JhHF7gqfOF1c1C0uqC+AUAMAnJt/6i+/CMc9przaXQaxm/miyzZmLD/nqZTEv
-	O4ZuRlrA==;
+	bh=UR1N1Oj1BhJTaP9CYCfklOeoLdyvHSV9tTJLfR7vzcs=; b=DdehkTEz48CztrFQxu2xpmx6qI
+	DDQeDhWA+HbcFUD/bVMWXiL/W2eTvSCEORxMBFvCqC4FQ9JlVSp4BQBACXCjamoY+6FIKo8Qz1/jC
+	6fXfy5vtQ7d+t5Qin/LcBazCj2Hxe4t9cKuvJJaB7LfIfP8iMhu2AFtfmUTdAF1wqSdNKVNkJOpd2
+	urVWSpohguTLMAuVGhz4HGTGiEq1TuJxujYG2JbcUogpanjdHLY7jjhv26z4ISlX4n9p5kZ+Dt1T2
+	AMtg95WnJPbXj1DyfLVS0hbT34TV6yYEOt81br/ZFNr2GYOjCu9UsHwzHAzH2Xgp8nLxA5FqycTP6
+	l9QM2T2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLt8F-00006l-7n; Tue, 07 Apr 2020 18:39:31 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1jLt7u-00082S-7D; Tue, 07 Apr 2020 18:39:10 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLt6q-0006iW-CH; Tue, 07 Apr 2020 18:38:05 +0000
+ id 1jLt6q-0006ie-CI; Tue, 07 Apr 2020 18:38:06 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 359A91D4; Tue,  7 Apr 2020 20:37:49 +0200 (CEST)
+ id 8C8F9273; Tue,  7 Apr 2020 20:37:49 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -40,20 +39,23 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [RFC PATCH 05/34] iommu/amd: Remove dma_mask check from check_device()
-Date: Tue,  7 Apr 2020 20:37:13 +0200
-Message-Id: <20200407183742.4344-6-joro@8bytes.org>
+Subject: [RFC PATCH 06/34] iommu/amd: Return -ENODEV in add_device when device
+ is not handled by IOMMU
+Date: Tue,  7 Apr 2020 20:37:14 +0200
+Message-Id: <20200407183742.4344-7-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407183742.4344-1-joro@8bytes.org>
 References: <20200407183742.4344-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_113804_647043_36052879 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20200407_113804_647532_B9344440 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -81,27 +83,32 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-The check was only needed for the DMA-API implementation in the AMD
-IOMMU driver, which no longer exists.
+When check_device() fails on the device, it is not handled by the
+IOMMU and amd_iommu_add_device() needs to return -ENODEV.
 
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/amd_iommu.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/iommu/amd_iommu.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/amd_iommu.c b/drivers/iommu/amd_iommu.c
-index 73b4f84cf449..504f2db75eda 100644
+index 504f2db75eda..3e0d27f7622e 100644
 --- a/drivers/iommu/amd_iommu.c
 +++ b/drivers/iommu/amd_iommu.c
-@@ -326,7 +326,7 @@ static bool check_device(struct device *dev)
- {
- 	int devid;
+@@ -2157,9 +2157,12 @@ static int amd_iommu_add_device(struct device *dev)
+ 	struct amd_iommu *iommu;
+ 	int ret, devid;
  
--	if (!dev || !dev->dma_mask)
-+	if (!dev)
- 		return false;
+-	if (!check_device(dev) || get_dev_data(dev))
++	if (get_dev_data(dev))
+ 		return 0;
  
++	if (!check_device(dev))
++		return -ENODEV;
++
  	devid = get_device_id(dev);
+ 	if (devid < 0)
+ 		return devid;
 -- 
 2.17.1
 
