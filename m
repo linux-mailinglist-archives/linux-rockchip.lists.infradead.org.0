@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D7991A14D3
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:40:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05FD71A150D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 20:41:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+1tnDUFLZ2bHix0/qzQH90SsyVzvH6KcaNC4y+mDmRI=; b=G6WF40DvqIG9HzEEhoQE1bXdvh
-	KDgPot7BeTiEy+3EUNwwyaAOTX5fckX8dq+kXZcJlZhiTdshXTAToMgiuxj0VgEso0JTVk1mpCfHF
-	1n0kIOXb/IY1ebj0zl3VyEv6eNZrCh5CVct0KbYVBulIwAFktllAHfFBLiHWXImyPF7aa6wb2SdX9
-	y4MA7FcWTrbDdr6fM/hXGIqQ4Xu1W9wpT1Y7ZeDxa8VGEzDsDo/S7qgqPxQXVXc6UQ5pSeGSHXwum
-	XgdKd/O5r3XHif6UWb4Nsn9/9ecX111iZSp7tTOgCPUpzg6RNjf76D25jngLfe6LAmoQPlIrc0YyR
-	bNiIIAXw==;
+	bh=0VGzU6S9GbcoB5xCbqSNXBv1lHRGJooNG3ygxl+E3bM=; b=JLJzxViqyhHoGn+e99fdlVE9lm
+	SKzvHf/A6ChV+/bI992Y8HSMG3F3hZtOAbm040YMKTQUcQr+bGSVQjyRJjHm8jbBEtBWv3nT7mVlZ
+	70ZYsmU+1nsvV+PaxuAimYu3Oi7/y4rWRFZGA3EdCPcbpgvCAqC69zyzcjMR6vX7jg8Kyjbu0RcjN
+	UM+av0uwJTD2wsdZgh+JZGoSB/Mq1HX5x7oy8KLuXNRXAhqnpGYwmBWhjmh2Bp4MLt/U+rV1GRkoO
+	tMNftzPtlIJmx+a7mfBDr3nuNEEMAs5/uwQ9lubdK77DSlY0kUnH+/6QGk66l3SjG+Qz2ABy+/azY
+	Ym7fDoQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLt8z-0003U8-NC; Tue, 07 Apr 2020 18:40:17 +0000
+	id 1jLt9j-0004OG-E0; Tue, 07 Apr 2020 18:41:03 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLt7U-0007QW-4M; Tue, 07 Apr 2020 18:38:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=7jodlBtZnGAR7wEmBjwZjV6LwDmS5pFdoJFCuxWFHmY=; b=j9savxOGOfX0Tnv9bR+Ig3iVsN
+ I734IvhFVyegCctqRlw4UQF+g9G3JRwDmysO+/jD4U1YcAK3xciMDP2d+ej6g/5J/egpU59j0+dUH
+ yJBfO7zBCbqAo/kT6kNIBs9G6ZWJCWFPjZ2hXx2gj/sSG2YNR0QnGQEts3h0Sp2j4szU7IhkbWDKr
+ RSZt3SMS+7wqyS4DgtCv+XzYI0CHgO0HorbDTu4qbr0NqxM7CorYHWGXfqG1xDP61UIb1AVU4ez4B
+ OTKT5GSDSlHmSNnUZnhQL9GwoWwYsOhINg9p+S0DyNrnZuXfBML1+3bHZT3kOnvlj8JRnUnQISa/+
+ ijl2RQ3A==;
 Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
  helo=theia.8bytes.org)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLt6w-0006rp-Fp; Tue, 07 Apr 2020 18:38:15 +0000
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jLt78-0004pg-25; Tue, 07 Apr 2020 18:38:42 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 45F6455F; Tue,  7 Apr 2020 20:37:52 +0200 (CEST)
+ id 773C3596; Tue,  7 Apr 2020 20:37:52 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -40,21 +53,23 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [RFC PATCH 21/34] iommu/virtio: Convert to probe/release_device()
+Subject: [RFC PATCH 22/34] iommu/msm: Convert to probe/release_device()
  call-backs
-Date: Tue,  7 Apr 2020 20:37:29 +0200
-Message-Id: <20200407183742.4344-22-joro@8bytes.org>
+Date: Tue,  7 Apr 2020 20:37:30 +0200
+Message-Id: <20200407183742.4344-23-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200407183742.4344-1-joro@8bytes.org>
 References: <20200407183742.4344-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_113810_888106_60483566 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+X-CRM114-CacheID: sfid-20200407_193823_741182_539491E5 
+X-CRM114-Status: GOOD (  14.42  )
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -82,109 +97,79 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-Convert the VirtIO IOMMU driver to use the probe_device() and
+Convert the MSM IOMMU driver to use the probe_device() and
 release_device() call-backs of iommu_ops, so that the iommu core code
 does the group and sysfs setup.
 
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/virtio-iommu.c | 41 +++++++++---------------------------
- 1 file changed, 10 insertions(+), 31 deletions(-)
+ drivers/iommu/msm_iommu.c | 34 +++++++---------------------------
+ 1 file changed, 7 insertions(+), 27 deletions(-)
 
-diff --git a/drivers/iommu/virtio-iommu.c b/drivers/iommu/virtio-iommu.c
-index d5cac4f46ca5..bda300c2a438 100644
---- a/drivers/iommu/virtio-iommu.c
-+++ b/drivers/iommu/virtio-iommu.c
-@@ -865,24 +865,23 @@ static struct viommu_dev *viommu_get_by_fwnode(struct fwnode_handle *fwnode)
- 	return dev ? dev_to_virtio(dev)->priv : NULL;
+diff --git a/drivers/iommu/msm_iommu.c b/drivers/iommu/msm_iommu.c
+index 94a6df1bddd6..10cd4db0710a 100644
+--- a/drivers/iommu/msm_iommu.c
++++ b/drivers/iommu/msm_iommu.c
+@@ -388,43 +388,23 @@ static struct msm_iommu_dev *find_iommu_for_dev(struct device *dev)
+ 	return ret;
  }
  
--static int viommu_add_device(struct device *dev)
-+static struct iommu_device *viommu_probe_device(struct device *dev)
+-static int msm_iommu_add_device(struct device *dev)
++static struct iommu_device *msm_iommu_probe_device(struct device *dev)
  {
- 	int ret;
+ 	struct msm_iommu_dev *iommu;
 -	struct iommu_group *group;
- 	struct viommu_endpoint *vdev;
- 	struct viommu_dev *viommu = NULL;
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
+ 	unsigned long flags;
  
- 	if (!fwspec || fwspec->ops != &viommu_ops)
+ 	spin_lock_irqsave(&msm_iommu_lock, flags);
+ 	iommu = find_iommu_for_dev(dev);
+ 	spin_unlock_irqrestore(&msm_iommu_lock, flags);
+ 
+-	if (iommu)
+-		iommu_device_link(&iommu->iommu, dev);
+-	else
 -		return -ENODEV;
-+		return ERR_PTR(-ENODEV);
- 
- 	viommu = viommu_get_by_fwnode(fwspec->iommu_fwnode);
- 	if (!viommu)
--		return -ENODEV;
-+		return ERR_PTR(-ENODEV);
- 
- 	vdev = kzalloc(sizeof(*vdev), GFP_KERNEL);
- 	if (!vdev)
--		return -ENOMEM;
-+		return ERR_PTR(-ENOMEM);
- 
- 	vdev->dev = dev;
- 	vdev->viommu = viommu;
-@@ -896,45 +895,25 @@ static int viommu_add_device(struct device *dev)
- 			goto err_free_dev;
- 	}
- 
--	ret = iommu_device_link(&viommu->iommu, dev);
--	if (ret)
--		goto err_free_dev;
-+	return &viommu->iommu;
- 
--	/*
--	 * Last step creates a default domain and attaches to it. Everything
--	 * must be ready.
--	 */
+-
 -	group = iommu_group_get_for_dev(dev);
--	if (IS_ERR(group)) {
--		ret = PTR_ERR(group);
--		goto err_unlink_dev;
--	}
+-	if (IS_ERR(group))
+-		return PTR_ERR(group);
 -
 -	iommu_group_put(group);
--
--	return PTR_ERR_OR_ZERO(group);
--
--err_unlink_dev:
--	iommu_device_unlink(&viommu->iommu, dev);
- err_free_dev:
- 	generic_iommu_put_resv_regions(dev, &vdev->resv_regions);
- 	kfree(vdev);
++	if (!iommu)
++		return ERR_PTR(-ENODEV);
  
--	return ret;
-+	return ERR_PTR(ret);
+-	return 0;
++	return &iommu->iommu;
  }
  
--static void viommu_remove_device(struct device *dev)
-+static void viommu_release_device(struct device *dev)
+-static void msm_iommu_remove_device(struct device *dev)
++static void msm_iommu_release_device(struct device *dev)
  {
--	struct viommu_endpoint *vdev;
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
-+	struct viommu_endpoint *vdev;
- 
- 	if (!fwspec || fwspec->ops != &viommu_ops)
- 		return;
- 
- 	vdev = dev_iommu_priv_get(dev);
- 
+-	struct msm_iommu_dev *iommu;
+-	unsigned long flags;
+-
+-	spin_lock_irqsave(&msm_iommu_lock, flags);
+-	iommu = find_iommu_for_dev(dev);
+-	spin_unlock_irqrestore(&msm_iommu_lock, flags);
+-
+-	if (iommu)
+-		iommu_device_unlink(&iommu->iommu, dev);
+-
 -	iommu_group_remove_device(dev);
--	iommu_device_unlink(&vdev->viommu->iommu, dev);
- 	generic_iommu_put_resv_regions(dev, &vdev->resv_regions);
- 	kfree(vdev);
  }
-@@ -960,8 +939,8 @@ static struct iommu_ops viommu_ops = {
- 	.unmap			= viommu_unmap,
- 	.iova_to_phys		= viommu_iova_to_phys,
- 	.iotlb_sync		= viommu_iotlb_sync,
--	.add_device		= viommu_add_device,
--	.remove_device		= viommu_remove_device,
-+	.probe_device		= viommu_probe_device,
-+	.release_device		= viommu_release_device,
- 	.device_group		= viommu_device_group,
- 	.get_resv_regions	= viommu_get_resv_regions,
- 	.put_resv_regions	= generic_iommu_put_resv_regions,
+ 
+ static int msm_iommu_attach_dev(struct iommu_domain *domain, struct device *dev)
+@@ -708,8 +688,8 @@ static struct iommu_ops msm_iommu_ops = {
+ 	 */
+ 	.iotlb_sync = NULL,
+ 	.iova_to_phys = msm_iommu_iova_to_phys,
+-	.add_device = msm_iommu_add_device,
+-	.remove_device = msm_iommu_remove_device,
++	.probe_device = msm_iommu_probe_device,
++	.release_device = msm_iommu_release_device,
+ 	.device_group = generic_device_group,
+ 	.pgsize_bitmap = MSM_IOMMU_PGSIZES,
+ 	.of_xlate = qcom_iommu_of_xlate,
 -- 
 2.17.1
 
