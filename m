@@ -2,82 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74B3A1A160A
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 21:35:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B06F1A160F
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 21:36:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WlCOJEDBtaUOu9YRMPTC0j8dX9iRmeETnVPa1wQVujY=; b=AeBErB0MQpHdUp
-	EmFMfSm7ImRWXUZpQPq2c8mHeo8fFjmlImBfppEcmEyBW4/ilah+TggXeGdEurq6KK7/ZeiJ/CTAl
-	kKShbbyad0Zqgfe0dzLBFpuiwki/fw4yTBu+QzqqkjYZJsWA/NrSlcKsh7L5pCRpAdM95DGFR7FG2
-	tAB8TLhV2HloTBOLC4PqYLbiAa1c3JFZqS/steHDQCghgr/gWZXRvylqD0uPUODA53ZHBRrBDyxGT
-	SSKrmlmPg0ij0vzKHoL08wQipikOQ83csMKFA/EImHZpW6WcAabXlsKBjddZ9Z0XD8IJtXAxgOD6C
-	xxSrBeQlTJjjyaHRXEfw==;
+	List-Owner; bh=6+51fIuzz7nKgkJ6vKTVOJzC2g6eWB/HlBovJCyoQTM=; b=EC10CiB+gfJOJw
+	ZPfS+GKAdSZpxAXxiB7CtcbH/84/MAOEXgDSS6g6HDmTmjgYRRa1AHAerGXAdsOybAhq+LHV3y8NP
+	RaDnmK4ApRYM4Tmv3ONxtk9kxo4dADbUq23/fxEOQe3Jsqf+zuQ4AT44pCe3l5lE3FGc26SfIQOxg
+	fbesCwEYwB34cM7xuoIo4BGQw+hcFsmTAXt8TI4SRu5Q5jpKcmufJchrh8ZKwwiXGq7DsRELp7jMH
+	gPIF6S2DOn47AopYBuMEXcJ5862vXc6684rzR2L8ITmADUr24N/GguI9BjDlCKYIN2GQcNOrA37HV
+	PkmyP8ktVpX1ekPUjmSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLtzz-000325-9u; Tue, 07 Apr 2020 19:35:03 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jLu1F-0005b4-G4; Tue, 07 Apr 2020 19:36:21 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLtzu-00031O-5F
- for linux-rockchip@lists.infradead.org; Tue, 07 Apr 2020 19:34:59 +0000
-Received: by mail-lj1-x242.google.com with SMTP id r24so5092601ljd.4
- for <linux-rockchip@lists.infradead.org>; Tue, 07 Apr 2020 12:34:57 -0700 (PDT)
+ id 1jLu1C-0005aU-1J
+ for linux-rockchip@lists.infradead.org; Tue, 07 Apr 2020 19:36:19 +0000
+Received: by mail-lf1-x144.google.com with SMTP id m19so1291843lfq.13
+ for <linux-rockchip@lists.infradead.org>; Tue, 07 Apr 2020 12:36:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=ragnatech-se.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:content-transfer-encoding:in-reply-to;
- bh=oTjVCuFZKsHR8rmYdP/22TGJxJAP4oGFR0k0Wc3dyYI=;
- b=lrRSGAFzEbPXA07o375bOTdLd/YSixu9Cg0DCC119qB+A0gJMrSmfWoh6tIaNBaCBh
- FM63P7UQcATYjdDP9dFzQdXXw553/fZs6dj1mQH5HiZ0h02TpeO9AQg5/kKu8zdGRg+u
- bg0wa4M5+EqIDi/Z5Y5o+wmsNXz0bhaB1DTDOvfSNAzK3OgbOcC+HtdSMnXWAwn8jIhf
- RsJKWIJNBj4dpA+Ga7Jt80PlWiDH97iTAJtqyM0Siv0BHwjTpIsIoh43ffACr7aEXoD9
- FRQy8+0b2vNEGq6jH6eZNeYpspW5IGmZ++F0vvC0Ile+1WkITvhK7rvm0mBp0Ukl/YBZ
- ogPg==
+ bh=zYmwLnSJ94Ak1KFQ2Lt4K/NwHQ1452knMRyiQWVA3M8=;
+ b=uc8JaIBoePdZQYUsZFc2nPs8Ko9Dz2onCuSwcbV59VPMJCmgoNdFMbJCpw0aiIknZt
+ Re41I6UNrzUrpklpcSzYlGTYDGJDLwByQhN4wdNx3JIKj+eaYPFoinaVAd5q3BwMj0l3
+ Cxrt5e82wl9kH6B/slgjYgtqU/4+3U1LHwux7GxgdffJljupkwvCWf6alBds2zJNKV9X
+ uC4d22I+0NA3a4deAToJSJejnFINFAtT/I727lzfdG3l4CY76U/MQmYCnqfqs+KM9aEy
+ qIM2Neory0Dgfp9vrzhpKMuO8L9v9ZOfdVCyw9Arsj0jBdP/QrB1Z6EhaBi1+Versc0Q
+ JmYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to;
- bh=oTjVCuFZKsHR8rmYdP/22TGJxJAP4oGFR0k0Wc3dyYI=;
- b=Cr9Mv9Gwy1cO9wFJxKAhic3PwSMM8PikpquHCzr8xNuz/vNTw8AJDLaF35qH8J11IO
- U8RgD1B+QGIlyswn9sL9Oq89OZ6APoA8GB4XF8geOScAWI2nH8Cbr5T2m7AjZfVkNEvd
- HO3XuU0nSMb9bdnNWIeQrq6zOakcZrEEqp1aicH4jleb8sffA1xcSxmLqxbYBejjUH8n
- +R7DRRWNkRo2ADAsDGWeqs8PkWIKF60ExtGZCX9FaP5zdi1KnSyl/eeO/ELkNOAbq64w
- V8cb9SJ//EylOCX8xOmIiuLjZXcDo9I9p0gPL8tm3BCya9iNeDrlZkbrsHFxglQi4eAN
- Yc3g==
-X-Gm-Message-State: AGi0PuZ4Acn/Js6icc3uQjKR18YVS1TsHRy5+C0Ob8WcRbhHE+p+sruX
- ESRvH31QfeMo+F7VgVEjngdWeg==
-X-Google-Smtp-Source: APiQypK2WA/n6jRO1CDXfuB25Me8MW/u2D6IwvVc8Ic6ePlBFao53EmemdW8U8NK2YQnPSBPI6hZBg==
-X-Received: by 2002:a2e:87cc:: with SMTP id v12mr2704317ljj.127.1586288095696; 
- Tue, 07 Apr 2020 12:34:55 -0700 (PDT)
+ bh=zYmwLnSJ94Ak1KFQ2Lt4K/NwHQ1452knMRyiQWVA3M8=;
+ b=AMzG9GoVwpEQeSbpwjeniz/0grjP3ClZFh1lyhJiQU9q0DpRvkHz0dk0GjzE3NXnfD
+ T+a6/RXIHrEoKx3FYHE4p/5zaZWtlU7m3bYaciCgT6kr6um91mLYudLHwCHDmxE00UDy
+ tzn47EVo+YBhJUKLjkjZqroG2iJjKD76/mhxJl2Usx3O1BzxrJj2cpmAAFBMxBS8FsFv
+ dy6OlFkwi0dzVIFlqvzORCo5V2gCw1anD8SgkrZAFFsXAskPY3IRQW8rfjuXuzk5LB0j
+ qgLFeiWxgn17t+Y8rqCNRPShycPZs25PjQEIq0myTG60o5TW8EEGBbO3HjdT96J43bkA
+ WL2A==
+X-Gm-Message-State: AGi0PuaRpQPKYDcVmNm+z600c80pYRTA9rcI6TAgi3v4EvqD8Yfr9xGo
+ +81wR0aZLexjIzGxtkGsqGGDkw==
+X-Google-Smtp-Source: APiQypLDRt4Lwe0RPpsuG1osUpGjx+Fpay7l4fosQ49a38aeoE/FR14zxknbcc1YZE8RZHUmwgI8NQ==
+X-Received: by 2002:a19:3848:: with SMTP id d8mr2332310lfj.44.1586288176141;
+ Tue, 07 Apr 2020 12:36:16 -0700 (PDT)
 Received: from localhost (h-200-138.A463.priv.bahnhof.se. [176.10.200.138])
- by smtp.gmail.com with ESMTPSA id y20sm12437520ljy.100.2020.04.07.12.34.54
+ by smtp.gmail.com with ESMTPSA id n26sm12248798ljg.93.2020.04.07.12.36.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 07 Apr 2020 12:34:55 -0700 (PDT)
-Date: Tue, 7 Apr 2020 21:34:53 +0200
+ Tue, 07 Apr 2020 12:36:15 -0700 (PDT)
+Date: Tue, 7 Apr 2020 21:36:15 +0200
 From: Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>
 To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v2 2/3] media: staging: rkisp1: use
- v4l2_pipeline_stream_{enable,disable} helpers
-Message-ID: <20200407193453.GF1716317@oden.dyn.berto.se>
+Subject: Re: [PATCH v2 0/3] media: add v4l2_pipeline_stream_{enable,disable}
+ helpers
+Message-ID: <20200407193615.GG1716317@oden.dyn.berto.se>
 References: <20200403213312.1863876-1-helen.koike@collabora.com>
- <20200403213312.1863876-3-helen.koike@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200403213312.1863876-3-helen.koike@collabora.com>
+In-Reply-To: <20200403213312.1863876-1-helen.koike@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_123458_202130_89055EC0 
-X-CRM114-Status: GOOD (  20.03  )
+X-CRM114-CacheID: sfid-20200407_123618_078301_CF417DD8 
+X-CRM114-Status: GOOD (  19.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,157 +105,110 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi Helen,
 
-Thanks for your work.
-
-On 2020-04-03 18:33:11 -0300, Helen Koike wrote:
-> Use v4l2_pipeline_stream_{enable,disable} to call .s_stream() subdevice
-> callbacks through the pipeline.
+On 2020-04-03 18:33:09 -0300, Helen Koike wrote:
+> Hi,
 > =
 
-> Tested by streaming on RockPi4 with imx219 and on Scarlet Chromebook.
+> Media drivers need to iterate through the pipeline and call .s_stream()
+> callbacks in the subdevices.
 > =
 
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> Instead of repeating code, add helpers for this.
 > =
 
-> ---
+> These helpers will go walk through the pipeline only visiting entities
+> that participates in the stream, i.e. it follows links from sink to source
+> (and not the opposite).
 > =
 
-> Changes in v2:
-> - rebase on top of new helpers prototypes
+> Which means that in a topology like this https://bit.ly/3b2MxjI
+> calling v4l2_pipeline_stream_enable() from rkisp1_mainpath won't call
+> .s_stream(true) for rkisp1_resizer_selfpath.
 > =
 
->  drivers/staging/media/rkisp1/rkisp1-capture.c | 76 +------------------
->  1 file changed, 3 insertions(+), 73 deletions(-)
+> stream_count variable was added in v4l2_subdevice to handle nested calls
+> to the helpers.
+> This is useful when the driver allows streaming from more then one
+> capture device sharing subdevices.
 > =
 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/stag=
-ing/media/rkisp1/rkisp1-capture.c
-> index 24fe6a7888aa4..0c2a357c4a12a 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> @@ -838,71 +838,6 @@ static void rkisp1_return_all_buffers(struct rkisp1_=
-capture *cap,
->  	spin_unlock_irqrestore(&cap->buf.lock, flags);
->  }
->  =
+> This patch came from the error I was facing when multistreaming from
+> rkisp1 driver, where stoping one capture would call s_stream(false) in
+> the pipeline, causing a stall in the second capture device.
+> =
 
-> -/*
-> - * rkisp1_pipeline_sink_walk - Walk through the pipeline and call cb
-> - * @from: entity at which to start pipeline walk
-> - * @until: entity at which to stop pipeline walk
-> - *
-> - * Walk the entities chain starting at the pipeline video node and stop
-> - * all subdevices in the chain.
-> - *
-> - * If the until argument isn't NULL, stop the pipeline walk when reachin=
-g the
-> - * until entity. This is used to disable a partially started pipeline du=
-e to a
-> - * subdev start error.
-> - */
-> -static int rkisp1_pipeline_sink_walk(struct media_entity *from,
-> -				     struct media_entity *until,
-> -				     int (*cb)(struct media_entity *from,
-> -					       struct media_entity *curr))
-> -{
-> -	struct media_entity *entity =3D from;
-> -	struct media_pad *pad;
-> -	unsigned int i;
-> -	int ret;
-> -
-> -	while (1) {
-> -		pad =3D NULL;
-> -		/* Find remote source pad */
-> -		for (i =3D 0; i < entity->num_pads; i++) {
-> -			struct media_pad *spad =3D &entity->pads[i];
-> -
-> -			if (!(spad->flags & MEDIA_PAD_FL_SINK))
-> -				continue;
-> -			pad =3D media_entity_remote_pad(spad);
-> -			if (pad && is_media_entity_v4l2_subdev(pad->entity))
-> -				break;
-> -		}
-> -		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-> -			break;
-> -
-> -		entity =3D pad->entity;
-> -		if (entity =3D=3D until)
-> -			break;
-> -
-> -		ret =3D cb(from, entity);
-> -		if (ret)
-> -			return ret;
-> -	}
-> -
-> -	return 0;
-> -}
-> -
-> -static int rkisp1_pipeline_disable_cb(struct media_entity *from,
-> -				      struct media_entity *curr)
-> -{
-> -	struct v4l2_subdev *sd =3D media_entity_to_v4l2_subdev(curr);
-> -
-> -	return v4l2_subdev_call(sd, video, s_stream, false);
-> -}
-> -
-> -static int rkisp1_pipeline_enable_cb(struct media_entity *from,
-> -				     struct media_entity *curr)
-> -{
-> -	struct v4l2_subdev *sd =3D media_entity_to_v4l2_subdev(curr);
-> -
-> -	return v4l2_subdev_call(sd, video, s_stream, true);
-> -}
-> -
->  static void rkisp1_stream_stop(struct rkisp1_capture *cap)
->  {
->  	int ret;
-> @@ -929,11 +864,7 @@ static void rkisp1_vb2_stop_streaming(struct vb2_que=
-ue *queue)
->  =
+> Also, the vimc patch https://patchwork.kernel.org/patch/10948833/ won't
+> be required with this patchset.
+> =
 
->  	rkisp1_stream_stop(cap);
->  	media_pipeline_stop(&node->vdev.entity);
-> -	ret =3D rkisp1_pipeline_sink_walk(&node->vdev.entity, NULL,
-> -					rkisp1_pipeline_disable_cb);
-> -	if (ret)
-> -		dev_err(rkisp1->dev,
-> -			"pipeline stream-off failed error:%d\n", ret);
-> +	v4l2_pipeline_stream_disable(&node->vdev);
->  =
+> This patchset was tested on rkisp1 and vimc drivers.
 
->  	rkisp1_return_all_buffers(cap, VB2_BUF_STATE_ERROR);
->  =
+I'm just curious, with this series applied can I stream simultaneously =
 
-> @@ -1005,8 +936,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, =
-unsigned int count)
->  	rkisp1_stream_start(cap);
->  =
+on multiple video devises using vimc?
 
->  	/* start sub-devices */
-> -	ret =3D rkisp1_pipeline_sink_walk(entity, NULL,
-> -					rkisp1_pipeline_enable_cb);
-> +	ret =3D v4l2_pipeline_stream_enable(&cap->vnode.vdev);
->  	if (ret)
->  		goto err_stop_stream;
->  =
+> =
 
-> @@ -1019,7 +949,7 @@ rkisp1_vb2_start_streaming(struct vb2_queue *queue, =
-unsigned int count)
->  	return 0;
->  =
+> Other cleanup might be possible (but I won't add in this patchset as I
+> don't have the hw to test):
+> 	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/qcom/=
+camss/camss-video.c#n430
+> 	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/omap3=
+isp/isp.c#n697
+> 	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/stm32=
+/stm32-dcmi.c#n680
+> 	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/xilin=
+x/xilinx-dma.c#n97
+> =
 
->  err_pipe_disable:
-> -	rkisp1_pipeline_sink_walk(entity, NULL, rkisp1_pipeline_disable_cb);
-> +	v4l2_pipeline_stream_disable(entity, &cap->rkisp1->pipe);
+> Changes in V2:
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> The first version was calling the s_stream() callbacks from sensor to
+> capture.
+> =
 
-This does not match the prototype for v4l2_pipeline_stream_disable() or =
+> This was generating errors in the Scarlet Chromebook, when the sensor
+> was being enabled before the ISP.
+> =
 
-am I missing something ?
+> It make sense to enable subdevices from capture to sensor instead (which
+> is what most drivers do already).
+> =
 
->  err_stop_stream:
->  	rkisp1_stream_stop(cap);
->  	v4l2_pipeline_pm_put(entity);
+> This v2 drops the changes from mc-entity.c, and re-implement helpers in
+> v4l2-common.c
+> =
+
+> Overview of patches:
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> =
+
+> Path 1/3 adds the helpers in v4l2-common.c, allowing nested calls by
+> adding stream_count in the subdevice struct.
+> =
+
+> Patch 2/3 cleanup rkisp1 driver to use the helpers.
+> =
+
+> Patch 3/3 cleanup vimc driver to use the helpers.
+> =
+
+> Helen Koike (3):
+>   media: v4l2-common: add helper functions to call s_stream() callbacks
+>   media: staging: rkisp1: use v4l2_pipeline_stream_{enable,disable}
+>     helpers
+>   media: vimc: use v4l2_pipeline_stream_{enable,disable} helpers
+> =
+
+>  drivers/media/platform/vimc/vimc-capture.c    |  28 +++--
+>  drivers/media/platform/vimc/vimc-streamer.c   |  49 +-------
+>  drivers/media/v4l2-core/v4l2-common.c         | 117 ++++++++++++++++++
+>  drivers/staging/media/rkisp1/rkisp1-capture.c |  76 +-----------
+>  include/media/v4l2-common.h                   |  28 +++++
+>  include/media/v4l2-subdev.h                   |   2 +
+>  6 files changed, 173 insertions(+), 127 deletions(-)
+> =
+
 > -- =
 
 > 2.26.0
