@@ -2,44 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C797A1A0F67
-	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 16:36:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC891A12A5
+	for <lists+linux-rockchip@lfdr.de>; Tue,  7 Apr 2020 19:25:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9zRFm4UXqr0WHGRVeFnZ0J5aWDf9++puVw8AHp6x2GM=; b=qeG/enhztnJTP9
-	A0rb6xn2sFmWHETTFabbsi3b5MUGT3lxuN/B1c0AseRXa6kQgrrsSZNgx8Xn6MIbMAeXqf5HoQSyu
-	k+IyjX9d7MjuTQxMWZL7xdLfACrhIi3u4Gwlqf4Or/weyDJX9nCONiViJdydE3uPUYbIMmtqhfD+f
-	pvL6KSOaEs45JLbMBn8NKCBl8Ki2QoTHo221/X5sZrOUs7OSa2vd/1wl8ho+mw68klm4fTBeL3W52
-	dt7Ohv6Qd9KcOpmDbdvHTogX5aU+bqX/SwPqaot6r+nYUkzzUE3sbDNRK1Uiqlv8XWx8voXcUQkZI
-	AHM/lK3fbJWLR4ljcW+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FDF3u7jSPY+P0Gfax6VcqrfPH8n5/G7+fPkOLgOA7+I=; b=okhJEA/OX5jVlQ
+	RB1To+59luEtNnzh/wFrjdN8BBNxmdyiRbZAkJILPhGXqdiXdqY8lfxn0eu7pN228ot6LegJyp9KD
+	72X64yyxS/eyRbBwMKbdXEoJQwV2z+QhsLRCtUNyPt4u8RpVz4GnCcRqcZCxffzv0gStp8Vg02p2B
+	OCnZliXkwXkFNNuunddllPiZXFyISEeu3AAburcuVftU8P0ek1p4x2ZRGwiUWu5bFSnnjxQi7e8nO
+	qBrWXD6hbskg3x+U7cIrqROdNTESFFnHLAqzN8IMNj5lKAan05nkDSd5VOJTx2308CzHUMRUnLjm7
+	DSDeszP4AUBDHUlI2lRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLpKb-0008Eu-2a; Tue, 07 Apr 2020 14:36:01 +0000
+	id 1jLryh-0004Md-Ok; Tue, 07 Apr 2020 17:25:35 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLpKY-0008DM-4h
- for linux-rockchip@lists.infradead.org; Tue, 07 Apr 2020 14:36:00 +0000
+ id 1jLryf-0004M4-5B
+ for linux-rockchip@lists.infradead.org; Tue, 07 Apr 2020 17:25:34 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 9F442295A6A
-Message-ID: <5c417620e1baeed7ec4ac750ab481366df2aa590.camel@collabora.com>
-Subject: Re: [PATCH v8 4/5] media: rkvdec: Add the rkvdec driver
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Nicolas Dufresne <nicolas@ndufresne.ca>
-Date: Tue, 07 Apr 2020 11:35:45 -0300
-In-Reply-To: <CAKQmDh_pCX_s2Ze7b1YBqgvEZHNrgzDUfcjPos8_GZq8x6=5Ng@mail.gmail.com>
-References: <20200403221345.16702-1-ezequiel@collabora.com>
- <20200403221345.16702-5-ezequiel@collabora.com>
- <CAKQmDh_pCX_s2Ze7b1YBqgvEZHNrgzDUfcjPos8_GZq8x6=5Ng@mail.gmail.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ (Authenticated sender: dafna) with ESMTPSA id E3CA929677F
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH] media: staging: rkisp1: remove TODO item - uapi structs
+ compatibility
+Date: Tue,  7 Apr 2020 19:25:22 +0200
+Message-Id: <20200407172522.20340-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_073558_449387_09D67851 
-X-CRM114-Status: GOOD (  24.63  )
+X-CRM114-CacheID: sfid-20200407_102533_329226_55D027D0 
+X-CRM114-Status: UNSURE (   6.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -63,116 +60,53 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
- DVB_Linux_Media <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
+ hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAyMDIwLTA0LTA2IGF0IDE2OjI3IC0wNDAwLCBOaWNvbGFzIER1ZnJlc25lIHdyb3Rl
-Ogo+IExlIHZlbi4gMyBhdnIuIDIwMjAgw6AgMTg6MTQsIEV6ZXF1aWVsIEdhcmNpYSA8ZXplcXVp
-ZWxAY29sbGFib3JhLmNvbT4gYSDDqWNyaXQgOgo+ID4gRnJvbTogQm9yaXMgQnJlemlsbG9uIDxi
-b3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4KPiA+IAo+ID4gVGhlIHJvY2tjaGlwIHZkZWMg
-YmxvY2sgaXMgYSBzdGF0ZWxlc3MgZGVjb2RlciB0aGF0J3MgYWJsZSB0byBkZWNvZGUKPiA+IEgy
-NjQsIEhFVkMgYW5kIFZQOSBjb250ZW50LiBUaGlzIGNvbW1pdCBhZGRzIHRoZSBjb3JlIGluZnJh
-c3RydWN0dXJlCj4gPiBhbmQgdGhlIEgyNjQgYmFja2VuZC4gU3VwcG9ydCBmb3IgVlA5IGFuZCBI
-RVZTIHdpbGwgYmUgYWRkZWQgbGF0ZXIgb24uCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IEJvcmlz
-IEJyZXppbGxvbiA8Ym9yaXMuYnJlemlsbG9uQGNvbGxhYm9yYS5jb20+Cj4gPiBTaWduZWQtb2Zm
-LWJ5OiBFemVxdWllbCBHYXJjaWEgPGV6ZXF1aWVsQGNvbGxhYm9yYS5jb20+Cj4gCj4gU29ycnkg
-Zm9yIHRoZSBsYXRlIGZlZWRiYWNrIChnb3QgYSBjb21tZW50IGxvd2VyKSAuLi4KPiAKPiBUZXN0
-ZWQtYnk6IE5pY29sYXMgRHVmcmVzbmUgPG5pY29sYXMuZHVmcmVzbmVAY29sbGFib3JhLmNvbT4K
-PiAKCk5pY2UsIHRoYW5rIHlvdS4KCj4gPiAtLQo+ID4gdjg6Cj4gPiAqIEZpeCBrZnJlZSBhbmQg
-c3R5bGUgY2hhbmdlcywgYXMgc3VnZ2VzdGVkIGJ5IEFuZHJpeS4KPiA+IHY3Ogo+ID4gKiBodmVy
-a3VpbC1jaXNjb0B4czRhbGwubmw6IHJlcGxhY2VkIFZGTF9UWVBFX0dSQUJCRVIgYnkgX1ZJREVP
-Cj4gPiAqIFVzZSBtYWNyb3MgYW5kIEFSUkFZX1NJWkUgaW5zdGVhZCBvZiBtYWdpYyBudW1iZXJz
-LAo+ID4gICBhcyBzdWdnZXN0ZWQgYnkgTWF1cm8uCj4gPiAqIFJlbmFtZWQgTV9OIG1hY3JvLCBz
-dWdnZXN0ZWQgYnkgTWF1cm8uCj4gPiAqIFVzZSB2NGwyX20ybV9idWZfZG9uZV9hbmRfam9iX2Zp
-bmlzaC4KPiA+ICogU2V0IGJ1ZmZlcnMnIHplcm90aCBwbGFuZSBwYXlsb2FkIGluIC5idWZfcHJl
-cGFyZQo+ID4gKiBSZWZhY3RvciB0cnkvc19mbXQgZm9yIHNwZWMgY29tcGxpYW5jZS4KPiA+IC0t
-LQo+ID4gIE1BSU5UQUlORVJTICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDcg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9LY29uZmlnICAgICAgICAgICAgICB8ICAgIDIg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9NYWtlZmlsZSAgICAgICAgICAgICB8ICAgIDEg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvS2NvbmZpZyAgICAgICB8ICAgMTUg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvTWFrZWZpbGUgICAgICB8ICAgIDMg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvVE9ETyAgICAgICAgICB8ICAgMTEg
-Kwo+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvcmt2ZGVjLWgyNjQuYyB8IDExNTYg
-KysrKysrKysrKysrKysrKysrKysKPiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVjL3Jr
-dmRlYy1yZWdzLmggfCAgMjIzICsrKysKPiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVj
-L3JrdmRlYy5jICAgICAgfCAxMTAzICsrKysrKysrKysrKysrKysrKysKPiA+ICBkcml2ZXJzL3N0
-YWdpbmcvbWVkaWEvcmt2ZGVjL3JrdmRlYy5oICAgICAgfCAgMTIxICsrCj4gPiAgMTAgZmlsZXMg
-Y2hhbmdlZCwgMjY0MiBpbnNlcnRpb25zKCspCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZl
-cnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvS2NvbmZpZwo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBk
-cml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVjL01ha2VmaWxlCj4gPiAgY3JlYXRlIG1vZGUgMTAw
-NjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvVE9ETwo+ID4gIGNyZWF0ZSBtb2RlIDEw
-MDY0NCBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVjL3JrdmRlYy1oMjY0LmMKPiA+ICBjcmVh
-dGUgbW9kZSAxMDA2NDQgZHJpdmVycy9zdGFnaW5nL21lZGlhL3JrdmRlYy9ya3ZkZWMtcmVncy5o
-Cj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvcmt2
-ZGVjLmMKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9zdGFnaW5nL21lZGlhL3JrdmRl
-Yy9ya3ZkZWMuaAo+ID4gCj4gClsuLl0KPiA+ICsKPiA+ICtzdGF0aWMgdm9pZCBzZXRfcHNfZmll
-bGQodTMyICpidWYsIHN0cnVjdCBya3ZkZWNfcHNfZmllbGQgZmllbGQsIHUzMiB2YWx1ZSkKPiA+
-ICt7Cj4gPiArICAgICAgIHU4IGJpdCA9IGZpZWxkLm9mZnNldCAlIDMyLCB3b3JkID0gZmllbGQu
-b2Zmc2V0IC8gMzI7Cj4gPiArICAgICAgIHU2NCBtYXNrID0gR0VOTUFTS19VTEwoYml0ICsgZmll
-bGQubGVuIC0gMSwgYml0KTsKPiA+ICsgICAgICAgdTY0IHZhbCA9ICgodTY0KXZhbHVlIDw8IGJp
-dCkgJiBtYXNrOwo+ID4gKwo+ID4gKyAgICAgICBidWZbd29yZF0gJj0gfm1hc2s7Cj4gPiArICAg
-ICAgIGJ1Zlt3b3JkXSB8PSB2YWw7Cj4gPiArICAgICAgIGlmIChiaXQgKyBmaWVsZC5sZW4gPiAz
-Mikgewo+ID4gKyAgICAgICAgICAgICAgIGJ1Zlt3b3JkICsgMV0gJj0gfihtYXNrID4+IDMyKTsK
-PiA+ICsgICAgICAgICAgICAgICBidWZbd29yZCArIDFdIHw9IHZhbCA+PiAzMjsKPiA+ICsgICAg
-ICAgfQo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgdm9pZCBhc3NlbWJsZV9od19wcHMoc3RydWN0
-IHJrdmRlY19jdHggKmN0eCwKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3Qg
-cmt2ZGVjX2gyNjRfcnVuICpydW4pCj4gPiArewo+ID4gKyAgICAgICBzdHJ1Y3Qgcmt2ZGVjX2gy
-NjRfY3R4ICpoMjY0X2N0eCA9IGN0eC0+cHJpdjsKPiA+ICsgICAgICAgY29uc3Qgc3RydWN0IHY0
-bDJfY3RybF9oMjY0X3NwcyAqc3BzID0gcnVuLT5zcHM7Cj4gPiArICAgICAgIGNvbnN0IHN0cnVj
-dCB2NGwyX2N0cmxfaDI2NF9wcHMgKnBwcyA9IHJ1bi0+cHBzOwo+ID4gKyAgICAgICBjb25zdCBz
-dHJ1Y3QgdjRsMl9jdHJsX2gyNjRfZGVjb2RlX3BhcmFtcyAqZGVjX3BhcmFtcyA9IHJ1bi0+ZGVj
-b2RlX3BhcmFtczsKPiA+ICsgICAgICAgY29uc3Qgc3RydWN0IHY0bDJfaDI2NF9kcGJfZW50cnkg
-KmRwYiA9IGRlY19wYXJhbXMtPmRwYjsKPiA+ICsgICAgICAgc3RydWN0IHJrdmRlY19oMjY0X3By
-aXZfdGJsICpwcml2X3RibCA9IGgyNjRfY3R4LT5wcml2X3RibC5jcHU7Cj4gPiArICAgICAgIHN0
-cnVjdCBya3ZkZWNfc3BzX3Bwc19wYWNrZXQgKmh3X3BzOwo+ID4gKyAgICAgICBkbWFfYWRkcl90
-IHNjYWxpbmdfbGlzdF9hZGRyZXNzOwo+ID4gKyAgICAgICB1MzIgc2NhbGluZ19kaXN0YW5jZTsK
-PiA+ICsgICAgICAgdTMyIGk7Cj4gPiArCj4gPiArICAgICAgIC8qCj4gPiArICAgICAgICAqIEhX
-IHJlYWQgdGhlIFNQUy9QUFMgaW5mb3JtYXRpb24gZnJvbSBQUFMgcGFja2V0IGluZGV4IGJ5IFBQ
-UyBpZC4KPiA+ICsgICAgICAgICogb2Zmc2V0IGZyb20gdGhlIGJhc2UgY2FuIGJlIGNhbGN1bGF0
-ZWQgYnkgUFBTX2lkICogMzIgKHNpemUgcGVyIFBQUwo+ID4gKyAgICAgICAgKiBwYWNrZXQgdW5p
-dCkuIHNvIHRoZSBkcml2ZXIgY29weSBTUFMvUFBTIGluZm9ybWF0aW9uIHRvIHRoZSBleGFjdCBQ
-UFMKPiA+ICsgICAgICAgICogcGFja2V0IHVuaXQgZm9yIEhXIGFjY2Vzc2luZy4KPiA+ICsgICAg
-ICAgICovCj4gPiArICAgICAgIGh3X3BzID0gJnByaXZfdGJsLT5wYXJhbV9zZXRbcHBzLT5waWNf
-cGFyYW1ldGVyX3NldF9pZF07Cj4gPiArICAgICAgIG1lbXNldChod19wcywgMCwgc2l6ZW9mKCpo
-d19wcykpOwo+ID4gKwo+ID4gKyNkZWZpbmUgV1JJVEVfUFBTKHZhbHVlLCBmaWVsZCkgc2V0X3Bz
-X2ZpZWxkKGh3X3BzLT5pbmZvLCBmaWVsZCwgdmFsdWUpCj4gPiArICAgICAgIC8qIHdyaXRlIHNw
-cyAqLwo+ID4gKyAgICAgICBXUklURV9QUFMoMHhmLCBTRVFfUEFSQU1FVEVSX1NFVF9JRCk7Cj4g
-PiArICAgICAgIFdSSVRFX1BQUygweGZmLCBQUk9GSUxFX0lEQyk7Cj4gPiArICAgICAgIFdSSVRF
-X1BQUygxLCBDT05TVFJBSU5UX1NFVDNfRkxBRyk7Cj4gCj4gQXQgZmlyc3QgSSBmb3VuZCB0aGF0
-IHBhcnQgcmF0aGVyIGludGVyZXN0aW5nLCBidXQgSSBzZWUgdGhpcwo+IGhhcmRjb2RpbmcgbWF0
-Y2hlcyB3aGF0IFJvY2tjaGlwIGRvLgo+IAo+IGh0dHBzOi8vZ2l0aHViLmNvbS9yb2NrY2hpcC1s
-aW51eC9tcHAvYmxvYi9yZWxlYXNlL21wcC9oYWwvcmtkZWMvaDI2NGQvaGFsX2gyNjRkX3Jrdl9y
-ZWcuYyNMMjY2Cj4gCj4gPiArICAgICAgIFdSSVRFX1BQUyhzcHMtPmNocm9tYV9mb3JtYXRfaWRj
-LCBDSFJPTUFfRk9STUFUX0lEQyk7Cj4gCj4gQnV0IGhlcmUncyBpdCdzIG5vdCBzbyBncmVhdC4g
-VGhpcyBkcml2ZXIgZG9lcyBub3QgaW1wbGVtZW50IGFueSBraW5kCj4gb2YgdmFsaWRhdGlvbi4g
-SW4gZmFjdCwgaWYgSSBwYXNzIDMKPiBoZXJlICAoWUNiQ3IgNDo0OjQpIGl0IHdpbGwgYWNjZXB0
-IGl0LCBhbmQga2luZCBvZiBkZWNvZGUgc29tZSBmcmFtZXMsCj4gYnV0IGV2ZW50dWFsbHkgd2l0
-aCBjcmFzaCBhbmQKPiByZWJvb3QgaXMgbmVlZGVkLiBXZSBzaG91bGQgKGFzIGRlZmluZWQgaW4g
-dGhlIFN0YXRlbHNzIENPREVDIHNwZWMpCj4gdmFsaWRhdGUgdGhlIFNQUyBhbmQgcmVmdXNlIGlm
-Cj4gYW4gdW5zdXBwb3J0ZWQgcHJvZmlsZSBpZGMsIGNocm9tYSBpZGMsIGx1bWEvY2hyb21hIGRl
-cHRoIG9yIGNvZGVkCj4gc2l6ZSBpcyByZXF1ZXN0ZWQuCgpQZXJoYXBzIHdlIGNvdWxkIHZhbGlk
-YXRlIHRoYXQgYXQgcmVxdWVzdF92YWxpZGF0ZSB0aW1lLApvciBtYXliZSBvcHMudHJ5X2N0cmwg
-aXMgYmV0dGVyLgoKPC90aGlua2luZ19vdXRfbG91ZD4KCj4gVmFsaWRhdGluZyB0aGUKPiBTX0ZN
-VCBpcyBub3Qgc3VmZmljaWVudCBhcyBvbmUgY2FuIHRyaWNrIHRoZSBkcml2ZXIgaW4gYWxsb2Nh
-dGluZwo+IGJ1ZmZlcnMgdGhhdCBhcmUgdG9vIHNtYWxsLgo+IAoKSSBhbSBub3Qgc3VyZSBJIGZv
-bGxvdyB5b3U6IGhvdyBkbyB5b3UgdGhpbmsgdGhlIGRyaXZlcgpjYW4gYmUgdHJpY2tlZCBsaWtl
-IHRoaXM/Cgo+IFdoYXQgSSBzdXNwZWN0IGlzIHRoYXQgd2UgbmVlZCB0byBiZSBjYXJlZnVsIHdp
-dGggdGhpcyBIVywgYXMgaXQgc2VlbXMKPiB0byBiZSBhIGJpdCBoYWxmIGJhY2tlZCwgd2hpY2gK
-PiBtZWFucyBpdCBtaWdodCBiZSBzdXBwb3J0aW5nIG1vcmUgZmVhdHVyZXMgdGhlbiBzdXBwb3J0
-ZWQgYnkgdGhlIFRSTQo+IG9yIHJlZmVyZW5jZSBjb2RlLCBhbmQgd2UKPiBtdXN0IGRpc2FibGUg
-dGhpcyB3aXRoIHNvZnR3YXJlLgo+IAo+IChwLnMuIEkgY2FuIHByb3ZpZGUgYSBzdHJlYW0gdG8g
-cmVwcm9kdWNlIHRoZSA0OjQ6NCBkcml2ZXIgZmFpbHVyZSkKPiAKClRoYW5rcywKRXplcXVpZWwK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1y
-b2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlw
-Cg==
+remove the TODO item:
+
+* Make sure uapi structs have the same size and layout in 32 and 62 bits,
+and that there are no holes in the structures (pahole is a utility that
+can be used to test this).
+
+It was tested with pahole and found compatible.
+
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+I tested it using a script that compiles a code that includes the header
+both for arm and arm64 and compare the sha1 of the pahole results:
+
+git clone --single-branch --branch rkisp1 git@gitlab.collabora.com:dafna/v4l2-ctrl-abi-check.git
+./run-rkisp1.sh
+
+ drivers/staging/media/rkisp1/TODO | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/drivers/staging/media/rkisp1/TODO b/drivers/staging/media/rkisp1/TODO
+index 0aa9877dd64a..f495b8177767 100644
+--- a/drivers/staging/media/rkisp1/TODO
++++ b/drivers/staging/media/rkisp1/TODO
+@@ -4,9 +4,6 @@ cio2_parse_firmware in drivers/media/pci/intel/ipu3/ipu3-cio2.c.
+ * Fix pad format size for statistics and parameters entities.
+ * Use threaded interrupt for rkisp1_stats_isr(), remove work queue.
+ * Fix checkpatch errors.
+-* Make sure uapi structs have the same size and layout in 32 and 62 bits,
+-and that there are no holes in the structures (pahole is a utility that
+-can be used to test this).
+ * Review and comment every lock
+ * Handle quantization
+ * Document rkisp1-common.h
+-- 
+2.20.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
