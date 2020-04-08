@@ -2,51 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42C061A2C8B
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 01:46:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B30E1A2C98
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 01:51:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=sNslW6s1ObRL1dEYhgGE37WVHxgDn5w3Aq/J/fFDG3A=; b=N4OYfeq11k0Kvi
-	fQNEdfajrAcZAl8UjVYc+H6dVqRz7gydIyuFHD8K3Wl9Fa9Zt8P+dePPLf5W/Y0PuXGBTIBrxJppm
-	N1MgOfLfpIja6D8BRDSw+8Bg/JUCnXXYLDivGHRna/N8T39PALbgTpStEUmkp6PnGmS1OyX5EvXiP
-	DpYvAXCF1Hq8OTomacyAZumdCx7JlQ0JSk+8vevPSl9VnGrcCTNBnO+8JvoHTnQHj8ZX3advxdZ/q
-	ndL4ilJTSA/VWGLhSdDUSM4YLa4K8ILFazU2EDY4b/C0pkEC3TpXEDNHp5C8HKu2+oD2gIE0/Dl3l
-	EY6Zp/bbNTETwet3d+MA==;
+	List-Owner; bh=307KZ9a5flTzhiVbvrLFE1hB+SakqiiNYYJsQ/o4MZw=; b=ePW9SDpOl5ZLJn
+	a3aMiE0cM/eN3z+KfPTWWv6r7UuHpA+rf2GhTZl1CSrvpanBHbnUOBVn2Yrs/TTkPteSdCvHLOTBi
+	1iSj+JaScDM/j8n1+MC2NPU9PKHVCwzgk7UVtcbTELuSKymEKJZsxl4y3tDY2BwJjZptlpf5Ps6sh
+	dppZO9sM59NOQ3t3Dwr2wQy+A5Ckt+iRjrLARGc/d72RyUoXPWIPOo7xFN5bTNXGm1E6Y8Wg2eJiO
+	sfBPP3lUBIXN/s1rSSGRvvjtJyH/dtRlLbOY2xlv7kE523tkxZUwFBT2i0CRaZ8PXJmi4hQuMmPky
+	8sgqpDM2QYqbtpPTpC3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMKOv-0006TR-L9; Wed, 08 Apr 2020 23:46:33 +0000
+	id 1jMKTz-00013J-E4; Wed, 08 Apr 2020 23:51:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMKOn-0006ND-HG; Wed, 08 Apr 2020 23:46:26 +0000
+ id 1jMKTn-0000vz-VF; Wed, 08 Apr 2020 23:51:37 +0000
 Received: from localhost (mobile-166-175-188-68.mycingular.net
  [166.175.188.68])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8821C20787;
- Wed,  8 Apr 2020 23:46:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 050E02082F;
+ Wed,  8 Apr 2020 23:51:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586389585;
- bh=jdERzFagcZJpT6zeQ9ptPHc+W/HgbAkXikMkMpGMIc8=;
+ s=default; t=1586389895;
+ bh=ohD59jkDFB/7GbrNwOr+RvtEO78AppOEta0uYKkJaOk=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=UBEF4PPNtgYeAzJH79lLGGULnX41ZtOGL+nLtZMe5rqcdjOevaJL0F7SJcJqnQ/gL
- cbk/jdvfvN7/J57YJCjLt9hgnh47iQLIXE+WlxuVESZ/NcOWOUykYPQC8tj5yfO0K9
- NtF4OXMIed85faV2LxGjwdhmPKjCAsn4lB7mBgEc=
-Date: Wed, 8 Apr 2020 18:46:22 -0500
+ b=i243TA3iZ14gJyfzqpJx5lW6qxa0I0TWRjoCNJ1pTyAMoKpRNGO9XGXe4feq2IHKZ
+ /N0BFAPMBXb2oHHt5BczVvgIHnz9by1j5vnTFnMQHgRR+xhuiQqEnffDgEQ9BBv+iT
+ 0IpSHFoe/PMaOm3RmcfLSyKA8M4gx9tSc9h2n7QQ=
+Date: Wed, 8 Apr 2020 18:51:33 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v7 4/8] PCI: endpoint: Add support to handle multiple
- base for mapping outbound memory
-Message-ID: <20200408234622.GA150772@google.com>
+Subject: Re: [PATCH v7 6/8] PCI: rcar: Add support for R-Car PCIe controller
+ in endpoint mode
+Message-ID: <20200408235133.GA151858@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1586360280-10956-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1586360280-10956-7-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_164625_590463_0A02B2B4 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20200408_165136_026140_3AA90DB8 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,41 +94,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 04:37:56PM +0100, Lad Prabhakar wrote:
-> R-Car PCIe controller has support to map multiple memory regions for
-> mapping the outbound memory in local system also the controller limits
-> single allocation for each region (that is, once a chunk is used from the
-> region it cannot be used to allocate a new one). This features inspires to
-> add support for handling multiple memory bases in endpoint framework.
-> 
-> With this patch pci_epc_mem_init() initializes address space for endpoint
-> controller which support single window and whereas __pci_epc_mem_init()
-> now accepts pointer to multiple windows supported by endpoint controller.
+Maybe:
 
-Adding a double underscore prefix usually indicates an internal
-function that skips some checking.
+  PCI: rcar: Add endpoint mode support
 
-It doesn't seem like quite the right thing for this external interface
-that adds functionality.  Maybe the name could include something like
-"multi"?
+so the important "endpoint mode" part is early and doesn't get chopped
+off or wrapped.  We already know it's PCIe and rcar-related.
 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+On Wed, Apr 08, 2020 at 04:37:58PM +0100, Lad Prabhakar wrote:
+> This patch adds support for R-Car PCIe controller to work in endpoint mode.
 
-This needs an ack from Kishon, of course.
+s/This patch adds/Add/
 
-This patch seems like it does several things that could possibly be
-split into separate patches?
+> +static int rcar_pcie_ep_set_bar(struct pci_epc *epc, u8 func_no,
+> +				struct pci_epf_bar *epf_bar)
+> +{
+> +	int flags = epf_bar->flags | LAR_ENABLE | LAM_64BIT;
+> +	struct rcar_pcie_endpoint *ep = epc_get_drvdata(epc);
+> +	u64 size = 1ULL << fls64(epf_bar->size - 1);
+> +	dma_addr_t cpu_addr = epf_bar->phys_addr;
+> +	enum pci_barno bar = epf_bar->barno;
+> +	struct rcar_pcie *pcie = &ep->pcie;
+> +	u32 mask;
+> +	int idx;
+> +	int err;
+> +
+> +	idx = find_first_zero_bit(ep->ib_window_map, ep->num_ib_windows);
+> +	if (idx >= ep->num_ib_windows) {
+> +		dev_err(pcie->dev, "no free inbound window\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO)
+> +		flags |= IO_SPACE;
+> +
+> +	ep->bar_to_atu[bar] = idx;
+> +	/* use 64 bit bars */
 
-  - Change pci_epc_mem_init() interface to add page_size argument (the
-    only one that touches cadence & rockchip; it would be nice if this
-    were a tiny patch)
+s/64 bit bars/64-bit BARs/
 
-  - Add struct pci_epc_mem_window
+> +static const struct pci_epc_features rcar_pcie_epc_features = {
+> +	.linkup_notifier = false,
+> +	.msi_capable = true,
+> +	.msix_capable = false,
+> +	/* use 64-bit bars so mark bar1/3/5 as reserved */
 
-  - Add a pci_epc_multi_mem_init() or similar, implement
-    pci_epc_mem_init() in terms of it (as you already do)
-
-Bjorn
+s/bar/BAR/g
 
 _______________________________________________
 Linux-rockchip mailing list
