@@ -2,145 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 385351A21DA
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 14:23:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE2B41A23BA
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 16:04:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=38Hnkkqd74FhTCwz5JP5h2DkelxXg1j3cEAoFGFqzKg=; b=WLICFqLEk+9QYM
-	yV1L4tIiHZXfGmBpuKuztcKbbrs9X2SN9Za2IyuI2sKcoYUSvkBLlQkmtT9JCqiJl4CKm6qcubX3q
-	5opHu8AvSHO7kcjgcsavElWmb8s0i5isEf2XvOQn5aw8SosH1a/Y0quWOFJTl6rzAZT/ig0Kco+bG
-	V5BDvpNEPSttl4md913rasepGzMu5A1EliEVrmHnt+7Qh1uJU5idXFp9ewnXSUSi/1gNxZ4249GSI
-	xvDsocwbAasXwZR8fopgdb7taouTE9qqD5A1cCg4jaXP7/6+M/FVD8r6T9L9YsJYr1VFMpJCJMgFg
-	TMi/ZuAqR0aCpa7K1L2Q==;
+	List-Owner; bh=rFgycXX3tYmb/QeAqyL01W6vyx2TJrBTmWsvX8wCUk8=; b=IYHCFvIyZSMnYv
+	Tz4Bl85B6i3vvAEoMu35xJLeuhEEVw81Ie96QOnrDvOgo6cJSHi0/pOcjX/qU4IViUbZZLmwAtTcl
+	JJSIsLPRrqGMOQF1FZSNdJIjpc2rB2IOTdgpRKbaDrsYPDm1MOXDN2z+3Cyi/9nzGBJ6DgEvP4gK3
+	JEUZQKMGS3fD1ee+p9H59f+Vu3lg1WxkKvgWZtGuuQsgsLnRPbH8vqFe3pYWVx8UP8KnZeM3xUa9O
+	QOsL1TE4/c8k7MpnvG7tgCQ3OAKJPN7gELDJv1CeP9AG23l/mIYWnnQhfZ3HzHZU2Wpra4eN/VkfU
+	Hjr5XQikTnB1JeonyucQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM9js-0000bQ-0t; Wed, 08 Apr 2020 12:23:28 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jMBJh-0000aO-EF; Wed, 08 Apr 2020 14:04:33 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM9jn-0000Sd-U9
- for linux-rockchip@lists.infradead.org; Wed, 08 Apr 2020 12:23:25 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200408122317euoutp01031a371c51bba7fd21059277546aee2c~D16UhUsJP0342103421euoutp01S
- for <linux-rockchip@lists.infradead.org>; Wed,  8 Apr 2020 12:23:17 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200408122317euoutp01031a371c51bba7fd21059277546aee2c~D16UhUsJP0342103421euoutp01S
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1586348598;
- bh=C6hOGADV2N8VHfBhoqvkcY7aLHRGpJSRBFxTuaQ0adc=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=eq7YTdEjrPoV1qaEHG3N0Y3STIRTSncARtOyUtO/9JzD+X0KfqPx1deMcS1ku4Vff
- a8Paw9xH5FcpZsscY9L1Qd1KuynvNkDzJjQy2Vx0oeqIfg64pLwDYlx1dLq/nDSNl3
- dX9HHrf3q2lqywK9fiU+ciWroqbteuj4wmzt7yGs=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200408122317eucas1p131bb3e9be76ee1155b4bea50e76fba0c~D16UH4SK20693706937eucas1p1d;
- Wed,  8 Apr 2020 12:23:17 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id EC.B6.60698.532CD8E5; Wed,  8
- Apr 2020 13:23:17 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200408122316eucas1p14d6cdb0b7291316c7825fc6d4373d43e~D16Tl4ECL1118111181eucas1p1V;
- Wed,  8 Apr 2020 12:23:16 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200408122316eusmtrp16a34672cfea082ba29cf649d44fce50b~D16Tk1AYA2798627986eusmtrp1M;
- Wed,  8 Apr 2020 12:23:16 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-11-5e8dc235c4f6
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id B7.E3.07950.432CD8E5; Wed,  8
- Apr 2020 13:23:16 +0100 (BST)
-Received: from [106.210.88.143] (unknown [106.210.88.143]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200408122315eusmtip1e5b8980e40ac1be62aedae60a4eacaed~D16SVJetc3016230162eusmtip10;
- Wed,  8 Apr 2020 12:23:15 +0000 (GMT)
-Subject: Re: [RFC PATCH 31/34] iommu/exynos: Create iommu_device in struct
- exynos_iommu_owner
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin
- Murphy <robin.murphy@arm.com>, Kukjin Kim <kgene@kernel.org>, Krzysztof
- Kozlowski <krzk@kernel.org>, David Woodhouse <dwmw2@infradead.org>, Lu Baolu
- <baolu.lu@linux.intel.com>, Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Matthias Brugger <matthias.bgg@gmail.com>, Rob
- Clark <robdclark@gmail.com>, Heiko Stuebner <heiko@sntech.de>, Gerald
- Schaefer <gerald.schaefer@de.ibm.com>, Thierry Reding
- <thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <449e7f16-e719-9617-ec92-63b82c0bc33f@samsung.com>
-Date: Wed, 8 Apr 2020 14:23:16 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jMBJe-0000Zq-01
+ for linux-rockchip@lists.infradead.org; Wed, 08 Apr 2020 14:04:32 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 9024929117E
+Message-ID: <f2a044b2c9a0d2920ce3cc327b331a790cd128bb.camel@collabora.com>
+Subject: Re: [PATCH v8 4/5] media: rkvdec: Add the rkvdec driver
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Nicolas Dufresne <nicolas@ndufresne.ca>
+Date: Wed, 08 Apr 2020 11:04:10 -0300
+In-Reply-To: <abe902f2ebdfa41bd4d99b7beb3b6c7ec91d2a8f.camel@ndufresne.ca>
+References: <20200403221345.16702-1-ezequiel@collabora.com>
+ <20200403221345.16702-5-ezequiel@collabora.com>
+ <CAKQmDh_pCX_s2Ze7b1YBqgvEZHNrgzDUfcjPos8_GZq8x6=5Ng@mail.gmail.com>
+ <5c417620e1baeed7ec4ac750ab481366df2aa590.camel@collabora.com>
+ <abe902f2ebdfa41bd4d99b7beb3b6c7ec91d2a8f.camel@ndufresne.ca>
+Organization: Collabora
+User-Agent: Evolution 3.36.0-1 
 MIME-Version: 1.0
-In-Reply-To: <20200407183742.4344-32-joro@8bytes.org>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0gUURTHuXtnZ0ZrZVwtDxYVWwQF+cisCxti0Yehgh7Ul0Brq8k0d5Xd
- tNeH1JVIUdLs5aSbiqmZlbppKlvqopktrqYlW1j4It9amZQVmuv08Nv5/8/v3HP+cFmsLKO9
- 2XDdaUGv00SqaFeq8vm0fUOgNTXU77plGbH3/aSIOb2CJrbacYqk38vApHp0kCazvSNyklOr
- JnH32+QkUcyjSNLtUoZkvMyWkSt9I5i0ts7J9NoWhnTUZNGkw/gKkS/ds5ik5RoxudX6TEaS
- voo0SUgMIAO53zGp/9QvJ9M1JooUtphoktgVGOzN99ebZHyJqQTx9b1Wmq8W3zO8uWg9X16c
- RPNdnRaaNzXv4835F/kMRyHiU43jNP+k04R5s+0CP1m+Yq/bIdetx4XI8FhB7xt0xPXkW1Md
- ijb6nK2zDDJxqHFNMnJhgdsE8eK4LBm5skquCMFMpw1J4iuCj5mzlCQmEVSOXKP/jlT0fPlD
- FSIwP+hmJDGB4HnxO7mT8uAOw1jeDHY2PLlvFOQ0VswLzDlkUDBRzjgpmvOH5LHk+XcVXBC8
- v1E19y7LUtwa6KvUOu0lXAjYex1yCXGH5sx+yom4cIFwuX0ewdxKeDKWhaXaC97135kPBNwo
- C9P5w4x09g4QWzpkUu0Bw02P//jLwZaRQkkDRgQ99geMJFIQdCTcQhKlhi77D9q5GXPr4FGN
- r2RvgyZ7LuO0gXMDx5i7dIQbXK28iSVbAZcvKSV6LYhND/+trW9rx2lIJS5IJi6IIy6II/7f
- m4OoYuQlxBi0YYIhQCec8TFotIYYXZjPsShtOZr7yLaZpqkq9OzXUSviWKRarKizpIYq5ZpY
- wzmtFQGLVZ6KXQlzluK45tx5QR91WB8TKRisaBlLqbwUAXlDIUouTHNaOCUI0YL+b1fGunjH
- oVrH8oLAg1PhtqSU3dca9jd6qyyrTryJVQdnZ01lF+c3H4gw6hqCVjkOjW6Obm9+unTSduam
- 3stPGx01NOF/e9CjKH6PZXvpx8LMjREf1mrz2reE+KZbE16n7RbvqvHwTvWO/LOLgg8M7Xvh
- 9nlAYFsLyn7cKTm63x5ydfWR1ajNZ1ZFGU5q/NdjvUHzG9B810LEAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SbUhTYRTHeXbvrtfR4jrfnsyyLn6Smk2deyyTyIJLQZRSH8yXhl7Ucpvs
- bpJFpE5CB5ZipU5baoZlWrFl5kvqBiomunIgVgq+UYYpZYKp5dpagd/+5/z/v8M5cEhMZOUH
- kJlKDatWyrNoQoAPbQ5M7o+wliQfqLYiNDK7gSNzWSuBhnqWcFT2uBxD7V/nCeSYWeCj2p5D
- KO/JWz4qNNTjqLj6uQcqf3OPh27NLmDIZnOWZT3DHsjeUUMgu+4dQMtTDgyV1ukwVGnr5qHi
- FQOBCgrD0ee6nxiyfJvjo7UOI44ah40EKpyQHglg5ixGHtNsbAaMZcZKMO2GSQ/G/CiEMTUV
- E8zEWBfBGAfPMOaG60z5eCNgSnRLBNM2ZsQY89BV5odp9+ntCeJotUqrYfdkqDjNYfq8BIWJ
- JVFIHBYRJZaEy5IOhknp0JjoNDYrM4dVh8ZcEGe8N/aCbJ34cm/XvEce6AvWA08SUhGwdXoZ
- 6IGAFFEPAez/ts5zG4Fw8G4e36294a8xPeEOLQJoXykFLsObSoGL9ZuYy/ChNnDYMN5JuAyM
- GufBvkY/N2EC8EHJa8xlEJQE6hf1f0NCKgZO3n3lnESSOBUMZ18qXG1fKgne0nUCd8QLDlbN
- 4a6IJyWFRaMK9/hIaDRPY24dBNsWa/5pf/hh7j6vFIgMW2jDFsSwBTFsQWoB3gR8WC2nSFdw
- YWJOruC0ynRxqkphAs7/edm/9sK56VK8FVAkoLcJe7tKkkV8eQ6Xq7ACSGK0j/BkgbMlTJPn
- XmHVqhS1NovlrEDqPK0MC/BNVTm/UalJkUglMhQlkYXLwiMR7S8soiyJIipdrmEvsWw2q/7P
- 8UjPgDxganY0dser76zVjS4n2LpjfsevVkyZKgcdF+njx6r2HfdsWT600FmkjB1p0D71PZuf
- dq2mdafAz2wnHHGCo8E7vJJORHxUZd4GQW0D8EaDvCJ7dv2T//DEzQt0rFkQWie1FPBO5ez6
- BUHgmt22MW4Zzk9c/f7lasveadszZdw5Gucy5JIQTM3J/wCebPzxVQMAAA==
-X-CMS-MailID: 20200408122316eucas1p14d6cdb0b7291316c7825fc6d4373d43e
-X-Msg-Generator: CA
-X-RootMTR: 20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82
-References: <20200407183742.4344-1-joro@8bytes.org>
- <CGME20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82@eucas1p2.samsung.com>
- <20200407183742.4344-32-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_052324_122756_C8C566CD 
-X-CRM114-Status: GOOD (  25.62  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200408_070430_301282_0F0A5EAE 
+X-CRM114-Status: GOOD (  32.94  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,200 +65,148 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
+ DVB_Linux_Media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Joerg,
-
-On 07.04.2020 20:37, Joerg Roedel wrote:
-> From: Joerg Roedel <jroedel@suse.de>
->
-> The 'struct exynos_iommu_owner' is an umbrella for multiple SYSMMU
-> instances attached to one master. As such all these instances are
-> handled the same, they are all configured with the same iommu_domain,
-> for example.
->
-> The IOMMU core code expects each device to have only one IOMMU
-> attached, so create the IOMMU-device for the umbrella instead of each
-> hardware SYSMMU.
->
-> Signed-off-by: Joerg Roedel <jroedel@suse.de>
-> ---
->   drivers/iommu/exynos-iommu.c | 96 +++++++++++++++++++++++++++---------
->   1 file changed, 73 insertions(+), 23 deletions(-)
->
-> diff --git a/drivers/iommu/exynos-iommu.c b/drivers/iommu/exynos-iommu.c
-> index 186ff5cc975c..86ecccbf0438 100644
-> --- a/drivers/iommu/exynos-iommu.c
-> +++ b/drivers/iommu/exynos-iommu.c
-> @@ -235,6 +235,8 @@ struct exynos_iommu_owner {
->   	struct list_head controllers;	/* list of sysmmu_drvdata.owner_node */
->   	struct iommu_domain *domain;	/* domain this device is attached */
->   	struct mutex rpm_lock;		/* for runtime pm of all sysmmus */
-> +
-> +	struct iommu_device iommu;	/* IOMMU core handle */
->   };
->   
->   /*
-> @@ -274,8 +276,6 @@ struct sysmmu_drvdata {
->   	struct list_head owner_node;	/* node for owner controllers list */
->   	phys_addr_t pgtable;		/* assigned page table structure */
->   	unsigned int version;		/* our version */
-> -
-> -	struct iommu_device iommu;	/* IOMMU core handle */
->   };
->   
->   static struct exynos_iommu_domain *to_exynos_domain(struct iommu_domain *dom)
-> @@ -625,18 +625,6 @@ static int exynos_sysmmu_probe(struct platform_device *pdev)
->   	data->sysmmu = dev;
->   	spin_lock_init(&data->lock);
->   
-> -	ret = iommu_device_sysfs_add(&data->iommu, &pdev->dev, NULL,
-> -				     dev_name(data->sysmmu));
-> -	if (ret)
-> -		return ret;
-> -
-> -	iommu_device_set_ops(&data->iommu, &exynos_iommu_ops);
-> -	iommu_device_set_fwnode(&data->iommu, &dev->of_node->fwnode);
-
-The iommu_device_set_fwnode() call is lost during this conversion, what breaks driver operation. Most of the above IOMMU fw calls you have moved to xlate function. I've checked briefly but it looks that there is a chicken-egg problem here. The owner structure is allocated and initialized from of_xlate(), which won't be called without linking the problem iommu structure with the fwnode first, what might be done only in sysmmu_probe(). I will check how to handle this in a different way.
-
-> -
-> -	ret = iommu_device_register(&data->iommu);
-> -	if (ret)
-> -		return ret;
-> -
->   	platform_set_drvdata(pdev, data);
->   
->   	__sysmmu_get_version(data);
-> @@ -1261,6 +1249,8 @@ static int exynos_iommu_add_device(struct device *dev)
->   	}
->   	iommu_group_put(group);
->   
-> +	iommu_device_link(&owner->iommu, dev);
-> +
->   	return 0;
->   }
->   
-> @@ -1282,18 +1272,82 @@ static void exynos_iommu_remove_device(struct device *dev)
->   			iommu_group_put(group);
->   		}
->   	}
-> +	iommu_device_unlink(&owner->iommu, dev);
->   	iommu_group_remove_device(dev);
->   
->   	list_for_each_entry(data, &owner->controllers, owner_node)
->   		device_link_del(data->link);
->   }
->   
-> +static int exynos_iommu_device_init(struct exynos_iommu_owner *owner)
-> +{
-> +	static u32 counter = 0;
-> +	int ret;
-> +
-> +	/*
-> +	 * Create a virtual IOMMU device. In reality it is an umbrella for a
-> +	 * number of SYSMMU platform devices, but that also means that any
-> +	 * master can have more than one real IOMMU device. This drivers handles
-> +	 * all the real devices for one master synchronously, so they appear as
-> +	 * one anyway.
-> +	 */
-> +	ret = iommu_device_sysfs_add(&owner->iommu, NULL, NULL,
-> +				     "sysmmu-owner-%d", counter++);
-> +	if (ret)
-> +		return ret;
-> +
-> +	iommu_device_set_ops(&owner->iommu, &exynos_iommu_ops);
-> +
-> +	return 0;
-> +}
-> +
-> +static void exynos_iommu_device_remove(struct exynos_iommu_owner *owner)
-> +{
-> +	iommu_device_set_ops(&owner->iommu, NULL);
-> +	iommu_device_sysfs_remove(&owner->iommu);
-> +}
-> +
-> +static int exynos_owner_init(struct device *dev)
-> +{
-> +	struct exynos_iommu_owner *owner = dev->archdata.iommu;
-> +	int ret;
-> +
-> +	if (owner)
-> +		return 0;
-> +
-> +	owner = kzalloc(sizeof(*owner), GFP_KERNEL);
-> +	if (!owner)
-> +		return -ENOMEM;
-> +
-> +	ret = exynos_iommu_device_init(owner);
-> +	if (ret)
-> +		goto out_free_owner;
-> +
-> +	ret = iommu_device_register(&owner->iommu);
-> +	if (ret)
-> +		goto out_remove_iommu_device;
-> +
-> +	INIT_LIST_HEAD(&owner->controllers);
-> +	mutex_init(&owner->rpm_lock);
-> +	dev->archdata.iommu = owner;
-> +
-> +	return 0;
-> +
-> +out_remove_iommu_device:
-> +	exynos_iommu_device_remove(owner);
-> +out_free_owner:
-> +	kfree(owner);
-> +
-> +	return ret;
-> +}
-> +
->   static int exynos_iommu_of_xlate(struct device *dev,
->   				 struct of_phandle_args *spec)
->   {
-> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
->   	struct platform_device *sysmmu = of_find_device_by_node(spec->np);
->   	struct sysmmu_drvdata *data, *entry;
-> +	struct exynos_iommu_owner *owner;
-> +	int ret;
->   
->   	if (!sysmmu)
->   		return -ENODEV;
-> @@ -1302,15 +1356,11 @@ static int exynos_iommu_of_xlate(struct device *dev,
->   	if (!data)
->   		return -ENODEV;
->   
-> -	if (!owner) {
-> -		owner = kzalloc(sizeof(*owner), GFP_KERNEL);
-> -		if (!owner)
-> -			return -ENOMEM;
-> +	ret = exynos_owner_init(dev);
-> +	if (ret)
-> +		return ret;
->   
-> -		INIT_LIST_HEAD(&owner->controllers);
-> -		mutex_init(&owner->rpm_lock);
-> -		dev->archdata.iommu = owner;
-> -	}
-> +	owner = dev->archdata.iommu;
->   
->   	list_for_each_entry(entry, &owner->controllers, owner_node)
->   		if (entry == data)
-
-Best regards
--- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gVHVlLCAyMDIwLTA0LTA3IGF0IDE1OjM2IC0wNDAwLCBOaWNvbGFzIER1ZnJlc25lIHdyb3Rl
+Ogo+IExlIG1hcmRpIDA3IGF2cmlsIDIwMjAgw6AgMTE6MzUgLTAzMDAsIEV6ZXF1aWVsIEdhcmNp
+YSBhIMOpY3JpdCA6Cj4gPiBPbiBNb24sIDIwMjAtMDQtMDYgYXQgMTY6MjcgLTA0MDAsIE5pY29s
+YXMgRHVmcmVzbmUgd3JvdGU6Cj4gPiA+IExlIHZlbi4gMyBhdnIuIDIwMjAgw6AgMTg6MTQsIEV6
+ZXF1aWVsIEdhcmNpYSA8ZXplcXVpZWxAY29sbGFib3JhLmNvbT4gYSDDqWNyaXQgOgo+ID4gPiA+
+IEZyb206IEJvcmlzIEJyZXppbGxvbiA8Ym9yaXMuYnJlemlsbG9uQGNvbGxhYm9yYS5jb20+Cj4g
+PiA+ID4gCj4gPiA+ID4gVGhlIHJvY2tjaGlwIHZkZWMgYmxvY2sgaXMgYSBzdGF0ZWxlc3MgZGVj
+b2RlciB0aGF0J3MgYWJsZSB0byBkZWNvZGUKPiA+ID4gPiBIMjY0LCBIRVZDIGFuZCBWUDkgY29u
+dGVudC4gVGhpcyBjb21taXQgYWRkcyB0aGUgY29yZSBpbmZyYXN0cnVjdHVyZQo+ID4gPiA+IGFu
+ZCB0aGUgSDI2NCBiYWNrZW5kLiBTdXBwb3J0IGZvciBWUDkgYW5kIEhFVlMgd2lsbCBiZSBhZGRl
+ZCBsYXRlciBvbi4KPiA+ID4gPiAKPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBCb3JpcyBCcmV6aWxs
+b24gPGJvcmlzLmJyZXppbGxvbkBjb2xsYWJvcmEuY29tPgo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6
+IEV6ZXF1aWVsIEdhcmNpYSA8ZXplcXVpZWxAY29sbGFib3JhLmNvbT4KPiA+ID4gCj4gPiA+IFNv
+cnJ5IGZvciB0aGUgbGF0ZSBmZWVkYmFjayAoZ290IGEgY29tbWVudCBsb3dlcikgLi4uCj4gPiA+
+IAo+ID4gPiBUZXN0ZWQtYnk6IE5pY29sYXMgRHVmcmVzbmUgPG5pY29sYXMuZHVmcmVzbmVAY29s
+bGFib3JhLmNvbT4KPiA+ID4gCj4gPiAKPiA+IE5pY2UsIHRoYW5rIHlvdS4KPiA+IAo+ID4gPiA+
+IC0tCj4gPiA+ID4gdjg6Cj4gPiA+ID4gKiBGaXgga2ZyZWUgYW5kIHN0eWxlIGNoYW5nZXMsIGFz
+IHN1Z2dlc3RlZCBieSBBbmRyaXkuCj4gPiA+ID4gdjc6Cj4gPiA+ID4gKiBodmVya3VpbC1jaXNj
+b0B4czRhbGwubmw6IHJlcGxhY2VkIFZGTF9UWVBFX0dSQUJCRVIgYnkgX1ZJREVPCj4gPiA+ID4g
+KiBVc2UgbWFjcm9zIGFuZCBBUlJBWV9TSVpFIGluc3RlYWQgb2YgbWFnaWMgbnVtYmVycywKPiA+
+ID4gPiAgIGFzIHN1Z2dlc3RlZCBieSBNYXVyby4KPiA+ID4gPiAqIFJlbmFtZWQgTV9OIG1hY3Jv
+LCBzdWdnZXN0ZWQgYnkgTWF1cm8uCj4gPiA+ID4gKiBVc2UgdjRsMl9tMm1fYnVmX2RvbmVfYW5k
+X2pvYl9maW5pc2guCj4gPiA+ID4gKiBTZXQgYnVmZmVycycgemVyb3RoIHBsYW5lIHBheWxvYWQg
+aW4gLmJ1Zl9wcmVwYXJlCj4gPiA+ID4gKiBSZWZhY3RvciB0cnkvc19mbXQgZm9yIHNwZWMgY29t
+cGxpYW5jZS4KPiA+ID4gPiAtLS0KPiA+ID4gPiAgTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIHwgICAgNyArCj4gPiA+ID4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9L
+Y29uZmlnICAgICAgICAgICAgICB8ICAgIDIgKwo+ID4gPiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVk
+aWEvTWFrZWZpbGUgICAgICAgICAgICAgfCAgICAxICsKPiA+ID4gPiAgZHJpdmVycy9zdGFnaW5n
+L21lZGlhL3JrdmRlYy9LY29uZmlnICAgICAgIHwgICAxNSArCj4gPiA+ID4gIGRyaXZlcnMvc3Rh
+Z2luZy9tZWRpYS9ya3ZkZWMvTWFrZWZpbGUgICAgICB8ICAgIDMgKwo+ID4gPiA+ICBkcml2ZXJz
+L3N0YWdpbmcvbWVkaWEvcmt2ZGVjL1RPRE8gICAgICAgICAgfCAgIDExICsKPiA+ID4gPiAgZHJp
+dmVycy9zdGFnaW5nL21lZGlhL3JrdmRlYy9ya3ZkZWMtaDI2NC5jIHwgMTE1NiArKysrKysrKysr
+KysrKysrKysrKwo+ID4gPiA+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVjL3JrdmRlYy1y
+ZWdzLmggfCAgMjIzICsrKysKPiA+ID4gPiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL3JrdmRlYy9y
+a3ZkZWMuYyAgICAgIHwgMTEwMyArKysrKysrKysrKysrKysrKysrCj4gPiA+ID4gIGRyaXZlcnMv
+c3RhZ2luZy9tZWRpYS9ya3ZkZWMvcmt2ZGVjLmggICAgICB8ICAxMjEgKysKPiA+ID4gPiAgMTAg
+ZmlsZXMgY2hhbmdlZCwgMjY0MiBpbnNlcnRpb25zKCspCj4gPiA+ID4gIGNyZWF0ZSBtb2RlIDEw
+MDY0NCBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvcmt2ZGVjL0tjb25maWcKPiA+ID4gPiAgY3JlYXRl
+IG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvTWFrZWZpbGUKPiA+ID4g
+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvVE9ETwo+
+ID4gPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9zdGFnaW5nL21lZGlhL3JrdmRlYy9y
+a3ZkZWMtaDI2NC5jCj4gPiA+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3N0YWdpbmcv
+bWVkaWEvcmt2ZGVjL3JrdmRlYy1yZWdzLmgKPiA+ID4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRy
+aXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvcmt2ZGVjLmMKPiA+ID4gPiAgY3JlYXRlIG1vZGUg
+MTAwNjQ0IGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9ya3ZkZWMvcmt2ZGVjLmgKPiA+ID4gPiAKPiA+
+IFsuLl0KPiA+ID4gPiArCj4gPiA+ID4gK3N0YXRpYyB2b2lkIHNldF9wc19maWVsZCh1MzIgKmJ1
+Ziwgc3RydWN0IHJrdmRlY19wc19maWVsZCBmaWVsZCwgdTMyIHZhbHVlKQo+ID4gPiA+ICt7Cj4g
+PiA+ID4gKyAgICAgICB1OCBiaXQgPSBmaWVsZC5vZmZzZXQgJSAzMiwgd29yZCA9IGZpZWxkLm9m
+ZnNldCAvIDMyOwo+ID4gPiA+ICsgICAgICAgdTY0IG1hc2sgPSBHRU5NQVNLX1VMTChiaXQgKyBm
+aWVsZC5sZW4gLSAxLCBiaXQpOwo+ID4gPiA+ICsgICAgICAgdTY0IHZhbCA9ICgodTY0KXZhbHVl
+IDw8IGJpdCkgJiBtYXNrOwo+ID4gPiA+ICsKPiA+ID4gPiArICAgICAgIGJ1Zlt3b3JkXSAmPSB+
+bWFzazsKPiA+ID4gPiArICAgICAgIGJ1Zlt3b3JkXSB8PSB2YWw7Cj4gPiA+ID4gKyAgICAgICBp
+ZiAoYml0ICsgZmllbGQubGVuID4gMzIpIHsKPiA+ID4gPiArICAgICAgICAgICAgICAgYnVmW3dv
+cmQgKyAxXSAmPSB+KG1hc2sgPj4gMzIpOwo+ID4gPiA+ICsgICAgICAgICAgICAgICBidWZbd29y
+ZCArIDFdIHw9IHZhbCA+PiAzMjsKPiA+ID4gPiArICAgICAgIH0KPiA+ID4gPiArfQo+ID4gPiA+
+ICsKPiA+ID4gPiArc3RhdGljIHZvaWQgYXNzZW1ibGVfaHdfcHBzKHN0cnVjdCBya3ZkZWNfY3R4
+ICpjdHgsCj4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBya3ZkZWNf
+aDI2NF9ydW4gKnJ1bikKPiA+ID4gPiArewo+ID4gPiA+ICsgICAgICAgc3RydWN0IHJrdmRlY19o
+MjY0X2N0eCAqaDI2NF9jdHggPSBjdHgtPnByaXY7Cj4gPiA+ID4gKyAgICAgICBjb25zdCBzdHJ1
+Y3QgdjRsMl9jdHJsX2gyNjRfc3BzICpzcHMgPSBydW4tPnNwczsKPiA+ID4gPiArICAgICAgIGNv
+bnN0IHN0cnVjdCB2NGwyX2N0cmxfaDI2NF9wcHMgKnBwcyA9IHJ1bi0+cHBzOwo+ID4gPiA+ICsg
+ICAgICAgY29uc3Qgc3RydWN0IHY0bDJfY3RybF9oMjY0X2RlY29kZV9wYXJhbXMgKmRlY19wYXJh
+bXMgPSBydW4tPmRlY29kZV9wYXJhbXM7Cj4gPiA+ID4gKyAgICAgICBjb25zdCBzdHJ1Y3QgdjRs
+Ml9oMjY0X2RwYl9lbnRyeSAqZHBiID0gZGVjX3BhcmFtcy0+ZHBiOwo+ID4gPiA+ICsgICAgICAg
+c3RydWN0IHJrdmRlY19oMjY0X3ByaXZfdGJsICpwcml2X3RibCA9IGgyNjRfY3R4LT5wcml2X3Ri
+bC5jcHU7Cj4gPiA+ID4gKyAgICAgICBzdHJ1Y3Qgcmt2ZGVjX3Nwc19wcHNfcGFja2V0ICpod19w
+czsKPiA+ID4gPiArICAgICAgIGRtYV9hZGRyX3Qgc2NhbGluZ19saXN0X2FkZHJlc3M7Cj4gPiA+
+ID4gKyAgICAgICB1MzIgc2NhbGluZ19kaXN0YW5jZTsKPiA+ID4gPiArICAgICAgIHUzMiBpOwo+
+ID4gPiA+ICsKPiA+ID4gPiArICAgICAgIC8qCj4gPiA+ID4gKyAgICAgICAgKiBIVyByZWFkIHRo
+ZSBTUFMvUFBTIGluZm9ybWF0aW9uIGZyb20gUFBTIHBhY2tldCBpbmRleCBieSBQUFMgaWQuCj4g
+PiA+ID4gKyAgICAgICAgKiBvZmZzZXQgZnJvbSB0aGUgYmFzZSBjYW4gYmUgY2FsY3VsYXRlZCBi
+eSBQUFNfaWQgKiAzMiAoc2l6ZSBwZXIgUFBTCj4gPiA+ID4gKyAgICAgICAgKiBwYWNrZXQgdW5p
+dCkuIHNvIHRoZSBkcml2ZXIgY29weSBTUFMvUFBTIGluZm9ybWF0aW9uIHRvIHRoZSBleGFjdCBQ
+UFMKPiA+ID4gPiArICAgICAgICAqIHBhY2tldCB1bml0IGZvciBIVyBhY2Nlc3NpbmcuCj4gPiA+
+ID4gKyAgICAgICAgKi8KPiA+ID4gPiArICAgICAgIGh3X3BzID0gJnByaXZfdGJsLT5wYXJhbV9z
+ZXRbcHBzLT5waWNfcGFyYW1ldGVyX3NldF9pZF07Cj4gPiA+ID4gKyAgICAgICBtZW1zZXQoaHdf
+cHMsIDAsIHNpemVvZigqaHdfcHMpKTsKPiA+ID4gPiArCj4gPiA+ID4gKyNkZWZpbmUgV1JJVEVf
+UFBTKHZhbHVlLCBmaWVsZCkgc2V0X3BzX2ZpZWxkKGh3X3BzLT5pbmZvLCBmaWVsZCwgdmFsdWUp
+Cj4gPiA+ID4gKyAgICAgICAvKiB3cml0ZSBzcHMgKi8KPiA+ID4gPiArICAgICAgIFdSSVRFX1BQ
+UygweGYsIFNFUV9QQVJBTUVURVJfU0VUX0lEKTsKPiA+ID4gPiArICAgICAgIFdSSVRFX1BQUygw
+eGZmLCBQUk9GSUxFX0lEQyk7Cj4gPiA+ID4gKyAgICAgICBXUklURV9QUFMoMSwgQ09OU1RSQUlO
+VF9TRVQzX0ZMQUcpOwo+ID4gPiAKPiA+ID4gQXQgZmlyc3QgSSBmb3VuZCB0aGF0IHBhcnQgcmF0
+aGVyIGludGVyZXN0aW5nLCBidXQgSSBzZWUgdGhpcwo+ID4gPiBoYXJkY29kaW5nIG1hdGNoZXMg
+d2hhdCBSb2NrY2hpcCBkby4KPiA+ID4gCj4gPiA+IGh0dHBzOi8vZ2l0aHViLmNvbS9yb2NrY2hp
+cC1saW51eC9tcHAvYmxvYi9yZWxlYXNlL21wcC9oYWwvcmtkZWMvaDI2NGQvaGFsX2gyNjRkX3Jr
+dl9yZWcuYyNMMjY2Cj4gPiA+IAo+ID4gPiA+ICsgICAgICAgV1JJVEVfUFBTKHNwcy0+Y2hyb21h
+X2Zvcm1hdF9pZGMsIENIUk9NQV9GT1JNQVRfSURDKTsKPiA+ID4gCj4gPiA+IEJ1dCBoZXJlJ3Mg
+aXQncyBub3Qgc28gZ3JlYXQuIFRoaXMgZHJpdmVyIGRvZXMgbm90IGltcGxlbWVudCBhbnkga2lu
+ZAo+ID4gPiBvZiB2YWxpZGF0aW9uLiBJbiBmYWN0LCBpZiBJIHBhc3MgMwo+ID4gPiBoZXJlICAo
+WUNiQ3IgNDo0OjQpIGl0IHdpbGwgYWNjZXB0IGl0LCBhbmQga2luZCBvZiBkZWNvZGUgc29tZSBm
+cmFtZXMsCj4gPiA+IGJ1dCBldmVudHVhbGx5IHdpdGggY3Jhc2ggYW5kCj4gPiA+IHJlYm9vdCBp
+cyBuZWVkZWQuIFdlIHNob3VsZCAoYXMgZGVmaW5lZCBpbiB0aGUgU3RhdGVsc3MgQ09ERUMgc3Bl
+YykKPiA+ID4gdmFsaWRhdGUgdGhlIFNQUyBhbmQgcmVmdXNlIGlmCj4gPiA+IGFuIHVuc3VwcG9y
+dGVkIHByb2ZpbGUgaWRjLCBjaHJvbWEgaWRjLCBsdW1hL2Nocm9tYSBkZXB0aCBvciBjb2RlZAo+
+ID4gPiBzaXplIGlzIHJlcXVlc3RlZC4KPiA+IAo+ID4gUGVyaGFwcyB3ZSBjb3VsZCB2YWxpZGF0
+ZSB0aGF0IGF0IHJlcXVlc3RfdmFsaWRhdGUgdGltZSwKPiA+IG9yIG1heWJlIG9wcy50cnlfY3Ry
+bCBpcyBiZXR0ZXIuCj4gPiAKPiA+IDwvdGhpbmtpbmdfb3V0X2xvdWQ+Cj4gPiAKPiA+ID4gVmFs
+aWRhdGluZyB0aGUKPiA+ID4gU19GTVQgaXMgbm90IHN1ZmZpY2llbnQgYXMgb25lIGNhbiB0cmlj
+ayB0aGUgZHJpdmVyIGluIGFsbG9jYXRpbmcKPiA+ID4gYnVmZmVycyB0aGF0IGFyZSB0b28gc21h
+bGwuCj4gPiA+IAo+ID4gCj4gPiBJIGFtIG5vdCBzdXJlIEkgZm9sbG93IHlvdTogaG93IGRvIHlv
+dSB0aGluayB0aGUgZHJpdmVyCj4gPiBjYW4gYmUgdHJpY2tlZCBsaWtlIHRoaXM/Cj4gCj4gV2hh
+dCBJIHNlZSBpcyB0aGF0IHRoZXJlIGlzIG5vIGNyb3NzIHZhbGlkYXRpb24gYmV0d2VlbiB0aGUg
+U1BTCj4gcmVnaXN0ZXIgY29uZmlndXJhdGlvbiBhbmQgdGhlIGZyYW1lIGFsbG9jYXRpb25zIGRv
+bmUgdGhyb3VnaCBTX0ZNVC4gU28KPiBpZiBJIGNoZWF0IGluIFNfRk1ULCBhbmQgdGhlbiBwYXNz
+IGFuIFNQUyB0aGF0IGlzIGxhcmdlciB0aGVuCj4gYW5ub3VuY2VkLCB0aGUgSFcgY291bGQgcG90
+ZW50aWFsbHkgb3ZlcnJ1biBidWZmZXJzLiBUaGF0IGVudGlyZWx5Cj4gZGVwZW5kcyBvbiBob3cg
+bXVjaCByb2J1c3RuZXNzIHRoZXJlIGlzIGluIHRoZSBIVyBpbXBsZW1lbnRhdGlvbiBpc2VsZgo+
+IChhbmQgaWYgd2UgaGF2ZSBhIHJlZ2lzdGVyIHRvIHBhc3MgdGhlIGJ1ZmZlciBzaXplKS4KPiAK
+PiBUaGlzIGlzIG9mIGNvdXJzZSBhIGd1dCBmZWVsaW5nLCBJIGhhdmVuJ3QgZm91bmQgdGltZSB0
+byB0ZXN0IHRoaXMgeWV0LAo+IGJ1dCBpdCBjYW1lIHRvIG15IG1pbmQgYWZ0ZXIgSSBub3RpY2Ug
+dGhhdCBwYXNzaW5nIGEgNDo0OjQgY2hvbWFfaWRjCj4gc3RyZWFtIGNhdXNlcyBkcml2ZXIgZmFp
+bHVyZSAobm8gdmlzaWJsZSBtZW1vcnkgY29ycnVwdGlvbiBvciBvdmVycnVuCj4gdGhvdWdoLCB0
+aGUgZHJpdmVyIGp1c3Qgc3RvcHMgd29ya2luZykuIFNvIHRoZSByZXN1bHRpbmcgaXNzdWVzIG1p
+Z2h0Cj4gbm90IGJlIHRoYXQgYmFkLCBidXQgeW91IGVuZHVwIGxvb3NpbmcgdGhlIGRlY29kZXIu
+Cj4gCgpOb3RlIHRoYXQgdGhpcyBkcml2ZXIgKGFzIHdlbGwgYXMgSGFudHJvKSBwcm9ncmFtcyB0
+aGUgaGFyZHdhcmUKdXNpbmcgdGhlIG5lZ290aWF0ZWQgcmVzb2x1dGlvbiwgYW5kIGlnbm9yZXMg
+d2hhdCB0aGUgU1BTIHNheXMKYWJvdXQgaXQuCgpJdCBzaG91bGRuJ3QgYmUgcG9zc2libGUgdG8g
+dHJpY2sgdGhlIGRyaXZlciB0aGlzIHdheS4KCk9UT0gsIGJvdGggZHJpdmVycyBzaG91bGQgaGF2
+ZSBhZGRpdGlvbmFsIGNoZWNrcyBmb3Igb3RoZXIgU1BTCmZpZWxkcyBzdWNoIGFzIGNocm9tYV9m
+b3JtYXRfaWRjIGFuZCBsdW1hX2JpdF9kZXB0aCwgYXMgeW91CnBvaW50ZWQgb3V0LgoKSSdsbCBh
+ZGQgdGhpcyB0byBteSBUT0RPIGxpc3QuIEkgdGhpbmsgaXQncyBkb2FibGUgYXMgZm9sbG93LXVw
+CnBhdGNoZXMuCgpUaGFuaywKRXplcXVpZWwKCj4gPiA+IFdoYXQgSSBzdXNwZWN0IGlzIHRoYXQg
+d2UgbmVlZCB0byBiZSBjYXJlZnVsIHdpdGggdGhpcyBIVywgYXMgaXQgc2VlbXMKPiA+ID4gdG8g
+YmUgYSBiaXQgaGFsZiBiYWNrZWQsIHdoaWNoCj4gPiA+IG1lYW5zIGl0IG1pZ2h0IGJlIHN1cHBv
+cnRpbmcgbW9yZSBmZWF0dXJlcyB0aGVuIHN1cHBvcnRlZCBieSB0aGUgVFJNCj4gPiA+IG9yIHJl
+ZmVyZW5jZSBjb2RlLCBhbmQgd2UKPiA+ID4gbXVzdCBkaXNhYmxlIHRoaXMgd2l0aCBzb2Z0d2Fy
+ZS4KPiA+ID4gCj4gPiA+IChwLnMuIEkgY2FuIHByb3ZpZGUgYSBzdHJlYW0gdG8gcmVwcm9kdWNl
+IHRoZSA0OjQ6NCBkcml2ZXIgZmFpbHVyZSkKPiA+ID4gCj4gPiAKPiA+IFRoYW5rcywKPiA+IEV6
+ZXF1aWVsCj4gPiAKPiAKPiAKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1yb2NrY2hpcAo=
