@@ -2,52 +2,68 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D95161A296C
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 21:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37DD01A2C5A
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 01:30:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2OMUGDMX4quk0vp15BdFxxkZupsFt2Y1ddNaBq5jmLY=; b=E9qPi5s5sXTqI5
-	24relSh7guKWe7p+sZxJ/xbqJWFzPLkezbsolybliXrkdK1JMpz/hCEIZNSO3NIyMipGLq3pvAWMG
-	huJs1u63kA/JvZw7BcXoNcp4i/MQEXkxUbDfU5Ro6zeo7goo0B2zNvuBvvqzjjfRwe4PwiHyZCCUv
-	z3L1WznQp2P/uZCmUbJLG8DeAfMWPmSdKlDXio8aPSBJwKy8cEGqFQKeOItcx8szier0WXB1HCBrV
-	2EWKvQF2eAC1hV8/bnFpRAN63aqT73w5zP8LPO+43JAFilFUC+GfHoOt9FqxCswBVVRpLlZd3NeM3
-	uOtmIz62vtYxNxdfzEug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=dene0hcR8lAcz8bTNmR3/pu4oCMUgBpK3ZANRbixW1g=; b=Y6wZz5cdJHQVPK
+	9D1zCjj/iuWAssLihR3GxoWLzi2UhESwAE9UigvKD0nJNb2ylvAkIQlg09lQt1d8u1BOG6QbrZDlQ
+	h9mIWBcCVC7pus/hB5AH5/YZRdmEzi8AKlQpAYZwoFmd2tFINgeZPwMOTg8SGzyDnbDvGGoFCBANK
+	30hIltzbTG3Jn4mBnlxWZOmKdUV1RpTeJb6ufoU1tmOVPNscyZJbauyA4lnUDZzX9pJeQCS7Yu6DF
+	5Nul45pFTKz+kLIPWpM1G9oVrOQPfTy1piJ0dugGZvBoTFjK9evdZ9w5tdKVMZhnt5iRx51RhliBe
+	JQ1bSeLe0klBxv6pAsjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMGXS-0001Bx-MR; Wed, 08 Apr 2020 19:39:06 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jMK9E-0003x6-KT; Wed, 08 Apr 2020 23:30:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMGX9-0000vV-ND; Wed, 08 Apr 2020 19:38:49 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 2D46728917A
-Message-ID: <58f011c7bd67c886892ac98505b916cc95adf495.camel@collabora.com>
-Subject: Re: [PATCH] media: staging: rkisp1: avoid unused variable warning
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 08 Apr 2020 16:38:30 -0300
-In-Reply-To: <CAK8P3a1K5T2e2kAQMVi=ubPN3v4rYgtb9TaGC6evNXSUc4embQ@mail.gmail.com>
-References: <20200408155325.2077345-1-arnd@arndb.de>
- <3336c3105120d2f90dbc20d47ff98e722a123d5b.camel@collabora.com>
- <CAK8P3a1K5T2e2kAQMVi=ubPN3v4rYgtb9TaGC6evNXSUc4embQ@mail.gmail.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ id 1jMK95-0003QI-4f; Wed, 08 Apr 2020 23:30:12 +0000
+Received: from localhost (mobile-166-175-188-68.mycingular.net
+ [166.175.188.68])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD0ED20730;
+ Wed,  8 Apr 2020 23:30:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586388610;
+ bh=BS0ZFoiAjqfPxe9bkyobcDKcwdePpxw1588Rc7wSJJc=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=Tq87FDiJYzSROkNza6MmRJ2L1MvMFuSLJty0f8QCOXhEryVgro3JUW+LY/jpx7JPt
+ A7jaNs8uU86tY53XAVsYf0RTGTgLzLVqKwY6wAnzho8QsVNndmxcHD9JMQQexFAcsh
+ uoCvMiiFs+QBCqEiVWGbNzi82E0hU7wSdJzZzKRs=
+Date: Wed, 8 Apr 2020 18:30:08 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v7 2/8] PCI: rcar: Move shareable code to a common file
+Message-ID: <20200408233008.GA150200@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1586360280-10956-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_123847_884374_148AE36E 
-X-CRM114-Status: GOOD (  14.67  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200408_163011_212178_3DDF5592 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,72 +76,32 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: driverdevel <devel@driverdev.osuosl.org>,
- Eddie Cai <eddie.cai.linux@gmail.com>, Jacob Chen <cc@rock-chips.com>,
- Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- Jeffy Chen <jeffy.chen@rock-chips.com>, Yichong Zhong <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tfiga@chromium.org>, "open list:ARM/Rockchip
- SoC support" <linux-rockchip@lists.infradead.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Allon Huang <allon.huang@rock-chips.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Shunqian Zheng <zhengsq@rock-chips.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
+ Rob Herring <robh+dt@kernel.org>, Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 2020-04-08 at 21:08 +0200, Arnd Bergmann wrote:
-> On Wed, Apr 8, 2020 at 7:56 PM Ezequiel Garcia <ezequiel@collabora.com> wrote:
-> > On Wed, 2020-04-08 at 17:52 +0200, Arnd Bergmann wrote:
-> > > When compile-testing with CONFIG_OF disabled, we get a warning
-> > > about an unused variable, and about inconsistent Kconfig dependencies:
-> > > 
-> > > WARNING: unmet direct dependencies detected for PHY_ROCKCHIP_DPHY_RX0
-> > >   Depends on [n]: STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y]) && OF [=n]
-> > >   Selected by [m]:
-> > >   - VIDEO_ROCKCHIP_ISP1 [=m] && STAGING [=y] && STAGING_MEDIA [=y] && MEDIA_SUPPORT [=m] && VIDEO_V4L2 [=m] && VIDEO_V4L2_SUBDEV_API [=y] &&
-> > > (ARCH_ROCKCHIP [=n] || COMPILE_TEST [=y])
-> > > 
-> > > drivers/staging/media/rkisp1/rkisp1-dev.c: In function 'rkisp1_probe':
-> > > drivers/staging/media/rkisp1/rkisp1-dev.c:457:22: error: unused variable 'node' [-Werror=unused-variable]
-> > >   457 |  struct device_node *node = pdev->dev.of_node;
-> > > 
-> > > Simply open-coding the pointer dereference in the only place
-> > > the variable is used avoids the warning in all configurations,
-> > > so we can allow compile-testing as well.
-> > > 
-> > 
-> > Hello Arnd,
-> > 
-> > Thanks for your patch.
-> > 
-> > I believe this is already fixed here:
-> > 
-> > https://patchwork.linuxtv.org/patch/62774/
-> > https://patchwork.linuxtv.org/patch/62775/
-> 
-> Ok, sorry for the duplicate. I only tested on mainline from a few days ago,
-> so I must have missed it getting merged in the meantime.
-> 
+On Wed, Apr 08, 2020 at 04:37:54PM +0100, Lad Prabhakar wrote:
+> This patch moves sharable code to common file pcie-rcar.c and the #defines
+> to pcie-rcar.h so that the common code can be reused with endpoint driver.
+> There are no functional changes with this patch for the host controller
+> driver.
 
-No worries!
-
-Those were was sent very recently, and won't be
-merged any time soon :-)
-
-Ezequiel
-
-
+s/This patch moves/Move/
+s/sharable/shareable/
 
 _______________________________________________
 Linux-rockchip mailing list
