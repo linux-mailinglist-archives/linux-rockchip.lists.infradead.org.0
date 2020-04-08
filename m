@@ -2,51 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37DD01A2C5A
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 01:30:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42C061A2C8B
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 01:46:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=dene0hcR8lAcz8bTNmR3/pu4oCMUgBpK3ZANRbixW1g=; b=Y6wZz5cdJHQVPK
-	9D1zCjj/iuWAssLihR3GxoWLzi2UhESwAE9UigvKD0nJNb2ylvAkIQlg09lQt1d8u1BOG6QbrZDlQ
-	h9mIWBcCVC7pus/hB5AH5/YZRdmEzi8AKlQpAYZwoFmd2tFINgeZPwMOTg8SGzyDnbDvGGoFCBANK
-	30hIltzbTG3Jn4mBnlxWZOmKdUV1RpTeJb6ufoU1tmOVPNscyZJbauyA4lnUDZzX9pJeQCS7Yu6DF
-	5Nul45pFTKz+kLIPWpM1G9oVrOQPfTy1piJ0dugGZvBoTFjK9evdZ9w5tdKVMZhnt5iRx51RhliBe
-	JQ1bSeLe0klBxv6pAsjA==;
+	List-Owner; bh=sNslW6s1ObRL1dEYhgGE37WVHxgDn5w3Aq/J/fFDG3A=; b=N4OYfeq11k0Kvi
+	fQNEdfajrAcZAl8UjVYc+H6dVqRz7gydIyuFHD8K3Wl9Fa9Zt8P+dePPLf5W/Y0PuXGBTIBrxJppm
+	N1MgOfLfpIja6D8BRDSw+8Bg/JUCnXXYLDivGHRna/N8T39PALbgTpStEUmkp6PnGmS1OyX5EvXiP
+	DpYvAXCF1Hq8OTomacyAZumdCx7JlQ0JSk+8vevPSl9VnGrcCTNBnO+8JvoHTnQHj8ZX3advxdZ/q
+	ndL4ilJTSA/VWGLhSdDUSM4YLa4K8ILFazU2EDY4b/C0pkEC3TpXEDNHp5C8HKu2+oD2gIE0/Dl3l
+	EY6Zp/bbNTETwet3d+MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMK9E-0003x6-KT; Wed, 08 Apr 2020 23:30:20 +0000
+	id 1jMKOv-0006TR-L9; Wed, 08 Apr 2020 23:46:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMK95-0003QI-4f; Wed, 08 Apr 2020 23:30:12 +0000
+ id 1jMKOn-0006ND-HG; Wed, 08 Apr 2020 23:46:26 +0000
 Received: from localhost (mobile-166-175-188-68.mycingular.net
  [166.175.188.68])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BD0ED20730;
- Wed,  8 Apr 2020 23:30:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8821C20787;
+ Wed,  8 Apr 2020 23:46:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586388610;
- bh=BS0ZFoiAjqfPxe9bkyobcDKcwdePpxw1588Rc7wSJJc=;
+ s=default; t=1586389585;
+ bh=jdERzFagcZJpT6zeQ9ptPHc+W/HgbAkXikMkMpGMIc8=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=Tq87FDiJYzSROkNza6MmRJ2L1MvMFuSLJty0f8QCOXhEryVgro3JUW+LY/jpx7JPt
- A7jaNs8uU86tY53XAVsYf0RTGTgLzLVqKwY6wAnzho8QsVNndmxcHD9JMQQexFAcsh
- uoCvMiiFs+QBCqEiVWGbNzi82E0hU7wSdJzZzKRs=
-Date: Wed, 8 Apr 2020 18:30:08 -0500
+ b=UBEF4PPNtgYeAzJH79lLGGULnX41ZtOGL+nLtZMe5rqcdjOevaJL0F7SJcJqnQ/gL
+ cbk/jdvfvN7/J57YJCjLt9hgnh47iQLIXE+WlxuVESZ/NcOWOUykYPQC8tj5yfO0K9
+ NtF4OXMIed85faV2LxGjwdhmPKjCAsn4lB7mBgEc=
+Date: Wed, 8 Apr 2020 18:46:22 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v7 2/8] PCI: rcar: Move shareable code to a common file
-Message-ID: <20200408233008.GA150200@google.com>
+Subject: Re: [PATCH v7 4/8] PCI: endpoint: Add support to handle multiple
+ base for mapping outbound memory
+Message-ID: <20200408234622.GA150772@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1586360280-10956-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1586360280-10956-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_163011_212178_3DDF5592 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200408_164625_590463_0A02B2B4 
+X-CRM114-Status: GOOD (  15.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,14 +94,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 04:37:54PM +0100, Lad Prabhakar wrote:
-> This patch moves sharable code to common file pcie-rcar.c and the #defines
-> to pcie-rcar.h so that the common code can be reused with endpoint driver.
-> There are no functional changes with this patch for the host controller
-> driver.
+On Wed, Apr 08, 2020 at 04:37:56PM +0100, Lad Prabhakar wrote:
+> R-Car PCIe controller has support to map multiple memory regions for
+> mapping the outbound memory in local system also the controller limits
+> single allocation for each region (that is, once a chunk is used from the
+> region it cannot be used to allocate a new one). This features inspires to
+> add support for handling multiple memory bases in endpoint framework.
+> 
+> With this patch pci_epc_mem_init() initializes address space for endpoint
+> controller which support single window and whereas __pci_epc_mem_init()
+> now accepts pointer to multiple windows supported by endpoint controller.
 
-s/This patch moves/Move/
-s/sharable/shareable/
+Adding a double underscore prefix usually indicates an internal
+function that skips some checking.
+
+It doesn't seem like quite the right thing for this external interface
+that adds functionality.  Maybe the name could include something like
+"multi"?
+
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+
+This needs an ack from Kishon, of course.
+
+This patch seems like it does several things that could possibly be
+split into separate patches?
+
+  - Change pci_epc_mem_init() interface to add page_size argument (the
+    only one that touches cadence & rockchip; it would be nice if this
+    were a tiny patch)
+
+  - Add struct pci_epc_mem_window
+
+  - Add a pci_epc_multi_mem_init() or similar, implement
+    pci_epc_mem_init() in terms of it (as you already do)
+
+Bjorn
 
 _______________________________________________
 Linux-rockchip mailing list
