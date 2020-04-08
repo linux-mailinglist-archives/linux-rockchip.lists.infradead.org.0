@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79DA51A2024
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 13:48:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D4C61A2026
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 13:48:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=80YEWTic9yR0rV5iPF5RJjZKdqg4Sl2mnzO8hkQxI1Y=; b=TV3jeNsfiudRCo
-	mDQ/EpTDfyTgYBtvNeBShzSmZiNJzBesOs5SGsWEvbFl8R1o8qVdXXXl3VOkoHnr1mi1r0qBxxj4O
-	QluRshgVBmREij7mLw3nt6uVi4gH5kOYnZ2JppL05o3HkOn/ZEuunidQZ3+DDCWiebt/X07rkN6lA
-	LB1JIInWPxgYVemgUkAbBlXm/exuuBh/SrTku/z/uwBSd/SKWmeSY+xcOVdM9YXFlLTzDcQTYiTDn
-	X5v1Q82YilGzBoJyl64n+fvUb3ue3PGRPZOykk4rfc7njeFoqY+DJ/1rPD7FITa4h4RRKwEd2GnId
-	X30vbtyDe89StMkmQeSA==;
+	List-Owner; bh=HFoqjdq9EGqtLjmnWgIU4eSm0eS1rU5VF/ZomjGZGnU=; b=JHc7f6Y6UOnbe9
+	nz78REm+uawjO5ZEdG8hB98hd1cr18A5JzNLhaWNjfkpV8qTz421kEvMomHniSN7zVwE+8Flmjx0A
+	Ub6C447H5TMpvESRSxevk1FBCNhFAqJxGClZo0fuRC38j9qumTLIMJgsp0JkyVxW8dOfz8kg8cmDr
+	HNo682czIrIQxgI/LSFZ6e53CwY1351t6NNG7h+3o6DIKXRShtQaWFqpy/qDfHxw2UjESPgBQpiCR
+	yhJ92dU36rNYzauLRnNrKY9R38Jzrok6y8xk6UkbayGWvIhqrNASfi1Y1BxYBO+I86IdZ3scKa/To
+	/t0EIJqtwSfjROOKq8Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM9CI-0003y3-VW; Wed, 08 Apr 2020 11:48:46 +0000
+	id 1jM9CK-0003zx-6R; Wed, 08 Apr 2020 11:48:48 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM9CB-0003sr-J5
+ id 1jM9CC-0003tG-4y
  for linux-rockchip@lists.infradead.org; Wed, 08 Apr 2020 11:48:41 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id A5A37296970
+ (Authenticated sender: dafna) with ESMTPSA id 3CB212969A6
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v3 3/6] media: staging: rkisp1: cap: change the logic for
- writing to uv swap register
-Date: Wed,  8 Apr 2020 13:48:19 +0200
-Message-Id: <20200408114822.27360-4-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v3 4/6] media: staging: rkisp1: cap: support uv swap only for
+ semiplanar formats
+Date: Wed,  8 Apr 2020 13:48:20 +0200
+Message-Id: <20200408114822.27360-5-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200408114822.27360-1-dafna.hirschfeld@collabora.com>
 References: <20200408114822.27360-1-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_044839_753044_B26DC624 
-X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-CacheID: sfid-20200408_044840_344256_031558CD 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -69,61 +69,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The register RKISP1_CIF_MI_XTD_FORMAT_CTRL is currently written
-with "on" only if the u,v streams need to be swapped. This patch
-also write to it with "off" if they don't need to be swapped.
+The register RKISP1_CIF_MI_XTD_FORMAT_CTRL is relevant only
+for semiplanar formats, therefore the uv swap can be supported
+through this register only for semiplanar formats.
 
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- drivers/staging/media/rkisp1/rkisp1-capture.c | 21 ++++++++++---------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 31 ++++++++++++-------
+ 1 file changed, 19 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-index 5d0e489505f0..4830083c33fd 100644
+index 4830083c33fd..257799a7d865 100644
 --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
 +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-@@ -383,12 +383,12 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
+@@ -383,12 +383,16 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
  		     cap->config->mi.cr_size_init);
  
  	rkisp1_irq_frame_end_enable(cap);
--	if (cap->pix.cfg->uv_swap) {
--		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
--
-+	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
-+	if (cap->pix.cfg->uv_swap)
- 		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
--		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
--	}
-+	else
-+		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
-+	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+-	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+-	if (cap->pix.cfg->uv_swap)
+-		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+-	else
+-		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+-	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++
++	/* set uv swapping for semiplanar formats */
++	if (cap->pix.info->comp_planes == 2) {
++		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++		if (cap->pix.cfg->uv_swap)
++			reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
++		else
++			reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
++		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++	}
  
  	rkisp1_mi_config_ctrl(cap);
  
-@@ -406,7 +406,7 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
- {
- 	const struct v4l2_pix_format_mplane *pixm = &cap->pix.fmt;
- 	struct rkisp1_device *rkisp1 = cap->rkisp1;
--	u32 mi_ctrl;
-+	u32 mi_ctrl, reg;
- 
- 	rkisp1_write(rkisp1, rkisp1_pixfmt_comp_size(pixm, RKISP1_PLANE_Y),
- 		     cap->config->mi.y_size_init);
-@@ -420,12 +420,13 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
- 	rkisp1_write(rkisp1, cap->sp_y_stride, RKISP1_CIF_MI_SP_Y_LLENGTH);
+@@ -421,12 +425,15 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
  
  	rkisp1_irq_frame_end_enable(cap);
--	if (cap->pix.cfg->uv_swap) {
--		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
  
-+	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
-+	if (cap->pix.cfg->uv_swap)
- 		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
--		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
--	}
-+	else
-+		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
-+	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+-	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+-	if (cap->pix.cfg->uv_swap)
+-		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+-	else
+-		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
+-	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++	/* set uv swapping for semiplanar formats */
++	if (cap->pix.info->comp_planes == 2) {
++		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++		if (cap->pix.cfg->uv_swap)
++			reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
++		else
++			reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
++		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
++	}
  
  	rkisp1_mi_config_ctrl(cap);
  
