@@ -2,57 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 371141A24A2
-	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 17:07:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 020EC1A257C
+	for <lists+linux-rockchip@lfdr.de>; Wed,  8 Apr 2020 17:38:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5N84b9a8nUAhajreSrcYkYWb/n6UWfwqaGZqOonoZv4=; b=ZN3an1Mcy2t40+K7HCYvrIj8M
-	qMbzfg1/wXGoXayE4+egO4O6cdfBel+XAAWJLlifS2hTkJl2ogYPlkqnqurE7Jpi81iQ5wlXyf0CK
-	ufekUveqrg+OPZtj/o8tIcy1TZQGG6+dy+XqAH0vci5VojHsr9v/y4THw6FmNcNaOyS30K5DB503g
-	IDftTKaLcFpjaLaoXZHj3roiTalmow0Y6PupCzhtccLIp6JaAX/KwSNydkErH+/Acs6/9b0nLWP/w
-	6dXpQsxxAGUu6vm3WX9bEwVLcc2Mp31bddaISqkG7czzQ3VJ5qXahi5NazrLEZCyRfqovGb2puAjX
-	0al2wn7xw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VyHGK0yS3SszBra9vuXy2xTfBSQECZVL8FDwJrXwo2E=; b=SDg
+	jqF39qUpCtSybSrKQSB0kkLVfD5Grj2dgFyAv/MDBrS9pR8UaGdqxWYrcaHHIxGtbut3ZgoUsAXea
+	XEzp6prlyPtHQr9pI3B86qVAnlvxh+mSY5I/TibYY1/BLeCkWlIHVJESZDDBS447ZL/SnMJDS1ej2
+	vHCfuEvhwVE3/sigBCKLz9VVJdH2fUvwzMt5RIuRFA7lj0bkK0c2NtKqeuHyUJgWAt6X9CtV12uA7
+	R3cux7jdMYW0PXXdGseI7viePbZj0dQxyJnHwYAIaDn3qUeHEYRoNaZOuQLO+FnyI1Riihr9XLpoe
+	eCeYvcvuJRYLg26GLGxFSST/CPW3/0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMCIt-0001PG-Oh; Wed, 08 Apr 2020 15:07:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jMCmj-000709-3W; Wed, 08 Apr 2020 15:38:37 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172]
+ helo=relmlie6.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMCIp-0001Nl-0R; Wed, 08 Apr 2020 15:07:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23D331063;
- Wed,  8 Apr 2020 08:07:40 -0700 (PDT)
-Received: from [10.57.55.221] (unknown [10.57.55.221])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B6D903F68F;
- Wed,  8 Apr 2020 08:07:35 -0700 (PDT)
-Subject: Re: [RFC PATCH 17/34] iommu/arm-smmu: Store device instead of group
- in arm_smmu_s2cr
-To: Joerg Roedel <joro@8bytes.org>
-References: <20200407183742.4344-1-joro@8bytes.org>
- <20200407183742.4344-18-joro@8bytes.org>
- <98c10a41-d223-e375-9742-b6471c3dc33c@arm.com>
- <20200408143707.GK3103@8bytes.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <f8b541c2-9271-fc48-dde6-166a2ed6679f@arm.com>
-Date: Wed, 8 Apr 2020 16:07:33 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <20200408143707.GK3103@8bytes.org>
-Content-Language: en-GB
+ id 1jMCmU-0006kG-6b; Wed, 08 Apr 2020 15:38:24 +0000
+X-IronPort-AV: E=Sophos;i="5.72,359,1580742000"; d="scan'208";a="43920549"
+Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
+ by relmlie6.idc.renesas.com with ESMTP; 09 Apr 2020 00:38:16 +0900
+Received: from localhost.localdomain (unknown [10.226.36.204])
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id A8BCB4004BDB;
+ Thu,  9 Apr 2020 00:38:11 +0900 (JST)
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Tom Joseph <tjoseph@cadence.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH v7 0/8] Add support for PCIe controller to work in endpoint
+ mode on R-Car/RZ/G2x SoCs
+Date: Wed,  8 Apr 2020 16:37:52 +0100
+Message-Id: <1586360280-10956-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_080743_097341_A35C2383 
-X-CRM114-Status: GOOD (  17.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200408_083822_584927_D6B378E2 
+X-CRM114-Status: GOOD (  15.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.160.252.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -67,62 +68,119 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
- Joerg Roedel <jroedel@suse.de>, linux-s390@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- virtualization@lists.linux-foundation.org,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>
+Cc: devicetree@vger.kernel.org, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2020-04-08 3:37 pm, Joerg Roedel wrote:
-> Hi Robin,
-> 
-> thanks for looking into this.
-> 
-> On Wed, Apr 08, 2020 at 01:09:40PM +0100, Robin Murphy wrote:
->> For a hot-pluggable bus where logical devices may share Stream IDs (like
->> fsl-mc), this could happen:
->>
->>    create device A
->>    iommu_probe_device(A)
->>      iommu_device_group(A) -> alloc group X
->>    create device B
->>    iommu_probe_device(B)
->>      iommu_device_group(A) -> lookup returns group X
->>    ...
->>    iommu_remove_device(A)
->>    delete device A
->>    create device C
->>    iommu_probe_device(C)
->>      iommu_device_group(C) -> use-after-free of A
->>
->> Preserving the logical behaviour here would probably look *something* like
->> the mangled diff below, but I haven't thought it through 100%.
-> 
-> Yeah, I think you are right. How about just moving the loop which sets
-> s2crs[idx].group to arm_smmu_device_group()? In that case I can drop
-> this patch and leave the group pointer in place.
+Hi All,
 
-Isn't that exactly what I suggested? :)
+This patch series adds support for PCIe controller on R-Car/RZ-G2x to work in
+endpoint mode, this also extends the epf framework to handle base region
+for mapping PCI address locally.
 
-I don't recall for sure, but knowing me, that bit of group bookkeeping 
-is only where it currently is because it cheekily saves iterating the 
-IDs a second time. I don't think there's any technical reason.
+Note:
+The cadence/rockchip/designware endpoint drivers are build tested only.
 
-Robin.
+Changes for v7 (Respun this version quickly to ML as the changes requested
+were quite small and it has been reviewed substantially):
+* Fixed review comments pointed by Shimoda-san
+  1] Made DT bindings dual licensed, added Shimoda-san as maintainer and fixed
+     the example as its built with #{address,size}-cells = <1>. I have still
+     restored the Ack from Rob and Shimoda-san with these changes.
+  2] Split up the patches so that they can be picked up by respective subsystem
+     patches 1/4-9/11 are now part of this series.
+  3] Dropped altering a comment in pci-epc.h
+  4] Used a local variable align_size in pci_epc_mem_alloc_addr() so that size
+     variable doesn't get overwritten in the loop.
+  5] Replaced i-=1 with i--
+  6] Replaced rcar with R-Car in patch subject and description.
+  7] Set MACCTLR in init() callback
+
+Changes for v6:
+1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
+   scm/linux/kernel/git/lpieralisi/pci.git/
+2] Fixed review comments from Shimoda-san
+   a] Made sure defconfig changes were in separate patch
+   b] Created rcar_pcie_host/rcar_pcie_ep structures
+   c] Added pci-id for R8A774C0
+   d] Added entry in MAINTAINERS for dt-binding
+   e] Dropped unnecessary braces
+3] Added support for msi.
+
+Changes for v5:
+1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
+   linux/kernel/git/helgaas/pci.git
+2] Fixed review comments reported by Kishon while fetching the matching
+   window in function pci_epc_get_matching_window()
+3] Fixed review comments reported by Bjorn
+   a] Split patch up first patch so that its easier to review and incremental
+   b] Fixed typos
+4] Included Reviewed tag from Rob for the dt-binding patch
+5] Fixed issue reported by Nathan for assigning variable to itself
+
+Changes for v4:
+1] Fixed dtb_check error reported by Rob
+2] Fixed review comments reported by Kishon
+   a] Dropped pci_epc_find_best_fit_window()
+   b] Fixed initializing mem ptr in __pci_epc_mem_init()
+   c] Dropped map_size from pci_epc_mem_window structure
+
+Changes for v3:
+1] Fixed review comments from Bjorn and Kishon.
+3] Converted to DT schema
+
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
+
+
+Lad Prabhakar (8):
+  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+  PCI: rcar: Move shareable code to a common file
+  PCI: rcar: Fix calculating mask for PCIEPAMR register
+  PCI: endpoint: Add support to handle multiple base for mapping
+    outbound memory
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  PCI: rcar: Add support for R-Car PCIe controller in endpoint mode
+  PCI: Add Renesas R8A774C0 device ID
+  MAINTAINERS: Add file patterns for rcar PCI device tree bindings
+
+ .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   77 ++
+ MAINTAINERS                                   |    1 +
+ drivers/pci/controller/Kconfig                |   18 +
+ drivers/pci/controller/Makefile               |    3 +-
+ .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
+ .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
+ drivers/pci/controller/pcie-rcar-ep.c         |  555 ++++++++
+ drivers/pci/controller/pcie-rcar-host.c       | 1065 +++++++++++++++
+ drivers/pci/controller/pcie-rcar.c            | 1206 +----------------
+ drivers/pci/controller/pcie-rcar.h            |  140 ++
+ drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
+ drivers/pci/endpoint/pci-epc-mem.c            |  196 ++-
+ include/linux/pci-epc.h                       |   37 +-
+ include/linux/pci_ids.h                       |    1 +
+ 14 files changed, 2071 insertions(+), 1249 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
+-- 
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
