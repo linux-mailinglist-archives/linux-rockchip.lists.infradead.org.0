@@ -2,80 +2,140 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C1B81A33ED
-	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 14:15:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 694041A353F
+	for <lists+linux-rockchip@lfdr.de>; Thu,  9 Apr 2020 15:58:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VWuAwUzwCyxelSo3yvDtGInWzuzsanZMSgukqSPtLZM=; b=nUFTRl5yzf8ecQ
-	xPQnB0dpTlP3SEyfNO1CL1rfCAhAwwKERB65tgFiukBhemV1iKIIZTbW5dwGjlmVfBXCZJ5DH1t2k
-	g80BsVdN/uD3LJSod4qImWgT2neU0xjFSTTnqRPVSouUlRrMZI+UAQbRyPjqoOBFB4UQ0xweOcHI3
-	Z/dHefWs6midbii3XKFu6wuphcl1k+tiqRGWMb55WbpSNqJJKCvTLp23DiMfWlrx5RSRQ1dvoDN/j
-	KdNYZGm5x3zRboafDm1d10z+FyLXljLOMwa5R6TAeK49LRFsmhyI8VLpTGxW1r6sWrVutp3QcT9Ew
-	ml8ourlD8+N3ncG1YeqQ==;
+	List-Owner; bh=55ExzuGGAjkhQhce7ynPXy6SKGWkbFGQUgwO7Yr8l9E=; b=B/YA4aVaKjprqM
+	1bsz0sBcZs16PdWAamV0j1QmtQrrz1bOVYN73zBQemULOAiuo3EV/1LEV/Y6oYsrjyruD/awLG7dZ
+	VWXn+P59pXvmt3m0tVU+RR1NKk7ZkBtTHQSFxyonzcJrCYyM+Qay+JZfGhUMFN0bDXUK+G8ZaD5FD
+	gdvge0COBv7uPoxSTWuG8ORXRXhjbrc8PGJE2+v6LIC3ri7JS8zgIcgi4vOz7FH1IjvLGj/73eAhn
+	uJVSi+SAxf31crGyCvgxpG9Ku7yKA10BdYZvy6higEqnYvF4sbPh+bpdiOEau/T1hVgJ9sv7FpQpC
+	1WrksBvEsXeDeSjKhh5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMW5e-0008A3-Dm; Thu, 09 Apr 2020 12:15:26 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1jMXh4-0000YJ-HT; Thu, 09 Apr 2020 13:58:10 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMW5H-0005a4-4U; Thu, 09 Apr 2020 12:15:06 +0000
-Received: by mail-ed1-f66.google.com with SMTP id cb27so1665333edb.11;
- Thu, 09 Apr 2020 05:15:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=gYvBs+A4oEEcIMW3rEpNzM655tFmA/5YHjSipVpMudE=;
- b=TsBCDTltWMIh3xwMZPemqsSFadcR5uCJ3d6qXX0VuhkRatxfUM6f9Ka86VsNoL07BX
- PFsqjLmNlOAjXVERv74nvup8pUX51L29QZSLc9Nqo4kt7v09VewTD54H2g8CSK76pIP4
- HrPFKfh1VqBNiyunzlACneGLn/e4jp90+6dZoPlgan02sfRMTb97DqcUtUQagdFP3247
- 46kC5XnggUYg5eQ2TzUdclhp4pT1x45Izn0M8fQgh3qG+TbC5IvE5+EwEjZlzb5i9UMI
- m3NgXlhxB6ty+DJo65olL5ibcmmdqpZjyp/4wVqa4/uDI6+3XoIMUYnNxsMo3Rh5VcNy
- PAmQ==
-X-Gm-Message-State: AGi0PuYtZN6UmMCFzHK9MvWvGVIuIZkESRItzm9tG+Xqnwx4dEaxOkPa
- sZbMyzCR4Ofn0jqLHZR25wA=
-X-Google-Smtp-Source: APiQypJUJiiLoo3HAf51vgJTKYVBHwPZEVH7hjM1r+1VFWyM0ypQpU23tWpSatmkBm3yArwlL/zmtg==
-X-Received: by 2002:a17:906:66c1:: with SMTP id
- k1mr11490807ejp.208.1586434500891; 
- Thu, 09 Apr 2020 05:15:00 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id m1sm532752ejr.81.2020.04.09.05.14.58
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 Apr 2020 05:14:59 -0700 (PDT)
-Date: Thu, 9 Apr 2020 14:14:56 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-Subject: Re: [RFC PATCH v2 6/6] arm: dts: pwm: replace flag 0 with PWM_NOFLAGS
-Message-ID: <20200409121456.GB802@kozik-lap>
-References: <20200405192246.3741784-1-oleksandr.suvorov@toradex.com>
- <20200405192246.3741784-7-oleksandr.suvorov@toradex.com>
+ id 1jMXh0-0000WB-2G
+ for linux-rockchip@lists.infradead.org; Thu, 09 Apr 2020 13:58:08 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200409135802euoutp01e53c224822a8f555fe13be40889b5062~EK2VQ26rk1341513415euoutp01w
+ for <linux-rockchip@lists.infradead.org>; Thu,  9 Apr 2020 13:58:02 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200409135802euoutp01e53c224822a8f555fe13be40889b5062~EK2VQ26rk1341513415euoutp01w
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1586440682;
+ bh=HoDULKZEPFgHf9tLjrd/wtlsxmYJbEnHig6v37JyBM0=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=R8PnFxbfDIQAXppwBdjui1Mkd0K5DDa4Aqdw41cUYIr7jXHMXcNTjoGViBCAY+ESv
+ OLm4385uTa3kTq9DJ+NNLpZm9pc9zrIDmsnSEs56yiMbjHZAkeNIyHHZ8/64AdbDk/
+ O5ElDGqrV7e6IjdGcrEOJE/xEADw7RzE/qWSscjQ=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200409135802eucas1p268bcd5fe08a6f43b0649e9f8f2d3bb04~EK2U47IiK2457124571eucas1p2S;
+ Thu,  9 Apr 2020 13:58:02 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id DB.8A.60679.AE92F8E5; Thu,  9
+ Apr 2020 14:58:02 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200409135801eucas1p2fd7106f33e1e2dc2dc9335e50a74f5b2~EK2UW_WXF0713307133eucas1p2-;
+ Thu,  9 Apr 2020 13:58:01 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200409135801eusmtrp115487dff4dcda68530454fed04cdff10~EK2UVVBiQ1539615396eusmtrp1H;
+ Thu,  9 Apr 2020 13:58:01 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-a1-5e8f29ea0978
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id C9.D4.07950.9E92F8E5; Thu,  9
+ Apr 2020 14:58:01 +0100 (BST)
+Received: from [106.210.88.143] (unknown [106.210.88.143]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200409135800eusmtip29e53826e1c4eae1630e8b8654b779ec0~EK2S9rSPp3234132341eusmtip28;
+ Thu,  9 Apr 2020 13:58:00 +0000 (GMT)
+Subject: Re: [PATCH] iommu/exynos: Get rid of 'struct exynos_iommu_owner'
+ exynos_iommu_owner
+To: Joerg Roedel <joro@8bytes.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <40af831b-d00c-0cf9-0a06-e60c048a9ab8@samsung.com>
+Date: Thu, 9 Apr 2020 15:58:00 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200405192246.3741784-7-oleksandr.suvorov@toradex.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200409114620.GA16298@8bytes.org>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sf0hTaxju2zk7O0qTr1X4XmtFI6KiH/N2i68fjIyCQ0E/uCUkuFx1MEkt
+ tmZaRLKtSDHMJLRjLbUumlrWVlpSyRZs2fBoGeUt86oZ3sqlOaMsy9yOlf89z/O+D8/zwstS
+ qutMFJuUeoA3phqSNUw4XeMZEhe+nZer114unUrEV19p4sy7yRBf/Xua5F3Op8jt3v8ZMtL1
+ Tk6K61eSzMpmObEJpTTJKrqmIPkPz8tI7qt3FGlqGqV59Y0K0lJ3jiEt1keIDHSMUORUiZUi
+ hU33ZCRrUGCIxbaE9JR8poirv1tOhursNClrtDPE1rZ0dRTX7bLLuCp7FeJcXW6Guy28VHDO
+ 8vmcoyKL4dqe3mE4e8MWznnpKJffWoa4k9b3DFf71E5xTt9hLuCYsTkiLnzVbj45KY03LtYl
+ hO850R+x35OU7rFUMJmo7+9sFMYC/gvaPQPybBTOqnA5gk+uQYVEBhE867iLJBJAcMX/Ff20
+ +C6NjA3KEHjEzjFLH4JvpdXy4NZkrIdy94sQnoI18CxwLBRC4WoFfLrjYIIDBkdDtj87hJVY
+ Bw0X7KEIGs+GN75aWRBPxfEgdrXKpZ1J0HC2mw7iMKyFkW+BkE7hmVDrP0dJOBKed1+QBcMA
+ 97Iw1G8f670WampslIQnw1vvDYWEp4MvP4eWDFYEneIVhURyELRYCsfcK6FN/DJalR2NmAfV
+ dYslOQa8YokiKAOOgFb/JKlEBJyuKaAkWQknjquk7TkgeK/+inU1P6ZOIY0w7jRh3DnCuHOE
+ 37nFiK5AkbzZlJLIm/5M5Q8uMhlSTObUxEW79qU40Ogj+757B2+huuGdboRZpJmo1E7I1avk
+ hjRTRoobAUtppig3WE7qVcrdhoxDvHHfDqM5mTe50TSW1kQql5S+iVfhRMMBfi/P7+eNP6cy
+ NiwqE7Gibuf23jP6f8+r1XvN6Z1Pbv4Rk36/fe76rf7mIpBVfu6r7XhQvzzOvGlWZWzC8V2H
+ h3syCqdprepAjigr0E3gVsQ2bVDjZQkXvds2Dg/8l6j/EEOp0z62T9SG5XJHdHGOsijc84/l
+ YUGR7cU6cXM8vUWIbny9cY1x7oq2BwucGtq0xxA9nzKaDD8ATrGZy8QDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHe3cu26rJaWq+SFSMiDI67qLtXZkW9eFECEYfivI29KCSc7Kz
+ VVaUOYucxBxG2LLjJUOzC+lMU0Nx6mStspDs4ooy6WazaEHZzTZX4Lffw/P/PQ8PPCJM2k9E
+ i/IKjKyhQJsvI+fjnj9DL9a+X21Nl7e8UqL7r3/iyGG7SSJP7xSObJcrMdT58R2JZsYnCVTb
+ uwEVX3lAoFJ7PY7Kzt8Qoso7FwTI+noSQ8PDgdLWe0+IRrqqSTRifgjQl5czGKqoM2OoarhH
+ gMq+2klUUqpCb+u+Y6jv8wSBprt4HDXe40lU6o3fFM1M9PEC5ip/FTB9406S6bQ/FzKOphim
+ tbmMZLyjt0mGd+9gHA3HmMonjYA5bZ4imY5RHmMcnsOMv3VpStgeOsGgNxnZ5bl6zrhRtleB
+ lLRCg2hlnIZWqNRp65XxstjEhGw2P28/a4hNzKRzT30OK3TlHXSVNJPF4NNOCxCLIBUHPQ0z
+ wALmi6TUJQCtl8uFocYS6D5bTIQ4HP4atZChkA/A3gH3bCOcSodNzrFZjqBk8LH/BBEMYVSL
+ EE5Plv8b6xTAzmsX8WCKpBTQ4guOEoskVCJ01/AgyDi1Ar73dAiCHEmlQau5G4Qyi6D73MSs
+ K6bkcOa3f3YbRq2DvOMVFuJlsMNX/Y+j4LOJGkEFkNrn6PY5in2OYp+j1AK8GUSwJk6Xo+OU
+ NKfVcaaCHDpLr2sFgQdqd0233QKWqZ1OQImAbKFEPs+aLiW0+7kinRNAESaLkGwvOZ0ulWRr
+ iw6xBn2GwZTPck4QHzjOhkVHZukD71hgzFDEK9RIo1Cr1Kp1SBYlOUX1pUqpHK2R3ceyhazh
+ vycQiaOLAb2qPrkHSfiEqjcfHP3Pttli2k3ilqyDGbss3XfXHBUmfesv2ZzShtNP5CfppFy+
+ K9PluuQ/bvIObXiqW35k/dOttnPYgvFY32NH/SAfNSrWEOpHjsKq3V58m6qTEW/9sSWzKueA
+ 3Lfy/vUE9uwZYvGgP7VirOj38+QBZVdPoQzncrWKGMzAaf8Ci7U6n1YDAAA=
+X-CMS-MailID: 20200409135801eucas1p2fd7106f33e1e2dc2dc9335e50a74f5b2
+X-Msg-Generator: CA
+X-RootMTR: 20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82
+References: <20200407183742.4344-1-joro@8bytes.org>
+ <CGME20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82@eucas1p2.samsung.com>
+ <20200407183742.4344-32-joro@8bytes.org>
+ <449e7f16-e719-9617-ec92-63b82c0bc33f@samsung.com>
+ <f59b0bb3-8c08-9cc9-bb1a-e69b7b226f60@samsung.com>
+ <20200409114620.GA16298@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_051503_228463_B36A094A 
-X-CRM114-Status: GOOD (  15.74  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200409_065806_382929_A3151038 
+X-CRM114-Status: GOOD (  33.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,110 +148,406 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, Sekhar Nori <nsekhar@ti.com>,
- Stefan Agner <stefan@agner.ch>, linux-kernel@vger.kernel.org,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>,
- Magnus Damm <magnus.damm@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- devicetree@vger.kernel.org, David Lechner <david@lechnology.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Paul Barker <pbarker@konsulko.com>, Rob Herring <robh+dt@kernel.org>,
- Tony Lindgren <tony@atomide.com>, linux-amlogic@lists.infradead.org,
- linux-omap@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, Igor Opaniuk <igor.opaniuk@toradex.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>, linux-renesas-soc@vger.kernel.org,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- Shawn Guo <shawnguo@kernel.org>, Peter Rosin <peda@axentia.se>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-tegra@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ Joerg Roedel <jroedel@suse.de>, linux-s390@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ virtualization@lists.linux-foundation.org,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Lu Baolu <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun, Apr 05, 2020 at 10:22:46PM +0300, Oleksandr Suvorov wrote:
-> The raw value '0' in the 3rd cell of the "pwms" property means there are
-> no flags to be set.
-> 
-> This patch converts '0' value into PWM_NOFLAGS.
-> 
-> Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Hi Joerg,
+
+On 09.04.2020 13:46, Joerg Roedel wrote:
+> Hi Marek,
+>
+> I had some more thoughts and discussions with Robin about how to make
+> this work with the Exynos driver. The result is the patch below, can you
+> please test it and report back? Even better if you can fix up any
+> breakage it might cause :)
+
+I've checked and it works fine on top of 
+ff68eb23308e6538ec7864c83d39540f423bbe90. However I'm not a fan of 
+removing this 'owner' structure. It gave a nice abstraction for the all 
+SYSMMU controllers for the given device (although most devices in the 
+system have only one SYSMMU). Why this structure is a problem for your 
+rework?
+
+I've also spent some time trying to fix exynos-iommu on top of your 
+iommu-probe-device branch. I really wonder if it works on any ARM 32bit 
+or 64bit systems for other IOMMUs.
+
+I got something working on ARM32bit, but I have to move all the 
+initialization from exynos_iommu_probe_device/exynos_iommu_of_xlate to 
+exynos_sysmmu_probe(). I don't like such approach, because I had to use 
+bus_find_device() and manually find the owner for the every SYSMMU 
+controller in the system. This approach also lack a proper symmetry and 
+release path.
+
+The main problem after your conversion is the fact that ->probe_device() 
+is called very early, before any other platform device (thus IOMMU 
+controller) is is probed. It doesn't handle EPROBE_DEFER too.
+
+The other issue I've noticed is that iommu_device_set_ops() is not 
+enough to assign ops properly. I had to add iommu_fwspec_init(dev, 
+&dev->of_node->fwnode, &exynos_iommu_ops) to ensure that the 'dev' gets 
+proper iommu ops.
+
+I will send my patch in a few minutes to show you the changes.
+
+> >From 60a288509baa34df6a0bf437c977925a0a617c72 Mon Sep 17 00:00:00 2001
+> From: Joerg Roedel <jroedel@suse.de>
+> Date: Thu, 9 Apr 2020 13:38:18 +0200
+> Subject: [PATCH] iommu/exynos: Get rid of 'struct exynos_iommu_owner'
+>
+> Remove 'struct exynos_iommu_owner' and replace it with a single-linked
+> list of 'struct sysmmu_drvdata'. The first item in the list acts as a
+> replacement for the previous exynos_iommu_owner structure. The
+> iommu_device member of the first list item is reported to the IOMMU
+> core code for the master device.
+>
+> Signed-off-by: Joerg Roedel <jroedel@suse.de>
 > ---
-> 
-> Changes in v2:
-> - remove the driver part of patchset as dangerous and senseless.
-> - use PWM_NOFLAGS instead of PWM_POLARITY_NORMAL to avoid possible
->   conflict with enum pwm_polarity in <linux/pwm.h>. Also, this name
->   reflects the sense of this value more precisely.
-> 
->  arch/arm/boot/dts/am335x-cm-t335.dts               | 2 +-
->  arch/arm/boot/dts/am335x-evm.dts                   | 2 +-
->  arch/arm/boot/dts/am3517-evm.dts                   | 2 +-
->  arch/arm/boot/dts/at91-dvk_su60_somc_lcm.dtsi      | 2 +-
->  arch/arm/boot/dts/at91-kizbox2-common.dtsi         | 6 +++---
->  arch/arm/boot/dts/at91-kizbox3_common.dtsi         | 8 ++++----
->  arch/arm/boot/dts/at91-kizboxmini-common.dtsi      | 6 +++---
->  arch/arm/boot/dts/at91-nattis-2-natte-2.dts        | 2 +-
->  arch/arm/boot/dts/at91-sama5d4_ma5d4evk.dts        | 2 +-
->  arch/arm/boot/dts/at91sam9n12ek.dts                | 2 +-
->  arch/arm/boot/dts/at91sam9x5dm.dtsi                | 2 +-
->  arch/arm/boot/dts/berlin2cd-google-chromecast.dts  | 4 ++--
->  arch/arm/boot/dts/da850-evm.dts                    | 2 +-
->  arch/arm/boot/dts/da850-lego-ev3.dts               | 4 ++--
->  arch/arm/boot/dts/exynos4412-midas.dtsi            | 2 +-
->  arch/arm/boot/dts/exynos4412-odroidu3.dts          | 2 +-
->  arch/arm/boot/dts/exynos5250-snow-common.dtsi      | 2 +-
->  arch/arm/boot/dts/exynos5410-odroidxu.dts          | 2 +-
->  arch/arm/boot/dts/exynos5420-peach-pit.dts         | 2 +-
->  arch/arm/boot/dts/exynos5422-odroidhc1.dts         | 2 +-
->  arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi | 2 +-
->  arch/arm/boot/dts/exynos5422-odroidxu4.dts         | 2 +-
->  arch/arm/boot/dts/exynos54xx-odroidxu-leds.dtsi    | 4 ++--
->  arch/arm/boot/dts/exynos5800-peach-pi.dts          | 2 +-
->  arch/arm/boot/dts/imx53-tx53-x13x.dts              | 5 +++--
->  arch/arm/boot/dts/imx6dl-tx6dl-comtft.dts          | 2 +-
->  arch/arm/boot/dts/imx6q-display5.dtsi              | 2 +-
->  arch/arm/boot/dts/imx6q-tx6q-1010-comtft.dts       | 2 +-
->  arch/arm/boot/dts/imx6q-tx6q-1020-comtft.dts       | 2 +-
->  arch/arm/boot/dts/imx6qdl-tx6-lvds.dtsi            | 4 ++--
->  arch/arm/boot/dts/imx7-colibri.dtsi                | 4 +++-
->  arch/arm/boot/dts/imx7d-nitrogen7.dts              | 3 ++-
->  arch/arm/boot/dts/imx7d-pico.dtsi                  | 3 ++-
->  arch/arm/boot/dts/imx7d-sdb.dts                    | 3 ++-
->  arch/arm/boot/dts/imx7ulp-evk.dts                  | 3 ++-
->  arch/arm/boot/dts/iwg20d-q7-common.dtsi            | 2 +-
->  arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   | 2 +-
->  arch/arm/boot/dts/meson8b-ec100.dts                | 4 ++--
->  arch/arm/boot/dts/meson8b-mxq.dts                  | 4 ++--
->  arch/arm/boot/dts/meson8b-odroidc1.dts             | 4 ++--
->  arch/arm/boot/dts/motorola-mapphone-common.dtsi    | 3 ++-
->  arch/arm/boot/dts/omap3-gta04.dtsi                 | 2 +-
->  arch/arm/boot/dts/omap3-n900.dts                   | 2 +-
->  arch/arm/boot/dts/rk3288-veyron-edp.dtsi           | 2 +-
->  arch/arm/boot/dts/rk3288-veyron.dtsi               | 2 +-
->  arch/arm/boot/dts/rv1108-evb.dts                   | 2 +-
->  arch/arm/boot/dts/s3c6410-mini6410.dts             | 2 +-
->  arch/arm/boot/dts/s5pv210-aries.dtsi               | 2 +-
->  arch/arm/boot/dts/s5pv210-smdkv210.dts             | 2 +-
+>   drivers/iommu/exynos-iommu.c | 155 ++++++++++++++++++++---------------
+>   1 file changed, 88 insertions(+), 67 deletions(-)
+>
+> diff --git a/drivers/iommu/exynos-iommu.c b/drivers/iommu/exynos-iommu.c
+> index 186ff5cc975c..e70eb360093f 100644
+> --- a/drivers/iommu/exynos-iommu.c
+> +++ b/drivers/iommu/exynos-iommu.c
+> @@ -225,18 +225,6 @@ static const struct sysmmu_fault_info sysmmu_v5_faults[] = {
+>   	{ 20, REG_V5_FAULT_AW_VA, "AW SECURITY PROTECTION", IOMMU_FAULT_WRITE },
+>   };
+>   
+> -/*
+> - * This structure is attached to dev.archdata.iommu of the master device
+> - * on device add, contains a list of SYSMMU controllers defined by device tree,
+> - * which are bound to given master device. It is usually referenced by 'owner'
+> - * pointer.
+> -*/
+> -struct exynos_iommu_owner {
+> -	struct list_head controllers;	/* list of sysmmu_drvdata.owner_node */
+> -	struct iommu_domain *domain;	/* domain this device is attached */
+> -	struct mutex rpm_lock;		/* for runtime pm of all sysmmus */
+> -};
+> -
+>   /*
+>    * This structure exynos specific generalization of struct iommu_domain.
+>    * It contains list of SYSMMU controllers from all master devices, which has
+> @@ -271,13 +259,23 @@ struct sysmmu_drvdata {
+>   	bool active;			/* current status */
+>   	struct exynos_iommu_domain *domain; /* domain we belong to */
+>   	struct list_head domain_node;	/* node for domain clients list */
+> -	struct list_head owner_node;	/* node for owner controllers list */
+> +	struct sysmmu_drvdata *next;	/* Single-linked list to group SMMUs for
+> +					   one master. NULL means not in any
+> +					   list, ERR_PTR(-ENODEV) means end of
+> +					   list */
+> +	struct mutex rpm_lock;		/* for runtime pm of all sysmmus */
+>   	phys_addr_t pgtable;		/* assigned page table structure */
+>   	unsigned int version;		/* our version */
+>   
+>   	struct iommu_device iommu;	/* IOMMU core handle */
+>   };
+>   
+> +/* Helper to iterate over all SYSMMUs for a given platform device */
+> +#define for_each_sysmmu(dev, drvdata)			\
+> +	for (drvdata = (dev)->archdata.iommu;		\
+> +	     drvdata != ERR_PTR(-ENODEV);		\
+> +	     drvdata = drvdata->next)
+> +
+>   static struct exynos_iommu_domain *to_exynos_domain(struct iommu_domain *dom)
+>   {
+>   	return container_of(dom, struct exynos_iommu_domain, domain);
+> @@ -624,6 +622,8 @@ static int exynos_sysmmu_probe(struct platform_device *pdev)
+>   
+>   	data->sysmmu = dev;
+>   	spin_lock_init(&data->lock);
+> +	data->next = NULL;
+> +	mutex_init(&data->rpm_lock);
+>   
+>   	ret = iommu_device_sysfs_add(&data->iommu, &pdev->dev, NULL,
+>   				     dev_name(data->sysmmu));
+> @@ -668,17 +668,20 @@ static int __maybe_unused exynos_sysmmu_suspend(struct device *dev)
+>   {
+>   	struct sysmmu_drvdata *data = dev_get_drvdata(dev);
+>   	struct device *master = data->master;
+> +	struct sysmmu_drvdata *master_data;
+>   
+> -	if (master) {
+> -		struct exynos_iommu_owner *owner = master->archdata.iommu;
+> +	if (!master)
+> +		return 0;
+>   
+> -		mutex_lock(&owner->rpm_lock);
+> -		if (data->domain) {
+> -			dev_dbg(data->sysmmu, "saving state\n");
+> -			__sysmmu_disable(data);
+> -		}
+> -		mutex_unlock(&owner->rpm_lock);
+> +	master_data = master->archdata.iommu;
+> +
+> +	mutex_lock(&master_data->rpm_lock);
+> +	if (data->domain) {
+> +		dev_dbg(data->sysmmu, "saving state\n");
+> +		__sysmmu_disable(data);
+>   	}
+> +	mutex_unlock(&master_data->rpm_lock);
+> +
+>   	return 0;
+>   }
+>   
+> @@ -686,17 +689,20 @@ static int __maybe_unused exynos_sysmmu_resume(struct device *dev)
+>   {
+>   	struct sysmmu_drvdata *data = dev_get_drvdata(dev);
+>   	struct device *master = data->master;
+> +	struct sysmmu_drvdata *master_data;
+>   
+> -	if (master) {
+> -		struct exynos_iommu_owner *owner = master->archdata.iommu;
+> +	if (!master)
+> +		return 0;
+>   
+> -		mutex_lock(&owner->rpm_lock);
+> -		if (data->domain) {
+> -			dev_dbg(data->sysmmu, "restoring state\n");
+> -			__sysmmu_enable(data);
+> -		}
+> -		mutex_unlock(&owner->rpm_lock);
+> +	master_data = master->archdata.iommu;
+> +
+> +	mutex_lock(&master_data->rpm_lock);
+> +	if (data->domain) {
+> +		dev_dbg(data->sysmmu, "restoring state\n");
+> +		__sysmmu_enable(data);
+>   	}
+> +	mutex_unlock(&master_data->rpm_lock);
+> +
+>   	return 0;
+>   }
+>   
+> @@ -834,21 +840,21 @@ static void exynos_iommu_domain_free(struct iommu_domain *iommu_domain)
+>   	kfree(domain);
+>   }
+>   
+> -static void exynos_iommu_detach_device(struct iommu_domain *iommu_domain,
+> -				    struct device *dev)
+> +static void __exynos_iommu_detach_device(struct exynos_iommu_domain *domain,
+> +					 struct device *dev)
+>   {
+> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
+> -	struct exynos_iommu_domain *domain = to_exynos_domain(iommu_domain);
+>   	phys_addr_t pagetable = virt_to_phys(domain->pgtable);
+> -	struct sysmmu_drvdata *data, *next;
+> +	struct sysmmu_drvdata *dev_data, *data, *next;
+>   	unsigned long flags;
+>   
+> -	if (!has_sysmmu(dev) || owner->domain != iommu_domain)
+> +	dev_data = dev->archdata.iommu;
+> +
+> +	if (!has_sysmmu(dev) || dev_data->domain != domain)
+>   		return;
+>   
+> -	mutex_lock(&owner->rpm_lock);
+> +	mutex_lock(&dev_data->rpm_lock);
+>   
+> -	list_for_each_entry(data, &owner->controllers, owner_node) {
+> +	for_each_sysmmu(dev, data) {
+>   		pm_runtime_get_noresume(data->sysmmu);
+>   		if (pm_runtime_active(data->sysmmu))
+>   			__sysmmu_disable(data);
+> @@ -863,51 +869,59 @@ static void exynos_iommu_detach_device(struct iommu_domain *iommu_domain,
+>   		list_del_init(&data->domain_node);
+>   		spin_unlock(&data->lock);
+>   	}
+> -	owner->domain = NULL;
+>   	spin_unlock_irqrestore(&domain->lock, flags);
+>   
+> -	mutex_unlock(&owner->rpm_lock);
+> +	mutex_unlock(&dev_data->rpm_lock);
+>   
+>   	dev_dbg(dev, "%s: Detached IOMMU with pgtable %pa\n", __func__,
+>   		&pagetable);
+>   }
+>   
+> +static void exynos_iommu_detach_device(struct iommu_domain *iommu_domain,
+> +				       struct device *dev)
+> +{
+> +	struct exynos_iommu_domain *domain = to_exynos_domain(iommu_domain);
+> +
+> +	__exynos_iommu_detach_device(domain, dev);
+> +}
+> +
+>   static int exynos_iommu_attach_device(struct iommu_domain *iommu_domain,
+>   				   struct device *dev)
+>   {
+> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
+>   	struct exynos_iommu_domain *domain = to_exynos_domain(iommu_domain);
+> -	struct sysmmu_drvdata *data;
+> +	struct sysmmu_drvdata *dev_data, *data;
+>   	phys_addr_t pagetable = virt_to_phys(domain->pgtable);
+>   	unsigned long flags;
+>   
+>   	if (!has_sysmmu(dev))
+>   		return -ENODEV;
+>   
+> -	if (owner->domain)
+> -		exynos_iommu_detach_device(owner->domain, dev);
+> +	dev_data = dev->archdata.iommu;
+>   
+> -	mutex_lock(&owner->rpm_lock);
+> +	if (dev_data->domain)
+> +		__exynos_iommu_detach_device(dev_data->domain, dev);
+> +
+> +	mutex_lock(&dev_data->rpm_lock);
+>   
+>   	spin_lock_irqsave(&domain->lock, flags);
+> -	list_for_each_entry(data, &owner->controllers, owner_node) {
+> +	for_each_sysmmu(dev, data) {
+>   		spin_lock(&data->lock);
+>   		data->pgtable = pagetable;
+>   		data->domain = domain;
+>   		list_add_tail(&data->domain_node, &domain->clients);
+>   		spin_unlock(&data->lock);
+>   	}
+> -	owner->domain = iommu_domain;
+>   	spin_unlock_irqrestore(&domain->lock, flags);
+>   
+> -	list_for_each_entry(data, &owner->controllers, owner_node) {
+> +
+> +	for_each_sysmmu(dev, data) {
+>   		pm_runtime_get_noresume(data->sysmmu);
+>   		if (pm_runtime_active(data->sysmmu))
+>   			__sysmmu_enable(data);
+>   		pm_runtime_put(data->sysmmu);
+>   	}
+>   
+> -	mutex_unlock(&owner->rpm_lock);
+> +	mutex_unlock(&dev_data->rpm_lock);
+>   
+>   	dev_dbg(dev, "%s: Attached IOMMU with pgtable %pa\n", __func__,
+>   		&pagetable);
+> @@ -1237,7 +1251,6 @@ static phys_addr_t exynos_iommu_iova_to_phys(struct iommu_domain *iommu_domain,
+>   
+>   static int exynos_iommu_add_device(struct device *dev)
+>   {
+> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
+>   	struct sysmmu_drvdata *data;
+>   	struct iommu_group *group;
+>   
+> @@ -1249,7 +1262,7 @@ static int exynos_iommu_add_device(struct device *dev)
+>   	if (IS_ERR(group))
+>   		return PTR_ERR(group);
+>   
+> -	list_for_each_entry(data, &owner->controllers, owner_node) {
+> +	for_each_sysmmu(dev, data) {
+>   		/*
+>   		 * SYSMMU will be runtime activated via device link
+>   		 * (dependency) to its master device, so there are no
+> @@ -1261,37 +1274,39 @@ static int exynos_iommu_add_device(struct device *dev)
+>   	}
+>   	iommu_group_put(group);
+>   
+> +	data = dev->archdata.iommu;
+> +	iommu_device_link(&data->iommu, dev);
+> +
+>   	return 0;
+>   }
+>   
+>   static void exynos_iommu_remove_device(struct device *dev)
+>   {
+> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
+> -	struct sysmmu_drvdata *data;
+> +	struct sysmmu_drvdata *data = dev->archdata.iommu;
+>   
+>   	if (!has_sysmmu(dev))
+>   		return;
+>   
+> -	if (owner->domain) {
+> +	if (data->domain) {
+>   		struct iommu_group *group = iommu_group_get(dev);
+>   
+>   		if (group) {
+> -			WARN_ON(owner->domain !=
+> +			WARN_ON(&data->domain->domain !=
+>   				iommu_group_default_domain(group));
+> -			exynos_iommu_detach_device(owner->domain, dev);
+> +			__exynos_iommu_detach_device(data->domain, dev);
+>   			iommu_group_put(group);
+>   		}
+>   	}
+> +	iommu_device_unlink(&data->iommu, dev);
+>   	iommu_group_remove_device(dev);
+>   
+> -	list_for_each_entry(data, &owner->controllers, owner_node)
+> +	for_each_sysmmu(dev, data)
+>   		device_link_del(data->link);
+>   }
+>   
+>   static int exynos_iommu_of_xlate(struct device *dev,
+>   				 struct of_phandle_args *spec)
+>   {
+> -	struct exynos_iommu_owner *owner = dev->archdata.iommu;
+>   	struct platform_device *sysmmu = of_find_device_by_node(spec->np);
+>   	struct sysmmu_drvdata *data, *entry;
+>   
+> @@ -1302,22 +1317,28 @@ static int exynos_iommu_of_xlate(struct device *dev,
+>   	if (!data)
+>   		return -ENODEV;
+>   
+> -	if (!owner) {
+> -		owner = kzalloc(sizeof(*owner), GFP_KERNEL);
+> -		if (!owner)
+> -			return -ENOMEM;
+> +	data->master = dev;
+>   
+> -		INIT_LIST_HEAD(&owner->controllers);
+> -		mutex_init(&owner->rpm_lock);
+> -		dev->archdata.iommu = owner;
+> +	if (!dev->archdata.iommu) {
+> +		WARN_ON(data->next != NULL);
+> +
+> +		/* SYSMMU list is empty - add drvdata and return */
+> +		data->next = ERR_PTR(-ENODEV);
+> +		dev->archdata.iommu = data;
+> +
+> +		return 0;
+>   	}
+>   
+> -	list_for_each_entry(entry, &owner->controllers, owner_node)
+> +	/* Check if SYSMMU is already in the list */
+> +	for_each_sysmmu(dev, entry)
+>   		if (entry == data)
+>   			return 0;
+>   
+> -	list_add_tail(&data->owner_node, &owner->controllers);
+> -	data->master = dev;
+> +	/* Not in the list yet */
+> +	WARN_ON(data->next != NULL);
+> +	entry = dev->archdata.iommu;
+> +	data->next  = entry->next;
+> +	entry->next = data;
+>   
+>   	return 0;
+>   }
 
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
 
-I understand you are going to push it through arm-soc, so:
-For Exynos/S3C/S5P:
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Otherwise if you expect individual maintainers to pick it up, please
-split per architecture.
-
-Best regards,
-Krzysztof
 
 _______________________________________________
 Linux-rockchip mailing list
