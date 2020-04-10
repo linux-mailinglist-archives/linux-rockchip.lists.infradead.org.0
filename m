@@ -2,79 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E9D31A4689
-	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Apr 2020 14:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 254E11A47DA
+	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Apr 2020 17:29:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9v6VYA86j4VGp7+ELK6q8DAs8o+F70EOo8f/hAjx1ew=; b=U4hN6Zy0lfiooS
-	dEcb1EGasrWh2NVkJ8XNfJQ1eEgrP+N5K0lPI1Pu3+iiW0etTT5AGMYCeiabNLKgwk4QeW2tLh7B8
-	JCSk4zrbDElqLGNuU4+1RM3wmCc7XVs20rtIoAgm85ilifjPKT6CTiNGuPY6qdsgr/f5J5tOME+Ap
-	k1d2003G3BCsrgJj5aWkeccCbr4Ixwl7Hd5MhFf63jZcihQqR/lIlge1MulgOcrxFiV2cBO+fnb3d
-	KFzJky9VKUdRDVTKOclm73WSCCOdVO3TEgcBXuulZdwY6vZq64QowU5itlUvX7qaDr6peS7ekXC81
-	Fiwfoq5W+ZY4kqUVdpCA==;
+	List-Owner; bh=rKjhqdviSDVPwxA7HknHXF/VqHplRH/LHaIbf8kc7cg=; b=RV7DLPqBfiB+57
+	WE1A4KqgJBPBEb1K8l5wvjXoEXut7tnm4oCVemyW+xFEhsDUGu4rxQATJNH8qZOBm+vE3WYwwKk+R
+	YeuQULbiIJO8gKif/w7y70FZkHCLzhi9YTUtQKjugojLiysQ2cpGX4QxWfDaa4ZKRZVblEHcqXqTW
+	F98oXy98AYKdyM3gwKyla8Fafn+cw3U/WKUEGHBoTtOl85z3oTHSjuH0HVj/WL59e1MOMg3oXSb5/
+	RACEIHAnOREc9nN6VQxMoIqSuZlSv/N3Wx31l+AXZXEQJn8Ju6IyBYfJaPxE+1toKVTE2Uq071jOw
+	Wo+0G9G5N+OzDWLmoXmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMtCn-0006tV-Vt; Fri, 10 Apr 2020 12:56:21 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1jMval-0001Pt-0f; Fri, 10 Apr 2020 15:29:15 +0000
+Received: from mail-ua1-x92e.google.com ([2607:f8b0:4864:20::92e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMtCk-0006t8-IX
- for linux-rockchip@lists.infradead.org; Fri, 10 Apr 2020 12:56:20 +0000
-Received: by mail-qt1-x842.google.com with SMTP id q17so1047504qtp.4
- for <linux-rockchip@lists.infradead.org>; Fri, 10 Apr 2020 05:56:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jMvah-0001PO-EX
+ for linux-rockchip@lists.infradead.org; Fri, 10 Apr 2020 15:29:12 +0000
+Received: by mail-ua1-x92e.google.com with SMTP id x18so9292uap.8
+ for <linux-rockchip@lists.infradead.org>; Fri, 10 Apr 2020 08:29:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=AjcjWk2f8HlNcIGTrrhNwnNBntj+RCGEbP7b5DX6NU4=;
- b=gFHM+raNbZhYXO/U/IxrMTF5eCHzkvwyHUw4WKSW63aD0zUuE36dZggxBoytNPc1/f
- v+fGcH4sx4i+nTTmdmNF03FrVpSxAqhwwnNe55kX4fTcD6sfhw9ExXSAo1csMpDq54ky
- R2uZuwAqnKKHcxLzhxjMuWIFWEmQbIYF05kcwxjxULsWsHRgMLXbHu8Jri9ADl5QqPlZ
- pjKU978lH/u/ekLMeNdH1D+LQXU4y1eJcMneU2VsiWpVIH1jW/t7iiF+nMFSHl5zkQV0
- ixtQFasRzVkeowxcdryVkDhDgeSMjHdsJDViuaXjEEoJohFzuuVV/8g6lRQoC8xv7Aqt
- SVFQ==
+ :cc; bh=4Fs9iOjZB6kqIyxNTIT7mN8CfQ+MPq5zSLjHONRoSXc=;
+ b=ev/twj7sTU6E0Ypcawl7UQXqDyn7+mXWYyS++S+Swxyjhtqtz89STlaN0wf9I8YnrH
+ ychq3FzVX/IOjYY6/2n31fNfCo7annSDPkMl769LnBbtfKm+NHIV8AeW0ZFfbei/KnRK
+ oFFd20LkWEqg5zowhsslHvkktpifGB8UbeJTU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=AjcjWk2f8HlNcIGTrrhNwnNBntj+RCGEbP7b5DX6NU4=;
- b=SCDO+P3Wxb4KfY7JpRdfam8F0BEOOvYHSmkVEED97kcEMY8lNgyhuvAiGMikCjekB9
- 5odZ/Fn0CpzPmZDTmt6te/Otdu6jMpQejcjZV35Xrrn/RbMk68gLfg1W3e3VMypIMXfe
- fbq85j+TtytdYwRHD02dyuilQsp0TN6lUvnHtXVngqHgyLTxm9nPXn1I+Chi0g2RXVVZ
- r3WGWQExC5Ckig2lUrhF03b2A8HrphfZcicp47ca19EaS46gbrnWqBfWwus7u9lBMGYZ
- 60AksIO0asZ6mSSq0jupxNVbdPag9QtiLN8CWgmzLuAMNYmz67eV07bvzWDGBf1WoShR
- RU0g==
-X-Gm-Message-State: AGi0PubsLR98ycubyXSsNUHAnc6ihQNT5oNKqUX8lqWC79793GXaRihY
- E//Hdk/AQ8uYmXQfx61LqdQRJ1vavYfsnMwnCRT/gcOWT2Q=
-X-Google-Smtp-Source: APiQypJ8+AmayqoTB2jZC7Nr57LpgPiBwCaj80MFHYV0Ukjx98nK5VJOV8+vxa9+VeYhFmO/j3sTCRM8gf86X6aJTtE=
-X-Received: by 2002:ac8:2939:: with SMTP id y54mr4200321qty.160.1586523376917; 
- Fri, 10 Apr 2020 05:56:16 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=4Fs9iOjZB6kqIyxNTIT7mN8CfQ+MPq5zSLjHONRoSXc=;
+ b=Ic8ZQjez8sXj+P6+cG8Ciakc45s6vYdYPKCzFmsU46JtrZcyhYaPyad2Ud8KqyH/KU
+ 7NaSsnlqdTRyttX26Bft2UfTH2QHfoR6diweQ3/TQpnr8Pmo/TwRX83vPychDsKs7B3c
+ qTSL+71n/H5wiI9U06/V2EJ7V06boTxxIQslqFLQukn0qRDM722++qMrqRkfCEqzlNB9
+ 6NPpcsrEeNd/1HPp5zP2A9ld4fESUGvdRcrPyL9q1nvZwRPE4FhMkNnecQq9nAnF0kZw
+ wiRFrOSqgyhI7/3vaEFZTBJsgWW6KNFaSPA1l+5EuE//dOyu8qd2YwTLfQpHwVgNg6jd
+ MBVA==
+X-Gm-Message-State: AGi0PubAQLuQkOa4kI0BFvcHBYNCi0A2pRWJyapR9kpXspEWeUp9veoB
+ XhZ5tqrXnpwur/gKHefiB4eAOvlIAxs=
+X-Google-Smtp-Source: APiQypIlb23lEXW0pdn9fSpr5V11wncV/CyFwavCCBFGgnSa1tzPCgNi2bJZVmHif6Z5vmH+F+JOGA==
+X-Received: by 2002:ab0:4827:: with SMTP id b36mr3360516uad.56.1586532548800; 
+ Fri, 10 Apr 2020 08:29:08 -0700 (PDT)
+Received: from mail-ua1-f53.google.com (mail-ua1-f53.google.com.
+ [209.85.222.53])
+ by smtp.gmail.com with ESMTPSA id k26sm499778uag.10.2020.04.10.08.29.08
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 10 Apr 2020 08:29:08 -0700 (PDT)
+Received: by mail-ua1-f53.google.com with SMTP id g24so726601uan.10
+ for <linux-rockchip@lists.infradead.org>; Fri, 10 Apr 2020 08:29:08 -0700 (PDT)
+X-Received: by 2002:ab0:1d10:: with SMTP id j16mr3361573uak.91.1586532547643; 
+ Fri, 10 Apr 2020 08:29:07 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200329203349.GA15121@arya.arvanta.net>
  <20200410095719.GA914@arya.arvanta.net>
-In-Reply-To: <20200410095719.GA914@arya.arvanta.net>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Fri, 10 Apr 2020 14:56:05 +0200
-Message-ID: <CAFqH_53TsmtSFnUoWixsa4v6GvOi0Korv3p8BJfROhtW0Afw-Q@mail.gmail.com>
+ <CAFqH_53TsmtSFnUoWixsa4v6GvOi0Korv3p8BJfROhtW0Afw-Q@mail.gmail.com>
+In-Reply-To: <CAFqH_53TsmtSFnUoWixsa4v6GvOi0Korv3p8BJfROhtW0Afw-Q@mail.gmail.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Fri, 10 Apr 2020 08:28:56 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=WWx2KH+qKvGa5yQW7fZHQ_azd69Eza_Gvs18eQPvfHGg@mail.gmail.com>
+Message-ID: <CAD=FV=WWx2KH+qKvGa5yQW7fZHQ_azd69Eza_Gvs18eQPvfHGg@mail.gmail.com>
 Subject: Re: PROBLEM: [drm:analogix_dp_bridge_atomic_enable [analogix_dp]]
  *ERROR* Failed to disable psr -110
-To: =?UTF-8?Q?Milan_P=2E_Stani=C4=87?= <mps@arvanta.net>
+To: Enric Balletbo Serra <eballetbo@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_055618_635944_9A495A72 
-X-CRM114-Status: GOOD (  19.77  )
+X-CRM114-CacheID: sfid-20200410_082911_514689_75050D67 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:92e listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eballetbo[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,62 +103,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ =?UTF-8?Q?Milan_P=2E_Stani=C4=87?= <mps@arvanta.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgTWlsYW4sCgpSaWdodCwgdGhpcyBpcyBhbiBhbm5veWluZyBpc3N1ZSBidXQgYWxzbyBrbm93
-biwgdW5mb3J0dW5hdGVseSwgSQpwZXJzb25hbGx5IGRpZG4ndCBoYXZlIHRpbWUgdG8gbG9vayBh
-dC4gYnV0IGl0IGlzIGluIG15IFRPRE8uCgpZb3UgY2FuIHRyeSB0byByZXZlcnQgdGhpcyBwYXRj
-aAoKY29tbWl0IGQ0ZGE0ZTMzMzQxYzVlNjE1OTU0M2FjYzAzNTU5Y2IyNGY1MjBiYzIKQXV0aG9y
-OiBTZWFuIFBhdWwgPHNlYW5wYXVsQGNocm9taXVtLm9yZz4KRGF0ZTogICBXZWQgU2VwIDE4IDE2
-OjA3OjI5IDIwMTkgLTA0MDAKCiAgICBkcm06IE1lYXN1cmUgU2VsZiBSZWZyZXNoIEVudHJ5L0V4
-aXQgdGltZXMgdG8gYXZvaWQgdGhyYXNoaW5nCgpTZWUgYWxzbyBzb21lIG1vcmUgaW5mbyBoZXJl
-OgogKiAgaHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMTkvOS8xOC85NzUKCk5vdGUgdGhhdCByZXZl
-cnRpbmcgdGhlIHBhdGNoIGRvZXNuJ3QgZml4ZXMgdGhlIGlzc3VlIGp1c3QgbWFrZXMgaXQKbGVz
-cyB2aXNpYmxlLgoKQ2hlZXJzLAogRW5yaWMKCk1pc3NhdGdlIGRlIE1pbGFuIFAuIFN0YW5pxIcg
-PG1wc0BhcnZhbnRhLm5ldD4gZGVsIGRpYSBkdi4sIDEwIGTigJlhYnIuCjIwMjAgYSBsZXMgMTE6
-NTc6Cj4KPiBIZWxsbywKPgo+IERvZXMgYW55b25lIGhhdmUva25vdyBhbnl0aGluZyB3aGljaCBj
-b3VsZCBoZWxwIHdpdGggdGhpcyBwcm9ibGVtIG9yCj4gcG9pbnQgbWUgd2hlcmUgSSBjYW4gbG9v
-ayB0byBmaW5kIHNvbHV0aW9uIGZvciB0aGlzIHNlcmlvdXMgaXNzdWUuCj4KPiBUSUEKPgo+IE9u
-IFN1biwgMjAyMC0wMy0yOSBhdCAyMjozMywgTWlsYW4gUC4gU3RhbmnEhyB3cm90ZToKPiA+IFsg
-UGxlYXNlIGtlZXAgbWUgaW4gQ2MsIEknbSBub3Qgc3Vic2NyaWJlZCB0byB0aGlzIG1haWxpbmcg
-bGlzdCBdCj4gPgo+ID4gWyBJIHBvc3RlZCB0aGlzIGJ1ZyByZXBvcnQgdG8gZHJpLWRldmVsQGZy
-ZWVkZXNrdG9wLm9yZyBoZXJlOgo+ID4gICBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9h
-cmNoaXZlcy9kcmktZGV2ZWwvMjAyMC1NYXJjaC8yNTk4MzIuaHRtbAo+ID4gICBvbiBUaHUgTWFy
-IDE5IDIwOjAxOjE5IFVUQyAyMDIwIGJ1dCBkaWRuJ3QgcmVjZWl2ZWQgYW55IGFuc3dlci4gU28K
-PiA+ICAgcmVwb3N0aW5nIGhlcmUgaW4gYSBob3BlIHRoYXQgc29tZW9uZSB3aWxsIGhlbHAgXQo+
-ID4KPiA+IEhlbGxvLAo+ID4KPiA+IFRoaXMgaXMgb25lIG9mIGZpcnN0IGJ1ZyByZXBvcnQgdG8g
-bGludXgga2VybmVsLCBzbyBzb3JyeSBpZiBJIGRvCj4gPiBzb21ldGhpbmcgd3Jvbmcgb3IgaW5h
-cHByb3ByaWF0ZS4gQW5kIEknbSBzZWxmIHRhdWdodCBpbiBFbmdsaXNoIHNvCj4gPiBzb3JyeSBp
-ZiBkbyBub3Qgd3JpdGUgb3IgZXhwcmVzcyBjb3JyZWN0bHkuCj4gPgo+ID4gSSdtIHJ1bm5pbmcg
-bGludXggNS42LjAtcmMzIHdpdGhvdXQgYW55IHBhdGNoZXMgb24gU2Ftc3VuZyBjaHJvbWVib29r
-Cj4gPiBvbmUgcGx1cywgQXJtNjQgcm9ja2NoaXAgcmszMzk5IGJhc2VkIG1vZGVsIG5hbWU6Cj4g
-PiBNYWNoaW5lIG1vZGVsOiBHb29nbGUgS2V2aW4KPiA+Cj4gPiBJIGJ1aWxkIGtlcm5lbHMgZnJv
-bSB1cHN0cmVhbSBnaXQua2VybmVsLm9yZyBmb3IgdGhpcyBtYWNoaW5lIGZvciBzb21lCj4gPiB0
-aW1lIChpaXJjLCBmcm9tIDUuNC4xIGFuZCB1cCkgYnV0IEknbSBnZXR0aW5nIGVycm9yIG1lc3Nh
-Z2VzIGluIGtlcm5lbAo+ID4gYWJvdXQgJ3BzcicgcmVsYXRlZCB0byBhbmFsb2dpeCBkcml2ZXIs
-IHdoaWNoIEkgc2VlIHdpdGggYGRtZXNnYC4KPiA+Cj4gPiBUaGlzIGJ1ZyBhcHBlYXJzIGluIGBk
-bWVzZ2Agb3V0cHV0IGZldyB0aW1lcyBvbiBhIGRheXMgYnV0IHJhbmRvbWx5IGFuZAo+ID4gSSBj
-YW4ndCBmaW5kIGFueSBjb3JyZWxhdGlvbiBvZiB0aGUgd29yayB3aXRoIG1hY2hpbmUgYW5kIGFw
-cGVhcmFuY2Ugb2YKPiA+IHRoaXMgYnVnLgo+ID4KPiA+IEkgaGF2ZSBubyBleHBlcmllbmNlIHdp
-dGggd2l0aCB2aWRlbyBkcml2ZXJzIHNvIGRvbid0IGtub3cgaG93IHRvIGRlYnVnCj4gPiB0aGlz
-IHByb2JsZW0gbW9yZSBkZWVwbHkuCj4gPgo+ID4gSSdtIGF0dGFjaGluZyBrZXJuZWwgLmNvbmZp
-ZyAoZmlsZSBjb25maWctNS42LjAtcmMzLTEtZ3J1LmNvbmYpIHdoaWNoIEkKPiA+IHVzZSB0byBi
-dWlsZCBrZXJuZWwsIG91dHB1dCBvZiB0aGUgYGF3ayAtZiBzY3JpcHRzL3Zlcl9saW51eGAgYXMg
-ZmlsZQo+ID4gdmVyX2xpbnV4LnR4dCBhbmQgIG91dHB1dCBvZiBkbWVzZyBhcyBmaWxlIGRtZXNn
-LWJyMy50eHQgKGZyb20gd2hpY2ggSQo+ID4gZGVsZXRlZCBvbmx5IHdpZmkgYXNzb2NpYXRpb24g
-bG9nKS4KPiA+Cj4gPiBTb3JyeSBhZ2FpbiBpZiBJIGRpZCBzb21ldGhpbmcgYmFkIG9yIHdyb25n
-IHdpdGggdGhpcyBidWcgcmVwb3J0Lgo+ID4KPiA+IEknbSByZWFkeSB0byBzZW5kIHlvdSBtb3Jl
-IGRhdGEsIGFuZCBpbnZlc3RpZ2F0ZSB0aGlzIG1vcmUsIGFwcGx5Cj4gPiBwYXRjaGVzIGFuZCBy
-ZWJ1aWxkIGtlcm5lbCBvciB3aGF0ZXZlciB5b3UgYXNrIG1lIChvZiBjb3Vyc2UgaWYgbXkKPiA+
-IHVuZGVyc3RhbmRpbmcgYW5kIGtub3dsZWRnZSBpcyBlbm91Z2ggZm9yIHRoaXMgam9iKS4KPiA+
-Cj4gPiBUaGFuayBpbiBhZHZhbmNlCj4gPgo+IFsuLi5dCj4KPiBfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IExpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlz
-dAo+IExpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5n
-IGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+Hi,
+
+On Fri, Apr 10, 2020 at 5:56 AM Enric Balletbo Serra
+<eballetbo@gmail.com> wrote:
+>
+> Hi Milan,
+>
+> Right, this is an annoying issue but also known, unfortunately, I
+> personally didn't have time to look at. but it is in my TODO.
+
+Random shot in the dark, but any chance somehow your PHY clock and
+PCLK for the eDP don't match?  If they don't then (IIRC) you'll get
+random failures to access eDP registers.
+
+Some history in <https://crrev.com/c/433393>.  It looks like the
+changes in that patch are upstream but if something else happened to
+make your PHY and PCLK mismatch it could cause similar symptoms.
+
+...of course it's always possible (probable) that it's something
+different, but since that was such a weird and hard-to-track-down
+problem I figured I'd at least make sure it wasn't that.
+
+-Doug
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
