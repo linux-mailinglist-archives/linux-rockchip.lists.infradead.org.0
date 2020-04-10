@@ -2,74 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11FA21A49D1
-	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Apr 2020 20:27:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31B091A49D2
+	for <lists+linux-rockchip@lfdr.de>; Fri, 10 Apr 2020 20:27:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iQ5BiAaKHTgshgBYjFtgqwLZA/GdeN9G2qQ5rW/2u0I=; b=chmmUjiMilEVbk
-	IxxFz9Gr7qDi0jRgaEb8vgkZWh5faXPuot/6dwTjpJ0oSbNRQXhsFZ3R5YyLYD73WQDU5X1DIy41j
-	vW1Rboar26t9yIQrItYU4rUfh90XWcFAVZqqG3VA6Pl1loCIJibjvLdhlyecpTnIZ3xWVuW2HgZ9q
-	eTgXMgnChnXvLj4khqDvQD1yUfnNfEC0oKN2DUFzzG+dBcbLkqPOQ9Tg1UePqfq9BcCSpnwQIrDYb
-	RUzW8erpKozvab55WoOGoeK8AQn5NvvaPnS5hfnRy9MfZbCGM3rASfYEREvVpiYM9dHXGIssTPXAa
-	BjubAnqv/0xCf39IuTAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=T6jwYfzPwGcG2H5xYwIriVXQ+rU2LoTy5usx71NFW/Q=; b=QncXxc/UXhOvTKVOXU85RIC61Z
+	XMmWEc5eQVEnbN8rkrChU7zd+/N/m9gkTfMilnlH5jq1YDEON4PeBPJLgSl1BiUrwUOs9VRWrMmpa
+	NcOZT2RDkdEr7v5ytgRRAEZIJu5DFY4mMOG8vdfBKvV2kC/A0LCzzANyahRrioCckQPZfTlO4tkOG
+	3KZPYHu0kj+3EZ4zarucj5SnXJjL/M12j9vB1umyeBQNFpO3aa0qRe8XhZOvfWXCEEgfpzPj/QnJ9
+	Xx835kH/5MvokYytMD7aMl6HMiY7VyhxEoBN0TKrG51SmUnsck2qKVK3OvLYZBn6NVcuHGwD4Cy75
+	LICnPG3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMyN2-0005JY-36; Fri, 10 Apr 2020 18:27:16 +0000
+	id 1jMyN6-0005NQ-BP; Fri, 10 Apr 2020 18:27:20 +0000
 Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMyMy-0005Ga-85
- for linux-rockchip@lists.infradead.org; Fri, 10 Apr 2020 18:27:13 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id z9so1037636pjd.2
- for <linux-rockchip@lists.infradead.org>; Fri, 10 Apr 2020 11:27:12 -0700 (PDT)
+ id 1jMyN1-0005Ju-Vm
+ for linux-rockchip@lists.infradead.org; Fri, 10 Apr 2020 18:27:17 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id nu11so1039248pjb.1
+ for <linux-rockchip@lists.infradead.org>; Fri, 10 Apr 2020 11:27:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=4R0WqpdYliBRFD6P9shAumdZEaICffalbnt+KRBJLe0=;
- b=LocK4TRuI03fDkY8AakJTCMBC6LP9e1tza+dnQCgzeQVgKY7DumsyvaDx7SDoqbloa
- rJC4WoTHUqSWJV09iDpNLFaMph11/34JAOFXzR3B+w22lKdnTzy0+FvpzWIR+utTw5mA
- orND4Ky+vdWuHJteFs1dI4juoRkh2Z9dOGvWI=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=RDC+S2pPClJt5MdFcAtW3zyRo5LPh1rQa69WeWQdF5c=;
+ b=on14pUjH8PmO73uLo3op2NNL5QZ3ov0OvvBfIIXOOT4BLwpQyGlNnBhcNA3LFbe1fb
+ I1nUvAGXLW5CchHyalrGRFKwQP8CN3ZZbVJ2G7XUoXeH9soQgFiUPvM5Im/W/HFGZ8Tx
+ xx+iW9eHtmryv9a3X3Ve+uGh1c0VeonNF+Cac=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=4R0WqpdYliBRFD6P9shAumdZEaICffalbnt+KRBJLe0=;
- b=ozlUFDdH/zKSn2MzuymsIH8Ontr9fuQNBHBpNLeHD5ZAz/7GYKuNc7cst6XKJPOeig
- W8bwpxSiINrvUyzsZTv/Pik13VEnskka71lXLRvh0pQtlrMrjWDx06lxZYxT5N5Bj/iA
- 6WCrSs6jvu4w/UQgQJUXUFq1Tz6+2jodulhVCDYV5JR/vagru1w5XjIXJUSAKVnqZJCV
- 40LtXYl0T1EQvq5EKzkMTLk3Y3POK+xDBLHn/811IS07M9vuLCXcJIPtsckqKw1tkXOl
- nevjdc/ldMxyQjok0x1b0bGGJ7bw1FXR6At//1CTJizqO+de6yHJXFdhZpKZon31I259
- YZsQ==
-X-Gm-Message-State: AGi0PuauAyB9578JNXkVQELxvH96M/nWbM9qvKt0CYereQcY/ZjYNokb
- cBzU8jpVLwuBHl7WmEW59zS2ZA==
-X-Google-Smtp-Source: APiQypLxmT/b5FSPx1ghgyQBX3kResB1HB+BcBm9Ve5qDlTg9IzEExyh8vbbDdeyBJs8hfvQvCO/cg==
-X-Received: by 2002:a17:90a:e013:: with SMTP id
- u19mr7092153pjy.54.1586543231664; 
- Fri, 10 Apr 2020 11:27:11 -0700 (PDT)
+ :references;
+ bh=RDC+S2pPClJt5MdFcAtW3zyRo5LPh1rQa69WeWQdF5c=;
+ b=G53qE3IDBd5Zv7UvxChPAd5b+gb+fDlNVGmLHbBy5bmiLqYH6y7bNRu0FMfwYm3l4r
+ o+Nfmatc8OUt0fEzjquMH9OOY9gdIhlCcH4hJtIPw2jD0wAIcshIiZ8mwegMiayatvgE
+ vwMw8cxfIlGovvA0Rx/gS2r+vMR8bXXfhFSyqiZU8m9MqECMQNqMztoHWq5H+Kki4uw8
+ OOlZAORUM8H/C2v2TExv3rahkJ/VEAbTuXG6DAQFfZDbBjXX/uP/JtMEsq/xR6ZJ00K8
+ TwFbSiJtEUhwXvFXbGVaMdxwl+juutqhNI2DUzFaxTqqcL/K65TSWslRRd+FFLXzxKXU
+ vRQw==
+X-Gm-Message-State: AGi0PuYSWnllvv+CDVFRqRVXM6NU97Lr/mAPkGJ7ChsPUu9JW294GkZ6
+ lReojFylLFcF/XTiRL8jozhn+w==
+X-Google-Smtp-Source: APiQypKODK7Rnfvhluj346tTsrOphamuwmSNQRNFcvqcLk6DPHZ9mdef/ckCVkCDmkkCgjhNR7sc7A==
+X-Received: by 2002:a17:902:8d8d:: with SMTP id
+ v13mr5948511plo.260.1586543235176; 
+ Fri, 10 Apr 2020 11:27:15 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:e854:42b6:1a5:a40e])
  by smtp.gmail.com with ESMTPSA id
- w90sm2214694pjj.2.2020.04.10.11.27.07
+ w90sm2214694pjj.2.2020.04.10.11.27.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Apr 2020 11:27:11 -0700 (PDT)
+ Fri, 10 Apr 2020 11:27:14 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Tom Rini <trini@konsulko.com>, Kever Yang <kever.yang@rock-chips.com>,
  Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 2/3] rk3399: Add boot flash script offset, size
-Date: Fri, 10 Apr 2020 23:56:30 +0530
-Message-Id: <20200410182631.11951-3-jagan@amarulasolutions.com>
+Subject: [PATCH v2 3/3] rockchip: Enable SF distro bootcmd
+Date: Fri, 10 Apr 2020 23:56:31 +0530
+Message-Id: <20200410182631.11951-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200410182631.11951-1-jagan@amarulasolutions.com>
 References: <20200410182631.11951-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_112712_293323_DF722280 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200410_112716_087321_2D5D3765 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,27 +100,73 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: u-boot@lists.denx.de, linux-rockchip@lists.infradead.org,
  linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
  sunil@amarulasolutions.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-TW9zdCBvZiB0aGUgU1BJIGZsYXNoIGRldmljZXMgaW4gcm9ja2NoaXAgKHJrMzM5OSkKYXJlIDE2
-TWlCIHNpemUuIFNvLCBsZXQncyB1c2UgdGhlIHNjcmlwdCBvZmZzZXQgYXQKdGhlIGVuZCBvZiA4
-Sy7CoAoKVGhpcyB3YXkgaXQgY2Fubm90IG92ZXJsYXAgYW55IG9mZnNldHMgYmVpbmcgdXNlZApi
-eSBzb2Z0d2FyZSBjb21wb25lbnRzIGluIGZsYXNoIGxheW91dC4KClNpZ25lZC1vZmYtYnk6IEph
-Z2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgpSZXZpZXdlZC1ieTogS2V2ZXIg
-WWFuZyA8a2V2ZXIueWFuZ0Byb2NrLWNoaXBzLmNvbT4KLS0tCkNoYW5nZXMgZm9yIHYyOgotIG5l
-dyBwYXRjaAoKIGluY2x1ZGUvY29uZmlncy9yazMzOTlfY29tbW9uLmggfCAyICsrCiAxIGZpbGUg
-Y2hhbmdlZCwgMiBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvaW5jbHVkZS9jb25maWdzL3Jr
-MzM5OV9jb21tb24uaCBiL2luY2x1ZGUvY29uZmlncy9yazMzOTlfY29tbW9uLmgKaW5kZXggODlh
-OGE0NGJiZS4uMDFhOTE3NGJkMiAxMDA2NDQKLS0tIGEvaW5jbHVkZS9jb25maWdzL3JrMzM5OV9j
-b21tb24uaAorKysgYi9pbmNsdWRlL2NvbmZpZ3MvcmszMzk5X2NvbW1vbi5oCkBAIC00OCw2ICs0
-OCw4IEBACiAKICNkZWZpbmUgRU5WX01FTV9MQVlPVVRfU0VUVElOR1MgXAogCSJzY3JpcHRhZGRy
-PTB4MDA1MDAwMDBcMCIgXAorCSJzY3JpcHRfb2Zmc2V0X2Y9MHhmZmUwMDBcMCIgXAorCSJzY3Jp
-cHRfc2l6ZV9mPTB4MjAwMFwwIiBcCiAJInB4ZWZpbGVfYWRkcl9yPTB4MDA2MDAwMDBcMCIgXAog
-CSJmZHRfYWRkcl9yPTB4MDFmMDAwMDBcMCIgXAogCSJrZXJuZWxfYWRkcl9yPTB4MDIwODAwMDBc
-MCIgXAotLSAKMi4xNy4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1yb2NrY2hpcAo=
+Enable SPI flash(SF) distro boot command in Rockchip.
+
+This distro boot will read the boot script at specific
+location at the flash and start sourcing the same.
+
+Included the SF device at the last of the target devices
+list since all the rest of the devices on the list have
+more possibility to boot the distribution due to the
+size of the SPI flash is concern.
+
+Cc: Tom Rini <trini@konsulko.com>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+Changes for v2:
+- update BOOT_TARGET_SF 
+
+ include/configs/rk3399_common.h   | 1 +
+ include/configs/rockchip-common.h | 9 ++++++++-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/include/configs/rk3399_common.h b/include/configs/rk3399_common.h
+index 01a9174bd2..f0ae6e67a7 100644
+--- a/include/configs/rk3399_common.h
++++ b/include/configs/rk3399_common.h
+@@ -60,6 +60,7 @@
+ #endif
+ 
+ #include <config_distro_bootcmd.h>
++#include <environment/distro/sf.h>
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+ 	ENV_MEM_LAYOUT_SETTINGS \
+ 	"fdtfile=" CONFIG_DEFAULT_FDT_FILE "\0" \
+diff --git a/include/configs/rockchip-common.h b/include/configs/rockchip-common.h
+index b55e09a9ca..d97395db90 100644
+--- a/include/configs/rockchip-common.h
++++ b/include/configs/rockchip-common.h
+@@ -41,11 +41,18 @@
+ 	#define BOOT_TARGET_DHCP(func)
+ #endif
+ 
++#if CONFIG_IS_ENABLED(CMD_SF)
++	#define BOOT_TARGET_SF(func)	func(SF, sf, 0)
++#else
++	#define BOOT_TARGET_SF(func)
++#endif
++
+ #define BOOT_TARGET_DEVICES(func) \
+ 	BOOT_TARGET_MMC(func) \
+ 	BOOT_TARGET_USB(func) \
+ 	BOOT_TARGET_PXE(func) \
+-	BOOT_TARGET_DHCP(func)
++	BOOT_TARGET_DHCP(func) \
++	BOOT_TARGET_SF(func)
+ 
+ #ifdef CONFIG_ARM64
+ #define ROOT_UUID "B921B045-1DF0-41C3-AF44-4C6F280D3FAE;\0"
+-- 
+2.17.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
