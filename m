@@ -2,63 +2,60 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4FB81A532C
-	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 19:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0C1D1A5342
+	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 20:10:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x5Qnv0EK8HxSUauYa+FtwJEH7Qn4/wqaclLGL0BiKko=; b=aEemy1JMFQW9NH
-	1Eb9hVwrIMKPpiGf8D00GXROWDo7R1Mb4zHrwEiORoH6jOPcp7d79I2Yec4P4TTm6zz+OY0rvjTU0
-	gPx2DKc6vdCwGvAHwoWOS+ymYzx/xl1d5brD8qO9Es9HfkVROoXDgFlf5Y54esvLAQAqDbcpVKS7u
-	6MoX9NnemnGUG1jqFUZVr1SoqxxifjaVy/q56NUipR5ZqBRIqmJv3tYZQI1mwA0idrhtlrnguIfV4
-	yVN26izEjmszFB8baK5+Uw7YjrGHcwcEdQLWALJwsuWOfDnlt88iZDd5Dh2L7boNhx+eVR68LXABZ
-	l4h1sdgA4PzMQ1bSaImg==;
+	List-Owner; bh=6QeEpWWTqxueyV2TGadlNVVPccasf3bxk4t42i5FxOk=; b=nTw9Nvqv6gAFRZ
+	le4pK67jXQoJLp0IVvomURNM30oPI9u/Cx0NFoyhuoCW3KCjE9O/YV223MSWnfrk2tJ18e93CMfhY
+	WZsQckL5ZHqk31z3j7CXD5/Z+NXhGXSL3S+wFu9zJDWYjuRhb7hHKf65u5BLa85guJXVnEbDQkreK
+	gBBesJZR7456P18E8rA7BUrmWcls2CKIl7W9tRX197n6GJZAMZa+q8u9gW5cKe2NBKNmEUkt4q974
+	d431/AeDg9azp8yHa/aj3rJheum3BJaFQloSecmgDlBNRi8JPly8YuiMn6lBcmJUZBD6F9CD+2pQb
+	KswmWqsjcltAlf7csVFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNK2R-0000HJ-DE; Sat, 11 Apr 2020 17:35:27 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
+	id 1jNKaL-0003O4-5z; Sat, 11 Apr 2020 18:10:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNK2I-0000AP-1L; Sat, 11 Apr 2020 17:35:20 +0000
-Received: from zn.tnic (p200300EC2F1EE200B53534244D96C31E.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f1e:e200:b535:3424:4d96:c31e])
+ id 1jNKaD-0003J4-G7; Sat, 11 Apr 2020 18:10:22 +0000
+Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 6FF401EC0C50;
- Sat, 11 Apr 2020 19:35:09 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1586626509;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=tITpXAEx0ZKBxrGmf7qRgeBQo5VORL0f/hlXJ7f6wlY=;
- b=lXfwEK6tpAvogvK08CzhUk18RhPgc4bf31WSPpPGihBfqj7p1woHl+SjSfJYSQq1TNfqjX
- 93NZz9vz6cMvuQ5PC+o8RNh1K+LWrIw/nOz0CHsgOm+9m3easHVSCjfGpvQJ5TJXzKngQm
- VR2UNFA8qiZWsCaapTt+JMhPi4I1LBY=
-Date: Sat, 11 Apr 2020 19:35:04 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Leon Romanovsky <leon@kernel.org>
+ by mail.kernel.org (Postfix) with ESMTPSA id E1AE420732;
+ Sat, 11 Apr 2020 18:10:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586628620;
+ bh=cR0eHiEhVEU/CYCz8ttOIHBrqvYs0p6ey3Uw55qOSGo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dcNVzinV8moP+fO5RfqQizJEQ1Fo5MA/EWcPhgl3anCgpKoqChGaQQMh6g6lxD8Zu
+ U4Uz5GI9QK6vrVpGwcn3HSXE+MfBDWSMFeD7yfpw5OsGv/2b1L7VjOahk8qLWPZWwn
+ jvyrMweq0NnBZhQyYqoGjPPwE0zfMs2kGVTNuapw=
+Date: Sat, 11 Apr 2020 21:10:15 +0300
+From: Leon Romanovsky <leon@kernel.org>
+To: Borislav Petkov <bp@alien8.de>
 Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200411173504.GA11128@zn.tnic>
+Message-ID: <20200411181015.GC200683@unreal>
 References: <20200224085311.460338-1-leon@kernel.org>
  <20200224085311.460338-4-leon@kernel.org>
  <20200411155623.GA22175@zn.tnic> <20200411161156.GA200683@unreal>
+ <20200411173504.GA11128@zn.tnic>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200411161156.GA200683@unreal>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200411173504.GA11128@zn.tnic>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_103518_228461_705637F6 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200411_111021_580232_4395731F 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -68,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,63 +100,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, Apr 11, 2020 at 07:11:56PM +0300, Leon Romanovsky wrote:
-> Probably, this is the right change, but I have a feeling that the right
-> solution will be inside headers itself. It is a little bit strange that
-> both very common kernel headers like module.h and vermagic.h are location
-> dependant.
+On Sat, Apr 11, 2020 at 07:35:04PM +0200, Borislav Petkov wrote:
+> On Sat, Apr 11, 2020 at 07:11:56PM +0300, Leon Romanovsky wrote:
+> > Probably, this is the right change, but I have a feeling that the right
+> > solution will be inside headers itself. It is a little bit strange that
+> > both very common kernel headers like module.h and vermagic.h are location
+> > dependant.
+>
+> Judging by how only a couple of net drivers include vermagic.h directly,
+> doh, of course:
+>
+> diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
+> index b762176a1406..139d0120f511 100644
+> --- a/drivers/net/ethernet/3com/3c509.c
+> +++ b/drivers/net/ethernet/3com/3c509.c
+> @@ -85,7 +85,6 @@
+>  #include <linux/device.h>
+>  #include <linux/eisa.h>
+>  #include <linux/bitops.h>
+> -#include <linux/vermagic.h>
+>
+>  #include <linux/uaccess.h>
+>  #include <asm/io.h>
+> diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
+> index 90312fcd6319..47b4215bb93b 100644
+> --- a/drivers/net/ethernet/3com/3c515.c
+> +++ b/drivers/net/ethernet/3com/3c515.c
+> @@ -22,7 +22,6 @@
+>
+>  */
+>
+> -#include <linux/vermagic.h>
+>  #define DRV_NAME		"3c515"
+>
+>  #define CORKSCREW 1
+>
+> ---
+>
+> Drivers include
+>
+> #include <linux/module.h>
+>
+> which includes
+>
+> #include <asm/module.h>
+>
+> which defines the arch-specific MODULE_ARCH_VERMAGIC.
+>
+> Why did you need to include vermagic.h directly? i386 builds fine with
+> the vermagic.h includes removed or was it some other arches which needed
+> it?
 
-Judging by how only a couple of net drivers include vermagic.h directly,
-doh, of course:
+I want to think that it was an outcome of some 0-day kbuild report,
+but I am not sure about that anymore [1].
 
-diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
-index b762176a1406..139d0120f511 100644
---- a/drivers/net/ethernet/3com/3c509.c
-+++ b/drivers/net/ethernet/3com/3c509.c
-@@ -85,7 +85,6 @@
- #include <linux/device.h>
- #include <linux/eisa.h>
- #include <linux/bitops.h>
--#include <linux/vermagic.h>
- 
- #include <linux/uaccess.h>
- #include <asm/io.h>
-diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
-index 90312fcd6319..47b4215bb93b 100644
---- a/drivers/net/ethernet/3com/3c515.c
-+++ b/drivers/net/ethernet/3com/3c515.c
-@@ -22,7 +22,6 @@
- 
- */
- 
--#include <linux/vermagic.h>
- #define DRV_NAME		"3c515"
- 
- #define CORKSCREW 1
+Thanks
 
----
+[1] https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org/
 
-Drivers include
-
-#include <linux/module.h>
-
-which includes
-
-#include <asm/module.h>
-
-which defines the arch-specific MODULE_ARCH_VERMAGIC.
-
-Why did you need to include vermagic.h directly? i386 builds fine with
-the vermagic.h includes removed or was it some other arches which needed
-it?
-
-Thx.
-
--- 
-Regards/Gruss,
-    Boris.
-
-https://people.kernel.org/tglx/notes-about-netiquette
+>
+> Thx.
+>
+> --
+> Regards/Gruss,
+>     Boris.
+>
+> https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 Linux-rockchip mailing list
