@@ -2,57 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDFCE1A5149
-	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 14:24:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF4891A5154
+	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 14:25:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dqjUZ068cDHVjXauryPf7ogi3BRh8gQrqm9KFGpXgvU=; b=FDSFlCBi8+3pXR6y4WrR96NQP
-	LUZ8ywUtRzUyn3XPpIimFjktpkQsJ7ewY4iCv0jy2xtBp8n/IInvbqDV9bfTiEpwG7QDwDeDfhLBD
-	IuNr1n6TMRBqxUuCwX5H8BvIjX9cdIyq+swfa8wTFwnjhwhIVqSt9vvm+566ptpAGkQUNEnXqqZ/D
-	9LyP/Uc/O0Gb+Erv2SH1MMGrjB9IRhl9pLEDej7ktZq4hJeP3ke/Tv2kArxRdUIQ8DoncQoteTBcE
-	gdoQhyBdfrgeGRqXbNAsvyJLx/XqUpAAq/BIRZaM6WjfqDFS0+J0KTD8MWDf2d1IeNfaHMurYn8kW
-	VqdPzxL7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4JQonJPy4f7NMSt4enlONHrgi4jxCMFq2xSAtnjM+xs=; b=ZDq
+	XyUszwJylLzgWVBPYoyq5kSoPfEbPWJs7PANgmRnrzNNrPpGJRfKn6LoLdjjadXKJNktb1F9nkO4I
+	7cv5CKdxdz5C8gLbIDGZUJsmmodGN7XXy8Xx1wUDFPx7BCPOpgwb6jIXbpHSx7f6lOgXbwd2akD2q
+	k4wI5SDvR0NCOfSn/ai9OpaBNyBN0owEqWsLmNQF+dpxWRLOr8tICqMwpEd0mBcU3wjlUq4RLSFog
+	tD4awbTmkVrAd18tZD23dLAXCLTwBveeI5SUdcCUyeIIYS+sEoyVbuG7wZzJG+6w6QQxRTMT/7kyv
+	jfdqexxu4ccrf8uMJh6i1Y92pXWCZ+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNFBj-0004XQ-VA; Sat, 11 Apr 2020 12:24:43 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jNFCQ-00077d-Pb; Sat, 11 Apr 2020 12:25:26 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNFBg-0004Wu-7u
- for linux-rockchip@lists.infradead.org; Sat, 11 Apr 2020 12:24:41 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 4F6152A07CD
-Subject: Re: [PATCH v3 3/6] media: staging: rkisp1: cap: change the logic for
- writing to uv swap register
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-References: <20200408114822.27360-1-dafna.hirschfeld@collabora.com>
- <20200408114822.27360-4-dafna.hirschfeld@collabora.com>
- <20200408121011.GE4881@pendragon.ideasonboard.com>
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Message-ID: <b27c1762-cdd6-a010-0950-ae2eec89ccab@collabora.com>
-Date: Sat, 11 Apr 2020 14:24:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
-MIME-Version: 1.0
-In-Reply-To: <20200408121011.GE4881@pendragon.ideasonboard.com>
-Content-Language: en-US
+ id 1jNFCH-00070K-Co; Sat, 11 Apr 2020 12:25:18 +0000
+Received: by mail-wr1-x444.google.com with SMTP id u13so4578685wrp.3;
+ Sat, 11 Apr 2020 05:25:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=PXnvbLdLrQw02Pv9aTraJTstO6BsBfshSbSvruk1AoI=;
+ b=eVKtwmuP9eIdsk0DhszqFM/hq7WkqRqir5lOWmDDJZ+lZVcGXyuUuO/jOnjM8mDYM+
+ SFYkcV9yi9yuUYTPhE2MftExFAECb2nT5xyY8TKHr7yD9lTPMjb9SlFwUnejhZ62EscA
+ toWiRpCF6/OhwypaUSnWTJ+yLZk/kyKeRmg5ztC4/axZrd8Yhmid80PA+dDCmM3agaDM
+ QTk01KBvlhT/6u15/u6/GDqWSNwWBAOGMk+R7SUs/3Ezir6yzC354SZFHsS16HbXG9e9
+ X76vq9XIbqCmrPwdVP+Esd3xTNJDcxCkSGKb8ZJuVinoBP/X0GXyPmhZiWyRSzOEZV4o
+ YBqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=PXnvbLdLrQw02Pv9aTraJTstO6BsBfshSbSvruk1AoI=;
+ b=QGzJzXeN21aiGx0pMfwgWKdaJbFtN1meIH2ratSNbfdqMqxnAfgaEQdgCLFw+gtnRa
+ WkwLvzAvj+tnQ4K6zCnLn+PmYKv+zogdp1VrqxbdvK1zQb1FUWt7ozxuzTLyGPnBTidW
+ hNsNAaQykv5zJEntJRLkv6j1NLmBcI7ze6jBonxIrFiUIh/pQ5jyA5AD5yjooUkbOH93
+ bWMSA+Z3CSDYdOJDBr2Xv0KcvP1WGLGFmOq1TL+aktTa9WdfIy0tpIGmlCCrGIo/V9j8
+ BWscsB4VTBMqSz2L9I1BIYl3am/BVWuKO02vHETVfjsBtyh1E86o6UTKeKR08MWuF1uN
+ 004A==
+X-Gm-Message-State: AGi0PuZVtwGI7lN7vX9ksdghNF34dw/vBVimhpV5oSXpSVtbX2zaoOx0
+ 3DbdsHcWcnk+AACG9d9jfiA=
+X-Google-Smtp-Source: APiQypIdubht9dZYotoZNNgJZ0IsRf27uQmOuX3WrqdShZOIC5TejYPydYZrpUauBMUEpVWmYHWhbA==
+X-Received: by 2002:adf:f9cc:: with SMTP id w12mr9762920wrr.148.1586607914276; 
+ Sat, 11 Apr 2020 05:25:14 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id v19sm675565wra.57.2020.04.11.05.25.13
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 11 Apr 2020 05:25:13 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v4] dt-bindings: sram: convert rockchip-pmu-sram bindings to
+ yaml
+Date: Sat, 11 Apr 2020 14:25:07 +0200
+Message-Id: <20200411122507.4040-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_052440_716278_4A36CB79 
-X-CRM114-Status: GOOD (  17.93  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200411_052517_457152_D0DC5B6C 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,92 +95,114 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+Current dts files with 'rockchip-pmu-sram' compatible nodes
+are now verified with sram.yaml, although the original
+text document still exists. Merge rockchip-pmu-sram.txt
+with sram.yaml by adding it as description with an example.
+Make #address-cells, #size-cells and ranges optional
+if there are no child nodes to prevent yaml warnings.
 
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+Changes v4:
+  Make some properties optional
 
-On 4/8/20 2:10 PM, Laurent Pinchart wrote:
-> Hi Dafna,
-> 
-> Thank you for the patch.
-> 
-> On Wed, Apr 08, 2020 at 01:48:19PM +0200, Dafna Hirschfeld wrote:
->> The register RKISP1_CIF_MI_XTD_FORMAT_CTRL is currently written
->> with "on" only if the u,v streams need to be swapped. This patch
->> also write to it with "off" if they don't need to be swapped.
->>
->> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> 
-> I think you can squash this with 1/6 and 2/6.
-Hi, as Helen already commented, since it is a combination of
-cleanups and bug fixes, I think it is better to keep them separated.
+Changes v3:
+  Document the compatible
 
-Thanks,
-Dafna
-> 
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> 
->> ---
->>   drivers/staging/media/rkisp1/rkisp1-capture.c | 21 ++++++++++---------
->>   1 file changed, 11 insertions(+), 10 deletions(-)
->>
->> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
->> index 5d0e489505f0..4830083c33fd 100644
->> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
->> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
->> @@ -383,12 +383,12 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
->>   		     cap->config->mi.cr_size_init);
->>   
->>   	rkisp1_irq_frame_end_enable(cap);
->> -	if (cap->pix.cfg->uv_swap) {
->> -		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->> -
->> +	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->> +	if (cap->pix.cfg->uv_swap)
->>   		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
->> -		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->> -	}
->> +	else
->> +		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
->> +	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->>   
->>   	rkisp1_mi_config_ctrl(cap);
->>   
->> @@ -406,7 +406,7 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
->>   {
->>   	const struct v4l2_pix_format_mplane *pixm = &cap->pix.fmt;
->>   	struct rkisp1_device *rkisp1 = cap->rkisp1;
->> -	u32 mi_ctrl;
->> +	u32 mi_ctrl, reg;
->>   
->>   	rkisp1_write(rkisp1, rkisp1_pixfmt_comp_size(pixm, RKISP1_PLANE_Y),
->>   		     cap->config->mi.y_size_init);
->> @@ -420,12 +420,13 @@ static void rkisp1_sp_config(struct rkisp1_capture *cap)
->>   	rkisp1_write(rkisp1, cap->sp_y_stride, RKISP1_CIF_MI_SP_Y_LLENGTH);
->>   
->>   	rkisp1_irq_frame_end_enable(cap);
->> -	if (cap->pix.cfg->uv_swap) {
->> -		u32 reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->>   
->> +	reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->> +	if (cap->pix.cfg->uv_swap)
->>   		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
->> -		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->> -	}
->> +	else
->> +		reg &= ~RKISP1_CIF_MI_XTD_FMT_CTRL_SP_CB_CR_SWAP;
->> +	rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
->>   
->>   	rkisp1_mi_config_ctrl(cap);
->>   
-> 
+Changed v2:
+  Merge with sram.yaml
+---
+ .../devicetree/bindings/sram/rockchip-pmu-sram.txt | 16 -------------
+ Documentation/devicetree/bindings/sram/sram.yaml   | 26 +++++++++++++++++++---
+ 2 files changed, 23 insertions(+), 19 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+
+diff --git a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt b/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
+deleted file mode 100644
+index 6b42fda30..000000000
+--- a/Documentation/devicetree/bindings/sram/rockchip-pmu-sram.txt
++++ /dev/null
+@@ -1,16 +0,0 @@
+-Rockchip SRAM for pmu:
+-------------------------------
+-
+-The sram of pmu is used to store the function of resume from maskrom(the 1st
+-level loader). This is a common use of the "pmu-sram" because it keeps power
+-even in low power states in the system.
+-
+-Required node properties:
+-- compatible : should be "rockchip,rk3288-pmu-sram"
+-- reg : physical base address and the size of the registers window
+-
+-Example:
+-	sram@ff720000 {
+-		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
+-		reg = <0xff720000 0x1000>;
+-	};
+diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+index 7b83cc6c9..f474fee47 100644
+--- a/Documentation/devicetree/bindings/sram/sram.yaml
++++ b/Documentation/devicetree/bindings/sram/sram.yaml
+@@ -29,6 +29,7 @@ properties:
+       enum:
+         - mmio-sram
+         - atmel,sama5d2-securam
++        - rockchip,rk3288-pmu-sram
+ 
+   reg:
+     maxItems: 1
+@@ -118,9 +119,18 @@ patternProperties:
+ required:
+   - compatible
+   - reg
+-  - "#address-cells"
+-  - "#size-cells"
+-  - ranges
++
++if:
++  properties:
++    compatible:
++      contains:
++        const: rockchip,rk3288-pmu-sram
++
++else:
++  required:
++    - "#address-cells"
++    - "#size-cells"
++    - ranges
+ 
+ additionalProperties: false
+ 
+@@ -224,6 +234,16 @@ examples:
+     };
+ 
+   - |
++    // Rockchip's rk3288 SoC uses the sram of pmu to store the function of
++    // resume from maskrom(the 1st level loader). This is a common use of
++    // the "pmu-sram" because it keeps power even in low power states
++    // in the system.
++    sram@ff720000 {
++      compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
++      reg = <0xff720000 0x1000>;
++    };
++
++  - |
+     // Allwinner's A80 SoC uses part of the secure sram for hotplugging of the
+     // primary core (cpu0). Once the core gets powered up it checks if a magic
+     // value is set at a specific location. If it is then the BROM will jump
+-- 
+2.11.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
