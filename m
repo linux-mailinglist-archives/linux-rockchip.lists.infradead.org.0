@@ -2,70 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA2A31A52AD
-	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 17:56:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73C901A52C6
+	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 18:06:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RUCnAewQGciliDm6p/w6HeDeh3WOe5OzqyrzFyzWFOQ=; b=mip/chEnxBd/aA
-	NWu4ngiyluWi3GllgROoJQvtC+rDBqaFjSMoVr3v8nH3pZaMrioBlzlppP2Qsu48C7fE7XQtWEfOq
-	Bi3ikEtGl32hYD5Eb0shRmfIMhDodVL9UMUetZtIb0x6uppo3aq2KPIXKMJYXG5qztxznXpzCASAm
-	R4CSD+NY2fuhdMwzhfnxiquBi/XbOOp/Y2IGG/C0O1bL9pdTfGxD5TFGEJr7S6LF92FJyuUuaF9iv
-	l2ioVR2vJ3HyEOT9BZJLLSRgnQZFUl2DaAYIngzfsOE8Qotc5WjknvKK+MlHgQ7RPtfoJZdaAG4Bb
-	bLX15sS9DMRrHbjIOifg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UcoX2EW/s9uvXFQ8+eteIsws0WF6bcrGSGAszvDUE68=; b=Tgbcun5+jjtRcE
+	LGuEvi4wOm1MXJm+ac+aSPvk4R3GB6LGMB+eFNAcTRmEM71DWpRpvdFjBCpEM4DOWx5zcF2LEMJ+C
+	7clZEbLM6qqBv9+GwedFnWRQcF2MLv0IxVs/4viCD1P+glezFbpbefE1zBHiR/l1uRv8cAwP9tbUg
+	Cmd8FH0oXyOkfgZCAvB79j1lqyzBupiDjPc522MTly9fHv72PsMtdgyq6cls4CsSJHZLR+wfc0s6n
+	i1PJp2NJcZ1a+Zz/4JUVbU3tPCVMm9bLYjGDGE5nVgXlVT8XSFEcFkKAzkcqaU48a5anEw74hyYiK
+	MUzOFpD7JH23iB7pzzmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNIUw-0001B4-Gk; Sat, 11 Apr 2020 15:56:46 +0000
-Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
+	id 1jNIe9-00079m-5o; Sat, 11 Apr 2020 16:06:17 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNIUo-00015U-HK; Sat, 11 Apr 2020 15:56:40 +0000
-Received: from zn.tnic (p200300EC2F1EE2004DDA4FC6A7F1C076.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f1e:e200:4dda:4fc6:a7f1:c076])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 404AB1EC085F;
- Sat, 11 Apr 2020 17:56:29 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1586620589;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=0QgKfyD3UcjRgzIwSEmTFwH1FvRCThOAFzQ5S67+qsI=;
- b=olq7daV2ItKU/slSpda7p8nzWckB9HYez1JCJ44uiLmdHYcn/3sb1KyxX0N4bSYLkeByEc
- tJIDbMt8m1/bjY7Pw0bZ4MMIIVKiNkPj1a+NKhcxS+2lDfEnuIHXkBiWRUKxiT0XVVWQPq
- DrnfQ0kcqIextkY2FMCiztRhZDUYQUs=
-Date: Sat, 11 Apr 2020 17:56:23 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Leon Romanovsky <leon@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200411155623.GA22175@zn.tnic>
-References: <20200224085311.460338-1-leon@kernel.org>
- <20200224085311.460338-4-leon@kernel.org>
+ id 1jNIe5-00078F-B5
+ for linux-rockchip@lists.infradead.org; Sat, 11 Apr 2020 16:06:14 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id 2FD7C2A11D7
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH v4 0/6] media: staging: rkisp1: cap: various fixes for capture
+ formats
+Date: Sat, 11 Apr 2020 18:05:56 +0200
+Message-Id: <20200411160602.14637-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200224085311.460338-4-leon@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_085638_882188_AA28DDAC 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200411_090613_517671_9FCC4333 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,78 +60,73 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
- Igor Russkikh <irusskikh@marvell.com>, Andreas Larsson <andreas@gaisler.com>,
- Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
- Jes Sorensen <jes@trained-monkey.org>,
- Iyappan Subramanian <iyappan@os.amperecomputing.com>,
- Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
- Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
- Tom Lendacky <thomas.lendacky@amd.com>, Jay Cliburn <jcliburn@gmail.com>,
- Jay Vosburgh <j.vosburgh@gmail.com>,
- Keyur Chudgar <keyur@os.amperecomputing.com>,
- Maxime Ripard <mripard@kernel.org>, Leon Romanovsky <leonro@mellanox.com>,
- Don Fry <pcnet32@frontier.com>, nios2-dev@lists.rocketboards.org,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ion Badulescu <ionut@badula.org>,
- Netanel Belgazal <netanel@amazon.com>, Mark Einon <mark.einon@gmail.com>
+Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
+ hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Borislav Petkov <bp@suse.de>
+This patchset fixes various issues related to
+the supported formats in the rkisp1 capture.
 
-Change the include order so that MODULE_ARCH_VERMAGIC from the arch
-header arch/x86/include/asm/module.h gets used instead of the fallback
-from include/linux/vermagic.h and thus fix:
+This patchset is rebased on top of v3 of the patchset:
+"rkisp1: use enum v4l2_pixel_encoding instead of rkisp1_fmt_pix_type"
 
-  In file included from ./include/linux/module.h:30,
-                   from drivers/net/ethernet/3com/3c515.c:56:
-  ./arch/x86/include/asm/module.h:73: warning: "MODULE_ARCH_VERMAGIC" redefined
-     73 | # define MODULE_ARCH_VERMAGIC MODULE_PROC_FAMILY
-        |
-  In file included from drivers/net/ethernet/3com/3c515.c:25:
-  ./include/linux/vermagic.h:28: note: this is the location of the previous definition
-     28 | #define MODULE_ARCH_VERMAGIC ""
-        |
+Patches summary:
 
-Fixes: 6bba2e89a88c ("net/3com: Delete driver and module versions from 3com drivers")
-Signed-off-by: Borislav Petkov <bp@suse.de>
----
- drivers/net/ethernet/3com/3c515.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+patches 1,2 - fixes a wrong assignments to the register that swaps the
+'u', 'v' planes in YUV semiplanar formats.
 
-diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
-index 90312fcd6319..cdceef891dbd 100644
---- a/drivers/net/ethernet/3com/3c515.c
-+++ b/drivers/net/ethernet/3com/3c515.c
-@@ -22,7 +22,6 @@
- 
- */
- 
--#include <linux/vermagic.h>
- #define DRV_NAME		"3c515"
- 
- #define CORKSCREW 1
-@@ -67,6 +66,7 @@ static int max_interrupt_work = 20;
- #include <linux/timer.h>
- #include <linux/ethtool.h>
- #include <linux/bitops.h>
-+#include <linux/vermagic.h>
- 
- #include <linux/uaccess.h>
- #include <asm/io.h>
+patch 3 - writes to the uv swap with "off" if swapping is not needed.
+
+patch 4 - sets the uv swap register only if the format is semiplanar.
+
+patch 5 - adds support to planar YUV formats with swapped u,v planes
+by swapping the addresses of the planes
+
+patch 6 - removes some packed YUV formats that are not supported
+by the driver.
+
+changes from v1:
+- split the first patch from v1 into two separate patches, the first is a cleanup patch
+the second fixes a bug.
+
+changes from v2:
+- rebasing the patchset on top of v3 of
+"rkisp1: use enum v4l2_pixel_encoding instead of rkisp1_fmt_pix_type"
+- patches 1,2: replace "reg = reg | .." with "reg |= .."
+- adding patch 3 to change the logic of wrrting to uv swap reg
+- patches 4,5: checking if format is (semi)planar using the info pointer and not using the write_format value
+- patch 4: using the "swap" define to swap the cb, cr addresses
+
+changes from v3:
+- In patch 5 in the doc and log message: s/plane formats/planar formats/
+
+
+
+
+
+Dafna Hirschfeld (6):
+  media: staging: rkisp1: cap: cleanup in mainpath config for uv swap
+    format
+  media: staging: rkisp1: cap: fix value written to uv swap register in
+    selfpath
+  media: staging: rkisp1: cap: change the logic for writing to uv swap
+    register
+  media: staging: rkisp1: cap: support uv swap only for semiplanar
+    formats
+  media: staging: rkisp1: cap: support uv swapped planar formats
+  media: staging: rkisp1: cap: remove unsupported formats
+
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 50 +++++++++----------
+ 1 file changed, 24 insertions(+), 26 deletions(-)
+
 -- 
-2.21.0
+2.20.1
 
--- 
-Regards/Gruss,
-    Boris.
-
-https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 Linux-rockchip mailing list
