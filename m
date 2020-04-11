@@ -2,40 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73C901A52C6
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E8391A52C5
 	for <lists+linux-rockchip@lfdr.de>; Sat, 11 Apr 2020 18:06:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UcoX2EW/s9uvXFQ8+eteIsws0WF6bcrGSGAszvDUE68=; b=Tgbcun5+jjtRcE
-	LGuEvi4wOm1MXJm+ac+aSPvk4R3GB6LGMB+eFNAcTRmEM71DWpRpvdFjBCpEM4DOWx5zcF2LEMJ+C
-	7clZEbLM6qqBv9+GwedFnWRQcF2MLv0IxVs/4viCD1P+glezFbpbefE1zBHiR/l1uRv8cAwP9tbUg
-	Cmd8FH0oXyOkfgZCAvB79j1lqyzBupiDjPc522MTly9fHv72PsMtdgyq6cls4CsSJHZLR+wfc0s6n
-	i1PJp2NJcZ1a+Zz/4JUVbU3tPCVMm9bLYjGDGE5nVgXlVT8XSFEcFkKAzkcqaU48a5anEw74hyYiK
-	MUzOFpD7JH23iB7pzzmQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wwHvq39d6XZfULwMG/32eg8JSOxtzkz/iI/bSYclITw=; b=gzJTD6Rzkq67u5
+	FC/w5i1bgoh4Zs7dxsMfmM/d6T7jtW0bg/DKSOJ0okzN72KUYoMeSQLWJUMdG5iok87zRVXKoxSXy
+	TVx6Rv2GlDkFzzRD261puUnMnuDAQbmjo4vbiUs01MFwJe608oXT7Oq2TGIEsClQcjNp6/ZiYKar8
+	2ypjm4C+R0/c71WYsRxdvXEInydfpsrmDDpERzjHwO/xgMvJKcBNJSWKzYXxqFa3YaFXEBt9rLb/s
+	tyu/lDWqjTjC+rYhcqeeeCpykyh23CH9dmWoAIplKLv6JzBkXuv1MmSx07GwTteoSo6LYK9cZTiyf
+	nRRkaArlYydu/OSLz2kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNIe9-00079m-5o; Sat, 11 Apr 2020 16:06:17 +0000
+	id 1jNIeA-0007B2-Kc; Sat, 11 Apr 2020 16:06:18 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNIe5-00078F-B5
+ id 1jNIe5-00078H-BH
  for linux-rockchip@lists.infradead.org; Sat, 11 Apr 2020 16:06:14 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 2FD7C2A11D7
+ (Authenticated sender: dafna) with ESMTPSA id C12BD2A1232
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH v4 0/6] media: staging: rkisp1: cap: various fixes for capture
- formats
-Date: Sat, 11 Apr 2020 18:05:56 +0200
-Message-Id: <20200411160602.14637-1-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v4 1/6] media: staging: rkisp1: cap: cleanup in mainpath
+ config for uv swap format
+Date: Sat, 11 Apr 2020 18:05:57 +0200
+Message-Id: <20200411160602.14637-2-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200411160602.14637-1-dafna.hirschfeld@collabora.com>
+References: <20200411160602.14637-1-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200411_090613_517671_9FCC4333 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20200411_090613_514167_FDDA0182 
+X-CRM114-Status: UNSURE (   9.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -69,61 +71,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patchset fixes various issues related to
-the supported formats in the rkisp1 capture.
+The value RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP equals BIT(0),
+Therefore when writing it to the register there is no need to mask
+it first with ~BIT(0).
 
-This patchset is rebased on top of v3 of the patchset:
-"rkisp1: use enum v4l2_pixel_encoding instead of rkisp1_fmt_pix_type"
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Acked-by: Helen Koike <helen.koike@collabora.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+---
+ drivers/staging/media/rkisp1/rkisp1-capture.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-Patches summary:
-
-patches 1,2 - fixes a wrong assignments to the register that swaps the
-'u', 'v' planes in YUV semiplanar formats.
-
-patch 3 - writes to the uv swap with "off" if swapping is not needed.
-
-patch 4 - sets the uv swap register only if the format is semiplanar.
-
-patch 5 - adds support to planar YUV formats with swapped u,v planes
-by swapping the addresses of the planes
-
-patch 6 - removes some packed YUV formats that are not supported
-by the driver.
-
-changes from v1:
-- split the first patch from v1 into two separate patches, the first is a cleanup patch
-the second fixes a bug.
-
-changes from v2:
-- rebasing the patchset on top of v3 of
-"rkisp1: use enum v4l2_pixel_encoding instead of rkisp1_fmt_pix_type"
-- patches 1,2: replace "reg = reg | .." with "reg |= .."
-- adding patch 3 to change the logic of wrrting to uv swap reg
-- patches 4,5: checking if format is (semi)planar using the info pointer and not using the write_format value
-- patch 4: using the "swap" define to swap the cb, cr addresses
-
-changes from v3:
-- In patch 5 in the doc and log message: s/plane formats/planar formats/
-
-
-
-
-
-Dafna Hirschfeld (6):
-  media: staging: rkisp1: cap: cleanup in mainpath config for uv swap
-    format
-  media: staging: rkisp1: cap: fix value written to uv swap register in
-    selfpath
-  media: staging: rkisp1: cap: change the logic for writing to uv swap
-    register
-  media: staging: rkisp1: cap: support uv swap only for semiplanar
-    formats
-  media: staging: rkisp1: cap: support uv swapped planar formats
-  media: staging: rkisp1: cap: remove unsupported formats
-
- drivers/staging/media/rkisp1/rkisp1-capture.c | 50 +++++++++----------
- 1 file changed, 24 insertions(+), 26 deletions(-)
-
+diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+index fbf62399fe3d..8ce1d25d4c6f 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-capture.c
++++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+@@ -386,8 +386,7 @@ static void rkisp1_mp_config(struct rkisp1_capture *cap)
+ 	if (cap->pix.cfg->uv_swap) {
+ 		reg = rkisp1_read(rkisp1, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+ 
+-		reg = (reg & ~BIT(0)) |
+-		      RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
++		reg |= RKISP1_CIF_MI_XTD_FMT_CTRL_MP_CB_CR_SWAP;
+ 		rkisp1_write(rkisp1, reg, RKISP1_CIF_MI_XTD_FORMAT_CTRL);
+ 	}
+ 
 -- 
 2.20.1
 
