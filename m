@@ -2,57 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6516A1A6270
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Apr 2020 07:36:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C08501A63F2
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Apr 2020 10:05:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OQLQ1OA2KF4C6djXoq9JdMiUyd22aXB5sz0CsWXHbpQ=; b=ZBRHtxHrrva8sD
-	RIzYsCjZ2qL7Pqo1X6uGinwpQlSRw3pQCtgWXHnzOha3OIHvTSHKPNnX150j3TVUwDbPdtHRJJml0
-	XNzylmfdXBwZw7bfjE80p85FG57Uu2Hl43Kdy1gBzYqbGWA2DrHltt2cjQqYWjNhZqCXRAxx6sUDy
-	tz+TAfR95NxUvk4BXVoioqVZNtmp6cUsamK4E9QlSZFyXfMZZ1MzGYz50RBx1w3XAcZC69xth9I0V
-	j701N7F08Hgdx96uKOGz7x7LCryZ0fT/HDu7ZDPA+CIWle/ShjP6J7EgWfnhTuWbZEkjWN9W03+aR
-	elvhaCY1cl1OuJLbIHxQ==;
+	List-Owner; bh=nwJlXCK5u1za1/RFX7zf8ZGGvyaCSP1t5w94SEzfdjQ=; b=Zgi+jyWsBkOZoP
+	5JPj6vkRuMnmIApOXLeEDfOjXSqp4gWr7yfozafQYFS6n9Fiwxf352p3X2lKzqybzdEpRWQaPN5l/
+	n0A3wT6WoIf+DrUCciX8ruGA+EGFW1jif11/faZJvqJFPO5WAGfxf/aRXjxTSz4zWZ4D+D8i6v8FP
+	la3nO4pGSc6LtJPoF6vm4gPS1VMPtmwKSbArBzrTCJTWQzFOzgAERoRDF9UOe/WjHU3XzT1CleH2O
+	f7e409xS2PUW2Jj1FJ78P7oLMqKgmxHqvQ1YUD4oD/DWRtJ6iDxNHobOyX2ReK9RB0/uJk4JjMWiH
+	2HShXm1QZvmqe7xR/NJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNrlg-00085U-5k; Mon, 13 Apr 2020 05:36:24 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jNu5p-0006zy-Se; Mon, 13 Apr 2020 08:05:21 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNrlR-0007xH-JH; Mon, 13 Apr 2020 05:36:10 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id F0857127B91F1;
- Sun, 12 Apr 2020 22:36:06 -0700 (PDT)
-Date: Sun, 12 Apr 2020 22:36:04 -0700 (PDT)
-Message-Id: <20200412.223604.1160930629964379276.davem@davemloft.net>
-To: leon@kernel.org
+ id 1jNu5f-0004Y4-UI; Mon, 13 Apr 2020 08:05:14 +0000
+Received: from zn.tnic (p200300EC2F06C9001913BA8A68E69387.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f06:c900:1913:ba8a:68e6:9387])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id AB4B41EC0C5C;
+ Mon, 13 Apr 2020 10:04:57 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1586765097;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=NtPO5LzemSA3ICkOs6m1ba4SCa7L4ISc43jbxALQ8Eo=;
+ b=LiW9TWY65xGpOpMp70AGqFiT+xVtj2UulV/4AIQ88A2mmw52OenPNvt84zJTmXQ7bqMzGL
+ zhBkQqATm2LMmz85N6xLixb3fl93koLptHv/GK7iGITPLXQOTiYA/vG270sn9ouOu+R2FU
+ JQU+EnPno3Dy9bJNMibbKFZ/Eah3XRc=
+Date: Mon, 13 Apr 2020 10:04:52 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: David Miller <davem@davemloft.net>, leon@kernel.org
 Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200413052637.GG334007@unreal>
+Message-ID: <20200413080452.GA3772@zn.tnic>
 References: <20200413045555.GE334007@unreal>
  <20200412.220739.516022706077351913.davem@davemloft.net>
  <20200413052637.GG334007@unreal>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sun, 12 Apr 2020 22:36:08 -0700 (PDT)
+ <20200412.223604.1160930629964379276.davem@davemloft.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200412.223604.1160930629964379276.davem@davemloft.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_223609_644902_3F12A4E8 
-X-CRM114-Status: UNSURE (   4.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200413_010512_280215_AB7950DB 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,21 +89,172 @@ Cc: thor.thayer@linux.intel.com, heiko@sntech.de, irusskikh@marvell.com,
  LinoSanfilippo@gmx.de, vfalico@gmail.com, kuba@kernel.org,
  thomas.lendacky@amd.com, jcliburn@gmail.com, j.vosburgh@gmail.com,
  keyur@os.amperecomputing.com, mripard@kernel.org, pcnet32@frontier.com,
- bp@alien8.de, nios2-dev@lists.rocketboards.org,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, ionut@badula.org, netanel@amazon.com,
- mark.einon@gmail.com
+ nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, ionut@badula.org,
+ netanel@amazon.com, mark.einon@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Leon Romanovsky <leon@kernel.org>
-Date: Mon, 13 Apr 2020 08:26:37 +0300
+On Sun, Apr 12, 2020 at 10:36:04PM -0700, David Miller wrote:
+> From: Leon Romanovsky <leon@kernel.org>
+> Date: Mon, 13 Apr 2020 08:26:37 +0300
+> 
+> > How do you want us to handle it? Boris resend, me to send, you to fix?
+> 
+> Anyone other than me can do it ;-)
 
-> How do you want us to handle it? Boris resend, me to send, you to fix?
+Ok, here's what I'm thinking: that vermagic.h is normally automatically
+included in the *mod.c as part of the module creation, see add_header()
+in modpost.c.
 
-Anyone other than me can do it ;-)
+So then perhaps drivers should not use it directly due to the current
+inclusion order:
+
+linux/module.h includes asm/module.h and that arch-specific header
+defines MODULE_VERMAGIC* for the respective arch.
+
+linux/vermagic.h defines all those fallbacks for those MODULE_VERMAGIC*
+things and if the inclusion order is swapped - we get the redefinition
+warning.
+
+Yesterday I tried the below - basically get rid of all the remaining
+includers of linux/vermagic.h but two are left:
+
+drivers/net/ethernet/hisilicon/hns3/hns3_enet.c:18:#include <linux/vermagic.h>
+drivers/net/ethernet/netronome/nfp/nfp_main.c:17:#include <linux/vermagic.h>
+
+because both use VERMAGIC_STRING directly.
+
+So,
+
+* one could either allow that and sort the inclusion order so that, for
+example, asm/module.h includes linux/vermagic.h and thus the fallbacks
+are there present.
+
+or
+
+* remove all uses of VERMAGIC_STRING from the drivers, add a header
+guard which prevents people from using it directly and leave
+VERMAGIC_STRING only to the internal module machinery in the kernel.
+
+Judging by how only a handful of old drivers are even using that,
+perhaps not too far fetched.
+
+In any case, this needs a maintainer decision.
+
+Leon, if you wanna do it whatever you guys end up agreeing on, just go
+ahead and submit the patches - it's not like I don't have anything else
+on the TODO :-) Just add a Reported-by: me and that should be enough.
+
+If you're busy too, lemme know and I'll put it on my todo then.
+
+Thx.
+
+diff --git a/drivers/net/bonding/bonding_priv.h b/drivers/net/bonding/bonding_priv.h
+index 45b77bc8c7b3..48cdf3a49a7d 100644
+--- a/drivers/net/bonding/bonding_priv.h
++++ b/drivers/net/bonding/bonding_priv.h
+@@ -14,7 +14,7 @@
+ 
+ #ifndef _BONDING_PRIV_H
+ #define _BONDING_PRIV_H
+-#include <linux/vermagic.h>
++#include <generated/utsrelease.h>
+ 
+ #define DRV_NAME	"bonding"
+ #define DRV_DESCRIPTION	"Ethernet Channel Bonding Driver"
+diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
+index b762176a1406..139d0120f511 100644
+--- a/drivers/net/ethernet/3com/3c509.c
++++ b/drivers/net/ethernet/3com/3c509.c
+@@ -85,7 +85,6 @@
+ #include <linux/device.h>
+ #include <linux/eisa.h>
+ #include <linux/bitops.h>
+-#include <linux/vermagic.h>
+ 
+ #include <linux/uaccess.h>
+ #include <asm/io.h>
+diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
+index 90312fcd6319..47b4215bb93b 100644
+--- a/drivers/net/ethernet/3com/3c515.c
++++ b/drivers/net/ethernet/3com/3c515.c
+@@ -22,7 +22,6 @@
+ 
+ */
+ 
+-#include <linux/vermagic.h>
+ #define DRV_NAME		"3c515"
+ 
+ #define CORKSCREW 1
+diff --git a/drivers/net/ethernet/adaptec/starfire.c b/drivers/net/ethernet/adaptec/starfire.c
+index 2db42211329f..a64191fc2af9 100644
+--- a/drivers/net/ethernet/adaptec/starfire.c
++++ b/drivers/net/ethernet/adaptec/starfire.c
+@@ -45,7 +45,6 @@
+ #include <asm/processor.h>		/* Processor type for cache alignment. */
+ #include <linux/uaccess.h>
+ #include <asm/io.h>
+-#include <linux/vermagic.h>
+ 
+ /*
+  * The current frame processor firmware fails to checksum a fragment
+diff --git a/drivers/net/ethernet/pensando/ionic/ionic_main.c b/drivers/net/ethernet/pensando/ionic/ionic_main.c
+index 588c62e9add7..3ed150512091 100644
+--- a/drivers/net/ethernet/pensando/ionic/ionic_main.c
++++ b/drivers/net/ethernet/pensando/ionic/ionic_main.c
+@@ -6,7 +6,7 @@
+ #include <linux/module.h>
+ #include <linux/netdevice.h>
+ #include <linux/utsname.h>
+-#include <linux/vermagic.h>
++#include <generated/utsrelease.h>
+ 
+ #include "ionic.h"
+ #include "ionic_bus.h"
+diff --git a/drivers/power/supply/test_power.c b/drivers/power/supply/test_power.c
+index 65c23ef6408d..b3c05ff05783 100644
+--- a/drivers/power/supply/test_power.c
++++ b/drivers/power/supply/test_power.c
+@@ -16,7 +16,7 @@
+ #include <linux/power_supply.h>
+ #include <linux/errno.h>
+ #include <linux/delay.h>
+-#include <linux/vermagic.h>
++#include <generated/utsrelease.h>
+ 
+ enum test_power_id {
+ 	TEST_AC,
+diff --git a/net/ethtool/ioctl.c b/net/ethtool/ioctl.c
+index 89d0b1827aaf..adab97e500cf 100644
+--- a/net/ethtool/ioctl.c
++++ b/net/ethtool/ioctl.c
+@@ -17,7 +17,6 @@
+ #include <linux/phy.h>
+ #include <linux/bitops.h>
+ #include <linux/uaccess.h>
+-#include <linux/vermagic.h>
+ #include <linux/vmalloc.h>
+ #include <linux/sfp.h>
+ #include <linux/slab.h>
+@@ -29,6 +28,8 @@
+ #include <net/flow_offload.h>
+ #include <linux/ethtool_netlink.h>
+ 
++#include <generated/utsrelease.h>
++
+ #include "common.h"
+ 
+ /*
+
+
+-- 
+Regards/Gruss,
+    Boris.
+
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 Linux-rockchip mailing list
