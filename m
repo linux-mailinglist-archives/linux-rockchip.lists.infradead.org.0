@@ -2,53 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCEB41A6A2F
-	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Apr 2020 18:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33BE11A9704
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 10:41:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k0B0G4z8pBAhe1GkxXTp5E+AmetAUmpVOcGrKv3KxNY=; b=U2e+BwJCsh7TuH
-	UNkKLvBTTNSPds7KxNH+ojIRRHTbbaO2eeuBFPLoCiwunfA7HGQVvZsodEG3CNFaGj5JVq7preTXL
-	owDGUTqBIh4/Deey21HNI98WerJWJucBnN2+zLObnjzpPPbct6bJPWpXxryiX9JdRPwdBiffIqQz1
-	Tdi58++lIKHcMHDKBNNrjfO76G0rcA5m3ZMObfF0va2Hbz02CubiIu/BIbe4GGJ48B1SM/3M+VU0K
-	yg62S7qIz6+UQ8gkPRQP83m4n1H5KV2a1ramtXKosuIQZHZ3Rf7jWnfek3wxudnJNE8cl0KPoq8zZ
-	8EpHsvrrU6dO3XhUqvEw==;
+	List-Owner; bh=bomeh+aDrku/iW4Xe9IfwDIYnA1j6KM3Jzt2+3S/aek=; b=YBRGfFDWfuVvGI
+	IrEG5Ii1D7/tFPKnpC4VRaLVEL/9YDUCetxzRtVwYWPBSnKSfHBK5QQhn5OCD/FPXM7w1JdJZwOMx
+	5shB/UQG0VUQtf9IWzznMAgLrEbshV4XfAgrO+Q1DSflkEXY8FMwQRDQJ4/rNLJ1xDk/Ldidiepb+
+	nP2+smHwKaREdlNV9t6crld9ES5N58kXfIiN6wcY9E1VS4R6w+uSgErnBkCGm5A54/TRgolj9CZOP
+	Y9sfSvmAB8H9ZGjNUgdZqLBxhT4DAcItRK5ZrnFfEtk6b/7Yl9LXXEt7hGrLCqO+LHDx3KU24fW+2
+	5rslzlm6g2yOl+66l+iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO2F2-0006vB-J5; Mon, 13 Apr 2020 16:47:24 +0000
-Received: from saturn.retrosnub.co.uk ([46.235.226.198])
+	id 1jOdbn-0006uT-If; Wed, 15 Apr 2020 08:41:23 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO2Ex-0006ul-Eu
- for linux-rockchip@lists.infradead.org; Mon, 13 Apr 2020 16:47:22 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95]) by saturn.retrosnub.co.uk (Postfix;
- Retrosnub mail submission) with ESMTPSA id E76C39E76F3; 
- Mon, 13 Apr 2020 17:47:11 +0100 (BST)
-Date: Mon, 13 Apr 2020 17:47:10 +0100
-From: Jonathan Cameron <jic23@jic23.retrosnub.co.uk>
-To: Heiko Stuebner <heiko@sntech.de>
+ id 1jOdZ1-0001hH-Pi
+ for linux-rockchip@lists.infradead.org; Wed, 15 Apr 2020 08:38:34 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jO2Mb-0002yy-E2; Mon, 13 Apr 2020 18:55:13 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Jonathan Cameron <jic23@kernel.org>
 Subject: Re: [PATCH v3] iio: adc: rockchip_saradc: Add support iio buffers
-Message-ID: <20200413174710.06224388@archlinux>
+Date: Mon, 13 Apr 2020 18:55:12 +0200
+Message-ID: <4304017.Osc3njyXrW@diego>
 In-Reply-To: <20200413174434.55b2941a@archlinux>
 References: <20200412224251.2919182-1-heiko@sntech.de>
  <20200413174434.55b2941a@archlinux>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_094719_767788_4447CDED 
-X-CRM114-Status: GOOD (  29.40  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200415_013832_029012_ACB88617 
+X-CRM114-Status: GOOD (  33.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.226.198 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,7 +60,6 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: lars@metafoo.de, xxm@rock-chips.com, linux-iio@vger.kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
  linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
  linux-rockchip@lists.infradead.org, pmeerw@pmeerw.net, knaack.h@gmx.de
 Content-Type: text/plain; charset="us-ascii"
@@ -70,9 +67,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, 13 Apr 2020 17:44:34 +0100
-Jonathan Cameron <jic23@kernel.org> wrote:
+Hi Jonathan,
 
+Am Montag, 13. April 2020, 18:44:34 CEST schrieb Jonathan Cameron:
 > On Mon, 13 Apr 2020 00:42:51 +0200
 > Heiko Stuebner <heiko@sntech.de> wrote:
 > 
@@ -88,7 +85,7 @@ Jonathan Cameron <jic23@kernel.org> wrote:
 > > 
 > > Signed-off-by: Simon Xue <xxm@rock-chips.com>
 > > [some simplifications and added commit description]
-> > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>  
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
 > Comments inline.
 > 
@@ -147,7 +144,7 @@ Jonathan Cameron <jic23@kernel.org> wrote:
 > > +#define SARADC_MAX_CHANNELS		6
 > > +
 > > +/* buffer elements are u16, timestamp needs to be 8-byte aligned */
-> > +#define SARADC_BUFFER_NUM_U16	ALIGN(SARADC_MAX_CHANNELS, 4)  
+> > +#define SARADC_BUFFER_NUM_U16	ALIGN(SARADC_MAX_CHANNELS, 4)
 > I may be going crazy but I think that will get you the 'start' of the
 > timestamp, not the length including it.
 > 
@@ -167,18 +164,25 @@ Jonathan Cameron <jic23@kernel.org> wrote:
 > ALIGN(SARADC_MAX_CHANNELS + sizeof(u64) / sizeof(u16), 4)
 > which will be ((10 + 3) & ~3) b1101 & b1100 = 12
 
-Doh. I see you then added the 64 bit as a separate element in
-a structure.  Note with that you will get the padding for
-free anyway as this should be standard C alignment.
+hmm, getting the start of the timestamp was actually what I intended ;-)
+The dln2-adc driver did that fancy struct definition for its data. which
+I stole, see the part from blow:
 
-That's actually quite a nice way of ensuring we get the right
-length!
+> > +	struct {
+> > +		u16 values[SARADC_BUFFER_NUM_U16];
+> > +		int64_t timestamp;
+> > +	} data;
 
-Thanks,
+So SARADC_BUFFER_NUM really is meant to only contain the
+number of actual buffer data - I guess I should explain that out better
+in the comment. Because defining this separate makes this so much
+more readable when we're not trying to implicitly add the timestamp
+space.
 
-Jonathan
+And a size_of(data) for that struct then returned nicely these 24 bytes
+in my tests.
 
->  
+
 > >  
 > >  struct rockchip_saradc_data {
 > > -	int				num_bits;
@@ -394,11 +398,17 @@ Jonathan
 > >  
 > > +	if (info->data->num_channels > SARADC_MAX_CHANNELS) {
 > > +		dev_err(&pdev->dev, "max channels exceeded");
-> > +		return -EINVAL;  
+> > +		return -EINVAL;
 > 
 > How can that happen?  Bug in the addition of a new device type?
 > If it's just paranoia against future code, perhaps add a comment to
 > say that.
+
+yep that is "paranoia" for the case someone adds a fancy new 20 channel
+saradc variant and forgets to adapt the constant.
+
+I'll add a comment.
+
 > 
 > > +	}
 > > +
@@ -414,7 +424,7 @@ Jonathan
 > > +					      NULL);
 > > +	if (ret)
 > > +		goto err_clk;
-> > +  
+> > +
 > 
 > Please avoid mixing an matching between device managed an unmanaged interfaces.
 > It means the driver is not 'obviously correct' and hence harder to review.
@@ -424,11 +434,20 @@ Jonathan
 > handling and remove (note this should be a precursor patch), or use
 > iio_triggered_buffer_setup and manually call iio_triggered_buffer_cleanup
 > in the right place in the remove function.
->  
+
+I'll go with the devm_* approach, less complexity is better than adding more ;-)
+
+
+Heiko
+
 > >  	ret = iio_device_register(indio_dev);
 > >  	if (ret)
-> >  		goto err_clk;  
+> >  		goto err_clk;
 > 
+> 
+
+
+
 
 
 _______________________________________________
