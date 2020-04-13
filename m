@@ -2,51 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33BE11A9704
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 10:41:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A82611A6AC0
+	for <lists+linux-rockchip@lfdr.de>; Mon, 13 Apr 2020 19:00:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bomeh+aDrku/iW4Xe9IfwDIYnA1j6KM3Jzt2+3S/aek=; b=YBRGfFDWfuVvGI
-	IrEG5Ii1D7/tFPKnpC4VRaLVEL/9YDUCetxzRtVwYWPBSnKSfHBK5QQhn5OCD/FPXM7w1JdJZwOMx
-	5shB/UQG0VUQtf9IWzznMAgLrEbshV4XfAgrO+Q1DSflkEXY8FMwQRDQJ4/rNLJ1xDk/Ldidiepb+
-	nP2+smHwKaREdlNV9t6crld9ES5N58kXfIiN6wcY9E1VS4R6w+uSgErnBkCGm5A54/TRgolj9CZOP
-	Y9sfSvmAB8H9ZGjNUgdZqLBxhT4DAcItRK5ZrnFfEtk6b/7Yl9LXXEt7hGrLCqO+LHDx3KU24fW+2
-	5rslzlm6g2yOl+66l+iA==;
+	List-Owner; bh=+1V6kjNlBqPm3iPBMEO5X3Lr4sR+Z1z3lzIs76IsfUI=; b=RfBOki4Mge2VWv
+	SnwNgMRu8ktJxhmPgf0SeIDwUZuvyjdRZ/oGiREZ6icOo4/fcaDROvoh1n879n48nukUlLRtwPgnz
+	ydLBZjo6sdsDk+f7+dBDLW8XNbqu5Bwiz7t7QV85wKXhIwY3SasDKg/tAufkaDlnqdjLG0KSfk35F
+	ZoIEFHLI9IOSD3QnU1Jg3P9jKgxG7b+I8XwXtJ4dU6pl78LeW5Qsu3r2xFG+GxIViu9Tzd6DUKTG5
+	9+U4oF+/U3MP3GzykKSmrU/JStDTR1H1qf/wd3ipeql5lppM4W5u6sJ3RmqPCB3nQptIUkoQPJ9dv
+	CYehATdhTdUyjjm5msLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOdbn-0006uT-If; Wed, 15 Apr 2020 08:41:23 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jO2RN-00077W-Jt; Mon, 13 Apr 2020 17:00:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdZ1-0001hH-Pi
- for linux-rockchip@lists.infradead.org; Wed, 15 Apr 2020 08:38:34 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jO2Mb-0002yy-E2; Mon, 13 Apr 2020 18:55:13 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Jonathan Cameron <jic23@kernel.org>
+ id 1jO2RI-00067a-H7
+ for linux-rockchip@lists.infradead.org; Mon, 13 Apr 2020 17:00:07 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F95F2063A;
+ Mon, 13 Apr 2020 17:00:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586797204;
+ bh=ocGzwyhvt/PYPOB6+zxPTBWiQ899GAZEAY8iTUvNIUs=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=bkW+EpneMfX+D9Fq74tsKvBc78hHopXaLraz2OzLalkawmS5DI/6HD6SbW2OYPnDh
+ FIuAI9QbsUfix589HVlHAulQ1glRXMUbG3bqg+pZMNZ661s5+e+B/g4c4k42pcOdNc
+ uERlxUqGbIItvHB+RblBOmESFU8ajXH0dMXm5q/8=
+Date: Mon, 13 Apr 2020 17:59:59 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
 Subject: Re: [PATCH v3] iio: adc: rockchip_saradc: Add support iio buffers
-Date: Mon, 13 Apr 2020 18:55:12 +0200
-Message-ID: <4304017.Osc3njyXrW@diego>
-In-Reply-To: <20200413174434.55b2941a@archlinux>
+Message-ID: <20200413175959.7766b9c8@archlinux>
+In-Reply-To: <4304017.Osc3njyXrW@diego>
 References: <20200412224251.2919182-1-heiko@sntech.de>
- <20200413174434.55b2941a@archlinux>
+ <20200413174434.55b2941a@archlinux> <4304017.Osc3njyXrW@diego>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_013832_029012_ACB88617 
-X-CRM114-Status: GOOD (  33.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200413_100004_647300_5FF5BE43 
+X-CRM114-Status: GOOD (  26.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,395 +81,206 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
 Cc: lars@metafoo.de, xxm@rock-chips.com, linux-iio@vger.kernel.org,
  linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
  linux-rockchip@lists.infradead.org, pmeerw@pmeerw.net, knaack.h@gmx.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jonathan,
-
-Am Montag, 13. April 2020, 18:44:34 CEST schrieb Jonathan Cameron:
-> On Mon, 13 Apr 2020 00:42:51 +0200
-> Heiko Stuebner <heiko@sntech.de> wrote:
-> 
-> > From: Simon Xue <xxm@rock-chips.com>
-> > 
-> > Add the ability to also support access via (triggered) buffers
-> > next to the existing direct mode.
-> > 
-> > Device in question is the Odroid Go Advance that connects a joystick
-> > to two of the saradc channels for X and Y axis and the new (and still
-> > pending) adc joystick driver of course wants to use triggered buffers
-> > from the iio subsystem.
-> > 
-> > Signed-off-by: Simon Xue <xxm@rock-chips.com>
-> > [some simplifications and added commit description]
-> > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> 
-> Comments inline.
-> 
-> The issue with mixing managed and unmanaged allocations needs tidying up.
-> Sorry if I missed that one before; I probably didn't open up the current
-> driver to sanity check it :(
-> 
-> Jonathan
-> 
-> > ---
-> > changes in v3:
-> > - split buffer struct into values and timestamp area similar to dln2-adc
-> >   and make sure timestamp gets 8-byte aligned - ALIGN uses 4 as it aligns
-> >   u16 elements not bytes - hopefully I got it right this time ;-)
-> > changes in v2:
-> > - use devm_iio_triggered_buffer_setup
-> > - calculate data array size from channel number (curtesy of at91-sama5d2_adc)
-> > 
-> >  drivers/iio/adc/Kconfig           |   2 +
-> >  drivers/iio/adc/rockchip_saradc.c | 146 ++++++++++++++++++++++--------
-> >  2 files changed, 112 insertions(+), 36 deletions(-)
-> > 
-> > diff --git a/drivers/iio/adc/Kconfig b/drivers/iio/adc/Kconfig
-> > index 12bb8b7ca1ff..8d2dd60614c6 100644
-> > --- a/drivers/iio/adc/Kconfig
-> > +++ b/drivers/iio/adc/Kconfig
-> > @@ -809,6 +809,8 @@ config ROCKCHIP_SARADC
-> >  	tristate "Rockchip SARADC driver"
-> >  	depends on ARCH_ROCKCHIP || (ARM && COMPILE_TEST)
-> >  	depends on RESET_CONTROLLER
-> > +	select IIO_BUFFER
-> > +	select IIO_TRIGGERED_BUFFER
-> >  	help
-> >  	  Say yes here to build support for the SARADC found in SoCs from
-> >  	  Rockchip.
-> > diff --git a/drivers/iio/adc/rockchip_saradc.c b/drivers/iio/adc/rockchip_saradc.c
-> > index 582ba047c4a6..0713363a4b43 100644
-> > --- a/drivers/iio/adc/rockchip_saradc.c
-> > +++ b/drivers/iio/adc/rockchip_saradc.c
-> > @@ -15,7 +15,11 @@
-> >  #include <linux/delay.h>
-> >  #include <linux/reset.h>
-> >  #include <linux/regulator/consumer.h>
-> > +#include <linux/iio/buffer.h>
-> >  #include <linux/iio/iio.h>
-> > +#include <linux/iio/trigger.h>
-> > +#include <linux/iio/trigger_consumer.h>
-> > +#include <linux/iio/triggered_buffer.h>
-> >  
-> >  #define SARADC_DATA			0x00
-> >  
-> > @@ -32,9 +36,12 @@
-> >  #define SARADC_DLY_PU_SOC_MASK		0x3f
-> >  
-> >  #define SARADC_TIMEOUT			msecs_to_jiffies(100)
-> > +#define SARADC_MAX_CHANNELS		6
-> > +
-> > +/* buffer elements are u16, timestamp needs to be 8-byte aligned */
-> > +#define SARADC_BUFFER_NUM_U16	ALIGN(SARADC_MAX_CHANNELS, 4)
-> I may be going crazy but I think that will get you the 'start' of the
-> timestamp, not the length including it.
-> 
-> We should be seeing 24 bytes here = 12 u16s.  Sanity check the value.
-> 
-> Running through the stack of defines.
-> #define ALIGN(x, a)		__ALIGN_KERNEL((x), (a))
-> #define __ALIGN_KERNEL(x, a)		__ALIGN_KERNEL_MASK(x, (typeof(x))(a) - 1)
-> #define __ALIGN_KERNEL_MASK(x, mask)	(((x) + (mask)) & ~(mask))
-> 
-> ALIGN(6, 4) == __ALIGN_KERNEL(6, 4)
->             == __ALIGN_KERNEL_MASK(6, 3)
->             == (((6 + 3) & ~3) 
-> which is 9 with the bottom two bits masked or b1001 & b1100 = 8 not 12
-> 
-> So I think you are looking for
-> ALIGN(SARADC_MAX_CHANNELS + sizeof(u64) / sizeof(u16), 4)
-> which will be ((10 + 3) & ~3) b1101 & b1100 = 12
-
-hmm, getting the start of the timestamp was actually what I intended ;-)
-The dln2-adc driver did that fancy struct definition for its data. which
-I stole, see the part from blow:
-
-> > +	struct {
-> > +		u16 values[SARADC_BUFFER_NUM_U16];
-> > +		int64_t timestamp;
-> > +	} data;
-
-So SARADC_BUFFER_NUM really is meant to only contain the
-number of actual buffer data - I guess I should explain that out better
-in the comment. Because defining this separate makes this so much
-more readable when we're not trying to implicitly add the timestamp
-space.
-
-And a size_of(data) for that struct then returned nicely these 24 bytes
-in my tests.
-
-
-> >  
-> >  struct rockchip_saradc_data {
-> > -	int				num_bits;
-> >  	const struct iio_chan_spec	*channels;
-> >  	int				num_channels;
-> >  	unsigned long			clk_rate;
-> > @@ -49,8 +56,37 @@ struct rockchip_saradc {
-> >  	struct reset_control	*reset;
-> >  	const struct rockchip_saradc_data *data;
-> >  	u16			last_val;
-> > +	const struct iio_chan_spec *last_chan;
-> >  };
-> >  
-> > +static void rockchip_saradc_power_down(struct rockchip_saradc *info)
-> > +{
-> > +	/* Clear irq & power down adc */
-> > +	writel_relaxed(0, info->regs + SARADC_CTRL);
-> > +}
-> > +
-> > +static int rockchip_saradc_conversion(struct rockchip_saradc *info,
-> > +				   struct iio_chan_spec const *chan)
-> > +{
-> > +	reinit_completion(&info->completion);
-> > +
-> > +	/* 8 clock periods as delay between power up and start cmd */
-> > +	writel_relaxed(8, info->regs + SARADC_DLY_PU_SOC);
-> > +
-> > +	info->last_chan = chan;
-> > +
-> > +	/* Select the channel to be used and trigger conversion */
-> > +	writel(SARADC_CTRL_POWER_CTRL
-> > +			| (chan->channel & SARADC_CTRL_CHN_MASK)
-> > +			| SARADC_CTRL_IRQ_ENABLE,
-> > +		   info->regs + SARADC_CTRL);
-> > +
-> > +	if (!wait_for_completion_timeout(&info->completion, SARADC_TIMEOUT))
-> > +		return -ETIMEDOUT;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> >  static int rockchip_saradc_read_raw(struct iio_dev *indio_dev,
-> >  				    struct iio_chan_spec const *chan,
-> >  				    int *val, int *val2, long mask)
-> > @@ -62,24 +98,12 @@ static int rockchip_saradc_read_raw(struct iio_dev *indio_dev,
-> >  	case IIO_CHAN_INFO_RAW:
-> >  		mutex_lock(&indio_dev->mlock);
-> >  
-> > -		reinit_completion(&info->completion);
-> > -
-> > -		/* 8 clock periods as delay between power up and start cmd */
-> > -		writel_relaxed(8, info->regs + SARADC_DLY_PU_SOC);
-> > -
-> > -		/* Select the channel to be used and trigger conversion */
-> > -		writel(SARADC_CTRL_POWER_CTRL
-> > -				| (chan->channel & SARADC_CTRL_CHN_MASK)
-> > -				| SARADC_CTRL_IRQ_ENABLE,
-> > -		       info->regs + SARADC_CTRL);
-> > -
-> > -		if (!wait_for_completion_timeout(&info->completion,
-> > -						 SARADC_TIMEOUT)) {
-> > -			writel_relaxed(0, info->regs + SARADC_CTRL);
-> > +		ret = rockchip_saradc_conversion(info, chan);
-> > +		if (ret) {
-> > +			rockchip_saradc_power_down(info);
-> >  			mutex_unlock(&indio_dev->mlock);
-> > -			return -ETIMEDOUT;
-> > +			return ret;
-> >  		}
-> > -
-> >  		*val = info->last_val;
-> >  		mutex_unlock(&indio_dev->mlock);
-> >  		return IIO_VAL_INT;
-> > @@ -91,7 +115,7 @@ static int rockchip_saradc_read_raw(struct iio_dev *indio_dev,
-> >  		}
-> >  
-> >  		*val = ret / 1000;
-> > -		*val2 = info->data->num_bits;
-> > +		*val2 = chan->scan_type.realbits;
-> >  		return IIO_VAL_FRACTIONAL_LOG2;
-> >  	default:
-> >  		return -EINVAL;
-> > @@ -104,10 +128,9 @@ static irqreturn_t rockchip_saradc_isr(int irq, void *dev_id)
-> >  
-> >  	/* Read value */
-> >  	info->last_val = readl_relaxed(info->regs + SARADC_DATA);
-> > -	info->last_val &= GENMASK(info->data->num_bits - 1, 0);
-> > +	info->last_val &= GENMASK(info->last_chan->scan_type.realbits - 1, 0);
-> >  
-> > -	/* Clear irq & power down adc */
-> > -	writel_relaxed(0, info->regs + SARADC_CTRL);
-> > +	rockchip_saradc_power_down(info);
-> >  
-> >  	complete(&info->completion);
-> >  
-> > @@ -118,51 +141,55 @@ static const struct iio_info rockchip_saradc_iio_info = {
-> >  	.read_raw = rockchip_saradc_read_raw,
-> >  };
-> >  
-> > -#define ADC_CHANNEL(_index, _id) {				\
-> > +#define ADC_CHANNEL(_index, _id, _res) {			\
-> >  	.type = IIO_VOLTAGE,					\
-> >  	.indexed = 1,						\
-> >  	.channel = _index,					\
-> >  	.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),		\
-> >  	.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE),	\
-> >  	.datasheet_name = _id,					\
-> > +	.scan_index = _index,					\
-> > +	.scan_type = {						\
-> > +		.sign = 'u',					\
-> > +		.realbits = _res,				\
-> > +		.storagebits = 16,				\
-> > +		.endianness = IIO_LE,				\
-> > +	},							\
-> >  }
-> >  
-> >  static const struct iio_chan_spec rockchip_saradc_iio_channels[] = {
-> > -	ADC_CHANNEL(0, "adc0"),
-> > -	ADC_CHANNEL(1, "adc1"),
-> > -	ADC_CHANNEL(2, "adc2"),
-> > +	ADC_CHANNEL(0, "adc0", 10),
-> > +	ADC_CHANNEL(1, "adc1", 10),
-> > +	ADC_CHANNEL(2, "adc2", 10),
-> >  };
-> >  
-> >  static const struct rockchip_saradc_data saradc_data = {
-> > -	.num_bits = 10,
-> >  	.channels = rockchip_saradc_iio_channels,
-> >  	.num_channels = ARRAY_SIZE(rockchip_saradc_iio_channels),
-> >  	.clk_rate = 1000000,
-> >  };
-> >  
-> >  static const struct iio_chan_spec rockchip_rk3066_tsadc_iio_channels[] = {
-> > -	ADC_CHANNEL(0, "adc0"),
-> > -	ADC_CHANNEL(1, "adc1"),
-> > +	ADC_CHANNEL(0, "adc0", 12),
-> > +	ADC_CHANNEL(1, "adc1", 12),
-> >  };
-> >  
-> >  static const struct rockchip_saradc_data rk3066_tsadc_data = {
-> > -	.num_bits = 12,
-> >  	.channels = rockchip_rk3066_tsadc_iio_channels,
-> >  	.num_channels = ARRAY_SIZE(rockchip_rk3066_tsadc_iio_channels),
-> >  	.clk_rate = 50000,
-> >  };
-> >  
-> >  static const struct iio_chan_spec rockchip_rk3399_saradc_iio_channels[] = {
-> > -	ADC_CHANNEL(0, "adc0"),
-> > -	ADC_CHANNEL(1, "adc1"),
-> > -	ADC_CHANNEL(2, "adc2"),
-> > -	ADC_CHANNEL(3, "adc3"),
-> > -	ADC_CHANNEL(4, "adc4"),
-> > -	ADC_CHANNEL(5, "adc5"),
-> > +	ADC_CHANNEL(0, "adc0", 10),
-> > +	ADC_CHANNEL(1, "adc1", 10),
-> > +	ADC_CHANNEL(2, "adc2", 10),
-> > +	ADC_CHANNEL(3, "adc3", 10),
-> > +	ADC_CHANNEL(4, "adc4", 10),
-> > +	ADC_CHANNEL(5, "adc5", 10),
-> >  };
-> >  
-> >  static const struct rockchip_saradc_data rk3399_saradc_data = {
-> > -	.num_bits = 10,
-> >  	.channels = rockchip_rk3399_saradc_iio_channels,
-> >  	.num_channels = ARRAY_SIZE(rockchip_rk3399_saradc_iio_channels),
-> >  	.clk_rate = 1000000,
-> > @@ -193,6 +220,42 @@ static void rockchip_saradc_reset_controller(struct reset_control *reset)
-> >  	reset_control_deassert(reset);
-> >  }
-> >  
-> > +static irqreturn_t rockchip_saradc_trigger_handler(int irq, void *p)
-> > +{
-> > +	struct iio_poll_func *pf = p;
-> > +	struct iio_dev *i_dev = pf->indio_dev;
-> > +	struct rockchip_saradc *info = iio_priv(i_dev);
-> > +	struct {
-> > +		u16 values[SARADC_BUFFER_NUM_U16];
-> > +		int64_t timestamp;
-> > +	} data;
-> > +	int ret;
-> > +	int i, j = 0;
-> > +
-> > +	mutex_lock(&i_dev->mlock);
-> > +
-> > +	for_each_set_bit(i, i_dev->active_scan_mask, i_dev->masklength) {
-> > +		const struct iio_chan_spec *chan = &i_dev->channels[i];
-> > +
-> > +		ret = rockchip_saradc_conversion(info, chan);
-> > +		if (ret) {
-> > +			rockchip_saradc_power_down(info);
-> > +			goto out;
-> > +		}
-> > +
-> > +		data.values[j] = info->last_val;
-> > +		j++;
-> > +	}
-> > +
-> > +	iio_push_to_buffers_with_timestamp(i_dev, &data, iio_get_time_ns(i_dev));
-> > +out:
-> > +	mutex_unlock(&i_dev->mlock);
-> > +
-> > +	iio_trigger_notify_done(i_dev->trig);
-> > +
-> > +	return IRQ_HANDLED;
-> > +}
-> > +
-> >  static int rockchip_saradc_probe(struct platform_device *pdev)
-> >  {
-> >  	struct rockchip_saradc *info = NULL;
-> > @@ -221,6 +284,11 @@ static int rockchip_saradc_probe(struct platform_device *pdev)
-> >  
-> >  	info->data = match->data;
-> >  
-> > +	if (info->data->num_channels > SARADC_MAX_CHANNELS) {
-> > +		dev_err(&pdev->dev, "max channels exceeded");
-> > +		return -EINVAL;
-> 
-> How can that happen?  Bug in the addition of a new device type?
-> If it's just paranoia against future code, perhaps add a comment to
-> say that.
-
-yep that is "paranoia" for the case someone adds a fancy new 20 channel
-saradc variant and forgets to adapt the constant.
-
-I'll add a comment.
-
-> 
-> > +	}
-> > +
-> >  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> >  	info->regs = devm_ioremap_resource(&pdev->dev, mem);
-> >  	if (IS_ERR(info->regs))
-> > @@ -315,6 +383,12 @@ static int rockchip_saradc_probe(struct platform_device *pdev)
-> >  	indio_dev->channels = info->data->channels;
-> >  	indio_dev->num_channels = info->data->num_channels;
-> >  
-> > +	ret = devm_iio_triggered_buffer_setup(&indio_dev->dev, indio_dev, NULL,
-> > +					      rockchip_saradc_trigger_handler,
-> > +					      NULL);
-> > +	if (ret)
-> > +		goto err_clk;
-> > +
-> 
-> Please avoid mixing an matching between device managed an unmanaged interfaces.
-> It means the driver is not 'obviously correct' and hence harder to review.
-> 
-> Two choices here.  Either use devm_add_action_or_reset to automatically
-> disable each clock + regulator in the managed release path, drop all the error
-> handling and remove (note this should be a precursor patch), or use
-> iio_triggered_buffer_setup and manually call iio_triggered_buffer_cleanup
-> in the right place in the remove function.
-
-I'll go with the devm_* approach, less complexity is better than adding more ;-)
-
-
-Heiko
-
-> >  	ret = iio_device_register(indio_dev);
-> >  	if (ret)
-> >  		goto err_clk;
-> 
-> 
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gTW9uLCAxMyBBcHIgMjAyMCAxODo1NToxMiArMDIwMApIZWlrbyBTdMO8Ym5lciA8aGVpa29A
+c250ZWNoLmRlPiB3cm90ZToKCj4gSGkgSm9uYXRoYW4sCj4gCgpIaSBIZWlrbywKCj4gPiA+ICsv
+KiBidWZmZXIgZWxlbWVudHMgYXJlIHUxNiwgdGltZXN0YW1wIG5lZWRzIHRvIGJlIDgtYnl0ZSBh
+bGlnbmVkICovCj4gPiA+ICsjZGVmaW5lIFNBUkFEQ19CVUZGRVJfTlVNX1UxNglBTElHTihTQVJB
+RENfTUFYX0NIQU5ORUxTLCA0KSAgCj4gPiBJIG1heSBiZSBnb2luZyBjcmF6eSBidXQgSSB0aGlu
+ayB0aGF0IHdpbGwgZ2V0IHlvdSB0aGUgJ3N0YXJ0JyBvZiB0aGUKPiA+IHRpbWVzdGFtcCwgbm90
+IHRoZSBsZW5ndGggaW5jbHVkaW5nIGl0Lgo+ID4gCj4gPiBXZSBzaG91bGQgYmUgc2VlaW5nIDI0
+IGJ5dGVzIGhlcmUgPSAxMiB1MTZzLiAgU2FuaXR5IGNoZWNrIHRoZSB2YWx1ZS4KPiA+IAo+ID4g
+UnVubmluZyB0aHJvdWdoIHRoZSBzdGFjayBvZiBkZWZpbmVzLgo+ID4gI2RlZmluZSBBTElHTih4
+LCBhKQkJX19BTElHTl9LRVJORUwoKHgpLCAoYSkpCj4gPiAjZGVmaW5lIF9fQUxJR05fS0VSTkVM
+KHgsIGEpCQlfX0FMSUdOX0tFUk5FTF9NQVNLKHgsICh0eXBlb2YoeCkpKGEpIC0gMSkKPiA+ICNk
+ZWZpbmUgX19BTElHTl9LRVJORUxfTUFTSyh4LCBtYXNrKQkoKCh4KSArIChtYXNrKSkgJiB+KG1h
+c2spKQo+ID4gCj4gPiBBTElHTig2LCA0KSA9PSBfX0FMSUdOX0tFUk5FTCg2LCA0KQo+ID4gICAg
+ICAgICAgICAgPT0gX19BTElHTl9LRVJORUxfTUFTSyg2LCAzKQo+ID4gICAgICAgICAgICAgPT0g
+KCgoNiArIDMpICYgfjMpIAo+ID4gd2hpY2ggaXMgOSB3aXRoIHRoZSBib3R0b20gdHdvIGJpdHMg
+bWFza2VkIG9yIGIxMDAxICYgYjExMDAgPSA4IG5vdCAxMgo+ID4gCj4gPiBTbyBJIHRoaW5rIHlv
+dSBhcmUgbG9va2luZyBmb3IKPiA+IEFMSUdOKFNBUkFEQ19NQVhfQ0hBTk5FTFMgKyBzaXplb2Yo
+dTY0KSAvIHNpemVvZih1MTYpLCA0KQo+ID4gd2hpY2ggd2lsbCBiZSAoKDEwICsgMykgJiB+Mykg
+YjExMDEgJiBiMTEwMCA9IDEyICAKPiAKPiBobW0sIGdldHRpbmcgdGhlIHN0YXJ0IG9mIHRoZSB0
+aW1lc3RhbXAgd2FzIGFjdHVhbGx5IHdoYXQgSSBpbnRlbmRlZCA7LSkKPiBUaGUgZGxuMi1hZGMg
+ZHJpdmVyIGRpZCB0aGF0IGZhbmN5IHN0cnVjdCBkZWZpbml0aW9uIGZvciBpdHMgZGF0YS4gd2hp
+Y2gKPiBJIHN0b2xlLCBzZWUgdGhlIHBhcnQgZnJvbSBibG93OgoKQ3Jvc3NlZCBlbWFpbHMuIEkg
+cmVhbGlzZWQgSSB3YXMgYmVpbmcgYW4gaWRpb3QgYnV0IGhhZCBhbHJlYWR5IGNsaWNrZWQgc2Vu
+ZCA6KQoKPiAKPiA+ID4gKwlzdHJ1Y3Qgewo+ID4gPiArCQl1MTYgdmFsdWVzW1NBUkFEQ19CVUZG
+RVJfTlVNX1UxNl07Cj4gPiA+ICsJCWludDY0X3QgdGltZXN0YW1wOwo+ID4gPiArCX0gZGF0YTsg
+IAo+IAo+IFNvIFNBUkFEQ19CVUZGRVJfTlVNIHJlYWxseSBpcyBtZWFudCB0byBvbmx5IGNvbnRh
+aW4gdGhlCj4gbnVtYmVyIG9mIGFjdHVhbCBidWZmZXIgZGF0YSAtIEkgZ3Vlc3MgSSBzaG91bGQg
+ZXhwbGFpbiB0aGF0IG91dCBiZXR0ZXIKPiBpbiB0aGUgY29tbWVudC4gQmVjYXVzZSBkZWZpbmlu
+ZyB0aGlzIHNlcGFyYXRlIG1ha2VzIHRoaXMgc28gbXVjaAo+IG1vcmUgcmVhZGFibGUgd2hlbiB3
+ZSdyZSBub3QgdHJ5aW5nIHRvIGltcGxpY2l0bHkgYWRkIHRoZSB0aW1lc3RhbXAKPiBzcGFjZS4K
+PiAKPiBBbmQgYSBzaXplX29mKGRhdGEpIGZvciB0aGF0IHN0cnVjdCB0aGVuIHJldHVybmVkIG5p
+Y2VseSB0aGVzZSAyNCBieXRlcwo+IGluIG15IHRlc3RzLgo+IAo+IAo+ID4gPiAgCj4gPiA+ICBz
+dHJ1Y3Qgcm9ja2NoaXBfc2FyYWRjX2RhdGEgewo+ID4gPiAtCWludAkJCQludW1fYml0czsKPiA+
+ID4gIAljb25zdCBzdHJ1Y3QgaWlvX2NoYW5fc3BlYwkqY2hhbm5lbHM7Cj4gPiA+ICAJaW50CQkJ
+CW51bV9jaGFubmVsczsKPiA+ID4gIAl1bnNpZ25lZCBsb25nCQkJY2xrX3JhdGU7Cj4gPiA+IEBA
+IC00OSw4ICs1NiwzNyBAQCBzdHJ1Y3Qgcm9ja2NoaXBfc2FyYWRjIHsKPiA+ID4gIAlzdHJ1Y3Qg
+cmVzZXRfY29udHJvbAkqcmVzZXQ7Cj4gPiA+ICAJY29uc3Qgc3RydWN0IHJvY2tjaGlwX3NhcmFk
+Y19kYXRhICpkYXRhOwo+ID4gPiAgCXUxNgkJCWxhc3RfdmFsOwo+ID4gPiArCWNvbnN0IHN0cnVj
+dCBpaW9fY2hhbl9zcGVjICpsYXN0X2NoYW47Cj4gPiA+ICB9Owo+ID4gPiAgCj4gPiA+ICtzdGF0
+aWMgdm9pZCByb2NrY2hpcF9zYXJhZGNfcG93ZXJfZG93bihzdHJ1Y3Qgcm9ja2NoaXBfc2FyYWRj
+ICppbmZvKQo+ID4gPiArewo+ID4gPiArCS8qIENsZWFyIGlycSAmIHBvd2VyIGRvd24gYWRjICov
+Cj4gPiA+ICsJd3JpdGVsX3JlbGF4ZWQoMCwgaW5mby0+cmVncyArIFNBUkFEQ19DVFJMKTsKPiA+
+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIGludCByb2NrY2hpcF9zYXJhZGNfY29udmVyc2lv
+bihzdHJ1Y3Qgcm9ja2NoaXBfc2FyYWRjICppbmZvLAo+ID4gPiArCQkJCSAgIHN0cnVjdCBpaW9f
+Y2hhbl9zcGVjIGNvbnN0ICpjaGFuKQo+ID4gPiArewo+ID4gPiArCXJlaW5pdF9jb21wbGV0aW9u
+KCZpbmZvLT5jb21wbGV0aW9uKTsKPiA+ID4gKwo+ID4gPiArCS8qIDggY2xvY2sgcGVyaW9kcyBh
+cyBkZWxheSBiZXR3ZWVuIHBvd2VyIHVwIGFuZCBzdGFydCBjbWQgKi8KPiA+ID4gKwl3cml0ZWxf
+cmVsYXhlZCg4LCBpbmZvLT5yZWdzICsgU0FSQURDX0RMWV9QVV9TT0MpOwo+ID4gPiArCj4gPiA+
+ICsJaW5mby0+bGFzdF9jaGFuID0gY2hhbjsKPiA+ID4gKwo+ID4gPiArCS8qIFNlbGVjdCB0aGUg
+Y2hhbm5lbCB0byBiZSB1c2VkIGFuZCB0cmlnZ2VyIGNvbnZlcnNpb24gKi8KPiA+ID4gKwl3cml0
+ZWwoU0FSQURDX0NUUkxfUE9XRVJfQ1RSTAo+ID4gPiArCQkJfCAoY2hhbi0+Y2hhbm5lbCAmIFNB
+UkFEQ19DVFJMX0NITl9NQVNLKQo+ID4gPiArCQkJfCBTQVJBRENfQ1RSTF9JUlFfRU5BQkxFLAo+
+ID4gPiArCQkgICBpbmZvLT5yZWdzICsgU0FSQURDX0NUUkwpOwo+ID4gPiArCj4gPiA+ICsJaWYg
+KCF3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJmluZm8tPmNvbXBsZXRpb24sIFNBUkFEQ19U
+SU1FT1VUKSkKPiA+ID4gKwkJcmV0dXJuIC1FVElNRURPVVQ7Cj4gPiA+ICsKPiA+ID4gKwlyZXR1
+cm4gMDsKPiA+ID4gK30KPiA+ID4gKwo+ID4gPiAgc3RhdGljIGludCByb2NrY2hpcF9zYXJhZGNf
+cmVhZF9yYXcoc3RydWN0IGlpb19kZXYgKmluZGlvX2RldiwKPiA+ID4gIAkJCQkgICAgc3RydWN0
+IGlpb19jaGFuX3NwZWMgY29uc3QgKmNoYW4sCj4gPiA+ICAJCQkJICAgIGludCAqdmFsLCBpbnQg
+KnZhbDIsIGxvbmcgbWFzaykKPiA+ID4gQEAgLTYyLDI0ICs5OCwxMiBAQCBzdGF0aWMgaW50IHJv
+Y2tjaGlwX3NhcmFkY19yZWFkX3JhdyhzdHJ1Y3QgaWlvX2RldiAqaW5kaW9fZGV2LAo+ID4gPiAg
+CWNhc2UgSUlPX0NIQU5fSU5GT19SQVc6Cj4gPiA+ICAJCW11dGV4X2xvY2soJmluZGlvX2Rldi0+
+bWxvY2spOwo+ID4gPiAgCj4gPiA+IC0JCXJlaW5pdF9jb21wbGV0aW9uKCZpbmZvLT5jb21wbGV0
+aW9uKTsKPiA+ID4gLQo+ID4gPiAtCQkvKiA4IGNsb2NrIHBlcmlvZHMgYXMgZGVsYXkgYmV0d2Vl
+biBwb3dlciB1cCBhbmQgc3RhcnQgY21kICovCj4gPiA+IC0JCXdyaXRlbF9yZWxheGVkKDgsIGlu
+Zm8tPnJlZ3MgKyBTQVJBRENfRExZX1BVX1NPQyk7Cj4gPiA+IC0KPiA+ID4gLQkJLyogU2VsZWN0
+IHRoZSBjaGFubmVsIHRvIGJlIHVzZWQgYW5kIHRyaWdnZXIgY29udmVyc2lvbiAqLwo+ID4gPiAt
+CQl3cml0ZWwoU0FSQURDX0NUUkxfUE9XRVJfQ1RSTAo+ID4gPiAtCQkJCXwgKGNoYW4tPmNoYW5u
+ZWwgJiBTQVJBRENfQ1RSTF9DSE5fTUFTSykKPiA+ID4gLQkJCQl8IFNBUkFEQ19DVFJMX0lSUV9F
+TkFCTEUsCj4gPiA+IC0JCSAgICAgICBpbmZvLT5yZWdzICsgU0FSQURDX0NUUkwpOwo+ID4gPiAt
+Cj4gPiA+IC0JCWlmICghd2FpdF9mb3JfY29tcGxldGlvbl90aW1lb3V0KCZpbmZvLT5jb21wbGV0
+aW9uLAo+ID4gPiAtCQkJCQkJIFNBUkFEQ19USU1FT1VUKSkgewo+ID4gPiAtCQkJd3JpdGVsX3Jl
+bGF4ZWQoMCwgaW5mby0+cmVncyArIFNBUkFEQ19DVFJMKTsKPiA+ID4gKwkJcmV0ID0gcm9ja2No
+aXBfc2FyYWRjX2NvbnZlcnNpb24oaW5mbywgY2hhbik7Cj4gPiA+ICsJCWlmIChyZXQpIHsKPiA+
+ID4gKwkJCXJvY2tjaGlwX3NhcmFkY19wb3dlcl9kb3duKGluZm8pOwo+ID4gPiAgCQkJbXV0ZXhf
+dW5sb2NrKCZpbmRpb19kZXYtPm1sb2NrKTsKPiA+ID4gLQkJCXJldHVybiAtRVRJTUVET1VUOwo+
+ID4gPiArCQkJcmV0dXJuIHJldDsKPiA+ID4gIAkJfQo+ID4gPiAtCj4gPiA+ICAJCSp2YWwgPSBp
+bmZvLT5sYXN0X3ZhbDsKPiA+ID4gIAkJbXV0ZXhfdW5sb2NrKCZpbmRpb19kZXYtPm1sb2NrKTsK
+PiA+ID4gIAkJcmV0dXJuIElJT19WQUxfSU5UOwo+ID4gPiBAQCAtOTEsNyArMTE1LDcgQEAgc3Rh
+dGljIGludCByb2NrY2hpcF9zYXJhZGNfcmVhZF9yYXcoc3RydWN0IGlpb19kZXYgKmluZGlvX2Rl
+diwKPiA+ID4gIAkJfQo+ID4gPiAgCj4gPiA+ICAJCSp2YWwgPSByZXQgLyAxMDAwOwo+ID4gPiAt
+CQkqdmFsMiA9IGluZm8tPmRhdGEtPm51bV9iaXRzOwo+ID4gPiArCQkqdmFsMiA9IGNoYW4tPnNj
+YW5fdHlwZS5yZWFsYml0czsKPiA+ID4gIAkJcmV0dXJuIElJT19WQUxfRlJBQ1RJT05BTF9MT0cy
+Owo+ID4gPiAgCWRlZmF1bHQ6Cj4gPiA+ICAJCXJldHVybiAtRUlOVkFMOwo+ID4gPiBAQCAtMTA0
+LDEwICsxMjgsOSBAQCBzdGF0aWMgaXJxcmV0dXJuX3Qgcm9ja2NoaXBfc2FyYWRjX2lzcihpbnQg
+aXJxLCB2b2lkICpkZXZfaWQpCj4gPiA+ICAKPiA+ID4gIAkvKiBSZWFkIHZhbHVlICovCj4gPiA+
+ICAJaW5mby0+bGFzdF92YWwgPSByZWFkbF9yZWxheGVkKGluZm8tPnJlZ3MgKyBTQVJBRENfREFU
+QSk7Cj4gPiA+IC0JaW5mby0+bGFzdF92YWwgJj0gR0VOTUFTSyhpbmZvLT5kYXRhLT5udW1fYml0
+cyAtIDEsIDApOwo+ID4gPiArCWluZm8tPmxhc3RfdmFsICY9IEdFTk1BU0soaW5mby0+bGFzdF9j
+aGFuLT5zY2FuX3R5cGUucmVhbGJpdHMgLSAxLCAwKTsKPiA+ID4gIAo+ID4gPiAtCS8qIENsZWFy
+IGlycSAmIHBvd2VyIGRvd24gYWRjICovCj4gPiA+IC0Jd3JpdGVsX3JlbGF4ZWQoMCwgaW5mby0+
+cmVncyArIFNBUkFEQ19DVFJMKTsKPiA+ID4gKwlyb2NrY2hpcF9zYXJhZGNfcG93ZXJfZG93bihp
+bmZvKTsKPiA+ID4gIAo+ID4gPiAgCWNvbXBsZXRlKCZpbmZvLT5jb21wbGV0aW9uKTsKPiA+ID4g
+IAo+ID4gPiBAQCAtMTE4LDUxICsxNDEsNTUgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBpaW9faW5m
+byByb2NrY2hpcF9zYXJhZGNfaWlvX2luZm8gPSB7Cj4gPiA+ICAJLnJlYWRfcmF3ID0gcm9ja2No
+aXBfc2FyYWRjX3JlYWRfcmF3LAo+ID4gPiAgfTsKPiA+ID4gIAo+ID4gPiAtI2RlZmluZSBBRENf
+Q0hBTk5FTChfaW5kZXgsIF9pZCkgewkJCQlcCj4gPiA+ICsjZGVmaW5lIEFEQ19DSEFOTkVMKF9p
+bmRleCwgX2lkLCBfcmVzKSB7CQkJXAo+ID4gPiAgCS50eXBlID0gSUlPX1ZPTFRBR0UsCQkJCQlc
+Cj4gPiA+ICAJLmluZGV4ZWQgPSAxLAkJCQkJCVwKPiA+ID4gIAkuY2hhbm5lbCA9IF9pbmRleCwJ
+CQkJCVwKPiA+ID4gIAkuaW5mb19tYXNrX3NlcGFyYXRlID0gQklUKElJT19DSEFOX0lORk9fUkFX
+KSwJCVwKPiA+ID4gIAkuaW5mb19tYXNrX3NoYXJlZF9ieV90eXBlID0gQklUKElJT19DSEFOX0lO
+Rk9fU0NBTEUpLAlcCj4gPiA+ICAJLmRhdGFzaGVldF9uYW1lID0gX2lkLAkJCQkJXAo+ID4gPiAr
+CS5zY2FuX2luZGV4ID0gX2luZGV4LAkJCQkJXAo+ID4gPiArCS5zY2FuX3R5cGUgPSB7CQkJCQkJ
+XAo+ID4gPiArCQkuc2lnbiA9ICd1JywJCQkJCVwKPiA+ID4gKwkJLnJlYWxiaXRzID0gX3JlcywJ
+CQkJXAo+ID4gPiArCQkuc3RvcmFnZWJpdHMgPSAxNiwJCQkJXAo+ID4gPiArCQkuZW5kaWFubmVz
+cyA9IElJT19MRSwJCQkJXAo+ID4gPiArCX0sCQkJCQkJCVwKPiA+ID4gIH0KPiA+ID4gIAo+ID4g
+PiAgc3RhdGljIGNvbnN0IHN0cnVjdCBpaW9fY2hhbl9zcGVjIHJvY2tjaGlwX3NhcmFkY19paW9f
+Y2hhbm5lbHNbXSA9IHsKPiA+ID4gLQlBRENfQ0hBTk5FTCgwLCAiYWRjMCIpLAo+ID4gPiAtCUFE
+Q19DSEFOTkVMKDEsICJhZGMxIiksCj4gPiA+IC0JQURDX0NIQU5ORUwoMiwgImFkYzIiKSwKPiA+
+ID4gKwlBRENfQ0hBTk5FTCgwLCAiYWRjMCIsIDEwKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCgxLCAi
+YWRjMSIsIDEwKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCgyLCAiYWRjMiIsIDEwKSwKPiA+ID4gIH07
+Cj4gPiA+ICAKPiA+ID4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfc2FyYWRjX2RhdGEg
+c2FyYWRjX2RhdGEgPSB7Cj4gPiA+IC0JLm51bV9iaXRzID0gMTAsCj4gPiA+ICAJLmNoYW5uZWxz
+ID0gcm9ja2NoaXBfc2FyYWRjX2lpb19jaGFubmVscywKPiA+ID4gIAkubnVtX2NoYW5uZWxzID0g
+QVJSQVlfU0laRShyb2NrY2hpcF9zYXJhZGNfaWlvX2NoYW5uZWxzKSwKPiA+ID4gIAkuY2xrX3Jh
+dGUgPSAxMDAwMDAwLAo+ID4gPiAgfTsKPiA+ID4gIAo+ID4gPiAgc3RhdGljIGNvbnN0IHN0cnVj
+dCBpaW9fY2hhbl9zcGVjIHJvY2tjaGlwX3JrMzA2Nl90c2FkY19paW9fY2hhbm5lbHNbXSA9IHsK
+PiA+ID4gLQlBRENfQ0hBTk5FTCgwLCAiYWRjMCIpLAo+ID4gPiAtCUFEQ19DSEFOTkVMKDEsICJh
+ZGMxIiksCj4gPiA+ICsJQURDX0NIQU5ORUwoMCwgImFkYzAiLCAxMiksCj4gPiA+ICsJQURDX0NI
+QU5ORUwoMSwgImFkYzEiLCAxMiksCj4gPiA+ICB9Owo+ID4gPiAgCj4gPiA+ICBzdGF0aWMgY29u
+c3Qgc3RydWN0IHJvY2tjaGlwX3NhcmFkY19kYXRhIHJrMzA2Nl90c2FkY19kYXRhID0gewo+ID4g
+PiAtCS5udW1fYml0cyA9IDEyLAo+ID4gPiAgCS5jaGFubmVscyA9IHJvY2tjaGlwX3JrMzA2Nl90
+c2FkY19paW9fY2hhbm5lbHMsCj4gPiA+ICAJLm51bV9jaGFubmVscyA9IEFSUkFZX1NJWkUocm9j
+a2NoaXBfcmszMDY2X3RzYWRjX2lpb19jaGFubmVscyksCj4gPiA+ICAJLmNsa19yYXRlID0gNTAw
+MDAsCj4gPiA+ICB9Owo+ID4gPiAgCj4gPiA+ICBzdGF0aWMgY29uc3Qgc3RydWN0IGlpb19jaGFu
+X3NwZWMgcm9ja2NoaXBfcmszMzk5X3NhcmFkY19paW9fY2hhbm5lbHNbXSA9IHsKPiA+ID4gLQlB
+RENfQ0hBTk5FTCgwLCAiYWRjMCIpLAo+ID4gPiAtCUFEQ19DSEFOTkVMKDEsICJhZGMxIiksCj4g
+PiA+IC0JQURDX0NIQU5ORUwoMiwgImFkYzIiKSwKPiA+ID4gLQlBRENfQ0hBTk5FTCgzLCAiYWRj
+MyIpLAo+ID4gPiAtCUFEQ19DSEFOTkVMKDQsICJhZGM0IiksCj4gPiA+IC0JQURDX0NIQU5ORUwo
+NSwgImFkYzUiKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCgwLCAiYWRjMCIsIDEwKSwKPiA+ID4gKwlB
+RENfQ0hBTk5FTCgxLCAiYWRjMSIsIDEwKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCgyLCAiYWRjMiIs
+IDEwKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCgzLCAiYWRjMyIsIDEwKSwKPiA+ID4gKwlBRENfQ0hB
+Tk5FTCg0LCAiYWRjNCIsIDEwKSwKPiA+ID4gKwlBRENfQ0hBTk5FTCg1LCAiYWRjNSIsIDEwKSwK
+PiA+ID4gIH07Cj4gPiA+ICAKPiA+ID4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfc2Fy
+YWRjX2RhdGEgcmszMzk5X3NhcmFkY19kYXRhID0gewo+ID4gPiAtCS5udW1fYml0cyA9IDEwLAo+
+ID4gPiAgCS5jaGFubmVscyA9IHJvY2tjaGlwX3JrMzM5OV9zYXJhZGNfaWlvX2NoYW5uZWxzLAo+
+ID4gPiAgCS5udW1fY2hhbm5lbHMgPSBBUlJBWV9TSVpFKHJvY2tjaGlwX3JrMzM5OV9zYXJhZGNf
+aWlvX2NoYW5uZWxzKSwKPiA+ID4gIAkuY2xrX3JhdGUgPSAxMDAwMDAwLAo+ID4gPiBAQCAtMTkz
+LDYgKzIyMCw0MiBAQCBzdGF0aWMgdm9pZCByb2NrY2hpcF9zYXJhZGNfcmVzZXRfY29udHJvbGxl
+cihzdHJ1Y3QgcmVzZXRfY29udHJvbCAqcmVzZXQpCj4gPiA+ICAJcmVzZXRfY29udHJvbF9kZWFz
+c2VydChyZXNldCk7Cj4gPiA+ICB9Cj4gPiA+ICAKPiA+ID4gK3N0YXRpYyBpcnFyZXR1cm5fdCBy
+b2NrY2hpcF9zYXJhZGNfdHJpZ2dlcl9oYW5kbGVyKGludCBpcnEsIHZvaWQgKnApCj4gPiA+ICt7
+Cj4gPiA+ICsJc3RydWN0IGlpb19wb2xsX2Z1bmMgKnBmID0gcDsKPiA+ID4gKwlzdHJ1Y3QgaWlv
+X2RldiAqaV9kZXYgPSBwZi0+aW5kaW9fZGV2Owo+ID4gPiArCXN0cnVjdCByb2NrY2hpcF9zYXJh
+ZGMgKmluZm8gPSBpaW9fcHJpdihpX2Rldik7Cj4gPiA+ICsJc3RydWN0IHsKPiA+ID4gKwkJdTE2
+IHZhbHVlc1tTQVJBRENfQlVGRkVSX05VTV9VMTZdOwo+ID4gPiArCQlpbnQ2NF90IHRpbWVzdGFt
+cDsKPiA+ID4gKwl9IGRhdGE7Cj4gPiA+ICsJaW50IHJldDsKPiA+ID4gKwlpbnQgaSwgaiA9IDA7
+Cj4gPiA+ICsKPiA+ID4gKwltdXRleF9sb2NrKCZpX2Rldi0+bWxvY2spOwo+ID4gPiArCj4gPiA+
+ICsJZm9yX2VhY2hfc2V0X2JpdChpLCBpX2Rldi0+YWN0aXZlX3NjYW5fbWFzaywgaV9kZXYtPm1h
+c2tsZW5ndGgpIHsKPiA+ID4gKwkJY29uc3Qgc3RydWN0IGlpb19jaGFuX3NwZWMgKmNoYW4gPSAm
+aV9kZXYtPmNoYW5uZWxzW2ldOwo+ID4gPiArCj4gPiA+ICsJCXJldCA9IHJvY2tjaGlwX3NhcmFk
+Y19jb252ZXJzaW9uKGluZm8sIGNoYW4pOwo+ID4gPiArCQlpZiAocmV0KSB7Cj4gPiA+ICsJCQly
+b2NrY2hpcF9zYXJhZGNfcG93ZXJfZG93bihpbmZvKTsKPiA+ID4gKwkJCWdvdG8gb3V0Owo+ID4g
+PiArCQl9Cj4gPiA+ICsKPiA+ID4gKwkJZGF0YS52YWx1ZXNbal0gPSBpbmZvLT5sYXN0X3ZhbDsK
+PiA+ID4gKwkJaisrOwo+ID4gPiArCX0KPiA+ID4gKwo+ID4gPiArCWlpb19wdXNoX3RvX2J1ZmZl
+cnNfd2l0aF90aW1lc3RhbXAoaV9kZXYsICZkYXRhLCBpaW9fZ2V0X3RpbWVfbnMoaV9kZXYpKTsK
+PiA+ID4gK291dDoKPiA+ID4gKwltdXRleF91bmxvY2soJmlfZGV2LT5tbG9jayk7Cj4gPiA+ICsK
+PiA+ID4gKwlpaW9fdHJpZ2dlcl9ub3RpZnlfZG9uZShpX2Rldi0+dHJpZyk7Cj4gPiA+ICsKPiA+
+ID4gKwlyZXR1cm4gSVJRX0hBTkRMRUQ7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gIHN0YXRpYyBp
+bnQgcm9ja2NoaXBfc2FyYWRjX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4g
+PiA+ICB7Cj4gPiA+ICAJc3RydWN0IHJvY2tjaGlwX3NhcmFkYyAqaW5mbyA9IE5VTEw7Cj4gPiA+
+IEBAIC0yMjEsNiArMjg0LDExIEBAIHN0YXRpYyBpbnQgcm9ja2NoaXBfc2FyYWRjX3Byb2JlKHN0
+cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiA+ICAKPiA+ID4gIAlpbmZvLT5kYXRhID0g
+bWF0Y2gtPmRhdGE7Cj4gPiA+ICAKPiA+ID4gKwlpZiAoaW5mby0+ZGF0YS0+bnVtX2NoYW5uZWxz
+ID4gU0FSQURDX01BWF9DSEFOTkVMUykgewo+ID4gPiArCQlkZXZfZXJyKCZwZGV2LT5kZXYsICJt
+YXggY2hhbm5lbHMgZXhjZWVkZWQiKTsKPiA+ID4gKwkJcmV0dXJuIC1FSU5WQUw7ICAKPiA+IAo+
+ID4gSG93IGNhbiB0aGF0IGhhcHBlbj8gIEJ1ZyBpbiB0aGUgYWRkaXRpb24gb2YgYSBuZXcgZGV2
+aWNlIHR5cGU/Cj4gPiBJZiBpdCdzIGp1c3QgcGFyYW5vaWEgYWdhaW5zdCBmdXR1cmUgY29kZSwg
+cGVyaGFwcyBhZGQgYSBjb21tZW50IHRvCj4gPiBzYXkgdGhhdC4gIAo+IAo+IHllcCB0aGF0IGlz
+ICJwYXJhbm9pYSIgZm9yIHRoZSBjYXNlIHNvbWVvbmUgYWRkcyBhIGZhbmN5IG5ldyAyMCBjaGFu
+bmVsCj4gc2FyYWRjIHZhcmlhbnQgYW5kIGZvcmdldHMgdG8gYWRhcHQgdGhlIGNvbnN0YW50Lgo+
+IAo+IEknbGwgYWRkIGEgY29tbWVudC4KPiAKPiA+ICAgCj4gPiA+ICsJfQo+ID4gPiArCj4gPiA+
+ICAJbWVtID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVTT1VSQ0VfTUVNLCAwKTsK
+PiA+ID4gIAlpbmZvLT5yZWdzID0gZGV2bV9pb3JlbWFwX3Jlc291cmNlKCZwZGV2LT5kZXYsIG1l
+bSk7Cj4gPiA+ICAJaWYgKElTX0VSUihpbmZvLT5yZWdzKSkKPiA+ID4gQEAgLTMxNSw2ICszODMs
+MTIgQEAgc3RhdGljIGludCByb2NrY2hpcF9zYXJhZGNfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rl
+dmljZSAqcGRldikKPiA+ID4gIAlpbmRpb19kZXYtPmNoYW5uZWxzID0gaW5mby0+ZGF0YS0+Y2hh
+bm5lbHM7Cj4gPiA+ICAJaW5kaW9fZGV2LT5udW1fY2hhbm5lbHMgPSBpbmZvLT5kYXRhLT5udW1f
+Y2hhbm5lbHM7Cj4gPiA+ICAKPiA+ID4gKwlyZXQgPSBkZXZtX2lpb190cmlnZ2VyZWRfYnVmZmVy
+X3NldHVwKCZpbmRpb19kZXYtPmRldiwgaW5kaW9fZGV2LCBOVUxMLAo+ID4gPiArCQkJCQkgICAg
+ICByb2NrY2hpcF9zYXJhZGNfdHJpZ2dlcl9oYW5kbGVyLAo+ID4gPiArCQkJCQkgICAgICBOVUxM
+KTsKPiA+ID4gKwlpZiAocmV0KQo+ID4gPiArCQlnb3RvIGVycl9jbGs7Cj4gPiA+ICsgIAo+ID4g
+Cj4gPiBQbGVhc2UgYXZvaWQgbWl4aW5nIGFuIG1hdGNoaW5nIGJldHdlZW4gZGV2aWNlIG1hbmFn
+ZWQgYW4gdW5tYW5hZ2VkIGludGVyZmFjZXMuCj4gPiBJdCBtZWFucyB0aGUgZHJpdmVyIGlzIG5v
+dCAnb2J2aW91c2x5IGNvcnJlY3QnIGFuZCBoZW5jZSBoYXJkZXIgdG8gcmV2aWV3Lgo+ID4gCj4g
+PiBUd28gY2hvaWNlcyBoZXJlLiAgRWl0aGVyIHVzZSBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQg
+dG8gYXV0b21hdGljYWxseQo+ID4gZGlzYWJsZSBlYWNoIGNsb2NrICsgcmVndWxhdG9yIGluIHRo
+ZSBtYW5hZ2VkIHJlbGVhc2UgcGF0aCwgZHJvcCBhbGwgdGhlIGVycm9yCj4gPiBoYW5kbGluZyBh
+bmQgcmVtb3ZlIChub3RlIHRoaXMgc2hvdWxkIGJlIGEgcHJlY3Vyc29yIHBhdGNoKSwgb3IgdXNl
+Cj4gPiBpaW9fdHJpZ2dlcmVkX2J1ZmZlcl9zZXR1cCBhbmQgbWFudWFsbHkgY2FsbCBpaW9fdHJp
+Z2dlcmVkX2J1ZmZlcl9jbGVhbnVwCj4gPiBpbiB0aGUgcmlnaHQgcGxhY2UgaW4gdGhlIHJlbW92
+ZSBmdW5jdGlvbi4gIAo+IAo+IEknbGwgZ28gd2l0aCB0aGUgZGV2bV8qIGFwcHJvYWNoLCBsZXNz
+IGNvbXBsZXhpdHkgaXMgYmV0dGVyIHRoYW4gYWRkaW5nIG1vcmUgOy0pCj4gCj4gCj4gSGVpa28K
+PiAKPiA+ID4gIAlyZXQgPSBpaW9fZGV2aWNlX3JlZ2lzdGVyKGluZGlvX2Rldik7Cj4gPiA+ICAJ
+aWYgKHJldCkKPiA+ID4gIAkJZ290byBlcnJfY2xrOyAgCj4gPiAKPiA+ICAgCj4gCj4gCj4gCj4g
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgt
+cm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hp
+cAo=
