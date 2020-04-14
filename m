@@ -2,85 +2,69 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F79F1A857A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 18:44:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74E471A85AA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 18:49:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w1lW3lb1bLwOe55SkEf/wfq6H921MaE2jEKB1FZpj7s=; b=TbXmSrsvwAkjeO
-	GFJ/+1OsW1mVPNdSo/8V/GCy6s+uWZwHxT/FrCXDL3EBa9SCaqagKMqQHVt+0v05YwQ3a60dyl3iB
-	ccvlpXAy2gmP1NYR7bH4TsYGCv/Ui7kLcsz5aNnRtvmT20WOsi6evTooEDfKyaJ7mLN35xcfr6Bo5
-	//wQacalEaBUS/n5M4vUUDnfSgiCF+Hsdx+HoXj7lDW8WBHJR0xHOfOFmMGlf6MdiBvxp6kK6M57n
-	A8ww8Awa4H2+OCPeR3QPanyIadwVQqRJEnCgjJXHj4JTnPLmeUq8y62D7lk1eCQgvagYdsyXyNlEg
-	8ovtKE0EnetBLSTbl8yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N6AG7QuyfzKjG6SQQDgaeMGPU3+owfCdt8CIIP0sdlU=; b=F3GUZFUBB7mpjZ
+	UzAX3x/cOmyxhyMkwalEmhFjVRxtJCrKgmFLl2Hp65wrAzuMOtLlbxfEXST5Xwq4WbZIdaPNcMxV+
+	d5gbEwntz1HNFmx1/PQtjylKnF6bBDHOsHtsyBTea3WmMUw78IOdGy0K2eAC19bXomeMfAYai2p4U
+	dSNg+77ij9dlQ2hbiOQJESbLKwNRc+8zhVg1LmH4RM7t3YGkpjWqIK2Ih6wPiiJsdNU4kwEsCfOaW
+	EAcX8Cp16QbVmKYUBiF5T4ePRHbtQ8rHF7El778HAqCnBwfmwVVj8R6kjxb/Va0N3SjmTXVT75lpC
+	GUr7035CSMwoomFYMMxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOfW-0003JF-C5; Tue, 14 Apr 2020 16:44:14 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jOOkU-0007Sy-U5; Tue, 14 Apr 2020 16:49:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOfJ-00039z-IU; Tue, 14 Apr 2020 16:44:02 +0000
-Received: by mail-ot1-f67.google.com with SMTP id j4so231767otr.11;
- Tue, 14 Apr 2020 09:44:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mdJGN+n2VYiCEYSu8u8xlSZpkqPfV2n6FeIMEPtdiVw=;
- b=T8RUznbV3QYmFaqk2q0OUJ1VB3VELU0ndNKSMeOpQcrE+Hh4CmkG52RrkAQ2jx1tTr
- Pn6E1e8Lw91aridS4pAzc0vaqIVBYrZrbb0uyvyt1bRhUHfeX6ntWnuxbC5wkqIuxSUj
- UBlq3SZEOM3yS7baEMOULYNmmteNkMjLyXiVq67j33IfoqwqVTDPl+H7lvCBS6iEEOja
- 65GRijwVI5WNZbb3bsA3u1JxRpY6DGPIxkBmXpgk2g6KJlUNf/qpFmOugQsLTZGm1hmk
- frdOIsukuuouJHP6iCxGmjEFB4gGLU8XQrjB9ubvSwWqCDf8sTF7JoNkUyody7Ldhu9+
- 2WJg==
-X-Gm-Message-State: AGi0PuZ54+JgiXbTAoAHQ7GGjSNYw3qc6m84OdNOIfvd19DAeyYwllV2
- gYjTS/lxJGcF3ZNhS/FNSg==
-X-Google-Smtp-Source: APiQypINczSaAx3RvBdTvMgP/hZFPK9N4KYJKAMcgw+8KVN2riIwZXpaqEpmPb+hOROqaiW2MJnmaw==
-X-Received: by 2002:a4a:a98b:: with SMTP id w11mr19105677oom.80.1586882640106; 
- Tue, 14 Apr 2020 09:44:00 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w15sm6274633ooq.24.2020.04.14.09.43.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 09:43:59 -0700 (PDT)
-Received: (nullmailer pid 11212 invoked by uid 1000);
- Tue, 14 Apr 2020 16:43:57 -0000
-Date: Tue, 14 Apr 2020 11:43:57 -0500
-From: Rob Herring <robh@kernel.org>
-To: Amit Kucheria <amit.kucheria@linaro.org>
-Subject: Re: [PATCH] dt-bindings: thermal: Get rid of thermal.txt and replace
- references
-Message-ID: <20200414164357.GA11178@bogus>
-References: <cbd70c2f0f5ddae0d8e418fcb1e03101e408f6c2.1585753313.git.amit.kucheria@linaro.org>
+ id 1jOOkB-0007ID-Ct; Tue, 14 Apr 2020 16:49:08 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 64BDD20787;
+ Tue, 14 Apr 2020 16:49:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586882942;
+ bh=hpU3ilpDhIBh1EkpHoT8CRglKxDNGuySrswIRHuRmXU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=qP/fh2JuBrTWMBDU0Po9QgHcYacrRlFhnHwEY8en7h953JH1K2J6xRWgtWi+ouXIY
+ 3gGiDenojv2rrUzJ4Wxk3whARW64aaikv0MOeHbofi1sPuRVe5IZT8BpzPaRPNxcO+
+ 07Ps8XSWU9UmRtIfijlblMPlQG+5+iBYwuA7KjAY=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jOOk8-0068kv-FR; Tue, 14 Apr 2020 18:49:00 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH v2 00/33] Documentation fixes for Kernel 5.8
+Date: Tue, 14 Apr 2020 18:48:26 +0200
+Message-Id: <cover.1586881715.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cbd70c2f0f5ddae0d8e418fcb1e03101e408f6c2.1585753313.git.amit.kucheria@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_094401_610987_81FCFE93 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_094903_487191_62A0AB56 
+X-CRM114-Status: GOOD (  14.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,77 +77,218 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mans Rullgard <mans@mansr.com>, Heiko Stuebner <heiko@sntech.de>,
- Yangtao Li <tiny.windzz@gmail.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Florian Fainelli <f.fainelli@gmail.com>, daniel.lezcano@linaro.org,
- Jonathan Hunter <jonathanh@nvidia.com>, Vasily Khoruzhick <anarsoul@gmail.com>,
- linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Ray Jui <rjui@broadcom.com>, Zhang Rui <rui.zhang@intel.com>,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-tegra@vger.kernel.org,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-arm-msm@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Talel Shenhar <talel@amazon.com>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Scott Branden <sbranden@broadcom.com>, linux-pm@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- lukasz.luba@arm.com, Sudeep Holla <sudeep.holla@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: kvm@vger.kernel.org, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ linux-unionfs@vger.kernel.org, linux-mm@kvack.org, netdev@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ kvmarm@lists.cs.columbia.edu, linux-arch@vger.kernel.org,
+ Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ Matthias Kaehlcke <mka@chromium.org>, Sandeep Maheswaram <sanm@codeaurora.org>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ ecryptfs@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>, Yuti Amonkar <yamonkar@cadence.com>,
+ linux-ide@vger.kernel.org, linux-ntfs-dev@lists.sourceforge.net,
+ freedreno@lists.freedesktop.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rdma@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-fsdevel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed,  1 Apr 2020 20:35:50 +0530, Amit Kucheria wrote:
-> Now that we have yaml bindings for the thermal subsystem, get rid of the
-> old bindings (thermal.txt).
-> 
-> Replace all references to thermal.txt in the Documentation with a link
-> to the appropriate YAML bindings using the following search and replace
-> pattern:
->  - If the reference is specific to the thermal-sensor-cells property,
->  replace with a pointer to thermal-sensor.yaml
->  - If the reference is to the cooling-cells property, replace with a
->  pointer to thermal-cooling-devices.yaml
->  - If the reference is generic thermal bindings, replace with a
->  reference to thermal*.yaml.
-> 
-> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> ---
->  .../devicetree/bindings/arm/arm,scmi.txt      |   2 +-
->  .../devicetree/bindings/arm/arm,scpi.txt      |   2 +-
->  .../arm/marvell/ap80x-system-controller.txt   |   2 +-
->  .../arm/marvell/cp110-system-controller.txt   |   2 +-
->  .../bindings/cpufreq/cpufreq-dt.txt           |   3 +-
->  .../bindings/cpufreq/cpufreq-mediatek.txt     |   4 +-
->  .../devicetree/bindings/hwmon/gpio-fan.txt    |   3 +-
->  .../devicetree/bindings/hwmon/lm90.txt        |   4 +-
->  .../thermal/allwinner,sun8i-a83t-ths.yaml     |   2 +-
->  .../bindings/thermal/amazon,al-thermal.txt    |   2 +-
->  .../bindings/thermal/brcm,avs-ro-thermal.yaml |   2 +-
->  .../bindings/thermal/brcm,bcm2835-thermal.txt |   2 +-
->  .../bindings/thermal/hisilicon-thermal.txt    |   2 +-
->  .../bindings/thermal/max77620_thermal.txt     |   6 +-
->  .../bindings/thermal/mediatek-thermal.txt     |   2 +-
->  .../thermal/nvidia,tegra124-soctherm.txt      |  10 +-
->  .../thermal/nvidia,tegra186-bpmp-thermal.txt  |   2 +-
->  .../bindings/thermal/qcom-spmi-temp-alarm.txt |   2 +-
->  .../bindings/thermal/rockchip-thermal.txt     |   2 +-
->  .../bindings/thermal/tango-thermal.txt        |   2 +-
->  .../bindings/thermal/thermal-generic-adc.txt  |   2 +-
->  .../devicetree/bindings/thermal/thermal.txt   | 586 ------------------
->  .../bindings/thermal/uniphier-thermal.txt     |   2 +-
->  23 files changed, 33 insertions(+), 615 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/thermal/thermal.txt
-> 
+Patches 1 to 5 contain changes to the documentation toolset:
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+- The first 3 patches help to reduce a lot the number of reported
+  kernel-doc issues, by making the tool more smart.
+
+- Patches 4 and 5 are meant to partially address the PDF
+  build, with now requires Sphinx version 2.4 or upper.
+
+The remaining patches fix broken references detected by
+this tool:
+
+        ./scripts/documentation-file-ref-check
+
+and address other random errors due to tags being mis-interpreted
+or mis-used.
+
+They are independent each other, but some may depend on
+the kernel-doc improvements.
+
+PS.: Due to the large number of C/C, I opted to keep a smaller
+set of C/C at this first e-mail (only e-mails with "L:" tag from
+MAINTAINERS file).
+
+Jon,
+
+Those patches should apply cleanly at docs-next, once you
+pull from v5.7-rc1.
+
+
+-
+
+v2:
+
+- patches re-ordered;
+- added reviewed/acked-by tags;
+- rebased on the top of docs-next + v5.7-rc1.
+
+
+Mauro Carvalho Chehab (33):
+  scripts: kernel-doc: proper handle @foo->bar()
+  scripts: kernel-doc: accept negation like !@var
+  scripts: kernel-doc: accept blank lines on parameter description
+  docs: update recommended Sphinx version to 2.4.4
+  docs: LaTeX/PDF: drop list of documents
+  MAINTAINERS: dt: update display/allwinner file entry
+  MAINTAINERS: dt: fix pointers for ARM Integrator, Versatile and
+    RealView
+  docs: dt: fix broken reference to phy-cadence-torrent.yaml
+  docs: fix broken references to text files
+  docs: fix broken references for ReST files that moved around
+  docs: filesystems: fix renamed references
+  docs: amu: supress some Sphinx warnings
+  docs: arm64: booting.rst: get rid of some warnings
+  docs: pci: boot-interrupts.rst: improve html output
+  docs: ras: get rid of some warnings
+  docs: ras: don't need to repeat twice the same thing
+  docs: infiniband: verbs.c: fix some documentation warnings
+  docs: spi: spi.h: fix a doc building warning
+  docs: drivers: fix some warnings at base/platform.c when building docs
+  docs: mm: userfaultfd.rst: use ``foo`` for literals
+  docs: mm: userfaultfd.rst: use a cross-reference for a section
+  docs: vm: index.rst: add an orphan doc to the building system
+  docs: dt: qcom,dwc3.txt: fix cross-reference for a converted file
+  docs: dt: fix a broken reference for a file converted to json
+  docs: powerpc: cxl.rst: mark two section titles as such
+  docs: i2c: rename i2c.svg to i2c_bus.svg
+  docs: Makefile: place final pdf docs on a separate dir
+  docs: dt: rockchip,dwc3.txt: fix a pointer to a renamed file
+  ata: libata-core: fix a doc warning
+  firewire: firewire-cdev.hL get rid of a docs warning
+  fs: inode.c: get rid of docs warnings
+  futex: get rid of a kernel-docs build warning
+  lib: bitmap.c: get rid of some doc warnings
+
+ Documentation/ABI/stable/sysfs-devices-node   |   2 +-
+ Documentation/ABI/testing/procfs-smaps_rollup |   2 +-
+ Documentation/Makefile                        |   6 +-
+ Documentation/PCI/boot-interrupts.rst         |  34 +--
+ Documentation/admin-guide/cpu-load.rst        |   2 +-
+ Documentation/admin-guide/mm/userfaultfd.rst  | 209 +++++++++---------
+ Documentation/admin-guide/nfs/nfsroot.rst     |   2 +-
+ Documentation/admin-guide/ras.rst             |  18 +-
+ Documentation/arm64/amu.rst                   |   5 +
+ Documentation/arm64/booting.rst               |  36 +--
+ Documentation/conf.py                         |  38 ----
+ .../bindings/net/qualcomm-bluetooth.txt       |   2 +-
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        |   2 +-
+ .../devicetree/bindings/usb/qcom,dwc3.txt     |   4 +-
+ .../devicetree/bindings/usb/rockchip,dwc3.txt |   2 +-
+ .../doc-guide/maintainer-profile.rst          |   2 +-
+ .../driver-api/driver-model/device.rst        |   4 +-
+ .../driver-api/driver-model/overview.rst      |   2 +-
+ Documentation/filesystems/dax.txt             |   2 +-
+ Documentation/filesystems/dnotify.txt         |   2 +-
+ .../filesystems/ramfs-rootfs-initramfs.rst    |   2 +-
+ Documentation/filesystems/sysfs.rst           |   2 +-
+ Documentation/i2c/{i2c.svg => i2c_bus.svg}    |   2 +-
+ Documentation/i2c/summary.rst                 |   2 +-
+ Documentation/memory-barriers.txt             |   2 +-
+ Documentation/powerpc/cxl.rst                 |   2 +
+ .../powerpc/firmware-assisted-dump.rst        |   2 +-
+ Documentation/process/adding-syscalls.rst     |   2 +-
+ Documentation/process/submit-checklist.rst    |   2 +-
+ Documentation/sphinx/requirements.txt         |   2 +-
+ .../it_IT/process/adding-syscalls.rst         |   2 +-
+ .../it_IT/process/submit-checklist.rst        |   2 +-
+ .../translations/ko_KR/memory-barriers.txt    |   2 +-
+ .../translations/zh_CN/filesystems/sysfs.txt  |   8 +-
+ .../zh_CN/process/submit-checklist.rst        |   2 +-
+ Documentation/virt/kvm/arm/pvtime.rst         |   2 +-
+ Documentation/virt/kvm/devices/vcpu.rst       |   2 +-
+ Documentation/virt/kvm/hypercalls.rst         |   4 +-
+ Documentation/virt/kvm/mmu.rst                |   2 +-
+ Documentation/virt/kvm/review-checklist.rst   |   2 +-
+ Documentation/vm/index.rst                    |   1 +
+ MAINTAINERS                                   |   7 +-
+ arch/powerpc/include/uapi/asm/kvm_para.h      |   2 +-
+ arch/x86/kvm/mmu/mmu.c                        |   2 +-
+ drivers/ata/libata-core.c                     |   2 +-
+ drivers/base/core.c                           |   2 +-
+ drivers/base/platform.c                       |   6 +-
+ .../allwinner/sun8i-ce/sun8i-ce-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |   2 +-
+ .../allwinner/sun8i-ss/sun8i-ss-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c |   2 +-
+ drivers/gpu/drm/Kconfig                       |   2 +-
+ drivers/gpu/drm/drm_ioctl.c                   |   2 +-
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.h       |   2 +-
+ drivers/hwtracing/coresight/Kconfig           |   2 +-
+ drivers/infiniband/core/verbs.c               |   7 +-
+ drivers/media/v4l2-core/v4l2-fwnode.c         |   2 +-
+ fs/Kconfig                                    |   2 +-
+ fs/Kconfig.binfmt                             |   2 +-
+ fs/adfs/Kconfig                               |   2 +-
+ fs/affs/Kconfig                               |   2 +-
+ fs/afs/Kconfig                                |   6 +-
+ fs/bfs/Kconfig                                |   2 +-
+ fs/cramfs/Kconfig                             |   2 +-
+ fs/ecryptfs/Kconfig                           |   2 +-
+ fs/fat/Kconfig                                |   8 +-
+ fs/fuse/Kconfig                               |   2 +-
+ fs/fuse/dev.c                                 |   2 +-
+ fs/hfs/Kconfig                                |   2 +-
+ fs/hpfs/Kconfig                               |   2 +-
+ fs/inode.c                                    |   6 +-
+ fs/isofs/Kconfig                              |   2 +-
+ fs/namespace.c                                |   2 +-
+ fs/notify/inotify/Kconfig                     |   2 +-
+ fs/ntfs/Kconfig                               |   2 +-
+ fs/ocfs2/Kconfig                              |   2 +-
+ fs/overlayfs/Kconfig                          |   6 +-
+ fs/proc/Kconfig                               |   4 +-
+ fs/romfs/Kconfig                              |   2 +-
+ fs/sysfs/dir.c                                |   2 +-
+ fs/sysfs/file.c                               |   2 +-
+ fs/sysfs/mount.c                              |   2 +-
+ fs/sysfs/symlink.c                            |   2 +-
+ fs/sysv/Kconfig                               |   2 +-
+ fs/udf/Kconfig                                |   2 +-
+ include/linux/kobject.h                       |   2 +-
+ include/linux/kobject_ns.h                    |   2 +-
+ include/linux/mm.h                            |   4 +-
+ include/linux/relay.h                         |   2 +-
+ include/linux/spi/spi.h                       |   1 +
+ include/linux/sysfs.h                         |   2 +-
+ include/uapi/linux/ethtool_netlink.h          |   2 +-
+ include/uapi/linux/firewire-cdev.h            |   2 +-
+ include/uapi/linux/kvm.h                      |   4 +-
+ include/uapi/rdma/rdma_user_ioctl_cmds.h      |   2 +-
+ kernel/futex.c                                |   3 +
+ kernel/relay.c                                |   2 +-
+ lib/bitmap.c                                  |  27 +--
+ lib/kobject.c                                 |   4 +-
+ mm/gup.c                                      |  12 +-
+ scripts/kernel-doc                            |  41 ++--
+ tools/include/uapi/linux/kvm.h                |   4 +-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c              |   2 +-
+ virt/kvm/arm/vgic/vgic.h                      |   4 +-
+ 104 files changed, 343 insertions(+), 326 deletions(-)
+ rename Documentation/i2c/{i2c.svg => i2c_bus.svg} (99%)
+
+-- 
+2.25.2
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
