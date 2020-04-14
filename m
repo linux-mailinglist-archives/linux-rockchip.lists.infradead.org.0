@@ -2,67 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B8B1A8035
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 16:46:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4132F1A81F3
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 17:19:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=J8kk4iSpytCcfRLFMsUu4aILyTuvJ5QZYmwZWR18l8A=; b=JjR
-	PGXb6I6iknxpmLWE52H/OBcdSaGiMHUHaKorO4o6/+rt3kPyvr5/RUUKuTKOLqQAsq2xDYXty6on9
-	ol+Vaa8aoLgjkweCD2ZrAR5M1U1Dw3nktraoSIJx5SCLZWz6nvrFo3j/fZ0dSa3NQVT36QldRyXAG
-	2RnovJDNlfe4gbFUiuBq3MMfPUD7X9+2ofUgAJgW+iS61alyPywZk5RyOkej8/sw2kJ1dM+qYhzil
-	kXiVZNgaCMJz2LkReClIf888pVdfhIeIwGJ751oXKpS8mk5mYGgehKyN53F4cOrTNHFtxoKIw/JCg
-	VGHlbW94ppe9i98I8E+GxuiFV+J1GHw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bs8BypTalAvzn1gZ3ei8SrfTUOkbmt72szNXWgqkS/I=; b=pu/PMG6vTkNWSu
+	F3YC0z/7M7ZIwBFsdkn2LwjaqZmwAuNJQIFXrtI3N4zdjZO1J5EfojwrwLgkZBjP8RUMNMP1/FgWE
+	edRmR6/XGYAJMx2jLb/ocYjaS2tVAwuSgRFZDKk+J7CFkdlUnx1FRi4jJRKF0m0ZWeF3pxaQqGIt1
+	/vJWJl4yVGDjKR+5VrW24Tav9vg9tTNW8fptiVURyX6MNG545jwswdtQQrHdGn59yt208mPgDEpEW
+	dCUifm8dllZBiSI6nvskdhQp+/CH/08R3J2/8HFpKgF2ZfdYhQEsGY5znI5sUYdfevH9kRSFJ6vwD
+	AgiJlSa6+NvXD1wjBN0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMpz-0004CE-1I; Tue, 14 Apr 2020 14:46:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jONLH-0002ah-Gr; Tue, 14 Apr 2020 15:19:15 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMpk-0003zY-Gk; Tue, 14 Apr 2020 14:46:42 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A724320578;
- Tue, 14 Apr 2020 14:46:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586875600;
- bh=g00iJtPzZcf8VyQjYtKqA/aEufNyrZ17hJE2UFDSDTQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=GfyFgj1INwbbPMiBOE/dh73dseOTY8FQWx5w2qLHZcdhWARYrmAhDHLVzbscAufN5
- MjP3PjLHDbYM7xri2xXaWV5AiJ3LgXzuw+tL8R2mKxCfgeObRfdlDX9o18UKWA3Tzy
- VYxT8QgDXyqRREidWCFZZA3Ck8Eu9LioF5Nqy4CY=
-Date: Tue, 14 Apr 2020 15:46:37 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "ASoC: convert rockchip spdif bindings to yaml" to the asoc
- tree
-In-Reply-To: <20200404115225.4314-1-jbx6244@gmail.com>
-Message-Id: <applied-20200404115225.4314-1-jbx6244@gmail.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1jONKu-0002Kc-Qx; Tue, 14 Apr 2020 15:18:54 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 6FFF72A16F6
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH v6 0/8] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+Date: Tue, 14 Apr 2020 18:19:47 +0300
+Message-Id: <20200414151955.311949-1-adrian.ratiu@collabora.com>
+X-Mailer: git-send-email 2.26.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_074640_594918_1BD720BE 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_081853_002741_F2925A9A 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,222 +57,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The patch
+Hello everyone,
 
-   ASoC: convert rockchip spdif bindings to yaml
+Many thanks to all who have contributed to this new iteration,
+especially to Arnaud Ferraris for his stm32mp1 testing and to
+Adrian Pop for his stm32f7 testing & debugging help.
 
-has been applied to the asoc tree at
+Further testing, especially on Rockchip devices, is very much
+appreciated.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
+All reported issues have been addressed and this series should
+apply cleanly on latest next-20200414 tree.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Tested on imx6dl, stm32mp1 and stm32f7.
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+Best wishes,
+Adrian
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+Adrian Ratiu (8):
+  drm: bridge: dw_mipi_dsi: add initial regmap infrastructure
+  drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+  drm: bridge: synopsis: add dsi v1.01 support
+  drm: imx: Add i.MX 6 MIPI DSI host platform driver
+  dt-bindings: display: add i.MX6 MIPI DSI host controller doc
+  drm: stm: dw-mipi-dsi: let the bridge handle the HW version check
+  drm: bridge: dw-mipi-dsi: split low power cfg register into fields
+  drm: bridge: dw-mipi-dsi: fix bad register field offsets
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+ .../display/imx/fsl,mipi-dsi-imx6.yaml        | 139 ++++
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 691 +++++++++++++-----
+ drivers/gpu/drm/imx/Kconfig                   |   7 +
+ drivers/gpu/drm/imx/Makefile                  |   1 +
+ drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 409 +++++++++++
+ drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  12 +-
+ 6 files changed, 1050 insertions(+), 209 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+ create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
 
-Thanks,
-Mark
-
-From 4d1a015a203c0249e3332ea217a38ec978118daa Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Sat, 4 Apr 2020 13:52:23 +0200
-Subject: [PATCH] ASoC: convert rockchip spdif bindings to yaml
-
-Current dts files with 'spdif' nodes are manually verified.
-In order to automate this process rockchip-spdif.txt
-has to be converted to yaml.
-
-Also rk3188.dtsi, rk3288.dtsi use an extra fallback string,
-so change this in the documentation.
-
-Changed:
-"rockchip,rk3188-spdif", "rockchip,rk3066-spdif"
-"rockchip,rk3288-spdif", "rockchip,rk3066-spdif"
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20200404115225.4314-1-jbx6244@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../bindings/sound/rockchip-spdif.txt         | 45 ---------
- .../bindings/sound/rockchip-spdif.yaml        | 93 +++++++++++++++++++
- 2 files changed, 93 insertions(+), 45 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.txt
- create mode 100644 Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt b/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-deleted file mode 100644
-index ec20c1271e92..000000000000
---- a/Documentation/devicetree/bindings/sound/rockchip-spdif.txt
-+++ /dev/null
-@@ -1,45 +0,0 @@
--* Rockchip SPDIF transceiver
--
--The S/PDIF audio block is a stereo transceiver that allows the
--processor to receive and transmit digital audio via an coaxial cable or
--a fibre cable.
--
--Required properties:
--
--- compatible: should be one of the following:
--   - "rockchip,rk3066-spdif"
--   - "rockchip,rk3188-spdif"
--   - "rockchip,rk3228-spdif"
--   - "rockchip,rk3288-spdif"
--   - "rockchip,rk3328-spdif"
--   - "rockchip,rk3366-spdif"
--   - "rockchip,rk3368-spdif"
--   - "rockchip,rk3399-spdif"
--- reg: physical base address of the controller and length of memory mapped
--  region.
--- interrupts: should contain the SPDIF interrupt.
--- dmas: DMA specifiers for tx dma. See the DMA client binding,
--  Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: should be "tx"
--- clocks: a list of phandle + clock-specifier pairs, one for each entry
--  in clock-names.
--- clock-names: should contain following:
--   - "hclk": clock for SPDIF controller
--   - "mclk" : clock for SPDIF bus
--
--Required properties on RK3288:
--  - rockchip,grf: the phandle of the syscon node for the general register
--                   file (GRF)
--
--Example for the rk3188 SPDIF controller:
--
--spdif: spdif@1011e000 {
--	compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
--	reg = <0x1011e000 0x2000>;
--	interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
--	dmas = <&dmac1_s 8>;
--	dma-names = "tx";
--	clock-names = "hclk", "mclk";
--	clocks = <&cru HCLK_SPDIF>, <&cru SCLK_SPDIF>;
--	#sound-dai-cells = <0>;
--};
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-new file mode 100644
-index 000000000000..bfd44fd8ecbc
---- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/rockchip-spdif.yaml
-@@ -0,0 +1,93 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/rockchip-spdif.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip SPDIF transceiver
-+
-+description:
-+  The S/PDIF audio block is a stereo transceiver that allows the
-+  processor to receive and transmit digital audio via a coaxial or
-+  fibre cable.
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3066-spdif
-+      - const: rockchip,rk3228-spdif
-+      - const: rockchip,rk3328-spdif
-+      - const: rockchip,rk3366-spdif
-+      - const: rockchip,rk3368-spdif
-+      - const: rockchip,rk3399-spdif
-+      - items:
-+          - enum:
-+            - rockchip,rk3188-spdif
-+            - rockchip,rk3288-spdif
-+          - const: rockchip,rk3066-spdif
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: clock for SPDIF bus
-+      - description: clock for SPDIF controller
-+
-+  clock-names:
-+    items:
-+      - const: mclk
-+      - const: hclk
-+
-+  dmas:
-+    maxItems: 1
-+
-+  dma-names:
-+    const: tx
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      The phandle of the syscon node for the GRF register.
-+      Required property on RK3288.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - dmas
-+  - dma-names
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        const: rockchip,rk3288-spdif
-+
-+then:
-+  required:
-+    - rockchip,grf
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    spdif: spdif@1011e000 {
-+      compatible = "rockchip,rk3188-spdif", "rockchip,rk3066-spdif";
-+      reg = <0x1011e000 0x2000>;
-+      interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_SPDIF>, <&cru HCLK_SPDIF>;
-+      clock-names = "mclk", "hclk";
-+      dmas = <&dmac1_s 8>;
-+      dma-names = "tx";
-+    };
 -- 
-2.20.1
+2.26.0
 
 
 _______________________________________________
