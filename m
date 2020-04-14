@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D7961A7D5F
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 797BC1A7D60
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,20 +11,20 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=o+aN2Ajv85+FpcIsbZ4oYwYTP5YnnCX4+FU5xPEF/uw=; b=WxMCDRyUL1QT9lYSHm3nZFdHV1
-	ujpixtAiQJW5/+AsJY5M8KhnHbfhs8b4q+81LxzyLx/GtvYJCOxdOKLH1R929G3S6tkb/9JUWDM6o
-	DdibZlR83G7qbpwbyRP9RgfK6fy0zRfmq16mEswwNCkOIaJuP7GIDrsz607a9TldCwDZ55CHFrTqU
-	RDd1FnrIMxhaOEvYaNQyEddYMT5zxmzCBDChaiAzx3ZkNPRJKcscq285rZ6zrraO58Ld9tAIsVx+Y
-	cnsdE4bmIEcxeOZ1dB2ZM8fEzO/uOjGy7FfAhpwFLbdn/oocWBEBBnIuhlpTTJxMJuabs/l1BzzKa
-	AzyIOZ4w==;
+	bh=+1tnDUFLZ2bHix0/qzQH90SsyVzvH6KcaNC4y+mDmRI=; b=Mhg0h0h7V3Y9aSVw4FaN67BgZ6
+	2itA59bmL3Reab8gQKeOVOkbE6WeiCMeyu3WoGnE/tOq9C2HOcJSPMI/3CKRr5dBZnrqOzu4ssdt4
+	hCxZI8SQ5fImOeELUSdDw8ugZ+tJcW4JqIqfJ5fnGfok4V5bkWy+yxh+e1T+1QanBDsWYmX5CBndg
+	CtidRMYqp1+eyElxSRaodDwTrAlKMkKmH9d/wT3Io8gXhNJ1Xn4VQySU5+ts3g2E8RHCGNJ3k2Tve
+	KLl7B/2UUYGwFg5XCzowwaVkEka9fb9onygxGNKuRlvhHlMGELzo3MJddORFoKy8XlWqakF2GbMlC
+	zbsaDTAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLYa-0005lR-IE; Tue, 14 Apr 2020 13:24:52 +0000
+	id 1jOLYf-0005s6-DR; Tue, 14 Apr 2020 13:24:57 +0000
 Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLQD-0002iW-Ks; Tue, 14 Apr 2020 13:16:19 +0000
+ id 1jOLQD-0002iX-Fn; Tue, 14 Apr 2020 13:16:18 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 1211B68C; Tue, 14 Apr 2020 15:15:54 +0200 (CEST)
+ id 49BD8694; Tue, 14 Apr 2020 15:15:55 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -39,16 +39,16 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v2 19/33] iommu/s390: Convert to probe/release_device()
+Subject: [PATCH v2 20/33] iommu/virtio: Convert to probe/release_device()
  call-backs
-Date: Tue, 14 Apr 2020 15:15:28 +0200
-Message-Id: <20200414131542.25608-20-joro@8bytes.org>
+Date: Tue, 14 Apr 2020 15:15:29 +0200
+Message-Id: <20200414131542.25608-21-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200414131542.25608-1-joro@8bytes.org>
 References: <20200414131542.25608-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_061613_932370_F55A1B99 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20200414_061613_855935_AAF50BD7 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -83,74 +83,109 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-Convert the S390 IOMMU driver to use the probe_device() and
+Convert the VirtIO IOMMU driver to use the probe_device() and
 release_device() call-backs of iommu_ops, so that the iommu core code
 does the group and sysfs setup.
 
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/s390-iommu.c | 22 ++++++----------------
- 1 file changed, 6 insertions(+), 16 deletions(-)
+ drivers/iommu/virtio-iommu.c | 41 +++++++++---------------------------
+ 1 file changed, 10 insertions(+), 31 deletions(-)
 
-diff --git a/drivers/iommu/s390-iommu.c b/drivers/iommu/s390-iommu.c
-index 1137f3ddcb85..610f0828f22d 100644
---- a/drivers/iommu/s390-iommu.c
-+++ b/drivers/iommu/s390-iommu.c
-@@ -166,21 +166,14 @@ static void s390_iommu_detach_device(struct iommu_domain *domain,
- 	}
+diff --git a/drivers/iommu/virtio-iommu.c b/drivers/iommu/virtio-iommu.c
+index d5cac4f46ca5..bda300c2a438 100644
+--- a/drivers/iommu/virtio-iommu.c
++++ b/drivers/iommu/virtio-iommu.c
+@@ -865,24 +865,23 @@ static struct viommu_dev *viommu_get_by_fwnode(struct fwnode_handle *fwnode)
+ 	return dev ? dev_to_virtio(dev)->priv : NULL;
  }
  
--static int s390_iommu_add_device(struct device *dev)
-+static struct iommu_device *s390_iommu_probe_device(struct device *dev)
+-static int viommu_add_device(struct device *dev)
++static struct iommu_device *viommu_probe_device(struct device *dev)
  {
--	struct iommu_group *group = iommu_group_get_for_dev(dev);
- 	struct zpci_dev *zdev = to_pci_dev(dev)->sysdata;
+ 	int ret;
+-	struct iommu_group *group;
+ 	struct viommu_endpoint *vdev;
+ 	struct viommu_dev *viommu = NULL;
+ 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
  
--	if (IS_ERR(group))
--		return PTR_ERR(group);
+ 	if (!fwspec || fwspec->ops != &viommu_ops)
+-		return -ENODEV;
++		return ERR_PTR(-ENODEV);
+ 
+ 	viommu = viommu_get_by_fwnode(fwspec->iommu_fwnode);
+ 	if (!viommu)
+-		return -ENODEV;
++		return ERR_PTR(-ENODEV);
+ 
+ 	vdev = kzalloc(sizeof(*vdev), GFP_KERNEL);
+ 	if (!vdev)
+-		return -ENOMEM;
++		return ERR_PTR(-ENOMEM);
+ 
+ 	vdev->dev = dev;
+ 	vdev->viommu = viommu;
+@@ -896,45 +895,25 @@ static int viommu_add_device(struct device *dev)
+ 			goto err_free_dev;
+ 	}
+ 
+-	ret = iommu_device_link(&viommu->iommu, dev);
+-	if (ret)
+-		goto err_free_dev;
++	return &viommu->iommu;
+ 
+-	/*
+-	 * Last step creates a default domain and attaches to it. Everything
+-	 * must be ready.
+-	 */
+-	group = iommu_group_get_for_dev(dev);
+-	if (IS_ERR(group)) {
+-		ret = PTR_ERR(group);
+-		goto err_unlink_dev;
+-	}
 -
 -	iommu_group_put(group);
--	iommu_device_link(&zdev->iommu_dev, dev);
 -
--	return 0;
-+	return &zdev->iommu_dev;
+-	return PTR_ERR_OR_ZERO(group);
+-
+-err_unlink_dev:
+-	iommu_device_unlink(&viommu->iommu, dev);
+ err_free_dev:
+ 	generic_iommu_put_resv_regions(dev, &vdev->resv_regions);
+ 	kfree(vdev);
+ 
+-	return ret;
++	return ERR_PTR(ret);
  }
  
--static void s390_iommu_remove_device(struct device *dev)
-+static void s390_iommu_release_device(struct device *dev)
+-static void viommu_remove_device(struct device *dev)
++static void viommu_release_device(struct device *dev)
  {
- 	struct zpci_dev *zdev = to_pci_dev(dev)->sysdata;
- 	struct iommu_domain *domain;
-@@ -191,7 +184,7 @@ static void s390_iommu_remove_device(struct device *dev)
- 	 * to vfio-pci and completing the VFIO_SET_IOMMU ioctl (which triggers
- 	 * the attach_dev), removing the device via
- 	 * "echo 1 > /sys/bus/pci/devices/.../remove" won't trigger detach_dev,
--	 * only remove_device will be called via the BUS_NOTIFY_REMOVED_DEVICE
-+	 * only release_device will be called via the BUS_NOTIFY_REMOVED_DEVICE
- 	 * notifier.
- 	 *
- 	 * So let's call detach_dev from here if it hasn't been called before.
-@@ -201,9 +194,6 @@ static void s390_iommu_remove_device(struct device *dev)
- 		if (domain)
- 			s390_iommu_detach_device(domain, dev);
- 	}
--
--	iommu_device_unlink(&zdev->iommu_dev, dev);
--	iommu_group_remove_device(dev);
- }
+-	struct viommu_endpoint *vdev;
+ 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
++	struct viommu_endpoint *vdev;
  
- static int s390_iommu_update_trans(struct s390_domain *s390_domain,
-@@ -373,8 +363,8 @@ static const struct iommu_ops s390_iommu_ops = {
- 	.map = s390_iommu_map,
- 	.unmap = s390_iommu_unmap,
- 	.iova_to_phys = s390_iommu_iova_to_phys,
--	.add_device = s390_iommu_add_device,
--	.remove_device = s390_iommu_remove_device,
-+	.probe_device = s390_iommu_probe_device,
-+	.release_device = s390_iommu_release_device,
- 	.device_group = generic_device_group,
- 	.pgsize_bitmap = S390_IOMMU_PGSIZES,
- };
+ 	if (!fwspec || fwspec->ops != &viommu_ops)
+ 		return;
+ 
+ 	vdev = dev_iommu_priv_get(dev);
+ 
+-	iommu_group_remove_device(dev);
+-	iommu_device_unlink(&vdev->viommu->iommu, dev);
+ 	generic_iommu_put_resv_regions(dev, &vdev->resv_regions);
+ 	kfree(vdev);
+ }
+@@ -960,8 +939,8 @@ static struct iommu_ops viommu_ops = {
+ 	.unmap			= viommu_unmap,
+ 	.iova_to_phys		= viommu_iova_to_phys,
+ 	.iotlb_sync		= viommu_iotlb_sync,
+-	.add_device		= viommu_add_device,
+-	.remove_device		= viommu_remove_device,
++	.probe_device		= viommu_probe_device,
++	.release_device		= viommu_release_device,
+ 	.device_group		= viommu_device_group,
+ 	.get_resv_regions	= viommu_get_resv_regions,
+ 	.put_resv_regions	= generic_iommu_put_resv_regions,
 -- 
 2.17.1
 
