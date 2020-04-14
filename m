@@ -2,50 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F4F31A7F2B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 16:07:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C3D11A802E
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 16:46:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uj/sVdtutWX1iHENDNgwvMIq8WSThyr49cdjfgFXm74=; b=VVsr9JruS8DXNR
-	FKnWewSlYzT+0m6ymT2hKe5Ar7KR9T6RLIxLYh7YkM0xMv2q5ViLiGvehwW+lOR+df5OdW5mhHL7P
-	pzDsaY02T03gBxWQ5i1gaOB/Q5ZP4e7sq3qS/LCCyJyuB4gBg5yt7AotuW2/A6pj6/fL/WeD2+efe
-	Mc1kFvlrhCLKbcgnzVekbR1FrGC/BehfSsK7DfGxBX6Im1pJkn4dKUvIvgLWR75tKHeZ9b3+87WJO
-	lfeIVyzFWH+SHaRvJ1Z11bYFcLrQRDdZl7vffL72DRmQE/ltvLb9L23th3zbQPrELEyV3Hwxskq7a
-	ztyEmUxTviX8CbelRLeQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=WY4FYuO9oQ2lfbAVeZRgjrdrutlXTvRD2e5C5UOfONY=; b=UAa
+	Z4wnNZJpmG2V8e9mkvTcTHYfbLXQFwKSGYFbx9VEUvAJpcQhuA0kPL6C1Gw4OEs2Kxr8GJPCKoNKO
+	301oJzqjvVvjxpoW6yT/mOci83kXgJjd/6tnHukpoD9f+njmw9kEBYDEQH/sblUwamOT/PJ6c8foA
+	ey+yeDg1fJsFlTTTFKbsHkkr3AS6A5BxHTYO4V3LutnYF2vhgggj4g1ldoXSFQNYEQF4WekWZBxQA
+	xak4LZVz42WtaiRwuO+Gylfh4GkvXvrUMvmFFmLuE/FSHPqkQKSByz48FFqZtU6WjyrKhyMVztJKh
+	fvVxfTLm6ue2HsYERNEqcryhzkUO6eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOMDN-00070m-6e; Tue, 14 Apr 2020 14:07:01 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jOMpF-0003SQ-00; Tue, 14 Apr 2020 14:46:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOMDC-0006sU-TE; Tue, 14 Apr 2020 14:06:52 +0000
-Received: from floko.floko.floko (unknown
- [IPv6:2804:431:e7cc:79a2:b6f7:4033:5775:cc3a])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: koike)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8DF162A0B2A;
- Tue, 14 Apr 2020 15:06:44 +0100 (BST)
-From: Helen Koike <helen.koike@collabora.com>
-To: devicetree@vger.kernel.org,
-	linux-rockchip@lists.infradead.org
-Subject: [PATCH] arm64: dts: rockchip: add isp and sensors for scarlet
-Date: Tue, 14 Apr 2020 11:06:34 -0300
-Message-Id: <20200414140634.915086-1-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.26.0
-MIME-Version: 1.0
+ id 1jOMp0-0003EV-9P; Tue, 14 Apr 2020 14:45:56 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7EA4320578;
+ Tue, 14 Apr 2020 14:45:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586875553;
+ bh=BKt0ly0X0uSnzjL/jCTuX7kQW79brFOyTVWQb3pvaVg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=Xj0eRvpcd0zAHHGgS+wlkuC4N5yFk7/Jl/HNtK96l4XQMHdwnPoEAvivqpMhgIeM0
+ vPngoZWMyKMqw4h4vqjDFcvzCxx/XMchC3Fwy/4lD2/mzfQ7AASvzYHB+w1bkMcJI+
+ NNDw8/wBVhwYCKjYJlDHd/tPPcA8jAUWZt/e+Xmw=
+Date: Tue, 14 Apr 2020 15:45:50 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Applied "ASoC: rockchip-i2s: add power-domains property" to the asoc
+ tree
+In-Reply-To: <20200324094149.6904-3-jbx6244@gmail.com>
+Message-Id: <applied-20200324094149.6904-3-jbx6244@gmail.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_070651_074677_A55DC6B4 
-X-CRM114-Status: GOOD (  12.31  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200414_074554_358788_C57FC607 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,135 +75,77 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Eddie Cai <eddie.cai.linux@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, Helen Koike <helen.koike@collabora.com>,
- Rob Herring <robh+dt@kernel.org>, jbx6244@gmail.com, kernel@collabora.com,
- Shunqian Zheng <zhengsq@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Eddie Cai <eddie.cai.linux@gmail.com>
+The patch
 
-Enable ISP and camera sensor ov2685 and ov5695 for scarlet.
+   ASoC: rockchip-i2s: add power-domains property
 
-Verified with:
-    make ARCH=arm64 dtbs_check
+has been applied to the asoc tree at
 
-Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-Signed-off-by: Eddie Cai <eddie.cai.linux@gmail.com>
-Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 2a79c31a498e002eeb7c7d759241c3cca95b28d9 Mon Sep 17 00:00:00 2001
+From: Johan Jonker <jbx6244@gmail.com>
+Date: Tue, 24 Mar 2020 10:41:49 +0100
+Subject: [PATCH] ASoC: rockchip-i2s: add power-domains property
+
+In the old txt situation we add/describe only properties that are used
+by the driver/hardware itself. With yaml it also filters things in a
+node that are used by other drivers like 'power-domains' for rk3399,
+so add it to 'rockchip-i2s.yaml'.
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20200324094149.6904-3-jbx6244@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
-This patch is based on:
-https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/527854
+ Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-It should be merged after moving the bidings out of staging:
-https://patchwork.kernel.org/project/linux-media/list/?series=266089
----
- .../boot/dts/rockchip/rk3399-gru-scarlet.dtsi | 74 +++++++++++++++++++
- 1 file changed, 74 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
-index 4373ed732af76..ae08205aa8e24 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
-@@ -296,6 +296,52 @@ camera: &i2c7 {
+diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+index 7cd0e278ed85..a3ba2186d6a1 100644
+--- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
++++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+@@ -56,6 +56,9 @@ properties:
+       - const: tx
+       - const: rx
  
- 	/* 24M mclk is shared between world and user cameras */
- 	pinctrl-0 = <&i2c7_xfer &test_clkout1>;
++  power-domains:
++    maxItems: 1
 +
-+	/* Rear-facing camera */
-+	wcam: camera@36 {
-+		compatible = "ovti,ov5695";
-+		reg = <0x36>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&wcam_rst>;
-+
-+		clocks = <&cru SCLK_TESTCLKOUT1>;
-+		clock-names = "xvclk";
-+
-+		avdd-supply = <&pp2800_cam>;
-+		dvdd-supply = <&pp1250_cam>;
-+		dovdd-supply = <&pp1800_s0>;
-+		reset-gpios = <&gpio2 5 GPIO_ACTIVE_LOW>;
-+
-+		port {
-+			wcam_out: endpoint {
-+				remote-endpoint = <&mipi_in_wcam>;
-+				data-lanes = <1 2>;
-+			};
-+		};
-+	};
-+
-+	/* Front-facing camera */
-+	ucam: camera@3c {
-+		compatible = "ovti,ov2685";
-+		reg = <0x3c>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&ucam_rst>;
-+
-+		clocks = <&cru SCLK_TESTCLKOUT1>;
-+		clock-names = "xvclk";
-+
-+		avdd-supply = <&pp2800_cam>;
-+		dovdd-supply = <&pp1800_s0>;
-+		dvdd-supply = <&pp1800_s0>;
-+		reset-gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
-+
-+		port {
-+			ucam_out: endpoint {
-+				remote-endpoint = <&mipi_in_ucam>;
-+				data-lanes = <1>;
-+			};
-+		};
-+	};
- };
- 
- &cdn_dp {
-@@ -353,10 +399,38 @@ &io_domains {
- 	gpio1830-supply = <&pp1800_s0>;		/* APIO4_VDD;  4c 4d */
- };
- 
-+&isp0 {
-+	status = "okay";
-+
-+	ports {
-+		port@0 {
-+			mipi_in_wcam: endpoint@0 {
-+				reg = <0>;
-+				remote-endpoint = <&wcam_out>;
-+				data-lanes = <1 2>;
-+			};
-+
-+			mipi_in_ucam: endpoint@1 {
-+				reg = <1>;
-+				remote-endpoint = <&ucam_out>;
-+				data-lanes = <1>;
-+			};
-+		};
-+	};
-+};
-+
-+&isp0_mmu {
-+	status = "okay";
-+};
-+
- &max98357a {
- 	sdmode-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
- };
- 
-+&mipi_dphy_rx0 {
-+	status = "okay";
-+};
-+
- &mipi_dsi {
- 	status = "okay";
- 	clock-master;
+   rockchip,capture-channels:
+     allOf:
+       - $ref: /schemas/types.yaml#/definitions/uint32
 -- 
-2.26.0
+2.20.1
 
 
 _______________________________________________
