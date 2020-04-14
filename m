@@ -2,53 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D99921A7DB1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDC6B1A7DBB
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5fGyK08BdFlhHguayan/g8PSPG1wJOnwYwytYey3SmE=; b=t01++2immOLB3+e5opZGZLv0Ek
-	Zm9ZMXnp0pf+dE3dCVWwK+KCGJ+CrS7guE0IIvMnY0lDNQwhwXTo05CfabdxyzpnVVQxFs6sG7zcF
-	tozI86JGjJc32vegCB3qw5shAxXGQYrW2dz2MJImF7mKLRWdnfCYvMra4CbSVh/E13uKDu/UEml3O
-	OVpwCEPWlVAg+YytscUBvYK3OhceSglAQPSz1DBeHzcyEwvyyxYEDYllkMxNdr+ut4Op1RhfrZ+Rr
-	gAyJ4sY4HeZEDFIUkhRQSUlFW03dspJYIjhOAYniYlRY7fHaXvBepXsqF2Dtn7SVFZ9qJzAiEHIgW
-	GHFXL9MA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d4tsnjkNr9Wk8Lw7HHpKQOc94egeCw4cVxIXW49LTLM=; b=WD50CFeikLJsSL
+	xlBVVODc+uf05qN/UUwboKAsaRUD3ZyS6uNudm6BW4uCzjHx3nGkwB25Mr0+iY6ap0k2MQ8iPf41T
+	mlnsbWPRUfRm95UkSFtIbRDBPIe2NeIiOGz9UkCoc3CjcO9uVv7V+8zFw1grioY8LP9BGMxEoSyW3
+	t9SlAXruw903VW/DNKJKju7u6SpYlg2fMWGDYxSHTzz5CNpdCOIIYg9HLeqjh+lZyXsH0gvmYoDT3
+	UCT1nKmBKz77xXo3HCUswudw0PhrCnmN4YPSSN7z/2rk9cDFIiX4OxiAkVFpFe6kPPE3Y9Sf2M84A
+	E+ocdYEt4tdSVmLPAzpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLZ8-0006Sj-9P; Tue, 14 Apr 2020 13:25:26 +0000
+	id 1jOLZF-0000Pv-CT; Tue, 14 Apr 2020 13:25:33 +0000
 Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
  helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLQI-0002oj-V3; Tue, 14 Apr 2020 13:16:23 +0000
+ id 1jOLRP-0003xL-PZ; Tue, 14 Apr 2020 13:17:29 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id E6E79984; Tue, 14 Apr 2020 15:15:57 +0200 (CEST)
+ id 7CE0145B; Tue, 14 Apr 2020 15:17:26 +0200 (CEST)
+Date: Tue, 14 Apr 2020 15:17:24 +0200
 From: Joerg Roedel <joro@8bytes.org>
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v2 33/33] iommu: Unexport iommu_group_get_for_dev()
-Date: Tue, 14 Apr 2020 15:15:42 +0200
-Message-Id: <20200414131542.25608-34-joro@8bytes.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200414131542.25608-1-joro@8bytes.org>
-References: <20200414131542.25608-1-joro@8bytes.org>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [RFC PATCH 33/34] iommu: Remove add_device()/remove_device()
+ code-paths
+Message-ID: <20200414131724.GA14731@8bytes.org>
+References: <20200407183742.4344-1-joro@8bytes.org>
+ <CGME20200407183806eucas1p2cf45fbce5a43a6b4fe3a623b28da0606@eucas1p2.samsung.com>
+ <20200407183742.4344-34-joro@8bytes.org>
+ <1a88547f-ac90-825e-e529-a56c2c4e0391@samsung.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1a88547f-ac90-825e-e529-a56c2c4e0391@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_061619_174460_5EFC10DD 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200414_061727_993929_F03D7019 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -68,71 +61,40 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org, linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-tegra@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ Joerg Roedel <jroedel@suse.de>, linux-s390@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ virtualization@lists.linux-foundation.org,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Lu Baolu <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Joerg Roedel <jroedel@suse.de>
+Hi Marek,
 
-The function is now only used in IOMMU core code and shouldn't be used
-outside of it anyway, so remove the export for it.
+On Fri, Apr 10, 2020 at 12:39:38PM +0200, Marek Szyprowski wrote:
+> > +		if (!group->default_domain)
+> > +			continue;
+> 
+> It doesn't look straight from the above diff, but this continue leaks 
+> group->lock taken.
 
-Signed-off-by: Joerg Roedel <jroedel@suse.de>
----
- drivers/iommu/iommu.c | 4 ++--
- include/linux/iommu.h | 1 -
- 2 files changed, 2 insertions(+), 3 deletions(-)
+You are right, thanks for the review! I fixed it in v2.
 
-diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 9a7120746b8e..e9413732c61e 100644
---- a/drivers/iommu/iommu.c
-+++ b/drivers/iommu/iommu.c
-@@ -91,6 +91,7 @@ static void __iommu_detach_group(struct iommu_domain *domain,
- 				 struct iommu_group *group);
- static int iommu_create_device_direct_mappings(struct iommu_group *group,
- 					       struct device *dev);
-+static struct iommu_group *iommu_group_get_for_dev(struct device *dev);
- 
- #define IOMMU_GROUP_ATTR(_name, _mode, _show, _store)		\
- struct iommu_group_attribute iommu_group_attr_##_name =		\
-@@ -1483,7 +1484,7 @@ static int iommu_alloc_default_domain(struct device *dev)
-  * to the returned IOMMU group, which will already include the provided
-  * device.  The reference should be released with iommu_group_put().
-  */
--struct iommu_group *iommu_group_get_for_dev(struct device *dev)
-+static struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- {
- 	const struct iommu_ops *ops = dev->bus->iommu_ops;
- 	struct iommu_group *group;
-@@ -1514,7 +1515,6 @@ struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- 
- 	return ERR_PTR(ret);
- }
--EXPORT_SYMBOL(iommu_group_get_for_dev);
- 
- struct iommu_domain *iommu_group_default_domain(struct iommu_group *group)
- {
-diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index dd076366383f..7cfd2dddb49d 100644
---- a/include/linux/iommu.h
-+++ b/include/linux/iommu.h
-@@ -527,7 +527,6 @@ extern int iommu_page_response(struct device *dev,
- 			       struct iommu_page_response *msg);
- 
- extern int iommu_group_id(struct iommu_group *group);
--extern struct iommu_group *iommu_group_get_for_dev(struct device *dev);
- extern struct iommu_domain *iommu_group_default_domain(struct iommu_group *);
- 
- extern int iommu_domain_get_attr(struct iommu_domain *domain, enum iommu_attr,
--- 
-2.17.1
+Regards,
+
+	Joerg
 
 
 _______________________________________________
