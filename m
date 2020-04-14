@@ -2,71 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 778461A7AA2
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 14:24:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 463771A7AC6
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 14:28:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DVBfndEDLJ8V9XCKva47HPDRXTimyxq/f70V9Z+hsLk=; b=Qzn25kxUj529PI
-	+p8dw5zoc8flIQUAwpXkJn1e2TlGQJip6e6LWOwkvQ/S0Vmg0KyWOJ4CG3oEUMrCzT9OTObGQd4qd
-	Qc9tteMl8kqUMwCS9HlC93FVOGUTmDaai95Nkkhlwgyi4kGuigk+znIJ7ZrjID7e0p5U1OXae3WFT
-	xUbihYQFk+GD1fCkgAvJ8KPhhELvqvMZ6+OsyhtX/8f6KKjXrb9r0HP5fKsyTp9WvmwFvTAWYrrk8
-	PoshpVPVVJVIb4G/DF9Hev5nH7qj5NbpMxb3i5QJ2yJbvZ5M4CuVeotaQ8HxMR3Ga1NglJI1Bguos
-	unYpxmKrVBVuvKyLGHKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7D/ibDq+6gp2vLRr653bn7wDTgaiY7xaLpqi2RVtpZ8=; b=hzX2GGbZCBRWe4S4lGK6cebZP
+	s+rW743Z7RA92Fk3cdXCa6jAFYeLWjMEmNZsbHNEs4fr4EAWZPMhH0r4jLbNmzAM66+IdMuAPvwIc
+	gZa15keqdK16tbzqehKScXvGhCt84Ihtjt0MgO4sNu/xk1Cn1d1Tr+PrHvyYF/L46crJY4s6JSQaX
+	kfEVnxIlkVhPhGkf53kcvL1C6xpG2pnkvOdhLJVNlOYqyn0/YWFumZGp5edSPzlEz8g7xxuoDsIhn
+	60x9mPtfHEz4RSmkoW8RZ+PT0lND6OJJsDDK0pPqLrhBl/NVMnRyq9eAfNe/Bx8B2yjQ3Z2iV60zR
+	xq4Rp6jkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOKbp-0002GQ-UQ; Tue, 14 Apr 2020 12:24:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOKbe-0001yC-Ga; Tue, 14 Apr 2020 12:24:00 +0000
-Received: from localhost (unknown [213.57.247.131])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 53E3620732;
- Tue, 14 Apr 2020 12:23:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586867033;
- bh=HO68f48Xhk1eA5LYUtWE07mUQhbLIhm8b3XNLus8Z7s=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gbD7t+j/tuM3YwdcvzylisLeDIKYDiBHL29WWCTO2WxU3f0EJgtm7kJqGbEKyoQj2
- xSUxvyJeQpWQQeL8XWNquZUdy9GG6qMVPbL4aBlMZWc/TsQdNzhgChw63E/mWyqSHr
- GbAlJZGfmYl6sSpwjstxHtrlnE3ds4vr80PmpIss=
-Date: Tue, 14 Apr 2020 15:23:49 +0300
-From: Leon Romanovsky <leon@kernel.org>
-To: Borislav Petkov <bp@alien8.de>
-Subject: Re: [PATCH] net/3com/3c515: Fix MODULE_ARCH_VERMAGIC redefinition
-Message-ID: <20200414122349.GB1011271@unreal>
-References: <20200413045555.GE334007@unreal>
- <20200412.220739.516022706077351913.davem@davemloft.net>
- <20200413052637.GG334007@unreal>
- <20200412.223604.1160930629964379276.davem@davemloft.net>
- <20200413080452.GA3772@zn.tnic> <20200413084026.GH334007@unreal>
+	id 1jOKfw-0005uH-KW; Tue, 14 Apr 2020 12:28:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOKfi-0005jq-V4; Tue, 14 Apr 2020 12:28:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11BD91FB;
+ Tue, 14 Apr 2020 05:28:10 -0700 (PDT)
+Received: from [10.57.33.145] (unknown [10.57.33.145])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AA6673F6C4;
+ Tue, 14 Apr 2020 05:28:07 -0700 (PDT)
+Subject: Re: [BUG] PCI: rockchip: rk3399: pcie switch support
+To: Soeren Moch <smoch@web.de>, Shawn Lin <shawn.lin@rock-chips.com>
+References: <4d03dd8c-14f9-d1ef-6fd2-095423be3dd3@web.de>
+ <3e9d2c53-4f0d-0c97-fbfa-6d799e223747@arm.com>
+ <b088ad0e-bab1-0cff-dc43-eb5709555902@web.de>
+ <1f180d4b-9e5d-c829-555b-c9750940361e@web.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <d02e0b72-5fb3-dd47-468c-08b86db07a9a@arm.com>
+Date: Tue, 14 Apr 2020 13:28:05 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200413084026.GH334007@unreal>
+In-Reply-To: <1f180d4b-9e5d-c829-555b-c9750940361e@web.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_052358_592575_F2695B63 
-X-CRM114-Status: GOOD (  25.23  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_052811_085505_21C0D53F 
+X-CRM114-Status: GOOD (  19.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,193 +66,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: thor.thayer@linux.intel.com, heiko@sntech.de, irusskikh@marvell.com,
- andreas@gaisler.com, chris.snook@gmail.com, dave@thedillows.org,
- jes@trained-monkey.org, iyappan@os.amperecomputing.com,
- quan@os.amperecomputing.com, linux-acenic@sunsite.dk, andy@greyhouse.net,
- akiyano@amazon.com, linux-rockchip@lists.infradead.org, wens@csie.org,
- LinoSanfilippo@gmx.de, vfalico@gmail.com, kuba@kernel.org,
- thomas.lendacky@amd.com, jcliburn@gmail.com, j.vosburgh@gmail.com,
- keyur@os.amperecomputing.com, mripard@kernel.org, pcnet32@frontier.com,
- nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, ionut@badula.org,
- netanel@amazon.com, mark.einon@gmail.com, David Miller <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Apr 13, 2020 at 11:40:26AM +0300, Leon Romanovsky wrote:
-> On Mon, Apr 13, 2020 at 10:04:52AM +0200, Borislav Petkov wrote:
-> > On Sun, Apr 12, 2020 at 10:36:04PM -0700, David Miller wrote:
-> > > From: Leon Romanovsky <leon@kernel.org>
-> > > Date: Mon, 13 Apr 2020 08:26:37 +0300
-> > >
-> > > > How do you want us to handle it? Boris resend, me to send, you to fix?
-> > >
-> > > Anyone other than me can do it ;-)
-> >
-> > Ok, here's what I'm thinking: that vermagic.h is normally automatically
-> > included in the *mod.c as part of the module creation, see add_header()
-> > in modpost.c.
-> >
-> > So then perhaps drivers should not use it directly due to the current
-> > inclusion order:
-> >
-> > linux/module.h includes asm/module.h and that arch-specific header
-> > defines MODULE_VERMAGIC* for the respective arch.
-> >
-> > linux/vermagic.h defines all those fallbacks for those MODULE_VERMAGIC*
-> > things and if the inclusion order is swapped - we get the redefinition
-> > warning.
-> >
-> > Yesterday I tried the below - basically get rid of all the remaining
-> > includers of linux/vermagic.h but two are left:
-> >
-> > drivers/net/ethernet/hisilicon/hns3/hns3_enet.c:18:#include <linux/vermagic.h>
-> > drivers/net/ethernet/netronome/nfp/nfp_main.c:17:#include <linux/vermagic.h>
-> >
-> > because both use VERMAGIC_STRING directly.
-> >
-> > So,
-> >
-> > * one could either allow that and sort the inclusion order so that, for
-> > example, asm/module.h includes linux/vermagic.h and thus the fallbacks
-> > are there present.
-> >
-> > or
-> >
-> > * remove all uses of VERMAGIC_STRING from the drivers, add a header
-> > guard which prevents people from using it directly and leave
-> > VERMAGIC_STRING only to the internal module machinery in the kernel.
-> >
-> > Judging by how only a handful of old drivers are even using that,
-> > perhaps not too far fetched.
-> >
-> > In any case, this needs a maintainer decision.
-> >
-> > Leon, if you wanna do it whatever you guys end up agreeing on, just go
-> > ahead and submit the patches - it's not like I don't have anything else
-> > on the TODO :-) Just add a Reported-by: me and that should be enough.
->
-> I broke it so I should fix and will send a patch today/tomorrow.
+On 2020-04-14 12:35 pm, Soeren Moch wrote:
+> On 06.04.20 19:12, Soeren Moch wrote:
+>> On 06.04.20 14:52, Robin Murphy wrote:
+>>> On 2020-04-04 7:41 pm, Soeren Moch wrote:
+>>>> I want to use a PCIe switch on a RK3399 based RockPro64 V2.1 board.
+>>>> "Normal" PCIe cards work (mostly) just fine on this board. The PCIe
+>>>> switches (I tried Pericom and ASMedia based switches) also work fine on
+>>>> other boards. The RK3399 PCIe controller with pcie_rockchip_host driver
+>>>> also recognises the switch, but fails to initialize the buses behind the
+>>>> bridge properly, see syslog from linux-5.6.0.
+>>>>
+>>>> Any ideas what I do wrong, or any suggestions what I can test here?
+>>> See the thread here:
+>>>
+>>> https://lore.kernel.org/linux-pci/CAMdYzYoTwjKz4EN8PtD5pZfu3+SX+68JL+dfvmCrSnLL=K6Few@mail.gmail.com/
+>>>
+>> Thanks Robin!
+>>
+>> I also found out in the meantime that device enumeration fails in this
+>> fatal way when probing non-existent devices. So if I hack my complete
+>> bus topology into rockchip_pcie_valid_device, then all existing devices
+>> come up properly. Of course this is not how PCIe should work.
+>>> The conclusion there seems to be that the RK3399 root complex just
+>>> doesn't handle certain types of response in a sensible manner, and
+>>> there's not much that can reasonably be done to change that.
+>> Hm, at least there is the promising suggestion to take over the SError
+>> handler, maybe in ATF, as workaround.
+> Unfortunately it seems to be not that easy. Only when PCIe device
+> probing runs on one of the Cortex-A72 cores of rk3399 we see the SError.
+> When probing runs on one of the A53 cores, we get a synchronous external
+> abort instead.
+> 
+> Is this expected to see different error types on big.LITTLE systems? Or
+> is this another special property of the rk3399 pcie controller?
 
-ok, the patches are here, will wait for the kbuild results and will send.
-https://git.kernel.org/pub/scm/linux/kernel/git/leon/linux-rdma.git/log/?h=vermagic
+As far as I'm aware, the CPU microarchitecture is indeed one of the 
+factors in whether it takes a given external abort synchronously or 
+asynchronously, so yes, I'd say that probably is expected. I wouldn't 
+necessarily even rely on a single microarchitecture only behaving one 
+way, since in principle it's possible that surrounding instructions 
+might affect whether the core still has enough context left to take the 
+exception synchronously or not at the point the abort does come back.
 
-Thanks
+In general external aborts are a "should never happen" kind of thing, so 
+they're not necessarily expected to be recoverable (I think the RAS 
+extensions might add a more robustness in terms of reporting, but aren't 
+relevant here either way).
 
->
-> Thanks
->
-> >
-> > If you're busy too, lemme know and I'll put it on my todo then.
-> >
-> > Thx.
-> >
-> > diff --git a/drivers/net/bonding/bonding_priv.h b/drivers/net/bonding/bonding_priv.h
-> > index 45b77bc8c7b3..48cdf3a49a7d 100644
-> > --- a/drivers/net/bonding/bonding_priv.h
-> > +++ b/drivers/net/bonding/bonding_priv.h
-> > @@ -14,7 +14,7 @@
-> >
-> >  #ifndef _BONDING_PRIV_H
-> >  #define _BONDING_PRIV_H
-> > -#include <linux/vermagic.h>
-> > +#include <generated/utsrelease.h>
-> >
-> >  #define DRV_NAME	"bonding"
-> >  #define DRV_DESCRIPTION	"Ethernet Channel Bonding Driver"
-> > diff --git a/drivers/net/ethernet/3com/3c509.c b/drivers/net/ethernet/3com/3c509.c
-> > index b762176a1406..139d0120f511 100644
-> > --- a/drivers/net/ethernet/3com/3c509.c
-> > +++ b/drivers/net/ethernet/3com/3c509.c
-> > @@ -85,7 +85,6 @@
-> >  #include <linux/device.h>
-> >  #include <linux/eisa.h>
-> >  #include <linux/bitops.h>
-> > -#include <linux/vermagic.h>
-> >
-> >  #include <linux/uaccess.h>
-> >  #include <asm/io.h>
-> > diff --git a/drivers/net/ethernet/3com/3c515.c b/drivers/net/ethernet/3com/3c515.c
-> > index 90312fcd6319..47b4215bb93b 100644
-> > --- a/drivers/net/ethernet/3com/3c515.c
-> > +++ b/drivers/net/ethernet/3com/3c515.c
-> > @@ -22,7 +22,6 @@
-> >
-> >  */
-> >
-> > -#include <linux/vermagic.h>
-> >  #define DRV_NAME		"3c515"
-> >
-> >  #define CORKSCREW 1
-> > diff --git a/drivers/net/ethernet/adaptec/starfire.c b/drivers/net/ethernet/adaptec/starfire.c
-> > index 2db42211329f..a64191fc2af9 100644
-> > --- a/drivers/net/ethernet/adaptec/starfire.c
-> > +++ b/drivers/net/ethernet/adaptec/starfire.c
-> > @@ -45,7 +45,6 @@
-> >  #include <asm/processor.h>		/* Processor type for cache alignment. */
-> >  #include <linux/uaccess.h>
-> >  #include <asm/io.h>
-> > -#include <linux/vermagic.h>
-> >
-> >  /*
-> >   * The current frame processor firmware fails to checksum a fragment
-> > diff --git a/drivers/net/ethernet/pensando/ionic/ionic_main.c b/drivers/net/ethernet/pensando/ionic/ionic_main.c
-> > index 588c62e9add7..3ed150512091 100644
-> > --- a/drivers/net/ethernet/pensando/ionic/ionic_main.c
-> > +++ b/drivers/net/ethernet/pensando/ionic/ionic_main.c
-> > @@ -6,7 +6,7 @@
-> >  #include <linux/module.h>
-> >  #include <linux/netdevice.h>
-> >  #include <linux/utsname.h>
-> > -#include <linux/vermagic.h>
-> > +#include <generated/utsrelease.h>
-> >
-> >  #include "ionic.h"
-> >  #include "ionic_bus.h"
-> > diff --git a/drivers/power/supply/test_power.c b/drivers/power/supply/test_power.c
-> > index 65c23ef6408d..b3c05ff05783 100644
-> > --- a/drivers/power/supply/test_power.c
-> > +++ b/drivers/power/supply/test_power.c
-> > @@ -16,7 +16,7 @@
-> >  #include <linux/power_supply.h>
-> >  #include <linux/errno.h>
-> >  #include <linux/delay.h>
-> > -#include <linux/vermagic.h>
-> > +#include <generated/utsrelease.h>
-> >
-> >  enum test_power_id {
-> >  	TEST_AC,
-> > diff --git a/net/ethtool/ioctl.c b/net/ethtool/ioctl.c
-> > index 89d0b1827aaf..adab97e500cf 100644
-> > --- a/net/ethtool/ioctl.c
-> > +++ b/net/ethtool/ioctl.c
-> > @@ -17,7 +17,6 @@
-> >  #include <linux/phy.h>
-> >  #include <linux/bitops.h>
-> >  #include <linux/uaccess.h>
-> > -#include <linux/vermagic.h>
-> >  #include <linux/vmalloc.h>
-> >  #include <linux/sfp.h>
-> >  #include <linux/slab.h>
-> > @@ -29,6 +28,8 @@
-> >  #include <net/flow_offload.h>
-> >  #include <linux/ethtool_netlink.h>
-> >
-> > +#include <generated/utsrelease.h>
-> > +
-> >  #include "common.h"
-> >
-> >  /*
-> >
-> >
-> > --
-> > Regards/Gruss,
-> >     Boris.
-> >
-> > https://people.kernel.org/tglx/notes-about-netiquette
+At this point I'm starting to wonder whether it might be possible to do 
+something similar to the Arm N1SDP workaround using the Cortex-M0, 
+albeit with the complication that probing would realistically have to be 
+explicitly invoked from the Linux driver due to clocks and external 
+regulators... :/
+
+Robin.
 
 _______________________________________________
 Linux-rockchip mailing list
