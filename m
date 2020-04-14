@@ -2,54 +2,48 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FAA41A7DCA
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F4F31A7F2B
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 16:07:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z/UIELaw/N8jzfCiHbPDPSrGrc6DYs4wo/Z3donSB/c=; b=AlgM6nev3QNS78
-	K/oJdvLVaozcJ0NgbyWTYcHp0l9rscmsGzQhmXDyC5Ng2JDXNoG1uLiPuz/4s7xidlRbEJIkpMQPu
-	YtIPGAM0Azfee/of1f3L60ngnmqlCFxhHQdOLDjeYB+ljeJ7Y+XA3xh/966V2R/mu0cuypSq6tl5/
-	185zcTDNgsFt6Jg3oxJLE+Pt0FXJeb/sPQJk4e/Wx+hTzI4wpeYA5EiypkY4c4wso3NhjEuaR6LxL
-	lcUvrFeD0/yhZ+pcU4xommcGboy/gm+Tx6Llof4/SMIIRI8o73FWyV++MTVn/xiHXcsqFXjwBGx7h
-	lJtg+yLA3e2vr7tsg8jw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uj/sVdtutWX1iHENDNgwvMIq8WSThyr49cdjfgFXm74=; b=VVsr9JruS8DXNR
+	FKnWewSlYzT+0m6ymT2hKe5Ar7KR9T6RLIxLYh7YkM0xMv2q5ViLiGvehwW+lOR+df5OdW5mhHL7P
+	pzDsaY02T03gBxWQ5i1gaOB/Q5ZP4e7sq3qS/LCCyJyuB4gBg5yt7AotuW2/A6pj6/fL/WeD2+efe
+	Mc1kFvlrhCLKbcgnzVekbR1FrGC/BehfSsK7DfGxBX6Im1pJkn4dKUvIvgLWR75tKHeZ9b3+87WJO
+	lfeIVyzFWH+SHaRvJ1Z11bYFcLrQRDdZl7vffL72DRmQE/ltvLb9L23th3zbQPrELEyV3Hwxskq7a
+	ztyEmUxTviX8CbelRLeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLZS-000122-MZ; Tue, 14 Apr 2020 13:25:46 +0000
-Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
+	id 1jOMDN-00070m-6e; Tue, 14 Apr 2020 14:07:01 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLUP-00012o-2q; Tue, 14 Apr 2020 13:20:39 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 340BE45B; Tue, 14 Apr 2020 15:20:31 +0200 (CEST)
-Date: Tue, 14 Apr 2020 15:20:29 +0200
-From: Joerg Roedel <joro@8bytes.org>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH] iommu/exynos: Get rid of 'struct exynos_iommu_owner'
- exynos_iommu_owner
-Message-ID: <20200414132029.GB14731@8bytes.org>
-References: <20200407183742.4344-1-joro@8bytes.org>
- <CGME20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82@eucas1p2.samsung.com>
- <20200407183742.4344-32-joro@8bytes.org>
- <449e7f16-e719-9617-ec92-63b82c0bc33f@samsung.com>
- <f59b0bb3-8c08-9cc9-bb1a-e69b7b226f60@samsung.com>
- <20200409114620.GA16298@8bytes.org>
- <40af831b-d00c-0cf9-0a06-e60c048a9ab8@samsung.com>
+ id 1jOMDC-0006sU-TE; Tue, 14 Apr 2020 14:06:52 +0000
+Received: from floko.floko.floko (unknown
+ [IPv6:2804:431:e7cc:79a2:b6f7:4033:5775:cc3a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: koike)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8DF162A0B2A;
+ Tue, 14 Apr 2020 15:06:44 +0100 (BST)
+From: Helen Koike <helen.koike@collabora.com>
+To: devicetree@vger.kernel.org,
+	linux-rockchip@lists.infradead.org
+Subject: [PATCH] arm64: dts: rockchip: add isp and sensors for scarlet
+Date: Tue, 14 Apr 2020 11:06:34 -0300
+Message-Id: <20200414140634.915086-1-helen.koike@collabora.com>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <40af831b-d00c-0cf9-0a06-e60c048a9ab8@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_062033_316131_9C9A1D4B 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20200414_070651_074677_A55DC6B4 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -64,43 +58,135 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
- Joerg Roedel <jroedel@suse.de>, linux-s390@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- virtualization@lists.linux-foundation.org,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, Lu Baolu <baolu.lu@linux.intel.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Eddie Cai <eddie.cai.linux@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Helen Koike <helen.koike@collabora.com>,
+ Rob Herring <robh+dt@kernel.org>, jbx6244@gmail.com, kernel@collabora.com,
+ Shunqian Zheng <zhengsq@rock-chips.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Apr 09, 2020 at 03:58:00PM +0200, Marek Szyprowski wrote:
-> I've checked and it works fine on top of 
-> ff68eb23308e6538ec7864c83d39540f423bbe90. However I'm not a fan of 
-> removing this 'owner' structure. It gave a nice abstraction for the all 
-> SYSMMU controllers for the given device (although most devices in the 
-> system have only one SYSMMU). Why this structure is a problem for your 
-> rework?
+From: Eddie Cai <eddie.cai.linux@gmail.com>
 
-Okay, the structure itself is not a problem, I just thought it is not
-really necessary. But to keep things simple I've taken another approach
-for v2 of this series: Just use the first SYSMMU of the controllers list
-to link the device and the IOMMU. When the owner structure exists there
-is always one entry in this list, so that should work fine.
+Enable ISP and camera sensor ov2685 and ov5695 for scarlet.
 
-Regards,
+Verified with:
+    make ARCH=arm64 dtbs_check
 
-	Joerg
+Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+Signed-off-by: Eddie Cai <eddie.cai.linux@gmail.com>
+Signed-off-by: Tomasz Figa <tfiga@chromium.org>
+Signed-off-by: Helen Koike <helen.koike@collabora.com>
+---
+This patch is based on:
+https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/527854
+
+It should be merged after moving the bidings out of staging:
+https://patchwork.kernel.org/project/linux-media/list/?series=266089
+---
+ .../boot/dts/rockchip/rk3399-gru-scarlet.dtsi | 74 +++++++++++++++++++
+ 1 file changed, 74 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
+index 4373ed732af76..ae08205aa8e24 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-gru-scarlet.dtsi
+@@ -296,6 +296,52 @@ camera: &i2c7 {
+ 
+ 	/* 24M mclk is shared between world and user cameras */
+ 	pinctrl-0 = <&i2c7_xfer &test_clkout1>;
++
++	/* Rear-facing camera */
++	wcam: camera@36 {
++		compatible = "ovti,ov5695";
++		reg = <0x36>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&wcam_rst>;
++
++		clocks = <&cru SCLK_TESTCLKOUT1>;
++		clock-names = "xvclk";
++
++		avdd-supply = <&pp2800_cam>;
++		dvdd-supply = <&pp1250_cam>;
++		dovdd-supply = <&pp1800_s0>;
++		reset-gpios = <&gpio2 5 GPIO_ACTIVE_LOW>;
++
++		port {
++			wcam_out: endpoint {
++				remote-endpoint = <&mipi_in_wcam>;
++				data-lanes = <1 2>;
++			};
++		};
++	};
++
++	/* Front-facing camera */
++	ucam: camera@3c {
++		compatible = "ovti,ov2685";
++		reg = <0x3c>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&ucam_rst>;
++
++		clocks = <&cru SCLK_TESTCLKOUT1>;
++		clock-names = "xvclk";
++
++		avdd-supply = <&pp2800_cam>;
++		dovdd-supply = <&pp1800_s0>;
++		dvdd-supply = <&pp1800_s0>;
++		reset-gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
++
++		port {
++			ucam_out: endpoint {
++				remote-endpoint = <&mipi_in_ucam>;
++				data-lanes = <1>;
++			};
++		};
++	};
+ };
+ 
+ &cdn_dp {
+@@ -353,10 +399,38 @@ &io_domains {
+ 	gpio1830-supply = <&pp1800_s0>;		/* APIO4_VDD;  4c 4d */
+ };
+ 
++&isp0 {
++	status = "okay";
++
++	ports {
++		port@0 {
++			mipi_in_wcam: endpoint@0 {
++				reg = <0>;
++				remote-endpoint = <&wcam_out>;
++				data-lanes = <1 2>;
++			};
++
++			mipi_in_ucam: endpoint@1 {
++				reg = <1>;
++				remote-endpoint = <&ucam_out>;
++				data-lanes = <1>;
++			};
++		};
++	};
++};
++
++&isp0_mmu {
++	status = "okay";
++};
++
+ &max98357a {
+ 	sdmode-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+ };
+ 
++&mipi_dphy_rx0 {
++	status = "okay";
++};
++
+ &mipi_dsi {
+ 	status = "okay";
+ 	clock-master;
+-- 
+2.26.0
 
 
 _______________________________________________
