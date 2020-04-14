@@ -2,51 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDC6B1A7DBB
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FAA41A7DCA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d4tsnjkNr9Wk8Lw7HHpKQOc94egeCw4cVxIXW49LTLM=; b=WD50CFeikLJsSL
-	xlBVVODc+uf05qN/UUwboKAsaRUD3ZyS6uNudm6BW4uCzjHx3nGkwB25Mr0+iY6ap0k2MQ8iPf41T
-	mlnsbWPRUfRm95UkSFtIbRDBPIe2NeIiOGz9UkCoc3CjcO9uVv7V+8zFw1grioY8LP9BGMxEoSyW3
-	t9SlAXruw903VW/DNKJKju7u6SpYlg2fMWGDYxSHTzz5CNpdCOIIYg9HLeqjh+lZyXsH0gvmYoDT3
-	UCT1nKmBKz77xXo3HCUswudw0PhrCnmN4YPSSN7z/2rk9cDFIiX4OxiAkVFpFe6kPPE3Y9Sf2M84A
-	E+ocdYEt4tdSVmLPAzpg==;
+	List-Owner; bh=z/UIELaw/N8jzfCiHbPDPSrGrc6DYs4wo/Z3donSB/c=; b=AlgM6nev3QNS78
+	K/oJdvLVaozcJ0NgbyWTYcHp0l9rscmsGzQhmXDyC5Ng2JDXNoG1uLiPuz/4s7xidlRbEJIkpMQPu
+	YtIPGAM0Azfee/of1f3L60ngnmqlCFxhHQdOLDjeYB+ljeJ7Y+XA3xh/966V2R/mu0cuypSq6tl5/
+	185zcTDNgsFt6Jg3oxJLE+Pt0FXJeb/sPQJk4e/Wx+hTzI4wpeYA5EiypkY4c4wso3NhjEuaR6LxL
+	lcUvrFeD0/yhZ+pcU4xommcGboy/gm+Tx6Llof4/SMIIRI8o73FWyV++MTVn/xiHXcsqFXjwBGx7h
+	lJtg+yLA3e2vr7tsg8jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLZF-0000Pv-CT; Tue, 14 Apr 2020 13:25:33 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1jOLZS-000122-MZ; Tue, 14 Apr 2020 13:25:46 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLRP-0003xL-PZ; Tue, 14 Apr 2020 13:17:29 +0000
+ id 1jOLUP-00012o-2q; Tue, 14 Apr 2020 13:20:39 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 7CE0145B; Tue, 14 Apr 2020 15:17:26 +0200 (CEST)
-Date: Tue, 14 Apr 2020 15:17:24 +0200
+ id 340BE45B; Tue, 14 Apr 2020 15:20:31 +0200 (CEST)
+Date: Tue, 14 Apr 2020 15:20:29 +0200
 From: Joerg Roedel <joro@8bytes.org>
 To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [RFC PATCH 33/34] iommu: Remove add_device()/remove_device()
- code-paths
-Message-ID: <20200414131724.GA14731@8bytes.org>
+Subject: Re: [PATCH] iommu/exynos: Get rid of 'struct exynos_iommu_owner'
+ exynos_iommu_owner
+Message-ID: <20200414132029.GB14731@8bytes.org>
 References: <20200407183742.4344-1-joro@8bytes.org>
- <CGME20200407183806eucas1p2cf45fbce5a43a6b4fe3a623b28da0606@eucas1p2.samsung.com>
- <20200407183742.4344-34-joro@8bytes.org>
- <1a88547f-ac90-825e-e529-a56c2c4e0391@samsung.com>
+ <CGME20200407184501eucas1p25407bc96e4345df406cf6ba061ae6a82@eucas1p2.samsung.com>
+ <20200407183742.4344-32-joro@8bytes.org>
+ <449e7f16-e719-9617-ec92-63b82c0bc33f@samsung.com>
+ <f59b0bb3-8c08-9cc9-bb1a-e69b7b226f60@samsung.com>
+ <20200409114620.GA16298@8bytes.org>
+ <40af831b-d00c-0cf9-0a06-e60c048a9ab8@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1a88547f-ac90-825e-e529-a56c2c4e0391@samsung.com>
+In-Reply-To: <40af831b-d00c-0cf9-0a06-e60c048a9ab8@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_061727_993929_F03D7019 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200414_062033_316131_9C9A1D4B 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -81,16 +84,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Marek,
+On Thu, Apr 09, 2020 at 03:58:00PM +0200, Marek Szyprowski wrote:
+> I've checked and it works fine on top of 
+> ff68eb23308e6538ec7864c83d39540f423bbe90. However I'm not a fan of 
+> removing this 'owner' structure. It gave a nice abstraction for the all 
+> SYSMMU controllers for the given device (although most devices in the 
+> system have only one SYSMMU). Why this structure is a problem for your 
+> rework?
 
-On Fri, Apr 10, 2020 at 12:39:38PM +0200, Marek Szyprowski wrote:
-> > +		if (!group->default_domain)
-> > +			continue;
-> 
-> It doesn't look straight from the above diff, but this continue leaks 
-> group->lock taken.
-
-You are right, thanks for the review! I fixed it in v2.
+Okay, the structure itself is not a problem, I just thought it is not
+really necessary. But to keep things simple I've taken another approach
+for v2 of this series: Just use the first SYSMMU of the controllers list
+to link the device and the IOMMU. When the owner structure exists there
+is always one entry in this list, so that should work fine.
 
 Regards,
 
