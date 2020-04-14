@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65B2E1A7D74
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 769BA1A7D97
+	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 15:25:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,20 +11,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0K2Uq7+Ec/wDnwU5dSdciglAdU8a6p+h2bZTBflNd9w=; b=KnCUabS11lQL5hWQ1De0TUPErR
-	1QWmYtNPaFKwFa65iRQBYW3nqJt73UECMSEs5gmIhXsZbzvNQM38BYAo8yDD961XVfGkkkQK7kJd3
-	5+BG/trrAoq4ZEOMcQ0gyLpGG50k8QF5KlZmknhDv1J6eAP/n6dNNGrPPqtfQk5zDs1us4cDKUk0q
-	O0tuVBwg5E2rMYIZUx7ibk6wFKBW4tjRpIODDrpPn0SQUnt9qwGzontxfdDgn4aON7PaNvZCmtdKq
-	LFFaeyDbez404+PJZmDrO7RiQSn+DsYGLEOTghdFoMzf9SAO6n5EJL4/Vm0uo1ISb7FsLNkgYcJOx
-	YRnNJERQ==;
+	bh=6uIvLwkD/4VWV+Tnt4wJAIJWGsIpQaWaYnjh0r++g0E=; b=tGKUSnsY1oL6gIXZM5Z4lsRlXo
+	7/zg0mraZmwI28C/liBdX/JrHW94B1Z4shoeUiwqYDQx6i2Eo/HtcTh00y1JmFdJQceRWY0IecLW1
+	JklFZ4SBj2zPWftjlr14F6OBk6flIs9TmF5PmaDFlp89DkHPQtUQHxa6yxmTi9bPWFATkOblbZVfC
+	Gvmgaoq2GdKSzFpJ2Ay2/GX8aoSQXrzOJXh18XCRHb8A/4MYZFKHj0RsJRzQePO0EVqQ6jbXrnb0R
+	3lHB7WB78H9EIvgJxwxi8vPRciawhslioleJpQ0rSP8W53Y8BlcXL2zOTxSlmTVZSkkcPo54CWUCn
+	18/bxxcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOLYp-00066g-FV; Tue, 14 Apr 2020 13:25:07 +0000
-Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
+	id 1jOLZ1-0006NT-U9; Tue, 14 Apr 2020 13:25:19 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOLQF-0002jY-8w; Tue, 14 Apr 2020 13:16:20 +0000
+ id 1jOLQS-0002wT-3G; Tue, 14 Apr 2020 13:16:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=Oi81xzj4r2wdTTCMSVqguO6olLR/Hdu0O0I/uW6hOrg=; b=ZYTfGr8KB2nbFuiocB4KRQyakz
+ Ei+RpYOCxdVtBMTr8BapRhTQtwCboQZ+v68h3t0sf6jzuJYWQAdDovwXzdnLf8+1o1b4BPEWBoOMl
+ eN31hg6QzdtjrwE9dlvfiwtR/j0tYsKVowTOU/4VJwHgLvhuu1W2deSxzb7EbDNaBdnOsYUdoq24G
+ KVQtHDaU2DVjNRYr97mM8r6sEk3wL+jFDwLYvA5z8nmHBXuySFq9kqcRwxrD/05F1WA9X1pP4Mmnd
+ sq5W/Av3o+wZrZ9lSROKQiEuA6arze/xg1ZWYKRNoyDJ45gTlgCH7gA8wmulscz+cjTY3Ny+ytuos
+ U3dKSYsQ==;
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOLQL-0003J8-8W; Tue, 14 Apr 2020 13:16:26 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id DBFDF6BB; Tue, 14 Apr 2020 15:15:55 +0200 (CEST)
+ id 12DC670B; Tue, 14 Apr 2020 15:15:55 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -39,21 +52,23 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v2 23/33] iommu/mediatek-v1 Convert to probe/release_device()
+Subject: [PATCH v2 24/33] iommu/qcom: Convert to probe/release_device()
  call-backs
-Date: Tue, 14 Apr 2020 15:15:32 +0200
-Message-Id: <20200414131542.25608-24-joro@8bytes.org>
+Date: Tue, 14 Apr 2020 15:15:33 +0200
+Message-Id: <20200414131542.25608-25-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200414131542.25608-1-joro@8bytes.org>
 References: <20200414131542.25608-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_061615_538032_CC79203F 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+X-CRM114-CacheID: sfid-20200414_141621_749373_DDCC6AA5 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -83,109 +98,79 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-Convert the Mediatek-v1 IOMMU driver to use the probe_device() and
+Convert the QCOM IOMMU driver to use the probe_device() and
 release_device() call-backs of iommu_ops, so that the iommu core code
 does the group and sysfs setup.
 
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/mtk_iommu_v1.c | 50 +++++++++++++++---------------------
- 1 file changed, 20 insertions(+), 30 deletions(-)
+ drivers/iommu/qcom_iommu.c | 24 +++++++-----------------
+ 1 file changed, 7 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-index a31be05601c9..7bdd74c7cb9f 100644
---- a/drivers/iommu/mtk_iommu_v1.c
-+++ b/drivers/iommu/mtk_iommu_v1.c
-@@ -416,14 +416,12 @@ static int mtk_iommu_create_mapping(struct device *dev,
- 	return 0;
+diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
+index 0e2a96467767..054e476ebd49 100644
+--- a/drivers/iommu/qcom_iommu.c
++++ b/drivers/iommu/qcom_iommu.c
+@@ -524,14 +524,13 @@ static bool qcom_iommu_capable(enum iommu_cap cap)
+ 	}
  }
  
--static int mtk_iommu_add_device(struct device *dev)
-+static struct iommu_device *mtk_iommu_probe_device(struct device *dev)
+-static int qcom_iommu_add_device(struct device *dev)
++static struct iommu_device *qcom_iommu_probe_device(struct device *dev)
  {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
--	struct dma_iommu_mapping *mtk_mapping;
- 	struct of_phandle_args iommu_spec;
- 	struct of_phandle_iterator it;
- 	struct mtk_iommu_data *data;
+ 	struct qcom_iommu_dev *qcom_iommu = to_iommu(dev);
 -	struct iommu_group *group;
- 	int err;
+ 	struct device_link *link;
  
- 	of_for_each_phandle(&it, err, dev->of_node, "iommus",
-@@ -442,35 +440,28 @@ static int mtk_iommu_add_device(struct device *dev)
+ 	if (!qcom_iommu)
+-		return -ENODEV;
++		return ERR_PTR(-ENODEV);
+ 
+ 	/*
+ 	 * Establish the link between iommu and master, so that the
+@@ -542,28 +541,19 @@ static int qcom_iommu_add_device(struct device *dev)
+ 	if (!link) {
+ 		dev_err(qcom_iommu->dev, "Unable to create device link between %s and %s\n",
+ 			dev_name(qcom_iommu->dev), dev_name(dev));
+-		return -ENODEV;
++		return ERR_PTR(-ENODEV);
  	}
  
- 	if (!fwspec || fwspec->ops != &mtk_iommu_ops)
--		return -ENODEV; /* Not a iommu client device */
-+		return ERR_PTR(-ENODEV); /* Not a iommu client device */
- 
--	/*
--	 * This is a short-term bodge because the ARM DMA code doesn't
--	 * understand multi-device groups, but we have to call into it
--	 * successfully (and not just rely on a normal IOMMU API attach
--	 * here) in order to set the correct DMA API ops on @dev.
--	 */
--	group = iommu_group_alloc();
+-	group = iommu_group_get_for_dev(dev);
 -	if (IS_ERR(group))
 -		return PTR_ERR(group);
-+	data = dev_iommu_priv_get(dev);
- 
--	err = iommu_group_add_device(group, dev);
+-
 -	iommu_group_put(group);
--	if (err)
--		return err;
-+	return &data->iommu;
-+}
- 
--	data = dev_iommu_priv_get(dev);
-+static void mtk_iommu_probe_finalize(struct device *dev)
-+{
-+	struct dma_iommu_mapping *mtk_mapping;
-+	struct mtk_iommu_data *data;
-+	int err;
-+
-+	data        = dev_iommu_priv_get(dev);
- 	mtk_mapping = data->dev->archdata.iommu;
--	err = arm_iommu_attach_device(dev, mtk_mapping);
--	if (err) {
--		iommu_group_remove_device(dev);
--		return err;
--	}
- 
--	return iommu_device_link(&data->iommu, dev);
-+	err = arm_iommu_attach_device(dev, mtk_mapping);
-+	if (err)
-+		dev_err(dev, "Can't create IOMMU mapping - DMA-OPS will not work\n");
+-	iommu_device_link(&qcom_iommu->iommu, dev);
+-
+-	return 0;
++	return &qcom_iommu->iommu;
  }
  
--static void mtk_iommu_remove_device(struct device *dev)
-+static void mtk_iommu_release_device(struct device *dev)
+-static void qcom_iommu_remove_device(struct device *dev)
++static void qcom_iommu_release_device(struct device *dev)
  {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
- 	struct mtk_iommu_data *data;
-@@ -479,9 +470,6 @@ static void mtk_iommu_remove_device(struct device *dev)
+ 	struct qcom_iommu_dev *qcom_iommu = to_iommu(dev);
+ 
+ 	if (!qcom_iommu)
  		return;
  
- 	data = dev_iommu_priv_get(dev);
--	iommu_device_unlink(&data->iommu, dev);
--
+-	iommu_device_unlink(&qcom_iommu->iommu, dev);
 -	iommu_group_remove_device(dev);
  	iommu_fwspec_free(dev);
  }
  
-@@ -534,8 +522,10 @@ static const struct iommu_ops mtk_iommu_ops = {
- 	.map		= mtk_iommu_map,
- 	.unmap		= mtk_iommu_unmap,
- 	.iova_to_phys	= mtk_iommu_iova_to_phys,
--	.add_device	= mtk_iommu_add_device,
--	.remove_device	= mtk_iommu_remove_device,
-+	.probe_device	= mtk_iommu_probe_device,
-+	.probe_finalize = mtk_iommu_probe_finalize,
-+	.release_device	= mtk_iommu_release_device,
-+	.device_group	= generic_device_group,
- 	.pgsize_bitmap	= ~0UL << MT2701_IOMMU_PAGE_SHIFT,
- };
- 
+@@ -619,8 +609,8 @@ static const struct iommu_ops qcom_iommu_ops = {
+ 	.flush_iotlb_all = qcom_iommu_flush_iotlb_all,
+ 	.iotlb_sync	= qcom_iommu_iotlb_sync,
+ 	.iova_to_phys	= qcom_iommu_iova_to_phys,
+-	.add_device	= qcom_iommu_add_device,
+-	.remove_device	= qcom_iommu_remove_device,
++	.probe_device	= qcom_iommu_probe_device,
++	.release_device	= qcom_iommu_release_device,
+ 	.device_group	= generic_device_group,
+ 	.of_xlate	= qcom_iommu_of_xlate,
+ 	.pgsize_bitmap	= SZ_4K | SZ_64K | SZ_1M | SZ_16M,
 -- 
 2.17.1
 
