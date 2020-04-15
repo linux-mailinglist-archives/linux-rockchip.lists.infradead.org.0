@@ -2,58 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D08A1AA026
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 14:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6ADA1AA354
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 15:11:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JTR0yQDYZCkIsi/iQz9g8Fx5qS0dXWWKgW3kQ0OMqgw=; b=ji5INPv9Bhzik+
-	YVKNhq6PkiV5krJbePGJylW7m3jlhdghRv8w6mykS4U4j6gtjkLvJ2RGkCB/rpncuVQm1rPzUrQJm
-	/SQgOwSP5k4fyVRsjYpTT1u8fRCe1FLbv2tt7saemtfBwZcc75gIleqsC2DPw4s6yivt7XT4fzsY3
-	jwHW5P8wKOPt8qs9fiy78W7jC9cQ66UDafoIIfwLiY+hXFZF/m/xpjqotxo6d1NDuwsBzCiYLdbnN
-	C4VLy9I8smkyT+fe6/gtc53oCFE5IgmuChBt142QbVhJvndGhLRrdkRwzLBdhvzYrdTlYtukuk+Yb
-	P7MH13EDecK1ofxCvGEw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vVO6+JDKCWcIgV8ZojLoUhRMwlxsn/mhDAbhP7+6WzE=; b=TOZ
+	GgYr3sW4hoQIyO354ZKFUlaT2dgx9dFv+KQNQrr8qNq7IiGqpzpiv+l/TOSlzVtuirlGgVTBfo1k+
+	NeUCllG2E4rXyAEGnZ29KTF8YSYcvy1YlXLuqSV3zfRwuPzsSBzfdDiGRBAMfGxLR+AQkOW8aCZLZ
+	tz8lpB0B8TxSezS+37Ly5eM/JIVUlNAcqImPCEgSF+rO88FV2h3BkgMBzHN0wUK4UrMQ/RV1eAhbm
+	OmbRZdsmyqdkmpSqgu/LPwyk/ol79iX2HiB9YU/CvDWc1nbwzPCoSEWM/Da1UzJJf39HvNIXc/73G
+	VoKdAm4Yd9dnLJ1C1rihGqqDL/HV49g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOhCm-0000oO-Qd; Wed, 15 Apr 2020 12:31:48 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jOhpG-0000YP-OX; Wed, 15 Apr 2020 13:11:34 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOhCi-0000mb-Qt; Wed, 15 Apr 2020 12:31:46 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C7A69AC11;
- Wed, 15 Apr 2020 12:31:41 +0000 (UTC)
-Date: Wed, 15 Apr 2020 14:31:40 +0200
-From: Joerg Roedel <jroedel@suse.de>
-To: Lu Baolu <baolu.lu@linux.intel.com>
-Subject: Re: [PATCH v2 07/33] iommu: Add probe_device() and remove_device()
- call-backs
-Message-ID: <20200415123140.GC21899@suse.de>
-References: <20200414131542.25608-1-joro@8bytes.org>
- <20200414131542.25608-8-joro@8bytes.org>
- <0ad37581-b464-30ac-c503-4c0daaf43867@linux.intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0ad37581-b464-30ac-c503-4c0daaf43867@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jOhop-0008Pt-Hn; Wed, 15 Apr 2020 13:11:08 +0000
+Received: by mail-wm1-x342.google.com with SMTP id h2so17363144wmb.4;
+ Wed, 15 Apr 2020 06:11:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=1YK31f6d9R7ZKz1959zNs117rXGUB2qZVpteQ8Nm8rE=;
+ b=opvfaQb0ZITpiBld1k4u5Ru6l4CFHpZ7v8Dsm3tWBEB7BZxs190+jPFTPIwCl50rrx
+ NPPMdBa7gnGMXIrhYoOpvsYB8NX67Xjf92Y6es4h/dRkErBjLDBbjqxCGRmV/GjT9ahb
+ 4il8jDWH3Wn9uiNiMzxAq8Po0YDsM5JA8B9WcZtp/qDYTMGaTLOYqN0SgUkn/Z7PVcSw
+ hsdfygbK/xTy52wU0y6n7Cqi0wAyu61S/3Nq5uFCyTH1DprmeApdnBrS4oXhcfva95OX
+ RpmoHTicjgAFZXs141O7f9i2gCRF2ctZwxqoP5d51mzkRirXjLJR34W41a7FfOC68577
+ PSXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=1YK31f6d9R7ZKz1959zNs117rXGUB2qZVpteQ8Nm8rE=;
+ b=Q+Fm3b6FNJIAQ3Q2MeCSvcwYYq7jHnH2Ykof8q87IzaqIJBVojpKrhMQy9P9Av9YgI
+ evGBHcaGmUGPzLDtm0aAnwNk5Fw0NLsCJkHJ4ZEIKKUN90VJt1xNXLtjvvo/jlNDGQkU
+ 3tU00nHgKFMC6Mtxs+v1HlC/HfKp1E46N0jtTiMkXSkoipXKWRoaSq64RHkN8rPCY6uv
+ RykTRyD4S1E+ziqgGZaZ5iUhAnH8T5PimWysJ+w/gtxF7MOZKGgcF5StUnXq3TDmU3Dw
+ KHv2+t+PHW2I97mW8tFlmCpN/mew82+QRmbLAKWeotxSea4ybPFRd/ONehYg9N2LmOtd
+ +V+Q==
+X-Gm-Message-State: AGi0PuY0Bik7eKoxS1/8RIs9N7S6rFyMggwfcWUn9xnGKaat82b1f03W
+ V27Bjk1nlHuDhL75CP81gqmeD1Tx
+X-Google-Smtp-Source: APiQypKb/YVsijkXt1W8jtMK4h3qXbl3iX+wO+27T2T3+keWoO4EtLb2fRtUtD+xSMEElkqoUaNBbQ==
+X-Received: by 2002:a1c:b70a:: with SMTP id h10mr5272755wmf.172.1586956264930; 
+ Wed, 15 Apr 2020 06:11:04 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id c20sm24022450wmd.36.2020.04.15.06.11.03
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 Apr 2020 06:11:04 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: remove bus-width from mmc nodes in
+ rk3308-roc-cc.dts
+Date: Wed, 15 Apr 2020 15:10:57 +0200
+Message-Id: <20200415131057.2366-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_053145_013951_284C10FA 
-X-CRM114-Status: GOOD (  17.91  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200415_061107_587655_E4AD17B0 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +95,48 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, linux-tegra@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Rob Clark <robdclark@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
- Andy Gross <agross@kernel.org>, linux-s390@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- virtualization@lists.linux-foundation.org,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 02:36:20PM +0800, Lu Baolu wrote:
-> On 2020/4/14 21:15, Joerg Roedel wrote:
-> > From: Joerg Roedel<jroedel@suse.de>
-> > 
-> > Add call-backs to 'struct iommu_ops' as an alternative to the
-> > add_device() and remove_device() call-backs, which will be removed when
-> > all drivers are converted.
-> > 
-> > The new call-backs will not setupt IOMMU groups and domains anymore,
-> > so also add a probe_finalize() call-back where the IOMMU driver can do
-> > per-device setup work which require the device to be set up with a
-> > group and a domain.
-> 
-> The subject is inaccurate. probe_device() and release_device() are
-> added to replace the add and remove pair.
+The 'bus-width' property for mmc nodes is defined both in
+'rk3308.dtsi' and 'rk3308-roc-cc.dts'.
+'bus-width' and pinctrl containing the bus-pins
+should be in the same file, so remove all entries
+from mmc nodes in 'rk3308-roc-cc.dts'.
 
-This patch does not replace them yet, it just adds the new call-backs.
-The removal of add_device()/remove_device() happens later in the
-patch-set when all drivers are converted.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
-Regards,
-
-	Joerg
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+index aa256350b..8011e9b12 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
+@@ -123,7 +123,6 @@
+ };
+ 
+ &emmc {
+-	bus-width = <8>;
+ 	cap-mmc-highspeed;
+ 	disable-wp;
+ 	mmc-hs200-1_8v;
+@@ -171,7 +170,6 @@
+ };
+ 
+ &sdmmc {
+-	bus-width = <4>;
+ 	cap-mmc-highspeed;
+ 	cap-sd-highspeed;
+ 	card-detect-delay = <300>;
+-- 
+2.11.0
 
 
 _______________________________________________
