@@ -2,53 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3F981A9C38
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:27:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3396C1A9C8A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CBjboAqw0mHJj1cHPrqXak7ewxf6bwz9GqGMQ8BrdtI=; b=KwQS4pz4g33aAFqx58+L2VK2P
-	J0u7KT3qhNP7EkWFIxTeOY4VNDWkNeYXxS9BSo1Pg4NkeHV2O9jZcSv78cEg+e2jbY/FXiHiIm9Yt
-	Fr4VydDK3Iu0NOAAA2YFYLkPffxAqzdbyr0Qofz3mkCz5l+yA5tH/GLHSmqowa9mFCaR4mSUmKfSP
-	VkX3mvPNUUfGOcVNgD6BQs7wF09UT30ZekHBJM9yYeGhVK+D1FXn0MhpYm9CuqECeIIQjxKY3Xisg
-	avq6b1Svb1GEzg6wYOiNVDpmYtyvEP8Kknp53bvEvbTS7z/EkRo3D+jrvGaHZt6gtcNkXhocbgrOh
-	RTTsxCrag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oxnB7pPwBBHgjwo9F51IUOAJbC2UaWDe0TDx4aYLtSY=; b=s9mDyjTvyMKmq7
+	cYjlYKn2Xn79htCaS+FXv+txTFLC2p66FQA/RMwBmWQdZfKUDX+Z3eGHt0IOLNjub4ShE12P0cvli
+	FztK5feXkzQgLDTTMiGiUciVsYquP2nolwHAhqxl4jPc8ieEU5CljbswrHcLn1K7ilJtoldg42l8T
+	WsVDSUb9ga/LTQl+FHgfjhMPlt5e7gdgRBRCOQ2F0h9vhGxhd50vPQllfFeUFNPaewFkRuSfaFbWo
+	d2nZPX7bwt1iwJYNeiOMdvud0YJgM4trHYXlDvfkLDgStzFMZHNjmwqZoONWL0f2HLZKmuFJZ0Dmc
+	bVo2ylVv0UXB0q5sfAyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgCd-000158-CR; Wed, 15 Apr 2020 11:27:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jOgLH-0000xO-OQ; Wed, 15 Apr 2020 11:36:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgCM-0000wS-Hg; Wed, 15 Apr 2020 11:27:25 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id BB2FA2A0A37
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v6 5/8] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-In-Reply-To: <20200414204202.GL19819@pendragon.ideasonboard.com>
-References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
- <20200414151955.311949-6-adrian.ratiu@collabora.com>
- <20200414204202.GL19819@pendragon.ideasonboard.com>
-Date: Wed, 15 Apr 2020 14:28:25 +0300
-Message-ID: <87wo6hj8di.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
+ id 1jOgJw-0006G9-0q; Wed, 15 Apr 2020 11:35:10 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 354F5208FE;
+ Wed, 15 Apr 2020 11:35:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586950505;
+ bh=Ovw4O+bQIjjYv0PGALGX8rJlm27Kw+SfdVJ5q442p7o=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=CRlI+wvQBdP2bLZNeVecuD/wbVCcNoIvIK1FAaiTaEUVlHyL6nLiKN/XQOu9GRnY0
+ Rmq+6KJpmnLZqHBGqGfz1WTB6WR8wbIPuQFONA8xQGV7WsfyaRJJ+Np/JjBAeWV8O8
+ lbp+87Zmzx6ncxqg8kYEQc48XEo9AlfxmOUhUHxY=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.6 016/129] ARM: dts: rockchip: fix vqmmc-supply
+ property name for rk3188-bqedison2qc
+Date: Wed, 15 Apr 2020 07:32:51 -0400
+Message-Id: <20200415113445.11881-16-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
+References: <20200415113445.11881-1-sashal@kernel.org>
 MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_042718_856482_F8C64C3C 
-X-CRM114-Status: GOOD (  22.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200415_043508_268465_22A488AE 
+X-CRM114-Status: GOOD (  13.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,259 +80,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Martyn Welch <martyn.welch@collabora.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- linux-imx@nxp.com, Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, 14 Apr 2020, Laurent Pinchart 
-<laurent.pinchart@ideasonboard.com> wrote:
-> Hi Adrian, 
-> 
-> Thank you for the patch. 
+From: Johan Jonker <jbx6244@gmail.com>
 
-Hi Laurent,
+[ Upstream commit 9cd568dc588c5d168615bf34f325fabe33b2c9a0 ]
 
-Thank you for the review - you raised some good points which will 
-be addressed in the next revision (will leave this on review a bit 
-more).
+A test with the command below does not detect all errors
+in combination with 'additionalProperties: false' and
+allOf:
+  - $ref: "synopsys-dw-mshc-common.yaml#"
+allOf:
+  - $ref: "mmc-controller.yaml#"
 
-I will also convert the dw_mipi_dsi.txt to yaml as you suggest and 
-send that as a separate patch.
+'additionalProperties' applies to all properties that are not
+accounted-for by 'properties' or 'patternProperties' in
+the immediate schema.
 
-Best wishes,
-Adrian
+First when we combine rockchip-dw-mshc.yaml,
+synopsys-dw-mshc-common.yaml and mmc-controller.yaml it gives
+this error:
 
-> 
-> On Tue, Apr 14, 2020 at 06:19:52PM +0300, Adrian Ratiu wrote: 
->> This provides an example DT binding for the MIPI DSI host 
->> controller present on the i.MX6 SoC based on Synopsis 
->> DesignWare v1.01 IP.   Cc: Rob Herring <robh@kernel.org> Cc: 
->> Neil Armstrong <narmstrong@baylibre.com> Cc: Fabio Estevam 
->> <festevam@gmail.com> Cc: devicetree@vger.kernel.org Tested-by: 
->> Adrian Pop <pop.adrian61@gmail.com> Tested-by: Arnaud Ferraris 
->> <arnaud.ferraris@collabora.com> Signed-off-by: Sjoerd Simons 
->> <sjoerd.simons@collabora.com> Signed-off-by: Martyn Welch 
->> <martyn.welch@collabora.com> Signed-off-by: Adrian Ratiu 
->> <adrian.ratiu@collabora.com> --- Changes since v5: 
->>   - Fixed missing reg warning (Fabio) - Updated dt-schema and 
->>   fixed warnings (Rob) 
->>  Changes since v4: 
->>   - Fixed yaml binding to pass `make dt_binding_check 
->>   dtbs_check` and addressed received binding feedback (Rob) 
->>  Changes since v3: 
->>   - Added commit message (Neil) - Converted to yaml format 
->>   (Neil) - Minor dt node + driver fixes (Rob) - Added small 
->>   panel example to the host controller binding 
->>  Changes since v2: 
->>   - Fixed commit tags (Emil) 
->> --- 
->>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 139 
->>  ++++++++++++++++++ 1 file changed, 139 insertions(+) create 
->>  mode 100644 
->>  Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
->>  diff --git 
->> a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
->> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
->> new file mode 100644 index 000000000000..10e289ea219a --- 
->> /dev/null +++ 
->> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
->> @@ -0,0 +1,139 @@ +# SPDX-License-Identifier: (GPL-2.0-only OR 
->> BSD-2-Clause) +%YAML 1.2 +--- +$id: 
->> http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml# 
->> +$schema: http://devicetree.org/meta-schemas/core.yaml# + 
->> +title: Freescale i.MX6 DW MIPI DSI Host Controller + 
->> +maintainers: +  - Adrian Ratiu <adrian.ratiu@collabora.com> + 
->> +description: | +  The i.MX6 DSI host controller is a Synopsys 
->> DesignWare MIPI DSI v1.01 +  IP block with a companion PHY IP. 
->> + +  These DT bindings follow the Synopsys DW MIPI DSI bindings 
->> defined in + 
->> Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt 
->> with +  the following device-specific properties. 
-> 
-> Not necessarily a prerequisite for this patch, but it would be 
-> nice to get that converted to yaml, and included here with 
-> 
-> allOf: 
->   $ref: ../bridge/snps,dw-mipi-dsi.yaml# 
-> 
-> (assuming that's how the file will be called). 
->
+arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: mmc@10218000:
+'vmmcq-supply' does not match any of the regexes:
+'^.*@[0-9]+$',
+'^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|
+uhs-(sdr(12|25|50|104)|ddr50))$',
+'pinctrl-[0-9]+'
 
-Yes, I will do this conversion but in a separate patch to avoid 
-making this series bigger.
+'vmmcq-supply' is not a valid property name for mmc nodes.
+Fix this error by renaming it to 'vqmmc-supply'.
 
-Thanks,
-Adrian
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 
->> +
->> +properties:
->> +  compatible:
->> +    items:
->> +      - const: fsl,imx6q-mipi-dsi
->> +      - const: snps,dw-mipi-dsi
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  interrupts:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    items:
->> +      - description: Module Clock
->> +      - description: DSI bus clock
->> +
->> +  clock-names:
->> +    items:
->> +      - const: ref
->> +      - const: pclk
->> +
->> +  fsl,gpr:
->> +    description: Phandle to the iomuxc-gpr region containing the multiplexer control register.
->
-> Could you please wrap liens at a 80 columns boundary ?
->
->> +    $ref: /schemas/types.yaml#/definitions/phandle
->> +
->> +  ports:
->> +    type: object
->> +    description: |
->> +      A node containing DSI input & output port nodes with endpoint
->> +      definitions as documented in
->> +      Documentation/devicetree/bindings/media/video-interfaces.txt
->> +      Documentation/devicetree/bindings/graph.txt
->> +    properties:
->
-> You should add
->
->        '#address-cells':
->          const: 1
->
->        '#size-cells':
->          const: 0
->
->> +      port@0:
->> +        type: object
->> +        description:
->> +          DSI input port node, connected to the ltdc rgb output port.
->> +
->> +      port@1:
->> +        type: object
->> +        description:
->> +          DSI output port node, connected to a panel or a bridge input port"
->
->
-> Should this be "RGB output port node" ? And s/"/./
->
-> And here you should add
->
->        additionalProperties: false
->
->> +
->> +patternProperties:
->> +  "^panel@[0-3]$":
->> +    type: object
->> +    description: |
->> +      A node containing the panel or bridge description as documented in
->> +      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
->> +    properties:
->> +      port:
->> +        type: object
->> +        description:
->> +          Panel or bridge port node, connected to the DSI output port (port@1)
->
-> Does this belong here ? I think the port property for the panel needs to
-> be described in the panel's binding instead.
->
->> +
->> +  "#address-cells":
->> +    const: 1
->> +
->> +  "#size-cells":
->> +    const: 0
->
-> These two properties are not pattern properties, right ? Should they be
-> listed under the properties above ?
->
->> +
->> +required:
->> +  - "#address-cells"
->> +  - "#size-cells"
->> +  - compatible
->> +  - reg
->> +  - interrupts
->> +  - clocks
->> +  - clock-names
->> +  - ports
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |+
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/clock/imx6qdl-clock.h>
->> +    #include <dt-bindings/gpio/gpio.h>
->
-> Alphabetical order ?
->
->> +
->> +    dsi: dsi@21e0000 {
->> +        #address-cells = <1>;
->> +        #size-cells = <0>;
->> +        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
->> +        reg = <0x021e0000 0x4000>;
->> +        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
->> +        fsl,gpr = <&gpr>;
->> +        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
->> +                 <&clks IMX6QDL_CLK_MIPI_IPG>;
->> +        clock-names = "ref", "pclk";
->> +
->> +        ports {
->> +            #address-cells = <1>;
->> +            #size-cells = <0>;
->> +            port@1 {
->> +                reg = <1>;
->> +                dsi_out: endpoint {
->> +                    remote-endpoint = <&panel_in>;
->> +                };
->> +            };
->> +        };
->> +
->> +        panel@0 {
->> +            compatible = "sharp,ls032b3sx01";
->> +            reg = <0>;
->> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
->> +            ports {
->> +                #address-cells = <1>;
->> +                #size-cells = <0>;
->> +                port@0 {
->> +                    reg = <0>;
->> +                    panel_in: endpoint {
->> +                        remote-endpoint = <&dsi_out>;
->> +                    };
->> +                };
->> +            };
->> +        };
->> +    };
->> +
->> +...
->
-> -- 
-> Regards,
->
-> Laurent Pinchart
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Link: https://lore.kernel.org/r/20200307134841.13803-1-jbx6244@gmail.com
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm/boot/dts/rk3188-bqedison2qc.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
+index ad1afd403052a..8afb2fd5d9f1b 100644
+--- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
++++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
+@@ -465,7 +465,7 @@
+ 	non-removable;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&sd1_clk>, <&sd1_cmd>, <&sd1_bus4>;
+-	vmmcq-supply = <&vccio_wl>;
++	vqmmc-supply = <&vccio_wl>;
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+ 	status = "okay";
+-- 
+2.20.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
