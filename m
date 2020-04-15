@@ -2,55 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3C161A9D61
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:46:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AEB41A9DC4
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L+flcdVlgY2vCNVzS6YHm4ZorxQx4s/eKmA9ldW64RQ=; b=Pd+a8aLhp8VjjY
-	ZvJB+lQ93FcLHXNiAeH/19pRYWTQVbszISOAl59A7r+ZHh7Q3Ij0Hv3h0XQ61sk4+vGUKtAAMDAiP
-	FmwKK9c/mpgVzIuqj3+zgPXcHN85PJb0o/nolkv54NoklLi5gP3BE01Y0GNKk29tR8VN/eEYoKhPs
-	6/IzaEKChHQAoztcewo0tHmB9Ma3aYYYxd92PWAQgCk54EXH/dnUAgdOG6p1jiH3nVaaEqLYALgfx
-	Xc1iKbOvaayJGHjPccns+M6n/fjiaZJl8ae0aJperyPFdqBTrdBcNMfI632WYUh6pASyZ+XTEPlJ6
-	3cjgxbRoSDv3FmgJsH0g==;
+	List-Owner; bh=oxnB7pPwBBHgjwo9F51IUOAJbC2UaWDe0TDx4aYLtSY=; b=VORj5v379Ghk3z
+	lPjTQ9ajUsHENw/O5lYqDOyB4j6AK1bPRnyBAhNAVkHBonDw7Wt5hXPt1Qr0cuTH5bQ6chBKRDN6F
+	dajLoaNwSw/gCbXc240ObH9YXrklK2Wbr6Y5uFhtPQqHk2lnQGsUWx+v4r3RKS2dtyXc/9OcTRDjg
+	6SmdSHwYTbOmyvUxKDmF6AgPnFph4hoNI4npCBQ7F9TjTkM5tUtDefb+jn7koi4OQLjtiTklX4bBq
+	q+qNWd95byFisySKN7jdXKJ+ZBEHAa+wNxLlYG5g6y/zlcz2givu/SGH4y2zKp0FFa/Lk8t0c6cbt
+	mwDHD9nw4VAM8Amm14Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgUi-0004mZ-Vd; Wed, 15 Apr 2020 11:46:16 +0000
+	id 1jOgWp-0006zL-QJ; Wed, 15 Apr 2020 11:48:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgRa-0008D7-7v; Wed, 15 Apr 2020 11:43:04 +0000
+ id 1jOgTL-0001TG-HA; Wed, 15 Apr 2020 11:44:53 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7193C206A2;
- Wed, 15 Apr 2020 11:43:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2BB8C2078A;
+ Wed, 15 Apr 2020 11:44:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586950981;
- bh=yZRJLnU4ErUB6W+jl5bb662sTl3GJZbnFAsMghgK1O4=;
+ s=default; t=1586951091;
+ bh=Ovw4O+bQIjjYv0PGALGX8rJlm27Kw+SfdVJ5q442p7o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=oPMxqEFSN6W8/xv/LoymzbM2FBBS7DI767JB0/3NdORgkdGbM32CSFi1gkYi4N187
- EAA1h01VfElfDRbd0Ptw7P/xhSnuoJoO6HhMCrk4QZAeGAs9lHO9D2Tsh9A8EjksMw
- E8+7uzdY7sQyVHqQHAyrNdqHhkp0fm0egTh3K5RM=
+ b=Ailmd1g11WnGdn5Tl8BRlqGq8HY1VvMGBDfCjVhuIyI/5iP13PNk+80FqN2UHTQT+
+ D2WiAjD92Afsc38udx3qTuPKNIsoFBydu1p1DiPebnKd154O8MvdL7U1OAxvm92Ypc
+ 9zK5s5TrlT8hxfexF2ZdsAlaxmQ19JDORohQcsj8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 029/106] ARM: dts: rockchip: fix lvds-encoder
- ports subnode for rk3188-bqedison2qc
-Date: Wed, 15 Apr 2020 07:41:09 -0400
-Message-Id: <20200415114226.13103-29-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 07/84] ARM: dts: rockchip: fix vqmmc-supply
+ property name for rk3188-bqedison2qc
+Date: Wed, 15 Apr 2020 07:43:24 -0400
+Message-Id: <20200415114442.14166-7-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200415114226.13103-1-sashal@kernel.org>
-References: <20200415114226.13103-1-sashal@kernel.org>
+In-Reply-To: <20200415114442.14166-1-sashal@kernel.org>
+References: <20200415114442.14166-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044302_365368_92FF1DF6 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200415_044451_590589_7AC9B030 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,69 +90,57 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit 1a7e99599dffd836fcb720cdc0eaf3cd43d7af4a ]
+[ Upstream commit 9cd568dc588c5d168615bf34f325fabe33b2c9a0 ]
 
-A test with the command below gives this error:
+A test with the command below does not detect all errors
+in combination with 'additionalProperties: false' and
+allOf:
+  - $ref: "synopsys-dw-mshc-common.yaml#"
+allOf:
+  - $ref: "mmc-controller.yaml#"
 
-arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: lvds-encoder:
-'ports' is a required property
+'additionalProperties' applies to all properties that are not
+accounted-for by 'properties' or 'patternProperties' in
+the immediate schema.
 
-Fix error by adding a ports wrapper for port@0 and port@1
-inside the 'lvds-encoder' node for rk3188-bqedison2qc.
+First when we combine rockchip-dw-mshc.yaml,
+synopsys-dw-mshc-common.yaml and mmc-controller.yaml it gives
+this error:
+
+arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: mmc@10218000:
+'vmmcq-supply' does not match any of the regexes:
+'^.*@[0-9]+$',
+'^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|
+uhs-(sdr(12|25|50|104)|ddr50))$',
+'pinctrl-[0-9]+'
+
+'vmmcq-supply' is not a valid property name for mmc nodes.
+Fix this error by renaming it to 'vqmmc-supply'.
 
 make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/
-bridge/lvds-codec.yaml
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200316174647.5598-1-jbx6244@gmail.com
+Link: https://lore.kernel.org/r/20200307134841.13803-1-jbx6244@gmail.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 27 ++++++++++++++----------
- 1 file changed, 16 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/rk3188-bqedison2qc.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index 8afb2fd5d9f1b..66a0ff196eb1f 100644
+index ad1afd403052a..8afb2fd5d9f1b 100644
 --- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
 +++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -58,20 +58,25 @@
- 
- 	lvds-encoder {
- 		compatible = "ti,sn75lvds83", "lvds-encoder";
--		#address-cells = <1>;
--		#size-cells = <0>;
- 
--		port@0 {
--			reg = <0>;
--			lvds_in_vop0: endpoint {
--				remote-endpoint = <&vop0_out_lvds>;
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+
-+				lvds_in_vop0: endpoint {
-+					remote-endpoint = <&vop0_out_lvds>;
-+				};
- 			};
--		};
- 
--		port@1 {
--			reg = <1>;
--			lvds_out_panel: endpoint {
--				remote-endpoint = <&panel_in_lvds>;
-+			port@1 {
-+				reg = <1>;
-+
-+				lvds_out_panel: endpoint {
-+					remote-endpoint = <&panel_in_lvds>;
-+				};
- 			};
- 		};
- 	};
+@@ -465,7 +465,7 @@
+ 	non-removable;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&sd1_clk>, <&sd1_cmd>, <&sd1_bus4>;
+-	vmmcq-supply = <&vccio_wl>;
++	vqmmc-supply = <&vccio_wl>;
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+ 	status = "okay";
 -- 
 2.20.1
 
