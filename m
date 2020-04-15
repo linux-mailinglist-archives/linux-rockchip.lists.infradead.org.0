@@ -2,82 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC8901AB232
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 22:00:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 396E51AB23A
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 22:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S7UDljMralo+CAaxbe0V1beyh9Az/LK+d6xkBMCh38U=; b=rupRfjx121DPfnR2RwtcbQVy3
-	O5guJCQK0Y2geKsXxYN3hTAT9fSOjYo2BKnnKEa3nEciEwiNLVr9qqMzHzTNCVB2YtOiGC7vlfpPD
-	p+Tez5y09MmUlJUO/DcWVDEnM+qW5YoxSeqegfEEYHq1db25jOULqB3jOL1uzwjwTh56k15q3yhXs
-	YJvrOBC+UIX5vD+lWtm/VGIL3P5OKA8uhUekItJM/0mY0bujTSYqp8DojL1MgL7CYVDuU6nOWXjHR
-	v0ScQOh/Di4ZyOWOS+FP8FeBt22pUV0YXYAwlYSAoOjZqeO7tN+1B0u/DXkXMvJjXphOUOIQ8zvio
-	5PSh5/+uQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=v9iZnfRi9DKxKMdAzAZPRwzkI3YXSiMaz2ss+J3Nqxo=; b=TRo
+	nX32jqkxcge7oBnZ8XpDt6uZkOeFtSgLp9dlrBqeKLW016Bxqg8U2YpdbG6chnDJXodPEDFa1fxuf
+	zGoAFEQFoSgXnzGWEUn9k2I9QlEtr/2Zky1SCqHu2pciOTagQclEexSvWZ+x4s9D2a/OKAAzZUsXj
+	Vzmf1XAPFlvpC/ZIcsGf29zXZGUKsLniQ7JcTL+lLS4ydLPJaEgIDVt7hlczkoNR3GPDoaI7Nu0O2
+	yeWSsgg9nx78dFdZxnALDsEd3NZ5yTdW7zl5dxmf57iDNsVtc/TxyRcSjtGVbVHpkSW/Cfcvo0DNs
+	jmUh3l8WkR59DZ0zY9gvSYWcop00bRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOoCy-00078u-Ad; Wed, 15 Apr 2020 20:00:28 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1jOoEb-0007NE-8f; Wed, 15 Apr 2020 20:02:09 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOoCv-00078P-Hy
- for linux-rockchip@lists.infradead.org; Wed, 15 Apr 2020 20:00:26 +0000
-Received: by mail-qt1-x843.google.com with SMTP id 71so14444884qtc.12
- for <linux-rockchip@lists.infradead.org>; Wed, 15 Apr 2020 13:00:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=tOQDvmN/FkNTSVI0zLqdf1kf9SCWn+FzLCppDs6wGoY=;
- b=Q4grfrEfdmuOzieWT+SaPLzBuq+2jYyJiAm007mZ03xan/6PiU225yZVraXuoXBR4P
- 9bqo4fvdSulClLptp3c0/959uTqwk7kzDTCON12kpcFVe5WYVO4Ts4HXbgHmU0kqvqMD
- N0DeXLS2MOTp/FDF/1uRdeEFdPeltKGycAt/Q=
+ id 1jOoES-0007Fu-Q4; Wed, 15 Apr 2020 20:02:02 +0000
+Received: by mail-wm1-x344.google.com with SMTP id d77so1186996wmd.3;
+ Wed, 15 Apr 2020 13:01:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=iCP6LoyFxExRJqxqIqO0ZCtpb3X9pIKnl0AtHQmrXjs=;
+ b=d7QuDTSV3oT/GjNp4OI65qjAjBfFkEo24nuK8zFcOZnpgc4WHnAIJ8SmZNfPyM+nEw
+ f1TGgcn+brikUxKXefZQn5XLEFe0rK7FFcAVWUjox8ZkUarOdcilxFfrVUWuE9dEyMvJ
+ Mm/TnZZnifu8z6mOSWxAgjq2gtcWOhmZkGm1szp7nXtwAvD9T4f8gHAEv0QSxAVp9rx3
+ HlJMAxZCU4uBPzH5GfScEBZNvTjWjkqjcK+DmgRK19x5a6P7AeVaSjRwcQezDFj+rSci
+ xgxzBLKCXrHAGxCEebROVLDuC/030ioyihdjtlwmIY+/HRsocdtcI6JET7qhdqXOynsk
+ oKcQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tOQDvmN/FkNTSVI0zLqdf1kf9SCWn+FzLCppDs6wGoY=;
- b=fDEeSahvFh+N3IyPPQdLbvvnh+PjwHOKO8Kctx+EKd4c8BQGLlab6q0yv20icwSLIJ
- 3olY8XLL/4T7NduMy7hpeONL3vc7GyseXcXJY6mbesIiwBdTY1VT0kNH3eenU4rUyKmf
- JzaQtky2HMe3L/VoR9JO1DKiF5VbzxgSlP4zKkpjuEzdyM0WFA8EfpK8edeXzmhyTkLi
- cm3EB2DYI7gdHbUXj/JHJQMrgdDdJvEXwwqblPPzc0N0kt5haYr1N2kgDR4GQU3jnDql
- QCYDCqI+diIZ3mOkAQOQS/mRuTQRbUCfO61QFzCYJpxduTY+9pmAs+dx4/4sbLsn9eyE
- HOdQ==
-X-Gm-Message-State: AGi0PuYBqFFqo3D0W9Pl+QwNzVApNLvc0shmqhcq98J1RMTqS2aIG8dV
- ddES5MyOFLQ8P/of1WlAElTPwg==
-X-Google-Smtp-Source: APiQypJY+whzk1AVWMgmIzW4xh/OJGtaNToyDSuXOa188j9H9Lq/7LIFsqhMiUufQgsUBYOCqfqSEA==
-X-Received: by 2002:ac8:90c:: with SMTP id t12mr22531423qth.12.1586980820866; 
- Wed, 15 Apr 2020 13:00:20 -0700 (PDT)
-Received: from bill-the-cat
- (2606-a000-1401-826f-e4d0-34ea-46de-51b1.inf6.spectrum.com.
- [2606:a000:1401:826f:e4d0:34ea:46de:51b1])
- by smtp.gmail.com with ESMTPSA id z6sm13046649qke.56.2020.04.15.13.00.19
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 15 Apr 2020 13:00:19 -0700 (PDT)
-Date: Wed, 15 Apr 2020 16:00:17 -0400
-From: Tom Rini <trini@konsulko.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v2 1/3] environment: distro: Add SF distro command
-Message-ID: <20200415200017.GH12111@bill-the-cat>
-References: <20200410182631.11951-1-jagan@amarulasolutions.com>
- <20200410182631.11951-2-jagan@amarulasolutions.com>
-MIME-Version: 1.0
-In-Reply-To: <20200410182631.11951-2-jagan@amarulasolutions.com>
-X-Clacks-Overhead: GNU Terry Pratchett
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=iCP6LoyFxExRJqxqIqO0ZCtpb3X9pIKnl0AtHQmrXjs=;
+ b=JUT7gzn58+3ue914g51GuejXUYvnO7xIn8k/EE6M4ShUbCNgPCtgdZy+Pg6JEhtkuV
+ PqZX3LrMoveTYO3/N0jXHIP7ql/WZ9qpkbyoBAVAArzu2M/vDsvOdICqLNmUFsFdprBu
+ EWpsqnohWxkShUUXGX0/2hKmw26suKjqauIf6Jw7WHWaKT3k5iF42VpRPXZJ1Euro77W
+ I/XAmMyhTf/GLx4yW1EHPkHguKpqLccWPD/VfvPG/UN9zR0RmVQyfH8zZOq0xw5JpARt
+ XlgmyL3rtTGsVCTkXi+Hf1549s0qw9JpEXp730n1GyAjGzJ7dz/8WosK1Fgfc84y9GQZ
+ zPJQ==
+X-Gm-Message-State: AGi0PuYkQC23OGjBltDDq3cBh7qIojQ4VAuG1751iKWBWcwuXPhRKiCL
+ zYyHE4yqyRETSs7mMSUIaWM=
+X-Google-Smtp-Source: APiQypIZiSysEEnEGOfY5fZpJcuccPWd4eDhfIDnRcThA/tstm0tS7BGJk0WDy4K33IfCgeGWrNurQ==
+X-Received: by 2002:a1c:1b58:: with SMTP id b85mr896338wmb.112.1586980916609; 
+ Wed, 15 Apr 2020 13:01:56 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id s6sm736184wmh.17.2020.04.15.13.01.55
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 Apr 2020 13:01:56 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] dt-bindings: net: ethernet-phy: add desciption for
+ ethernet-phy-id1234.d400
+Date: Wed, 15 Apr 2020 22:01:49 +0200
+Message-Id: <20200415200149.16986-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_130025_602321_3690E8E5 
-X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-CacheID: sfid-20200415_130200_866667_6F06B933 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,76 +96,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, linux-rockchip@lists.infradead.org,
- sunil@amarulasolutions.com,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula@amarulasolutions.com
-Content-Type: multipart/mixed; boundary="===============6283993431510749349=="
+Cc: andrew@lunn.ch, f.fainelli@gmail.com, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+The description below is already in use in
+'rk3228-evb.dts', 'rk3229-xms6.dts' and 'rk3328.dtsi'
+but somehow never added to a document, so add
+"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
+for ethernet-phy nodes on Rockchip platforms to
+'ethernet-phy.yaml'.
 
---===============6283993431510749349==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="wayzTnRSUXKNfBqd"
-Content-Disposition: inline
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ Documentation/devicetree/bindings/net/ethernet-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
+diff --git a/Documentation/devicetree/bindings/net/ethernet-phy.yaml b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
+index 8927941c7..5aa141ccc 100644
+--- a/Documentation/devicetree/bindings/net/ethernet-phy.yaml
++++ b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
+@@ -45,6 +45,9 @@ properties:
+           bits of a vendor specific ID.
+       - items:
+           - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
++          - const: ethernet-phy-ieee802.3-c22
++      - items:
++          - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
+           - const: ethernet-phy-ieee802.3-c45
+ 
+   reg:
+-- 
+2.11.0
 
---wayzTnRSUXKNfBqd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Apr 10, 2020 at 11:56:29PM +0530, Jagan Teki wrote:
-
-> Add distro boot command support for SPI flash (SF).
->=20
-> This distro boot will read the boot script at specific
-> location at the flash and start sourcing the same.
->=20
-> This file need to include on required include/config
-> file.
->=20
-> Cc: Tom Rini <trini@konsulko.com>
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-
-Reviewed-by: Tom Rini <trini@konsulko.com>
-
---=20
-Tom
-
---wayzTnRSUXKNfBqd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQGzBAABCgAdFiEEGjx/cOCPqxcHgJu/FHw5/5Y0tywFAl6XZ9EACgkQFHw5/5Y0
-tyx7JgwAoMrgOz3n3RgpUbpqGAiC3vthKl6cIohB+T2P1V44o/nC81nysrykBb1b
-kTztUHEsZT4nK1k+9OXVKZkGP96fYTcwSzZtUSPiYqOvBgVP4YYJBPLAf0sDsvyY
-fM/LkMpv6uQp8dTjCYBRkFi3pYC0kacad1zLdRGH6HM2Fg4wleXzJuDgsrfrJjiI
-ok9IlX28+zKQ6wkXmEJwFk4N7jcRyqIJ39msc8pSTqDaLtb0J4cnZAY8oVg0+t0G
-ONz2L+ZXTUDRtSy/bT4EpK97MwEcUx3H5Hey7WxE2KittmK3EeAhQpyA3P3oueIy
-MWvO5fKfH7oLyAPL08EctSgsjuG6m/rQTGm0BggzCh+s+CB4cZyY/r38eeJj7LYF
-WakBgyGNw0hVzCUX+mVbF25I+48f5m9tauHhItztwigZ8lHQuAkRwNvC349WIqMy
-eokX9WmTe6GJaiG40CU2Lk3AkOgDxREkyemF49PweCJK3AT4uvjj80Nt0zBDyxI+
-bP807D7X
-=vqDA
------END PGP SIGNATURE-----
-
---wayzTnRSUXKNfBqd--
-
-
---===============6283993431510749349==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============6283993431510749349==--
-
