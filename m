@@ -2,95 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0B8E1A9C25
-	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:25:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3F981A9C38
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 13:27:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pDY0hOd5hnpLqjXCqczckGtYYTLXQjPY5vFXv4cnd7k=; b=Sn7f0v5sCZeoiy
-	1edT5aGnAgPX2atNTj8vzZ9pZi2LWolkfkVb7eTXFnzCvIXpF7A9ueWTgxi8PtEpjc27rz9sGhWdO
-	bYQGzcMwTAZpKRFfk0HeIY9unoIdJLTJDdk68cXKq2ZWJlQpbEMKjSo5G0WEatTaajR6IsJITBTIL
-	jcafZmYzOqowoD359udveJCecEFWzjfF3io7OEUXrUTpatkZ0geM0pBtnjtswsFAO2jTfBDuXpaRw
-	YZfxGP0qtywBOQY26uLyG/AiJDtcwWc8Ehrl12IbnrSbKhVjILMwUOq/sfvkbOc/8WfSPcuBYfH9N
-	DUrDvNTLi54lvgzMXhkw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CBjboAqw0mHJj1cHPrqXak7ewxf6bwz9GqGMQ8BrdtI=; b=KwQS4pz4g33aAFqx58+L2VK2P
+	J0u7KT3qhNP7EkWFIxTeOY4VNDWkNeYXxS9BSo1Pg4NkeHV2O9jZcSv78cEg+e2jbY/FXiHiIm9Yt
+	Fr4VydDK3Iu0NOAAA2YFYLkPffxAqzdbyr0Qofz3mkCz5l+yA5tH/GLHSmqowa9mFCaR4mSUmKfSP
+	VkX3mvPNUUfGOcVNgD6BQs7wF09UT30ZekHBJM9yYeGhVK+D1FXn0MhpYm9CuqECeIIQjxKY3Xisg
+	avq6b1Svb1GEzg6wYOiNVDpmYtyvEP8Kknp53bvEvbTS7z/EkRo3D+jrvGaHZt6gtcNkXhocbgrOh
+	RTTsxCrag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgAt-0007yg-Qs; Wed, 15 Apr 2020 11:25:47 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jOgCd-000158-CR; Wed, 15 Apr 2020 11:27:35 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgAZ-0007nx-RR
- for linux-rockchip@lists.infradead.org; Wed, 15 Apr 2020 11:25:30 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z6so18577606wml.2
- for <linux-rockchip@lists.infradead.org>; Wed, 15 Apr 2020 04:25:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to;
- bh=apXLkj8/Y6/Je/J3pw9VYIeGtZznbEDSTaodMw9SIP8=;
- b=CtHkHYlCnlsa+tUc8/F7g7a0/P6u8ejT1ayfSACtu0kpWhs3EFaqXHsG66HdK2TqVO
- 1YepPve4g/tteoWGzn/BId3gVqa0gSrcAXKoX7yewG/1H0vQN4Qe2Pn7YxQ/IdDn6tw3
- UgUpHRyZ0gelkfNm/V6/st91NhPu8ozpGjQpo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=apXLkj8/Y6/Je/J3pw9VYIeGtZznbEDSTaodMw9SIP8=;
- b=nU1y16Ujoj2107Wx69yFed+EaHbODn83Dd16By7pW4QiFb92ebJqZROG8PYfgdFO9u
- 3K2psnwlKgqelWnxSvbCn8nXuK6ox2ihYFb/mwG7xD1AzzyqFU3I4unhm1vYV0Ah4QLH
- Z7pKNutj/5gufCU1Bf0uPQD7/uJY9c+lnMHplTj8ApY5JC7k7v3PTeZkzJNvlu0vp2mo
- Dak05wT82aDGuijJCYsJKxs4xx+l5hyweiwx9juqK3YTbIWQkR+gi+K8LLZA2uPIeuVK
- lXic31oxJr19YXqtp8OIdNEqGKQ2PnEvHSgRwk5j3OuBfQp2d8HmrdQK1TclueusvyI6
- Jppg==
-X-Gm-Message-State: AGi0Pubu15sheym4radG2UxAH9GF+zzG18U0N9QEHQA2Eq3FpPbGNqzF
- J8KTeWRn8u+bfYeYEFDwUIhHOw==
-X-Google-Smtp-Source: APiQypLPhakDBiE4HRC90MnW5/bRC2vpIu2AQD3Xvb6Y3wPK7412N1qq31ytrTaUWKirLB1NJ1AesQ==
-X-Received: by 2002:a1c:7c13:: with SMTP id x19mr4706062wmc.124.1586949925687; 
- Wed, 15 Apr 2020 04:25:25 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id w3sm4358429wrc.18.2020.04.15.04.25.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 15 Apr 2020 04:25:25 -0700 (PDT)
-Date: Wed, 15 Apr 2020 13:25:23 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH][next] drm/rockchip: fix spelling mistake "modifer" ->
- "modifier"
-Message-ID: <20200415112523.GA3456981@phenom.ffwll.local>
-Mail-Followup-To: Colin King <colin.king@canonical.com>,
- Sandy Huang <hjc@rock-chips.com>,
- Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20200415083420.366279-1-colin.king@canonical.com>
+ id 1jOgCM-0000wS-Hg; Wed, 15 Apr 2020 11:27:25 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id BB2FA2A0A37
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v6 5/8] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+In-Reply-To: <20200414204202.GL19819@pendragon.ideasonboard.com>
+References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
+ <20200414151955.311949-6-adrian.ratiu@collabora.com>
+ <20200414204202.GL19819@pendragon.ideasonboard.com>
+Date: Wed, 15 Apr 2020 14:28:25 +0300
+Message-ID: <87wo6hj8di.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200415083420.366279-1-colin.king@canonical.com>
-X-Operating-System: Linux phenom 5.3.0-3-amd64 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_042529_430084_B78E8148 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200415_042718_856482_F8C64C3C 
+X-CRM114-Status: GOOD (  22.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,51 +61,259 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, kernel-janitors@vger.kernel.org,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ Martyn Welch <martyn.welch@collabora.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 09:34:20AM +0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
+On Tue, 14 Apr 2020, Laurent Pinchart 
+<laurent.pinchart@ideasonboard.com> wrote:
+> Hi Adrian, 
 > 
-> There is a spelling mistake in a DRM_DEBUG_KMS debug message. Fix it.
-> 
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> Thank you for the patch. 
 
-Queued for 5.8, thanks for your patch.
--Daniel
+Hi Laurent,
 
-> ---
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+Thank you for the review - you raised some good points which will 
+be addressed in the next revision (will leave this on review a bit 
+more).
+
+I will also convert the dw_mipi_dsi.txt to yaml as you suggest and 
+send that as a separate patch.
+
+Best wishes,
+Adrian
+
 > 
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index b87d22eb6ae1..33463b79a37b 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -769,7 +769,7 @@ static bool rockchip_mod_supported(struct drm_plane *plane,
->  		return true;
->  
->  	if (!rockchip_afbc(modifier)) {
-> -		DRM_DEBUG_KMS("Unsupported format modifer 0x%llx\n", modifier);
-> +		DRM_DEBUG_KMS("Unsupported format modifier 0x%llx\n", modifier);
->  
->  		return false;
->  	}
+> On Tue, Apr 14, 2020 at 06:19:52PM +0300, Adrian Ratiu wrote: 
+>> This provides an example DT binding for the MIPI DSI host 
+>> controller present on the i.MX6 SoC based on Synopsis 
+>> DesignWare v1.01 IP.   Cc: Rob Herring <robh@kernel.org> Cc: 
+>> Neil Armstrong <narmstrong@baylibre.com> Cc: Fabio Estevam 
+>> <festevam@gmail.com> Cc: devicetree@vger.kernel.org Tested-by: 
+>> Adrian Pop <pop.adrian61@gmail.com> Tested-by: Arnaud Ferraris 
+>> <arnaud.ferraris@collabora.com> Signed-off-by: Sjoerd Simons 
+>> <sjoerd.simons@collabora.com> Signed-off-by: Martyn Welch 
+>> <martyn.welch@collabora.com> Signed-off-by: Adrian Ratiu 
+>> <adrian.ratiu@collabora.com> --- Changes since v5: 
+>>   - Fixed missing reg warning (Fabio) - Updated dt-schema and 
+>>   fixed warnings (Rob) 
+>>  Changes since v4: 
+>>   - Fixed yaml binding to pass `make dt_binding_check 
+>>   dtbs_check` and addressed received binding feedback (Rob) 
+>>  Changes since v3: 
+>>   - Added commit message (Neil) - Converted to yaml format 
+>>   (Neil) - Minor dt node + driver fixes (Rob) - Added small 
+>>   panel example to the host controller binding 
+>>  Changes since v2: 
+>>   - Fixed commit tags (Emil) 
+>> --- 
+>>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 139 
+>>  ++++++++++++++++++ 1 file changed, 139 insertions(+) create 
+>>  mode 100644 
+>>  Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
+>>  diff --git 
+>> a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
+>> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
+>> new file mode 100644 index 000000000000..10e289ea219a --- 
+>> /dev/null +++ 
+>> b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml 
+>> @@ -0,0 +1,139 @@ +# SPDX-License-Identifier: (GPL-2.0-only OR 
+>> BSD-2-Clause) +%YAML 1.2 +--- +$id: 
+>> http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml# 
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml# + 
+>> +title: Freescale i.MX6 DW MIPI DSI Host Controller + 
+>> +maintainers: +  - Adrian Ratiu <adrian.ratiu@collabora.com> + 
+>> +description: | +  The i.MX6 DSI host controller is a Synopsys 
+>> DesignWare MIPI DSI v1.01 +  IP block with a companion PHY IP. 
+>> + +  These DT bindings follow the Synopsys DW MIPI DSI bindings 
+>> defined in + 
+>> Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt 
+>> with +  the following device-specific properties. 
+> 
+> Not necessarily a prerequisite for this patch, but it would be 
+> nice to get that converted to yaml, and included here with 
+> 
+> allOf: 
+>   $ref: ../bridge/snps,dw-mipi-dsi.yaml# 
+> 
+> (assuming that's how the file will be called). 
+>
+
+Yes, I will do this conversion but in a separate patch to avoid 
+making this series bigger.
+
+Thanks,
+Adrian
+
+>> +
+>> +properties:
+>> +  compatible:
+>> +    items:
+>> +      - const: fsl,imx6q-mipi-dsi
+>> +      - const: snps,dw-mipi-dsi
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    items:
+>> +      - description: Module Clock
+>> +      - description: DSI bus clock
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: ref
+>> +      - const: pclk
+>> +
+>> +  fsl,gpr:
+>> +    description: Phandle to the iomuxc-gpr region containing the multiplexer control register.
+>
+> Could you please wrap liens at a 80 columns boundary ?
+>
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +
+>> +  ports:
+>> +    type: object
+>> +    description: |
+>> +      A node containing DSI input & output port nodes with endpoint
+>> +      definitions as documented in
+>> +      Documentation/devicetree/bindings/media/video-interfaces.txt
+>> +      Documentation/devicetree/bindings/graph.txt
+>> +    properties:
+>
+> You should add
+>
+>        '#address-cells':
+>          const: 1
+>
+>        '#size-cells':
+>          const: 0
+>
+>> +      port@0:
+>> +        type: object
+>> +        description:
+>> +          DSI input port node, connected to the ltdc rgb output port.
+>> +
+>> +      port@1:
+>> +        type: object
+>> +        description:
+>> +          DSI output port node, connected to a panel or a bridge input port"
+>
+>
+> Should this be "RGB output port node" ? And s/"/./
+>
+> And here you should add
+>
+>        additionalProperties: false
+>
+>> +
+>> +patternProperties:
+>> +  "^panel@[0-3]$":
+>> +    type: object
+>> +    description: |
+>> +      A node containing the panel or bridge description as documented in
+>> +      Documentation/devicetree/bindings/display/mipi-dsi-bus.txt
+>> +    properties:
+>> +      port:
+>> +        type: object
+>> +        description:
+>> +          Panel or bridge port node, connected to the DSI output port (port@1)
+>
+> Does this belong here ? I think the port property for the panel needs to
+> be described in the panel's binding instead.
+>
+>> +
+>> +  "#address-cells":
+>> +    const: 1
+>> +
+>> +  "#size-cells":
+>> +    const: 0
+>
+> These two properties are not pattern properties, right ? Should they be
+> listed under the properties above ?
+>
+>> +
+>> +required:
+>> +  - "#address-cells"
+>> +  - "#size-cells"
+>> +  - compatible
+>> +  - reg
+>> +  - interrupts
+>> +  - clocks
+>> +  - clock-names
+>> +  - ports
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |+
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/imx6qdl-clock.h>
+>> +    #include <dt-bindings/gpio/gpio.h>
+>
+> Alphabetical order ?
+>
+>> +
+>> +    dsi: dsi@21e0000 {
+>> +        #address-cells = <1>;
+>> +        #size-cells = <0>;
+>> +        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
+>> +        reg = <0x021e0000 0x4000>;
+>> +        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
+>> +        fsl,gpr = <&gpr>;
+>> +        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
+>> +                 <&clks IMX6QDL_CLK_MIPI_IPG>;
+>> +        clock-names = "ref", "pclk";
+>> +
+>> +        ports {
+>> +            #address-cells = <1>;
+>> +            #size-cells = <0>;
+>> +            port@1 {
+>> +                reg = <1>;
+>> +                dsi_out: endpoint {
+>> +                    remote-endpoint = <&panel_in>;
+>> +                };
+>> +            };
+>> +        };
+>> +
+>> +        panel@0 {
+>> +            compatible = "sharp,ls032b3sx01";
+>> +            reg = <0>;
+>> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
+>> +            ports {
+>> +                #address-cells = <1>;
+>> +                #size-cells = <0>;
+>> +                port@0 {
+>> +                    reg = <0>;
+>> +                    panel_in: endpoint {
+>> +                        remote-endpoint = <&dsi_out>;
+>> +                    };
+>> +                };
+>> +            };
+>> +        };
+>> +    };
+>> +
+>> +...
+>
 > -- 
-> 2.25.1
-> 
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+> Regards,
+>
+> Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
