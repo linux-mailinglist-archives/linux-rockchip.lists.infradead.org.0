@@ -2,87 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 376821A8D1D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 14 Apr 2020 23:02:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A6B71A906F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 15 Apr 2020 03:31:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qlucwdSwoAEAysYs4GbKUmHgEqE5LnE12uSuF92lS10=; b=Q4wuyxowhvoSZJ
-	GY2WoXgthYZjItwE1oLrd2EfEcetCOA7EwZ3azDptAVCz2EL5gJozur7JDbD50e2qPMTx7dkU1MGd
-	lWSJkmpQsIL79B5PhLrSzy0Ku4giyEvKK30BtLxK+kBC4+MmkM4TzUCGfip7JnLc+/V+BQcq4ove7
-	HZj/iv1+s18tOWHxzJ9xED+GOZxQi3X0ZzjOg6QCy4Of+i7WjC2HdoF+ZYgH9OPZvS8bgKr0925e8
-	eBCk/hEOZgrmT+yal9ZipbUjytV3HVvVzpr8YdI8hoBK1omyo2gwcYg8+YF14AHDcg6a6lg8bkC3e
-	Xetb/gXTU9t0h145sYow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aowk4yEj8XftDmSnFPUhP1bpFzQJ0JfLJtKPyaCi96k=; b=QrEZmv+F1ZReEU
+	3ItNc1Syxmoe2a9XgLwudiD3FnkiwAV8OrKp4NMknq0fn6afX8+1RDRZXzfjdU0x8kYcqh0rMULB+
+	6L/s648EbdDu4imu2cy4FKoPJ5H9mYLcL7TtVPujSDkOq3r0GEVSexEZhK9s90D04BlXV71rxW0os
+	UfMVx250ergA/OlkDTQlyHqpStTJQJXU95Fhqn0qO1JdZEyJ7tjLUcmYoLGQln9JvJ3MqMDWxMGUB
+	i+BEGtX0v18LOk4leetCn84IADz6UvPXg/QuwYJEfIHeSv+dWNdHXcxDMiRi1XG0BsDyX+wuusL//
+	tPi/EaiQWDpJAkJxGClA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOShl-00088J-U2; Tue, 14 Apr 2020 21:02:49 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jOWtL-0004Hg-O2; Wed, 15 Apr 2020 01:31:03 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOShW-0007yz-69; Tue, 14 Apr 2020 21:02:35 +0000
-Received: by mail-ot1-f66.google.com with SMTP id e20so1231112otl.2;
- Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1nuyaAjNqXWnHHUJzL2XAoGa0wH4Zq86LiHy6nqxsJQ=;
- b=SGaH/mk82EDwIrMIRBIWEO3wNZI1yqPuUe+oMV+XnQ9eAcmp1NkIhadvDED6EWwwpQ
- 2PkOa1jGrTyMUw7bfijZ+mA4DC+HP6hXDbR7JJQgn++qIkPhDp4ICPkxZRPoWnD6lT0b
- KTG/zW4YyX05CQyNG/UquD2xYhRXSQh+w/OA3Mvig2wU4G45FiXZyF7d1MwdnMHzZY8j
- JzAbQH9IOg/ZJN8cvYa+2kA4U6GUkveFukMCxiDeRjxg2petDKbwwabJSWf+HC+Kss3X
- fYRcdPsnDppTmYuDSA1nX/KrFwY2lOK8R4oqwOr6LDM+QmmyZK9nMJzbwRESQ5T1gM1n
- stUQ==
-X-Gm-Message-State: AGi0PuZ6yPovmXaDQkNObiVGjRZ3XfmI8pR9bsYLgPaLCNc01yfRE9Cq
- oV+abyxe7rX6WsArfOVotA==
-X-Google-Smtp-Source: APiQypKapzYt9/7Q7GX3xQeCXyCjneXL8ofq3ZPCgF3NijaDtaMlETjB5mxGRQw13Z/0NIvx/NAIzg==
-X-Received: by 2002:a05:6830:573:: with SMTP id
- f19mr11105288otc.195.1586898153253; 
- Tue, 14 Apr 2020 14:02:33 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s73sm1425254oih.14.2020.04.14.14.02.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 14 Apr 2020 14:02:32 -0700 (PDT)
-Received: (nullmailer pid 5278 invoked by uid 1000);
- Tue, 14 Apr 2020 21:02:31 -0000
-Date: Tue, 14 Apr 2020 16:02:31 -0500
-From: Rob Herring <robh@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH v2 28/33] docs: dt: rockchip, dwc3.txt: fix a pointer to a
- renamed file
-Message-ID: <20200414210231.GA5218@bogus>
-References: <cover.1586881715.git.mchehab+huawei@kernel.org>
- <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
+ id 1jOWtI-0004GT-F4
+ for linux-rockchip@lists.infradead.org; Wed, 15 Apr 2020 01:31:02 +0000
+Received: from floko.floko.floko (unknown
+ [IPv6:2804:431:e7cc:79a2:b6f7:4033:5775:cc3a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: koike)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id ACFE62A1BC8;
+ Wed, 15 Apr 2020 02:30:54 +0100 (BST)
+From: Helen Koike <helen.koike@collabora.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH v3 0/4] media: add v4l2_pipeline_stream_{enable,
+ disable} helpers
+Date: Tue, 14 Apr 2020 22:30:40 -0300
+Message-Id: <20200415013044.1778572-1-helen.koike@collabora.com>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <287bd271f5c542e9d12a132a6b6a17672c9fd67c.1586881715.git.mchehab+huawei@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_140234_225304_9D23B6FE 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200414_183100_633372_7E7250ED 
+X-CRM114-Status: GOOD (  12.77  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,32 +59,131 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mchehab@kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ hans.verkuil@cisco.com, skhan@linuxfoundation.org,
+ niklas.soderlund@ragnatech.se, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, 14 Apr 2020 18:48:54 +0200, Mauro Carvalho Chehab wrote:
-> phy-rockchip-inno-usb2.txt was converted to yaml.
-> 
-> Fix the corresponding reference.
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
->  Documentation/devicetree/bindings/usb/rockchip,dwc3.txt | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
+Hi,
 
-Applied, thanks.
+Media drivers need to iterate through the pipeline and call .s_stream()
+callbacks in the subdevices.
 
-Rob
+Instead of repeating code, add helpers for this.
+
+These helpers will go walk through the pipeline only visiting entities
+that participates in the stream, i.e. it follows links from sink to source
+(and not the opposite).
+
+Which means that in a topology like this https://bit.ly/3b2MxjI
+calling v4l2_pipeline_stream_enable() from rkisp1_mainpath won't call
+.s_stream(true) for rkisp1_resizer_selfpath.
+
+stream_count variable was added in v4l2_subdevice to handle nested calls
+to the helpers.
+This is useful when the driver allows streaming from more then one
+capture device sharing subdevices.
+
+This patch came from the error I was facing when multistreaming from
+rkisp1 driver, where stoping one capture would call s_stream(false) in
+the pipeline, causing a stall in the second capture device.
+
+Also, the vimc patch https://patchwork.kernel.org/patch/10948833/ won't
+be required with this patchset.
+
+This patchset was tested on rkisp1 and vimc drivers.
+
+Other cleanup might be possible (but I won't add in this patchset as I
+don't have the hw to test):
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/qcom/camss/camss-video.c#n430
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/omap3isp/isp.c#n697
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/stm32/stm32-dcmi.c#n680
+	https://git.linuxtv.org/media_tree.git/tree/drivers/media/platform/xilinx/xilinx-dma.c#n97
+
+Changes in V3:
+====================
+Following up Niklas' comments in V2 https://patchwork.kernel.org/patch/11473681/#23270823
+
+* I removed the limitation in topologies with entities with multiple enabled
+links to its sink pads in the topology.
+Now it enables all subdevs in the pipeline that have an enabled link going
+from sink to source while walking from the video device, so it can be
+also useful for rcar-vin driver.
+
+To implement this, I added back in the series the patch from v1:
+    "media: mc-entity.c: add media_graph_walk_next_stream()"
+
+* "size" was renamed to "max_size" in function v4l2_pipeline_subdevs_get()
+to reflect the maximum number of elements that can fit in the subdevs array,
+with proper documentation.
+
+* v4l2_pipeline_subdevs_get() returns a negative number for error, instead
+of returning 0 and printing a warning.
+
+* I also add if defined(CONFIG_MEDIA_CONTROLLER) around helpers to avoid
+compiling errors.
+
+Overview of patches in V3:
+--------------------------
+
+Patch 1/4 adds a new iterator function to follow links from sink to
+source only.
+
+Path 2/4 adds the helpers in v4l2-common.c, allowing nested calls by
+adding stream_count in the subdevice struct.
+
+Patch 3/4 cleanup rkisp1 driver to use the helpers.
+
+Patch 4/4 cleanup vimc driver to use the helpers.
+
+Changes in V2:
+====================
+The first version was calling the s_stream() callbacks from sensor to
+capture.
+
+This was generating errors in the Scarlet Chromebook, when the sensor
+was being enabled before the ISP.
+
+It make sense to enable subdevices from capture to sensor instead (which
+is what most drivers do already).
+
+This v2 drops the changes from mc-entity.c, and re-implement helpers in
+v4l2-common.c
+
+Overview of patches in V2:
+--------------------------
+
+Path 1/3 adds the helpers in v4l2-common.c, allowing nested calls by
+adding stream_count in the subdevice struct.
+
+Patch 2/3 cleanup rkisp1 driver to use the helpers.
+
+Patch 3/3 cleanup vimc driver to use the helpers.
+
+Helen Koike (4):
+  media: mc-entity.c: add media_graph_walk_next_stream()
+  media: v4l2-common: add helper functions to call s_stream() callbacks
+  media: staging: rkisp1: use v4l2_pipeline_stream_{enable,disable}
+    helpers
+  media: vimc: use v4l2_pipeline_stream_{enable,disable} helpers
+
+ drivers/media/mc/mc-entity.c                  |  34 ++++-
+ .../media/test_drivers/vimc/vimc-capture.c    |  28 ++--
+ .../media/test_drivers/vimc/vimc-streamer.c   |  49 +------
+ drivers/media/v4l2-core/v4l2-common.c         | 125 ++++++++++++++++++
+ drivers/staging/media/rkisp1/rkisp1-capture.c |  76 +----------
+ include/media/media-entity.h                  |  15 +++
+ include/media/v4l2-common.h                   |  43 ++++++
+ include/media/v4l2-subdev.h                   |   2 +
+ 8 files changed, 242 insertions(+), 130 deletions(-)
+
+-- 
+2.26.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
