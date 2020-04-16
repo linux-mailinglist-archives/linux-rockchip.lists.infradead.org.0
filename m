@@ -2,100 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69AC91AC4A1
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 16:02:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 460141AC4D8
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 16:06:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HhsNeCrJKEsWFw6UEazK3GcBgpN2NUuPpFbi8W8KX8A=; b=FdkyYedqsMHc6E
-	GIYiT6pKNnZF4RrgIKEqOKRAbGGA5RuG2eaTU+rSapX1ix49GPhmtZKnbTqpyF6htVu+6qCfGRkqq
-	XPDX4g0EKJXla+ycwWbf4sOx1Nbuf2aerIdI5BwZcVZKjctYqhstre6cTzGEnW7NgLevsc46Fw+c0
-	MgZUWA0ZcAo0ejq4d5fF6ZhzQAXtXoenbhhsK6wRo9T4CEnMswLnifk98hfLxijeiSWvdubMbDcaq
-	8E2UlH76Xx7/5oA6kcN8PTui+eApOOr5aSsxk/s6bU+PHDLfks0J+/dgtvHbdJgmuxlvuzaEdNipc
-	uX/MrgHs5OGetyAHN5dA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pGzlt7AgzfLi25glI2lZdDFuj4iOOJFdsvq1l6C8avk=; b=aAlMU8oiZck1CZ
+	aaySZrN4AC1oCj6PP2WfwfAazLGSbK12EnlFegOVsj0IFL5agxjhkBx6Y6bXkUU7D6oPFhOfWMJy5
+	OoBFUClGtdV1LyynxPsiybvqFTvrekewvBf8oD0Xxb3PvTjflrb9NmbRdk55ivaQaFT8KS+m1xEfU
+	f8c/l4tRaPJxJLIbzv00UU0GvFlSNA9pxzHITdPa9Tin0QngO1/m1fokbJUsBULjvs8aoaqDLetMc
+	7YqHvpaKFC+fk7z0bsqieeAk5T8zXpvTobNI5cYzcxUWqsMeUjkqLtJ2F3LX68GpudeeQ4EUIXzyC
+	15U9dEFt5MKywssqpmrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP56O-0000Yh-2T; Thu, 16 Apr 2020 14:02:48 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jP59T-0004bN-Fs; Thu, 16 Apr 2020 14:05:59 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP56K-0000Xl-Lc; Thu, 16 Apr 2020 14:02:46 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v8so2612788wma.0;
- Thu, 16 Apr 2020 07:02:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NHqfdeNveULnM7vQAbJglacV+XZ4nJdoryqrPGPSWH0=;
- b=joAdCPp1vLkSbqtIwf3+wLlZtkPXrnifqtZ7/pDNKHE5OT01834YQYcWRvCorRphmA
- 310gNbj+A8S3oahU7wcGkJiCOoBzmwTlZTl7uT+gehWEXbQHl3HJ/QnWzYMrKU1qjg3e
- zxGQD6Lc4IdSrNdSiAyKW4NKk3A/glK+jt3xv5gClHrFMfhDrmGOYSOzEmzxki3SWVpA
- MubOA85JiEnSOZBdfdWDSsudvebrjpXqzDY0fSvczrFXBRH6Y5aM5kZyO9zURhRH408N
- W7ZkmLOTf5gcVncU6pvW7GEFIETnpmo2r/utHGnjS4flkxmwX4hruSPYDXbuRADMQua5
- UTgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NHqfdeNveULnM7vQAbJglacV+XZ4nJdoryqrPGPSWH0=;
- b=ES/bsQdMdotj8So1upfoWRC5WJmkZlj+6BJD7DLrU4jvVQ2OYdCDPHB46Q3U5+IcCx
- Y1XtdDuOtpkPWci+zb7IQY8+VTtbUe2E1tbysOJHntZ4hoYjIcexlzqW81KMt7agIMca
- 9L80590xUqtwNZq32EXnATBJ4Kc5UiBtCd/T0lAVV4xzLQQ5Na/9DU66QS66smGsjF8w
- BAz5tIF8hwwgvgAzpV1rRmLrGPI5AQjLPffitnv78EFUaAKIrlGGcgdkUbHjtVAhCzPu
- +jjtLjRtNHOJu/ll8fUjivdbNAF3Yvr2mgT5MKAAJ6u62hloo3ci43JTD8pFavhx8u5k
- lC+w==
-X-Gm-Message-State: AGi0PuYFv7z68BFry7g/lVrEFMwdPhyXqqCcKgiO/JiJeFZUFLzqpgB7
- VaEeBOdhKzogu2avoLx3e90=
-X-Google-Smtp-Source: APiQypJV2H42TwzOHO9PsPVCAA/RA8bXt0qbCwFdMXRNN2D2+xQOY5NEhSB4Y23QQTB8V/rxI3S6Yg==
-X-Received: by 2002:a05:600c:2194:: with SMTP id
- e20mr5049382wme.22.1587045761652; 
- Thu, 16 Apr 2020 07:02:41 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id p10sm26933094wrm.6.2020.04.16.07.02.40
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 07:02:40 -0700 (PDT)
-Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
- <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
- <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
- <20200416132442.GI125838@aptenodytes>
- <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
- <20200416135519.GJ125838@aptenodytes>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <f97d7661-834d-3fbf-2cd9-0b37c487e8f7@gmail.com>
-Date: Thu, 16 Apr 2020 16:02:38 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jP59I-0004T1-Ex; Thu, 16 Apr 2020 14:05:51 +0000
+Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
+ [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 7A4D9100009;
+ Thu, 16 Apr 2020 14:05:42 +0000 (UTC)
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] drm/rockchip: Add per-pixel alpha support for the PX30 VOP
+Date: Thu, 16 Apr 2020 16:05:26 +0200
+Message-Id: <20200416140526.262533-1-paul.kocialkowski@bootlin.com>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-In-Reply-To: <20200416135519.GJ125838@aptenodytes>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_070244_730483_35625B4B 
-X-CRM114-Status: GOOD (  23.79  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200416_070548_768724_728D8795 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,133 +60,96 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
- linux-rockchip@lists.infradead.org, Jacob Chen <jacob-chen@iotwrt.com>,
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 4/16/20 3:55 PM, Paul Kocialkowski wrote:
-> Hi,
-> 
-> On Thu 16 Apr 20, 15:44, Johan Jonker wrote:
->> On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
->>> Hi,
->>>
->>> On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
->>>> Hi Paul,
->>>>
->>>> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
->>>> has been approved by robh.
->>>
->>> Huh, I looked around for ongoing related work but missed it.
->>> I'll definitely rebase on top of your series and use the yaml description
->>> instead. Thanks!
->>>
->>>> Maybe place dts patches at the end of a patch serie.
->>>> Could you include a &rga patch if your device is supported in mainline,
->>>> so we can test with:
->>>> make ARCH=arm64 dtbs_check
->>>> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
->>>
->>> I tested with the PX30 EVB so I can surely add a node there if that turns
->>> out necessary (see below).
->>>
->>>> Johan
->>>>
->>>> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
->>>>> The PX30 features a RGA block: add the necessary node to support it.
->>>>>
->>>>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
->>>>> ---
->>>>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
->>>>>  1 file changed, 11 insertions(+)
->>>>>
->>>>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> index 75908c587511..4bfbee9d4123 100644
->>>>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>>>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
->>>>>  		status = "disabled";
->>>>>  	};
->>>>>  
->>>>> +	rga: rga@ff480000 {
->>>>> +		compatible = "rockchip,px30-rga";
->>>>> +		reg = <0x0 0xff480000 0x0 0x10000>;
->>>>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
->>>>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
->>>>> +		clock-names = "aclk", "hclk", "sclk";
->>>>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
->>>>> +		reset-names = "core", "axi", "ahb";
->>>>> +		power-domains = <&power PX30_PD_VO>;
->>>>
->>>> 		status = "disabled";
->>>
->>> As of 5.6, the rk3399 has the node enabled by default. Did that change?
->>
->> 'status' disappeared during review for rk3399 between v2 and v3, but
->> doesn't mention the reason. If someone can give more info here?
->>
->> https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen@iotwrt.com/
->>
->> https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen@iotwrt.com/
->>
->>>
->>> Since it's a standalone block that has no I/O dependency, I don't really see
->>> the point of disabling it by default.
->>
->> Vop, hdmi and other video devices are also disabled.
->> Follow the rest I think...
-> 
-> Well, these blocks do have related I/O ports so it makes sense not to enable
-> them by default because of pinmux, or because there might be no connector
-> populated/routed.
-> 
-> For a memory to memory internal block, I don't see any reason why.
-> It's definitely not board-specific and having to add these nodes for every board
-> that has them is kind of a pain and might be overlooked. This will easily result
-> in the feature not being available for end users without having to change the
-> dt.
-> 
-> Also, the vpu node is always enabled on rockchip (and sunxi) platforms.
-> I think these are better examples to follow.
+Compared to its predecessors, the PX30 VOP has a different register layout
+for enabling per-pixel alpha. Instead of src_alpha_ctl and dst_alpha_ctl,
+there is a single alpha control register. This register takes some fields
+from src_alpha_ctl, but with a different layout.
 
-From PX30 TRM-Part1:
+Add support for the required fields to the PX30 VOP window descriptions,
+which makes per-pixel-alpha formats behave correctly.
 
-Power domain is shared by vop and dsi.
-It's up to the user what blocks he/she enables and what power it uses.
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+---
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 4 ++++
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.h | 3 +++
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c | 9 +++++++++
+ 3 files changed, 16 insertions(+)
 
-PD_VO: VOP_M, VOP_S, RGA and DSI
-
-> 
-> Cheers,
-> 
-> Paul
-> 
->>>
->>> What do you think?
->>>
->>> Cheers,
->>>
->>> Paul
->>>
->>>>> +	};
->>>>> +
->>>>>  	qos_gmac: qos@ff518000 {
->>>>>  		compatible = "syscon";
->>>>>  		reg = <0x0 0xff518000 0x0 0x20>;
->>>>>
->>>>
->>>
->>
-> 
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index d04b3492bdac..ac1b1923c4bc 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -906,6 +906,10 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
+ 			SRC_ALPHA_CAL_M0(ALPHA_NO_SATURATION) |
+ 			SRC_FACTOR_M0(ALPHA_ONE);
+ 		VOP_WIN_SET(vop, win, src_alpha_ctl, val);
++
++		VOP_WIN_SET(vop, win, alpha_pre_mul, ALPHA_SRC_PRE_MUL);
++		VOP_WIN_SET(vop, win, alpha_mode, ALPHA_PER_PIX);
++		VOP_WIN_SET(vop, win, alpha_en, 1);
+ 	} else {
+ 		VOP_WIN_SET(vop, win, src_alpha_ctl, SRC_ALPHA_EN(0));
+ 	}
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+index 0b3d18c457b2..562b127d120b 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.h
+@@ -151,6 +151,9 @@ struct vop_win_phy {
+ 
+ 	struct vop_reg dst_alpha_ctl;
+ 	struct vop_reg src_alpha_ctl;
++	struct vop_reg alpha_pre_mul;
++	struct vop_reg alpha_mode;
++	struct vop_reg alpha_en;
+ 	struct vop_reg channel;
+ };
+ 
+diff --git a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+index 7a9d979c8d5d..67bb2625db68 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
++++ b/drivers/gpu/drm/rockchip/rockchip_vop_reg.c
+@@ -244,6 +244,9 @@ static const struct vop_win_phy px30_win0_data = {
+ 	.uv_mst = VOP_REG(PX30_WIN0_CBR_MST0, 0xffffffff, 0),
+ 	.yrgb_vir = VOP_REG(PX30_WIN0_VIR, 0x1fff, 0),
+ 	.uv_vir = VOP_REG(PX30_WIN0_VIR, 0x1fff, 16),
++	.alpha_pre_mul = VOP_REG(PX30_WIN0_ALPHA_CTRL, 0x1, 2),
++	.alpha_mode = VOP_REG(PX30_WIN0_ALPHA_CTRL, 0x1, 1),
++	.alpha_en = VOP_REG(PX30_WIN0_ALPHA_CTRL, 0x1, 0),
+ };
+ 
+ static const struct vop_win_phy px30_win1_data = {
+@@ -256,6 +259,9 @@ static const struct vop_win_phy px30_win1_data = {
+ 	.dsp_st = VOP_REG(PX30_WIN1_DSP_ST, 0xffffffff, 0),
+ 	.yrgb_mst = VOP_REG(PX30_WIN1_MST, 0xffffffff, 0),
+ 	.yrgb_vir = VOP_REG(PX30_WIN1_VIR, 0x1fff, 0),
++	.alpha_pre_mul = VOP_REG(PX30_WIN1_ALPHA_CTRL, 0x1, 2),
++	.alpha_mode = VOP_REG(PX30_WIN1_ALPHA_CTRL, 0x1, 1),
++	.alpha_en = VOP_REG(PX30_WIN1_ALPHA_CTRL, 0x1, 0),
+ };
+ 
+ static const struct vop_win_phy px30_win2_data = {
+@@ -269,6 +275,9 @@ static const struct vop_win_phy px30_win2_data = {
+ 	.dsp_st = VOP_REG(PX30_WIN2_DSP_ST0, 0x1fff1fff, 0),
+ 	.yrgb_mst = VOP_REG(PX30_WIN2_MST0, 0xffffffff, 0),
+ 	.yrgb_vir = VOP_REG(PX30_WIN2_VIR0_1, 0x1fff, 0),
++	.alpha_pre_mul = VOP_REG(PX30_WIN2_ALPHA_CTRL, 0x1, 2),
++	.alpha_mode = VOP_REG(PX30_WIN2_ALPHA_CTRL, 0x1, 1),
++	.alpha_en = VOP_REG(PX30_WIN2_ALPHA_CTRL, 0x1, 0),
+ };
+ 
+ static const struct vop_win_data px30_vop_big_win_data[] = {
+-- 
+2.26.0
 
 
 _______________________________________________
