@@ -2,60 +2,98 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2121C1AC1C5
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 14:48:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E96A41AC1FD
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 15:02:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FwJoq5v5OTJs6IDrtDdRNiW2GVqrViE0yJIzW6CDBoo=; b=EJedKmB7yHvLCnKLVmzmroctm
-	5GlRmmaCOudJ/rL9SSeCHfGAHTLJ5zlOygyPfGcT5Xgg7VhJU7joFNpOtRZm5IXg7I3DrOnMiPulD
-	e2wNBjaTejh/q9ub6OnL3v3/85gk4eYog0sy6+8J4UgY09eDrpK7KvciJGBIeQ68fCmIw3hB+jUXV
-	sP9Yd+JthWsiPvXjWZE2ncY0R5MEQI4mOAJxXfsu2XbSKha+11WJltXKfOgSC/AuokshI4ghAC9Lf
-	AoM6IHfKRnoZn/gvVUYUqYgybFU9PyYCbYJ5Wkwf0JF49N7dmusRBP+jkF8eeyHW25wSLqhSty9ip
-	S7aGZtbfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iq+3UmaXeBV+YKPwZobgcuo0tF9kFjiFXi3bjGD/9B0=; b=cPfnznycmI7A+q
+	UGXYA/AsVHEqF6xyVwrfN/APEvi6Q1+SDGcttXQOm5sT2UjKxP6mTfOknfWVFNGaDuDlVMWyd6NVa
+	9daxj+vXjZ0XeFNJMq6AxGngEqDg6JJqtVND2TtFcIgzOSd5B5+2WeIwwID61ZgDkPUUP3XQcvSIR
+	WgOi82TKGZqM9rXxfYhXRdJm/2D5zrSGyem2/0UXMZiDw1RMD6rrUG0ZbUISYKSND/FtOWU5cSkLS
+	WMCnTGvpJNLUThWi8340eBObtvTH5MZIUg+NsOWFzljVttwUed6VhmocigXe/SEdk5Ynt5ojZYCnq
+	kb83Z4L+SqM7OicR9FGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP3wq-0005D7-0x; Thu, 16 Apr 2020 12:48:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP3wd-00056V-UB; Thu, 16 Apr 2020 12:48:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B0A39C14;
- Thu, 16 Apr 2020 05:48:38 -0700 (PDT)
-Received: from [10.57.59.184] (unknown [10.57.59.184])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 940FD3F68F;
- Thu, 16 Apr 2020 05:48:36 -0700 (PDT)
-Subject: Re: [PATCH 2/3] media: rockchip: Introduce driver for Rockhip's
- camera interface
-To: Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Hans Verkuil <hverkuil-cisco@xs4all.nl>
-References: <20200403142122.297283-1-maxime.chevallier@bootlin.com>
- <20200403142122.297283-3-maxime.chevallier@bootlin.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <18d46e23-a7fa-ddaf-690f-f06580a536cb@arm.com>
-Date: Thu, 16 Apr 2020 13:48:35 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jP4AK-0006fG-8k; Thu, 16 Apr 2020 13:02:48 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jP4AH-0006eb-0a; Thu, 16 Apr 2020 13:02:46 +0000
+Received: by mail-wm1-x341.google.com with SMTP id x4so4512718wmj.1;
+ Thu, 16 Apr 2020 06:02:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=DsXbXqSR3WQQ/q3QyWRXNvBRy+VnfDMjqm/TEYscBoU=;
+ b=l9OHz4Xu8UUrVETfqDUe78B77QloOSjAuW1zUUPhF6mnjZNyfmYlTZlstQ7DTLMZXx
+ QZp/1o3zt7Pyua6lAgb+Fg8JZ+UNuL0xMB0C5Rg4lNWyh/Y0n58k3khWQmgQMgFW10vA
+ UZEt/WHoic7XKdFncgmdMdD/ERfOIihkhdAZpnaTfjz7gEfcQKaaIbuGilMxFH/Hmcnq
+ 2BajeBWSbyY3UWqPnOuAa6ECF+V1+As5iLm580KPCfBt0++Ja+vZt6Yl9Pj6jFpP4SRk
+ 6EYcyexDlQ2/QiQcgXyU+yM+IM2Z3TOfzzI21YEHupFpmb5JU3l3/cnQBP7SsJaWacdV
+ /X0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=DsXbXqSR3WQQ/q3QyWRXNvBRy+VnfDMjqm/TEYscBoU=;
+ b=fj4lN9m0cUbJHwF/fXugu4EcWREHuy8qn2QRewwWmzDIH1jmFXoVJ60eXMCOX9KXX+
+ sCbQe4Uep8SLrB+TTYrXQu6I1ZMm7qHYRJ1jZyWCi22Lk7iyGwDiv27+KK6Eff3wT2wT
+ bRuurP+aPdxdGN+dghg9bgdeGP7moKA5yVuQ2Dt1qtZ22F4jb8guVOoP5W7KKKQvEh7q
+ 2U9nROvSt083e36hVS2KcDQQSXhzKvCkfZlh3ADhkiw9WnP9VczzsZjWcuzBV/tBlixZ
+ 7mQdTwSXGMWbLY4LaDG2+ZuFqOtrrlIRU4Rl1slME3mGD+Ki+HC8cqoqc+BTukrr4EtZ
+ WnGg==
+X-Gm-Message-State: AGi0PuYpmgxVS5D0a5gCFikZ0Sh47SsagZTw/5h3CnC4L1wVZJQH3//Z
+ CzpS1H6KQhnaSe5MJZaggRk=
+X-Google-Smtp-Source: APiQypJmGVgOCUB4Bi9u+4yal3fthikSw/VxSVv6cs2uWMvyqqMrS3fjb25iU4fphqExvZQpuidm6Q==
+X-Received: by 2002:a1c:7706:: with SMTP id t6mr4806123wmi.110.1587042163757; 
+ Thu, 16 Apr 2020 06:02:43 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id c18sm26903597wrx.5.2020.04.16.06.02.41
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 16 Apr 2020 06:02:42 -0700 (PDT)
+Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
+ <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
+Date: Thu, 16 Apr 2020 15:02:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200403142122.297283-3-maxime.chevallier@bootlin.com>
-Content-Language: en-GB
+In-Reply-To: <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_054840_059989_C5D0F4F3 
-X-CRM114-Status: GOOD (  22.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200416_060245_075426_63CBEED3 
+X-CRM114-Status: GOOD (  17.31  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,183 +106,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hansverk@cisco.com>,
+ Jacob Chen <jacob-chen@iotwrt.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+Hi Paul,
 
-Just a handful of drive-by cleanup suggestions to help this smell less 
-like a BSP driver...
+The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
+has been approved by robh.
+Maybe place dts patches at the end of a patch serie.
+Could you include a &rga patch if your device is supported in mainline,
+so we can test with:
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
 
-(one day I still hope to get round to playing with what appears to be 
-the DVP interface populated but unused inside my RK3288 box, and the 
-camera module I picked up to supposedly fit it, but alas not today)
+Johan
 
-On 2020-04-03 3:21 pm, Maxime Chevallier wrote:
-[...]
-> +static int rkcif_plat_probe(struct platform_device *pdev)
-> +{
-> +	const struct of_device_id *match;
-> +	struct device_node *node = pdev->dev.of_node;
-> +	struct device *dev = &pdev->dev;
-> +	struct v4l2_device *v4l2_dev;
-> +	struct rkcif_device *cif_dev;
-> +	const struct cif_match_data *data;
-> +	struct resource *res;
-> +	int i, ret, irq;
-> +
-> +	match = of_match_node(rkcif_plat_of_match, node);
-> +	if (IS_ERR(match))
-> +		return PTR_ERR(match);
+On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
+> The PX30 features a RGA block: add the necessary node to support it.
+> 
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> index 75908c587511..4bfbee9d4123 100644
+> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
+>  		status = "disabled";
+>  	};
+>  
+> +	rga: rga@ff480000 {
+> +		compatible = "rockchip,px30-rga";
+> +		reg = <0x0 0xff480000 0x0 0x10000>;
+> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
+> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
+> +		clock-names = "aclk", "hclk", "sclk";
+> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+> +		reset-names = "core", "axi", "ahb";
+> +		power-domains = <&power PX30_PD_VO>;
 
-of_device_get_match_data()
+		status = "disabled";
 
+> +	};
 > +
-> +	cif_dev = devm_kzalloc(dev, sizeof(*cif_dev), GFP_KERNEL);
-> +	if (!cif_dev)
-> +		return -ENOMEM;
-> +
-> +	dev_set_drvdata(dev, cif_dev);
-> +	cif_dev->dev = dev;
-> +
-> +	irq = platform_get_irq(pdev, 0);
-> +	if (irq < 0)
-> +		return irq;
-> +
-> +	ret = devm_request_irq(dev, irq, rkcif_irq_handler, IRQF_SHARED,
-> +			       dev_driver_string(dev), dev);
-> +	if (ret < 0) {
-> +		dev_err(dev, "request irq failed: %d\n", ret);
-> +		return ret;
-> +	}
-> +
-> +	cif_dev->irq = irq;
-> +	data = match->data;
-> +	cif_dev->chip_id = data->chip_id;
+>  	qos_gmac: qos@ff518000 {
+>  		compatible = "syscon";
+>  		reg = <0x0 0xff518000 0x0 0x20>;
+> 
 
-It pretty much breaks even at the moment, but consider just holding a 
-pointer to data itself rather than copying multiple fields into cif_dev, 
-particularly if there's any likelihood of adding more in future. The 
-couple of places clk_size and chip_id are used here don't really look 
-like critical fast-paths where cache/TLB locality is super-important.
-
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	cif_dev->base_addr = devm_ioremap_resource(dev, res);
-
-devm_platform_ioremap_resource()
-
-> +
-> +	if (IS_ERR(cif_dev->base_addr))
-> +		return PTR_ERR(cif_dev->base_addr);
-> +
-> +	if (data->clks_num > RKCIF_MAX_BUS_CLK ||
-> +		data->rsts_num > RKCIF_MAX_RESET) {
-
-It's silly to have runtime checks of constants - BUILD_BUG_ON() 
-somewhere if you really want to validate that the driver data is 
-self-consistent.
-
-> +		dev_err(dev, "out of range: clks(%d %d) rsts(%d %d)\n",
-> +			data->clks_num, RKCIF_MAX_BUS_CLK,
-> +			data->rsts_num, RKCIF_MAX_RESET);
-> +		return -EINVAL;
-> +	}
-> +
-> +	for (i = 0; i < data->clks_num; i++) {
-> +		struct clk *clk = devm_clk_get(dev, data->clks[i]);
-> +
-> +		if (IS_ERR(clk)) {
-> +			dev_err(dev, "failed to get %s\n", data->clks[i]);
-> +			return PTR_ERR(clk);
-> +		}
-> +
-> +		cif_dev->clks[i] = clk;
-> +	}
-
-All of the clock handling looks like it could use the clk_bulk_* APIs.
-
-> +
-> +	cif_dev->clk_size = data->clks_num;
-> +
-> +	for (i = 0; i < data->rsts_num; i++) {
-> +		struct reset_control *rst =
-> +			devm_reset_control_get(dev, data->rsts[i]);
-> +		if (IS_ERR(rst)) {
-> +			dev_err(dev, "failed to get %s\n", data->rsts[i]);
-> +			return PTR_ERR(rst);
-> +		}
-> +		cif_dev->cif_rst[i] = rst;
-> +	}
-
-And possibly the reset_control_array_* APIs for resets? (assuming there 
-isn't a subtle ordering requirement implicit in data->rsts)
-
-> +
-> +	/* Initialize the stream */
-> +	rkcif_stream_init(cif_dev);
-> +
-> +	strlcpy(cif_dev->media_dev.model, "rkcif",
-> +		sizeof(cif_dev->media_dev.model));
-> +	cif_dev->media_dev.dev = &pdev->dev;
-> +	v4l2_dev = &cif_dev->v4l2_dev;
-> +	v4l2_dev->mdev = &cif_dev->media_dev;
-> +	strlcpy(v4l2_dev->name, "rkcif", sizeof(v4l2_dev->name));
-> +	v4l2_ctrl_handler_init(&cif_dev->ctrl_handler, 8);
-> +	v4l2_dev->ctrl_handler = &cif_dev->ctrl_handler;
-> +
-> +	ret = v4l2_device_register(cif_dev->dev, &cif_dev->v4l2_dev);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	media_device_init(&cif_dev->media_dev);
-> +
-> +	ret = media_device_register(&cif_dev->media_dev);
-> +	if (ret < 0) {
-> +		v4l2_err(v4l2_dev, "Failed to register media device: %d\n",
-> +			 ret);
-> +		goto err_unreg_v4l2_dev;
-> +	}
-> +
-> +	/* create & register platefom subdev (from of_node) */
-> +	ret = rkcif_register_platform_subdevs(cif_dev);
-> +	if (ret < 0)
-> +		goto err_unreg_media_dev;
-> +
-> +	ret = of_reserved_mem_device_init(dev);
-> +	if (ret)
-> +		v4l2_warn(v4l2_dev, "No reserved memory region assign to CIF\n");
-
-It feels like that should probably happen earlier in the "resource 
-acquisition" part of probe, before any external init/register calls that 
-in principle could want to preallocate DMA buffers.
-
-Also, is the lack of reserved memory really a warn-level condition? The 
-DT binding doesn't even appear to treat a "memory-region" property as 
-legal, and with CMA or (as appears to be the case for at least RK3288) 
-an IOMMU, it should be largely moot anyway.
-
-Robin.
-
-> +
-> +	pm_runtime_enable(&pdev->dev);
-> +
-> +	return 0;
-> +
-> +err_unreg_media_dev:
-> +	media_device_unregister(&cif_dev->media_dev);
-> +err_unreg_v4l2_dev:
-> +	v4l2_device_unregister(&cif_dev->v4l2_dev);
-> +	return ret;
-> +}
 
 _______________________________________________
 Linux-rockchip mailing list
