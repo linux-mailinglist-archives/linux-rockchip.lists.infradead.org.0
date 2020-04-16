@@ -2,76 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC2301ACE4C
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 19:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D68221ACF7B
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 20:20:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0jUQLtXDvDfzbbXeXZSgzXBo7buM0waWc7AHhAaUIZs=; b=RG37HgpJ8/5/FgZmhCc/gclnDu
-	cFwOGEMTwdQZ5fWW0ghnO6By7H38nQg3k99mVztUcMIl14FfbrQh+2PMCIGXGWpUc09VuN4BfrGii
-	WwzZ18DAZKV2H1otDLd31XNu/T5F8+QxUPFYwKYBsQUMkk6s6tEG8AybKcrEKgP6mr+Bxy2IK5zZS
-	Wbogzhxos+QGv90WB20ZLopDIABawFiDeIqPkwzE7DfNU3A6eHo/2+UZQithGWBKFInUKgmpUSGr4
-	88CBMQxPleqKKruzhzgCKT/QpmJdqh05xbkdRoDpmuZ0J+RzK+CFVqj5uxRUpTTAeVJrxjWPyXMWt
-	YSmNostg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=w22tVsNZuzsJezV1LllBUUfSEpbsdS5x8y/atykPYEU=; b=Rp7
+	tBZ/zq4rXjthpG+VN9I0bH3jB02NpIQvL2Pk9OUKBL+uq5C2sKUqRepQBm5B3a2Cu5MafUnRfUBsD
+	+NV6H38CYh3lNGdK1MqW2YqxDuVbYYJqLVgzottsBCPEz3nsg6xa4bKWGZCf2uqMBiw7p8J8KG6ue
+	mGnW/PknSbVktut4paL9tak1cno3DOotaFDEsMVjV/qF/IkmenbPXwBt2Dk/6pW9PXMZPTWVxwl3e
+	TemHdEHvistvKKgeV46pFUhUkj4J4LgYTtST/OVNGRxxHKIFUUi8gvygLRm5z6MN3UDZy9bJLmcof
+	OuW6J8e2FvVeH7qbj7QU0yCRWIHJf+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP7vh-0000gr-SE; Thu, 16 Apr 2020 17:03:57 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jP97a-0007OI-MO; Thu, 16 Apr 2020 18:20:18 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP7vI-0000DU-2a; Thu, 16 Apr 2020 17:03:33 +0000
-Received: by mail-wr1-x444.google.com with SMTP id h26so5709542wrb.7;
- Thu, 16 Apr 2020 10:03:30 -0700 (PDT)
+ id 1jP97B-0004pS-Ep; Thu, 16 Apr 2020 18:19:54 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x18so6028530wrq.2;
+ Thu, 16 Apr 2020 11:19:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=998VS9NQrf44xyeybmnR7tkwj8PiFEeNjnEnBJHx1Ko=;
- b=etEaeasSiSnGiMygaw1TlDGQZ5cuMJRKnWb8gWIaGHwyAXZBfJeejm33AX4ONaR8aI
- JxtnLBp+/eySPyxInci7beLJ4a52M/l9P5oIPnZIWPnk3E/+YPJkf1D28FRUYTewa3gd
- jpgUngG5usb629smh5qO5gW8bxf5/gSYukgwdSU9/cG2PyZJCP0WeNbbOt7zmuLALD/B
- lF/vnL+ODCRBwZGOX8dtzV9+aiKO5gJu70kFoO7oPWBO7ck8UQbkCUqvVL9DbSE8OkBy
- 3Wl2foDhlFoaaT+DXs8xvh3hVFeCXEg9Aa/5CqjGoV1OaCiJPCA46M8FFylgz6pFLtqn
- yPBQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=cEAaXqjbvarVunGK5EIaoB/gFSYviCQxW9/KrEgduNU=;
+ b=jOjIXOUNpqV4vgS2P0e/NN2SML1NfcNU4agJ7hlenV8vJ7aS6bhAXCz9Dn8fBKcD2f
+ pIUPxsoWthEWnS4sy/30qAJcaI/VnP89Z7M4clcCSzK4EWGRkrfyAKAYv3rIE5q+P3IJ
+ aiBiLZQVWgMSSpNy93+Z7GpGHJAQP7b0choQXL0MTXBufxCV39OGP6fUGq71G3bWrUxI
+ EpBvR5rWusmBgI/JJ/S5CFobq7Ublms2NXQc+XRR0K0UnL5QQoSV6o1AzH7IW/68HOuZ
+ 682Mt6jHr3UuW+h+3JIIi1bPTcecaos3iPweLmD7GXtMRR7ZUCEbvr5yYlFxqcgBik0f
+ RfMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=998VS9NQrf44xyeybmnR7tkwj8PiFEeNjnEnBJHx1Ko=;
- b=iuZSfYKofKMgt7bokKK6eM9VRC3OrNXQsT4R/ubnlyPs0G54yI58hvG6K1bymfypZq
- CW1AvUdM7EnXo3SLnA5hwitR7TvKxA5qO41pUNLYADFbHyefm6ZeDM5WP8MnIJio+dl7
- U5KZaoIYxWeN/vyc166CyNOWMvKuPLUr6tz8d6CojgVAbwD9v8NDE+Yeto5Jnen5NiTG
- 4Pp84OJdmNjdZp1jj9ifUMVfdl24jdNQOBsOiWyMHf1Bx0RbcxuuAJeCXkBU3aep5X0c
- pSteili6RJDB/iOu2ImgCqmZQc+QG6sIsXVisN1wdrKEe4BKVsjFzoI5szRPREpFtCQK
- PxbQ==
-X-Gm-Message-State: AGi0PubQaurjBx4GiL3KYaVv57OjuA1v0/L8TjDYfVNiTZCsX/ZLPrDj
- 1HCsWfhPt/+ABPvy/DV11EE=
-X-Google-Smtp-Source: APiQypJ4BZpuLiC8lmK4Vpk0+VBIqECGuTW9aEjV8pEaWUoRQYlq6LDI6LbwtVgS38F2ll9IB9SpLA==
-X-Received: by 2002:a5d:49c7:: with SMTP id t7mr34097581wrs.22.1587056609264; 
- Thu, 16 Apr 2020 10:03:29 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=cEAaXqjbvarVunGK5EIaoB/gFSYviCQxW9/KrEgduNU=;
+ b=UD66WrlD5yRFyqT8OV+/IFtTXHAbj60K+8WFhZOzx9nmFk+vpoPwpkP8cnKkwl2mTH
+ uXTxLvtr0v1T2KFceuuhwgL6rAK+B2mQaUsx/7dthrZgX7quDtMXdIExWGfLCKpaqIp6
+ 6k+VargNtLuca1zGPjSjWYsSCmAlEaBAXNAr6dj41gHRbWdojxSjs/M2lhGkiDSU50KZ
+ tRExn2/zxaYJT18g2KIAAYKdFFMaFAFX5hEvvq5u3pXFLOwauKeQKenKIVKZqqku/Z3V
+ uXuK1ij/epRauX70WnNwguzRv/tGxkJ/WTeKYHm/eX55WxjktTT9azrHobyHzOJ6PxQa
+ Ltow==
+X-Gm-Message-State: AGi0PuZDDtYlvwQFpQ6kpkQTHwULjGAkdVo9n4KMvZi1Rk73Nnr7EbjJ
+ jCE+BC5Bo8Lk/IzkvqF+854=
+X-Google-Smtp-Source: APiQypK1DEot7c5BxCRkgoBTWKxlQTrfIXgs2pj3dVp4kUGCzv4aCzV9FQqfjF1BDwwMYWgvn4Cfpw==
+X-Received: by 2002:adf:a18c:: with SMTP id u12mr32028157wru.325.1587061192033; 
+ Thu, 16 Apr 2020 11:19:52 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g186sm4339600wme.7.2020.04.16.10.03.28
+ by smtp.gmail.com with ESMTPSA id u17sm31317719wra.63.2020.04.16.11.19.50
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 Apr 2020 10:03:28 -0700 (PDT)
+ Thu, 16 Apr 2020 11:19:51 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 2/2] ARM: dts: rockchip: fix phy nodename for rk3229-xms6
-Date: Thu, 16 Apr 2020 19:03:21 +0200
-Message-Id: <20200416170321.4216-2-jbx6244@gmail.com>
+Subject: [PATCH 1/3] arm64: dts: rockchip: add bus-width properties to mmc
+ nodes for rk3328.dtsi
+Date: Thu, 16 Apr 2020 20:19:42 +0200
+Message-Id: <20200416181944.5879-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200416170321.4216-1-jbx6244@gmail.com>
-References: <20200416170321.4216-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_100332_114841_C99F47D4 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20200416_111953_519827_7EC9E0A7 
+X-CRM114-Status: GOOD (  13.34  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -107,40 +104,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
-
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: phy@0:
-'#phy-cells' is a required property
-
-The phy nodename is normally used by a phy-handle.
-This node is however compatible with
-"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
-which is just been added to 'ethernet-phy.yaml'.
-So change nodename to 'ethernet-phy' for which '#phy-cells'
-is not a required property
-
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
-phy/phy-provider.yaml
+'bus-width' and pinctrl containing the bus-pins
+should be in the same file, so add them to
+all mmc nodes in 'rk3328.dtsi'.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rk3229-xms6.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
-index 679fc2b00..933ef69da 100644
---- a/arch/arm/boot/dts/rk3229-xms6.dts
-+++ b/arch/arm/boot/dts/rk3229-xms6.dts
-@@ -150,7 +150,7 @@
- 		#address-cells = <1>;
- 		#size-cells = <0>;
- 
--		phy: phy@0 {
-+		phy: ethernet-phy@0 {
- 			compatible = "ethernet-phy-id1234.d400",
- 			             "ethernet-phy-ieee802.3-c22";
- 			reg = <0>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+index 175060695..db2c3085e 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+@@ -861,6 +861,7 @@
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+ 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
++		bus-width = <4>;
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		status = "disabled";
+@@ -873,6 +874,7 @@
+ 		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+ 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
++		bus-width = <4>;
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		status = "disabled";
+@@ -885,6 +887,7 @@
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+ 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+ 		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
++		bus-width = <8>;
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		status = "disabled";
 -- 
 2.11.0
 
