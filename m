@@ -2,97 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D2861AC37B
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 15:44:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FD1B1AC42C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 15:55:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNHaAEy7811wJfqpF60NlNdQ3S565F4WcUeCpTNlRmI=; b=Ng+CW+lS2rjXM+
-	L1U5OM8OsX8Ayxc73yhfUBxSyrXi417jKI9xObv/i6nXwTJXg80iE6tQa6MytuDi5fZFzXMk4Wq4o
-	VaOvqHRRQk9xMRU1cnXdzl0y3pLkwUmgzH60MDRqNZ6s2SC312LnflCMkxhKi965LFmpmu9sKnix9
-	W1qhXKKNwKmALADqDbdnXnjSlx7ySZLa9cf49MKm/Njn3IO3E5XzabwKlGVDtJHVOVo+VxneDDKTE
-	j347Z8dVqH7FceU3i4CYa4gmfDNGoIOZblaVCpBWG8021SL8rwZyjdO216Uu2HSnsFcY7QFDblGXR
-	R5n3C/aAmlkZ8l/Eoo+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wiPfmfIJbdeVeJwWTo/QYxaCnecAsKVFzmVLN9A/1Yo=; b=gR5Nul+Mj1LJOH0jfyfqoy96e
+	4qc007iHw+mymuQDffqdePWgikA1FRRhsOFodxCbsRYuVrQma9WpsdC9b4yDp3tNzQlwmza2rZZyy
+	WPA1Xssr8RQHG6sGt5HVg/9jyahiAjCbeaB+Xk2UaL1UdDqbLCaRSCn12pMUPrxqOsJyuPu6QNVBz
+	saiPKB9Od6TK2QDblGsNDLTImVOoP4vGi1PaWF/wPh9XkbOrZ1MasU/gbkXPPosEOnfXFfqoIZazf
+	kCLcAC2YovapSytq3h2tf8dTMbW99CWVWz2SVHN5hS//yR73LD+Pq0fNrKcGaVeahGMbQ7Ywzwlc+
+	+3uXbbHhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP4ol-0002T1-9D; Thu, 16 Apr 2020 13:44:35 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jP4zQ-0003qn-Nx; Thu, 16 Apr 2020 13:55:36 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP4oi-0002CY-2F; Thu, 16 Apr 2020 13:44:33 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c195so2577804wme.1;
- Thu, 16 Apr 2020 06:44:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
- b=NKaFl00peRLsJRd1TCpOYzHetW8sbRA+/HJn6nXHcphRgYoHcE2As4Skpd/c5OOtl3
- aAJP6GhSIoz0w4NCFbSZJ6HKcTBmEX7IXKjNWRGHscVFHFO40s7l2Oij2g2owDoID0a5
- 7/75cQ6pZ1aQ52kQoT65AaH1sagq0kwsSQQsKV6iAsy2BwSQXEQu+AZUDJEATTyjsEvW
- /dQmoQ710BctBOzQRsQWEq7qIyYJgrGIrl24rfwI89EL6oev6W3DzRYRUHoGWtgMTglM
- 5DlQjWI5n+jybhbO+jO01+JAbMYihB8YdAnzppfOgx7wop42LLUkMnTRf0PV4zxzyq5i
- zrVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=WnOLlJGWjKKU4l6KU86petvNf/KeuBQfP8LASQRqnt8=;
- b=O8V0tadVyb36mrMUnRQSXFC28KBbj5zNDxqxV7vUxwr7xBu/46HRhmj6KHPnstRr2P
- ikQcmLIc064d35CWHk7MQiui2Qnj6HBPEuQqVvyYJneoaFDX9ezYFpaLOtTFUBqYIZYx
- N+xSUVBji3IouEdtiwUqtduUc2LwmJSYbLtDMN82TYGjBbgyA3q0nkNjHAaC0WiTSr8v
- 4R02AQVFtJSrlskvnPJAIjrsAX+ycihwXlniKau3slCVS8RSza8Pn+7EJlIsCb23A8Ey
- I4K8DND/yWoo0GXMW9cXzO+KuwECHQl5agOpILHfATeOjYBOqz9ha0oi7P90+IIxtA8T
- FnGA==
-X-Gm-Message-State: AGi0PubQLMJNdoagiVpA1MziDzMxSyc0C0Q/44nJA2ZHHKnk7snCOQez
- FDlTKDbJJjFFqDDEmC8EsGg=
-X-Google-Smtp-Source: APiQypKHstkks+d7QKXlK1Kx2K4FOqpUNOov9QzJnGobXCUEc76Hs0tyB7U8aK6EB9CSGnwIDUH4vw==
-X-Received: by 2002:a7b:cd10:: with SMTP id f16mr5171636wmj.21.1587044668689; 
- Thu, 16 Apr 2020 06:44:28 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id z18sm21457242wrw.41.2020.04.16.06.44.27
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 16 Apr 2020 06:44:27 -0700 (PDT)
+ id 1jP4zH-0003jD-9P; Thu, 16 Apr 2020 13:55:29 +0000
+Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 491B2100006;
+ Thu, 16 Apr 2020 13:55:20 +0000 (UTC)
+Date: Thu, 16 Apr 2020 15:55:19 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Johan Jonker <jbx6244@gmail.com>
 Subject: Re: [PATCH 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Message-ID: <20200416135519.GJ125838@aptenodytes>
 References: <20200416115047.233720-1-paul.kocialkowski@bootlin.com>
  <20200416115047.233720-3-paul.kocialkowski@bootlin.com>
  <478f0a8b-f819-62f4-83b8-27918c4c2431@gmail.com>
  <20200416132442.GI125838@aptenodytes>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
-Date: Thu, 16 Apr 2020 15:44:25 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200416132442.GI125838@aptenodytes>
-Content-Language: en-US
+In-Reply-To: <f4ad8ea4-7904-1458-e564-2d20c87ed417@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_064432_111336_D041916C 
-X-CRM114-Status: GOOD (  20.84  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200416_065527_599245_0635951C 
+X-CRM114-Status: GOOD (  24.42  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,97 +70,170 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3540438497156651978=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
-> Hi,
-> 
-> On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
->> Hi Paul,
->>
->> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
->> has been approved by robh.
-> 
-> Huh, I looked around for ongoing related work but missed it.
-> I'll definitely rebase on top of your series and use the yaml description
-> instead. Thanks!
-> 
->> Maybe place dts patches at the end of a patch serie.
->> Could you include a &rga patch if your device is supported in mainline,
->> so we can test with:
->> make ARCH=arm64 dtbs_check
->> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> 
-> I tested with the PX30 EVB so I can surely add a node there if that turns
-> out necessary (see below).
-> 
->> Johan
->>
->> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
->>> The PX30 features a RGA block: add the necessary node to support it.
->>>
->>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
->>> ---
->>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
->>>  1 file changed, 11 insertions(+)
->>>
->>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> index 75908c587511..4bfbee9d4123 100644
->>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
->>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
->>>  		status = "disabled";
->>>  	};
->>>  
->>> +	rga: rga@ff480000 {
->>> +		compatible = "rockchip,px30-rga";
->>> +		reg = <0x0 0xff480000 0x0 0x10000>;
->>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
->>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
->>> +		clock-names = "aclk", "hclk", "sclk";
->>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
->>> +		reset-names = "core", "axi", "ahb";
->>> +		power-domains = <&power PX30_PD_VO>;
->>
->> 		status = "disabled";
-> 
-> As of 5.6, the rk3399 has the node enabled by default. Did that change?
 
-'status' disappeared during review for rk3399 between v2 and v3, but
-doesn't mention the reason. If someone can give more info here?
+--===============3540438497156651978==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="5me2qT3T17SWzdxI"
+Content-Disposition: inline
 
-https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen@iotwrt.com/
 
-https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen@iotwrt.com/
+--5me2qT3T17SWzdxI
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> 
-> Since it's a standalone block that has no I/O dependency, I don't really see
-> the point of disabling it by default.
+Hi,
 
-Vop, hdmi and other video devices are also disabled.
-Follow the rest I think...
+On Thu 16 Apr 20, 15:44, Johan Jonker wrote:
+> On 4/16/20 3:24 PM, Paul Kocialkowski wrote:
+> > Hi,
+> >=20
+> > On Thu 16 Apr 20, 15:02, Johan Jonker wrote:
+> >> Hi Paul,
+> >>
+> >> The conversion of rockchip-rga.txt to rockchip-rga.yaml by myself just
+> >> has been approved by robh.
+> >=20
+> > Huh, I looked around for ongoing related work but missed it.
+> > I'll definitely rebase on top of your series and use the yaml descripti=
+on
+> > instead. Thanks!
+> >=20
+> >> Maybe place dts patches at the end of a patch serie.
+> >> Could you include a &rga patch if your device is supported in mainline,
+> >> so we can test with:
+> >> make ARCH=3Darm64 dtbs_check
+> >> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/media/rockchip-rga=
+=2Eyaml
+> >=20
+> > I tested with the PX30 EVB so I can surely add a node there if that tur=
+ns
+> > out necessary (see below).
+> >=20
+> >> Johan
+> >>
+> >> On 4/16/20 1:50 PM, Paul Kocialkowski wrote:
+> >>> The PX30 features a RGA block: add the necessary node to support it.
+> >>>
+> >>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> >>> ---
+> >>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
+> >>>  1 file changed, 11 insertions(+)
+> >>>
+> >>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot=
+/dts/rockchip/px30.dtsi
+> >>> index 75908c587511..4bfbee9d4123 100644
+> >>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+> >>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> >>> @@ -1104,6 +1104,17 @@ vopl_mmu: iommu@ff470f00 {
+> >>>  		status =3D "disabled";
+> >>>  	};
+> >>> =20
+> >>> +	rga: rga@ff480000 {
+> >>> +		compatible =3D "rockchip,px30-rga";
+> >>> +		reg =3D <0x0 0xff480000 0x0 0x10000>;
+> >>> +		interrupts =3D <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
+> >>> +		clocks =3D <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
+> >>> +		clock-names =3D "aclk", "hclk", "sclk";
+> >>> +		resets =3D <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+> >>> +		reset-names =3D "core", "axi", "ahb";
+> >>> +		power-domains =3D <&power PX30_PD_VO>;
+> >>
+> >> 		status =3D "disabled";
+> >=20
+> > As of 5.6, the rk3399 has the node enabled by default. Did that change?
+>=20
+> 'status' disappeared during review for rk3399 between v2 and v3, but
+> doesn't mention the reason. If someone can give more info here?
+>=20
+> https://lore.kernel.org/lkml/1500101920-24039-5-git-send-email-jacob-chen=
+@iotwrt.com/
+>=20
+> https://lore.kernel.org/lkml/1501470460-12014-5-git-send-email-jacob-chen=
+@iotwrt.com/
+>=20
+> >=20
+> > Since it's a standalone block that has no I/O dependency, I don't reall=
+y see
+> > the point of disabling it by default.
+>=20
+> Vop, hdmi and other video devices are also disabled.
+> Follow the rest I think...
 
-> 
-> What do you think?
-> 
-> Cheers,
-> 
-> Paul
-> 
->>> +	};
->>> +
->>>  	qos_gmac: qos@ff518000 {
->>>  		compatible = "syscon";
->>>  		reg = <0x0 0xff518000 0x0 0x20>;
->>>
->>
-> 
+Well, these blocks do have related I/O ports so it makes sense not to enable
+them by default because of pinmux, or because there might be no connector
+populated/routed.
 
+For a memory to memory internal block, I don't see any reason why.
+It's definitely not board-specific and having to add these nodes for every =
+board
+that has them is kind of a pain and might be overlooked. This will easily r=
+esult
+in the feature not being available for end users without having to change t=
+he
+dt.
+
+Also, the vpu node is always enabled on rockchip (and sunxi) platforms.
+I think these are better examples to follow.
+
+Cheers,
+
+Paul
+
+> >=20
+> > What do you think?
+> >=20
+> > Cheers,
+> >=20
+> > Paul
+> >=20
+> >>> +	};
+> >>> +
+> >>>  	qos_gmac: qos@ff518000 {
+> >>>  		compatible =3D "syscon";
+> >>>  		reg =3D <0x0 0xff518000 0x0 0x20>;
+> >>>
+> >>
+> >=20
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--5me2qT3T17SWzdxI
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6YY8cACgkQ3cLmz3+f
+v9HFdQf/Ucl4BsyAk0vmxKBrLrYibjhWFadjBl0GYEQ9ZVUmMP+VemCFEYed3jWw
+HrmVkh1G/pdP3WesXwKxEJxhmfxJqdbD6MqyA9RIhGNOO36Mojbe2Q+xSA2UGVRA
+bvo3jg1Gb+DrWPDhYXrcTHWrGn6zdMXNYbzR9HHJvOFqbUHM2fBIWZBafuz2ph/T
+yzgVoCwWEuxfxAYcGdFn/qkm6F+Afq/DOmXxTjwk3t80f4lCsgzmRecXTZibktpV
+E5XjKumCb6FGHFOyKTROrY0y4sKbWygQNDdzZ7NIW3UIY3ViiudG3poAcxCjxL4Y
+LCHF/9ORJJ71RasTzUB+aDbe4OaBUA==
+=+2Ry
+-----END PGP SIGNATURE-----
+
+--5me2qT3T17SWzdxI--
+
+
+--===============3540438497156651978==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============3540438497156651978==--
+
