@@ -2,46 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41AC11ADC75
-	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Apr 2020 13:51:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88EB21ADCEC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Apr 2020 14:09:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UcpiRpjGj9mVni0qqfBdvU8ffpTijOfL4KjyozDv5Jc=; b=BgYcKehBZ38v6YLYo5G2P7vxp
-	bcIALr6djQg8rDUjHS/C8aHHz9jcME80pxO5nWZ/+VzhhhkVfoZMYkFqYbSt+ONzCeS5UXJBlYIAN
-	AkzdMFK4gQ9ZcvqpQnFCbUqMPWUN0NS2CrPiLIIQRRMRqPOWjRfwADwwMblwSfiIsHVm0ax9MBTLR
-	mv09dHteUey/kJKuv8sk2ww0vew5Sl/H4yc49WeSWWypH32FN1TH3JwP/YPESZpOzBOUOG+wirbT7
-	qvjuLo0RKtIdH0oWrHPzJcgkcmep9xhQrd5LG+ywgMPXcx6I3yenogK0ERzhKReWvwqZL2MObWNYD
-	kamRl02Kw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OwZ7WLw+kG6NI9MuyVi19HZ0gYo4r9utWqNJiv87ah8=; b=IqqiIL6jJOR7M7
+	J5gOv8kMSTodSBuTlUmWp4PrwKMBBHziNSbxN0HB84YRQDk0iiUhAQu2QcTYTvujD2ZRV8rpM7wNr
+	Z5jWyYOaYhkUl+LHSjFq7rh7wAKdhLjTwO5/n5OPpLWt1O0oo6vduO1ulBQMSaSx+IbkOjeoEkEGh
+	IMDg/uZwRH225rej2iS7isDofkCNs992VZWSy+cc949j3+ukPZlFlHC49hv0S0Ndw2OY2d8q9yiZo
+	lTCoR1jsQyhZG3F9aLsLgAIMQTNAFnia1tNP5390GvKDOZy4KysOlFbWR3sNgwc6q1ZtXXeM3zhAw
+	pVhoSIN7EFp60HrwoTZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPPWv-0006B0-O1; Fri, 17 Apr 2020 11:51:33 +0000
+	id 1jPPnk-000894-68; Fri, 17 Apr 2020 12:08:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPPWm-000649-25; Fri, 17 Apr 2020 11:51:25 +0000
+ id 1jPPnW-0007zI-5Y; Fri, 17 Apr 2020 12:08:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6E1530E;
- Fri, 17 Apr 2020 04:51:18 -0700 (PDT)
-Received: from [10.57.59.184] (unknown [10.57.59.184])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 984933F6C4;
- Fri, 17 Apr 2020 04:51:17 -0700 (PDT)
-Subject: Re: [RFC PATCH] arm64: dts: rockchip: add core devicetree for rk3318
-To: Heiko Stuebner <heiko@sntech.de>, Johan Jonker <jbx6244@gmail.com>
-References: <20200417105739.3718-1-jbx6244@gmail.com> <2141402.AJMLQ3pQEO@phil>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E89CD30E;
+ Fri, 17 Apr 2020 05:08:40 -0700 (PDT)
+Received: from e121345-lin.cambridge.arm.com (e121345-lin.cambridge.arm.com
+ [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 45C903F6C4;
+ Fri, 17 Apr 2020 05:08:40 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <6d5a1d27-8d32-eca2-007c-aa0bed81af46@arm.com>
-Date: Fri, 17 Apr 2020 12:51:15 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: Correct PMU compatibles
+Date: Fri, 17 Apr 2020 13:08:34 +0100
+Message-Id: <6dfed94a99780c2314b38ff2b55a7efa0be4edbc.1587125314.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.23.0.dirty
 MIME-Version: 1.0
-In-Reply-To: <2141402.AJMLQ3pQEO@phil>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_045124_146519_6947B3B9 
-X-CRM114-Status: GOOD (  19.98  )
+X-CRM114-CacheID: sfid-20200417_050842_254452_76BFFF65 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,74 +60,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2020-04-17 12:05 pm, Heiko Stuebner wrote:
-> Hi Johan,
-> 
-> Am Freitag, 17. April 2020, 12:57:39 CEST schrieb Johan Jonker:
->> The rk3318 is basically a rk3328 with improved gpu,
->> so add a dtsi based on that.
->>
->> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> 
-> Please don't add dangling dtsi files.
-> I'd expect at least a board dts to actually use that and
-> also the updated gpu node.
-> 
->  From a cursory glance it looks like it gets upgraded from
-> 450-MP2 to 450MP3 or so, so that would at least mean
-> another set of interrupts.
+A proper binding for the Cortex-A35 PMU actually predates these DTs
+being upstreamed, so use it.
 
-I'm not sure anything's "improved" - as far as the internet can tell 
-it's a special low-cost variant of RK3328 for low-end TV box vendors 
-that Rockchip don't want to talk about. The DTB for my H96 Max 3318 
-shows no appreciable difference from the BSP DT for RK3328, although I 
-wouldn't be surprised if some of the unused stuff like the external GMAC 
-was actually missing or broken. The board itself is the exact same one 
-used in a lot of other cheap RK3328 boxes (and I mean literally, it's 
-silkscreened "RK3328_8D4_V1.2").
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
+ arch/arm64/boot/dts/rockchip/px30.dtsi   | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-Thanks to one unexpectedly honest Aliexpress listing I stumbled across, 
-the "penta-core GPU" apparently translates from TV-box-marketing-speak 
-to mean Mali-450 MP2 (1GP + 2PP) plus the RGA plus the VOP ;)
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index f809dd6d5dc3..adc9b8bf5eaa 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -143,7 +143,7 @@
+ 	};
+ 
+ 	arm-pmu {
+-		compatible = "arm,cortex-a53-pmu";
++		compatible = "arm,cortex-a35-pmu";
+ 		interrupts = <GIC_SPI 100 IRQ_TYPE_LEVEL_HIGH>,
+ 			     <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>,
+ 			     <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>,
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index ac43bc3f7031..ac7f694079d0 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -127,7 +127,7 @@
+ 	};
+ 
+ 	arm-pmu {
+-		compatible = "arm,cortex-a53-pmu";
++		compatible = "arm,cortex-a35-pmu";
+ 		interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>,
+ 			     <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>,
+ 			     <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>,
+-- 
+2.23.0.dirty
 
-Robin.
-
-> 
-> Heiko
-> 
->> ---
->>   arch/arm64/boot/dts/rockchip/rk3318.dtsi | 3 +++
->>   1 file changed, 3 insertions(+)
->>   create mode 100644 arch/arm64/boot/dts/rockchip/rk3318.dtsi
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3318.dtsi b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
->> new file mode 100644
->> index 000000000..a32f771bc
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/rockchip/rk3318.dtsi
->> @@ -0,0 +1,3 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +
->> +#include "rk3328.dtsi"
->>
-> 
-> 
-> 
-> 
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
 
 _______________________________________________
 Linux-rockchip mailing list
