@@ -2,78 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 288C71AD743
-	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Apr 2020 09:18:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B99C1AD776
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Apr 2020 09:33:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4wpNl4kh0bfochjU3RxAVs0vlJNNN7HbZ5X9tQCnk/Q=; b=UUl6tqvZ0qDbrB
-	89au0l69ky6NC9NVToHxhbNuqJS2knAo05YQP1zncdxRuM9aYJweqv/7SBpjeykKDkkc+iGjOY1uq
-	mXmb2GTdrPmT/j6b71lECrg0MNzoHEmGFe4nORWpEqkL9glX+EFPq6FkarYTlnsEAG/sNXQJRxV56
-	ZhsQYCv6xc1vnbw8v+uN3GuaM6OMJRx2OgS44/iJ75wwhQFWx5tCSuywtOSSnQTjQu3MoHVXrWIcM
-	XXDJBXnzaWZ64ee1SouIvoHaBOw0KZS/7rhJ7rRKj2RQ/iHhcYKdXh9vcRUeJkt75FrO+5U8fjrzF
-	JxAbL30Wd3gqbDiYr0PQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fjl36ko1mtVJ4jgUtmbenw/hQp8PyzYbNokRKFpIct4=; b=o/58zz/HUmG18f
+	tKC4bw8gQ5K4hZU5GIdFdHMmBWz2+/OMxulu/fcICK8OYQbGuIl0pu/sILigoOA1eNYz67V8rqFwQ
+	JeEjfyJ43WRZM5en5m9HFkv7LsL/+0R3KYh65ZxNrOC0528rU9X9sdUPkzAiRUJe00/SzBETu2d2E
+	Fs5CjFCjnusdEVNVJ2jtxaZDOgocxIGVv+JMMsH6CMAlx8U98F1WA0n8rJA93ousYsNA5+B84i5MZ
+	4LfEmgVBZpUoY2cOjHBF7DF4La1iZeSrZ54HYN85q8tTy5ZVmp4Z9gYY3wS/OVauotVOUR5vD/4Ma
+	2T3UYEsqXSzyHZEJllKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPLGZ-00026T-1p; Fri, 17 Apr 2020 07:18:23 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1jPLUm-000324-3S; Fri, 17 Apr 2020 07:33:04 +0000
+Received: from smtprelay0083.hostedemail.com ([216.40.44.83]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPLGV-00025R-Lq
- for linux-rockchip@lists.infradead.org; Fri, 17 Apr 2020 07:18:21 +0000
-Received: from cust-b5b5937f ([IPv6:fc0c:c16d:66b8:757f:c639:739b:9d66:799d])
- by smtp-cloud7.xs4all.net with ESMTPA
- id PLGLjhe6v7xncPLGOj9cXk; Fri, 17 Apr 2020 09:18:13 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1587107893; bh=HSLs2JiZcy4OA1k/VMJ4MaHDQtFq2ylnKTJGakTcPR8=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=D0shEtuyA6wOYrboGofBaD6Hcvyue0LHWkhqvWKl4cAbtlR+789ibtP1go8+npAdS
- D0GJUT2xnk5cC3X13WO8g/7Fa6+BWe0BnzvxtPX5sgfGvl1PBgDfCCXMTipyw0iy21
- miXGRXji8uREA4AP3zoHfQGgMK23lJVpbmtJHMud3KbXoTDg7k/iJ1Vzi4FYKaGhOB
- 9RvGs9lDNxWItdMUUytQXVk1iZ8gYrv1+i8XHXUZcyHdh7+wVoayGIwBUZtwzcTgaN
- M8JHq2lwj72RCeNFDeBABlrTxp8HjSoTKN6BrYVUtB8IXEcr3ZbO/UtFhRxYrhCZZX
- RvVEV+D9R0kPA==
+ id 1jPLUj-00031e-IT
+ for linux-rockchip@lists.infradead.org; Fri, 17 Apr 2020 07:33:02 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay05.hostedemail.com (Postfix) with ESMTP id 2884B180284E9;
+ Fri, 17 Apr 2020 07:32:59 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1540:1593:1594:1711:1730:1747:1777:1792:2194:2198:2199:2200:2393:2559:2562:2731:2828:2895:3138:3139:3140:3141:3142:3352:3622:3865:3866:3867:3868:3870:4250:4321:5007:6742:10004:10400:10848:11232:11658:11914:12043:12048:12297:12555:12740:12760:12895:13069:13311:13357:13439:14181:14659:14721:21080:21451:21627:30054:30070:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:2, LUA_SUMMARY:none
+X-HE-Tag: food81_710b3da05d519
+X-Filterd-Recvd-Size: 2062
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf19.hostedemail.com (Postfix) with ESMTPA;
+ Fri, 17 Apr 2020 07:32:56 +0000 (UTC)
+Message-ID: <df23fe6083baad4781a2b79bcbd7d3db055eecd3.camel@perches.com>
 Subject: Re: [PATCH v2 7/9] media: MAINTAINERS: rkisp1: add path to dt-bindings
-To: Helen Koike <helen.koike@collabora.com>, devicetree@vger.kernel.org,
+From: Joe Perches <joe@perches.com>
+To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Helen Koike
+ <helen.koike@collabora.com>, devicetree@vger.kernel.org, 
  linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org
+Date: Fri, 17 Apr 2020 00:30:44 -0700
+In-Reply-To: <9a95d227-9592-2c5c-fe6d-dff9b84f4292@xs4all.nl>
 References: <20200403161538.1375908-1-helen.koike@collabora.com>
  <20200403161538.1375908-8-helen.koike@collabora.com>
-From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Message-ID: <9a95d227-9592-2c5c-fe6d-dff9b84f4292@xs4all.nl>
-Date: Fri, 17 Apr 2020 09:18:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ <9a95d227-9592-2c5c-fe6d-dff9b84f4292@xs4all.nl>
+User-Agent: Evolution 3.34.1-2 
 MIME-Version: 1.0
-In-Reply-To: <20200403161538.1375908-8-helen.koike@collabora.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfN/6IaxCKZYDRmsDs68Ac7Ohz+Yi31l+n/3qIvjgojpcfRUtSJSc05kGL2CfXDapr3Rq4gYZgR4YeLxd10TX4h+NBJFBcEU+jLCtDcwIuTse6A59qRpJ
- WiwqnAonGsAFeOerDoqNy1YmLjtUYSNLSY5LUmmSmKy0rm6DvctTMLL3W9KqFzXOfreLQuav06dYKKGgABldV/sXbi1MEA0/2ohTpssCluapKmoWm6umTG9e
- HExIcM3ACV3iIWTi/FPC5szOfNda35Gg/qXqYmby1qh1kIs/HV8CftXHnN5/2d3NpCApcrT7MMY3/uVm+19nTEM/4gEtPEqIY9tyPN5whm6zo7Xe0SjvlqW3
- IJCQMlQnO9vto6abRNvXyk95hQWSImEWy6sW2HSs/de9ytBnO5oQzOgIivkyTXpZwi/Fee2YnCZMiYP02i8q6QHktUWTEguBtgWDT5+tp9IJhrbyHhdZeUCv
- 0f6v/H02P6xJWXY334V3m0VQ6GSTi8p3rJKXE/tJ4EuFT8fucFUXQTyG9nlsMApBPgbXguFq1nGWiDYo8XxIfY/JZOPhaeD78ELP20IXX39a21oQUFlNYEW8
- Sv4OmjRKJehtX+CPvRbDgzx2v1cMFI1OQs1KvqsqqQdffVXGX/uoVqqqp+n2fnvsBb4D0CIuZgI89l2iB/T3/PoWTioEn1NwCWNUNnBSHspRLA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_001819_871921_4C98C756 
-X-CRM114-Status: GOOD (  12.46  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200417_003301_668908_4A534C7F 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.83 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.83 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,41 +90,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 03/04/2020 18:15, Helen Koike wrote:
-> The Rockchip ISP bindings was moved out of staging.
-> Update MAINTAINERS file with the new path.
-
-Shouldn't there be a reference to Documentation/devicetree/bindings/phy/rockchip-mipi-dphy-rx0.yaml
-as well in MAINTAINERS?
-
-Regards,
-
-	Hans
-
+On Fri, 2020-04-17 at 09:18 +0200, Hans Verkuil wrote:
+> On 03/04/2020 18:15, Helen Koike wrote:
+> > The Rockchip ISP bindings was moved out of staging.
+> > Update MAINTAINERS file with the new path.
 > 
-> Suggested-by: Johan Jonker <jbx6244@gmail.com>
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> ---
-> 
-> V2:
-> - This is a new patch in the series
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index d66ac41ef5872..726044b84cf23 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -14303,6 +14303,7 @@ M:	Helen Koike <helen.koike@collabora.com>
->  L:	linux-media@vger.kernel.org
->  S:	Maintained
->  F:	drivers/staging/media/rkisp1/
-> +F:	Documentation/devicetree/bindings/media/rockchip-isp1.yaml
->  
->  ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
->  M:	Jacob Chen <jacob-chen@iotwrt.com>
-> 
+> Shouldn't there be a reference to Documentation/devicetree/bindings/phy/rockchip-mipi-dphy-rx0.yaml
+> as well in MAINTAINERS?
+
+And please keep the file references F: fields in
+alphabetic order.
+
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+[]
+> > @@ -14303,6 +14303,7 @@ M:	Helen Koike <helen.koike@collabora.com>
+> >  L:	linux-media@vger.kernel.org
+> >  S:	Maintained
+> >  F:	drivers/staging/media/rkisp1/
+> > +F:	Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> >  
+> >  ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
+> >  M:	Jacob Chen <jacob-chen@iotwrt.com>
+> > 
 
 
 _______________________________________________
