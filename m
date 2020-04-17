@@ -2,86 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 173261AD0F1
-	for <lists+linux-rockchip@lfdr.de>; Thu, 16 Apr 2020 22:15:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5221AD3EC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 17 Apr 2020 03:03:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m0H4z26m8v1Q/N6fzFu1vpxDnZs2aNAzv989hVEE+Dg=; b=IOPsEO+11uIHgd
-	oMNjTHejLvMmmKH9svOgB1Co+iVFokZ0iH/zRXEaXVVPNrTUg2SNyyPPqkL1Tg3QkLeTh5Dc0IcJW
-	djYTEcPdKl/U1Pw+j9xovQmX4HlUl+XypEXtpgk4etqok9IyiBfPoy2lz+0t1G0BI1uFE0VjJl4mD
-	2Ct3CKc384yKuYahQxvi9MA8u5QaYF/OEp+elG6FB4zCJfK9luV6uHFK+AmnIvxydIkStG8WR5b3B
-	cQ0GsgGlSPlM4BBMBc5cGtIB180CDho8q7Pjn2htYJ7i9mUCBaVtFMhHvbqa1WdQCQCceKFepRsgy
-	0R9XcXWYbNC3hKwy8USA==;
+	List-Owner; bh=IG90CcHSJTxN/YGec+1CtVsetkKT2XYNCfX65/gbM6o=; b=lhv+gcOtLGNBAZ
+	YQZyQoLtcZgJ+dFMa/KIlp0iqwZxlRM5Fnu9+hIwdsqVQcwtFyompjvSutBEWFlFgKCpCIe4+tyL8
+	/h+LoLFLEH6dUiYJAnJdx2Nr2Blvtpz+zTTlelB+xt07DmaBm66uXZK7ZhySJh2ctrs/4vpG4vPpl
+	XiIVRMXj3k/V3HozyyR8dKUw+77V9XsbX0eBV3eKCxN8MjLiwp1E3j1Y/I65XDSGiZQLtLlBg14e8
+	1JPG1be28Jb2nMIERDnXQLlJ89re7sq8e1lvYAzdMyxGr+l3tmGmIbgIAlQyWhDk/QZck0Ww6ruF3
+	Ojgwgs9SKKEUNyiisDmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPAvK-0005mF-Ml; Thu, 16 Apr 2020 20:15:46 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1jPFQ6-0004vt-7Y; Fri, 17 Apr 2020 01:03:50 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPAv5-0005dr-Rw; Thu, 16 Apr 2020 20:15:33 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id fb4so2737585qvb.7;
- Thu, 16 Apr 2020 13:15:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RrhoCocMui3bsFc5qkdYNErfeCVARryDRP7TYadbG5M=;
- b=QfKW6F7xCXl6+vxdlzAiOL5ivPMy1SHP4U5CM8CVeegJchb5+KDPwsbTufj449g+u4
- SD8E5bdY6BjaDM0KbK7iKkgwtLkedOn6so4ibg1BTWRdPCngH3jq4GS1rAXU0x3tqAW+
- +Z+52kZuoEnBLuNVBNWfPaISsumvknew1jf03TvmuKfwG9QZs3ABAS2cvd1he0XhnLDQ
- aeKzpcLxXOlZl4GkR6FTBIMSIghnearpfUmTipNkoasRCwGXVJ76zE+VYDzzcJFVV3tu
- IXG/BpW9slI84n6+qwgUnA2Ga9rgXPyqvF4yPDwBPGswDWoEGlWhip+xHunJQ8F1C6C2
- YMLA==
+ id 1jPFQ1-0004ud-Gh
+ for linux-rockchip@lists.infradead.org; Fri, 17 Apr 2020 01:03:48 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id kb16so359405pjb.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 16 Apr 2020 18:03:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=endlessm-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=0ZL5DKQEN5tIRYMA9bsAF7qYyxlNKGNuVSjiADQ9SPk=;
+ b=FrdtkA3N/A0B10cQBR1BRxqf+/pg1uBkd6DO7lHtdKgOqGpk1/7USrxTk4rdlzJ0Pn
+ oQGe7ba6HSEplsOy6ec3K4H8Fpx1j9/0meJ+gk7xvdUqFq7CDtsNxsMJzjX3kGdDbbz8
+ GCSySEUU8oXzqHDM2sby4knjcPLSSaIgNvaO9PtWZWWefGILL8HPrNXdIlKHYq2YILWZ
+ AMHiZb/IAXXMBCtRYZZ2S6R7t7InyUg113cLru837l9P5It247de3hDzpXYYYkdzsiNW
+ l3eKB2Wxab5vn9CTNWz5BkklF52xIUVdN24g+AL8C9OhFHLjLh5Ls1ropaQnpLD31b3o
+ DqaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RrhoCocMui3bsFc5qkdYNErfeCVARryDRP7TYadbG5M=;
- b=BTZsW3JODTiM0ZdzfvJMZkb+0e0S9ep/Hfpa/Hbphiwd7Iaan+J5OOpFdZkrHvldLs
- 0jmHCz+mloofFAIN+Y1ybvcmTsUGVsk9tX9pxhoGcUyJpPeHfJz8RTpzne7rJ+jdugp/
- 1OKNRCrZ7O8dIY6M0a0yTKYpm4P/7CPPPawGIW7wtL1dKU4JIdwv2sNs76miZPaIu3nj
- bI6ntE/CWoVmQrIwKlH90YlWYKJ/RIhUMmFeejO+DLVu40IYyVbBmJW3eEHfkgJnsHW6
- ftM0P5ujZlmfPF1kmRJ+y1FfoW85svyr245xmaZLGV7HBD/DM6a1rTvwFFCWWmfxkJEc
- fYJg==
-X-Gm-Message-State: AGi0Puab0mt6orxsrI/yi+LFNMr6Yln1Z/c36cNxX21Wsg4ukTAtlsQc
- FkQlfR8cpF3XLZWdsX5DsYvD+FscNkdB67MU8jc=
-X-Google-Smtp-Source: APiQypLEw9l7W2hSliB15jHFogvAHufSRGn0ZYH76LQ8VoeRoID9myxCgGr4Pn9PvD87gHrPUOj8sgZxasNifp8qNh4=
-X-Received: by 2002:a0c:f748:: with SMTP id e8mr11834286qvo.237.1587068130311; 
- Thu, 16 Apr 2020 13:15:30 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=0ZL5DKQEN5tIRYMA9bsAF7qYyxlNKGNuVSjiADQ9SPk=;
+ b=ACAfM5s69VHfOSGIPLxvel/LL/B8NvjBXhlfR9KJYjMVTvA8sbU6/qffWxFaO3twF5
+ 0kShip3zAYZ63v+2sbG3dkQS75TSllzN1EOnAKp8Dsc/oKpV2zKhhF7sZCLI2QdSRFp6
+ 6vPRK8656k3SNrpfMVUqDpCMl+17mrVbVxO/iGCiU2CunBiEkNAzdsZFDRgsAtJYuWgH
+ hN5UQScJ2EXakk6ioLpuJsCCuld5B2lsaBeoaujVekCLr5m2TWCR9WHCqqDeI0nIaY/j
+ L/nrMYIqv9dBJVuESpnPXj3DNHo5/iZ30V3EK6mKYTRaWofwitNIRiujNw2O2EBJqehZ
+ jMRQ==
+X-Gm-Message-State: AGi0PuYP3jeyLdITI/XoIuXoQ2ioeYDHCWcmro2ZhCFWYEpmiIxt1AB2
+ dV/gnRbfSnvkELFwFWMq4JMFUXf1o3DBLg==
+X-Google-Smtp-Source: APiQypKfJXVVs8nt0ABNaLviRVVB2FF8oWh5BJ43V1JXuqqLWnC3nHs+J6exlmUfG8/Dws2LqNNTtg==
+X-Received: by 2002:a17:902:fe09:: with SMTP id
+ g9mr366208plj.171.1587085424144; 
+ Thu, 16 Apr 2020 18:03:44 -0700 (PDT)
+Received: from limbo.local (host-160.218-14-119.dynamic.totalbb.net.tw.
+ [119.14.218.160])
+ by smtp.gmail.com with ESMTPSA id u8sm16518026pgl.19.2020.04.16.18.03.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Apr 2020 18:03:43 -0700 (PDT)
+From: Daniel Drake <drake@endlessm.com>
+To: joro@8bytes.org
+Subject: Re: [PATCH v2 00/33] iommu: Move iommu_group setup to IOMMU core code
+Date: Fri, 17 Apr 2020 09:03:35 +0800
+Message-Id: <20200417010335.31739-1-drake@endlessm.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200414131542.25608-1-joro@8bytes.org>
+References: <20200414131542.25608-1-joro@8bytes.org>
 MIME-Version: 1.0
-References: <20200414151955.311949-1-adrian.ratiu@collabora.com>
- <20200414151955.311949-2-adrian.ratiu@collabora.com>
- <CAFqH_52eKB4jtmn5e4HQubv8ijOPqDqncp1dRGahhU3NOorJMQ@mail.gmail.com>
- <87lfmvjmt5.fsf@collabora.com>
-In-Reply-To: <87lfmvjmt5.fsf@collabora.com>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Thu, 16 Apr 2020 22:15:19 +0200
-Message-ID: <CAFqH_513KB+En_xbpXSBG6Q38kYxWCgw0KO3NVxCb6fqHDaKBA@mail.gmail.com>
-Subject: Re: [PATCH v6 1/8] drm: bridge: dw_mipi_dsi: add initial regmap
- infrastructure
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_131531_932090_BA61220C 
-X-CRM114-Status: GOOD (  14.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_180345_606705_C5077685 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eballetbo[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,58 +96,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Adrian Pop <pop.adrian61@gmail.com>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-imx@nxp.com
+Cc: heiko@sntech.de, bjorn.andersson@linaro.org, linux-tegra@vger.kernel.org,
+ thierry.reding@gmail.com, will@kernel.org, m.szyprowski@samsung.com,
+ jean-philippe@linaro.org, linux-samsung-soc@vger.kernel.org,
+ robdclark@gmail.com, krzk@kernel.org, jonathanh@nvidia.com,
+ linux-rockchip@lists.infradead.org, agross@kernel.org,
+ jonathan.derrick@intel.com, linux-s390@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, virtualization@lists.linux-foundation.org,
+ gerald.schaefer@de.ibm.com, dwmw2@infradead.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, kgene@kernel.org, robin.murphy@arm.com,
+ baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Adrian,
+Hi Joerg,
 
-[snip]
+> Hi,
+> 
+> here is the second version of this patch-set. The first version with
+> some more introductory text can be found here:
+> 
+> 	https://lore.kernel.org/lkml/20200407183742.4344-1-joro@8bytes.org/
 
-> >>
-> >> +static void dw_mipi_dsi_get_hw_version(struct dw_mipi_dsi
-> >> *dsi) +{ +       regmap_read(dsi->regs, DSI_VERSION,
-> >> &dsi->hw_version); +       dsi->hw_version &= VERSION; +
-> >> if (!dsi->hw_version) +               dev_err(dsi->dev, "Failed
-> >> to read DSI hw version register\n");
-> >
-> > Is this an error that should be ignored? If you can't get the HW
-> > version, probably, there is something wrong with your hardware
-> > so, don't you need to return an error?
-> >
->
-> After thinking a bit more about it, that error should be a
-> warning.
->
-> I added it because in some cases (for eg. if the peripheral clock
-> is disabled) the reads can return 0 which is obviously an invalid
-> version and the bridge will error in the next step when not
-> finding a layout.
->
+Thanks for the continued improvements in this area!
 
-If you'll error anyway, why wait? IIUC at this point the clock *must*
-be enabled, and if not, something is wrong with the driver, I don't
-see any advantage on delay the error. do you have a use case where
-this is called and peripheral clock disabled?
+I may have spotted a problem with setups like VMD.
 
-> So I'll make this a warning in v7 and explicitely mention that
-> reads version == 0 can be caused by a disabled pclk.
->
+The core PCI bus is set up during early boot.
+Then, for the PCI bus, we reach iommu_bus_init() -> bus_iommu_probe().
+In there, we call probe_iommu_group() -> dev_iommu_get() for each PCI
+device, which allocates dev->iommu in each case. So far so good.
 
--- Enric
+The problem is that this is the last time that we'll call dev_iommu_get().
+If any PCI bus devices get added after this point, they do not get passed
+to dev_iommu_get().
+
+So when the vmd module gets loaded later, and creates more PCI devices,
+we end up in iommu_bus_notifier() -> iommu_probe_device()
+-> __iommu_probe_device() which does:
+
+	dev->iommu->iommu_dev = iommu_dev;
+
+dev->iommu-> is a NULL dereference because dev_iommu_get() was never
+called for this new device.
+
+Daniel
+
 
 _______________________________________________
 Linux-rockchip mailing list
