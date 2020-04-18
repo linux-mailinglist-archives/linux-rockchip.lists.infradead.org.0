@@ -2,97 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05B7C1AEC5C
-	for <lists+linux-rockchip@lfdr.de>; Sat, 18 Apr 2020 14:14:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28B551AEC96
+	for <lists+linux-rockchip@lfdr.de>; Sat, 18 Apr 2020 14:45:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YbCJ+EyqynXwbDFUl+dwR8nemw9YHyts4f3IXd2FU1w=; b=RiSLPq2f08DJDL
-	cmHdkARAhBIheFslnNkNIUJeOk4TNUFNy4eiVD/GcWG0TLPkUsLdkLPHB/0hTE/IZymZSC+LPXh9v
-	aVZBuqVckJZt4PGFEPD0iMdjqOOpj88MTakeHBDmHupEv8Pu2XEP3Alzm1VsOvaJaK4MtbD0QXgey
-	XBpsuKZojIVWF0V4y2c3wZWwJfIRWUccGPqdc6KoewZkCPTIc+dfxr5hBXVs2Xu0t4P+0FgzH3+ZG
-	fFpkq0Cydaw36DId3GaDDWNpiUq+8lBuPISs5utQUbjmQ7qKSCj2NJA+PoJnJgHjSEXwKybSqd1dZ
-	or++G6eltLasNDC+1Siw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f6isDjqcXGlMdu/VYcGZvSFsB2/8DlwLrqCI55DQ2ik=; b=UHUrbQTsu2JvDW
+	likvuvqFrSnfoW7riFwl7demiRS/TVOgm+lWKiIw5Km8TRwB49hWz2dG8zVa6dJnDqIGBjZl7s5T0
+	/64ahnja1y0nyaspKzLyM1yHtpISOnHQdHQlltS1DK56Y+dayhGC1Uoc9rn8nUjKgItSYYS3DXPRQ
+	1GbK8MV/Zl9Ptcwo68cG/iJ5urF35t/iVbTuka3BuQs8F+9MZrZ9NJnCHsdyQP6dnr9bTX1TXgTT3
+	NhIKlNO+4c26m5BLUsPBb8yAMD9fVLowr65myqswIEnvYLdagY3Bt/prTrS04xJzy43jilZwOe8x4
+	/WkY6c2HjmJ2h6OOJyQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPmN2-0000Ri-IJ; Sat, 18 Apr 2020 12:14:52 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jPmqC-0005IG-JJ; Sat, 18 Apr 2020 12:45:00 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPmMz-0000QN-5Z; Sat, 18 Apr 2020 12:14:50 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r26so5726361wmh.0;
- Sat, 18 Apr 2020 05:14:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=f+xMR+KYzCgzYlW1x4Og/ZLSKx3U5B8Ky3smGBm8ZHA=;
- b=koe5NkvTdWegoN30UZTYBcRaxprT1wTS0WqnTAbfD8B4oBWVkTSEqoj+1yIpB/qPiV
- ondEhRv6v/0G/SyDhcn0t/WmOPmyjDrfge1QkFKA+oRl07dvL613Vq/D8u93n3qt7U42
- FLe6mDe9LYxN36yCaI/+nOkdw02d0TgkgjwyXWf6FxtJk+7Cy7uiOtaObxKrUH6lAst2
- mP3wJ4gn5ZjUWKlP0li8NkjDPDSFgJomwczytkyqePEGoq9lfcTTCtthyxd6cZgwbHQ8
- HDXCuSdNftLEaY8W8+SbZ6FYchlOOLsYXjg8cdsSCSYsiMXf3TuOI66csYo3OddvAUqU
- KkAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=f+xMR+KYzCgzYlW1x4Og/ZLSKx3U5B8Ky3smGBm8ZHA=;
- b=s+YyZDWncz15bw3xYjt5qMZBEHm9DSNyqgBWtFpOE8xiPDKMsq+2/bCQAhhYdNkIce
- 9MPrt1piQ1y4RctY+O2szp/MJpBLs0jQe3Ok43Pzo3xOAlyqFmDEFGfCNO7H7VpZFsPa
- qjlXaOgi37DMfk7/4BkFE6izuXCOXUgVH2xS7TxP3PGs0GvcQV1umtcibD9Uq/Fa2G+S
- VZ0wcwkTRgzF3MYtEQy6Xd9Yi+8wdgWb5zpUrNgieJGAo7nabopVVX+DlQ1/OrSIaHqB
- c4bSXCEcj0aphwSm67ytcP65RYwEsZ7RzMD4iaqT26DGunNzrNvLaYFacn2WZXi0NlLv
- KeBA==
-X-Gm-Message-State: AGi0PuYdsT5AZ5qgCavLGGdZIx5+le/7usRASH/mi/YjVNqe4m9vV8KF
- HRY5S9r735f1hcY8J5vFPFs=
-X-Google-Smtp-Source: APiQypLstfRt6XI+FJgsZSB8kYksMAzORNwekKGiJB7VWHJq2V546ps+cjXl1idfaq0d3MMRzVBZ9A==
-X-Received: by 2002:a1c:3105:: with SMTP id x5mr8366565wmx.51.1587212087665;
- Sat, 18 Apr 2020 05:14:47 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i97sm37891167wri.1.2020.04.18.05.14.46
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 18 Apr 2020 05:14:47 -0700 (PDT)
-Subject: Re: [PATCH v4 2/3] ARM: dts: rockchip: add rga node for rk322x
-To: Heiko Stuebner <heiko@sntech.de>,
- Justin Swartz <justin.swartz@risingedge.co.za>
-References: <be4f2c802a64562cbab629abc82dd7d228a1a747.1580768038.git.justin.swartz@risingedge.co.za>
- <3593382.iQIKm1rSL1@phil> <b77422198df7c285d824086131371284@risingedge.co.za>
- <2533855.f5ZhyS2AsA@phil>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <558b35c3-7f75-8d0d-048b-c55c06fa8a53@gmail.com>
-Date: Sat, 18 Apr 2020 14:14:45 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jPmq8-0005Ga-P8; Sat, 18 Apr 2020 12:44:58 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 7275A48C; Sat, 18 Apr 2020 14:44:54 +0200 (CEST)
+Date: Sat, 18 Apr 2020 14:44:53 +0200
+From: "joro@8bytes.org" <joro@8bytes.org>
+To: "Derrick, Jonathan" <jonathan.derrick@intel.com>
+Subject: Re: [PATCH v2 00/33] iommu: Move iommu_group setup to IOMMU core code
+Message-ID: <20200418124452.GE6113@8bytes.org>
+References: <20200414131542.25608-1-joro@8bytes.org>
+ <20200417010335.31739-1-drake@endlessm.com>
+ <aafed865c0254934986528b3ce9c4d34ff2fccad.camel@intel.com>
 MIME-Version: 1.0
-In-Reply-To: <2533855.f5ZhyS2AsA@phil>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <aafed865c0254934986528b3ce9c4d34ff2fccad.camel@intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200418_051449_236595_767E6F76 
-X-CRM114-Status: GOOD (  16.94  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200418_054456_966704_B52F5F7C 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [81.169.241.247 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,97 +61,49 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "heiko@sntech.de" <heiko@sntech.de>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ "drake@endlessm.com" <drake@endlessm.com>, "will@kernel.org" <will@kernel.org>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "robdclark@gmail.com" <robdclark@gmail.com>,
+ "krzk@kernel.org" <krzk@kernel.org>,
+ "jonathanh@nvidia.com" <jonathanh@nvidia.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "kgene@kernel.org" <kgene@kernel.org>, "agross@kernel.org" <agross@kernel.org>,
+ "jean-philippe@linaro.org" <jean-philippe@linaro.org>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "virtualization@lists.linux-foundation.org"
+ <virtualization@lists.linux-foundation.org>,
+ "gerald.schaefer@de.ibm.com" <gerald.schaefer@de.ibm.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "dwmw2@infradead.org" <dwmw2@infradead.org>,
+ "baolu.lu@linux.intel.com" <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 4/18/20 12:53 PM, Heiko Stuebner wrote:
-> Am Samstag, 18. April 2020, 11:56:03 CEST schrieb Justin Swartz:
->> Hi Johan, Heiko,
->>
->> On 2020-04-18 11:49, Heiko Stuebner wrote:
->>
->>> Am Samstag, 18. April 2020, 11:15:27 CEST schrieb Johan Jonker:
->>>
->>>> Hi Justin, Heiko,
->>>>
->>>> In the discussion about "rockchip,px30-rga" it was mentioned that:
->>>> "no status for soc internal components without any board-specifics".
->>>> The binding is in mainline, but the dts node is missing I think.
->>>> Should this also be changed?
->>>
->>> yep, drop the status disabled from the dtsi and that then results
->>> in not needing the board-level enablement
->>>
->>> (background: rga is a simple mem2mem device without any
->>> board-specific hooks)
->>
->> Shall I submit version 5 of this patch series?
-> 
-> I guess so ... especially as we expect patch1 to go through the
-> media tree and sending a new version might serve as a ping :-)
-> and include the Ack by Rob for easy applying
+Hi Jonathan, Hi Daniel,
 
-The conversion to rockchip-rga.yaml including rockchip,rk3228-rga is
-already reviewed by robh.
+On Fri, Apr 17, 2020 at 01:14:30AM +0000, Derrick, Jonathan wrote:
+> Hi Daniel> I should have CCed you on this, but it should temporarily resolve that
+> issue:
+> https://lists.linuxfoundation.org/pipermail/iommu/2020-April/043253.html
 
-> 
-> 
-> Heiko
-> 
-> 
->>
->>> Johan
->>>
->>> +&rga {
->>> +    status = "okay";
->>> +};
->>> +
->>>
->>> Add a node to define the presence of RGA, a 2D raster
->>> graphic acceleration unit.
->>>
->>> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
->>> ---
->>> arch/arm/boot/dts/rk322x.dtsi | 11 +++++++++++
->>> 1 file changed, 11 insertions(+)
->>>
->>> diff --git a/arch/arm/boot/dts/rk322x.dtsi 
->>> b/arch/arm/boot/dts/rk322x.dtsi
->>> index 340ed6ccb..29d50bebc 100644
->>> --- a/arch/arm/boot/dts/rk322x.dtsi
->>> +++ b/arch/arm/boot/dts/rk322x.dtsi
->>> @@ -621,6 +621,17 @@
->>> status = "disabled";
->>> };
->>>
->>> +    rga: rga@20060000 {
->>> +        compatible = "rockchip,rk3228-rga", "rockchip,rk3288-rga";
->>> +        reg = <0x20060000 0x1000>;
->>> +        interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
->>> +        clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA>;
->>> +        clock-names = "aclk", "hclk", "sclk";
->>> +        resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru 
->>> SRST_RGA_H>;
->>> +        reset-names = "core", "axi", "ahb";
->>> +        status = "disabled";
->>> remove?
->>>
->>> +    };
->>> +
->>> iep_mmu: iommu@20070800 {
->>> compatible = "rockchip,iommu";
->>> reg = <0x20070800 0x100>;
->>
-> 
-> 
-> 
-> 
+Yes, this is an issue in the hotplug handling path which I already fixed
+in my branch. With next post of this series it should work.
 
+Regards,
+
+	Joerg
 
 _______________________________________________
 Linux-rockchip mailing list
