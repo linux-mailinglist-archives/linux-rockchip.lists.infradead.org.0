@@ -2,43 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A246D1AF9DB
-	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 14:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 282281AFA18
+	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 14:37:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0yW9unTn7OmbKfDiWW5k/WIra6JTDs+nrLXL4QzouwE=; b=Mgi8qGFZKoI1To
-	WSKyZq44PZEoTABRibC6HLJw9JzFAAefYBqrZlC7JK7bZhfXic1WUrggOsRN5qK4H71bxh9rKwmco
-	vRjTGKHHgciMdQwCz1DpmD3w1VHfQXsmZj1JsNWCCBHUNXGrNmcw6QKV2f8TFWnEJOzDm+GzMQl/6
-	05bcK4HcYTW9frtF5i2IRDwgT2DDlbAlItIXwCu3Trqag1MybEqIGXWwkrUo+A+H/CUhgR/9/65kU
-	lDDnFxwdkualIrIfWB7g/z5CiimGES5rbJDwSIbLdAj2KFQJPYU8NUfQDMybLbbtSwZrCUS7qdi38
-	t5fhvRzXzYGA+BU6Le/Q==;
+	List-Owner; bh=aiEOzePpZdVePHivfQiZHmdJvkxmIo6sUtKSVnEO6lw=; b=DuEcs+OEGWUviu
+	9m3Fulv43Uui7SNzXRdgLwIeH6gXZ9XQ4wXUSYZZMRxrFnnFFz9z5/iB8/0uNEY1XbKpk1ZYEoCR1
+	Ud2Mui+Ed+VrILpGBxnr2O4GWME5Aepm5fZsHiMu39hkob+vtSAP1zoZ2h+5OCpLsWYZh+sZrucrg
+	YJIAqUtaO8F8liRGNJanzaJz461UjzwXwtOOu3Zmt2hdwkA2CHyhqjjuk7KblO468oQuMtM2/vLDT
+	7Owz/7ho5i2U1gTxuamex3JHb9pwYKM5Dmkw1Z3TpepnHDriFBliTFSNKq7jXEbDAbm+gL1DdaB03
+	o6drAAuGg3E41Ck4bdMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ8pQ-0003nz-Ft; Sun, 19 Apr 2020 12:13:40 +0000
+	id 1jQ9CM-0003ib-De; Sun, 19 Apr 2020 12:37:22 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ8pC-0003e3-5H; Sun, 19 Apr 2020 12:13:27 +0000
+ id 1jQ9BH-0002km-7k; Sun, 19 Apr 2020 12:36:16 +0000
 Received: from p508fcedd.dip0.t-ipconnect.de ([80.143.206.221]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jQ8p9-0006f3-5Q; Sun, 19 Apr 2020 14:13:23 +0200
+ id 1jQ9BB-0006k5-AZ; Sun, 19 Apr 2020 14:36:09 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: rockchip: fix phy nodename for rk3228-evb
-Date: Sun, 19 Apr 2020 14:13:06 +0200
-Message-Id: <158729833730.67563.9205424674473235719.b4-ty@sntech.de>
+To: Heiko Stuebner <heiko@sntech.de>,
+	linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH v4 1/3] arm64: dts: rockchip: add core devicetree for
+ rk3326
+Date: Sun, 19 Apr 2020 14:35:56 +0200
+Message-Id: <158729964648.70529.10290347754936450590.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200416170321.4216-1-jbx6244@gmail.com>
-References: <20200416170321.4216-1-jbx6244@gmail.com>
+In-Reply-To: <20200414082938.2977572-1-heiko@sntech.de>
+References: <20200414082938.2977572-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_051326_198512_4F9EDE30 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20200419_053615_302775_B7D59985 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,35 +61,34 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ kever.yang@rock-chips.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ jbx6244@gmail.com, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, 16 Apr 2020 19:03:20 +0200, Johan Jonker wrote:
-> A test with the command below gives for example this error:
+On Tue, 14 Apr 2020 10:29:36 +0200, Heiko Stuebner wrote:
+> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
-> arch/arm/boot/dts/rk3228-evb.dt.yaml: phy@0:
-> '#phy-cells' is a required property
+> The rk3326 is basically a px30 without the second display controller.
+> So add a dtsi based on that, that just removes the affected nodes.
 > 
-> The phy nodename is normally used by a phy-handle.
-> This node is however compatible with
-> "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
-> which is just been added to 'ethernet-phy.yaml'.
-> So change nodename to 'ethernet-phy' for which '#phy-cells'
-> is not a required property
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] ARM: dts: rockchip: fix phy nodename for rk3228-evb
-      commit: 806bceeea63f58bde45dbd633092bd9d14da02b0
-[2/2] ARM: dts: rockchip: fix phy nodename for rk3229-xms6
-      commit: 5c5555f7efed273c61152da03cd395a0d06e054c
+[1/3] arm64: dts: rockchip: add core devicetree for rk3326
+      commit: df07f7df7e5a61d06b21f89c4ab744fb4e4c2222
+[2/3] dt-bindings: Add binding for Hardkernel Odroid Go Advance
+      commit: 98412e1e57ea776b4581077a68fe6ed598bfba99
+[3/3] arm64: dts: rockchip: add Odroid Advance Go
+      commit: ce33988fb69828dfcb5825f9086d9dc2b37a9282
 
 Best regards,
 -- 
