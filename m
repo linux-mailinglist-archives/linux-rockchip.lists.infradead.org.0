@@ -2,43 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67CB71AF930
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BF7A1AF931
 	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 12:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KGyRwlATH/Yk2MFJ9mCF6KixbIQdHES1kiSlT2eJ8DM=; b=WIUhoHJBDa1K94
-	xoDPdcso2zpCgxfpp5UJm7iQ0pmWQZItQ2+M+VENXrzERtTzISo0O+lvSy+75TwDP63n9uWHYQ0lB
-	hvHLngQ8jkHUuhfxMpH214Sq0zgaa8b4tYQZ7kV28PpYV5QEbVuTnPda8SnqZCPhenxaj7jcSMTq+
-	3oVnbfHvmCM/ybWjDwJAJk7zs06WaqXYjwnYs9vVoFuZx7RNU9EfVYs6dX5OwpnJ/4DELA1+m2FY1
-	6IAXiUPLcSIQBmGPKuk+/FKsPr4BMEG9MozfbYVYB9oHdCJhC5DPDYVS+nDJZLEj6MXEuApH0fIj1
-	FVrO6htTBVFMQdznOgeQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PEv1kGdfJbQFj08MylNdrZt2tlDdIQqXNQ3QxT1EkD4=; b=eJ2eKsS/YGAn4v
+	Tx7+oU94LxXDfZdks+/TRYD8yM7pYt0nsSgZcvw2usQYsI95NwzHYlLn2qbSJOgaHzf5Kqn+XU3Gx
+	UADbd2HbADAjGbX+YFTfAA5ZFAIc/Xp6ard1cChy4JT7SUuxkpMxnF6BabJTLkVSPMLSjptMCCr0e
+	qmaQVLyuq+naKHBcup2r4/TXtfnNJtVltX2xn8Dgqc1GtIpooEQm+9+nt64NCv0M9owOVj8uK/2jo
+	HhMe9BxP6Dx2ay0A3RLP77JmiJGmeB447DkxKHkx7LTp+nRmxptSsIQnLi0CyViEzUnbnmMsZkMPk
+	jeTtBCdGt7YTJb84bmjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQ6mW-000781-QM; Sun, 19 Apr 2020 10:02:32 +0000
+	id 1jQ6mU-00075Q-EM; Sun, 19 Apr 2020 10:02:30 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ6mR-000747-Ik
- for linux-rockchip@lists.infradead.org; Sun, 19 Apr 2020 10:02:30 +0000
+ id 1jQ6mR-000748-Ix
+ for linux-rockchip@lists.infradead.org; Sun, 19 Apr 2020 10:02:29 +0000
 Received: from p508fcedd.dip0.t-ipconnect.de ([80.143.206.221]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jQ6mB-00069Y-8z; Sun, 19 Apr 2020 12:02:11 +0200
+ id 1jQ6mC-00069Y-0i; Sun, 19 Apr 2020 12:02:12 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: jic23@kernel.org
-Subject: [PATCH v5 1/3] iio: adc: rockchip_saradc: move all of probe to
- devm-functions
-Date: Sun, 19 Apr 2020 12:02:05 +0200
-Message-Id: <20200419100207.58108-1-heiko@sntech.de>
+Subject: [PATCH v5 2/3] iio: adc: rockchip_saradc: better prefix for channel
+ constant
+Date: Sun, 19 Apr 2020 12:02:06 +0200
+Message-Id: <20200419100207.58108-2-heiko@sntech.de>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200419100207.58108-1-heiko@sntech.de>
+References: <20200419100207.58108-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_030227_615793_A497C7FA 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20200419_030227_617635_63D3210D 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,107 +73,74 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-Parts of the saradc probe rely on devm functions and later parts do not.
-This makes it more difficult to for example enable triggers via their
-devm-functions and would need more undo-work in remove.
+As suggested give the current ADC_CHANNEL constant a distinct
+and consistent prefix.
 
-So to make life easier for the driver, move the rest of probe calls
-also to their devm-equivalents.
-
-This includes moving the clk- and regulator-disabling to a devm_action
-so that they gets disabled both during remove and in the error case
-in probe, after the action is registered.
-
+Suggested-by: Peter Meerwald-Stadler <pmeerw@pmeerw.net>
 Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 ---
 changes in v5:
-- none
-changes in v4:
-- new patch as suggested by Jonathan
+- new patch
 
- drivers/iio/adc/rockchip_saradc.c | 37 ++++++++++++++++---------------
- 1 file changed, 19 insertions(+), 18 deletions(-)
+ drivers/iio/adc/rockchip_saradc.c | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/iio/adc/rockchip_saradc.c b/drivers/iio/adc/rockchip_saradc.c
-index 582ba047c4a6..270eb7e83823 100644
+index 270eb7e83823..29d7f6e4057e 100644
 --- a/drivers/iio/adc/rockchip_saradc.c
 +++ b/drivers/iio/adc/rockchip_saradc.c
-@@ -193,6 +193,15 @@ static void rockchip_saradc_reset_controller(struct reset_control *reset)
- 	reset_control_deassert(reset);
+@@ -118,7 +118,7 @@ static const struct iio_info rockchip_saradc_iio_info = {
+ 	.read_raw = rockchip_saradc_read_raw,
+ };
+ 
+-#define ADC_CHANNEL(_index, _id) {				\
++#define SARADC_CHANNEL(_index, _id) {				\
+ 	.type = IIO_VOLTAGE,					\
+ 	.indexed = 1,						\
+ 	.channel = _index,					\
+@@ -128,9 +128,9 @@ static const struct iio_info rockchip_saradc_iio_info = {
  }
  
-+static void rockchip_saradc_disable(void *data)
-+{
-+	struct rockchip_saradc *info = data;
-+
-+	clk_disable_unprepare(info->clk);
-+	clk_disable_unprepare(info->pclk);
-+	regulator_disable(info->vref);
-+}
-+
- static int rockchip_saradc_probe(struct platform_device *pdev)
- {
- 	struct rockchip_saradc *info = NULL;
-@@ -304,6 +313,14 @@ static int rockchip_saradc_probe(struct platform_device *pdev)
- 		goto err_pclk;
- 	}
+ static const struct iio_chan_spec rockchip_saradc_iio_channels[] = {
+-	ADC_CHANNEL(0, "adc0"),
+-	ADC_CHANNEL(1, "adc1"),
+-	ADC_CHANNEL(2, "adc2"),
++	SARADC_CHANNEL(0, "adc0"),
++	SARADC_CHANNEL(1, "adc1"),
++	SARADC_CHANNEL(2, "adc2"),
+ };
  
-+	ret = devm_add_action_or_reset(&pdev->dev,
-+				       rockchip_saradc_disable, info);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to register devm action, %d\n",
-+			ret);
-+		return ret;
-+	}
-+
- 	platform_set_drvdata(pdev, indio_dev);
+ static const struct rockchip_saradc_data saradc_data = {
+@@ -141,8 +141,8 @@ static const struct rockchip_saradc_data saradc_data = {
+ };
  
- 	indio_dev->name = dev_name(&pdev->dev);
-@@ -315,14 +332,12 @@ static int rockchip_saradc_probe(struct platform_device *pdev)
- 	indio_dev->channels = info->data->channels;
- 	indio_dev->num_channels = info->data->num_channels;
+ static const struct iio_chan_spec rockchip_rk3066_tsadc_iio_channels[] = {
+-	ADC_CHANNEL(0, "adc0"),
+-	ADC_CHANNEL(1, "adc1"),
++	SARADC_CHANNEL(0, "adc0"),
++	SARADC_CHANNEL(1, "adc1"),
+ };
  
--	ret = iio_device_register(indio_dev);
-+	ret = devm_iio_device_register(&pdev->dev, indio_dev);
- 	if (ret)
--		goto err_clk;
-+		return ret;
+ static const struct rockchip_saradc_data rk3066_tsadc_data = {
+@@ -153,12 +153,12 @@ static const struct rockchip_saradc_data rk3066_tsadc_data = {
+ };
  
- 	return 0;
+ static const struct iio_chan_spec rockchip_rk3399_saradc_iio_channels[] = {
+-	ADC_CHANNEL(0, "adc0"),
+-	ADC_CHANNEL(1, "adc1"),
+-	ADC_CHANNEL(2, "adc2"),
+-	ADC_CHANNEL(3, "adc3"),
+-	ADC_CHANNEL(4, "adc4"),
+-	ADC_CHANNEL(5, "adc5"),
++	SARADC_CHANNEL(0, "adc0"),
++	SARADC_CHANNEL(1, "adc1"),
++	SARADC_CHANNEL(2, "adc2"),
++	SARADC_CHANNEL(3, "adc3"),
++	SARADC_CHANNEL(4, "adc4"),
++	SARADC_CHANNEL(5, "adc5"),
+ };
  
--err_clk:
--	clk_disable_unprepare(info->clk);
- err_pclk:
- 	clk_disable_unprepare(info->pclk);
- err_reg_voltage:
-@@ -330,19 +345,6 @@ static int rockchip_saradc_probe(struct platform_device *pdev)
- 	return ret;
- }
- 
--static int rockchip_saradc_remove(struct platform_device *pdev)
--{
--	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
--	struct rockchip_saradc *info = iio_priv(indio_dev);
--
--	iio_device_unregister(indio_dev);
--	clk_disable_unprepare(info->clk);
--	clk_disable_unprepare(info->pclk);
--	regulator_disable(info->vref);
--
--	return 0;
--}
--
- #ifdef CONFIG_PM_SLEEP
- static int rockchip_saradc_suspend(struct device *dev)
- {
-@@ -383,7 +385,6 @@ static SIMPLE_DEV_PM_OPS(rockchip_saradc_pm_ops,
- 
- static struct platform_driver rockchip_saradc_driver = {
- 	.probe		= rockchip_saradc_probe,
--	.remove		= rockchip_saradc_remove,
- 	.driver		= {
- 		.name	= "rockchip-saradc",
- 		.of_match_table = rockchip_saradc_match,
+ static const struct rockchip_saradc_data rk3399_saradc_data = {
 -- 
 2.25.1
 
