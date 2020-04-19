@@ -2,64 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80B781AFAB8
-	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 15:30:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9BCA1AFBF7
+	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 18:38:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fwuIdLVM+09bdbYVTQ35Uoi63en5pb2tUQdq54Ivyyc=; b=CDeyjXjpjBkw2i87EeWExWaQIa
-	YMF560ygJisR+1yju8s+C1r1pj9phUtfgN812Bu8AmVbJ3TbzWXP9SRXoTG5BUgd4id0Ec0Neio+7
-	2kXh3fhfImRLMgoqIIg5ZgnpUNhTchzFiVMEZ/xHVcWfGQamOrMkitF44b/2ZlXN4NnA1IUrE9Jxr
-	S55wEOywNqV0g6vQ9ZXFdOExNzYdpcnjXoiGQfqBAVdcCNj9whQNpmC3dUX0QvNAkuJ1Cjlzrfty0
-	IkNjGFCA157jDOSjM8tOptk8TOrsw6eLospyADsGom3iSKfwnVx8AZqd4639mhFG8pBYZ1gnh81l/
-	Z/qOGABQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FosttCYCgPRlHYffHAlwPYPuo85vOYe63+WrklDr8Ng=; b=AVJH0HosSVaEoe
+	S1CFZ2hchNW77RyKRk535o+0NOg+RF21pJKHPNmnWJ04nflo01B3XBe00QicKVJKkMzLqhoCB7ZDf
+	hK7dre3W7etMwJRqBNU2TCkS2au2UzqJGMVI5JSTsJNvA4ajmSlgxKcyNvYEWvhM9n+3kgAqwMLDT
+	MBs0XdKs3IjsbGX7bzPagUyC5EyKUGZ32stqunsMeNWy63sUA6exGI+mHlh7Vhcpoi0xi69GFyZ8N
+	I55xAjOjKY8oYAl5AV7G+GY5CJuIfjPc+CpE4mZ6NyouLpavUdAKl96MX71jqucTDtuKNf+8MIEna
+	L52E7qB20HYoz3HkmJbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQA1z-0003wf-PL; Sun, 19 Apr 2020 13:30:43 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172]
- helo=relmlie6.idc.renesas.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQ9zJ-0007c3-1h; Sun, 19 Apr 2020 13:27:58 +0000
-X-IronPort-AV: E=Sophos;i="5.72,403,1580742000"; d="scan'208";a="44894783"
-Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie6.idc.renesas.com with ESMTP; 19 Apr 2020 22:27:55 +0900
-Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id 1B2A9422C025;
- Sun, 19 Apr 2020 22:27:50 +0900 (JST)
-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v8 8/8] MAINTAINERS: Add file patterns for rcar PCI device
- tree bindings
-Date: Sun, 19 Apr 2020 14:27:03 +0100
-Message-Id: <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+	id 1jQCy0-0008Tk-Dj; Sun, 19 Apr 2020 16:38:48 +0000
+Received: from smtprelay0133.hostedemail.com ([216.40.44.133]
+ helo=smtprelay.hostedemail.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jQCxq-0008NO-EI; Sun, 19 Apr 2020 16:38:39 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay02.hostedemail.com (Postfix) with ESMTP id E2A595836;
+ Sun, 19 Apr 2020 16:38:29 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1539:1568:1593:1594:1711:1714:1730:1747:1777:1792:2198:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3867:3874:4250:4321:5007:6737:10004:10400:10848:11232:11658:11914:12043:12048:12297:12555:12740:12760:12895:13069:13255:13311:13357:13439:14181:14659:14721:21080:21451:21627:30054:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:1, LUA_SUMMARY:none
+X-HE-Tag: bone84_2ca91b5f55455
+X-Filterd-Recvd-Size: 2304
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf18.hostedemail.com (Postfix) with ESMTPA;
+ Sun, 19 Apr 2020 16:38:26 +0000 (UTC)
+Message-ID: <975f3a73bb272b8276687af609cd7e592d6ba9ac.camel@perches.com>
+Subject: Re: [PATCH v8 8/8] MAINTAINERS: Add file patterns for rcar PCI
+ device tree bindings
+From: Joe Perches <joe@perches.com>
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, Yoshihiro
+ Shimoda <yoshihiro.shimoda.uh@renesas.com>, Kishon Vijay Abraham I
+ <kishon@ti.com>, Bjorn Helgaas <bhelgaas@google.com>, Rob Herring
+ <robh+dt@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Andrew
+ Murray <amurray@thegoodpenguin.co.uk>,  Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel
+ <gustavo.pimentel@synopsys.com>, Marek Vasut
+ <marek.vasut+renesas@gmail.com>,  Shawn Lin <shawn.lin@rock-chips.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Date: Sun, 19 Apr 2020 09:36:11 -0700
+In-Reply-To: <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+User-Agent: Evolution 3.34.1-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_062757_258162_CF3E75A7 
-X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-CacheID: sfid-20200419_093838_539332_221A5CC3 
+X-CRM114-Status: UNSURE (   7.33  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.172 listed in list.dnswl.org]
+ no trust [216.40.44.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.133 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,40 +88,31 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
  linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
  linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
  Lad Prabhakar <prabhakar.csengg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add file pattern entry for rcar PCI devicetree binding, so that when
-people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
-be listed.
+On Sun, 2020-04-19 at 14:27 +0100, Lad Prabhakar wrote:
+> Add file pattern entry for rcar PCI devicetree binding, so that when
+> people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
+> be listed.
+[]
+> diff --git a/MAINTAINERS b/MAINTAINERS
+[]
+> @@ -12933,6 +12933,7 @@ L:	linux-pci@vger.kernel.org
+>  L:	linux-renesas-soc@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/pci/controller/*rcar*
+> +F:	Documentation/devicetree/bindings/pci/*rcar*
 
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+MAINTAINERS was recently sorted for consistency.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 3f0f2ee2af32..87df2d31a54b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12933,6 +12933,7 @@ L:	linux-pci@vger.kernel.org
- L:	linux-renesas-soc@vger.kernel.org
- S:	Maintained
- F:	drivers/pci/controller/*rcar*
-+F:	Documentation/devicetree/bindings/pci/*rcar*
- 
- PCI DRIVER FOR SAMSUNG EXYNOS
- M:	Jingoo Han <jingoohan1@gmail.com>
--- 
-2.17.1
+Please move this new line above drivers/ to keep alphabetic ordering.
+
 
 
 _______________________________________________
