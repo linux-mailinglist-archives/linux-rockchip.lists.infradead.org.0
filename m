@@ -2,79 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 402821B056B
-	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Apr 2020 11:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0902D1B0CB6
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Apr 2020 15:33:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JTfZVHAId8Vu0y+dvLkmxhcVd5VeB7kiVYTUTNrWuIs=; b=i2TX7Qx1JyhCR7
-	wQoAU7D89a/XA/WICJZOQjdoEDRpPt+oNNSEkdaBeXR8xbXBx4RfaXwxW+dAzx77/E+kRspljfQy6
-	jT8TRYOFb8cX0Lhydyi3xKodzp8cxaW0KihDHrWFot/DooCPtevZs6pFYs/8D5fuh9JVKI31wKoZA
-	t2MDVA1cUfnvLKCxUeUN0/vE9folEPLPxyjMLM4QcsrwVObrpABWVjdJPJGL2R49Bv+HKkbhQmyxo
-	iSq6y+v2JAAy56t42pw5DZaSEoG47rwe1vR1tAzm1oj2tkjV265bWvmvWOFEU+wDYiU7BDjCp4m+X
-	Pl7ScKlTCSxVgDVpILQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GUdpeqsI12M/91yZ8UpUtMr4B+n6A5D6IWfiSwqyv4M=; b=KL1OSMjKKGHwwL
+	GcDRi9Gj3S+8PL1/Sq7lnAFrwqVbjsFms9IqbrdIeBAOkeuJpuG2UDdlnCbmlqGy7M51uz6bjiOYr
+	lfFkdu2W6c6P93vDcnQPxpUKgLoYugtB1y8Vok63T3BcyUNWnXSzAgLfvY8KOd4n5XMAWsCJfUQF9
+	tYMJyc5hLz2mXqVttEsZNPNJbm1BCMnaK2+79BhvNkMA36nFsXyJuMBO2SeVjAXdmKeswwpz2Scnf
+	SoKdediOAZJxIWXH5P+pHR7/iqMkzx442pibWrBzbIw9sNuuel25Y7UeRf5ydpzuuUC3zpeC4Y58U
+	FnwAU1MgGDPzCytZ9IyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQSYh-0004L2-HW; Mon, 20 Apr 2020 09:17:43 +0000
-Received: from mail-oo1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1jQWYU-0005xp-Sh; Mon, 20 Apr 2020 13:33:46 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQSYe-0004Jx-5G; Mon, 20 Apr 2020 09:17:41 +0000
-Received: by mail-oo1-xc44.google.com with SMTP id e18so1962681oot.9;
- Mon, 20 Apr 2020 02:17:35 -0700 (PDT)
+ id 1jQWYR-0005x8-AT
+ for linux-rockchip@lists.infradead.org; Mon, 20 Apr 2020 13:33:44 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j1so6757751wrt.1
+ for <linux-rockchip@lists.infradead.org>; Mon, 20 Apr 2020 06:33:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AnWmmqyadUpYAg/OdUB3REEr7mswPcf6gajx39PJsls=;
- b=iMz5C7M8nwUrx4PejZt5Ek6DNYZFxgkLLWtP2mqKgO2eJVezj+9VzWUQUMHbt+OmbJ
- 6zeKio16xHc6GdLed5Xy3i/+R9PDWQ91F9WupihOLmer9oz2zNYMIu2dQjHhwc0T1HjC
- B3m1VobXmuxbat9P+52AvY8zl/GGEjIVXYjYurr7gorAu8SJk1mHuDW0CxLswbHPk4w8
- lSnfXrCC3HR/nc3KiUqB4InexSyq6q/Og8e1aRe3fddjrIX1Whl0C4gAkft9JiU+iD99
- 3s52XY3R79g2gBni4SVfzv8VeZ/y2PBZpq+ZLu2L8fKxnL1KiZ26JiZ+LDPi9YYkhw+k
- U+dw==
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=8BFEyEY0pQowkZqKW1UkfT7rrgGTA/DT5VZkesq580U=;
+ b=jI6iP14b7dzEFoZQvAAIUYghaAf74HD2b1ii3wq9eMvvEjaomCD7s16mvfUIQ3rDjA
+ n5zzGtHPJnqu8IG4W2z0EORu4pNg2WrZLng5F5k5QzOFEylOaUGwxN+82zE2B47vgRIQ
+ WLMY9m8uHHcghaTF0wunUg+LFTcKRF4gbhCPF5op07R8yWMAi3J69LC3QtnD3C3lkdMu
+ 3ASAmvnv/2rus6HAuPIVE7WBgsN0oPVDV7aV0dqd3pBPdC18aIFKwVlmxa+v4y+UOnKU
+ eqXdkvPDSZ2DyO3uodzwMos8ejLoUotD4Zx7aoJTfF9GesOL5Hx+Mw3nbLUWgNWTRpWy
+ eNbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AnWmmqyadUpYAg/OdUB3REEr7mswPcf6gajx39PJsls=;
- b=aSuSAiQ2drV4cjrP7GbsXUu8nthLS5Qy+tD9ZpB16Kgcv8cJbzAskdF8SnLSKuUSjC
- 8RLjc1OIxfdjipFTMFbQL4liG+dXXoC8ETIDbUQrvCRk+10QIwcojS7hoiPUIrG1TMeB
- 10FcV1c/tWoJATM6C7G5P+YJD7sIdmR5fWM0frI2ApuRk4WsBOWIxtftjbx3CwotrYWL
- bhfJ6ysoRroM+ruAaUlhYwT7QwYYevV3QHaWqqNmRgm+mna0PwtJwIpf8ARC+aKefncu
- JISJ2AB8AdB/FPsm4pCvCenllTOjS1YfNOhUt5olyZeQnceFVfoU6V5ogAaxUTiHyhsj
- 6KtQ==
-X-Gm-Message-State: AGi0PuY4qWccnHjMbynu4fw3IC9uTPw7eqH6lNmmcvMrmuGU20OavlW6
- G0qLN2J8Pqk9fCFrZh4ncj8mx4+PvuRAoSnRNz4=
-X-Google-Smtp-Source: APiQypI4Gr+ymKJWQD9+txTG6EVrczz7o4VweZ+9eE91Uh1wR935sBN7tHzoKMtrzlSaP1JA6RLmCgydoef3Y6ZHrSo=
-X-Received: by 2002:a4a:e08b:: with SMTP id w11mr12080171oos.62.1587374254916; 
- Mon, 20 Apr 2020 02:17:34 -0700 (PDT)
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=8BFEyEY0pQowkZqKW1UkfT7rrgGTA/DT5VZkesq580U=;
+ b=NECr8gcLJJ0YZ6Jaj8t1j+swPKhmP4pJZEBqudfOszhdTdVfIfRRLqGhw9MeobkoyW
+ H8IIgYL0mXdOegYQimE/c5LoLexA8Gamrc7fVxBBwFnDnTVYT8LjeClhOdVh+MlBcpip
+ 0wEq/8UP7eaNI0a94aoZ/jnD4ZxpWEgtSj+Wfby4KX4X4cnjma4C57YdYkqCRfRdoREW
+ kf5eUtcLTvihAOFk5zgOnIhF4Ijxv+KgbRqCjSlryXDPKd6R0GcqtEwSNUzbrDHwcfDT
+ BxeG7aJXEkWxE1Iy3RCeIRHkeRM0g6KgohgCp+nhPg0HyeGIbdMBarqq8dYujbJDHulw
+ HbSQ==
+X-Gm-Message-State: AGi0PuYgW7tO76kTNoFLCDImPNQIma6GoX8bmjNOpQQmymB5XzUP062T
+ 1Myfi/PffW/z+7uZvRNPGds=
+X-Google-Smtp-Source: APiQypKZk4QdbUtcxcSUADGSPzH1arT+R3V9CoHvjnRas3SWIG9QuEjLf0kMSsO0onIm5RbW3IJU1g==
+X-Received: by 2002:a05:6000:f:: with SMTP id
+ h15mr18501426wrx.408.1587389621483; 
+ Mon, 20 Apr 2020 06:33:41 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id v19sm1310706wra.57.2020.04.20.06.33.40
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 20 Apr 2020 06:33:40 -0700 (PDT)
+To: heiko@sntech.de
+References: <20200326191343.1989-1-ezequiel@collabora.com>
+Subject: Re: [PATCH v4] dt-bindings: rockchip-vpu: Convert bindings to
+ json-schema
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
+Date: Mon, 20 Apr 2020 15:33:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587302823-4435-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB4544FDF2FEDBED104F6C6C45D8D40@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB4544FDF2FEDBED104F6C6C45D8D40@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Mon, 20 Apr 2020 10:17:08 +0100
-Message-ID: <CA+V-a8vkZwgOf8gkxWU62A3L1BTXw_y2H5MGo-7-+ad28q1tWQ@mail.gmail.com>
-Subject: Re: [PATCH v8 5/8] PCI: endpoint: Add support to handle multiple base
- for mapping outbound memory
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+In-Reply-To: <20200326191343.1989-1-ezequiel@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_021740_206548_08CC2091 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_063343_383989_FFBAE683 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,140 +106,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Jingoo Han <jingoohan1@gmail.com>, Shawn Lin <shawn.lin@rock-chips.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh@kernel.org,
+ linux-kernel@vger.kernel.org, hverkuil@xs4all.nl,
+ linux-rockchip@lists.infradead.org, ezequiel@collabora.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Yoshihiro,
+Hi Heiko,
 
-Thank you for the review.
+This patch was applied by the media people Hans and Ezequil without note
+and test I think.
 
-On Mon, Apr 20, 2020 at 10:04 AM Yoshihiro Shimoda
-<yoshihiro.shimoda.uh@renesas.com> wrote:
->
-> Hi Prabhakar-san,
->
-> Thank you for the patch!
->
-> > From: Lad Prabhakar, Sent: Sunday, April 19, 2020 10:27 PM
-> <snip>
-> > @@ -109,11 +137,22 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_init);
-> >   */
-> >  void pci_epc_mem_exit(struct pci_epc *epc)
-> >  {
-> > -     struct pci_epc_mem *mem = epc->mem;
-> > +     struct pci_epc_mem *mem;
-> > +     int i;
-> >
-> > +     if (!epc->num_windows)
-> > +             return;
-> > +
-> > +     for (i = 0; i <= epc->num_windows; i++) {
->
-> I'm sorry, I overlooked when I reviewed before.
-> This condition should be "i < epc->num_windows".
->
-Argh my bad, will fix it.
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-vpu.yaml
 
-> > +             mem = epc->windows[i];
-> > +             kfree(mem->bitmap);
-> > +             kfree(mem);
-> > +     }
-> > +     kfree(epc->windows);
-> > +
-> > +     epc->windows = NULL;
-> >       epc->mem = NULL;
-> > -     kfree(mem->bitmap);
-> > -     kfree(mem);
-> > +     epc->num_windows = 0;
-> >  }
-> >  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
-> >
-> > @@ -129,31 +168,57 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
-> >  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
-> >                                    phys_addr_t *phys_addr, size_t size)
-> >  {
-> > -     int pageno;
-> >       void __iomem *virt_addr = NULL;
-> > -     struct pci_epc_mem *mem = epc->mem;
-> > -     unsigned int page_shift = ilog2(mem->page_size);
-> > +     struct pci_epc_mem *mem;
-> > +     unsigned int page_shift;
-> > +     size_t align_size;
-> > +     int pageno;
-> >       int order;
-> > +     int i;
-> >
-> > -     size = ALIGN(size, mem->page_size);
-> > -     order = pci_epc_mem_get_order(mem, size);
-> > -
-> > -     mutex_lock(&mem->lock);
-> > -     pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
-> > -     if (pageno < 0)
-> > -             goto ret;
-> > +     for (i = 0; i < epc->num_windows; i++) {
-> > +             mem = epc->windows[i];
-> > +             mutex_lock(&mem->lock);
-> > +             align_size = ALIGN(size, mem->window.page_size);
-> > +             order = pci_epc_mem_get_order(mem, align_size);
-> >
-> > -     *phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> > -     virt_addr = ioremap(*phys_addr, size);
-> > -     if (!virt_addr)
-> > -             bitmap_release_region(mem->bitmap, pageno, order);
-> > +             pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> > +                                              order);
-> > +             if (pageno >= 0) {
-> > +                     page_shift = ilog2(mem->window.page_size);
-> > +                     *phys_addr = mem->window.phys_base +
-> > +                             ((phys_addr_t)pageno << page_shift);
-> > +                     virt_addr = ioremap(*phys_addr, align_size);
-> > +                     if (!virt_addr)
-> > +                             bitmap_release_region(mem->bitmap,
-> > +                                                   pageno, order);
->
-> I'm sorry here again. But, I think we should call mutex_unlock() and "continue;"
-> here if ioremap() failed for trying remaining windows. What do you think?
->
-If ioremap() has failed something has really went wrong with the
-system, but there is no harm in trying other windows. So Ill add the
-code as suggested above.
+Errors for example:
 
-Cheers,
---Prabhakar
+  DTC     arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
+  CHECK   arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
+interrupts: [[0, 9, 4]] is too short
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
+interrupt-names: ['vdpu'] is too short
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
+interrupt-names:0: 'vepu' was expected
 
-> > +                     mutex_unlock(&mem->lock);
-> > +                     return virt_addr;
-> > +             }
-> > +             mutex_unlock(&mem->lock);
-> > +     }
-> >
-> > -ret:
-> > -     mutex_unlock(&mem->lock);
-> >       return virt_addr;
-> >  }
-> >  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->
-> Best regards,
-> Yoshihiro Shimoda
->
+See:
+https://lore.kernel.org/lkml/20200403124316.5445-1-jbx6244@gmail.com/
+
++  interrupts:
++    minItems: 1
++    maxItems: 2
++
++  interrupt-names:
++    oneOf:
++      - const: vdpu
++      - items:
++        - const: vepu
++        - const: vdpu
+
+Vs.:
+
+
++  interrupts:
++    maxItems: 2
++
++  interrupt-names:
++    items:
++      - const: vepu
++      - const: vdpu
 
 _______________________________________________
 Linux-rockchip mailing list
