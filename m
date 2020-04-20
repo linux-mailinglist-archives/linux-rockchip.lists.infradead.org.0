@@ -2,91 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0902D1B0CB6
-	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Apr 2020 15:33:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CCF91B0E37
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Apr 2020 16:21:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GUdpeqsI12M/91yZ8UpUtMr4B+n6A5D6IWfiSwqyv4M=; b=KL1OSMjKKGHwwL
-	GcDRi9Gj3S+8PL1/Sq7lnAFrwqVbjsFms9IqbrdIeBAOkeuJpuG2UDdlnCbmlqGy7M51uz6bjiOYr
-	lfFkdu2W6c6P93vDcnQPxpUKgLoYugtB1y8Vok63T3BcyUNWnXSzAgLfvY8KOd4n5XMAWsCJfUQF9
-	tYMJyc5hLz2mXqVttEsZNPNJbm1BCMnaK2+79BhvNkMA36nFsXyJuMBO2SeVjAXdmKeswwpz2Scnf
-	SoKdediOAZJxIWXH5P+pHR7/iqMkzx442pibWrBzbIw9sNuuel25Y7UeRf5ydpzuuUC3zpeC4Y58U
-	FnwAU1MgGDPzCytZ9IyQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/xGcZvotsYckwI5H5ZVnmraGhpNeE7Mq46aXCeClTwk=; b=LWhRnDZMdw30xs
+	jen27t5dUqkpxixrgUjLlKab+1DMvtc6KXfudbv7vOeA5Cm8wYu2PMI0Ojhdr+9yDDOYOqhoiHF0B
+	DsJe87HDeZi9tqjQp2uMuNt2XDhfxFZNR+AHdpYQAcFoQOVZ2lyouWZOp+VKMjm1Bt80TW+70DKij
+	Grm0I2D4a9M6RdDrtVrwdeL1lnxvPnQy9tfR5E67ZXgYG73yw/G2B/qT1Gimn7BftrtWhR+KcpDqF
+	b6bNtKVLUsPvaQWyQv3jD2SKWYCko7Q6duC9C7mXrKAhAXBOqXxIJnW84tWlS/lTJ14J4EbRRN2jw
+	/328QPrBwuYvPPU+gJ5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQWYU-0005xp-Sh; Mon, 20 Apr 2020 13:33:46 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jQXIq-00068m-KX; Mon, 20 Apr 2020 14:21:40 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQWYR-0005x8-AT
- for linux-rockchip@lists.infradead.org; Mon, 20 Apr 2020 13:33:44 +0000
-Received: by mail-wr1-x442.google.com with SMTP id j1so6757751wrt.1
- for <linux-rockchip@lists.infradead.org>; Mon, 20 Apr 2020 06:33:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=8BFEyEY0pQowkZqKW1UkfT7rrgGTA/DT5VZkesq580U=;
- b=jI6iP14b7dzEFoZQvAAIUYghaAf74HD2b1ii3wq9eMvvEjaomCD7s16mvfUIQ3rDjA
- n5zzGtHPJnqu8IG4W2z0EORu4pNg2WrZLng5F5k5QzOFEylOaUGwxN+82zE2B47vgRIQ
- WLMY9m8uHHcghaTF0wunUg+LFTcKRF4gbhCPF5op07R8yWMAi3J69LC3QtnD3C3lkdMu
- 3ASAmvnv/2rus6HAuPIVE7WBgsN0oPVDV7aV0dqd3pBPdC18aIFKwVlmxa+v4y+UOnKU
- eqXdkvPDSZ2DyO3uodzwMos8ejLoUotD4Zx7aoJTfF9GesOL5Hx+Mw3nbLUWgNWTRpWy
- eNbg==
+ id 1jQXIY-0005mk-1V
+ for linux-rockchip@lists.infradead.org; Mon, 20 Apr 2020 14:21:23 +0000
+Received: by mail-il1-x142.google.com with SMTP id w6so5565561ilg.1
+ for <linux-rockchip@lists.infradead.org>; Mon, 20 Apr 2020 07:21:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nnAOI1x4ASY+lCPHniKXrcB2zt/qr+P0D/sxPqSPkpA=;
+ b=JHkY9gsqL6+5fcpChyfNBpdSGzn/++w/ZxNte9fLEMIU255uspsLg4uq0xDK7rrtDC
+ Gp4VWSM+qk5q2eac/lWURoLMS+M4hppdbMCyt1SLx/C5ZJlbR4Ef0pqZhlvzZjvQQPmF
+ 5f7W5O5NJy22/Y1ObJJDJ+C8tDFij1/iWN2fg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=8BFEyEY0pQowkZqKW1UkfT7rrgGTA/DT5VZkesq580U=;
- b=NECr8gcLJJ0YZ6Jaj8t1j+swPKhmP4pJZEBqudfOszhdTdVfIfRRLqGhw9MeobkoyW
- H8IIgYL0mXdOegYQimE/c5LoLexA8Gamrc7fVxBBwFnDnTVYT8LjeClhOdVh+MlBcpip
- 0wEq/8UP7eaNI0a94aoZ/jnD4ZxpWEgtSj+Wfby4KX4X4cnjma4C57YdYkqCRfRdoREW
- kf5eUtcLTvihAOFk5zgOnIhF4Ijxv+KgbRqCjSlryXDPKd6R0GcqtEwSNUzbrDHwcfDT
- BxeG7aJXEkWxE1Iy3RCeIRHkeRM0g6KgohgCp+nhPg0HyeGIbdMBarqq8dYujbJDHulw
- HbSQ==
-X-Gm-Message-State: AGi0PuYgW7tO76kTNoFLCDImPNQIma6GoX8bmjNOpQQmymB5XzUP062T
- 1Myfi/PffW/z+7uZvRNPGds=
-X-Google-Smtp-Source: APiQypKZk4QdbUtcxcSUADGSPzH1arT+R3V9CoHvjnRas3SWIG9QuEjLf0kMSsO0onIm5RbW3IJU1g==
-X-Received: by 2002:a05:6000:f:: with SMTP id
- h15mr18501426wrx.408.1587389621483; 
- Mon, 20 Apr 2020 06:33:41 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v19sm1310706wra.57.2020.04.20.06.33.40
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 20 Apr 2020 06:33:40 -0700 (PDT)
-To: heiko@sntech.de
-References: <20200326191343.1989-1-ezequiel@collabora.com>
-Subject: Re: [PATCH v4] dt-bindings: rockchip-vpu: Convert bindings to
- json-schema
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
-Date: Mon, 20 Apr 2020 15:33:38 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nnAOI1x4ASY+lCPHniKXrcB2zt/qr+P0D/sxPqSPkpA=;
+ b=I807bVPyAfhFIsfQ72TAACvwwdCsGNFmEiZYx0K/a7xpXj4D327ZczoUQTsF1KWDiC
+ XtXovN+6lJFYZ62nI8hk3k5VUcnJnNh1xJfvLdIm6eEJPNb8oLiBMJK7EdKprV6PFZhq
+ iIkxWMFnQ6NbXue9YrDL/IAVgJr3DI9kygPr6sBIg724WkMPcggWbVjT7v0X5b6LDz74
+ tBFJY/wRs0UUFBzNcJHcn7NLYfcEEour0xplPAOJBsAz68fwlhCempbGZwqrVfvPCXJV
+ ebeeqQ+YC9Qy44UBuuZokxMp4Dg+jdxIt18DDaoEduaVorlND4N1buIXKnvc3YnyDIhs
+ Raag==
+X-Gm-Message-State: AGi0PuaGWoWJtQb45Wp/WgfFGtWymIj8GNBM+4yNnzcl4fbeKNr8Bm3G
+ IWIipBlbnJLIFQIM8b3yd6LpovGdYbOQk6IOf8T1eQ==
+X-Google-Smtp-Source: APiQypIRvCnS4PSiGgvI5JZv/fA2M6vyOk0TCOpZ8JNXk96MVpTs4TX7l6Rv4hTZRPv5QYFwbPR9Ge86eQieg5vMGPU=
+X-Received: by 2002:a92:cf0a:: with SMTP id c10mr14982475ilo.173.1587392479923; 
+ Mon, 20 Apr 2020 07:21:19 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200326191343.1989-1-ezequiel@collabora.com>
-Content-Language: en-US
+References: <20200410182631.11951-1-jagan@amarulasolutions.com>
+In-Reply-To: <20200410182631.11951-1-jagan@amarulasolutions.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Mon, 20 Apr 2020 19:51:08 +0530
+Message-ID: <CAMty3ZDUk2+N8up3zXaaV3XGy=SmoMB35HiyCXvamf2spwVjrA@mail.gmail.com>
+Subject: Re: [PATCH v2 0/3] environment: distro: Add SF distro support
+To: Tom Rini <trini@konsulko.com>, Kever Yang <kever.yang@rock-chips.com>, 
+ Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_063343_383989_FFBAE683 
-X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-CacheID: sfid-20200420_072122_240822_A4C42DA2 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,58 +91,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh@kernel.org,
- linux-kernel@vger.kernel.org, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, ezequiel@collabora.com,
- linux-media@vger.kernel.org
+Cc: U-Boot-Denx <u-boot@lists.denx.de>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ Suniel Mahesh <sunil@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+On Fri, Apr 10, 2020 at 11:57 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> This patch is based on Tom comments from previous
+> version[1] for adding new distro support separately
+> as in include/environment/distro/sf.h
+>
+> This new sf distro command not touch the existing
+> include/config_distro_bootcmd.h.
+>
+> Used this new SF distro command in rk3399 platform.
+>
+> [1] https://patchwork.ozlabs.org/patch/1232666/
+>
+> Any inputs?
+> Jagan.
+>
+> Jagan Teki (3):
+>   environment: distro: Add SF distro command
+>   rk3399: Add boot flash script offset, size
+>   rockchip: Enable SF distro bootcmd
 
-This patch was applied by the media people Hans and Ezequil without note
-and test I think.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-
-Errors for example:
-
-  DTC     arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
-  CHECK   arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupts: [[0, 9, 4]] is too short
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupt-names: ['vdpu'] is too short
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupt-names:0: 'vepu' was expected
-
-See:
-https://lore.kernel.org/lkml/20200403124316.5445-1-jbx6244@gmail.com/
-
-+  interrupts:
-+    minItems: 1
-+    maxItems: 2
-+
-+  interrupt-names:
-+    oneOf:
-+      - const: vdpu
-+      - items:
-+        - const: vepu
-+        - const: vdpu
-
-Vs.:
-
-
-+  interrupts:
-+    maxItems: 2
-+
-+  interrupt-names:
-+    items:
-+      - const: vepu
-+      - const: vdpu
+Applied to u-boot-spi/master
 
 _______________________________________________
 Linux-rockchip mailing list
