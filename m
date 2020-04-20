@@ -2,86 +2,118 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6CFD1AFD45
-	for <lists+linux-rockchip@lfdr.de>; Sun, 19 Apr 2020 21:11:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59CC51B052B
+	for <lists+linux-rockchip@lfdr.de>; Mon, 20 Apr 2020 11:04:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4LK8IReRGzof3i6XJXW2zWHF4QQ3jvaLQXeB53qWAwU=; b=IaW9X4qlIG73fh
-	lpzFqPNlLYBkWVn1xCHjdhDj532f8jJGansMiYJksjHb2qA2g+lAZd0H+UU5pD0MbuFhUX+MqixlN
-	S6vlGl0sJx1AexHkou4dpZ9XqdLkrnJf6yGU3BPBDp2GGlymZzGFwV+1k4xprb42NpaNBiL1D4TGL
-	jQXuqiC23j4L1Jw5csd7vHn55aqz2b9doqLnxje4NqVHpfTTw9X9nUTjL7w+YWyW2iq0SmFqz0Zpz
-	kFSXgBvk2SfAi1gUzI7qj1aHHGRBm8kyfu9Hne6dw8bUbrXhLKnPiNAVGtpa1RPex7ylfuOwNiDBc
-	iPir+RZfICb28VbjcwMw==;
+	List-Owner; bh=1W8Fx6a1iLkObkEuc6R6PzBt2H2QHmMOO2c9yJCtutU=; b=nOXqfRMDkuc/4a
+	YFUade9GuoUsI9bfcIkpBZ/9MFhzvDVQVx/tAbsMjR0DGioMi+Vps9M1JpNzy9r7wvcc/vgdbAGfH
+	DhKxOxgxjiGsIzus3MGtYYewW8LO4vZf6Jelb+V60S9bht8CnVmQBrofDqkU8WtBx4Rwd1EoPcPUg
+	iaYzmBmnbKj5FWoSyhlaS523ZIKk1ccqLGIySC+/osmKZhvT5z6HagBKkglsnGfx6zDfMvvtmj5LO
+	z4vCXT31PDwk0l6tKsXxiZDtnmrHWd53UudO5ymVl2tyebhuVPydGrTF8grJ+82uT8AmE9L/3pDOV
+	j5eyTlzpJmgdCC8/clTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQFLB-0006fy-4H; Sun, 19 Apr 2020 19:10:53 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1jQSLY-00034D-W1; Mon, 20 Apr 2020 09:04:08 +0000
+Received: from mail-eopbgr1410092.outbound.protection.outlook.com
+ ([40.107.141.92] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQFL8-0006en-AE; Sun, 19 Apr 2020 19:10:51 +0000
-Received: by mail-oi1-x243.google.com with SMTP id j16so6915298oih.10;
- Sun, 19 Apr 2020 12:10:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gED75tHRUZsoWEBmkmqXmBkA+S7n+TXCiZUX+ASdEyA=;
- b=AMF1DXFRPm9Bk2MU0CgrIARVheldiQhxEiQbB0EpUkPWCUMpk9ohQMAwbi4ShqBtdd
- p3uu4cYI/3J8aCDSkzPifeuU4v6OK9jdP63Z8MqSalHHTYcf2Ky9o9DQLxOMmLIIvgU0
- FoGFyJl3TZY7zrAU841JHbEE2tqAG1a/eAraXi9sKJpT6aDEtU/4m4OFMABqs2irQVhA
- 79AVHbzXGeIeCW5I3C3GJi1F7WBCY1a1YUrVfMAz8iDc6Znpxny4sb0eTxKyZ6AY9A+8
- XzenocQ/xWKFrjh7QZ4llHhcPYnMmkxedz2lc5Cju6rY9fMqAEd3FBmoAO5FOxykeK3d
- aYwg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gED75tHRUZsoWEBmkmqXmBkA+S7n+TXCiZUX+ASdEyA=;
- b=OXMm1LE4moRoX+GsnKf1Q63TQfPPxWgDzVxXjdBiz4DE3PwpVDUc1d8ton0rHd58SJ
- HhrWg5KyRgiATTIN0jNsyYLfAunmNny1ErTH3pGEhD86NxTeLTVX7pZpW4uGa7EnKGcS
- cj23YnIVBFkn7U3at5HgCjiP+Gh6iPxnjaGTd7JbSlPlHaP/Y2LHzxs2oViVZES1jdLx
- A2bNtbnGN/Qg6ZMSU4kwW5PJko76pGhFQ/Vl3wW1NeHZcRW8AP+rc0Bk5sUmzBQT2gtO
- xF6VrQ8IcVk4O9FKOKYRW1svVgIh/hrxnQ5GnaKsTgPlKmln0/BiOeO2UNAyapzPaeuP
- e+gg==
-X-Gm-Message-State: AGi0PuZnqB+3rmqZhJ3SwxyOhD+E9KfISjQClKjUPOF/zUHl28e2bBik
- WuynpQeMyMf5apuMLdvEz6jF0fpWmBE3D2814S4=
-X-Google-Smtp-Source: APiQypJy/sjdjUWZOujEBGWlWQXsxdIbkeokdvT3BGmONZYx9UDW/EoFLMydMrhyS4nVxPTI0l8LnJ60Q9sNUNhhjPg=
-X-Received: by 2002:aca:5d83:: with SMTP id r125mr8757326oib.8.1587323448883; 
- Sun, 19 Apr 2020 12:10:48 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jQSLW-00033b-69; Mon, 20 Apr 2020 09:04:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KI33g9xZBgHKaW5voW69jTw0gIidmq43HfdrX6QMYgXFNfwybamzIX+n8FZCI2BXJV6c+Z4E3AU9k//W+xZr4GAFjPuIfiK7MEwSjc7S8pTo9HRT/mOw+YxhXyuOw9J4aJpK/jw95zrY/gw1TjKLgwHIWtLmfe8hipmzJmbGE6NktHcArgIktQ8zhX5n/smQEFA7EmRNuCUsqtvkzONodNX8zkRcLWZWlOpBFKp9BJLew7347v/Q7iU+wSYtmd8q0PeaG6hIMS/mALstP6m3HHrj4dL8FjnitGWYWf3/ihe3EaRCL4B3TUMfn9xt7mfyQwyCS3dZk6XJnXcEK8hwYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7TGHtjA5Z7WbIVqJ1NdRUTSyiYds1CA/1Sub6kW+AsM=;
+ b=dnLClVAWCWhhrPRoYohHDdI84YSchTRAEHy6ZF1laXTQ63irMmy11fNqP5eQ/XH7BKZ9Chz9edBP3yzbLMZUCH5CZvaWiJ6P9a5unQrRHI1dvrAlzxgJfBj6GAYOVaOs2shUsD9iYxZX8Z47zSTca5q/QrRTGNofW9P+4l7Zc67Tgfi3S8EhAE4KpjlPNVRKc1IoPsh1Dsk1hA2+3KW4n/k2evCsA86Kvz/rfh7mGqb/f8SipzkuWmeLsAgvN5XndjcgH94lg1oaLSenOWjaySWG7kap3JiMxhIBHn357FVo6U9gIRAX7zJh8cPVjZ6XIvs1mlZxQjE8WW3xrjF7/Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7TGHtjA5Z7WbIVqJ1NdRUTSyiYds1CA/1Sub6kW+AsM=;
+ b=pwDDKyOF1YoAfw1ZG+LryRjLQgwFZFnHHsIIj76nl4cD6qnLApYcMgWdkcxbeK+C//xC+dFdMvPH87YqeZGUceeNuZ2ptHsCFJh98kwFN55FXzLJSeXnMhL7JU66dOFWYqK5Ik3PIrIL9nf3g3dPBaHVbV4SEk6KAoB7nEAS1SY=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB2605.jpnprd01.prod.outlook.com (20.177.103.137) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2921.26; Mon, 20 Apr 2020 09:04:00 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::ed7f:1268:55a9:fc06%4]) with mapi id 15.20.2921.027; Mon, 20 Apr 2020
+ 09:04:00 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, Kishon
+ Vijay Abraham I <kishon@ti.com>, Bjorn Helgaas <bhelgaas@google.com>, Rob
+ Herring <robh+dt@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>, Tom Joseph
+ <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel
+ <gustavo.pimentel@synopsys.com>, Marek Vasut <marek.vasut+renesas@gmail.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: RE: [PATCH v8 5/8] PCI: endpoint: Add support to handle multiple base
+ for mapping outbound memory
+Thread-Topic: [PATCH v8 5/8] PCI: endpoint: Add support to handle multiple
+ base for mapping outbound memory
+Thread-Index: AQHWFk5NxeIeMSjSVEWc7YIINcCN9KiBtnxg
+Date: Mon, 20 Apr 2020 09:04:00 +0000
+Message-ID: <TYAPR01MB4544FDF2FEDBED104F6C6C45D8D40@TYAPR01MB4544.jpnprd01.prod.outlook.com>
 References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587302823-4435-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <975f3a73bb272b8276687af609cd7e592d6ba9ac.camel@perches.com>
-In-Reply-To: <975f3a73bb272b8276687af609cd7e592d6ba9ac.camel@perches.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Sun, 19 Apr 2020 20:10:22 +0100
-Message-ID: <CA+V-a8uADgccR7sr_Jc0t6gcwGSX5aOANF4NZeNY6ZoSaJJ4Xg@mail.gmail.com>
-Subject: Re: [PATCH v8 8/8] MAINTAINERS: Add file patterns for rcar PCI device
- tree bindings
-To: Joe Perches <joe@perches.com>
+ <1587302823-4435-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1587302823-4435-6-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [124.210.22.195]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 29289b9f-751e-47cc-7a2c-08d7e509c438
+x-ms-traffictypediagnostic: TYAPR01MB2605:|TYAPR01MB2605:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TYAPR01MB26058622ED10DD7BFE47D86AD8D40@TYAPR01MB2605.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 03793408BA
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TYAPR01MB4544.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(10019020)(4636009)(396003)(376002)(346002)(39860400002)(366004)(136003)(55016002)(107886003)(9686003)(33656002)(4326008)(76116006)(52536014)(64756008)(66556008)(66476007)(66946007)(186003)(55236004)(26005)(6506007)(7696005)(66446008)(316002)(54906003)(8676002)(81156014)(8936002)(110136005)(2906002)(5660300002)(478600001)(86362001)(71200400001)(7416002)(921003);
+ DIR:OUT; SFP:1102; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: tuuphgj5ozXh/JagCacIiYpiQHopSrB44vp7l4QbKFcfeL/cyfeYcrdVsVhBfvUWgwp8B7uRcq0k9jAGi/NBNdA8OASsTMuIYmr7ljnxK5kkMy63/VKrTapfgM4qphbExzhVKMEwwlX3d3Vr0OVxBTJNVvKeDs/Mg+seaAaYsbcvVMMM3Rsbrgk2jKKZcLFZMcATuCjd7cwyXEI0enm9q3Cx76X76BiYUuMw4+m7NaGEFb2o0uJjWd15C1ie8Hzfql98tG/wCNoPLvHWXbIc0QHX8w6XlOQvDIENA3YK+CvHhJLwEITKhizoWIt4FwrvBvi0i065aw1xm4iA8gNuH44lqLU95eGTdf2O44gSafTZKaZ+HqdOEREZ90atDXFcDwaur4p+qBhBkd2ZDrtsm+AAIhT4Id5f1uuAXB3psvO2b1WcE7Q5GDn2ftDBbgdfEBDMobrGDJTcGsFhvDDiV2zwTYXNn0Wu+ZDxKTjMhFg=
+x-ms-exchange-antispam-messagedata: B5753voFyj56JAbim634rYGLx2IMGOn8IXdCWRgzA3Z+9c8F7FwlwMUzg9V5ysP5+N+GfYD3l2x0S5dkmKn0BIkNU38qvvl9QK35wxzWHz958W0ZHuMKYu6v/3qvoxXDjUha0eKNgoED+8nMK0qUXQ==
+MIME-Version: 1.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 29289b9f-751e-47cc-7a2c-08d7e509c438
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Apr 2020 09:04:00.4087 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: D0AmiTVgX7RGN8P+dRYr045sJi9aVmMWAqWSjsZUPEBseyxbxCgZS+H4qZOTutGa0QupR4Up3qUed9Sf5UcFE0FX3uR444mfGB1aKq5jhqkZCP5Ma4d1K4EuM2zr95rJ
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB2605
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200419_121050_379085_AC806E6C 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200420_020406_285197_1E36E79A 
+X-CRM114-Status: GOOD (  13.95  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.141.92 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,53 +126,117 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci <linux-pci@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, LKML <linux-kernel@vger.kernel.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ Lad Prabhakar <prabhakar.csengg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Joe,
+Hi Prabhakar-san,
 
-On Sun, Apr 19, 2020 at 5:38 PM Joe Perches <joe@perches.com> wrote:
->
-> On Sun, 2020-04-19 at 14:27 +0100, Lad Prabhakar wrote:
-> > Add file pattern entry for rcar PCI devicetree binding, so that when
-> > people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
-> > be listed.
-> []
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> []
-> > @@ -12933,6 +12933,7 @@ L:    linux-pci@vger.kernel.org
-> >  L:   linux-renesas-soc@vger.kernel.org
-> >  S:   Maintained
-> >  F:   drivers/pci/controller/*rcar*
-> > +F:   Documentation/devicetree/bindings/pci/*rcar*
->
-> MAINTAINERS was recently sorted for consistency.
->
-> Please move this new line above drivers/ to keep alphabetic ordering.
->
-Sure I will rebase this patch on -next and post this patch independently.
+Thank you for the patch!
 
-Cheers,
---Prabhakar
+> From: Lad Prabhakar, Sent: Sunday, April 19, 2020 10:27 PM
+<snip>
+> @@ -109,11 +137,22 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_init);
+>   */
+>  void pci_epc_mem_exit(struct pci_epc *epc)
+>  {
+> -	struct pci_epc_mem *mem = epc->mem;
+> +	struct pci_epc_mem *mem;
+> +	int i;
+> 
+> +	if (!epc->num_windows)
+> +		return;
+> +
+> +	for (i = 0; i <= epc->num_windows; i++) {
+
+I'm sorry, I overlooked when I reviewed before.
+This condition should be "i < epc->num_windows".
+
+> +		mem = epc->windows[i];
+> +		kfree(mem->bitmap);
+> +		kfree(mem);
+> +	}
+> +	kfree(epc->windows);
+> +
+> +	epc->windows = NULL;
+>  	epc->mem = NULL;
+> -	kfree(mem->bitmap);
+> -	kfree(mem);
+> +	epc->num_windows = 0;
+>  }
+>  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
+> 
+> @@ -129,31 +168,57 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
+>  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
+>  				     phys_addr_t *phys_addr, size_t size)
+>  {
+> -	int pageno;
+>  	void __iomem *virt_addr = NULL;
+> -	struct pci_epc_mem *mem = epc->mem;
+> -	unsigned int page_shift = ilog2(mem->page_size);
+> +	struct pci_epc_mem *mem;
+> +	unsigned int page_shift;
+> +	size_t align_size;
+> +	int pageno;
+>  	int order;
+> +	int i;
+> 
+> -	size = ALIGN(size, mem->page_size);
+> -	order = pci_epc_mem_get_order(mem, size);
+> -
+> -	mutex_lock(&mem->lock);
+> -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
+> -	if (pageno < 0)
+> -		goto ret;
+> +	for (i = 0; i < epc->num_windows; i++) {
+> +		mem = epc->windows[i];
+> +		mutex_lock(&mem->lock);
+> +		align_size = ALIGN(size, mem->window.page_size);
+> +		order = pci_epc_mem_get_order(mem, align_size);
+> 
+> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
+> -	virt_addr = ioremap(*phys_addr, size);
+> -	if (!virt_addr)
+> -		bitmap_release_region(mem->bitmap, pageno, order);
+> +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
+> +						 order);
+> +		if (pageno >= 0) {
+> +			page_shift = ilog2(mem->window.page_size);
+> +			*phys_addr = mem->window.phys_base +
+> +				((phys_addr_t)pageno << page_shift);
+> +			virt_addr = ioremap(*phys_addr, align_size);
+> +			if (!virt_addr)
+> +				bitmap_release_region(mem->bitmap,
+> +						      pageno, order);
+
+I'm sorry here again. But, I think we should call mutex_unlock() and "continue;"
+here if ioremap() failed for trying remaining windows. What do you think?
+
+> +			mutex_unlock(&mem->lock);
+> +			return virt_addr;
+> +		}
+> +		mutex_unlock(&mem->lock);
+> +	}
+> 
+> -ret:
+> -	mutex_unlock(&mem->lock);
+>  	return virt_addr;
+>  }
+>  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
+
+Best regards,
+Yoshihiro Shimoda
+
 
 _______________________________________________
 Linux-rockchip mailing list
