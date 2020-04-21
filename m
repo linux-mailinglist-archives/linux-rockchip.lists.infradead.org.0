@@ -2,78 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C512A1B2228
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 10:58:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1D611B2785
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 15:19:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HRybqR1NtAD94uvpRA/tPy6iHpK9ccPadvEhL7xm0s=; b=elaq0MBvyY3N5v
-	M2jiTtFoYMEU/K0w6tVtFYAt8pPX7+0kje3gp9MW1LAUiLiMktbAel+OWsJb2PX6EjDmaLQ/jY0AD
-	fNj5RiIdLshA29pia0oPqnTSP11diYH3ASDnfXVbXOJ+P7phoUy7DC0DLa3k6NVLXkm5MPT6Yjvuo
-	7g9LE1TPriaMUHU+tf2CVHNA5eRO0geGCSwu4tO6hM4Lnepb1nW4QyithsdO/hwhQMjlrWhM6L65Z
-	RB97pRJvLFikyzfBNGpEQ6kNrB9Vi8obA515qFZv61HVBzxkI6G0OooNeSnbXBZ6D/Qg2Hj19Tyt3
-	iOgcz0mNdRGYceKFjFBw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6COE7yTPg5iS/ynaOC83ZgK9wX6fRwBACMMVX39vq5Y=; b=rfBAeOWaWiyxwG
+	F8GHUTjqxpuXu1Rp+RxzavJLQeNv7MBDcc3MYI4KIyJPsC6pdC0KuPoS7sPTwM/EWvr0kWL7XKy+z
+	OuDaaJ6Km+s5XHI1/w6LxOWB6lEiw1yl8SHnAnM0i/OWs3x/hgHPgoxaTLCu6wRvpYrt10gFrzchU
+	Im2obrW9faKfRa0R532DlNhddtDvwqe5SeozwH8ZgoEYz+j8rpCIPKk814aI0GalINFcjRZ936urd
+	D8nGBwk0dD0YlCBRxH0Uz/WsYTL33ZpTKGvP0pW90Sy6Ib67ccfLy53ffhUpFapT26Pot+/QHDLtt
+	hLXY2TiLTw5iLbOyysyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQojn-0006AY-Ap; Tue, 21 Apr 2020 08:58:39 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1jQsoR-000535-Jy; Tue, 21 Apr 2020 13:19:43 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQojk-000698-C0; Tue, 21 Apr 2020 08:58:37 +0000
-Received: by mail-ot1-x342.google.com with SMTP id z17so10632501oto.4;
- Tue, 21 Apr 2020 01:58:34 -0700 (PDT)
+ id 1jQsoO-00051t-98
+ for linux-rockchip@lists.infradead.org; Tue, 21 Apr 2020 13:19:41 +0000
+Received: by mail-wm1-x341.google.com with SMTP id e26so3515861wmk.5
+ for <linux-rockchip@lists.infradead.org>; Tue, 21 Apr 2020 06:19:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dUns/kjPu6u9tSXe7Z8gHTGMDO76ns/IgyXfimiO/PU=;
- b=FVLHAm8HaJhFpLMnFDibkZl8lVYjKyP9RfKPVv5QkQ+HIfcyk1jy3TtEr08bO6yyY1
- zOLA59m/g/X5ydWB8ha3Ydk5O9h1g1+tGiTMn8o+HBSKJJflYJeV3bjqSRQTiG7SdCwB
- q+32tDGMtH2rQ4I63c3aSL/+a5GNh9i7QlAxyXJm1rWNFHfl3eCq7pmkOjClW498lij6
- 35rzXXdZHx5bwhm8LyoAC0hgj+1NWoN403i8d0KpIDbVRLQU7gAtpCdGrzoYJPTHDI/f
- gUurocG2xt4xP0EhfaMGsqqfB1LYdMKvgGq2GMeUYW5eAjaa9Oo0VGHBHgLrNktv5RCd
- ZC/g==
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=TAO+0ZkQGzRlz79i9so3eTTstzU170GvA9NPAGQEIMQ=;
+ b=D9x5mxHFMGg+HnZopS9+Zgl4ocxvopuSEo6BqEwDW+5f7Jn7eo+EHmjtUGZw43My+S
+ nIDulDrnrMxWXgjM4y+tGlVDAEjZkxqJfKld3UD7pDfmcQWp7ayYOkwv3kHM9k3z3L4B
+ y5BRcojU/DG5+0lIoEZ9XlRNCvYgxfhnxkwo3KIpIcdX7iZZSfh5ZbR7OrNk/g0LvUCs
+ Lf84VWlivj4vXdm6uRvwXD+7ay1CdeqM6cDVKe7MNMOVKUryPAnqYJDMGUwlWZc1zEvL
+ O76dUv+liatt0wUeHHESLmXa+leq7LgDWVVEXEf+nAEFNd5+7kvSQVgncU87Xi2rarAD
+ Ok5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dUns/kjPu6u9tSXe7Z8gHTGMDO76ns/IgyXfimiO/PU=;
- b=oPBPK31Xf2OcBXCxBvx9Fm70vqIcDz8YQgTfWj7pLaEQJhkzF4XYdqTQXAzw1chotn
- Ib5B+jpiAMVaQNNHTNw4V0GZZf3ne55j+TluM37qgei0bhBPi5y4632+QRlG6ZaU0lTA
- Nm5gqkWya5MTZV8pWLCfluWlYf7Jla71Fsv7aVHkQoDbil66VjgYMuky2/1d+6IW198I
- C2J3BJ1hSFgjeCT/oZKTdT0cfVrOpdFnHpNC5qvYKQXcXE7mqhdcZtcgYGxsNEPB7Heg
- kF1Fn6ogndVNfYr9xjVPSTp60ozIVCtzfCii/F7o/+BIedNZy5kVFh1+BXUD1acRA9G7
- NmvQ==
-X-Gm-Message-State: AGi0PuYSJaz+ZOd5bxt0As4WHZBhMgubVFZ7Fz7joxE7W1/ezADFYjXg
- eD3G0odPRf00us91Iz6dpXSsPhAFQEQ23xGNeCw=
-X-Google-Smtp-Source: APiQypI8xj3IMjACE9QOAf2a0RsB6nIO3wKgy0JpQgDppV6khnJ3NaCV2mAllXXjBYSbqW/spQXkXeOjPHw63y+tTFE=
-X-Received: by 2002:a9d:895:: with SMTP id 21mr12415957otf.365.1587459514238; 
- Tue, 21 Apr 2020 01:58:34 -0700 (PDT)
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=TAO+0ZkQGzRlz79i9so3eTTstzU170GvA9NPAGQEIMQ=;
+ b=kvHEEHsvaNi4HbJaib+hSoVTfSuhcXnqYcXugnMOuZotwLYfawSXExTfnqqmZDdQ6P
+ 5Ix3tT5f/qHKV2epGjNQIpZDLkWARxiWopahzUNPTDDyyRJ+mx0egAhEhVim5rhsyHud
+ Ckhb1+yejKaZnetXGXaynslwiUdFge6MJo2T4dspK5OlbpqV1pEUdvjzTv7YeJF63HTI
+ TwDHAU99SmXhUAi/7emAzq0hA/GBfuhm0k1uvaWnkrp71iFfc0qJR4XT6BHOLlljZCKb
+ TV+srHXg2glqk8Uihm5ifVf6FCiFfvBgHcc5PI7UypTUtHaSMdbKZv9jJhiNS+hlhql2
+ YrKw==
+X-Gm-Message-State: AGi0PubuW+3Bbo+t0Ykw/TSIcllYJZN67ltCAfw15PDD7RDggpeAiUHm
+ i3o9dAGa4USp22B+rnvRxAo=
+X-Google-Smtp-Source: APiQypLr/7nO9p+xL01dDsn1rdwzQMyND4hb6/GRHkqQt+WjCBL145fU5drl2P0dW+IH4WO5WuiZew==
+X-Received: by 2002:a7b:ce0b:: with SMTP id m11mr4981350wmc.67.1587475178825; 
+ Tue, 21 Apr 2020 06:19:38 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id w6sm3847410wrm.86.2020.04.21.06.19.37
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 21 Apr 2020 06:19:38 -0700 (PDT)
+Subject: Re: [PATCH v4] dt-bindings: rockchip-vpu: Convert bindings to
+ json-schema
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+References: <20200326191343.1989-1-ezequiel@collabora.com>
+ <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
+Message-ID: <9328212d-139f-6a0e-7d0c-3a5529a392f2@gmail.com>
+Date: Tue, 21 Apr 2020 15:19:36 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <1587302823-4435-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1587302823-4435-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <TYAPR01MB45443972F88BDA1134628342D8D50@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB45443972F88BDA1134628342D8D50@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Tue, 21 Apr 2020 09:58:07 +0100
-Message-ID: <CA+V-a8tBEwMz4LDfcg2ReLsCkZH7Q_aN1b_Yc1qhp1H_g_HsTw@mail.gmail.com>
-Subject: Re: [PATCH v8 7/8] PCI: rcar: Add endpoint mode support
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+In-Reply-To: <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_015836_411131_05E1EB27 
-X-CRM114-Status: GOOD (  23.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200421_061940_344180_44E74A67 
+X-CRM114-Status: GOOD (  10.63  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,263 +105,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Jingoo Han <jingoohan1@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh@kernel.org,
+ linux-kernel@vger.kernel.org, hverkuil@xs4all.nl,
+ linux-rockchip@lists.infradead.org, ezequiel@collabora.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Shimoda-san,
+Hi,
 
-Thank you for the review.
+Question for the media maintainers Hans & Co. :
 
-On Tue, Apr 21, 2020 at 5:08 AM Yoshihiro Shimoda
-<yoshihiro.shimoda.uh@renesas.com> wrote:
->
-> Hi Prabhakar-san,
->
-> Thank you for the patch!
-> I'm sorry I should have mentioned on previous email. But, I have some comments.
->
-> > From: Lad Prabhakar, Sent: Sunday, April 19, 2020 10:27 PM
-> >
-> > Add support for R-Car PCIe controller to work in endpoint mode.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> <snip>
-> > +static int rcar_pcie_ep_set_msi(struct pci_epc *epc, u8 fn, u8 interrupts)
-> > +{
-> > +     struct rcar_pcie_endpoint *ep = epc_get_drvdata(epc);
-> > +     struct rcar_pcie *pcie = &ep->pcie;
-> > +     u32 flags;
-> > +
-> > +     flags = rcar_pci_read_reg(pcie, MSICAP(fn));
->
-> The argument of MSICAP() should be 0. Otherwise, if the fn is 1 or more,
-> the code reads a wrong register.
->
-Agreed, but fn (func_no = find_first_zero_bit(&epc->function_num_map,
-BITS_PER_LONG); in pci_epc_add_epf()) in any callback is compared
-against to max_functions in the core and  is configurable and by
-default its set to 1 in rcar_pcie_ep_get_pdata(). So this will make
-sure that fn in any callback will always be 0. Said that the binding
-needs to be fixed to:
+What's nxp,imx8mq-vpu.yaml doing under rga?
+Why is rockchip-vpu.yaml inserted under rga instead of vpu?
 
-  max-functions:
-    minimum: 1
-    maximum: 1
+Johan
 
-> > +     flags |= interrupts << MSICAP0_MMESCAP_OFFSET;
-> > +     rcar_pci_write_reg(pcie, flags, MSICAP(fn));
->
-> Same here about MSICAP().
->
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static int rcar_pcie_ep_get_msi(struct pci_epc *epc, u8 fn)
-> > +{
-> > +     struct rcar_pcie_endpoint *ep = epc_get_drvdata(epc);
-> > +     struct rcar_pcie *pcie = &ep->pcie;
-> > +     u32 flags;
-> > +
-> > +     flags = rcar_pci_read_reg(pcie, MSICAP(fn));
->
-> Same here about MSICAP().
->
-> > +     if (!(flags & MSICAP0_MSIE))
-> > +             return -EINVAL;
-> > +
-> > +     return ((flags & MSICAP0_MMENUM_MASK) >> MSICAP0_MMENUM_OFFSET);
-> > +}
-> > +
-> > +static int rcar_pcie_ep_map_addr(struct pci_epc *epc, u8 fn,
-> > +                              phys_addr_t addr, u64 pci_addr, size_t size)
-> > +{
-> > +     struct rcar_pcie_endpoint *ep = epc_get_drvdata(epc);
-> > +     struct rcar_pcie *pcie = &ep->pcie;
-> > +     struct resource res;
-> > +     int window;
-> > +     int err;
-> > +
-> > +     /* check if we have a link. */
-> > +     err = rcar_pcie_wait_for_dl(pcie);
-> > +     if (err) {
-> > +             dev_err(pcie->dev, "link not up\n");
-> > +             return err;
-> > +     }
-> > +
-> > +     window = rcar_pcie_ep_get_window(ep, addr);
-> > +     if (window < 0) {
-> > +             dev_err(pcie->dev, "failed to get corresponding window\n");
-> > +             return -EINVAL;
-> > +     }
-> > +
-> > +     memset(&res, 0x0, sizeof(res));
-> > +     res.start = pci_addr;
-> > +     res.end = pci_addr + size - 1;
-> > +     res.flags = IORESOURCE_MEM;
-> > +
-> > +     rcar_pcie_set_outbound(pcie, window, &res);
-> > +
-> > +     ep->ob_mapped_addr[window] = addr;
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static void rcar_pcie_ep_unmap_addr(struct pci_epc *epc, u8 fn,
-> > +                                 phys_addr_t addr)
-> > +{
-> > +     struct rcar_pcie_endpoint *ep = epc_get_drvdata(epc);
-> > +     struct resource res;
-> > +     int idx;
-> > +
-> > +     for (idx = 0; idx < ep->num_ob_windows; idx++)
-> > +             if (ep->ob_mapped_addr[idx] == addr)
-> > +                     break;
-> > +
-> > +     if (idx >= ep->num_ob_windows)
-> > +             return;
-> > +
-> > +     memset(&res, 0x0, sizeof(res));
-> > +     rcar_pcie_set_outbound(&ep->pcie, idx, &res);
-> > +
-> > +     ep->ob_mapped_addr[idx] = 0;
-> > +}
-> > +
-> > +static int rcar_pcie_ep_assert_intx(struct rcar_pcie_endpoint *ep,
-> > +                                 u8 fn, u8 intx)
-> > +{
-> > +     struct rcar_pcie *pcie = &ep->pcie;
-> > +     u32 val;
-> > +
-> > +     val = rcar_pci_read_reg(pcie, PCIEMSITXR);
-> > +     if ((val & PCI_MSI_FLAGS_ENABLE)) {
-> > +             dev_err(pcie->dev, "MSI is enabled, cannot assert INTx\n");
-> > +             return -EINVAL;
-> > +     }
-> > +
-> > +     val = rcar_pci_read_reg(pcie, PCICONF(1));
-> > +     if ((val & INTDIS)) {
-> > +             dev_err(pcie->dev, "INTx message transmission is disabled\n");
-> > +             return -EINVAL;
-> > +     }
-> > +
-> > +     val = rcar_pci_read_reg(pcie, PCIEINTXR);
-> > +     if ((val & ASTINTX)) {
-> > +             dev_err(pcie->dev, "INTx is already asserted\n");
-> > +             return -EINVAL;
-> > +     }
-> > +
-> > +     val |= ASTINTX;
-> > +     rcar_pci_write_reg(pcie, val, PCIEINTXR);
-> > +     mdelay(1);
->
-> Since pci_epc_raise_irq() calls mutex_lock() and then this function,
-> we can assume this function also can sleep. And, according to
-> Documentation/timers/timers-howto.rst, we should use
-> usleep_range(1000, 1000) instead of mdelay(1).
->
-Sure will replace that.
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index f0e7b4d17fcc..0cfd86594b0b 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -14471,7 +14471,8 @@ M:	Jacob Chen <jacob-chen@iotwrt.com>
+>  M:	Ezequiel Garcia <ezequiel@collabora.com>
+>  L:	linux-media@vger.kernel.org
+>  S:	Maintained
+> -F:	Documentation/devicetree/bindings/media/rockchip-rga.txt
+> +F:	Documentation/devicetree/bindings/media/nxp,imx8mq-vpu.yaml
+> +F:	Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+>  F:	drivers/media/platform/rockchip/rga/
 
-> > +     val = rcar_pci_read_reg(pcie, PCIEINTXR);
-> > +     val &= ~ASTINTX;
-> > +     rcar_pci_write_reg(pcie, val, PCIEINTXR);
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static int rcar_pcie_ep_assert_msi(struct rcar_pcie *pcie,
-> > +                                u8 fn, u8 interrupt_num)
-> > +{
-> > +     u16 msi_count;
-> > +     u32 val;
-> > +
-> > +     /* Check MSI enable bit */
-> > +     val = rcar_pci_read_reg(pcie, MSICAP(fn));
->
-> Same here about MSICAP().
->
-> > +     if (!(val & MSICAP0_MSIE))
-> > +             return -EINVAL;
-> > +
-> > +     /* Get MSI numbers from MME */
-> > +     msi_count = ((val & MSICAP0_MMENUM_MASK) >> MSICAP0_MMENUM_OFFSET);
-> > +     msi_count = 1 << msi_count;
-> > +
-> > +     if (!interrupt_num || interrupt_num > msi_count)
-> > +             return -EINVAL;
-> > +
-> > +     val = rcar_pci_read_reg(pcie, PCIEMSITXR);
-> > +     rcar_pci_write_reg(pcie, val | (interrupt_num - 1), PCIEMSITXR);
-> > +
-> > +     return 0;
-> > +}
-> <snip>
-> > diff --git a/drivers/pci/controller/pcie-rcar.h b/drivers/pci/controller/pcie-rcar.h
-> > index cec7768b4725..0fbeff3d7b78 100644
-> > --- a/drivers/pci/controller/pcie-rcar.h
-> > +++ b/drivers/pci/controller/pcie-rcar.h
-> > @@ -17,6 +17,7 @@
-> >  #define PCIECDR                      0x000020
-> >  #define PCIEMSR                      0x000028
-> >  #define PCIEINTXR            0x000400
-> > +#define  ASTINTX             BIT(16)
-> >  #define PCIEPHYSR            0x0007f0
-> >  #define  PHYRDY                      BIT(0)
-> >  #define PCIEMSITXR           0x000840
-> > @@ -55,12 +56,20 @@
-> >
-> >  /* Configuration */
-> >  #define PCICONF(x)           (0x010000 + ((x) * 0x4))
-> > +#define  INTDIS                      BIT(10)
-> >  #define PMCAP(x)             (0x010040 + ((x) * 0x4))
-> > +#define MSICAP(x)            (0x010050 + ((x) * 0x4))
-> > +#define  MSICAP0_MSIE                BIT(16)
-> > +#define  MSICAP0_MMESCAP_OFFSET      17
-> > +#define  MSICAP0_MMENUM_OFFSET       20
-> > +#define  MSICAP0_MMENUM_MASK GENMASK(22, 20)
->
-> s/MSICAP0_MMENUM/MSICAP0_MMESE/ ?
->
-Sure will replace that.
+HANTRO VPU CODEC DRIVER
+M:	Ezequiel Garcia <ezequiel@collabora.com>
+M:	Philipp Zabel <p.zabel@pengutronix.de>
+L:	linux-media@vger.kernel.org
+L:	linux-rockchip@lists.infradead.org
+S:	Maintained
+F:	Documentation/devicetree/bindings/media/nxp,imx8mq-vpu.yaml
+F:	Documentation/devicetree/bindings/media/rockchip-vpu.txt
+F:	drivers/staging/media/hantro/
 
-Cheers,
---Prabhakar
-
-> Best regards,
-> Yoshihiro Shimoda
->
-> >  #define EXPCAP(x)            (0x010070 + ((x) * 0x4))
-> >  #define VCCAP(x)             (0x010100 + ((x) * 0x4))
-> >
-> >  /* link layer */
-> > +#define IDSETR0                      0x011000
-> >  #define IDSETR1                      0x011004
-> > +#define SUBIDSETR            0x011024
-> >  #define TLCTLR                       0x011048
-> >  #define MACSR                        0x011054
-> >  #define  SPCHGFIN            BIT(4)
-> > --
-> > 2.17.1
->
+ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
+M:	Jacob Chen <jacob-chen@iotwrt.com>
+M:	Ezequiel Garcia <ezequiel@collabora.com>
+L:	linux-media@vger.kernel.org
+S:	Maintained
+F:	Documentation/devicetree/bindings/media/nxp,imx8mq-vpu.yaml
+F:	Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+F:	drivers/media/platform/rockchip/rga/
 
 _______________________________________________
 Linux-rockchip mailing list
