@@ -2,86 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5BA21B2BA1
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 17:51:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 033901B2C2A
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 18:15:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=v2k4BZuc1UBnvn6BpbmhlYvyRE7/yVjHVnUWkCAEGEc=; b=oEF
-	1SPGuDFZhB6h8+MheUbIOghEY23kTAJtyYT5fVqhjX/i1bwgh33FwBN0h6GfXT+4DMe83uMpP/C5c
-	4HzrLbfW4f5o9KtFmYGb2lYhcZ2UbU3qVPcOlHbKhuJ8qIKPC2bH/3euBRoxKT+qzf8EOxYHtECni
-	NefPqbVyL2QSu/vER0MqO+RDxKxkDbq/u0F7kqSvFT3W0TAvT4hl/FOHZYABYMibifQQdmcy9qKzS
-	+qZK+f6zrk98VFIRj5IdrAjSqAbN/rAmm9EPMo0W+rKACDu/DHFckxxRm5b9vldS6hE2pa2/u2wKb
-	WkYUB1oM0BjSxTnu3oSZ4+XcJ6xFoOQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zyaQPDSBzrU1eH4cGeTcA7rm5X7KMcRhThA5IoJxNP8=; b=lj3PpRoa+u6uKE
+	QyexmeNxmN/NC6cyrJIO/W8c1/4iIFCdNTBJc6cMJV5vQ306R5fXrtmmFm4Pjsv17GUASHA0tidmL
+	doLkfOf2pbDE2T6SOSktsSFk9P684E/OPNJmC9mbyLs1jO/uhmpUKWIZHdfh6fgWuqtw5Xx3YCVTI
+	MX57rz92BGw+afY+sD/AsvxegHoavaTeslzKk+yu/CRisRGXO7rnul4QrtAVstLIzCpIsjffioAoB
+	FAEmNJdvonRHoBoUTNgWf0/n8b8P6J41kxXmNxhUILzq8qvfikYnIpVnSd4UAWPHbwr2eWyxtCclM
+	Xszll4AhY9ZfNpNXjhBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQvBh-00070h-6J; Tue, 21 Apr 2020 15:51:53 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jQvYZ-00015B-Cb; Tue, 21 Apr 2020 16:15:31 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQvBV-0006rA-G4; Tue, 21 Apr 2020 15:51:44 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d17so16976199wrg.11;
- Tue, 21 Apr 2020 08:51:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=kcT8YhRThPhegOm3BQj7wUe66PuL6hDa8ErzC+LQvVA=;
- b=T/PyuRExpYtl18m3qkte0wueAWmWWpHTRgZgK8uwu12i+5YbEWa0GkQnamXwmmz2ym
- HnDhNv2mBoB9JSc/2zO24+fUuBTWzCT81vqx7x/beNBoW2Cd5JlP50LrNaiIDdARVTY8
- 9sOn3cfal5fmxmyBKT2JFMwIzpFqAgVi9hKyEoKy3wy+BNKyqoyxTn7bgh02qlQqm7RA
- 4jSQfhpNWkjxqAkY0QObUBLau0NXNyECQ6J7+J8P/AnZz/3VYvfv5HOxkawlcQ6q2RQF
- wXBghlmE8m7LWE8EISO7TF1NwV3wItGrFtlorZhTzNRY/p0HaUCSteOWlgJzbn1FNE26
- YtUQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=kcT8YhRThPhegOm3BQj7wUe66PuL6hDa8ErzC+LQvVA=;
- b=aIcWd2CtfHFOwQJvgFSutyZ5nIp5vKBNy9Q1KsI8/OR/LzNQcHJdIXTWr9X91t/OII
- xrDNa/RPpJ7Gvz6qtuJsmYxMUZjiJdZCB5XaUvB1o87ZBnoptkasAIMNA9w50WmQW9x7
- qWLT+4UnIKmxcnMr0ScAfT7tdZLf2wgl5ettAAhQGPoIINpOD6ferOq/oxFLHgOMDwgF
- OqbCtpSB1A/SxUHQdyIib2DzEyFFRspWzmh/nTn/ZqyVtMwOy3Y1exPaAbv9sWzEy4ka
- qOGZimqeRCnyZ1uYsXb/HsslqYdWxweEqCAqP1DFX1xAqCPPcn20SK5eVp5+a/eyQcHT
- cXRA==
-X-Gm-Message-State: AGi0PuaE5DeLKWV/ZRt2+AME1ag2Ro4XEoJtN5/6gLmSJBa+XiqwkPuS
- SU4YlVMxkcp4aXTAY7GP6lo=
-X-Google-Smtp-Source: APiQypLwxUr2g6yIkcRAqbgAzcYzXQ/xaGoq2pE5TKNjpKqN73rSSuaC3AUnTp3g8GDcaDbKPiJI/g==
-X-Received: by 2002:a5d:4cd0:: with SMTP id c16mr23192004wrt.98.1587484299782; 
- Tue, 21 Apr 2020 08:51:39 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v19sm4357664wra.57.2020.04.21.08.51.37
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 Apr 2020 08:51:38 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] dt-bindings: media: rockchip-vpu: fix interrupt-names
-Date: Tue, 21 Apr 2020 17:51:31 +0200
-Message-Id: <20200421155131.5839-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jQvYC-0007x2-7x; Tue, 21 Apr 2020 16:15:09 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id D26CA2A18B4
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org
+Subject: [PATCH v7 0/8] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+Date: Tue, 21 Apr 2020 19:16:02 +0300
+Message-Id: <20200421161610.1501827-1-adrian.ratiu@collabora.com>
+X-Mailer: git-send-email 2.26.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_085141_537650_E57B27BE 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200421_091508_444908_0510004B 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,61 +59,61 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org, mchehab@kernel.org,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+Hello everyone,
 
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupts: [[0, 9, 4]] is too short
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupt-names: ['vdpu'] is too short
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-interrupt-names:0: 'vepu' was expected
+v7 addresses the points raised by Enric and Laurent in v6.
+Specific details in patch changelogs.
 
-With the conversion of rockchip-vpu.txt to yaml the correct
-'interrupt-names' for rk3328 was not included, so add them now.
-Also add 'minItems' to 'interrupts'for the completeness.
+Two new independent patches were derived from this series
+and posted for review (now they are dependencies for v7):
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-vpu.yaml
+Message-ID: 20200421105814.1364900-1-adrian.ratiu@collabora.com
+Web: https://lore.kernel.org/linux-devicetree/20200421105814.1364900-1-adrian.ratiu@collabora.com/T/#u
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/media/rockchip-vpu.yaml | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+and
 
-diff --git a/Documentation/devicetree/bindings/media/rockchip-vpu.yaml b/Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-index d7a42e6f9..27df18ad6 100644
---- a/Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-+++ b/Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-@@ -24,12 +24,15 @@ properties:
-     maxItems: 1
- 
-   interrupts:
-+    minItems: 1
-     maxItems: 2
- 
-   interrupt-names:
--    items:
--      - const: vepu
-+    oneOf:
-       - const: vdpu
-+      - items:
-+        - const: vepu
-+        - const: vdpu
- 
-   clocks:
-     maxItems: 2
+Message-ID: 20200420100222.1308898-1-adrian.ratiu@collabora.com
+Web: https://lore.kernel.org/linux-arm-kernel/20200420100222.1308898-1-adrian.ratiu@collabora.com/T/#u
+
+Tested on latest linux-next 20200421 with the above two patches
+applied.
+
+Thank you,
+Adrian
+
+Adrian Ratiu (8):
+  drm: bridge: dw_mipi_dsi: add initial regmap infrastructure
+  drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+  drm: bridge: synopsis: add dsi v1.01 support
+  drm: imx: Add i.MX 6 MIPI DSI host platform driver
+  dt-bindings: display: add i.MX6 MIPI DSI host controller doc
+  drm: stm: dw-mipi-dsi: let the bridge handle the HW version check
+  drm: bridge: dw-mipi-dsi: split low power cfg register into fields
+  drm: bridge: dw-mipi-dsi: fix bad register field offsets
+
+ .../display/imx/fsl,mipi-dsi-imx6.yaml        | 135 ++++
+ drivers/gpu/drm/bridge/synopsys/Kconfig       |   1 +
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 692 +++++++++++++-----
+ drivers/gpu/drm/imx/Kconfig                   |   8 +
+ drivers/gpu/drm/imx/Makefile                  |   1 +
+ drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 391 ++++++++++
+ drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  12 +-
+ 7 files changed, 1035 insertions(+), 205 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+ create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
+
 -- 
-2.11.0
+2.26.0
 
 
 _______________________________________________
