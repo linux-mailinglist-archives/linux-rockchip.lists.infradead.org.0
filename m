@@ -2,54 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 704011B1C35
-	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 04:59:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 349F21B1D14
+	for <lists+linux-rockchip@lfdr.de>; Tue, 21 Apr 2020 05:49:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WWPJPtiDnEtx6LDBpkRli6/keD9YtpEXG9rb6I0/FOY=; b=onyqdYVoZhIAlu
-	tUyCV1NKLX6y/6N0+H6XAqoGYXwR/+tIR5XXcvSR78ZunIaP2rVHxlxaRnin5DUqnpJ8hjpZmPsb9
-	LFFZ/QSYJ1yuxKSUcqWgzW04EQk4DWPlzzRurWvoU9o4gz870174Sq5eNEMdWJijUr+S/tcKa0yPj
-	7DcapYNhI7KIK8xDC9CzjfFQy/7CkLim+DC2O7aN4m5IADNpmdzXl6awwUke6/vDxdLFCSz5kYBeY
-	CcYhSkyQ7qw74Zkxuu7+cVOGXRLVWCtF3oPVU46y2epyPFbrJkozw9GbVhZOd6KbJ/af29DqDlokC
-	K2ZurdTm2C5ssxTn1VXw==;
+	List-Owner; bh=AfAKw5KsZ3KQyJfYMPL/NQXk8pFmNksCg59PazmWKjc=; b=gVLw7Ea1jAF0zF
+	/ONsYrC8N4Uy8oAkQrqMagSkzYmb7wwZZw5v/C0vaaWlfB62o60+IZcYF/HPiN+vUga3mGop1SCII
+	NZ4g2Nny0W8bCBsKmvAfNz2QOD5J0+usfUpuDpPOc6ZiI/n/t9e6mMyif4gE+kYw/OTJI7w0sqBCi
+	yxXN8jDV+zcINu+WPYCHKpgSsGsogBzd1HCACGV+F3n/xZfhU97qLhMDy1MN17iIOqv+2ttcdtHsD
+	wQjB/nZRNIUSesClW84uvR/xVPLZpJpKH+pINTBreJ9CpOBbG/PMhH7p8xrQSI7QIx17aKsBAQxp5
+	81jY9vlA7S90ejMbb7xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQj8a-0001eA-Ra; Tue, 21 Apr 2020 02:59:52 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jQjuT-0008Jm-6X; Tue, 21 Apr 2020 03:49:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQj8X-0001cz-A2
- for linux-rockchip@lists.infradead.org; Tue, 21 Apr 2020 02:59:50 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id C6B722A11CD
-Message-ID: <2d1da0b9d857c5607c989be85a04c9d7d9d19b38.camel@collabora.com>
-Subject: Re: [PATCH v4] dt-bindings: rockchip-vpu: Convert bindings to
- json-schema
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
-Date: Mon, 20 Apr 2020 23:59:33 -0300
-In-Reply-To: <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
-References: <20200326191343.1989-1-ezequiel@collabora.com>
- <12f6d7cf-6af6-4f54-3188-65e73b703a72@gmail.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ id 1jQjuF-0008Aj-Fc; Tue, 21 Apr 2020 03:49:09 +0000
+Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com
+ [209.85.208.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 88EC52071E;
+ Tue, 21 Apr 2020 03:49:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587440946;
+ bh=0D6hYraBu1DbsgpFZCPm8t6r20cXBzyDrsgU4Z9wbZk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WWyMs0j3tGy9ANeQcxvdnl4D2WfDvXmeTx+v/xAjU3v1syDAcRLuG+jTM8pAN9C8c
+ +ugCB2prYMNqzzfI9yUZDDQU/E3+XpLnEbFc8dmEc5PWVfX6iEZUISBELut7DAYoEn
+ qZ6RAUv8WCZxTJmFNfy78KPXTD5Iybr6mKPjsOrk=
+Received: by mail-lj1-f175.google.com with SMTP id m8so12461647lji.1;
+ Mon, 20 Apr 2020 20:49:06 -0700 (PDT)
+X-Gm-Message-State: AGi0PuYb9x00y2iPVFRytbGNG1LbdaYxnwaPccg4aNibzykwLYjl8DaJ
+ IlO0cQNanArZ6/gvRCIJzKrgsbf5zMIdyehaGDA=
+X-Google-Smtp-Source: APiQypJ1or0lDKF5QqUv6w69NTZ4v7V/G08isP2Oq7HTw+F7ljB+CKK2Gz7J3f4a+MkTFc+nuAlbnVCvdthGDNd2ybs=
+X-Received: by 2002:a2e:9ada:: with SMTP id p26mr8877859ljj.14.1587440944667; 
+ Mon, 20 Apr 2020 20:49:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200416181944.5879-1-jbx6244@gmail.com>
+In-Reply-To: <20200416181944.5879-1-jbx6244@gmail.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 21 Apr 2020 11:48:52 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67N6t+C8dVKdjuOv1NzD9=3-n0GZQkshy1Pm6PFPJ87dQ@mail.gmail.com>
+Message-ID: <CAGb2v67N6t+C8dVKdjuOv1NzD9=3-n0GZQkshy1Pm6PFPJ87dQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm64: dts: rockchip: add bus-width properties to mmc
+ nodes for rk3328.dtsi
+To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_195949_480962_41CA1211 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200420_204907_560823_0F003354 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,69 +84,74 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh@kernel.org,
- linux-kernel@vger.kernel.org, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hey Johan,
+On Fri, Apr 17, 2020 at 2:19 AM Johan Jonker <jbx6244@gmail.com> wrote:
+>
+> 'bus-width' and pinctrl containing the bus-pins
+> should be in the same file, so add them to
+> all mmc nodes in 'rk3328.dtsi'.
 
-On Mon, 2020-04-20 at 15:33 +0200, Johan Jonker wrote:
-> Hi Heiko,
-> 
-> This patch was applied by the media people Hans and Ezequil without note
-> and test I think.
-> 
+Nope. First of all, pinctrl usage is with pinctrl-N properties, not the
+pinctrl device, and there are no defaults set for any of the mmc nodes.
+Second, these are board design specific. For example, boards are free to
+use just 4 bits for the eMMC if they so desire. So this should be in each
+board dts file. If a board is missing this property, fix the board.
 
-I did test it, but I guess something felt thru the cracks.
-If you'd be kind enough to submit a patch, that would be lovely.
+This applies to all three patches in the series.
 
-Thanks!
-Ezequiel
+ChenYu
 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-vpu.yaml
-> 
-> Errors for example:
-> 
->   DTC     arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
->   CHECK   arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml
-> arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-> interrupts: [[0, 9, 4]] is too short
-> arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-> interrupt-names: ['vdpu'] is too short
-> arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: video-codec@ff350000:
-> interrupt-names:0: 'vepu' was expected
-> 
-> See:
-> https://lore.kernel.org/lkml/20200403124316.5445-1-jbx6244@gmail.com/
-> 
-> +  interrupts:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  interrupt-names:
-> +    oneOf:
-> +      - const: vdpu
-> +      - items:
-> +        - const: vepu
-> +        - const: vdpu
-> 
-> Vs.:
-> 
-> 
-> +  interrupts:
-> +    maxItems: 2
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: vepu
-> +      - const: vdpu
-
-
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> index 175060695..db2c3085e 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+> @@ -861,6 +861,7 @@
+>                 clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+>                          <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <4>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> @@ -873,6 +874,7 @@
+>                 clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+>                          <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <4>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> @@ -885,6 +887,7 @@
+>                 clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+>                          <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+>                 clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+> +               bus-width = <8>;
+>                 fifo-depth = <0x100>;
+>                 max-frequency = <150000000>;
+>                 status = "disabled";
+> --
+> 2.11.0
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 Linux-rockchip mailing list
