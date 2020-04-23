@@ -2,91 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4C9E1B5CA5
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 15:33:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1E4D1B5E99
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 17:05:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CFKqaKNTvZ4nFH/2gsnj4bemAZ9Tl19wAACISlrQEh4=; b=WG3R4kFbSv9VQX
-	wCXemSvRiJEF4Bu/u3hbMauBu6rKq37I/QO22xcDdh1Jg0L/hEC6u505rZJtq+c3Skkrz3y/BbV30
-	hYchhexJ7seqlzKA49wH+/crUsRLDmLOjZSniu89P4Uf7WORqcELE0LGVjEENkxaUFbaItIiaIhO6
-	IF2ryEsQ9ZqfFQfD7RArlvw3qdiGhAOjN+Beg8nP3kf78KiM+uaSzTN30KldlZrgS3bzCTOjdLu/7
-	urpjdcRBatoCOmXob+wsizMbLD5ebkZQ/lQGSc5Py2+j577q+3Drs+1Ta1fP/XdUQbpVpOKa6EEkK
-	HY+HihTCeOuLv1E50DdA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VeJ9su48xJxhPNbYbjnlenzZX1C+lxJDE9yzpnT8r8A=; b=tEEFkekFbt5p33
+	zqI1TXKZuvw3UvYWUNeQH8Sqjr6dCmvaGAwephka/eVerbgp8/nOSToT6R7+hTi7OisrJ1X88j24E
+	gL+88lOj5/TWjDPD8nc7SzAvFupWaItDqal0NctEMMjX0BRFT5uQxVqrD338c1CMKjzneEN164Gsw
+	xWFukW0jg/kFInELI07PuB89GaJeUIY2gZ1dKHFZTBIo9CR5es6JtXBHtTSAdcx0I3e2BsJPl50fN
+	5+E0wd1Vgmt0FUEP/rKESLWiD+5z+TXUbRH3Tv1zHAf19p1cjvLNabSy//c9u78dTrti39En5sQ/Q
+	jHEx1RkEUMFR/GqjIZTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRbzC-0003jT-4D; Thu, 23 Apr 2020 13:33:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jRdQ9-0002E4-CT; Thu, 23 Apr 2020 15:05:45 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRbz6-0003gm-SP
- for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 13:33:47 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x18so6877916wrq.2
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 06:33:44 -0700 (PDT)
+ id 1jRdQ6-0002CF-3H
+ for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 15:05:43 +0000
+Received: by mail-qt1-x842.google.com with SMTP id i68so5091910qtb.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 08:05:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=0Mxnr6QHfY5l0I7jQqZWYhUgYSSrzd0fZHj7N3zbutY=;
- b=VuH56kWd003boJuQQcUlw8yVQmGe1BHZSvNdF/cY7EpN4JQOs8Miy6zpbzOtbAL5TA
- tD6pAoBxupOUJE+vpfkf1o1ofVZbwDudQV3/1JM8c6ZooCk2GazIUtTqKgUbISjq4KGQ
- +AC8O0Aphrq9v23aGS4oVwBJ2mm+nhjCa0WmRNmxlppUbHMLLAIkIB9OpYx+/UoW28s5
- DtHlCvRf6TUGyU2+w6WYWSjiQYowqvbr/uRLT7lcuG1y6fsRNSc4hJr9PZiRxgE0IW4N
- eg/Sar2b2uNOVTodH/4Ic8t8kbRSYHuRzc7TaMXuX5V+SFEsZfBeeyLJdhr5SuQ3VnmG
- ZBMw==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=wacqHW3gccmDNURCgjlzvVgG21qNlFCj1/O4TOTssA0=;
+ b=hcDXxb7mnhzRYWUCDDAmLzi9GoUjgYoNgqaEk4TqkurVhy69y/ma8CuVssbNZbYigp
+ q+Vk3EE+q1JwizU0qURzyKRp24G+WAJfFeDnbsw2Qga07BxUxqICbP62T6KiyJK0tyju
+ NaMlhp2eDHeO9jnwtATVxFJnl5f/DyBtn9JKTnRsxO0ys8tzFkb+/8VKNpEL4f/rVjW1
+ 7xSf0SA8Rva+XNCJi2TLEUaPp97HNKr1WfI0kMoEiNAkX0ceHurrfppCvy/gIU926g0r
+ GrJnQAI5T5IR2I0kWqyPGdII0LzzieelRjA93EKS1kSOwZF0cGhE3G5RJrCnOZsHfi+B
+ rd0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=0Mxnr6QHfY5l0I7jQqZWYhUgYSSrzd0fZHj7N3zbutY=;
- b=L5HconoevelRRawjQdG6N5hWeR/0C7u5o7lxg5vNuurJtRnGrfGVJtztyl771ZTyUu
- ZaaJhvAJ5zorIEQL/XYhsoJIqsEOddb9aPh28RCjJ+BhhpGoH5RdoE8ur8EP+FbCSerT
- ENmdcGMoWICqHSRl1FVFHksf4sS/UmiWMO3o1hPPS+flnWHDXhmiImH82KKkIPMOjSjl
- +IUyLi9r083OV1+3ur5Zf6rENFiHfNwoO7T8v+R2Y761vHFwYn1qtNjgq0aeBBHIYVcA
- hRNhJVAbkJxRLgq8AMKjtLyJ/3TsS73pCVPj0hpadP1r5w6ptuFGOIQYCOPqK5TzW6Vi
- 0yOQ==
-X-Gm-Message-State: AGi0PuaUMjqWDC+8WSF5f+Nc6vs6DoHixMbWu9SY+pjwWVvIJXrPsW6E
- Dxvfb4gXnTDdnw3lS2XgAQU=
-X-Google-Smtp-Source: APiQypLpY8N4F27spciix9Sp0I6NywG1ZST5sjbgl6JI+cEYUmY2EnFBHiU/1vkTiDZA9R8SP6bOVA==
-X-Received: by 2002:adf:f4cb:: with SMTP id h11mr589133wrp.191.1587648823644; 
- Thu, 23 Apr 2020 06:33:43 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v7sm12489779wmg.3.2020.04.23.06.33.42
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 23 Apr 2020 06:33:43 -0700 (PDT)
-Subject: Re: [PATCH v2 6/9] dt-bindings: media: rkisp1: move rockchip-isp1
- bindings out of staging
-To: Helen Koike <helen.koike@collabora.com>, devicetree@vger.kernel.org,
- linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org
-References: <20200403161538.1375908-1-helen.koike@collabora.com>
- <20200403161538.1375908-7-helen.koike@collabora.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <32115405-8a29-29ee-69e2-7c662689ecfd@gmail.com>
-Date: Thu, 23 Apr 2020 15:33:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ bh=wacqHW3gccmDNURCgjlzvVgG21qNlFCj1/O4TOTssA0=;
+ b=d+jfI3yshVs4iqC4s85FfJBrXtLTGX4tLAXhBVwp0/BeikF/84hF9Ei58fsWfBTSyz
+ N3woVjTx1VP6lRWvY5lIq1uxKMX7TMRFS8++dcuAmu2m3atLdXVa+USucwtiaf0XwyfL
+ lacPjzoNfu/bURAorerqw/qZKIxnCbvRdrEDSUi31T9q370Nj4099W0QeWioJmhJ/ERq
+ hbPDMe3sZq1OtT8n0ugKHLDmM9wzDjGeemr34arw+izBCaiOy78Vmw8wt63ecUa+kicw
+ FxanRgSQ5fFv0HVFkHuegc3rV7Nn0wjWSmgH09qAJMawuOXehZ8j5v5X5mDlRQdPVSSM
+ auEA==
+X-Gm-Message-State: AGi0PubkMYg0YVb4wj6cbbRXjcBrK88BD7MRxAMsZleoSzT7AxInuNA+
+ NgZt5Tvw486l7hgHwrSYHbQ=
+X-Google-Smtp-Source: APiQypK5lLma3tb8p4+cxfygakfvgNBPOKNsGobH9EmlK0lf1GmXWoa0U5Ej0ezx+JLY17ZmJt9GtA==
+X-Received: by 2002:aed:3e22:: with SMTP id l31mr4476722qtf.290.1587654338902; 
+ Thu, 23 Apr 2020 08:05:38 -0700 (PDT)
+Received: from rockpro64.sparksnet ([2601:153:900:206::20])
+ by smtp.gmail.com with ESMTPSA id b42sm1923188qta.29.2020.04.23.08.05.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 23 Apr 2020 08:05:38 -0700 (PDT)
+From: Peter Geis <pgwipeout@gmail.com>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Subject: [PATCH] arm64: dts: rockchip: fix rk3399 pcie speed
+Date: Thu, 23 Apr 2020 15:05:10 +0000
+Message-Id: <20200423150510.6216-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200403161538.1375908-7-helen.koike@collabora.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_063344_948072_6C3C7C34 
-X-CRM114-Status: GOOD (  12.10  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200423_080542_139402_58BD500E 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ provider [pgwipeout[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -106,109 +97,39 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, mark.rutland@arm.com,
- dafna.hirschfeld@collabora.com, heiko@sntech.de, kishon@ti.com,
- linux-kernel@vger.kernel.org, karthik.poduval@gmail.com, robh+dt@kernel.org,
- hverkuil-cisco@xs4all.nl, kernel@collabora.com, ezequiel@collabora.com
+Cc: linux-rockchip@lists.infradead.org, Peter Geis <pgwipeout@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Helen,
+The rk3399 is capable of operating at PCIe gen 2 as per the TRM.
+The device-tree incorrectly limits us to gen 1.
 
+Correctly set the maximum link speed to <2>.
 
->   clocks:
->     items:
->       - description: ISP clock
->       - description: ISP AXI clock clock
->       - description: ISP AXI clock  wrapper clock
->       - description: ISP AHB clock clock
+Tested on the rockpro64.
 
-Too many clocks here             ^
-Too many spaces here                 ^
+Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
->       - description: ISP AHB wrapper clock
-
-We can expect 4 to 5 clocks.
-With 5 clocks and a different description this layout is maybe not so handy.
-
-As first change:
-
-  clocks:
-    maxItems: 5
-    description:
-      rk3399 clocks
-        ISP clock
-        ISP AXI clock
-        ISP AXI wrapper clock
-        ISP AHB clock
-        ISP AHB wrapper clock
-
-And then later:
-
-  clocks:
-    maxItems: 5
-    description:
-      rk3288 clocks
-        ISP clock
-        ISP AXI clock
-        ISP AHB clock
-        ISP Pixel clock
-        ISP JPEG source clock
-      rk3399 clocks
-        ISP clock
-        ISP AXI clock
-        ISP AXI wrapper clock
-        ISP AHB clock
-        ISP AHB wrapper clock
-
-With 4 clocks:
-
-  clocks:
-    minItems: 4
-    maxItems: 5
-    description:
-      rk1808 clocks
-      rk3288 clocks
-      rk3326 clocks
-      rk3368 clocks
-      rk3399 clocks
-[..]
-
-
-> 
->   clock-names:
->     items:
->       - const: clk_isp
->       - const: aclk_isp
->       - const: aclk_isp_wrap
->       - const: hclk_isp
->       - const: hclk_isp_wrap
-
-
-
-On 4/3/20 6:15 PM, Helen Koike wrote:
-> Move rkisp1 bindings to Documentation/devicetree/bindings/media
-> 
-> Verified with:
-> make ARCH=arm64 dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> 
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> ---
-> 
-> V2:
-> - no changes
-> 
->  .../devicetree/bindings/media/rockchip-isp1.yaml                  | 0
->  1 file changed, 0 insertions(+), 0 deletions(-)
->  rename {drivers/staging/media/rkisp1/Documentation => Documentation}/devicetree/bindings/media/rockchip-isp1.yaml (100%)
-> 
-> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> similarity index 100%
-> rename from drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> rename to Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-> 
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 74f2c3d49095..e9efd330810b 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -248,7 +248,7 @@
+ 				<0 0 0 3 &pcie0_intc 2>,
+ 				<0 0 0 4 &pcie0_intc 3>;
+ 		linux,pci-domain = <0>;
+-		max-link-speed = <1>;
++		max-link-speed = <2>;
+ 		msi-map = <0x0 &its 0x0 0x1000>;
+ 		phys = <&pcie_phy 0>, <&pcie_phy 1>,
+ 		       <&pcie_phy 2>, <&pcie_phy 3>;
+-- 
+2.20.1
 
 
 _______________________________________________
