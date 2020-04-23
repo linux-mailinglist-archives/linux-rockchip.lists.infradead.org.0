@@ -2,59 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A426F1B6535
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 22:11:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24CFA1B654F
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 22:20:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+KvkyQ+sBO58Fmzv6dLME6z8oY3NUZrtSNSoITllAm8=; b=bJ8/HNekrp3Rkf
-	Q+K6tZ1U56goEO6ygt1LKBcZPZKViuVEW/hzmX8GTQcDWsg+oKLLFoj7CaMTPCSs6qr4NcErKQWgd
-	EHQyWxOfBIBawGPHxW3QvRzr/HFN75e8FU9+gGsvXwAGq9nL0zzRStI60jKIjN5pUZ7pGZfyV4w2Q
-	9x5phVSesV26uZtPKVvBRYGHUEU5aGjSYiApQbnIgFxvGN4lOUNnqn33JLVmLVvj/dyS3ab8xmskr
-	apkJCBww6qPqOpTqP98YcMhBasqbu6ELIFXQBNq37FdVtbl7HaSJTE8CkTRrb5mziKwR+WFTU56EQ
-	lu3svei1SX22oUwq8BGQ==;
+	List-Owner; bh=CbUstx0mCnTe/O8pcQkLFI/J0WcDSKNg8b9Mk51YRDI=; b=X+I3H+qF3HaFZ1
+	ZXnG+aRjTVvLU2XhNGZ5H57vAZtz8GUIKeKp64F4MivpUtZlGZ8y3DQfxAmVSTXZQmT4QrgmSY3Pi
+	VOE2HaXJVC/ytgE5TdSgPTACWKGdK60j8+TVWJksAgbR8MoMDC9hAIcL9LBCgZ76gVYQeed2YCPX8
+	LW3+E8GNgW2zV1MqgIpgsgJqpw7HgIekmyAxWpZTk1LidY8/HlZSHKYZJVVp12cMDnlFEbmaIf84l
+	XdFUVwBXwrtn+jB07b6W4vAQ7nEahgN6yeMdkAX1S0Pxn17phsjoJeBj3J6fc2ywCkr6VlRASgvW9
+	Me3zfYg962P9JA1orQAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRiBp-0004Ug-Ic; Thu, 23 Apr 2020 20:11:17 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1jRiKw-00037O-Os; Thu, 23 Apr 2020 20:20:42 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRiAX-000119-UI; Thu, 23 Apr 2020 20:10:00 +0000
-X-Originating-IP: 93.29.109.196
-Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
- [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id DB045E000A;
- Thu, 23 Apr 2020 20:09:54 +0000 (UTC)
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2 4/4] media: rockchip: rga: Only set output CSC mode for RGB
- input
-Date: Thu, 23 Apr 2020 22:09:37 +0200
-Message-Id: <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
-References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
+ id 1jRiKt-00036I-VL
+ for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 20:20:41 +0000
+Received: by mail-ej1-x643.google.com with SMTP id gr25so5707235ejb.10
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 13:20:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YmiZ/ZxWr1VybX2u36jFFBljJvMI6PQcBnakrRBuFvc=;
+ b=CYKHU/i/9Ack1w8T06q57x++2/81CCj12RQI1wHZVm/LaDgSLWabuo6CJLToatB+zj
+ G/lV1NFsVlKnLURyRX+tVWQCUStABg+s+IBLXkO+jArdAtHdPWWOIpsKw/A48oG+sTiJ
+ fo+w9tpow9sy6LH2l9frtCS/yhB1JgkG20vsArzt//cZ2i3ieUqQTs1glPd1jt6DBQQW
+ OMn1zmZNuDfN6cUg1fGAetrIK10VLs5nqHD8EbyoPNaVfAs8U0s3nE73/13p/jspDzD3
+ qGk42G2pHMDz/7U06BOF/vkonFDXVV+vjv83lkUY5pbUMsWg9NDLfaVAPzUl4762i6w5
+ GwhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YmiZ/ZxWr1VybX2u36jFFBljJvMI6PQcBnakrRBuFvc=;
+ b=hYJ+QghX69G/aPVfIs6JOoGylqvzAvLizlKsMvrRTYL6ftWudHtf/lIZUO/Y2PKa7x
+ gaTOtN0Zq9w7qY+/gSk3Kv50Aast3QFBAsrsCWV6yzaipEQ5mcPcjer1bdCIqGthOeUv
+ TU7TrgJwrsWqmrddlTDME+VQFiGgQVocLMTNRulSZa8KtktPRx6IL0jQLNDB9FyrrnFl
+ W/seYfvXZPrmqBcpik40VCtAaufFowkhSHc+Ot6bcS1VnTreXvts4F1Dag1R45DfqxtM
+ 8WVr9M1+UnwCqSsLR8J3ZubA3YT3Yan/gEUc3ArXaKaMQm6+Vurpj5ip/Fz1/en5lM5W
+ 0OGA==
+X-Gm-Message-State: AGi0PuaVYzdTsXr9/A2G00AEUO/sHq8xsScxZugeqUCSnalaCY1sjoq2
+ WxLRUp4cy16EHR+bY2WaxmUlvm13N9VpNeKLVek=
+X-Google-Smtp-Source: APiQypLFRFUo8oCx8s1iec0XKMbb96VyOkGXbH/rG/5y1AOLbu+4xWQm+HOgQlwjdJd+++Z7AvXASdzqNqbctlxMVLE=
+X-Received: by 2002:a17:906:ce49:: with SMTP id
+ se9mr880124ejb.345.1587673236511; 
+ Thu, 23 Apr 2020 13:20:36 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191028182254.30739-1-pgwipeout@gmail.com>
+ <5230f80c-9684-72e0-8f96-602428a9e655@arm.com>
+ <9e5546de-f5b6-7f60-96d0-612249e832ce@arm.com>
+ <CAMdYzYrZhof2DtrNH4+Amu1ZN-6sWw57rC+2joqXSyWVn99wWw@mail.gmail.com>
+In-Reply-To: <CAMdYzYrZhof2DtrNH4+Amu1ZN-6sWw57rC+2joqXSyWVn99wWw@mail.gmail.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Thu, 23 Apr 2020 16:20:25 -0400
+Message-ID: <CAMdYzYppYADDTGD26uO4zpUCZWSW8eRpcdtLsUQGDqppW3_7vA@mail.gmail.com>
+Subject: Re: [PATCH 0/5] add rk3328 usb3 phy driver
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_130958_103925_79852A8D 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200423_132040_010006_C1D78A10 
+X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pgwipeout[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,62 +94,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- justin.swartz@risingedge.co.za, Heiko Stuebner <heiko@sntech.de>,
- Hans Verkuil <hansverk@cisco.com>, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Johan Jonker <jbx6244@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>
+Cc: katsuhiro@katsuster.net,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-usb@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>, kishon@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Setting the output CSC mode is required for a YUV output, but must not
-be set when the input is also YUV. Doing this (as tested with a YUV420P
-to YUV420P conversion) results in wrong colors.
+As a status update for this, I have spent quite a while working on this driver.
+In the end, it appears the available documentation is insufficient.
+The original driver calls a few registers that are not documented in the TRM.
 
-Adapt the logic to only set the CSC mode when the output is YUV and the
-input is RGB.
+What I have found is the following:
+The 2.0 functionality works as documented in the original rockchip driver.
+The 3.0 functionality does not.
+A 3.0 device does not trigger the interrupt like a 2.0 device does.
+A 3.0 device causes 0x34 bit 6 to toggle, which is usb3otg_pipe3_phystatus
+I've enabled all usb3phy interrupts, and cannot get a 3.0 device to
+trigger any of them.
 
-Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
----
- drivers/media/platform/rockchip/rga/rga-hw.c | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
-index 4be6dcf292ff..cbffcf986ccf 100644
---- a/drivers/media/platform/rockchip/rga/rga-hw.c
-+++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-@@ -216,13 +216,17 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
- 	}
- 
- 	if (ctx->out.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
--		switch (ctx->out.colorspace) {
--		case V4L2_COLORSPACE_REC709:
--			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
--			break;
--		default:
--			dst_info.data.csc_mode = RGA_DST_CSC_MODE_BT601_R0;
--			break;
-+		if (ctx->in.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
-+			switch (ctx->out.colorspace) {
-+			case V4L2_COLORSPACE_REC709:
-+				dst_info.data.csc_mode =
-+					RGA_SRC_CSC_MODE_BT709_R0;
-+				break;
-+			default:
-+				dst_info.data.csc_mode =
-+					RGA_DST_CSC_MODE_BT601_R0;
-+				break;
-+			}
- 		}
- 	}
- 
--- 
-2.26.0
-
+Did the original driver ever work correctly?
 
 _______________________________________________
 Linux-rockchip mailing list
