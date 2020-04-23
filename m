@@ -2,83 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136D41B5BB9
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 14:48:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4C9E1B5CA5
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 15:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/FMU4eRTYwZihHrlYyZVFJwa1NgSL9i+cc/GQX4o0s4=; b=p78nt6eD8cgaB4
-	SH0SAtDv9j4VOlPFMbj7GC/QmkJ1ij3M0nZYaRqvoRt1k1NZoYvbiYtB2t0CHmZRyUWIyVOEG/sT1
-	R55pz0Zr8wP8XD+QxitNLhR0DgFRnLzZP9NR625d5QYqxXc9WJRb9okqYniL+jUogE5Wi36Evh/hG
-	WKiyXBIJiuNcsNLk3wt9Td0JVUpWObWwIfb5dKAb9Ah2ZMDu5IYPrIE0cC/8MKskQXC10umqZDAIn
-	wJVEj4VKy5EG5c2f/RYmV3CBaVG8g1wOpnwmwNBQzdUT91rHTMseQ47dux76/VF1jO8T4xvgwPha1
-	ctwwLOhYTqt8jXnCGwJg==;
+	List-Owner; bh=CFKqaKNTvZ4nFH/2gsnj4bemAZ9Tl19wAACISlrQEh4=; b=WG3R4kFbSv9VQX
+	wCXemSvRiJEF4Bu/u3hbMauBu6rKq37I/QO22xcDdh1Jg0L/hEC6u505rZJtq+c3Skkrz3y/BbV30
+	hYchhexJ7seqlzKA49wH+/crUsRLDmLOjZSniu89P4Uf7WORqcELE0LGVjEENkxaUFbaItIiaIhO6
+	IF2ryEsQ9ZqfFQfD7RArlvw3qdiGhAOjN+Beg8nP3kf78KiM+uaSzTN30KldlZrgS3bzCTOjdLu/7
+	urpjdcRBatoCOmXob+wsizMbLD5ebkZQ/lQGSc5Py2+j577q+3Drs+1Ta1fP/XdUQbpVpOKa6EEkK
+	HY+HihTCeOuLv1E50DdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRbH5-0002Fb-DL; Thu, 23 Apr 2020 12:48:15 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jRbzC-0003jT-4D; Thu, 23 Apr 2020 13:33:50 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRbH2-0002Ej-M2
- for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 12:48:13 +0000
-Received: by mail-wm1-x341.google.com with SMTP id h2so6285295wmb.4
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 05:48:12 -0700 (PDT)
+ id 1jRbz6-0003gm-SP
+ for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 13:33:47 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x18so6877916wrq.2
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 06:33:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=AIWDZqBU/m1xMWhrZfTJgdQpK0v0DeS2ch8sjIFRn1o=;
- b=IWSs9nbgcZK6vbN6AxMc7DXCMIRSEXT+zXxFa2memXXRINJEoe9BBuUC1XuEul8cU5
- faG8X/sEDFm2OAPncZD6JmPNo/L1TCNX6CfNM11N3DEfoFStIKSDEELn15N3Z+5P4PUy
- wUaZgTs5CIAU/qMmi+8RxsyD9Ca+MjwUfOhdK2mWesajkf1G2Z7IYe5KxwnsnPiaMn9D
- 35ZJSQFo6N12ePSS4VxpnFbMFNX8ublLbVA6itFGlvvFB7iRh5VEwbegt6KIanp/CSoF
- yY3yAFC6idyTWu1j/1GNB3sus005W1MD6LDsqf++mUuPvql+q7Y1flk4g+/GCpd8t7Vb
- yBiA==
+ bh=0Mxnr6QHfY5l0I7jQqZWYhUgYSSrzd0fZHj7N3zbutY=;
+ b=VuH56kWd003boJuQQcUlw8yVQmGe1BHZSvNdF/cY7EpN4JQOs8Miy6zpbzOtbAL5TA
+ tD6pAoBxupOUJE+vpfkf1o1ofVZbwDudQV3/1JM8c6ZooCk2GazIUtTqKgUbISjq4KGQ
+ +AC8O0Aphrq9v23aGS4oVwBJ2mm+nhjCa0WmRNmxlppUbHMLLAIkIB9OpYx+/UoW28s5
+ DtHlCvRf6TUGyU2+w6WYWSjiQYowqvbr/uRLT7lcuG1y6fsRNSc4hJr9PZiRxgE0IW4N
+ eg/Sar2b2uNOVTodH/4Ic8t8kbRSYHuRzc7TaMXuX5V+SFEsZfBeeyLJdhr5SuQ3VnmG
+ ZBMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=AIWDZqBU/m1xMWhrZfTJgdQpK0v0DeS2ch8sjIFRn1o=;
- b=SwdnNsAV9L7s9jZkVv8KhVamC4PsyOnuneOVfQKxbFWNyACI7ZWX2/B8IfLCyuLc14
- Vh9VdWgQTTkvrUl6AtiB77IJ1VDGPjwgjTGsSlXSb8vLeb+2XkynR2fK2QQTe7kKB5Oo
- ZFsgBnOKy2EreG9A79F9O51Cs5Pga9seDGf8AzEZG7CQIsXeMcuE6yVhbjs46UpQYLBZ
- ze2zDFBFSn3Rgu44ko+t6FV1UxyFAinEIrgeHfAQEKGylq3zXiHCm6IbaRL8n5Ib1u26
- jlfeWnl308z8IrGUbrUgjCf966kzPQAkqXWsfxVBcHzB+niENz7a9FVzwJPjSnkiCLis
- Yd/w==
-X-Gm-Message-State: AGi0PubmmYQB22KKNYa3UWClhXbkUOIh+arn8RXL5O33aKND5oFY5bbp
- hw2n/ZVaXYQDs7Cs98/wKg0=
-X-Google-Smtp-Source: APiQypLbjw45ucXMMdNEze5vzTmLlFY1dYkm9XBnrtS1Rr4KNXzqteQX0stoMFeih45vI8iuRblXRQ==
-X-Received: by 2002:a1c:5683:: with SMTP id k125mr3897667wmb.17.1587646091198; 
- Thu, 23 Apr 2020 05:48:11 -0700 (PDT)
+ bh=0Mxnr6QHfY5l0I7jQqZWYhUgYSSrzd0fZHj7N3zbutY=;
+ b=L5HconoevelRRawjQdG6N5hWeR/0C7u5o7lxg5vNuurJtRnGrfGVJtztyl771ZTyUu
+ ZaaJhvAJ5zorIEQL/XYhsoJIqsEOddb9aPh28RCjJ+BhhpGoH5RdoE8ur8EP+FbCSerT
+ ENmdcGMoWICqHSRl1FVFHksf4sS/UmiWMO3o1hPPS+flnWHDXhmiImH82KKkIPMOjSjl
+ +IUyLi9r083OV1+3ur5Zf6rENFiHfNwoO7T8v+R2Y761vHFwYn1qtNjgq0aeBBHIYVcA
+ hRNhJVAbkJxRLgq8AMKjtLyJ/3TsS73pCVPj0hpadP1r5w6ptuFGOIQYCOPqK5TzW6Vi
+ 0yOQ==
+X-Gm-Message-State: AGi0PuaUMjqWDC+8WSF5f+Nc6vs6DoHixMbWu9SY+pjwWVvIJXrPsW6E
+ Dxvfb4gXnTDdnw3lS2XgAQU=
+X-Google-Smtp-Source: APiQypLpY8N4F27spciix9Sp0I6NywG1ZST5sjbgl6JI+cEYUmY2EnFBHiU/1vkTiDZA9R8SP6bOVA==
+X-Received: by 2002:adf:f4cb:: with SMTP id h11mr589133wrp.191.1587648823644; 
+ Thu, 23 Apr 2020 06:33:43 -0700 (PDT)
 Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id f8sm3626512wrm.14.2020.04.23.05.48.10
+ by smtp.gmail.com with ESMTPSA id v7sm12489779wmg.3.2020.04.23.06.33.42
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 23 Apr 2020 05:48:10 -0700 (PDT)
-Subject: Re: [PATCH v2 7/9] media: MAINTAINERS: rkisp1: add path to dt-bindings
+ Thu, 23 Apr 2020 06:33:43 -0700 (PDT)
+Subject: Re: [PATCH v2 6/9] dt-bindings: media: rkisp1: move rockchip-isp1
+ bindings out of staging
 To: Helen Koike <helen.koike@collabora.com>, devicetree@vger.kernel.org,
  linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org
 References: <20200403161538.1375908-1-helen.koike@collabora.com>
- <20200403161538.1375908-8-helen.koike@collabora.com>
+ <20200403161538.1375908-7-helen.koike@collabora.com>
 From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <6cc8ac87-761b-de5d-7104-6f55f419a4d1@gmail.com>
-Date: Thu, 23 Apr 2020 14:48:09 +0200
+Message-ID: <32115405-8a29-29ee-69e2-7c662689ecfd@gmail.com>
+Date: Thu, 23 Apr 2020 15:33:41 +0200
 User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200403161538.1375908-8-helen.koike@collabora.com>
+In-Reply-To: <20200403161538.1375908-7-helen.koike@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_054812_748484_AD732939 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20200423_063344_948072_6C3C7C34 
+X-CRM114-Status: GOOD (  12.10  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,44 +117,97 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hi Helen,
 
-On 4/3/20 6:15 PM, Helen Koike wrote:
-> The Rockchip ISP bindings was moved out of staging.
-> Update MAINTAINERS file with the new path.
+
+>   clocks:
+>     items:
+>       - description: ISP clock
+>       - description: ISP AXI clock clock
+>       - description: ISP AXI clock  wrapper clock
+>       - description: ISP AHB clock clock
+
+Too many clocks here             ^
+Too many spaces here                 ^
+
+>       - description: ISP AHB wrapper clock
+
+We can expect 4 to 5 clocks.
+With 5 clocks and a different description this layout is maybe not so handy.
+
+As first change:
+
+  clocks:
+    maxItems: 5
+    description:
+      rk3399 clocks
+        ISP clock
+        ISP AXI clock
+        ISP AXI wrapper clock
+        ISP AHB clock
+        ISP AHB wrapper clock
+
+And then later:
+
+  clocks:
+    maxItems: 5
+    description:
+      rk3288 clocks
+        ISP clock
+        ISP AXI clock
+        ISP AHB clock
+        ISP Pixel clock
+        ISP JPEG source clock
+      rk3399 clocks
+        ISP clock
+        ISP AXI clock
+        ISP AXI wrapper clock
+        ISP AHB clock
+        ISP AHB wrapper clock
+
+With 4 clocks:
+
+  clocks:
+    minItems: 4
+    maxItems: 5
+    description:
+      rk1808 clocks
+      rk3288 clocks
+      rk3326 clocks
+      rk3368 clocks
+      rk3399 clocks
+[..]
+
+
 > 
-> Suggested-by: Johan Jonker <jbx6244@gmail.com>
+>   clock-names:
+>     items:
+>       - const: clk_isp
+>       - const: aclk_isp
+>       - const: aclk_isp_wrap
+>       - const: hclk_isp
+>       - const: hclk_isp_wrap
+
+
+
+On 4/3/20 6:15 PM, Helen Koike wrote:
+> Move rkisp1 bindings to Documentation/devicetree/bindings/media
+> 
+> Verified with:
+> make ARCH=arm64 dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
 > Signed-off-by: Helen Koike <helen.koike@collabora.com>
 > ---
 > 
 > V2:
-> - This is a new patch in the series
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
+> - no changes
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index d66ac41ef5872..726044b84cf23 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -14303,6 +14303,7 @@ M:	Helen Koike <helen.koike@collabora.com>
->  L:	linux-media@vger.kernel.org
-
-L:	linux-rockchip@lists.infradead.org
-
->  S:	Maintained
-
->  F:	drivers/staging/media/rkisp1/
-> +F:	Documentation/devicetree/bindings/media/rockchip-isp1.yaml
-
-Rebase.
-The MAINTAINERS document was recently sort.
-Check entries with:
-
-./scripts/parse-maintainers.pl --input=MAINTAINERS --output=MAINTAINERS
---order
-
->  
->  ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
->  M:	Jacob Chen <jacob-chen@iotwrt.com>
+>  .../devicetree/bindings/media/rockchip-isp1.yaml                  | 0
+>  1 file changed, 0 insertions(+), 0 deletions(-)
+>  rename {drivers/staging/media/rkisp1/Documentation => Documentation}/devicetree/bindings/media/rockchip-isp1.yaml (100%)
+> 
+> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> similarity index 100%
+> rename from drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> rename to Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 > 
 
 
