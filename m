@@ -2,57 +2,99 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC2A81B5B01
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 14:02:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E8AC1B5B8F
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 14:37:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FJY7ScxdhHx21GCeQN8WKLe3rqAgw6ctOzoRepOVBtE=; b=U8mYXmBqi62uyMABUYvOX4XD7
-	29QNHW4n6uB3YrGONXOz6x9Y/y/RiCOK69KsuvC9BGyVtvNPpLrbNjW6ks0CImGUm5vXEsROB9nPn
-	LTAdsS3hDGUtV5UZ6xN5XzJ5kPKqf8GkidfRta0A3nR4NT/e6I83BiSUXSaLT2ABFp7dSMCk4i0bG
-	uJ++jReNsYWQNm42r2nKcrpZak58BTYO2/N5RFTBxGz3bCFcGPU8qxSavPlNkrOLS0pwZ67n7o2lh
-	U7rLVuLt8Xio3F9vUAzyBQD8GwFW5I4NgQzFpXM7ty8BBXRzlPfQPSlR7HqtKddk/PRFWe61ndwML
-	d7Qnrr+JQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dWByBHrrZxoOi6Lnj4YCiG0a6bHC07JMcQbVi60Tr44=; b=poYZ81zMybQ5/8
+	4HwhBUv2l8beCdJHUMmo9Qsx/sLkhpYJDfBI/jFvJzjz/flk5hf5eFDZvkbn6zyg2REmeDasIypjc
+	RuD3f6NkkKVrBfII51TKkDNeWGgQVAviIYc9RkvAgCqYvZVSzbgtFaQ0GBMeI+LZjhNTjhe5w+Ozq
+	p8u1gbaZL3Iu3/sJvHwxFxfEI4qYq3l+q3XD2AeeB84l/SkEgRzaR20sUIvG/2dA20W2ad/GMaC+L
+	Ezle/bw96lsz2WP//f99ZV5D0cvYWQ8R9hFcfZr/wTSW/c59hxNcGyXipHME1Cv2ixNQe3HxBSkyX
+	dIPfYaJVxm4BUF7pQRWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRaZ9-00020W-3Q; Thu, 23 Apr 2020 12:02:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRaZ5-0001zx-U2
- for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 12:02:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A995431B;
- Thu, 23 Apr 2020 05:02:45 -0700 (PDT)
-Received: from [10.57.33.170] (unknown [10.57.33.170])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0ACE73F6CF;
- Thu, 23 Apr 2020 05:02:42 -0700 (PDT)
-Subject: Re: [PATCH] usb: fusb302: Convert to use GPIO descriptors
-To: Linus Walleij <linus.walleij@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <20200415192448.305257-1-linus.walleij@linaro.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <22317f07-ad49-ada2-b323-ad16695ae3d2@arm.com>
-Date: Thu, 23 Apr 2020 13:02:42 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jRb6A-0002bX-WA; Thu, 23 Apr 2020 12:36:58 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRb67-0002Zh-4t
+ for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 12:36:56 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u127so6378859wmg.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 05:36:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=mi3rnUMPvy/QR3Ps6vsxVuv41qLYHh/uNXwCdOf964o=;
+ b=PgsVLVg2fEE4UgEw5ybsRRcMm8D0szEHNj4jYCN/y3Piw4K0Zvmgpeth5Hjb8gCVI0
+ Y2HAif5w2DxAfImAwIjZYnbyP7fEaBREjKHo0lML6cKH1VCtmlwGLGXxHftgpxo7RyJk
+ 5ta54tkpyf8ALl3fGhh7E3u2HGxUH2dYnvxhZ8FMENxzdzOtQmlhJPnxAadF68Z+W+uf
+ V2We74ZXkgSjQP/TIAUvhG6NnMiAjbgwaE6w/Kt2o6aFnsYbbqeZjmXF+ac+tinjBO/U
+ p6YlOnEegbdG2PF+zK/S49wjLppEutcfSgHcBipTrQvS9xAjVt25l7orY3r29/DAPQFs
+ eEMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=mi3rnUMPvy/QR3Ps6vsxVuv41qLYHh/uNXwCdOf964o=;
+ b=U396i3gDH8+kGaKTiq++jjqXw9n+QTB0SfA2z2H1Ny3DDZHSsD1FiC1gUIhAPtm3jW
+ WRHjyJ6L2IwKAGZs/6qfBJz3udC+kOLrCaILk/ir+RflkK4knY8UKKLZqYvUXTy5YxqE
+ 7dwtP41KKc1V37AOBuzg3tyk3Rgdww+ouFUO8/0Rgr5PKvcvkvpHyok/RKFyPwGDSgc9
+ 5zU0KK0YSC70fx2nxTnHapixz8GdCoJGtRqPR2/l01gLTIDdhnJVH7JgbkawMYIshCBr
+ nMbzWWAL5xra1Mpenr2jkHcv9iq5ewy0W4DomXoIm2RlyiW/+3G8ArAe30N8D1CQS91R
+ NirQ==
+X-Gm-Message-State: AGi0Pua/g7qk+p26CHffbQhI0j5n8QGYUvng42OtYKDckGyQf3Y9r9ii
+ ipIL/e0YrGPRDmbR1t15Q+uRnWLE
+X-Google-Smtp-Source: APiQypLOTc7Zk2kFUmf/qLTme2iOBIANPeVm3oJWV5ReTH48bHyBCwfMNIZwZ1IBZDmEt730DGE/4A==
+X-Received: by 2002:a05:600c:2316:: with SMTP id
+ 22mr3898972wmo.164.1587645412306; 
+ Thu, 23 Apr 2020 05:36:52 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id 68sm3672991wrm.65.2020.04.23.05.36.50
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 23 Apr 2020 05:36:51 -0700 (PDT)
+Subject: Re: [PATCH v2 6/9] dt-bindings: media: rkisp1: move rockchip-isp1
+ bindings out of staging
+To: Helen Koike <helen.koike@collabora.com>, devicetree@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org
+References: <20200403161538.1375908-1-helen.koike@collabora.com>
+ <20200403161538.1375908-7-helen.koike@collabora.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <7da8fb4d-018e-894a-884b-760eaf2959e6@gmail.com>
+Date: Thu, 23 Apr 2020 14:36:49 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200415192448.305257-1-linus.walleij@linaro.org>
-Content-Language: en-GB
+In-Reply-To: <20200403161538.1375908-7-helen.koike@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_050248_053807_FD1AF777 
-X-CRM114-Status: GOOD (  33.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200423_053655_212577_F5BF0F81 
+X-CRM114-Status: GOOD (  11.22  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,187 +107,52 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Tobias Schramm <t.schramm@manjaro.org>,
- Yueyao Zhu <yueyao@google.com>, linux-usb@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Guenter Roeck <linux@roeck-us.net>
+Cc: devel@driverdev.osuosl.org, mark.rutland@arm.com,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, kishon@ti.com,
+ linux-kernel@vger.kernel.org, karthik.poduval@gmail.com, robh+dt@kernel.org,
+ hverkuil-cisco@xs4all.nl, kernel@collabora.com, ezequiel@collabora.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2020-04-15 8:24 pm, Linus Walleij wrote:
-> This converts the FUSB302 driver to use GPIO descriptors.
-> The conversion to descriptors per se is pretty straight-forward.
-> 
-> In the process I discovered that:
-> 
-> 1. The driver uses a completely undocumented device tree binding
->     for the interrupt GPIO line, "fcs,int_n". Ooops.
-> 
-> 2. The undocumented binding, presumably since it has not seen
->     review, is just "fcs,int_n", lacking the compulsory "-gpios"
->     suffix and also something that is not a good name because
->     the "_n" implies the line is inverted which is something we
->     handle with flags in the device tree. Ooops.
-> 
-> 3. Possibly the driver should not be requesting the line as a
->     GPIO and request the corresponding interrupt line by open
->     coding, the GPIO chip is very likely doubleing as an IRQ
->     controller and can probably provide an interrupt directly
->     for this line with interrupts-extended = <&gpio0 ...>;
-> 
-> 4. Possibly the IRQ should just be tagged on the I2C client node
->     in the device tree like apparently ACPI does, as it overrides
->     this IRQ with client->irq if that exists.
-> 
-> But now it is too late to do much about that and as I can see
-> this is used like this in the Pinebook which is a shipping product
-> so let'a just contain the mess and move on.
-> 
-> The property currently appears in:
-> arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
-> 
-> Create a quirk in the GPIO OF library to allow this property
-> specifically to be specified without the "-gpios" suffix, we have
-> other such bindings already.
+Hi Helen,
 
-FWIW, the datasheet makes it clear than INT_N is just a regular IRQ 
-output, so it really should be specified as an interrupt targeting the 
-GPIO controller just like any other I2C chip, and the FUSB302 binding 
-itself supports.
+make ARCH=arm dt_binding_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+  SCHEMA  Documentation/devicetree/bindings/processed-schema-examples.yaml
+  SCHEMA  Documentation/devicetree/bindings/processed-schema.yaml
+  CHKDT   Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+  DTC
+Documentation/devicetree/bindings/media/rockchip-isp1.example.dt.yaml
+Documentation/devicetree/bindings/media/rockchip-isp1.example.dts:22.27-99.11:
+Warning (unit_address_vs_reg): /example-0/parent@0: node has a unit
+name, but no reg or ranges property
+  CHECK
+Documentation/devicetree/bindings/media/rockchip-isp1.example.dt.yaml
 
-The Pinebook Pro devicetree has only just landed this cycle, so there 
-should still be plenty of time to fix it and not have to worry about an 
-ugly undocumented quirk. The downstream vendor kernels use a totally 
-different FUSB302 driver from the upstream one (based on extcon rather 
-than the typec framework) so I don't think downstream DTBs are a concern.
-
-Robin.
-
-> Cc: Tobias Schramm <t.schramm@manjaro.org>
-> Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> Cc: Yueyao Zhu <yueyao@google.com>
-> Cc: Guenter Roeck <linux@roeck-us.net>
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+On 4/3/20 6:15 PM, Helen Koike wrote:
+> Move rkisp1 bindings to Documentation/devicetree/bindings/media
+> 
+> Verified with:
+> make ARCH=arm64 dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
 > ---
-> This is now covered as far as GPIO is concerned but you might
-> want to look into creating proper bindings for this or
-> correcting the devicetree.
-> ---
->   drivers/gpio/gpiolib-of.c        | 21 +++++++++++++++++++++
->   drivers/usb/typec/tcpm/fusb302.c | 32 +++++++++-----------------------
->   2 files changed, 30 insertions(+), 23 deletions(-)
 > 
-> diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
-> index ccc449df3792..20c2c428168e 100644
-> --- a/drivers/gpio/gpiolib-of.c
-> +++ b/drivers/gpio/gpiolib-of.c
-> @@ -460,6 +460,24 @@ static struct gpio_desc *of_find_arizona_gpio(struct device *dev,
->   	return of_get_named_gpiod_flags(dev->of_node, con_id, 0, of_flags);
->   }
->   
-> +static struct gpio_desc *of_find_usb_gpio(struct device *dev,
-> +					  const char *con_id,
-> +					  enum of_gpio_flags *of_flags)
-> +{
-> +	/*
-> +	 * Currently this USB quirk is only for the Fairchild FUSB302 host which is using
-> +	 * an undocumented DT GPIO line named "fcs,int_n" without the compulsory "-gpios"
-> +	 * suffix.
-> +	 */
-> +	if (!IS_ENABLED(CONFIG_TYPEC_FUSB302))
-> +		return ERR_PTR(-ENOENT);
-> +
-> +	if (!con_id || strcmp(con_id, "fcs,int_n"))
-> +		return ERR_PTR(-ENOENT);
-> +
-> +	return of_get_named_gpiod_flags(dev->of_node, con_id, 0, of_flags);
-> +}
-> +
->   struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
->   			       unsigned int idx, unsigned long *flags)
->   {
-> @@ -504,6 +522,9 @@ struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
->   	if (PTR_ERR(desc) == -ENOENT)
->   		desc = of_find_arizona_gpio(dev, con_id, &of_flags);
->   
-> +	if (PTR_ERR(desc) == -ENOENT)
-> +		desc = of_find_usb_gpio(dev, con_id, &of_flags);
-> +
->   	if (IS_ERR(desc))
->   		return desc;
->   
-> diff --git a/drivers/usb/typec/tcpm/fusb302.c b/drivers/usb/typec/tcpm/fusb302.c
-> index b498960ff72b..b28facece43c 100644
-> --- a/drivers/usb/typec/tcpm/fusb302.c
-> +++ b/drivers/usb/typec/tcpm/fusb302.c
-> @@ -9,14 +9,13 @@
->   #include <linux/delay.h>
->   #include <linux/errno.h>
->   #include <linux/extcon.h>
-> -#include <linux/gpio.h>
-> +#include <linux/gpio/consumer.h>
->   #include <linux/i2c.h>
->   #include <linux/interrupt.h>
->   #include <linux/kernel.h>
->   #include <linux/module.h>
->   #include <linux/mutex.h>
->   #include <linux/of_device.h>
-> -#include <linux/of_gpio.h>
->   #include <linux/pinctrl/consumer.h>
->   #include <linux/proc_fs.h>
->   #include <linux/regulator/consumer.h>
-> @@ -83,7 +82,7 @@ struct fusb302_chip {
->   	struct work_struct irq_work;
->   	bool irq_suspended;
->   	bool irq_while_suspended;
-> -	int gpio_int_n;
-> +	struct gpio_desc *gpio_int_n;
->   	int gpio_int_n_irq;
->   	struct extcon_dev *extcon;
->   
-> @@ -1618,30 +1617,17 @@ static void fusb302_irq_work(struct work_struct *work)
->   
->   static int init_gpio(struct fusb302_chip *chip)
->   {
-> -	struct device_node *node;
-> +	struct device *dev = chip->dev;
->   	int ret = 0;
->   
-> -	node = chip->dev->of_node;
-> -	chip->gpio_int_n = of_get_named_gpio(node, "fcs,int_n", 0);
-> -	if (!gpio_is_valid(chip->gpio_int_n)) {
-> -		ret = chip->gpio_int_n;
-> -		dev_err(chip->dev, "cannot get named GPIO Int_N, ret=%d", ret);
-> -		return ret;
-> -	}
-> -	ret = devm_gpio_request(chip->dev, chip->gpio_int_n, "fcs,int_n");
-> -	if (ret < 0) {
-> -		dev_err(chip->dev, "cannot request GPIO Int_N, ret=%d", ret);
-> -		return ret;
-> -	}
-> -	ret = gpio_direction_input(chip->gpio_int_n);
-> -	if (ret < 0) {
-> -		dev_err(chip->dev,
-> -			"cannot set GPIO Int_N to input, ret=%d", ret);
-> -		return ret;
-> +	chip->gpio_int_n = devm_gpiod_get(dev, "fcs,int_n", GPIOD_IN);
-> +	if (IS_ERR(chip->gpio_int_n)) {
-> +		dev_err(dev, "failed to request gpio_int_n\n");
-> +		return PTR_ERR(chip->gpio_int_n);
->   	}
-> -	ret = gpio_to_irq(chip->gpio_int_n);
-> +	ret = gpiod_to_irq(chip->gpio_int_n);
->   	if (ret < 0) {
-> -		dev_err(chip->dev,
-> +		dev_err(dev,
->   			"cannot request IRQ for GPIO Int_N, ret=%d", ret);
->   		return ret;
->   	}
+> V2:
+> - no changes
 > 
+>  .../devicetree/bindings/media/rockchip-isp1.yaml                  | 0
+>  1 file changed, 0 insertions(+), 0 deletions(-)
+>  rename {drivers/staging/media/rkisp1/Documentation => Documentation}/devicetree/bindings/media/rockchip-isp1.yaml (100%)
+> 
+> diff --git a/drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml b/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> similarity index 100%
+> rename from drivers/staging/media/rkisp1/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> rename to Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> 
+
 
 _______________________________________________
 Linux-rockchip mailing list
