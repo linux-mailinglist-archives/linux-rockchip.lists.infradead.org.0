@@ -2,142 +2,100 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB31E1B55A7
-	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 09:31:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B6981B5A24
+	for <lists+linux-rockchip@lfdr.de>; Thu, 23 Apr 2020 13:12:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1p/TpvfSNhvJur83a89vSMOdulHyt68BDr8fzRg9feI=; b=rB91M+EtnVryGN
-	QQYSku70ekhKDvq2or3c/drIGt16MvFFZAyKNykJSmQPPq2nQtem/ei8MJ7TE+y21LWKYTKHyo6C7
-	SazS3LAmdi3jW16nSSwq3Sflm8gJLdfx4E+ymOi0JuX+xgDhVtdpHqA5uXhudoX82iJkUO3EqMs3v
-	VrzujSJq2XsJA5qfOYjpxUAFYuuLCnkuRRSyX57rGObos7/Bx+WBzc3YmLxRr2t19lBMZykV4kSj4
-	YaAirS9pNb4QuV98yyjZXysbbwVuHujTGUK38gl8IRGR5d6XwzBFn2ckD9OmvQX+0DzZ3YU+eTHFI
-	Ck4ZF9B6zprOHrngiW2g==;
+	List-Owner; bh=UXlt4IGpLz2913qLpp8f66CSPPUqejETazHaOpk3os8=; b=nVLU+0VR9a+YBN
+	6oveYJvVbCIOIgLmqosesEGu/Ggaz3616/UAoRTVxggeY6kwQzF/ZyvCFjajqSrKSu5vYCY11QGuT
+	MhJ7j18wqhIuUH2ao+OVfWffkWb+CG4JOaBgskdPo2nZplr0TckNTdP4oTUjG1V+j7xqXZY7J7jZL
+	FrFkKDNkuJypICVtVXK9fKWJIX/0PMTSLBC6fEDtgHtG3eZbI9xTU1adpATAQHwj8q/uW5eIatnKv
+	wfiEXRICea/SWm7U2kcdAOjWqLhS+f8QBMGso3H/AvUBtO5kPEN5Jha7KzBimEUyIpWwdCu0UPqzx
+	REqHE9SmL9eLVMc1Cg4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRWKI-0002Fv-Pj; Thu, 23 Apr 2020 07:31:14 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jRZmO-0004wJ-Io; Thu, 23 Apr 2020 11:12:28 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRWKE-0002Ds-Qn
- for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 07:31:13 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x17so4832010wrt.5
- for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 00:31:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QCHmK+5GfaVz8bbbSowmaOnzegplSKmswr3oSdG1Ntc=;
- b=wHRuCyoYU/1JjFHHLgJzy5f6OLxd/6zex5VtF6Y8xPMvGkeIiIERjXUt3Yw+NBYZOr
- YgqzpaTbrSURXySiGxorVXH2cTNKO5vmz7ISsdQ/dvyNgFiMf597TORn0tn9B6mQ8Aee
- 5TzyhRWTUrp0hqap5PjWPA5royN5hN9sHtohj/OoAYa+1IVy9/k/LYW+dCTjtXE4kqhW
- V68KHrWzidCtAlLJwi/NG0r/abQfxKHE/fjaLWv1IosHKt41zcM3yowszB1EALP+9V89
- Vhf8OfJ79+p7RnBMwGKNW7NO9eLRFYvAf7/GDJNe+E43+jT8nHN7WjhytopLZBgFfxmW
- ZxbA==
+ id 1jRZmL-0004vc-GT
+ for linux-rockchip@lists.infradead.org; Thu, 23 Apr 2020 11:12:27 +0000
+Received: by mail-wm1-x341.google.com with SMTP id x4so6009471wmj.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 23 Apr 2020 04:12:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=bxYSxdYwcXc6p7kPweonk+RqgS5u92HacX+d8Hknp8w=;
+ b=m8uwcZY2w3V/NUn1S7/3puo8tm4KGsYlcltRYEaBJfs5yo/KAhIrQ8a0RbLQ4H2HkC
+ 69cRz/4+7tgAUnFTt3WaNdvjiN265ZpkME/0IsvhR0wJ1/mCVQYdvZ8IBph7tOeK68uh
+ 0nZI+/d/ww+t/fNY4amVEeRB9kOHXTs8gaoVvw+68Bc5S34QH1xmibH+fX4YPjkpcfy8
+ PJex+Ze9DsIid7poXiLvw6JjS34hKqi0H0SzVeCwhqWPBuj1+3+uja/B+xm3i9l2pyh0
+ lXbqVD6zZgH5dEDM4e4kp1DwWbup01cX/myaS8C3e2JY6JqqPV3PqWy4WLwIiI5zKeVu
+ i8XQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=QCHmK+5GfaVz8bbbSowmaOnzegplSKmswr3oSdG1Ntc=;
- b=U8JuCGMzXF6QLvQlQceVeFFmuVthKhCgcVbWImtFR9B61XbxCMrL6vscbW2Cpd3OSF
- u4q0vM80Y079mIy8yIJFUzV1MB4q1Ye1iEYxTWMJ3L1KRLh8OD10Ym1dcrOkS/iF+rhi
- C0nh7us7wglVyYAhBflsrEdOZOd5YGZ3R0GhJQz5LIJ55fvuyjbQ6j5JY5X3Z9UjNMf3
- INGS57QdpIjEOmY5VD74F4iijE5YgY5/zw992/Ym5IjFvP8vVanKHa68xRniVhol9BIn
- TBGSJX/PTlR5tWj6SdzclTlDfTSBy9GD82CK3k7eYtwG1ByLWKRq6Vf1DrtMdHJHar5k
- YNWw==
-X-Gm-Message-State: AGi0PuatrAt972SD7ObQeQPd2RrQmNAGwUQsbbID2z8NcpfV7npkNqFq
- xpHPLgAbDBHLSPq6lgLYi12yTg==
-X-Google-Smtp-Source: APiQypJURckLnLZ0H/WagG5eV1Il3kHdYUP+TbaZp19RH7fgAaUZ5DpZsvJJE3WKzR4nFCtMn0O5IA==
-X-Received: by 2002:a5d:4092:: with SMTP id o18mr3262717wrp.227.1587627069178; 
- Thu, 23 Apr 2020 00:31:09 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56?
- ([2a01:e35:2ec0:82b0:39cc:a07:8b48:cc56])
- by smtp.gmail.com with ESMTPSA id j68sm2443417wrj.32.2020.04.23.00.31.07
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=bxYSxdYwcXc6p7kPweonk+RqgS5u92HacX+d8Hknp8w=;
+ b=KtnlXOmYvV3cBOzXWrR8PQH0dkliuTxGpMvQA/KsUBsH6TVHByHHX2kA9JEJJYkZ7l
+ b/+9Eno3+oJi4368rsTMBzSNaTNAlYdYRIxFMr7FTkaaY0RSU5EqHGPBzjiEAwdoHtS7
+ FULaeIc1rsT9S7N1BkD70A/GSUKHm2IrFpiVCzxNNq5Idx9DQmSZyGFGR+vKCD6OCdVa
+ 7lQMiOA4VVJ5oYI/iXFGUKg8pMYfQR4FN7wYHZVz35KU/3IiOPxch+ZWkyfDCD2Mtbh+
+ fsvvFN2PWqF70I5D1YpYHmxrSLN12lhkvqIZhFwACEgQckzrzQjFxjm6fs5x/u302K5E
+ KJ6g==
+X-Gm-Message-State: AGi0PuY4n5ljP0Rz0onpKmnE6BZPyRVAK4KT7tWon2z4qP6Qsubme/f1
+ e60ykYtBQLgij6XMfKX/Mpo=
+X-Google-Smtp-Source: APiQypIYhN6tMBpUfx0YFUtGTxS8oFi+CP08Gt2smdXlLPjkiye0Xa8KXYom/+lhppWn0l0NiA9l0g==
+X-Received: by 2002:a7b:c927:: with SMTP id h7mr3574245wml.122.1587640343491; 
+ Thu, 23 Apr 2020 04:12:23 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id n9sm3240829wrx.61.2020.04.23.04.12.22
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 23 Apr 2020 00:31:08 -0700 (PDT)
-Subject: Re: [PATCH v7 0/8] Genericize DW MIPI DSI bridge and add i.MX 6 driver
-To: Adrian Ratiu <adrian.ratiu@collabora.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org
-References: <20200421161610.1501827-1-adrian.ratiu@collabora.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <d4cda063-3047-a5cc-a675-1d5008657b97@baylibre.com>
-Date: Thu, 23 Apr 2020 09:31:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thu, 23 Apr 2020 04:12:22 -0700 (PDT)
+Subject: Re: [PATCH v2 3/3] ARM: dts: rockchip: add rk3288 ISP and DPHY
+To: karthik poduval <karthik.poduval@gmail.com>
+References: <karthik.poduval@gmail.com>
+ <20200406073017.19462-1-karthik.poduval@gmail.com>
+ <20200406073017.19462-4-karthik.poduval@gmail.com>
+ <2fc95890-f938-30a5-a163-bf3fa2e223df@gmail.com>
+ <CAFP0Ok-NxDDF8TMP4pN=xn6w3H=TYqN3DMfGW-vuiC5qB-Oj5g@mail.gmail.com>
+ <CAFP0Ok9XGzVbghbnOOyfXiOOc5-a94uFRu7sD5wXz9sr-+AYEA@mail.gmail.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <9407b6c3-b932-5904-18ff-7c6cbf6bcc8b@gmail.com>
+Date: Thu, 23 Apr 2020 13:12:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <20200421161610.1501827-1-adrian.ratiu@collabora.com>
+In-Reply-To: <CAFP0Ok9XGzVbghbnOOyfXiOOc5-a94uFRu7sD5wXz9sr-+AYEA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_003110_938550_EDB405AE 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200423_041225_582781_4E15F567 
+X-CRM114-Status: GOOD (  33.35  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,65 +108,439 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-imx@nxp.com
+Cc: Rob Herring <robh@kernel.org>, heiko@sntech.de, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 21/04/2020 18:16, Adrian Ratiu wrote:
-> Hello everyone,
-> 
-> v7 addresses the points raised by Enric and Laurent in v6.
-> Specific details in patch changelogs.
-> 
-> Two new independent patches were derived from this series
-> and posted for review (now they are dependencies for v7):
-> 
-> Message-ID: 20200421105814.1364900-1-adrian.ratiu@collabora.com
-> Web: https://lore.kernel.org/linux-devicetree/20200421105814.1364900-1-adrian.ratiu@collabora.com/T/#u
-> 
-> and
-> 
-> Message-ID: 20200420100222.1308898-1-adrian.ratiu@collabora.com
-> Web: https://lore.kernel.org/linux-arm-kernel/20200420100222.1308898-1-adrian.ratiu@collabora.com/T/#u
+Hi robh, Heiko, Karthik, Helen and others,
 
-Side note, you can build the following URL from message-id:
-http://lore.kernel.org/r/20200420100222.1308898-1-adrian.ratiu@collabora.com
+See comments below.
+Should we change Helen's patch serie a little bit to accommodate other
+isp1 compatibles as well? Could you give advise here? Thanks!
 
-Neil
+Johan
+
+
+On 4/23/20 7:10 AM, karthik poduval wrote:
+> Hi Johan/Helen,
+> 
+> I was attempting to fix the yaml to work for both platforms rk3288 and
+> rk3399. I couldn't find any specific example in the existing yaml files
+> that deal with this exact scenario common driver but different clocks for
+> different chipsets. Could you point me to an appropriate example ?
+> 
+> Meanwhile here is the patch I was trying out.
+> diff --git a/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> b/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> index af246b71eac6..4ca76a1bbb63 100644
+> --- a/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> +++ b/Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+> @@ -15,7 +15,11 @@ description: |
+> 
+>  properties:
+>    compatible:
+> -    const: rockchip,rk3399-cif-isp
+> +    items:
+> +      - enum:
+> +        - rockchip,rk3288-cif-isp
+> +        - rockchip,rk3399-cif-isp
+> +      - const: rockchip,rk3399-cif-isp
+> 
+>    reg:
+>      maxItems: 1
+> @@ -37,20 +41,38 @@ properties:
+>      const: dphy
+> 
+
+>    clocks:
+> -    items:
+> -      - description: ISP clock
+> -      - description: ISP AXI clock clock
+> -      - description: ISP AXI clock  wrapper clock
+> -      - description: ISP AHB clock clock
+> -      - description: ISP AHB wrapper clock
+> +    oneOf:
+> +      # rk3399 clocks
+> +      - items:
+> +        - description: ISP clock
+> +        - description: ISP AXI clock clock
+> +        - description: ISP AXI clock  wrapper clock
+> +        - description: ISP AHB clock clock
+> +        - description: ISP AHB wrapper clock
+> +      # rk3288 clocks
+> +      - items:
+> +        - description: ISP clock
+> +        - description: ISP AXI clock clock
+> +        - description: ISP AHB clock clock
+> +        - description: ISP Pixel clock
+> +        - description: ISP JPEG source clock
+> 
+
+We can expect a few more clocks here, so just use:
+
+  clocks:
+    minItems: 4
+    maxItems: 5
+
+or
+
+See question for Helen about 'pclk_isp_wrap':
+
+  clocks:
+    minItems: 4
+    maxItems: 6
+
+
+From Rockchip tree:
+
+static const char * const rk1808_isp_clks[] = {
+	"clk_isp",
+	"aclk_isp",
+	"hclk_isp",
+	"pclk_isp",
+};
+
+static const char * const rk3288_isp_clks[] = {
+	"clk_isp",
+	"aclk_isp",
+	"hclk_isp",
+	"pclk_isp_in",
+	"sclk_isp_jpe",
+};
+
+static const char * const rk3326_isp_clks[] = {
+	"clk_isp",
+	"aclk_isp",
+	"hclk_isp",
+	"pclk_isp",
+};
+
+static const char * const rk3368_isp_clks[] = {
+	"clk_isp",
+	"aclk_isp",
+	"hclk_isp",
+	"pclk_isp",
+};
+
+static const char * const rk3399_isp_clks[] = {
+	"clk_isp",
+	"aclk_isp",
+	"hclk_isp",
+	"aclk_isp_wrap",
+	"hclk_isp_wrap",
+	"pclk_isp_wrap"
+};
+
+Question for Helen:
+
+Where did 'pclk_isp_wrap' go in your patch serie?
+
+>    clock-names:
+> -    items:
+> -      - const: clk_isp
+> -      - const: aclk_isp
+> -      - const: aclk_isp_wrap
+> -      - const: hclk_isp
+> -      - const: hclk_isp_wrap
+> +    oneOf:
+> +      # rk3399 clocks
+
+sort on SoC
+
+> +      - items:
+> +        - const: clk_isp
+> +        - const: aclk_isp
+> +        - const: aclk_isp_wrap
+> +        - const: hclk_isp
+> +        - const: hclk_isp_wrap
+> +      # rk3288 clocks
+
+sort on SoC
+
+> +      - items:
+> +        - const: clk_isp
+> +        - const: aclk_isp
+> +        - const: hclk_isp
+> +        - const: pclk_isp_in
+> +        - const: sclk_isp_jpe
+
+  clock-names:
+    oneOf:
+      # rk3288 clocks
+      - items:
+        - const: clk_isp
+          description: ISP clock
+        - const: aclk_isp
+          description: ISP AXI clock clock
+        - const: hclk_isp
+          description: ISP AHB clock clock
+        - const: pclk_isp_in
+          description: ISP Pixel clock
+        - const: sclk_isp_jpe
+          description: ISP JPEG source clock
+      # rk3399 clocks
+      - items:
+        - const: clk_isp
+          description: ISP clock
+        - const: aclk_isp
+          description: ISP AXI clock clock
+        - const: aclk_isp_wrap
+          description: ISP AXI clock  wrapper clock
+        - const: hclk_isp
+          description: ISP AHB clock clock
+        - const: hclk_isp_wrap
+          description: ISP AHB wrapper clock
+
+Question for robh:
+Is this a proper way to add description or is there a beter way?
 
 > 
-> Tested on latest linux-next 20200421 with the above two patches
-> applied.
+> on running command.
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
 > 
-> Thank you,
-> Adrian
+> I see following messages for dts nodes.
+>  DTC     arch/arm/boot/dts/rk3288-firefly-beta.dt.yaml
+>   CHECK   arch/arm/boot/dts/rk3288-firefly-beta.dt.yaml
+> /home/kpoduval/workspace/tinkerboard-yocto/build/tmp/work/tinker_board-poky-linux-gnueabi/linux-stable/5.5.7+gitAUTOINC+ceab3ac1e6-r0/linux-tinker_board-standard-build/arch/arm/boot/dts/rk3288-firefly-beta.dt.yaml:
+> isp@ff910000: clocks: [[7, 107], [7, 205], [7, 469], [7, 371], [7, 108]] is
+> valid under each of {'additionalItems': False, 'items': [{}, {}, {}, {},
+> {}], 'maxItems': 5, 'minItems': 5, 'type': 'array'}, {'additionalItems':
+> False, 'items': [{}, {}, {}, {}, {}], 'maxItems': 5, 'minItems': 5, 'type':
+> 'array'}
+> /home/kpoduval/workspace/tinkerboard-yocto/build/tmp/work/tinker_board-poky-linux-gnueabi/linux-stable/5.5.7+gitAUTOINC+ceab3ac1e6-r0/linux-tinker_board-standard-build/arch/arm/boot/dts/rk3288-firefly-beta.dt.yaml:
+> isp@ff910000: compatible: ['rockchip,rk3288-cif-isp'] is too short
 > 
-> Adrian Ratiu (8):
->   drm: bridge: dw_mipi_dsi: add initial regmap infrastructure
->   drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
->   drm: bridge: synopsis: add dsi v1.01 support
->   drm: imx: Add i.MX 6 MIPI DSI host platform driver
->   dt-bindings: display: add i.MX6 MIPI DSI host controller doc
->   drm: stm: dw-mipi-dsi: let the bridge handle the HW version check
->   drm: bridge: dw-mipi-dsi: split low power cfg register into fields
->   drm: bridge: dw-mipi-dsi: fix bad register field offsets
+> Are these cosidered as error messages ? The "too short" is being alerted
+> for the orgianl yaml for rk3399 without any of my chnages.
+> Kindly advise.
 > 
->  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 135 ++++
->  drivers/gpu/drm/bridge/synopsys/Kconfig       |   1 +
->  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 692 +++++++++++++-----
->  drivers/gpu/drm/imx/Kconfig                   |   8 +
->  drivers/gpu/drm/imx/Makefile                  |   1 +
->  drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 391 ++++++++++
->  drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  12 +-
->  7 files changed, 1035 insertions(+), 205 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
->  create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
+> --
+> Regards,
+> Karthik Poduval
+> 
+> On Sat, Apr 11, 2020 at 10:13 PM karthik poduval <karthik.poduval@gmail.com>
+> wrote:
+> 
+>> Thanks Johan for your valuable comments.
+>>
+>> On Wed, Apr 8, 2020 at 6:19 PM Johan Jonker <jbx6244@gmail.com> wrote:
+>>>
+>>> Hi Karthik and others,
+>>>
+>>> Include all mail lists found with:
+>>> ./scripts/get_maintainer.pl --nogit-fallback --nogit
+>>>
+>>> Helen is moving isp1 bindings out of staging.
+>>> Clocks and other things don't fit with her patch serie.
+>>> Maybe fix this while still in staging?
+>>>
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> 'phys' is a required property
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> 'phy-names' is a required property
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> 'ports' is a required property
+>>>
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> 'assigned-clock-rates', 'assigned-clocks'
+>>> do not match any of the regexes: 'pinctrl-[0-9]+'
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> clock-names:2: 'aclk_isp_wrap' was expected
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> clock-names:3: 'hclk_isp' was expected
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: isp@ff910000:
+>>> clock-names:4: 'hclk_isp_wrap' was expected
+>>>
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: mipi-phy-rx0: 'power-domains'
+>>> is a required property
+>>>
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: mipi-phy-rx0: clock-names:1:
+>>> 'dphy-cfg' was expected
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: mipi-phy-rx0: clock-names:
+>>> ['dphy-ref', 'pclk'] is too short
+>>> arch/arm/boot/dts/rk3288-tinker.dt.yaml: mipi-phy-rx0: clocks: [[7,
+>>> 126], [7, 358]] is too short
+>>>
+>>>
+>>> Inside yaml:
+>>> Use enum and sort.
+>>>>>  properties:
+>>>>>    compatible:
+>>>
+>>>>>      const: rockchip,rk3399-cif-isp
+>>>>> +    const: rockchip,rk3288-rkisp1
+>>>
+>>>     enum:
+>>>       - rockchip,rk3288-rkisp1
+>>>       - rockchip,rk3399-cif-isp
+>>>
+>>>>>  properties:
+>>>>>    compatible:
+>>>>>      const: rockchip,rk3399-mipi-dphy-rx0
+>>>>> +    const: rockchip,rk3288-mipi-dphy-rx0
+>>>
+>>>     enum:
+>>>       - rockchip,rk3288-mipi-dphy-rx0
+>>>       - rockchip,rk3399-mipi-dphy-rx0
+>>>
+>>>>
+>>>> Please, keep consistency, or rk3288-cif-isp, or we change
+>> rk3399-cif-isp to be rk3399-rkisp1.
+>>>
+>>>
+>>> On 4/6/20 9:30 AM, Karthik Poduval wrote:
+>>>> ISP and DPHY device entries missing so add them.
+>>>>
+>>>
+>>>> tested on tinkerbaord with ov5647 using command
+>>>> cam -c 1 -C -F cap
+>>>
+>>> Disclose dts node for ov5647 in cover letter, so people can reproduce
+>>> this experiment.
+>>>
+>>> Caution!
+>>> Without dts node this command doesn't work correct.
+>>>
+>>> make ARCH=arm dtbs_check
+>>>
+>> DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/rockchip-isp1.yaml
+>>>
+>>> make ARCH=arm dtbs_check
+>>>
+>> DT_SCHEMA_FILES=Documentation/devicetree/bindings/phy/rockchip-mipi-dphy-rx0.yaml
+>>>
+>>> Needed to detect missing: phys, phy-names and ports ,etc.
+>>>
+>>> &isp {
+>>>         status = "okay";
+>>> };
+>>>
+>> Makes sense, that's why my kernel compilation passed and I didn't
+>> these errors. Thanks for the command, I will verify dts for
+>> correctness in next patch series.
+>>
+>>> Needed to detect missing: power-domains, etc.
+>>>
+>>> &mipi_phy_rx0 {
+>>>         status = "okay";
+>>> };
+>>>
+>>>>
+>>>> Reported-by: Karthik Poduval <karthik.poduval@gmail.com>
+>>>> Signed-off-by: Karthik Poduval <karthik.poduval@gmail.com>
+>>>> ---
+>>>>  arch/arm/boot/dts/rk3288.dtsi | 25 +++++++++++++++++++++++++
+>>>>  1 file changed, 25 insertions(+)
+>>>>
+>>>> diff --git a/arch/arm/boot/dts/rk3288.dtsi
+>> b/arch/arm/boot/dts/rk3288.dtsi
+>>>> index 9beb662166aa..adea8189abd9 100644
+>>>> --- a/arch/arm/boot/dts/rk3288.dtsi
+>>>> +++ b/arch/arm/boot/dts/rk3288.dtsi
+>>>> @@ -247,6 +247,23 @@
+>>>>               ports = <&vopl_out>, <&vopb_out>;
+>>>>       };
+>>>>
+>>>
+>>>> +     isp: isp@ff910000 {
+>>>
+>>> For nodes:
+>>> Sort things without reg alphabetical first,
+>>> then sort the rest by reg address.
+>>>
+>> Sure
+>>>> +             compatible = "rockchip,rk3288-rkisp1";
+>>>> +             reg = <0x0 0xff910000 0x0 0x4000>;
+>>>> +             interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+>>>> +             clocks = <&cru SCLK_ISP>, <&cru ACLK_ISP>,
+>>>> +                      <&cru HCLK_ISP>, <&cru PCLK_ISP_IN>,
+>>>> +                      <&cru SCLK_ISP_JPE>;
+>>>> +             clock-names = "clk_isp", "aclk_isp",
+>>>> +                           "hclk_isp", "pclk_isp_in",
+>>>> +                           "sclk_isp_jpe";
+>>>> +             assigned-clocks = <&cru SCLK_ISP>, <&cru SCLK_ISP_JPE>;
+>>>> +             assigned-clock-rates = <400000000>, <400000000>;
+>>>
+>>>> +             power-domains = <&power RK3288_PD_VIO>;
+>>>> +             iommus = <&isp_mmu>;
+>>>
+>>> sort
+>>>
+>>> Something missing?
+>>> Where are the ports and port nodes?
+>>
+>> I was assuming that this would be a part of the board specific dtsi or
+>> dts entry where the isp node would be overriden and the i2c camera
+>> port
+>> and the isp port remote-endpoints would be connected. I had this as a
+>> part of my first patch series. However I was advised by Helen to not
+>> include the ov5647
+>> dtsi as it isn't hardwired to the SoC and resides on an camera adapter
+>> board.
+>>
+>> Should this be defined without the remote-endpoint phandle since we
+>> don't know exactly which sensor gets connected in this dtsi file ?
+>>
+>>>
+>>>> +             status = "disabled";
+
+Question for Heiko:
+Should we add status to Helen's serie as well?
+
+>>>> +     };
+>>>> +
+>>>>       sdmmc: mmc@ff0c0000 {
+>>>>               compatible = "rockchip,rk3288-dw-mshc";
+>>>>               max-frequency = <150000000>;
+>>>> @@ -891,6 +908,14 @@
+>>>>                       status = "disabled";
+>>>>               };
+>>>>
+>>>
+>>>> +             mipi_phy_rx0: mipi-phy-rx0 {
+>>>
+>>> Use separate patch.
+>>>
+>>> For nodes:
+>>> Sort things without reg alphabetical first,
+>>> then sort the rest by reg address.
+>>>
+>> Sure
+>>
+>>>> +                     compatible = "rockchip,rk3288-mipi-dphy-rx0";
+>>>> +                     clocks = <&cru SCLK_MIPIDSI_24M>, <&cru
+>> PCLK_MIPI_CSI>;
+>>>> +                     clock-names = "dphy-ref", "pclk";
+>>> Something missing?
+>>> Does this phy have a power domain?
+>> The tinkerboard debian kernel (where I referred to for this patch)
+>> didn't have it defined for the DPHY. I would guess that it would be
+>> the same as the ISP i.e. RK3288_PD_VIO,
+>> does anyone know the answer to this or do I have to reach out to
+>> Rockchip engineering ?
+>>>
+>>>> +                     #phy-cells = <0>;
+>>>> +                     status = "disabled";
+>>>> +             };
+>>>> +
+>>>>               io_domains: io-domains {
+>>>>                       compatible = "rockchip,rk3288-io-voltage-domain";
+>>>>                       status = "disabled";
+>>>>
+>>>
+>>
+>>
+>> --
+>> Regards,
+>> Karthik Poduval
+>>
+> 
 > 
 
 
