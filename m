@@ -2,88 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF8AD1B758D
-	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Apr 2020 14:39:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91D5A1B7601
+	for <lists+linux-rockchip@lfdr.de>; Fri, 24 Apr 2020 14:54:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JNfzM/0Lxq3VKhpVllsG6qalet9nSK/0gm3cjEvy1YQ=; b=WSP
-	5Z1eO6r1ZniMxOQt63yNnyhi1uzk+d20jCrrg3cE00kYUwYod4Wye5Y7ovdTYhm6UiqFWveWQNdKd
-	S2PFk8FuH//uIS3O1jzo1+vsYkqvJHGLxc2jQqjxdkVpBh5Q6vH8Jq3OviShvmLUPSY9pgsfvrB8a
-	c8nC82d484TFyXbxpU3OmB6fXZp3VDkGSHIJafwiRYJDEu9gH+49SAW7C4XZOxul5Y7kYYpCY8h49
-	uW5zwXdYw4vT+yhMF5xK/9Z6jflp5A07lMuEKDCQzhHdxXVP4RDUD/ZmMwK2QCI9cz+Je2NcxGk54
-	szvZu0NBoZDK3Yc4Li9g11j3iW+isUw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mqD9YEiHe2KSxFcLB1bnFRvDFi8x6zsJtTJjTdOUy1k=; b=R3fvSMtQiP0q9Q
+	beosx5FOZ4cRHqY+Z5Z7eI97b9hzcFjhyjIAGf77MyGPy8YW8ljOGoaWMWQj+R1bbgb+Y241OOz6H
+	4BzEBdLmObg4grV+sUwKk5hrnfJ1IuI3LLKlZ1g6ofs9tAoL/oYlOQyun0DGCJPh9tWXl8ohEFaPn
+	klzf3LLHn6plNj7I7o4XpivBFke5+X9boqd8BoLX4qMQORJEu9+FveTy5SpQW++tuGEgOhwIWiQ+g
+	BOVt1K0Yq/Uj/JC/Ju+lcPxMdYVZS60mV0IB/9kgQy7E2un1SYik6brOeFvvU7vp4TpUFL+iKsHZJ
+	KgSV+lt+ZYAgk0a1fEfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxcS-000216-9x; Fri, 24 Apr 2020 12:39:48 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jRxqp-0005ka-7Z; Fri, 24 Apr 2020 12:54:39 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxcF-0001ra-JS; Fri, 24 Apr 2020 12:39:36 +0000
-Received: by mail-wm1-x343.google.com with SMTP id k12so1701795wmj.3;
- Fri, 24 Apr 2020 05:39:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
- b=teIk66JmO3IgWg1GspSg6VCLItxXTdO1u7eb8fUFMU1hNrcoBYZXDVZoLV6cPR1RMF
- Kv31jgC7+Q1/s/yQIy2NIpwJ59DdnE6U7NT6Y4kyOGlze/NKDXRptsRrBeFKR8xRbz5g
- glrUypL0KSIC7WPE1M6ct55WNR0c5Xt31WsWb75eFEBgstEfRymNxjm0e92XKYLn72YP
- yYcmw+lf3k92IBqkoaICC04Hb40kMPASXUwBBIeZAqw+k6hGmE8dGn94vUO+9/uk/+Gn
- Z5mJsfiT2cciloi5lMLEwBDP3dlkGN305mOnuo/C6bthykIkjf5IWmEYSYCuGJXxjPut
- fmHw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=/5FhewZOjMa+L+2tqcMzJgPUq1JNbdQFqoKSCaQXbEM=;
- b=EPULjlnyn8kInBW3IzrHqxTFbD6SI0R5gPBaUqfgQxEnG9U8dAJRKYRZPB2e5q+A9Y
- 8TOBCZM154klaiEW8aN8qS0AbS+DZIBynYUqEE8RUkcYs9X2QZE/g0z1hDjw3d1eb6tg
- VS/vwSJfgp6Hwgh1liOXdah5T/WlglPto42xHzfTOt2MlPWLsIz7LbiW9gVUQyCJyaYK
- K/swOZEAPyg8AyjjSGrPL7HJycbUeP1j3cZ6mNbXKMPSjyZBd00JRXFAS3kD0Q+cVomU
- q5AFn7ZUndCyg4WuaFFpHmUr3/I7HzB/0ypjK1MbWSilmQvKZbcZClzg55Qwx2+qgk9a
- g2qg==
-X-Gm-Message-State: AGi0PubiB+AXsxIAGeOkFw3e1wObN38T7OoiiRP9+04+tkpKrK9fCwhz
- WhpMq8sb7vPPNzsSxwUGBc0=
-X-Google-Smtp-Source: APiQypKzAVcFFjXq84S98O4oSdfTNcU47XV/qwKDcg5zoIea/Yi23V/u7OuB9vSrNLmWi+JIwU/mEg==
-X-Received: by 2002:a05:600c:210c:: with SMTP id
- u12mr10328859wml.135.1587731973727; 
- Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id b12sm9136457wro.18.2020.04.24.05.39.32
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Apr 2020 05:39:33 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] ARM: dts: rockchip: fix pinctrl sub nodename for spi in
- rk322x.dtsi
-Date: Fri, 24 Apr 2020 14:39:23 +0200
-Message-Id: <20200424123923.8192-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jRxqU-0005Vu-6N; Fri, 24 Apr 2020 12:54:19 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id E0DE32A2C38
+Message-ID: <cf31ae67792aedf60ee4cf8002861edadc305314.camel@collabora.com>
+Subject: Re: [PATCH v2 3/4] media: rockchip: rga: Add support for the PX30
+ compatible
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>, 
+ linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+Date: Fri, 24 Apr 2020 09:54:04 -0300
+In-Reply-To: <20200423200937.1039257-4-paul.kocialkowski@bootlin.com>
+References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
+ <20200423200937.1039257-4-paul.kocialkowski@bootlin.com>
+Organization: Collabora
+User-Agent: Evolution 3.36.0-1 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_053935_656370_6D9E6397 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200424_055418_360858_27D4B339 
+X-CRM114-Status: GOOD (  14.43  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,63 +63,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: justin.swartz@risingedge.co.za, Heiko Stuebner <heiko@sntech.de>,
+ Hans Verkuil <hansverk@cisco.com>, Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Johan Jonker <jbx6244@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives these errors:
+Hey Paul,
 
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
-'#address-cells' is a required property
+Thanks for the patch!
 
-The $nodename pattern for spi nodes is
-"^spi(@.*|-[0-9a-f])*$". To prevent warnings rename
-'spi-0' and 'spi-1' pinctrl sub nodenames to
-'spi0' and 'spi1' in 'rk322x.dtsi'.
+On Thu, 2020-04-23 at 22:09 +0200, Paul Kocialkowski wrote:
+> The PX30 SoC has a RGA block, so add the associated compatible to
+> support it.
+> 
+> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> ---
+>  drivers/media/platform/rockchip/rga/rga.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+> index 9d122429706e..4fb4615662b7 100644
+> --- a/drivers/media/platform/rockchip/rga/rga.c
+> +++ b/drivers/media/platform/rockchip/rga/rga.c
+> @@ -955,6 +955,9 @@ static const struct dev_pm_ops rga_pm = {
+>  };
+>  
+>  static const struct of_device_id rockchip_rga_match[] = {
+> +	{
+> +		.compatible = "rockchip,px30-rga",
+> +	},
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-controller.yaml
+Please note that if you don't have anything px30-specific,
+then you don't need the compatible in the driver.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm/boot/dts/rk322x.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+You can have something like:
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 06172ebbf..e3b27da0a 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -1020,7 +1020,7 @@
- 			};
- 		};
- 
--		spi-0 {
-+		spi0 {
- 			spi0_clk: spi0-clk {
- 				rockchip,pins = <0 RK_PB1 2 &pcfg_pull_up>;
- 			};
-@@ -1038,7 +1038,7 @@
- 			};
- 		};
- 
--		spi-1 {
-+		spi1 {
- 			spi1_clk: spi1-clk {
- 				rockchip,pins = <0 RK_PC7 2 &pcfg_pull_up>;
- 			};
--- 
-2.11.0
+compatible = "rockchip,px30-rga", "rockchip,rk3288-rga"
+
+so you need to add it to the bindings. See Justin Swartz
+recent patches for rk3228.
+
+Down the road, if you find something specific for px30,
+you can make the driver aware. 
+
+Cheers,
+Ezequiel
 
 
 _______________________________________________
