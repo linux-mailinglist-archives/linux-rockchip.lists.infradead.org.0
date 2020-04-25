@@ -2,57 +2,87 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 644F71B86DE
-	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 15:47:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC9D1B8719
+	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 16:39:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fy7g6Z28l2VyCyjstoqBUGEC5wq5pbOORBwyUD6HSTc=; b=Echj9wuDRxCejU
-	tfdHXfvcOfJNOjM8DOx207jzVrJKknpMAKuIyToYGnRFRId460ulLii01JWs4OMppSffrQ5BZs5lg
-	QWWW4NMd0JHH/4ApkjV76YNEtISMFofNMV/4p1ZtlJete/MT2/cv2DzEHekTDBNlmaEYgrG80hFCN
-	ARNauxc2riUzZ20nFAkmx/eTqzSApb2ydmoXj7M+ff9lRinvvMaeHK968SS27i0W2g7D4EoM0005Z
-	2elX0LNip/RS/3mNrPZF9LgJpZ5ItaUyfEKbEkO1JtQKRRJH9eB+D2l+mUOwoKH4EFinPuZnetJP5
-	gQ8JoxwvB7BLcwPfvnfQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8hbJQhJcx6hhTxjGRf4VVuRGf9esVNhUo8NpfeZK1N0=; b=V0u
+	khQc+K6sicasGlOzLwukvZsxdnOl4GvtW45NKUHrn+fZxwH5nGG4BPt1VQRvA3IsqTqfTZuXLQllp
+	yiZXVuZ4LkGKyTSMTIfMHJdT3T80f54Xm5hvMD5WLy27WArclvX7ctq5UFxI3OrhxFQSYbx2P0Y2H
+	xHh7//e/dsEq/dKr9Hoq9KibpBsjVKossqaN0vE2e+vXr+OPdxGFyYECiZwwMPjxXEGBKiKahQRDe
+	uLxSSuVRl6krmiaGur728YmTx7uLNf2iDnegpQ4bvNQYJBMnwIxalM9Tl/W37eY/D9lft5wtohnOO
+	5rMf3zESBfMEH13vRnl2tAKQnsQ+FgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSL9F-0008Jz-1I; Sat, 25 Apr 2020 13:47:13 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jSLxN-00069j-Cc; Sat, 25 Apr 2020 14:39:01 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSL97-0008Dx-H7; Sat, 25 Apr 2020 13:47:07 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 6EA352A227C
-Message-ID: <c49a060e7f5da9564e375fdd47117d3f901e5d00.camel@collabora.com>
-Subject: Re: [PATCH v2 4/4] media: rockchip: rga: Only set output CSC mode
- for RGB input
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>, 
- linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-Date: Sat, 25 Apr 2020 10:46:47 -0300
-In-Reply-To: <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
-References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
- <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
-MIME-Version: 1.0
+ id 1jSLx9-0005zr-Ru; Sat, 25 Apr 2020 14:38:49 +0000
+Received: by mail-wr1-x444.google.com with SMTP id x17so14258614wrt.5;
+ Sat, 25 Apr 2020 07:38:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
+ b=FGQiUsJz1DJdOU4aO8/4AqLbPHoWHwIxq5qoq/tqkZLC6rVDhcb38vvj/iAoP5hZYu
+ duQ2y6wDLf+L0EbvJ0E1JkYMuR7jzSUXNEawNDfMTfk6RN1Ty4vVZ5u7XbWiFTlXu/0N
+ K5RT4Xe2hJcpvYyXkOKKWw7GSR5SOW93OIMUeVJmz4/ISn+DtDday9k8UNI6ZgK4rBPg
+ FjUv7npiIKVQLDMcXcdOlSJtBkZP8AMcKBlo2gWKwSu1HwfCpIn+rx45skgd+IIrEkZI
+ orGTUY6R4GQqZUICb6YixeLhATsRgjkbf1q0LFLyl+BTG/X3l2hRG9h57or4AqT7xEGU
+ 6rMg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
+ b=Inn3t1U8XvN0dS3A7iM80+OLLd9p6IZP61qTatGIgy60iZZoVYtbVZI0ekqpfM7XmD
+ VwD3liqoTWAL8ONI11r7XOP/iyX9wIYmKCYdpq8cXjVdvLsbVRq7T5Airt62i0l8sFCS
+ 5+K0A1/kwPV9M/97Xp18xsTZEBr5BvvwEnGRSavlPbOM1mrhlaoqd2qt9ht/NaRd5+1w
+ uqqAvCQk80COf/RUccp14zyRVnavF5DE1ZAHem3iESBn6Dh7wl46YBmPGThvMVVOhnTq
+ qp0VUNI+m5jHicXlpKCaIY92Zn1H/Yf8/1X+5k3nTzrTJvoAQn043W9E5JOEKbbcb/on
+ V/ag==
+X-Gm-Message-State: AGi0Pub0DxSOiSDJHf2ho3rF09KV8XAv2rDqRdoWwBRKdnvNIxoKqbEE
+ HwZynK5HTrgxuYrNiFxGOJg=
+X-Google-Smtp-Source: APiQypI1PZr71kxZ6u3RtjCr6IZCMHu+P3s3ugg7H6oMtBvZjl6Y1B94I3JpK//BSH+Rw9hHJxni/w==
+X-Received: by 2002:a5d:4248:: with SMTP id s8mr16903547wrr.216.1587825524488; 
+ Sat, 25 Apr 2020 07:38:44 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id t67sm8029319wmg.40.2020.04.25.07.38.43
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 25 Apr 2020 07:38:43 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: swap interrupts interrupt-names rk3399
+ gpu node
+Date: Sat, 25 Apr 2020 16:38:37 +0200
+Message-Id: <20200425143837.18706-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_064705_701596_9B734C42 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200425_073847_926957_BD7980B4 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,91 +95,51 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: justin.swartz@risingedge.co.za, Heiko Stuebner <heiko@sntech.de>,
- Hans Verkuil <hansverk@cisco.com>, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Johan Jonker <jbx6244@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Paul,
+Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
+In order to automate this process arm,mali-midgard.txt
+has been converted to yaml. In the new setup dtbs_check with
+arm,mali-midgard.yaml expects interrupts and interrupt-names values
+in the same order. Fix this for rk3399.
 
-Thanks a lot for the patch.
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
+arm,mali-midgard.yaml
 
-I haven't had the chance to test this,
-but I'd say you are fixing a long time issue here.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-I really appreciate that.
-
-On Thu, 2020-04-23 at 22:09 +0200, Paul Kocialkowski wrote:
-> Setting the output CSC mode is required for a YUV output, but must not
-> be set when the input is also YUV. Doing this (as tested with a YUV420P
-> to YUV420P conversion) results in wrong colors.
-> 
-> Adapt the logic to only set the CSC mode when the output is YUV and the
-> input is RGB.
-> 
-> Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> ---
->  drivers/media/platform/rockchip/rga/rga-hw.c | 18 +++++++++++-------
->  1 file changed, 11 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
-> index 4be6dcf292ff..cbffcf986ccf 100644
-> --- a/drivers/media/platform/rockchip/rga/rga-hw.c
-> +++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-> @@ -216,13 +216,17 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
->  	}
->  
->  	if (ctx->out.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
-
-Since we are already here touching this code, would you mind
-adding another patch, to do some cleaning first?
-
-First, replace the nested ifs with a boolean operator.
-Then, introduce some IS_YUV (or IS_RGB) macro, making the above test
-more like IS_YUV(out_hw_format).
-
-Finally, perhaps a comment along the lines of your commit message:
-
-"""
-Setting the output CSC mode is required for a YUV output,
-but must not be set when the input is also YUV.
-"""
-
-Details up to you :-)
-
-After the clean-up patch, which would be just cosmetics,
-your fix should be cleaner and more clear.
-
-Thanks,
-Ezequiel
- 
-> -		switch (ctx->out.colorspace) {
-> -		case V4L2_COLORSPACE_REC709:
-> -			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
-> -			break;
-> -		default:
-> -			dst_info.data.csc_mode = RGA_DST_CSC_MODE_BT601_R0;
-> -			break;
-> +		if (ctx->in.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
-> +			switch (ctx->out.colorspace) {
-> +			case V4L2_COLORSPACE_REC709:
-> +				dst_info.data.csc_mode =
-> +					RGA_SRC_CSC_MODE_BT709_R0;
-> +				break;
-> +			default:
-> +				dst_info.data.csc_mode =
-> +					RGA_DST_CSC_MODE_BT601_R0;
-> +				break;
-> +			}
->  		}
->  	}
->  
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 74f2c3d49..a08340fc8 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1883,10 +1883,10 @@
+ 	gpu: gpu@ff9a0000 {
+ 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
+ 		reg = <0x0 0xff9a0000 0x0 0x10000>;
+-		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
+-		interrupt-names = "gpu", "job", "mmu";
++		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
++		interrupt-names = "job", "mmu", "gpu";
+ 		clocks = <&cru ACLK_GPU>;
+ 		#cooling-cells = <2>;
+ 		power-domains = <&power RK3399_PD_GPU>;
+-- 
+2.11.0
 
 
 _______________________________________________
