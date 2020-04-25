@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18E331B85D1
-	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 12:53:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE1AC1B85D3
+	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 12:53:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,62 +11,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8P7GE46LTJRP8MRcnqtNmF4R+2DX/veLIRoWXHcWgjQ=; b=iFkJ78H8TpZMUNJh7dlqPdE7hg
-	b13IHcYtM7uGovzFpUOVL85kGAGydGP4XccsjNY3rFHI2la2s9F/RIFlvts9h1Bbc4Hbm0NXTvhXx
-	eAbst0RK8qYLOX0zvkpm7KchJ0wZs4gD5j/p3LNw8OeFPlkO4qwDyXcITew+8Lfw8FhjVxiO6vdVd
-	lWo+e23Xp8tRPcKBQdkYf14VUVagAPGTO+ePT2WqUbAsMUaOmza7uy7ocj/STMZb2inNbmK5fa/S3
-	xVoYBoqp8S1l12tif38IAzJEz+ZIQ22+HOsAOMFbmn6O+47+HcP3tLIyJ3tNrVxJEWR+TmufCIDdS
-	A9o/SCqw==;
+	bh=vV62mCQbsm4Ohl4D0ncLAUP5ohoUR4agdGEr4M6dpCQ=; b=oxErZzXvIc5A9liwDDDjO9zoQV
+	QZr6EEt8XUp9Lz64C0aoaSzfPjUPwhIJiusY5zt7sCxUmfDYn8sISTyw9wFYdElwh2Wzc5HDxLKsK
+	srKK26XaTG3GuHqoSouLTF7UO9HEJBSVWm5t01jxMxxFilf1JMvepeyj+nV33Sc2zgRu1LsDx5EiI
+	8Amg+qJf69piAqJTZ8PpbIcAp53/7vNGfHlZaoJ+4QQmsazU2mooqqCLSjrsIDzL6FxQmPoEqXh5S
+	CNxNxNcJAKgCokXP/2Hx4RsKCHdWKfOHC/007Pi+H4mqMhGrND6u0zPenaqBLga8BwcleQcUq0dVv
+	rBHqGcQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSIRK-0007ts-Dw; Sat, 25 Apr 2020 10:53:42 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jSIRP-0007xr-Br; Sat, 25 Apr 2020 10:53:47 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSIRH-0007s9-Lt
- for linux-rockchip@lists.infradead.org; Sat, 25 Apr 2020 10:53:40 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o15so5939673pgi.1
- for <linux-rockchip@lists.infradead.org>; Sat, 25 Apr 2020 03:53:39 -0700 (PDT)
+ id 1jSIRL-0007vT-I4
+ for linux-rockchip@lists.infradead.org; Sat, 25 Apr 2020 10:53:45 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 18so6105837pfx.6
+ for <linux-rockchip@lists.infradead.org>; Sat, 25 Apr 2020 03:53:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ozu7uNkxnfT3pFaKwz1ZBLbmh39OTUtagkK2pMdFdIA=;
- b=Oz5IZptXg6snmD/T9u2QwtK8sPSoked2lDQe3AV1m3gn41ogh3N+MUJ5wq2VPFpNwd
- HkiTeUjsbpBuT1Qk2L9y6YlV4o0yh3kfviG5+zxOknUO4TEdWe8VZ4NqPev8sDjVTuFJ
- 5WGnlRg4gOpEJ8aGnE3RgISFJd2E/He93QF0I=
+ bh=X0Fu+2qU88fU8C9sC/PgLXk4sJVmRSxsErJP5r2L0Rg=;
+ b=dG/KWNu6fQUReMjYJszWfkkkNtPEjpUUiMP6ZzUy183yCcsikJdEnU34SzEWJQYKSz
+ hdoyqhgEd/FB7hp7K5mhFYvFqPtkhq5Pa+gojrQxiTGUqToEYnrYCRHz8st6AlI/d5L3
+ hU4RrxjBkbwfHhpYT9bSlI0JPneqzJ3QETimE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ozu7uNkxnfT3pFaKwz1ZBLbmh39OTUtagkK2pMdFdIA=;
- b=TAZo9sLonREVP7FEBoguLQ+CcDpHTv9YZ3xZmunvJ6dralXrLsg5h+iQtFlnHiWjb+
- scquLEdMM+FA7twj+KJ+bLUZKQpy78APE6/HNRS45BJiXJTBXOqTkYbqrJhw4IzjhRvt
- T3RtN9VpxOJWheoGXmy7ioVuBMZRvpOK+wOq9WP7os5R8u/vzmCLQ7rcqfHUgTpm+xmD
- 7grfpM5E8xV5RnMOHb7dkAvUl1PlFNV25zb5q40lrK9g7Q3CVnF1nDSUxR/RrrCyz2+2
- TwLsgQi1u0AQSPhNd5Th9fCfSlAdjfcpkPnB7o3giTewUfQ5UF7Fbv5LeNvfTOjryFSA
- rJ3w==
-X-Gm-Message-State: AGi0PuZqORwJjDNyhhj9Zjr43sMclItUMtjuOxVA1PLT346I6M5JgF8Y
- CIj4nXvMpTS59Sosvao8Iaf/CQ==
-X-Google-Smtp-Source: APiQypJGQ1l88BqPLWXKnKMxlSWgKElqIDF5s+YVqymDpILkaKBAn/3guY57/ZKsSd+01WQA7ThiZg==
-X-Received: by 2002:a62:e211:: with SMTP id a17mr13803265pfi.250.1587812019217; 
- Sat, 25 Apr 2020 03:53:39 -0700 (PDT)
+ bh=X0Fu+2qU88fU8C9sC/PgLXk4sJVmRSxsErJP5r2L0Rg=;
+ b=AYj9gtXDBBl5XUrLmbKGGG2UKVySWb2voYo3Y4pwumZ+2YaZlcPWba/dyApkVEx/Fy
+ 9Wq/4EocUPTcErJxk8/n+efOkNgy+0WEOBIR2j8y/ch/RcCime6eDoQZnoljhQMeYzsB
+ HJtA+YGAY/xklN3wLW88aYIEbMk0qxxWXYV+Rv1jYZEhlWslcwFPzd8LyP5991jLSL/S
+ 0LUIwPPYlih91KH2GqitanHaomfVStankV9oy5nGHwdJR3PYfGWkSBwplsJaYJ8a+sr8
+ WKca1leTXJObcX3L4i8rNiS8RRsVts5RXf5JJH9o9yvst15ESOO4SXpgsM4EDrHoAcgt
+ x86A==
+X-Gm-Message-State: AGi0Pua+AZPTvHCW8DRgBJ9TXdjwwZVoDlMbJZBlnBbjHOSvkAbfgsQi
+ Qu4jKr3AVlWtTO8Mg0L6DVFsMQ==
+X-Google-Smtp-Source: APiQypKzByvjYL8MeVn+x3AudQdxXVziDFOU+LhBTSWu8AIa01Qheuv4TBJ83xGux3BTjf90IxJxXA==
+X-Received: by 2002:a63:2143:: with SMTP id s3mr13514049pgm.20.1587812022604; 
+ Sat, 25 Apr 2020 03:53:42 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:1d46:fa69:c34:93dc])
  by smtp.gmail.com with ESMTPSA id
- u188sm7996303pfu.33.2020.04.25.03.53.36
+ u188sm7996303pfu.33.2020.04.25.03.53.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 25 Apr 2020 03:53:38 -0700 (PDT)
+ Sat, 25 Apr 2020 03:53:41 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 2/6] arm64: dts: rk3399-evb: Move u-boot properties into
- -u-boot.dtsi
-Date: Sat, 25 Apr 2020 16:23:15 +0530
-Message-Id: <20200425105319.12009-3-jagan@amarulasolutions.com>
+Subject: [PATCH 3/6] clk: rk3399: Set empty for HCLK_SD assigned-clocks
+Date: Sat, 25 Apr 2020 16:23:16 +0530
+Message-Id: <20200425105319.12009-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200425105319.12009-1-jagan@amarulasolutions.com>
 References: <20200425105319.12009-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_035339_714400_4089BAC8 
-X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-CacheID: sfid-20200425_035343_595650_9F7F99AA 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,54 +105,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Move U-Boot specific properties into rk3399-evb u-boot
-specific dtsi file.
+Due to v5.7-rc1 sync the SD controller nodes in rk3399.dtsi
+have HCLK_SD assigned-clocks which are usually required for
+Linux and don't require to handle them in U-Boot.
 
-This would help to sync the devicetrees from Linux whenever
-required instead of adding specific nodes.
+ assigned-clocks = <&cru HCLK_SD>;
+
+So, mark them as empty in clock otherwise device probe on
+those SD controllers would fail.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/dts/rk3399-evb-u-boot.dtsi | 8 ++++++++
- arch/arm/dts/rk3399-evb.dts         | 2 --
- 2 files changed, 8 insertions(+), 2 deletions(-)
+ drivers/clk/rockchip/clk_rk3399.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/dts/rk3399-evb-u-boot.dtsi b/arch/arm/dts/rk3399-evb-u-boot.dtsi
-index ccb33d34d1..a4d68f3b98 100644
---- a/arch/arm/dts/rk3399-evb-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-evb-u-boot.dtsi
-@@ -11,3 +11,11 @@
- 		u-boot,spl-boot-order = &sdhci, &sdmmc;
- 	};
- };
-+
-+&i2c0 {
-+	u-boot,dm-pre-reloc;
-+};
-+
-+&rk808 {
-+	u-boot,dm-pre-reloc;
-+};
-diff --git a/arch/arm/dts/rk3399-evb.dts b/arch/arm/dts/rk3399-evb.dts
-index 4129e902a8..c72719c0d3 100644
---- a/arch/arm/dts/rk3399-evb.dts
-+++ b/arch/arm/dts/rk3399-evb.dts
-@@ -199,7 +199,6 @@
- 	clock-frequency = <400000>;
- 	i2c-scl-falling-time-ns = <50>;
- 	i2c-scl-rising-time-ns = <100>;
--	u-boot,dm-pre-reloc;
- 
- 	rk808: pmic@1b {
- 		compatible = "rockchip,rk808";
-@@ -211,7 +210,6 @@
- 		reg = <0x1b>;
- 		rockchip,system-power-controller;
- 		#clock-cells = <1>;
--		u-boot,dm-pre-reloc;
- 		status = "okay";
- 
- 		vcc12-supply = <&vcc3v3_sys>;
+diff --git a/drivers/clk/rockchip/clk_rk3399.c b/drivers/clk/rockchip/clk_rk3399.c
+index 1f62376595..d822acace1 100644
+--- a/drivers/clk/rockchip/clk_rk3399.c
++++ b/drivers/clk/rockchip/clk_rk3399.c
+@@ -996,6 +996,7 @@ static ulong rk3399_clk_set_rate(struct clk *clk, ulong rate)
+ 		break;
+ 	case ACLK_VOP1:
+ 	case HCLK_VOP1:
++	case HCLK_SD:
+ 		/**
+ 		 * assigned-clocks handling won't require for vopl, so
+ 		 * return 0 to satisfy clk_set_defaults during device probe.
 -- 
 2.17.1
 
