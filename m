@@ -2,73 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEC9D1B8719
-	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 16:39:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9282B1B876D
+	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 17:41:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8hbJQhJcx6hhTxjGRf4VVuRGf9esVNhUo8NpfeZK1N0=; b=V0u
-	khQc+K6sicasGlOzLwukvZsxdnOl4GvtW45NKUHrn+fZxwH5nGG4BPt1VQRvA3IsqTqfTZuXLQllp
-	yiZXVuZ4LkGKyTSMTIfMHJdT3T80f54Xm5hvMD5WLy27WArclvX7ctq5UFxI3OrhxFQSYbx2P0Y2H
-	xHh7//e/dsEq/dKr9Hoq9KibpBsjVKossqaN0vE2e+vXr+OPdxGFyYECiZwwMPjxXEGBKiKahQRDe
-	uLxSSuVRl6krmiaGur728YmTx7uLNf2iDnegpQ4bvNQYJBMnwIxalM9Tl/W37eY/D9lft5wtohnOO
-	5rMf3zESBfMEH13vRnl2tAKQnsQ+FgQ==;
+	References:List-Owner; bh=BabeYLpWVDHdANxl10ZzQB57rOycBdEm6g948TVsoic=; b=cGr
+	lPfan/RYR0mqubeN0Rze25E9bCCm+UIxpFAkB8mP3uaE0T5k9CXIG7xy7eDIYfCN2mVtstkIOe1Wz
+	HaCJQ7B20nrPp16jV5VVjRYLkDOE2tJcYKXUwm6ZRERcA86fmHN2IOZPBpHqvFvN7hbD/kKl5J6w5
+	g8R73Ec7V8HeJ517L44Vx/w+yvECfoBykTMc+OHfrYrAkQViGCnYHec98eNKi5IEFqR4ibf9ofJ70
+	iJPIvjG81flHTqiWkIQGiDE0oaBPNswnK01ZhZFyRzxwIIr6qS0i/8PpJXcBNd5n9taOVrG0+QjR5
+	ZcWMJ+MU4d5JmAc/JExH6a3LhLRx9tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSLxN-00069j-Cc; Sat, 25 Apr 2020 14:39:01 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jSMvJ-0005Z5-PK; Sat, 25 Apr 2020 15:40:57 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSLx9-0005zr-Ru; Sat, 25 Apr 2020 14:38:49 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x17so14258614wrt.5;
- Sat, 25 Apr 2020 07:38:45 -0700 (PDT)
+ id 1jSMv9-0005Rl-4q; Sat, 25 Apr 2020 15:40:48 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j1so15171251wrt.1;
+ Sat, 25 Apr 2020 08:40:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
- b=FGQiUsJz1DJdOU4aO8/4AqLbPHoWHwIxq5qoq/tqkZLC6rVDhcb38vvj/iAoP5hZYu
- duQ2y6wDLf+L0EbvJ0E1JkYMuR7jzSUXNEawNDfMTfk6RN1Ty4vVZ5u7XbWiFTlXu/0N
- K5RT4Xe2hJcpvYyXkOKKWw7GSR5SOW93OIMUeVJmz4/ISn+DtDday9k8UNI6ZgK4rBPg
- FjUv7npiIKVQLDMcXcdOlSJtBkZP8AMcKBlo2gWKwSu1HwfCpIn+rx45skgd+IIrEkZI
- orGTUY6R4GQqZUICb6YixeLhATsRgjkbf1q0LFLyl+BTG/X3l2hRG9h57or4AqT7xEGU
- 6rMg==
+ bh=4tS2YGMao2bjz+V8i9WcC4XNAp8kWn2u9wEJt79QoxQ=;
+ b=dF1k9liH3vfLfnCQ38X3ZEdw/ILSueU4pIU8vSkFjXiNbaOk0AOr7z6fV5KjjUhI3G
+ tGmJbp7EWR2o+ivKlKnxVEms60/+1PQmdCuJUJlDSpU9c2UP4038Fr4cDhjIWw4hsMjq
+ gGdRD3NqmVtvGDsdb+VQF2ruU1D78lBlNTBpCpWuJkYFqR1ymt5O3ng224ZDwlvUl/Pu
+ zYlP3+58ZnvuRTo8pNHKJl/F+2SR0Rn7vy7iF49aV2kXRZOgiw6H75UuYXSq8Y9tj8t0
+ TWGpif2nTKtPlcbYrCUGN7cDWU3ba0bEa/CNDdiiiO+0Ir9vBH11pGwugIFjUBrtpdH+
+ iyIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=biH+0Hq+KFxUENm9j1osu5bV9OSz14Gyl0yY3KBBFzU=;
- b=Inn3t1U8XvN0dS3A7iM80+OLLd9p6IZP61qTatGIgy60iZZoVYtbVZI0ekqpfM7XmD
- VwD3liqoTWAL8ONI11r7XOP/iyX9wIYmKCYdpq8cXjVdvLsbVRq7T5Airt62i0l8sFCS
- 5+K0A1/kwPV9M/97Xp18xsTZEBr5BvvwEnGRSavlPbOM1mrhlaoqd2qt9ht/NaRd5+1w
- uqqAvCQk80COf/RUccp14zyRVnavF5DE1ZAHem3iESBn6Dh7wl46YBmPGThvMVVOhnTq
- qp0VUNI+m5jHicXlpKCaIY92Zn1H/Yf8/1X+5k3nTzrTJvoAQn043W9E5JOEKbbcb/on
- V/ag==
-X-Gm-Message-State: AGi0Pub0DxSOiSDJHf2ho3rF09KV8XAv2rDqRdoWwBRKdnvNIxoKqbEE
- HwZynK5HTrgxuYrNiFxGOJg=
-X-Google-Smtp-Source: APiQypI1PZr71kxZ6u3RtjCr6IZCMHu+P3s3ugg7H6oMtBvZjl6Y1B94I3JpK//BSH+Rw9hHJxni/w==
-X-Received: by 2002:a5d:4248:: with SMTP id s8mr16903547wrr.216.1587825524488; 
- Sat, 25 Apr 2020 07:38:44 -0700 (PDT)
+ bh=4tS2YGMao2bjz+V8i9WcC4XNAp8kWn2u9wEJt79QoxQ=;
+ b=RM5ccnKINLym5LWXsInxAO9ag/yK66wOgycQb7xJLj0DlvMfwovhg+8Il+vfAkINSd
+ Uj656EzE2TBTubYxX6FqJqt11KV+smrUIBWHNk/aYbc1DyBveMS4UHw25vHHu9kI3uau
+ uINokXqBvtMsRIv5aXumZPDZEiIPXDddIh79/OXD6/v4PP0uD6DDdIjE1//LmmfL4AwF
+ St5NU8mTjvgI41sT1XUiNNpK02yfi1ZfPA4xknpB/C0kaB8ugOW+n919HpbTrGqT8mbG
+ Tv/BfSAISbnM6RAsnsPeEA6TUZ8M8aBxSsfWOVe42GGqO89B4aIPDOg+56scuAuM/OQl
+ HatQ==
+X-Gm-Message-State: AGi0PuY6fyFLQ2Odn+U8IOxufP2Ct2ted2Jd5i6iUAOW8Rx7KbWyM0Ib
+ L7X9PQ+DzJAsPt53OXmZwi2MLhK9
+X-Google-Smtp-Source: APiQypJGoGaAzG+Bg3At6JDz4UC0pKLg+Q1gEBvlSnQRnBene5RUUzfezzxPjtbNthOJhfaLe9pXvA==
+X-Received: by 2002:adf:ab5c:: with SMTP id r28mr17423144wrc.384.1587829245032; 
+ Sat, 25 Apr 2020 08:40:45 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id t67sm8029319wmg.40.2020.04.25.07.38.43
+ by smtp.gmail.com with ESMTPSA id c190sm7759143wme.4.2020.04.25.08.40.43
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 Apr 2020 07:38:43 -0700 (PDT)
+ Sat, 25 Apr 2020 08:40:44 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: swap interrupts interrupt-names rk3399
- gpu node
-Date: Sat, 25 Apr 2020 16:38:37 +0200
-Message-Id: <20200425143837.18706-1-jbx6244@gmail.com>
+Subject: [PATCH] dt-bindings: gpu: add power-domains #cooling-cells to arm,
+ mali-bifrost.yaml
+Date: Sat, 25 Apr 2020 17:40:37 +0200
+Message-Id: <20200425154037.21083-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_073847_926957_BD7980B4 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200425_084047_213676_0CE7D2C6 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jbx6244[at]gmail.com]
@@ -95,49 +96,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
-In order to automate this process arm,mali-midgard.txt
-has been converted to yaml. In the new setup dtbs_check with
-arm,mali-midgard.yaml expects interrupts and interrupt-names values
-in the same order. Fix this for rk3399.
+A test with the command below gives this error:
+
+arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: gpu@ff400000:
+'#cooling-cells', 'power-domains'
+do not match any of the regexes: 'pinctrl-[0-9]+'
+
+With the conversion to yaml it also filters things
+in a node that are used by other drivers like
+'#cooling-cells' and 'power-domains'
+for Rockchip px30 gpu nodes,
+so add them to 'arm,mali-bifrost.yaml'.
 
 make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
-arm,mali-midgard.yaml
+arm,mali-bifrost.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 74f2c3d49..a08340fc8 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1883,10 +1883,10 @@
- 	gpu: gpu@ff9a0000 {
- 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
- 		reg = <0x0 0xff9a0000 0x0 0x10000>;
--		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
--		interrupt-names = "gpu", "job", "mmu";
-+		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "job", "mmu", "gpu";
- 		clocks = <&cru ACLK_GPU>;
- 		#cooling-cells = <2>;
- 		power-domains = <&power RK3399_PD_GPU>;
+diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+index 0b229a7d4..b1844b9c2 100644
+--- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
++++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+@@ -43,9 +43,15 @@ properties:
+ 
+   operating-points-v2: true
+ 
++  power-domains:
++    maxItems: 1
++
+   resets:
+     maxItems: 2
+ 
++  "#cooling-cells":
++    const: 2
++
+ required:
+   - compatible
+   - reg
 -- 
 2.11.0
 
