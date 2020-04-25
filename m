@@ -2,79 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26D371B85EE
-	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 13:04:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 440D51B8677
+	for <lists+linux-rockchip@lfdr.de>; Sat, 25 Apr 2020 14:24:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JJSObaVbMmgXT1qG4DMxeuucPspZ75724aJqTY4HM5A=; b=ltGa1IFoQ0rIU5WoQGH0anToKZ
-	iIbFCxZWsn0km0/HFFPYJdjZSe2qAzAbC8mzzZNJHdnSQnphSaZTaqhY/b8NUDrYEELAl3nI1kDBU
-	GtiWQ54JzzrmxwF5HR5Wli0Bll6Nwwsr2xLT0xCb8JVrIBivpC95n7i5i8V5qimPwEBkuBaQ8cNyI
-	U7df8Mno5jLCSCLYIU8kizjjsxCFiyFVMZCTRRlsRIKUf1U71RGyjuUDijICeO3KGUqG24eJoK14W
-	i/EfS4V5cowzLQ+/snaVocg7+R7rq3bCaTbJHnaHJW7Ky6UEij5sBus+JcR6VqtwHYwsCdudOR5X0
-	L9EUggDQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Um0+ib90qZIwSJ0FRD7VebzGVtTbZApTkwqsvjrw6L4=; b=VhI
+	2Z+0XmYzRrT+YqN3BbVnddxB5Pr85QpWjlkZd8hH36ZrQllRH65jxDGeMcuD/KZ06hf78/gfwPDch
+	hTNpF/pj6CAjHqW4n3O393dioJ4KX/BcLPWb9jJvFyANiMb0QxD8F+xozeJKJ7A51e7clnMLeXHpF
+	xbbrCe2bOJigabZ8MMdQLr6hN+Ef3HPRJRXc56BZQ5NCVDOqBjQsGvuuKuDSfeLAQueoaqHZFhtkK
+	DAPUjk00/DD6INA2km1OP3dKa+sExBb9Zg1DxAjyWy4n29WWbxUDOrGDQXqN9WsxQY3JFUW6vzS3d
+	YEBfj7Ic11V5uGkewYOz9tVOJMG8VFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSIbx-0006W6-FR; Sat, 25 Apr 2020 11:04:41 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jSJqo-0006IG-GW; Sat, 25 Apr 2020 12:24:06 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSIbu-0006UV-HI
- for linux-rockchip@lists.infradead.org; Sat, 25 Apr 2020 11:04:39 +0000
-Received: by mail-pf1-x442.google.com with SMTP id w65so6099104pfc.12
- for <linux-rockchip@lists.infradead.org>; Sat, 25 Apr 2020 04:04:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=q43WUa+L6irHpcR7445SOskgq/+LIo6862w0Q9Mjsg0=;
- b=KOTx5CK6JYrp1mBcCYeA431SO6ucLDOOHDe8RTp1aAlQCIMscVWL4QUiMW3OxP0AwJ
- fb+R9ytlHBXew1ITl9vHMwl/g4TPDUax9MNZ9UqHMZGYVf1csfMDminU3AcfYiVWu9bd
- FM2YzU5uQExcEqJ1iHQceur8PMeyhtRen/Kt4=
+ id 1jSJqd-0006Bl-U9; Sat, 25 Apr 2020 12:23:57 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x17so13969720wrt.5;
+ Sat, 25 Apr 2020 05:23:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
+ b=Uh/YxgYrTgZm8cH7x+rLL64FIq82XOzzZDijkhS9sHgRdyfLMD/FImyOANWUtI0X3Z
+ MGtQg53S8vd8vXVy0dZQDwHprtF0QDAjizqUCMyFFlRqAaAZiYkEchZr7uDlaryCrDrt
+ 7Otk2t/c6Nr85RCeC2V163G1cXTCBflRW7hOomfmDjQdH1VLPppXS3gHbZdKarWReiKs
+ srkiAdwQ7LFjNUO21rK/JS0vR35lr2NV5jEFjWfAH/4igFTtSD0jwnvScl9nJ9LSxA7U
+ yxhFKMjLoD5qWB3POqMKhwqWvDJe36uIdpFEnfOA7z+P7Klhz90Q3fEn0oRq8J9TuP7O
+ 1U9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=q43WUa+L6irHpcR7445SOskgq/+LIo6862w0Q9Mjsg0=;
- b=EWx2xImtiA6Tf+z5K6xZlsWiGbX0yOuLq3idky4mBAixf8njGCpuI8bs8PUCiaTd2k
- otTHco78utODpMNeSaVdBnLzmbdVsdJLtmxBY2XQVckmkwRg6yyQH/fr5KJgYxb54XPb
- iVMafVkzQPxqYAEOZNpMEgPhsmB13qpMv3FqvR0yasFhwoW7kySEOhT9lqISYjo4gS8T
- rkflf3/JWpf+pZI2zRJayXhlodZlXlLpPMxoQfTsLpr/oKigQkqfXKSMF/Uy55rPR+Ko
- TpSg6IzJixKLdMgtgUsTsUV3kCkLZieln2x8Lk7lP+6IZF9PiRGotQfXxro7DYnZ50PQ
- 02uA==
-X-Gm-Message-State: AGi0PuYDJBGOu/bLJ+7piqCsNr9Db9IOun6e99/emVRO+Sx/piTha2/6
- XCl+hWDrw7U73ShinRVyeqemOQ==
-X-Google-Smtp-Source: APiQypJEZvLlzo7Fdte1V9dqqGFbB9LWSYwf+6ugYvA+EYm7V/51bkAt/m786oIFrl5RX0jP0joAew==
-X-Received: by 2002:a65:4c41:: with SMTP id l1mr13692106pgr.43.1587812677934; 
- Sat, 25 Apr 2020 04:04:37 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:1d46:fa69:c34:93dc])
- by smtp.gmail.com with ESMTPSA id
- v94sm6922831pjb.39.2020.04.25.04.04.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 25 Apr 2020 04:04:37 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 8/8] rockchip: Enable PCIe/M.2 on rock960 board
-Date: Sat, 25 Apr 2020 16:33:54 +0530
-Message-Id: <20200425110354.12381-9-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200425110354.12381-1-jagan@amarulasolutions.com>
-References: <20200425110354.12381-1-jagan@amarulasolutions.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=c08OzdbQ1jE2QKx73owHlaSBf5XrQfOgZDyVrQRe5NE=;
+ b=R03RnxQMkBjCegTYVZZiQlenzqM/kOpLL42lMHLb9B43fBcViS+EfuT4V7SrDl64M3
+ 6YOgDpZ3wi/2Yl2sS+xZ/q+SBt5SP0GgiyM91ItJ66JWwBO6NcXnuTQM0wG6Rye0qOui
+ SjpAKfpCvSQREU0HM8Tt1oGnNoZaSaqMeGzecLLVcuRdSuGSFKfVweEz2dRaPRh4tv+j
+ 3EdiYOCgrP5rfx7wfzSCAi+nrEZW6oBZ1vOQ/hVv3pVYsKxSo28qFILugkgmHQd+Xqm9
+ X24wpAuIuID/IpuvdwcYBUSMilojJL7+LR0yAZHddX5rKCY7gliulogiaPm3HKCJlPo7
+ ztug==
+X-Gm-Message-State: AGi0Pua0SndCUVQ2IG+j8w3USgR/XnGKzsCWnn7I9ybJwtDCNO+MOgRi
+ J+Rnu89Sqja+cNPw9G2HUw0=
+X-Google-Smtp-Source: APiQypKqV1QTBOAvxcY1sOfn6lI7/CzLvVHNS8erVBArRldAOpnsmJD7HkBmATIOd07gEBWAxue0aw==
+X-Received: by 2002:adf:e3c2:: with SMTP id k2mr16436150wrm.287.1587817432474; 
+ Sat, 25 Apr 2020 05:23:52 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id o6sm3248461wrw.63.2020.04.25.05.23.51
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 25 Apr 2020 05:23:51 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] arm64: dts: rockchip: remove extra assigned-clocks
+ property from &gmac2phy node in rk3328-evb.dts
+Date: Sat, 25 Apr 2020 14:23:44 +0200
+Message-Id: <20200425122345.12902-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_040438_598503_91B03C77 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20200425_052355_993596_268F6458 
+X-CRM114-Status: UNSURE (   9.77  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,107 +96,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: patrick@blueri.se, linux-rockchip@lists.infradead.org,
- Tom Cubie <tom@radxa.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, u-boot@lists.denx.de,
- Jagan Teki <jagan@amarulasolutions.com>, sunil@amarulasolutions.com,
- linux-amarula@amarulasolutions.com
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Due to some on board limitation rock960 PCIe
-works only with 1.8V IO domain.
+There are 2 'assigned-clocks' properties in the '&gmac2phy'
+node in 'rk3328-evb.dts', so remove one of them.
 
-So, this patch enables grf io_sel explicitly
-to make PCIe/M.2 to work.
+Info from clk-rk3328.c:
 
-rock960 => pci
-Scanning PCI devices on bus 0
-BusDevFun  VendorId   DeviceId   Device Class       Sub-Class
-_____________________________________________________________
-00.00.00   0x1d87     0x0100     Bridge device           0x04
-rock960 => nvme scan
-rock960 => nvme dev
+MUXGRF(SCLK_MAC2PHY, "clk_mac2phy", mux_mac2phy_src_p,
+CLK_SET_RATE_NO_REPARENT,
+RK3328_GRF_MAC_CON2, 10, 1, MFLAGS),
 
-IDE device 0: Vendor: 0x144d Rev: 4L1QCXB7 Prod: S35FNX0J623292
-            Type: Hard Disk
-            Capacity: 122104.3 MB = 119.2 GB (250069680 x 512)
-
-Cc: Tom Cubie <tom@radxa.com>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- board/vamrs/rock960_rk3399/rock960-rk3399.c | 20 ++++++++++++++++++++
- configs/rock960-rk3399_defconfig            |  5 +++++
- 2 files changed, 25 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/board/vamrs/rock960_rk3399/rock960-rk3399.c b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-index 68a127b9ac..98d62e89ca 100644
---- a/board/vamrs/rock960_rk3399/rock960-rk3399.c
-+++ b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-@@ -2,3 +2,23 @@
- /*
-  * Copyright (C) 2018 Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-  */
-+
-+#include <common.h>
-+#include <syscon.h>
-+#include <asm/io.h>
-+#include <asm/arch-rockchip/clock.h>
-+#include <asm/arch-rockchip/grf_rk3399.h>
-+#include <asm/arch-rockchip/hardware.h>
-+
-+#ifdef CONFIG_MISC_INIT_R
-+int misc_init_r(void)
-+{
-+	struct rk3399_grf_regs *grf =
-+	    syscon_get_first_range(ROCKCHIP_SYSCON_GRF);
-+
-+	/* BT565 is in 1.8v domain */
-+	rk_setreg(&grf->io_vsel, BIT(0));
-+
-+	return 0;
-+}
-+#endif
-diff --git a/configs/rock960-rk3399_defconfig b/configs/rock960-rk3399_defconfig
-index c4e954731a..cb1ec3c26b 100644
---- a/configs/rock960-rk3399_defconfig
-+++ b/configs/rock960-rk3399_defconfig
-@@ -9,6 +9,7 @@ CONFIG_DEBUG_UART_BASE=0xFF1A0000
- CONFIG_DEBUG_UART_CLOCK=24000000
- CONFIG_DEBUG_UART=y
- CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rock960.dtb"
-+CONFIG_MISC_INIT_R=y
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
-@@ -19,6 +20,7 @@ CONFIG_CMD_BOOTZ=y
- CONFIG_CMD_GPT=y
- CONFIG_CMD_MMC=y
- CONFIG_CMD_USB=y
-+CONFIG_CMD_PCI=y
- # CONFIG_CMD_SETEXPR is not set
- CONFIG_CMD_TIME=y
- CONFIG_CMD_PMIC=y
-@@ -36,10 +38,13 @@ CONFIG_MMC_SDHCI=y
- CONFIG_MMC_SDHCI_SDMA=y
- CONFIG_MMC_SDHCI_ROCKCHIP=y
- CONFIG_DM_ETH=y
-+CONFIG_NVME=y
-+CONFIG_PCI=y
- CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
-+CONFIG_DM_RESET=y
- CONFIG_BAUDRATE=1500000
- CONFIG_DEBUG_UART_SHIFT=2
- CONFIG_SYSRESET=y
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+index 49c4b96da..ab69b493d 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+@@ -82,7 +82,6 @@
+ &gmac2phy {
+ 	phy-supply = <&vcc_phy>;
+ 	clock_in_out = "output";
+-	assigned-clocks = <&cru SCLK_MAC2PHY_SRC>;
+ 	assigned-clock-rate = <50000000>;
+ 	assigned-clocks = <&cru SCLK_MAC2PHY>;
+ 	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>;
 -- 
-2.17.1
+2.11.0
 
 
 _______________________________________________
