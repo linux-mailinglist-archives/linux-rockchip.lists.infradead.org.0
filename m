@@ -2,86 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38C541BAD51
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 20:56:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01AFD1BADB9
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 21:19:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8P9Sn8ByJNLcPoug5JwSyFpjQf3h9Vs6+ZJxBtDChhE=; b=ijVM1oeSF8NUDr
-	IEd4wlwatcHCzLgwPWdYmKoLvqxvMpn6Nlyy5BoenjSiWCUYCV1boyCo2Uabimg07CMYcVo0JIDHX
-	nOqr/ldOYYzXuBos35ZUtdVcph/d5s0QXIAqbF8z/1DZtIxcLkv9gOPIlfeNfRhpzfZ4dLhp8MOlf
-	sq5PS68JiMquTEQLx19+JtKR9OjA4YfFNxC67g+c8kp5/9n7oFUu4aXsU+n4ESMS3NGjQWJdBYeG2
-	yeQn9YlOlNSeW+xjfCD55oSuYPqeImH78Uc+unauZmmeB/jgHqQj4A9bACuk4uAyy/B8e+rOZrYFg
-	XUzXc3ymHpqN0Q4WXtVw==;
+	List-Owner; bh=m0AdfmdnT9KbzJqgRGTggag5FcZhJ9TJGDoNKl2K5m4=; b=s5bGuy770Cd3WQ
+	dvB1Xucabu2WpzPAOjF5z2OEgfzwvqEZfkRws/sK4fzN88g0P/TAE8sV6zJAYHV9ghl70lVHa/qxT
+	9dtml2Ox1UdrW9GBtVzBJcjLb5k5F5qR5sm5m/ynrEVJNBRYZ4fMX39hBkGwLbnPs8zvjNGzgp+s4
+	5empgXcSRdy5m7hvz5muSJfyyEqT5UZQ8XvsSmqqfnxrEJDNwjQqvmliordtJjQLRDodp4u4h9BGi
+	sZpGjUjP+mLyxWzCnUObBYRw0BoRi2jA/qo0O6qQVmJTcAb/q0/QWnICD+UO5/nQYm4xCMGrk9nE6
+	7kHKNVKEzbtrl4wt8B3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT8vd-0008MP-8V; Mon, 27 Apr 2020 18:56:29 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1jT9Hh-0008TN-K4; Mon, 27 Apr 2020 19:19:17 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT8vY-0008Kl-CE
- for linux-rockchip@lists.infradead.org; Mon, 27 Apr 2020 18:56:26 +0000
-Received: by mail-il1-x141.google.com with SMTP id i16so17773370ils.12
- for <linux-rockchip@lists.infradead.org>; Mon, 27 Apr 2020 11:56:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zqkytQuRqbdyIv1fNw/hFQaHmYGu4kuwrAG4aDt0KwY=;
- b=saJPBmpcSFa8Gvk3fcBP7BcUJ0vdCttdE09MxHpW/uEu9CFjYVwWXKpV1EEM1mB0F7
- JFDFlfW7lrpuG4de/SsT3EJ0es11Ti+ZJc0tiVi4/T1IGbRrXFDHmF+ZBdm2NQpDv+l/
- 13SOK6VVfaa+9DkL0COKwTrTcbC+UbULtctB/kvHH/4EyfpJ2bzBsFPAfxyKaZPfVVPZ
- 99EVOEKR3i+w77aASsepR7u7Nehl5B2fz4pKmrvxFgFGw/sFvtRkOyA1xtQLbHDsVofz
- ZWeEKbLSdxqY4wWZOF9EMA0Xvh1Uls9FM+b+kXBa5SgpwKJun8A+woBS0WAllujr8kAF
- QlJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zqkytQuRqbdyIv1fNw/hFQaHmYGu4kuwrAG4aDt0KwY=;
- b=VyleEtpYp038b4L0zmz0TiglhAy4IcTgYClwDOGTz0vAYll8feBzPxqC+WfoknzEZP
- AFFpCd2rhLoKspuR6UTSFQ/NlaFUbM6IMd0Sc70EkiN7yZkq2ax+qxKjud25NiFz3+RR
- swg6llHBKouPmIEC6bUOGOMIlfp6FwwOS88ppAeGD28pzNq8/BMlfr1glaPw8tIDphsY
- YRv/FLp6cLxeQlQDZf7JhAQAOOHW3fDxXNvPgrA6ocXsEmdJ3+iWVLGxWxqEwlPV5tp7
- 7dd38ShYLJQX+Ip3uooBwDUKh0ZpfEvqDrSy7SOtSi/9knEiPnI5qlr4N+91ZQxKwNP5
- 8VHA==
-X-Gm-Message-State: AGi0PuYKQPNOm45DmUpCEVpfXTgRKtVymFTW+DIlYm9Pp2WQ6JsyvFlr
- ctvFcdZljfU+/deJMJkLnvuiXNYN0hRDDJqBAG8=
-X-Google-Smtp-Source: APiQypKSjWUNccvaGaP7GIFyMyjBa2ylFPQ2+a7hXLOAZWmMk7LFoZjV2MZ6L0j5XxwlwKRKShuLGc74DMMUsDsJ/v4=
-X-Received: by 2002:a92:8587:: with SMTP id f129mr22745284ilh.75.1588013783349; 
- Mon, 27 Apr 2020 11:56:23 -0700 (PDT)
+ id 1jT9HE-00080z-Fv; Mon, 27 Apr 2020 19:18:49 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=phil.lan)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1jT9H6-0008PW-LV; Mon, 27 Apr 2020 21:18:40 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-kernel@vger.kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH] drm/rockchip: cdn-dp-core: Make
+ cdn_dp_core_suspend/resume static
+Date: Mon, 27 Apr 2020 21:18:37 +0200
+Message-Id: <158801509401.47920.2598441742545466292.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200426161653.7710-1-enric.balletbo@collabora.com>
+References: <20200426161653.7710-1-enric.balletbo@collabora.com>
 MIME-Version: 1.0
-References: <cover.1578789410.git.robin.murphy@arm.com>
- <CANAwSgSFPtdvEvacNf6DhzE2fCabgZSBNnZUf0+nQErDWpErOw@mail.gmail.com>
- <c7345431-7585-6052-835e-d9c292978b6e@web.de>
-In-Reply-To: <c7345431-7585-6052-835e-d9c292978b6e@web.de>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Tue, 28 Apr 2020 00:26:12 +0530
-Message-ID: <CANAwSgQsMnkRyLCbgbWUGnCOzeK+4rucdMCkBGrv=Gp=Etq5JA@mail.gmail.com>
-Subject: Re: [PATCH v2 0/5] mfd: RK8xx tidyup
-To: Soeren Moch <smoch@web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_115624_440066_5CB6D8CD 
-X-CRM114-Status: GOOD (  11.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_121848_524333_679302A8 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [linux.amoon[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,47 +61,27 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Lee Jones <lee.jones@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Soeren
-
-On Tue, 28 Apr 2020 at 00:16, Soeren Moch <smoch@web.de> wrote:
->
->
->
-> On 27.04.20 20:41, Anand Moon wrote:
-> > Hi Robin,
-> >
-> > On Sun, 12 Jan 2020 at 07:25, Robin Murphy <robin.murphy@arm.com> wrote:
-> >> Hi all,
-> >>
-> >> Here's a second crack at my RK805-inspired cleanup. There was a bit
-> >> of debate around v1[1], but it seems like we're now all happy that this
-> >> is a reasonable way to go. For clarity I decided to include Soeren's
-> >> patch as #1/5, but since I've rewritten most of my patches I've not
-> >> included the tested-by tags.
-> >>
-> >> Robin.
-> >>
-> > Can you re-spin this series, it seem these patches are lost.
-> >
-> These patches are already merged as
-> d8f083a302f7..42679765faf2
->
-> Soeren
-
-Thanks for the input.
-
--Anand
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gU3VuLCAyNiBBcHIgMjAyMCAxODoxNjo1MyArMDIwMCwgRW5yaWMgQmFsbGV0Ym8gaSBTZXJy
+YSB3cm90ZToKPiBUaGlzIGZpeGVzIHRoZSBmb2xsb3dpbmcgd2FybmluZyBkZXRlY3RlZCB3aGVu
+IHJ1bm5pbmcgbWFrZSB3aXRoIFc9MQo+IAo+ICAgICBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAv
+L2Nkbi1kcC1jb3JlLmM6MTExMjo1OiB3YXJuaW5nOiBubyBwcmV2aW91cwo+ICAgICBwcm90b3R5
+cGUgZm9yIOKAmGNkbl9kcF9zdXNwZW5k4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10KPiAKPiAg
+ICAgZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwLy9jZG4tZHAtY29yZS5jOjExMjY6NTogd2Fybmlu
+Zzogbm8gcHJldmlvdXMKPiAgICAgcHJvdG90eXBlIGZvciDigJhjZG5fZHBfcmVzdW1l4oCZIFst
+V21pc3NpbmctcHJvdG90eXBlc10KPiAKPiBbLi4uXQoKQXBwbGllZCwgdGhhbmtzIQoKWzEvMV0g
+ZHJtL3JvY2tjaGlwOiBjZG4tZHAtY29yZTogTWFrZSBjZG5fZHBfY29yZV9zdXNwZW5kL3Jlc3Vt
+ZSBzdGF0aWMKICAgICAgY29tbWl0OiA3YzQ5YWJiNGMyZjg4NTM1MjBhYmMwNWI3ZjdlOGI3NTFm
+YmIzMDg2CgpCZXN0IHJlZ2FyZHMsCi0tIApIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRl
+PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgt
+cm9ja2NoaXAgbWFpbGluZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hp
+cAo=
