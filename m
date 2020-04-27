@@ -2,82 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 988021B9A52
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 10:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8D1D1B9B1B
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 10:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ls/bhJRPNTHwhEPUfxj+0ZD2jfkuBD3sQ0tuDSMzNm0=; b=gNg3g/R99WTXps
-	tksj+H8LQINfe5ZxzTvGnhN/+jPNYyKUJ7SMcrLiXEhiRMO+Hjv+R/9clT/xtT725RLRXWcMkJLZE
-	Cg+ozTi8T4HR10z/4Y0SB8NWPO0ABjR8lznSCnz6tksO10mbo5c/DyRyO+8+3K0YwLeUQymHo2DEe
-	FZP8C5AQKoe6PZ4FNO0Drt4y6UtXFKnqR68ul7hkxF1t4pP27o85R6QVnzD48Nf5zQtvUL9qgsuZI
-	0RtVmvr6WEOgsikT1VLhVpA6+Usb2/L+wHoEJWLDFPUn/Jfg+YsTwiubp1TTHYDSASflEoAr4WBS2
-	ufi1bbeG/lqyuJaLnnNA==;
+	List-Owner; bh=q32P7ghD1te6KFdYaRTChwQOFK+WC6fb1oN8RpbWmJE=; b=gAQDPUiaG6ZoVJ
+	TqMGr36l0m7CFJiEbRtk0LlZNScViG9jwRrP1ZVu5vMbN6lycjzJKe4SeUa6ju+v7su6j1tPrUJL3
+	ycGrm1K5gu6Kg0w4EAUhx2PfbVkiHoWKwmoHGQL3F9zArIS8gx4UGxNR4PYhXk3MyJYR67f9oILvn
+	/fzJk6B0u16GfOufkVRMF7eFIfqArbye9wLruyIbf7zBLsMCWbnTn0fZqVKz2wW75TLNtRKJuH+p9
+	togMcoMaWB0yEWDvspei6DfUdWOwGPDRIv1slvfgrOjAiTfz6OK9yyU8twwcDM3qFFbcjFZRYK0IB
+	H7eTUSQhCbk/9hUwR8HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSzCs-00035U-CH; Mon, 27 Apr 2020 08:33:38 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jSzZh-0005EL-UC; Mon, 27 Apr 2020 08:57:13 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSzCo-00034D-VM; Mon, 27 Apr 2020 08:33:36 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g12so19402107wmh.3;
- Mon, 27 Apr 2020 01:33:34 -0700 (PDT)
+ id 1jSzZe-0005DQ-QZ; Mon, 27 Apr 2020 08:57:12 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z6so19545737wml.2;
+ Mon, 27 Apr 2020 01:57:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=to:cc:references:subject:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=w0nU7XWSKjZiq42hI6aJFP/wV037pceDvXS4f3Cj24g=;
- b=abmztt5gJbmn/okxMUbQZq3wfbR/ooUc1lHRkBzCsYfwqY/b/rQ6IfE9Gdd9IIy0kJ
- Q6piiNV6rQTZ3K0fPfXalydyufc+WO9ycBQd/npG373tXzphOEqqqYbAZHOcD6ZyHfN/
- Ki3hCsk/ORwsvcEZV35MfxVEDM9JTddzQZtfGFL00l5UPp0axMtX15HOg2vuCPO9iAv/
- hanG4dd7nuMjBdgZ5D3FgShsnF0qzJ97w3nN+Up1kfB7WlCXPh9W+xfMbPcsPrCYM3bc
- lt7WCcTZSzxaDOuOaYaKoA1OmdkYbALxXPoS9XGkcuZNhQ0xEasOL3NOeCZb01+OTxcU
- nDfw==
+ bh=Jcofdwz9+t05uTAvna4ymutVAwmekuIi4pNGc9/MH88=;
+ b=Q5d4M2jz0Wl+6clQyaBEO2kE27ihpH/n/zKCNoR5NFAAQD625a4A/+auWeg6qrJawA
+ jGR2qBn0JrZnYf7qSaaPjd+QHediUI2IHZMSBuRMhYjEYXJF/abFd8uW6qj3Q4k/2FIc
+ HfOyQQFh7Om6oOkXvwLf00BmlW6ynC3vAylSpTpgjxiaMSxlssL1culT6yEle+zkt+G7
+ VWBMAI6HDXZNoIv1OZLghE1QmeHNhmQ06ca2JAS9uWxvSmCtibky3Aj9f2WMJnQAe9E3
+ Wgo4xlTuB9g6fG1VUUti0HpHlJBu1+C5r6cQlAs1aTEfXIAnzU7vlviA5I9kmmKntLoa
+ 86pQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:to:cc:references:subject:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=w0nU7XWSKjZiq42hI6aJFP/wV037pceDvXS4f3Cj24g=;
- b=PQ+rYg3u7IU2RBNKpAX2ecaannBXly7oW0L4GuxvGhuaV+iU6VMuiM2I8z8AlLV7Q/
- 8YYPGzBZJhbwZiGvWFjx7AexNcUc0Kbdrfw4fvAupb9i6lOfzuYiERbvpmclYYIsZKTi
- zh2H9zwykcgHEgsaXMAODuEEI8flE301x4fxcENr047eafGYjePpZ/EXaY+s6x0Xj3Qc
- t1Vus9WfLUPGztNFOypo22lvkVUMiU16DRwgNAbNQku0+KxQ83sc7jLHFvNe3M6TryEr
- s6kXUjsGL6zbk3tBhUkIM+0wGFKxz0n9VREyYdTI6iYIuwDu7XQWmaMabE2ZPRqGxJLK
- fjWQ==
-X-Gm-Message-State: AGi0PuZ0deJLat8hp55IBFvdXdaMvYgYSvHdHHB1xmMg5gufchBJat17
- ouDs4G+xZLdkNA4Xb57Z3qQ=
-X-Google-Smtp-Source: APiQypL9vQ25d/cx9/t2iweoGlzNivVSTWo7XTtXrJ5QP9N9j3FZH6z7MY/kfoDn/0qec5alrYVV6w==
-X-Received: by 2002:a1c:808c:: with SMTP id
- b134mr26231938wmd.131.1587976409450; 
- Mon, 27 Apr 2020 01:33:29 -0700 (PDT)
+ bh=Jcofdwz9+t05uTAvna4ymutVAwmekuIi4pNGc9/MH88=;
+ b=KimuCfCuVGoEKFPNawypY2J/WHB3n1b6jpBqYrt6NFOJRDxoZ0lXmP3sqawbR8E1sh
+ TnVZ7HeDbWpv5IA3ayK14+0isheCza/C/TzfpfGT4eJYos3+HIya8JMkjshR9ZvNXaqM
+ Nq9dt/CqqxFw2IKfHQUaGXqkPCwEWq3+Z0OuDkY0rtuNy+Ckeq/BJxm1Ffhxw3U77YJN
+ 1soLPAm+7AlT3RaaPgR4kc4ETd+AAMxf57MoE93sZgGmxBmZvUpEbAQ6Ki5tuhigmaW+
+ 93hMgRdUTN65hlN4ATlfFzUqTL6sgxnQIm9T8tQeW9nu8hZ93qksnieglV4OJhMSdhrW
+ J99A==
+X-Gm-Message-State: AGi0PuYlptp3Bk25pTjq20k0SzlDw8s/y9grXgnAFuCoZcjMJ9lMTJsX
+ mhwO+fRSfQxGpf8uniS5RsA=
+X-Google-Smtp-Source: APiQypIwXrjjInfbjfDk9B1skhirM2+uI+xE5YfNG3+dy/5UjcY8PBtYZfDkyuRvwRt/tiB7c3z8UQ==
+X-Received: by 2002:a05:600c:2046:: with SMTP id
+ p6mr25177578wmg.177.1587977829209; 
+ Mon, 27 Apr 2020 01:57:09 -0700 (PDT)
 Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x18sm14448554wmi.29.2020.04.27.01.33.28
+ by smtp.gmail.com with ESMTPSA id i129sm15502103wmi.20.2020.04.27.01.57.07
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 27 Apr 2020 01:33:28 -0700 (PDT)
+ Mon, 27 Apr 2020 01:57:08 -0700 (PDT)
 To: wens@kernel.org
-References: <20200427073132.29997-2-wens@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for
- linux,default-triggers
+References: <20200427073132.29997-3-wens@kernel.org>
+Subject: Re: [PATCH v2 2/3] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
+ numbering for LED triggers
 From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <4044214d-5385-94b6-d985-e1f824a60c5e@gmail.com>
-Date: Mon, 27 Apr 2020 10:33:27 +0200
+Message-ID: <684132b8-4a84-8295-474b-38ccb992bba7@gmail.com>
+Date: Mon, 27 Apr 2020 10:57:06 +0200
 User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200427073132.29997-2-wens@kernel.org>
+In-Reply-To: <20200427073132.29997-3-wens@kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_013335_009886_73AE1AEC 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20200427_015710_859540_B844DA73 
+X-CRM114-Status: GOOD (  18.32  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -118,54 +118,73 @@ Hi Chen-Yu,
 
 > From: Chen-Yu Tsai <wens@csie.org>
 > 
-> The bindings currently list a very small subset of valid triggers for
-> LEDs. Since many drivers or subsystems in Linux register custom
-> triggers, the list would become very hard to maintain.
+> With SDIO now enabled, the numbering of the existing MMC host controllers
+> gets incremented by 1, as the SDIO host is the first one.
 > 
-> Instead, just drop the list and allow free form strings.
+> Increment the numbering of the MMC LED triggers to match.
 > 
+> Fixes: cf3c5397835f ("arm64: dts: rockchip: Enable sdio0 and uart0 on rk3399-roc-pc-mezzanine")
 > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 > ---
->  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
->  1 file changed, 1 insertion(+), 20 deletions(-)
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 8 ++++++++
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 4 ++--
+>  2 files changed, 10 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
-> index 4c270fde4567..3b3cdab3fc15 100644
-> --- a/Documentation/devicetree/bindings/leds/common.yaml
-> +++ b/Documentation/devicetree/bindings/leds/common.yaml
-> @@ -79,26 +79,7 @@ properties:
->      description:
->        This parameter, if present, is a string defining the trigger assigned to
->        the LED.
-> -    allOf:
-> -      - $ref: /schemas/types.yaml#definitions/string
-> -    enum:
-> -        # LED will act as a back-light, controlled by the framebuffer system
-> -      - backlight
-> -        # LED will turn on (but for leds-gpio see "default-state" property in
-> -        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
-> -      - default-on
-> -        # LED "double" flashes at a load average based rate
-> -      - heartbeat
-> -        # LED indicates disk activity
-> -      - disk-activity
-> -        # LED indicates IDE disk activity (deprecated), in new implementations
-> -        # use "disk-activity"
-> -      - ide-disk
-> -        # LED flashes at a fixed, configurable rate
-> -      - timer
-> -        # LED alters the brightness for the specified duration with one software
-> -        # timer (requires "led-pattern" property)
-> -      - pattern
-> +    $ref: /schemas/types.yaml#definitions/string
-
-This makes it free form, but deletes the documentation of options that
-are standard available for people without custom driver.
-Where should that info go?
-
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> index 2acb3d500fb9..f0686fc276be 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+> @@ -38,6 +38,10 @@ vcc3v3_pcie: vcc3v3-pcie {
+>  	};
+>  };
 >  
->    led-pattern:
->      description: |
+> +&diy_led {
+> +	linux,default-trigger = "mmc2";
+> +};
+> +
+>  &pcie_phy {
+>  	status = "okay";
+>  };
+> @@ -91,3 +95,7 @@ &uart0 {
+>  	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+>  	status = "okay";
+>  };
+> +
+> +&yellow_led {
+> +	linux,default-trigger = "mmc1";
+> +};
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> index 9f225e9c3d54..bc060ac7972d 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+> @@ -70,14 +70,14 @@ work-led {
+>  			linux,default-trigger = "heartbeat";
+>  		};
+>  
+
+> -		diy-led {
+> +		diy_led: diy-led {
+
+This changes an existing nodename into something that is still not the
+preferred way. In the current Rockchip dts there are nodenames like
+'work', 'yellow' that causing warnings with the command:
+
+make -k ARCH=arm dtbs_check
+
+Could you give a generic guide line/example, so all these changes are
+treated the same way? As if the naming follows the preferred 'led-0' line.
+
+>  			label = "red:diy";
+>  			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
+>  			default-state = "off";
+>  			linux,default-trigger = "mmc1";
+>  		};
+>  
+> -		yellow-led {
+> +		yellow_led: yellow-led {
+>  			label = "yellow:yellow-led";
+>  			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
+>  			default-state = "off";
 > -- 
 > 2.26.0
 
