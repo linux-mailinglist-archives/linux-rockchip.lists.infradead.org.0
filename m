@@ -2,53 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D2A31BA79B
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 17:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99AAA1BAB0D
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 19:19:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/jpbKbgWjJtmc9ihaQ5MKtSIqaONJPdFX+o6DkkcDkg=; b=XKQBlkAvTbosP9KXgPsfuCDK3
-	3La011sIOJlIJbWYt2bTczEIFl9SD/3uCH8ySxXJxeixm5JeEHJ08B+EPEn1XD0FpVr09KhaUSeYj
-	2WzBg8YozrRUEeX7ut2GtBWhw42qQVkoPrreVdq2ii8+M+ueDD6jUPl5o0RLxqYW+MEf3oljRXaKl
-	j5gY3IHYMw5lsKyy0PtQUyq70A8s/kateM+zOmvp0pF3Iy4Y6YZJmBDdu60zqSXx7HEiPRssKy0Pw
-	5AwElp+fV+29PdIFwXzhZK8ZzQgZTdtlvdiPfSTGKR8Z1HWRDbOallpKqoYcJS691oZ7jDOkzwocC
-	8rRs84YDw==;
+	 bh=qJQVqK0AOBj8YuECo9JYwVSo9BoWANYmPH/Kxu9pOhA=; b=hW0PwJxURBq95i9zulwsZU3qV
+	uS9oa3cBjwL6v7c7yi4icel0rHSN9MMT1t6a0PU6Y+ErhhSl+ZvK4R28VeULZ8Nf02tKqd9vWB57Y
+	5gu+lZV5dyMEz7sEOBsEskM017QEwazHQRKLOCEj/NPFm4g4DaC3zx3UU+NuUr942r/N+wP7BQB2j
+	RieJjJnkojfhsiBIDxt+FwcD1poaeqrCQ9EmBpGn9/14Y0oYqlz6KclL4UN327WeSEoq0tV1qru10
+	uK2Zgjsx2nezcPbOzJea3o2C3EdP4jkj0IRcbg+CFB+2ekFrECt6seeaYeQR2NXVn1Rm+oYcwDIJS
+	la2yA+WKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT5So-0008Q7-KZ; Mon, 27 Apr 2020 15:14:30 +0000
+	id 1jT7Q9-0007Ch-KF; Mon, 27 Apr 2020 17:19:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT5SQ-00086y-DR; Mon, 27 Apr 2020 15:14:08 +0000
+ id 1jT7Py-0006xL-3R
+ for linux-rockchip@lists.infradead.org; Mon, 27 Apr 2020 17:19:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BA71A31B;
- Mon, 27 Apr 2020 08:14:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 477B631B;
+ Mon, 27 Apr 2020 10:19:41 -0700 (PDT)
 Received: from [10.57.33.170] (unknown [10.57.33.170])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9BCC3F68F;
- Mon, 27 Apr 2020 08:14:00 -0700 (PDT)
-Subject: Re: [PATCH v2 2/3] arm64: dts: rockchip: rk3399-roc-pc: Fix MMC
- numbering for LED triggers
-To: Johan Jonker <jbx6244@gmail.com>, Chen-Yu Tsai <wens@kernel.org>
-References: <20200427073132.29997-3-wens@kernel.org>
- <684132b8-4a84-8295-474b-38ccb992bba7@gmail.com>
- <CAGb2v66Piu5_2bdqvWV3eEn2Se_y1MNKWvvYBv_J7DA-8jBhbQ@mail.gmail.com>
- <65d15254-08da-895c-1a0c-ef6ce231b620@gmail.com>
- <CAGb2v65fGYguNoksq5Dyx3HTKeYg+U82TiQSL+NO8AUcQJQj5w@mail.gmail.com>
- <74a984fc-ce57-211b-936c-2d77e2e642bb@gmail.com>
- <a81840d3-813b-51b5-767c-e0d9d270200e@gmail.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B16C53F68F;
+ Mon, 27 Apr 2020 10:19:39 -0700 (PDT)
+Subject: Re: [PATCH 5/8] pci: Add Rockchip PCIe controller driver
+To: Jagan Teki <jagan@amarulasolutions.com>,
+ Mark Kettenis <mark.kettenis@xs4all.nl>
+References: <20200425110354.12381-1-jagan@amarulasolutions.com>
+ <20200425110354.12381-6-jagan@amarulasolutions.com>
+ <016196137a6060e1@bloch.sibelius.xs4all.nl>
+ <CAMty3ZC+DiW2gGjN3rWcrwHPXZfxuGhjJN-1caUXW-Ry7VNR+A@mail.gmail.com>
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <94e7671f-2d11-b2f7-e049-b90893c61ab2@arm.com>
-Date: Mon, 27 Apr 2020 16:13:59 +0100
+Message-ID: <9c00b50f-cf17-9c4e-4c75-b6e85668f9a2@arm.com>
+Date: Mon, 27 Apr 2020 18:19:37 +0100
 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <a81840d3-813b-51b5-767c-e0d9d270200e@gmail.com>
+In-Reply-To: <CAMty3ZC+DiW2gGjN3rWcrwHPXZfxuGhjJN-1caUXW-Ry7VNR+A@mail.gmail.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_081406_501276_751417A7 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20200427_101942_199780_1D6E14A0 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,70 +68,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- devicetree <devicetree@vger.kernel.org>,
- =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
+Cc: Patrick Wildt <patrick@blueri.se>, U-Boot-Denx <u-boot@lists.denx.de>,
+ Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, jacek.anaszewski@gmail.com,
- Pavel Machek <pavel@ucw.cz>, linux-leds@vger.kernel.org, dmurphy@ti.com
+ Suniel Mahesh <sunil@amarulasolutions.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2020-04-27 3:12 pm, Johan Jonker wrote:
-> Hi,
-> 
->>> So for fixing up the LED node names, we'd probably want the following:
+On 2020-04-25 8:36 pm, Jagan Teki wrote:
+> On Sun, Apr 26, 2020 at 12:23 AM Mark Kettenis <mark.kettenis@xs4all.nl> wrote:
+>>
+>>> From: Jagan Teki <jagan@amarulasolutions.com>
+>>> Date: Sat, 25 Apr 2020 16:33:51 +0530
 >>>
->>>      diy_led: led-0
->>>      yellow_led: led-1
->>>      work_led: led-2
-> 
-> Change proposal for led nodes to comply with preexisting dts.
-> Does this work?
-> 
-> diy_led: led_0: led-0
-> yellow_led: led_1: led-1
-> work_led: led_2: led-2
+>>> Add Rockchip PCIe controller driver for rk3399 platform.
+>>>
+>>> Driver support Gen1 by operating as a Root complex.
+>>>
+>>> Thanks to Patrick for initial work.
+>>
+>> Tried to get this to work on my firefly-rk3399 which made me notice
+>> some shortcomings:
+>>
+>> 1. The vpcie1v8 and vpcie0v9 supplies are optional, just like the
+>>     vpcie3v3 supply.
 
-Yuck, why?
+FWIW those are "non-optional" in Linux in the sense that supplies to the 
+PCIE_AVDD_0V9 and PCIE_AVDD_1V8 pins of the SoC must physically exist, 
+even if they aren't described. If U-Boot doesn't have the same "create a 
+dummy regulator if none is specified" behaviour then you might need some 
+slightly different logic there.
 
-Labels are simply human-readable source annotations for the sake of 
-referencing nodes more easily. Meaningful label names - that correlate 
-to SoC or board components, schematic names, or physical labels on the 
-board/device - make the DT sources easier to read, review, and maintain. 
-There are a handful of cases where one node might have multiple labels, 
-e.g. if two logical supply nets come from the same regulator on certain 
-board variants, but there is zero point in defining redundant labels 
-that just meaninglessly echo the DT's own structure.
-
-> blue: led_0: led-0
-> 
-> A check does not give any warnings.
-
-I should hope not. Labels are there to be consumed by DT compilers (and 
-whatever symbolic overlay handlers count as... DT linkers, maybe?) - 
-they have no business being within the scope of the bindings that define 
-a contract for system software consuming the final DTB.
+The 3.3V and 12V supplies on the other hand may legitimately not be part 
+of the board at all, depending on whether it implements a full-size 
+slot, a mini-PCI/M.2 socket, a hard-wired endpoint chip, or just the 
+data and clock signal pairs exposed on some non-standard connector.
 
 Robin.
-
-> make -k ARCH=arm dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/leds-gpio.yaml
-> 
->>
->> That doesn't look pretty either.
->> Would like to hear the maintainers view on how to handle other cases
->> without 'led' like for example 'blue' for mk808.
->>
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
 
 _______________________________________________
 Linux-rockchip mailing list
