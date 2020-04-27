@@ -2,55 +2,96 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E62161B99FE
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 10:22:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 988021B9A52
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 10:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a8mXawm0MVudKltTCvAafGZHtd5mSwh17qEW0sArYDQ=; b=G2d64MUUmK7GMW
-	wzgH29dQX6bh0dYTFXboNxqyWP1dmi3c9iRmIFGStinOc73QOuIEiGb9589eiUoCBWoyyzai6ZeMH
-	QUaAG7f2rJFsn+qgi2b23k/ld/mgY+v8m9iyNNXcitIylGOsQD+jOkRRC9PmgdgPnqo9HJrk32AET
-	zRdM6gp7TDMycyeorDHHBYnsdPYke1nOYnQeZ/7Crm/i4C9j13oWRE8IpNtIXWH8cMs+/5rn7p1Rz
-	koRbDc3jrU2Z61aoLwZZy+x9ML+SKHGRI4by7/TXVfYxiggamGJ1a60P1QmOA6mCU7JeeKLUbKNLX
-	NE+TF1B7vffucKX+9w6A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ls/bhJRPNTHwhEPUfxj+0ZD2jfkuBD3sQ0tuDSMzNm0=; b=gNg3g/R99WTXps
+	tksj+H8LQINfe5ZxzTvGnhN/+jPNYyKUJ7SMcrLiXEhiRMO+Hjv+R/9clT/xtT725RLRXWcMkJLZE
+	Cg+ozTi8T4HR10z/4Y0SB8NWPO0ABjR8lznSCnz6tksO10mbo5c/DyRyO+8+3K0YwLeUQymHo2DEe
+	FZP8C5AQKoe6PZ4FNO0Drt4y6UtXFKnqR68ul7hkxF1t4pP27o85R6QVnzD48Nf5zQtvUL9qgsuZI
+	0RtVmvr6WEOgsikT1VLhVpA6+Usb2/L+wHoEJWLDFPUn/Jfg+YsTwiubp1TTHYDSASflEoAr4WBS2
+	ufi1bbeG/lqyuJaLnnNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSz2V-0008DR-Mr; Mon, 27 Apr 2020 08:22:55 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jSzCs-00035U-CH; Mon, 27 Apr 2020 08:33:38 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSyyp-0002eg-Io; Mon, 27 Apr 2020 08:19:10 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id A74082A098C
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v8 10/10] drm: bridge: dw-mipi-dsi: fix bad register field
- offsets
-Date: Mon, 27 Apr 2020 11:19:52 +0300
-Message-Id: <20200427081952.3536741-11-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ id 1jSzCo-00034D-VM; Mon, 27 Apr 2020 08:33:36 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g12so19402107wmh.3;
+ Mon, 27 Apr 2020 01:33:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=w0nU7XWSKjZiq42hI6aJFP/wV037pceDvXS4f3Cj24g=;
+ b=abmztt5gJbmn/okxMUbQZq3wfbR/ooUc1lHRkBzCsYfwqY/b/rQ6IfE9Gdd9IIy0kJ
+ Q6piiNV6rQTZ3K0fPfXalydyufc+WO9ycBQd/npG373tXzphOEqqqYbAZHOcD6ZyHfN/
+ Ki3hCsk/ORwsvcEZV35MfxVEDM9JTddzQZtfGFL00l5UPp0axMtX15HOg2vuCPO9iAv/
+ hanG4dd7nuMjBdgZ5D3FgShsnF0qzJ97w3nN+Up1kfB7WlCXPh9W+xfMbPcsPrCYM3bc
+ lt7WCcTZSzxaDOuOaYaKoA1OmdkYbALxXPoS9XGkcuZNhQ0xEasOL3NOeCZb01+OTxcU
+ nDfw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=w0nU7XWSKjZiq42hI6aJFP/wV037pceDvXS4f3Cj24g=;
+ b=PQ+rYg3u7IU2RBNKpAX2ecaannBXly7oW0L4GuxvGhuaV+iU6VMuiM2I8z8AlLV7Q/
+ 8YYPGzBZJhbwZiGvWFjx7AexNcUc0Kbdrfw4fvAupb9i6lOfzuYiERbvpmclYYIsZKTi
+ zh2H9zwykcgHEgsaXMAODuEEI8flE301x4fxcENr047eafGYjePpZ/EXaY+s6x0Xj3Qc
+ t1Vus9WfLUPGztNFOypo22lvkVUMiU16DRwgNAbNQku0+KxQ83sc7jLHFvNe3M6TryEr
+ s6kXUjsGL6zbk3tBhUkIM+0wGFKxz0n9VREyYdTI6iYIuwDu7XQWmaMabE2ZPRqGxJLK
+ fjWQ==
+X-Gm-Message-State: AGi0PuZ0deJLat8hp55IBFvdXdaMvYgYSvHdHHB1xmMg5gufchBJat17
+ ouDs4G+xZLdkNA4Xb57Z3qQ=
+X-Google-Smtp-Source: APiQypL9vQ25d/cx9/t2iweoGlzNivVSTWo7XTtXrJ5QP9N9j3FZH6z7MY/kfoDn/0qec5alrYVV6w==
+X-Received: by 2002:a1c:808c:: with SMTP id
+ b134mr26231938wmd.131.1587976409450; 
+ Mon, 27 Apr 2020 01:33:29 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id x18sm14448554wmi.29.2020.04.27.01.33.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Apr 2020 01:33:28 -0700 (PDT)
+To: wens@kernel.org
+References: <20200427073132.29997-2-wens@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for
+ linux,default-triggers
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <4044214d-5385-94b6-d985-e1f824a60c5e@gmail.com>
+Date: Mon, 27 Apr 2020 10:33:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200427073132.29997-2-wens@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_011907_927108_7F330BE4 
-X-CRM114-Status: UNSURE (   8.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200427_013335_009886_73AE1AEC 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,118 +104,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, pavel@ucw.cz,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ wens@csie.org, robh+dt@kernel.org, jacek.anaszewski@gmail.com,
+ linux-leds@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dmurphy@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-According to the DSI Host Registers sections available in the IMX,
-STM and RK ref manuals for 1.01, 1.30 and 1.31, the register fields
-are smaller or bigger than what's coded in the driver, leading to
-r/w in reserved spaces which might cause undefined behaviours.
+Hi Chen-Yu,
 
-Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
----
-New in v6.
----
- drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 46 +++++++++----------
- 1 file changed, 23 insertions(+), 23 deletions(-)
+> From: Chen-Yu Tsai <wens@csie.org>
+> 
+> The bindings currently list a very small subset of valid triggers for
+> LEDs. Since many drivers or subsystems in Linux register custom
+> triggers, the list would become very hard to maintain.
+> 
+> Instead, just drop the list and allow free form strings.
+> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
+>  1 file changed, 1 insertion(+), 20 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
+> index 4c270fde4567..3b3cdab3fc15 100644
+> --- a/Documentation/devicetree/bindings/leds/common.yaml
+> +++ b/Documentation/devicetree/bindings/leds/common.yaml
+> @@ -79,26 +79,7 @@ properties:
+>      description:
+>        This parameter, if present, is a string defining the trigger assigned to
+>        the LED.
+> -    allOf:
+> -      - $ref: /schemas/types.yaml#definitions/string
+> -    enum:
+> -        # LED will act as a back-light, controlled by the framebuffer system
+> -      - backlight
+> -        # LED will turn on (but for leds-gpio see "default-state" property in
+> -        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
+> -      - default-on
+> -        # LED "double" flashes at a load average based rate
+> -      - heartbeat
+> -        # LED indicates disk activity
+> -      - disk-activity
+> -        # LED indicates IDE disk activity (deprecated), in new implementations
+> -        # use "disk-activity"
+> -      - ide-disk
+> -        # LED flashes at a fixed, configurable rate
+> -      - timer
+> -        # LED alters the brightness for the specified duration with one software
+> -        # timer (requires "led-pattern" property)
+> -      - pattern
+> +    $ref: /schemas/types.yaml#definitions/string
 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-index 0903ec37289dd..bf22b04761fdf 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-@@ -316,7 +316,7 @@ struct dw_mipi_dsi_variant {
- static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_dpi_color_coding =		REG_FIELD(DSI_DPI_COLOR_CODING, 0, 3),
- 	.cfg_dpi_18loosely_en =		REG_FIELD(DSI_DPI_COLOR_CODING, 8, 8),
--	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 2),
-+	.cfg_dpi_vid =			REG_FIELD(DSI_DPI_VCID, 0, 1),
- 	.cfg_dpi_vsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 1, 1),
- 	.cfg_dpi_hsync_active_low =	REG_FIELD(DSI_DPI_CFG_POL, 2, 2),
- 	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG, 1, 1),
-@@ -325,29 +325,29 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_cmd_mode_dcs_sw_sr_en =	REG_FIELD(DSI_CMD_MODE_CFG, 16, 18),
- 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 19, 19),
- 	.cfg_cmd_mode_max_rd_pkt_size =	REG_FIELD(DSI_CMD_MODE_CFG, 24, 24),
--	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
--	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 31),
--	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 31),
-+	.cfg_cmd_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
-+	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS, 0, 6),
-+	.cfg_vid_mode_en =		REG_FIELD(DSI_MODE_CFG, 0, 0),
- 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG, 0, 1),
- 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG, 8, 13),
- 	.cfg_vid_mode_vpg_en =		REG_FIELD(DSI_VID_MODE_CFG, 16, 16),
- 	.cfg_vid_mode_vpg_horiz =	REG_FIELD(DSI_VID_MODE_CFG, 24, 24),
--	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 10),
--	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 31),
--	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 31),
--	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 31),
--	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 31),
--	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 31),
--	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 31),
--	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 31),
-+	.cfg_vid_pkt_size =		REG_FIELD(DSI_VID_PKT_SIZE, 0, 13),
-+	.cfg_vid_hsa_time =		REG_FIELD(DSI_VID_HSA_TIME, 0, 11),
-+	.cfg_vid_hbp_time =		REG_FIELD(DSI_VID_HBP_TIME, 0, 11),
-+	.cfg_vid_hline_time =		REG_FIELD(DSI_VID_HLINE_TIME, 0, 14),
-+	.cfg_vid_vsa_time =		REG_FIELD(DSI_VID_VSA_LINES, 0, 9),
-+	.cfg_vid_vbp_time =		REG_FIELD(DSI_VID_VBP_LINES, 0, 9),
-+	.cfg_vid_vfp_time =		REG_FIELD(DSI_VID_VFP_LINES, 0, 9),
-+	.cfg_vid_vactive_time =		REG_FIELD(DSI_VID_VACTIVE_LINES, 0, 13),
- 	.cfg_phy_txrequestclkhs =	REG_FIELD(DSI_LPCLK_CTRL, 0, 0),
--	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 31),
--	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
-+	.cfg_phy_bta_time =		REG_FIELD(DSI_BTA_TO_CNT, 0, 15),
-+	.cfg_phy_max_rd_time =		REG_FIELD(DSI_PHY_TMR_CFG, 0, 14),
- 	.cfg_phy_lp2hs_time =		REG_FIELD(DSI_PHY_TMR_CFG, 16, 23),
- 	.cfg_phy_hs2lp_time =		REG_FIELD(DSI_PHY_TMR_CFG, 24, 31),
--	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 15),
--	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 15),
--	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 31),
-+	.cfg_phy_max_rd_time_v131 =	REG_FIELD(DSI_PHY_TMR_RD_CFG, 0, 14),
-+	.cfg_phy_lp2hs_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 0, 9),
-+	.cfg_phy_hs2lp_time_v131 =	REG_FIELD(DSI_PHY_TMR_CFG, 16, 25),
- 	.cfg_phy_clklp2hs_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 0, 15),
- 	.cfg_phy_clkhs2lp_time =	REG_FIELD(DSI_PHY_TMR_LPCLK_CFG, 16, 31),
- 	.cfg_phy_testclr =		REG_FIELD(DSI_PHY_TST_CTRL0, 0, 0),
-@@ -361,11 +361,11 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
- 	.cfg_pckhdl_cfg =		REG_FIELD(DSI_PCKHDL_CFG, 0, 4),
- 	.cfg_hstx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 16, 31),
- 	.cfg_lprx_timeout_counter =	REG_FIELD(DSI_TO_CNT_CFG, 0, 15),
--	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 31),
--	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 31),
--	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 31),
--	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 31),
--	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 31),
-+	.cfg_int_stat0 =		REG_FIELD(DSI_INT_ST0, 0, 20),
-+	.cfg_int_stat1 =		REG_FIELD(DSI_INT_ST1, 0, 12),
-+	.cfg_int_mask0 =		REG_FIELD(DSI_INT_MSK0, 0, 20),
-+	.cfg_int_mask1 =		REG_FIELD(DSI_INT_MSK1, 0, 12),
-+	.cfg_gen_hdr =			REG_FIELD(DSI_GEN_HDR, 0, 23),
- 	.cfg_gen_payload =		REG_FIELD(DSI_GEN_PLD_DATA, 0, 31),
- };
- 
-@@ -382,7 +382,7 @@ static const struct dw_mipi_dsi_variant dw_mipi_dsi_v101_layout = {
- 	.cfg_cmd_mode_gen_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 11, 11),
- 	.cfg_cmd_mode_dcs_lw_en =	REG_FIELD(DSI_CMD_MODE_CFG, 12, 12),
- 	.cfg_cmd_mode_ack_rqst_en =	REG_FIELD(DSI_CMD_MODE_CFG_V101, 13, 13),
--	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 14),
-+	.cfg_cmd_pkt_status =		REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 6),
- 	.cfg_vid_mode_en =		REG_FIELD(DSI_VID_MODE_CFG_V101, 0, 0),
- 	.cfg_vid_mode_type =		REG_FIELD(DSI_VID_MODE_CFG_V101, 1, 2),
- 	.cfg_vid_mode_low_power =	REG_FIELD(DSI_VID_MODE_CFG_V101, 3, 8),
--- 
-2.26.0
+This makes it free form, but deletes the documentation of options that
+are standard available for people without custom driver.
+Where should that info go?
+
+>  
+>    led-pattern:
+>      description: |
+> -- 
+> 2.26.0
 
 
 _______________________________________________
