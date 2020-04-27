@@ -2,44 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 303D41BAE35
-	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 21:43:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163501BAE42
+	for <lists+linux-rockchip@lfdr.de>; Mon, 27 Apr 2020 21:43:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZmolLtoPOQD/kMh4vRumbhlgAq1z14zb6RQztUnIFB4=; b=nsCsW6amwgFvXr
-	8waxdFQRECGh4XyGd4A2JHAH4OufaKIp6emEgJKsmbUn94o2xafBqfg76ljMdKEt4EUhnvROHYwPd
-	TUt6jy6tSl5c0VwugilkZPpoTvxxQrI60VZVSquaDa6jYjKkFkYc67idz9GX+434Wein9AUiegWbN
-	DmzYRGr0FLvCrSDM2haV9P56LXNrq3ZgE/Prt9hEEnbBzx2gVUkohhBe8TGdWkp8oUZNonwAyZakm
-	soOSN+aIsKWxIXtWYW5VXpo7X+PPXdVul5tGW8XLGf20jrIqHP8APIslPbYN8l57P1+lCH3SJU09n
-	X4vNXoJHbQxhfEdsoMWw==;
+	List-Owner; bh=Qq6QcfQlilYFmobm7TtsBMv8rLZr8b6I+JOx4IATGNY=; b=pt66w1Gy8V2lGS
+	hRDkcldMOMy45N9kWF0+Vj60LdfDni8L3u/tsGEuC3UqA1FtPmF5fzBeCSDxJVu4ae5NGcSLdTBSx
+	fQGhB75SVpGmbJi+y7Lx3qbfSsXfU55XwGDW5UQ/1So9h9IkvPYItn0GhdN706B0RmWtjF08u4zRO
+	mesOG1qvsCIRN8FS/7tab7rAmqPkE4rKPboUoduVZxI+yWKsIOq/DtQEpZNjGvVL/IzjErIftfi+1
+	qhAghJsAr+Pz7yZ3tkswnkiAxaWiM8ie4BxBGRdrfQCk5OyVPV+yLcX+a/p9fJr1PcT941n/SegB6
+	Tr0NbAMjs6uwVnupwTgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jT9eb-00032D-7I; Mon, 27 Apr 2020 19:42:57 +0000
+	id 1jT9fM-0003d6-IB; Mon, 27 Apr 2020 19:43:44 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jT9eC-0002j5-RR; Mon, 27 Apr 2020 19:42:34 +0000
+ id 1jT9eD-0002jO-58; Mon, 27 Apr 2020 19:42:34 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.lan)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jT9eB-00007W-C8; Mon, 27 Apr 2020 21:42:31 +0200
+ id 1jT9eB-00007W-KU; Mon, 27 Apr 2020 21:42:31 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: fix pinctrl sub nodename for spi in
- rk322x.dtsi
-Date: Mon, 27 Apr 2020 21:42:26 +0200
-Message-Id: <158801649141.50507.14560694452002330366.b4-ty@sntech.de>
+Subject: Re: [PATCH] ARM: dts: rockchip: swap clock-names of gpu nodes
+Date: Mon, 27 Apr 2020 21:42:27 +0200
+Message-Id: <158801649141.50507.12679129425303471594.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200424123923.8192-1-jbx6244@gmail.com>
-References: <20200424123923.8192-1-jbx6244@gmail.com>
+In-Reply-To: <20200425192500.1808-1-jbx6244@gmail.com>
+References: <20200425192500.1808-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_124232_891936_B5974B86 
-X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-CacheID: sfid-20200427_124233_191988_C20EE01D 
+X-CRM114-Status: UNSURE (   8.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -68,24 +67,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 24 Apr 2020 14:39:23 +0200, Johan Jonker wrote:
-> A test with the command below gives these errors:
+On Sat, 25 Apr 2020 21:25:00 +0200, Johan Jonker wrote:
+> Dts files with Rockchip 'gpu' nodes were manually verified.
+> In order to automate this process arm,mali-utgard.txt
+> has been converted to yaml. In the new setup dtbs_check with
+> arm,mali-utgard.yaml expects clock-names values
+> in the same order, so fix that.
 > 
-> arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
-> '#address-cells' is a required property
-> arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
-> '#address-cells' is a required property
-> arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
-> '#address-cells' is a required property
-> arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
-> '#address-cells' is a required property
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] ARM: dts: rockchip: fix pinctrl sub nodename for spi in rk322x.dtsi
-      commit: 855bdca1781c79eb661f89c8944c4a719ce720e8
+[1/1] ARM: dts: rockchip: swap clock-names of gpu nodes
+      commit: b14f3898d2c25a9b47a61fb879d0b1f3af92c59b
 
 Best regards,
 -- 
