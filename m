@@ -2,91 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2764E1BCD75
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 Apr 2020 22:31:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39D801BCEC0
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 Apr 2020 23:32:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QUbNiPq7Nn86wJ9Vk92M/bFt2or6cAis6H+4EnMBNqA=; b=E7aJuTkI+/9SVgi5Ppdcata7f9
-	hPnayI4eIV1axk07mfE988b7umc3nv78qGMGwXkyAiNmIPvJtzA8uyPvf7kLMGmJdYudU9dH9apDE
-	fzVusffGmBFkmLQxvIQUmTfcllbyiR1u69pRBf8CF05FTTkNH/9yp1s/FJyaXATynnLYhg5i5vtFA
-	UUJeF5WNr/JgHOCKrwMQIDVvQEuAoPWQ0w6xhC0qPSWwio2kU3Axk8EdnjXDomc5Yxwzmtnof4EjP
-	AZTrbTppji3Qfi6GmhzJTT8rse8gSXmH9cX1m9++09mn+mym9AEh8DUYBN7MwuG6u7/hfMT7U8Fd/
-	A7kfp58w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fP10yXfYEVlaKGcPi+c0odbbOU60fGCvDD5y/Rlzx/E=; b=lPUE6EZ7Jb65/b
+	Gc87WgIVQIylwPbKKGT/BGE1TGCU77U6Fou7QXfP/u27utn12Ci614eSFomTR0IOLFSIKfC5ytrXz
+	/fxdEBNxdow89we7J5U/tanb4jSnYsum78j5ZTTQVh2vlxouC1YnoO7Cu+nZOjWwyXMaYaP9um1u3
+	vJYDWXcog9uwTN/vCH9Bqg4EpRwsgKNW9ptiIANdBxpQKegY7k4Bpd5ZM93A+WwQ9w9kLgkurmE2v
+	SpEu4WUYjMeFsWnl1V2Gh8M9inxn0VIPxY17qnH29pFB6uaIqshqQ6KnlwffmqKFB8NIosIp6cmAU
+	FQvo0LRiXoF1SvTgQKjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTWsc-0000L7-T4; Tue, 28 Apr 2020 20:30:58 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jTXq2-0002tQ-Cl; Tue, 28 Apr 2020 21:32:22 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTWru-0007eY-Pu; Tue, 28 Apr 2020 20:30:18 +0000
-Received: by mail-wm1-x344.google.com with SMTP id u16so197768wmc.5;
- Tue, 28 Apr 2020 13:30:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=D7lH5jpMtckNSFWtOtcaCj8HA5zjfrZB2xijxB3Vzwk=;
- b=eeBZUJfzaTbrABWRoPU8NpncQs7kH6G4ugk7Vdy4CgWduJ2L96HkVafVsAmiprSt65
- 9sdZEOKk45ypC0Ahk3ZWmgoBY4USteNEaXkSzQ7TGF/HUVgD0sBqKuJOnhyZU/FfRtr1
- XB+C9EH+gDAB91vMTiqzRTHY+KcGPqXzXENrxGIwsf0L/lgMhhAJyK/wbWulRNSbU7G7
- /m4ea26kvZYKE64YEBG6d1bstbkbmi5VAEA4mZVFAkV4e/0B2UQUKf00dyo2UyoYHQo/
- tG1GdmPO056n4QKILjfUYJ+tI5hIVPiITw+fE/U/TVZ68f/b9XdEsfJkrkYT5OEj2VnS
- TpkA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=D7lH5jpMtckNSFWtOtcaCj8HA5zjfrZB2xijxB3Vzwk=;
- b=fD20u9mSlZPt577CDnEuc/FsRA0y4UwuiZUumukJe0dRAtMIpmMrQrvAvRxfMPLcRT
- cXQ1I/Hri8MYl8uVDGvayFK21fbVOYokpVRAomctJCWRCpVgQB0mk19cQzcdk9AGSTRp
- Iuj/w4s+maHU8AzZcpZ1Emdw5f10UP7XUgYfclQcABP6cD8S1//1Gd7L8/upPXM+eLdT
- guxETFPWt8D6Em2IpJtXrFTPbN21Dn/AzI8Hxhi73n1FeivSVSoti6Xag451nF01DLK7
- lXX6Gj9+EKwNEAzRNcOH7Os1XicBpm2DxeWM8f1cZfU/uYRWLLNB4m5kLuNfef7PtoBV
- urzQ==
-X-Gm-Message-State: AGi0Pua5rimNku5rNF6zdPSBiyHzLc+kCcEhwsZ2bzEuV4keJLsfjEEU
- QUwsAhpKkHwnH93yb30n2eo=
-X-Google-Smtp-Source: APiQypISF7Ph82vT5pmWbVwsK1+ILae0VWTNn0sORfI+E79t5C6YH1tBk0jHRXhMF5Te8XG8lhktdg==
-X-Received: by 2002:a1c:7c18:: with SMTP id x24mr6011138wmc.146.1588105812727; 
- Tue, 28 Apr 2020 13:30:12 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 1sm4797801wmz.13.2020.04.28.13.30.11
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 Apr 2020 13:30:12 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: rk3399: fix pd_tcpc0 and
- pd_tcpc1 node position
-Date: Tue, 28 Apr 2020 22:30:03 +0200
-Message-Id: <20200428203003.3318-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200428203003.3318-1-jbx6244@gmail.com>
-References: <20200428203003.3318-1-jbx6244@gmail.com>
+ id 1jTXpg-0002Ra-6o; Tue, 28 Apr 2020 21:32:01 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1Mhl8Y-1iycqy1vmK-00dk8x; Tue, 28 Apr 2020 23:31:40 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Sandy Huang <hjc@rock-chips.com>,
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: [PATCH] drm/rockchip: cdn-dp-core: Make cdn_dp_core_suspend/resume
+ __maybe_unused
+Date: Tue, 28 Apr 2020 23:31:24 +0200
+Message-Id: <20200428213138.3171708-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.26.0
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:9gben41GuxcER2oeB9wYFmmawlgPoyYBUHJXzEFjF9Cabdyd6zx
+ UnQqpKoIlMMhMSJMpuySRnALm9dHkuP2ohqYNq/f1dDi8rb7CkJYGeWWaT5DbF2erglp9jy
+ 3dnGb8OeECJrvFGIXwYVDOrV/PXlOVyafv0VaeEy3uA6RtW2Vo4Iu93RlK6TbIOJRrhZw1c
+ pp3XMgxlBaX9JAjUHxR9A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:PpL1chTksEs=:0aWKAbC6CW1CMI3dzP5Gzu
+ BZBRqPxP6Abvzmlu7WERc3rgNnMtcHirhasII1DlkqCVt16q0C+fZ8ue4ruuVX8oCISwbyejA
+ p2pHgv1AGbewbLj49YMiETFtVQr9Sl42j5XNtq26eUN94I514lrIGZD7o1m2Rc0sc1x1oKjSY
+ RpRmcczTirgb8KYRp+O+SDikXS47dme+T96VaQefBAviX3IvR/+TSM6GojVBgTJlq5ie5y4UB
+ zFkmoty+bLSedIJn1bva4MxZTHT40+E0CYFs6LZT0vpgA9SxoKEtNPTSNL+56QiXAnr89Rv0J
+ DwV1btZHMLgKyGI6a1C5nI7NESiwwQw2ztp5fF1mmfGrJTQQqiBlvHLxQBhQxG4nFd7ZxQBnl
+ L86RYJUU5WUbaImD6KV9niyjczw2Y1AI358s0LJ/uJtgggdHgLCMfryNoLWVuskP5+f22cyNx
+ eUJlm6EmNQiyl0sJm0VWBwDPQFD4AGHrIpx2XNUr9OIcYWTm+R47zrZUjyvvHaBJEqEqTosIx
+ mJ8/KbmpbhepBJDPF6EVgTjeRFmTUa96uvRZiF7u5B+iBewkNpfrfBQVNXAl0Jbbm0kGRSHbO
+ nuTDJrxKieLaOefJUke5OeRUY6uMWXHarOOSTwhoERccYSorX5lDGViY+UdD0ef0x6uaWI79D
+ TatCoGF3WzbWrR5UumEiT/5sqJ/nsG3XIh+2k6NhJpqNy+/Nw1Ri7VvUgtuAg+6PB958HPY7B
+ V3Sgnel9PC8tBoXnYABhIfwxsbE8OFYsb4ABLxGS+AIYVNAkqRnSAtm86mZK6UXxLzsIBrD7s
+ NU4xcEH1iZsFiksRG/EuB6b1CocT//Y2QGhYlyuQ0fa7KdIh1A=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_133015_076260_FB164D44 
-X-CRM114-Status: GOOD (  12.13  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200428_143200_543996_57D87904 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.9 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
+ [217.72.192.73 listed in bl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,65 +81,55 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thierry Reding <treding@nvidia.com>, Sam Ravnborg <sam@ravnborg.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The pd_tcpc0 and pd_tcpc1 nodes are currently a sub node of pd_vio.
-In the rk3399 TRM figure of the 'Power Domain Partition' and in the
-table of 'Power Domain and Voltage Domain Summary' these power domains
-are positioned directly under VD_LOGIC, so fix that in 'rk3399.dtsi'.
+With the new static annotation, the compiler warns when the functions
+are actually unused:
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+drivers/gpu/drm/rockchip/cdn-dp-core.c:1123:12: error: 'cdn_dp_resume' defined but not used [-Werror=unused-function]
+ 1123 | static int cdn_dp_resume(struct device *dev)
+      |            ^~~~~~~~~~~~~
+
+Mark them __maybe_unused to suppress that warning as well.
+
+Fixes: 7c49abb4c2f8 ("drm/rockchip: cdn-dp-core: Make cdn_dp_core_suspend/resume static")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ drivers/gpu/drm/rockchip/cdn-dp-core.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 37279db53..a4dc1bf2e 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1056,6 +1056,16 @@
- 				clocks = <&cru HCLK_SDIO>;
- 				pm_qos = <&qos_sdioaudio>;
- 			};
-+			pd_tcpc0@RK3399_PD_TCPD0 {
-+				reg = <RK3399_PD_TCPD0>;
-+				clocks = <&cru SCLK_UPHY0_TCPDCORE>,
-+					 <&cru SCLK_UPHY0_TCPDPHY_REF>;
-+			};
-+			pd_tcpc1@RK3399_PD_TCPD1 {
-+				reg = <RK3399_PD_TCPD1>;
-+				clocks = <&cru SCLK_UPHY1_TCPDCORE>,
-+					 <&cru SCLK_UPHY1_TCPDPHY_REF>;
-+			};
- 			pd_usb3@RK3399_PD_USB3 {
- 				reg = <RK3399_PD_USB3>;
- 				clocks = <&cru ACLK_USB3>;
-@@ -1088,16 +1098,6 @@
- 					pm_qos = <&qos_isp1_m0>,
- 						 <&qos_isp1_m1>;
- 				};
--				pd_tcpc0@RK3399_PD_TCPD0 {
--					reg = <RK3399_PD_TCPD0>;
--					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
--						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
--				};
--				pd_tcpc1@RK3399_PD_TCPD1 {
--					reg = <RK3399_PD_TCPD1>;
--					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
--						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
--				};
- 				pd_vo@RK3399_PD_VO {
- 					reg = <RK3399_PD_VO>;
- 					#address-cells = <1>;
+diff --git a/drivers/gpu/drm/rockchip/cdn-dp-core.c b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+index c634b95b50f7..1cde98c6b0e6 100644
+--- a/drivers/gpu/drm/rockchip/cdn-dp-core.c
++++ b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+@@ -1106,7 +1106,7 @@ static const struct component_ops cdn_dp_component_ops = {
+ 	.unbind = cdn_dp_unbind,
+ };
+ 
+-static int cdn_dp_suspend(struct device *dev)
++static __maybe_unused int cdn_dp_suspend(struct device *dev)
+ {
+ 	struct cdn_dp_device *dp = dev_get_drvdata(dev);
+ 	int ret = 0;
+@@ -1120,7 +1120,7 @@ static int cdn_dp_suspend(struct device *dev)
+ 	return ret;
+ }
+ 
+-static int cdn_dp_resume(struct device *dev)
++static __maybe_unused int cdn_dp_resume(struct device *dev)
+ {
+ 	struct cdn_dp_device *dp = dev_get_drvdata(dev);
+ 
 -- 
-2.11.0
+2.26.0
 
 
 _______________________________________________
