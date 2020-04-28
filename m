@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D2471BBA81
-	for <lists+linux-rockchip@lfdr.de>; Tue, 28 Apr 2020 12:00:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95B001BBA89
+	for <lists+linux-rockchip@lfdr.de>; Tue, 28 Apr 2020 12:01:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zCsImxuw04sndZh57h/1rafEhFVE9r1bVEyCifG7ggs=; b=khKeclxJZ2GqUNpZ1/JpsPqSGJ
-	XLl3LgKggOHZ5jY9PaOwC48+mdB4RR3tlIvAdRxsDQBx35lcJEDjcph2sf3wlv8S5sUjI815NKVDj
-	Y3e0U5Dkui5n4o97zOx4+W+lWD8xj3IBp3v7KS9mZpCET083zeTOPuG7BKOrjbydX6J8qqwSbxhiy
-	Mad0F8jTSsaanwzCaHc1qBgQqies5dDY9fTr7rl0qtrLnIbPjjIW4Z/s0VupVIMqKioiDPsJDMgan
-	Pxx+nJMspSM9aPqFBHY2LlLlIAOISeQXNduZ4U2ny4oPGX4YCJJbpnMNTqrxZUYGM6eQV8Z3Z0UGH
-	cfjW8f9w==;
+	bh=bbThKILr3iLs4etizFqB87BzuORUHkaKsa4ghzLB3E4=; b=WR4bN/OZxyLJEC9H2+h0EBk+Hl
+	nsI+51bose+a+CL/3/jDaPzNTKQ4X9hmmcqkZiftJnmqOMr+mlEvE24CgpZNXTeiT3vUY/TK6kMUD
+	AClmX4utgcmo9+GeWNZNgEFtloWp/eDTFIUp+876pWnXdLIK9Y/NfPPFGTFLXT4GlwyV4JnLpKEWp
+	c6k752PBgGRcGccolJ5XNwKQYHWhpb5SNP9Iw6A4sS/RBTV2Sof+VDOG356ME/8U6FJmXuseNAnPK
+	DtqDvBDqQDf/RxyW7kKuumSqmRxqUCo6OGPpFT5k3xFefI5MYPQySUrqm37q0syGjyvkElBUn0RR2
+	+SbSeVgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTN2s-0006Nx-1L; Tue, 28 Apr 2020 10:00:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jTN2y-0006Rb-Gc; Tue, 28 Apr 2020 10:01:00 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTN2o-0006MU-R5
- for linux-rockchip@lists.infradead.org; Tue, 28 Apr 2020 10:00:52 +0000
-Received: by mail-pl1-x643.google.com with SMTP id h11so8154638plr.11
- for <linux-rockchip@lists.infradead.org>; Tue, 28 Apr 2020 03:00:50 -0700 (PDT)
+ id 1jTN2s-0006Oe-BJ
+ for linux-rockchip@lists.infradead.org; Tue, 28 Apr 2020 10:00:55 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n11so1970037pgl.9
+ for <linux-rockchip@lists.infradead.org>; Tue, 28 Apr 2020 03:00:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0oMe2DD/reatfvO3u85Qztq2FmvG6vjgDNDK7VrZJfc=;
- b=EPTfT4vrwXLQrlM2swnqSjp8bG6ms9TfLYYisNi7J/VJoydu5CnJFZbi5WLqRETOFQ
- YqJObJMoCvvqSUxO/ClJlfin7A2V/7qswl5CXyH4wrOyoUOwNU8mj2wkNlYf/5c3npwu
- bZhXlErNSI6h4fLLTJgFtdC6z8F/mardWthn8=
+ bh=LmEATzXo84nsgbWcnoVrVjm3PW9lqScSfgwFAmOpw4g=;
+ b=oeLCXjtITb5aNU2sNc9LaUPQ0z2dz8kSy/ZgDNijFJWOhZPmixFq42tymkyvr+N+UJ
+ mK0TA29SH4H/AxCxsmtskmlmMW3W3xCVFs/9nw5m6Iberx+bu2jdffAlLQFaCqw8+Q/N
+ 40vX7f2htc2SqSnXJ3DsFF3Bzrs7VSukn57yg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=0oMe2DD/reatfvO3u85Qztq2FmvG6vjgDNDK7VrZJfc=;
- b=VvDWkt89UCjjZu6SGxTNCUp4vBna+NfCRnjp2jBNoygL/dVcR0yVZ2JZDl2bRNQZbG
- RTpNl6FCtTY1X4GuCI3V4IkEmcxEdEVj+sOVDSpzEtlLazlKJVQQedDSX42gNOvHoNmY
- hUr00SF9S0XdapMizlOA+G1i0kBywlEbGYiQZxxmpEsKUrootmWF0QMoHFtw4MlOHegj
- LKfKikfxyY1zRCndnjlfUDkQfLqkHeqeskXrY0wf1LdPGsMlCPEg72tx7UJwdLfKo3TF
- Hyqq+MknDMGnCIJt3IXDeWIPG5HEDXqfpl5V7u/Pw+737p7uKQvVk9jFLDckVqdfmffz
- 4+3Q==
-X-Gm-Message-State: AGi0PubcFNJLjZ2gF7rfZRWfS1CRlWVaPCpnDL4OP8p767JUECI5Hc48
- usZVD0Wrd5cfPuvHV+5DvzInag==
-X-Google-Smtp-Source: APiQypIISyKWMJObySowF7kMgtPex5OVFJl/XuUypZKPBL3xjrUZJ8A7ENQneKOqlKvslbys+39n6w==
-X-Received: by 2002:a17:90a:d98e:: with SMTP id
- d14mr4003321pjv.178.1588068049980; 
- Tue, 28 Apr 2020 03:00:49 -0700 (PDT)
+ bh=LmEATzXo84nsgbWcnoVrVjm3PW9lqScSfgwFAmOpw4g=;
+ b=qmmkJ8dlekp6PkULgFr76VzsfMnDv7lMBNFxhzuAH/iofppR5MEAqRc4NpBQkomg/a
+ 0OYJbKh7dIVAIojaXK9CtBAdoj/go9cYKTGWk9byYlnFTTM4CR+0s534tjBiDUv/7BKN
+ oEUKkRgZE1Jgpop+dvyDnFanzDZ4m53awv/9OyyL0lRY2unfCEO7rhyZFyMT+tUGIjvr
+ kEIu+KuzuVDHqH+bM7DK9AZn8zXIjGEOPzM8YZ4k2K3SUM9vuxO7Ki1IlGQTJkz1jB2n
+ TQAGNbOstzcdXSA1AcpOZOvIX+qEIimjSYZzbPp4hf6jd9eOeqaY8b176XDFrBMUJbxj
+ Y3YA==
+X-Gm-Message-State: AGi0PubcvV/tYL7L5twObzN7tYcZh/TZ5PyZw9OcWsEjUtqKHK8IW44z
+ 0LszW8Sv367fY7jPUAAP6PnWYw==
+X-Google-Smtp-Source: APiQypKXu4naF6EZ0qV89Z0X7gXEA5goyba7Cj1iMrZaQ4eysBPP3v25zuo5sHW1A8ohyzmrSIm3QA==
+X-Received: by 2002:a65:5509:: with SMTP id f9mr27989733pgr.70.1588068053571; 
+ Tue, 28 Apr 2020 03:00:53 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:f9c1:1c6a:49dc:267d])
- by smtp.gmail.com with ESMTPSA id j32sm12676379pgb.55.2020.04.28.03.00.46
+ by smtp.gmail.com with ESMTPSA id j32sm12676379pgb.55.2020.04.28.03.00.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 03:00:49 -0700 (PDT)
+ Tue, 28 Apr 2020 03:00:52 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 5/6] arm: dts: rk3399: Sync roc-pc-mezzanine from v5.7-rc1
-Date: Tue, 28 Apr 2020 15:30:18 +0530
-Message-Id: <20200428100019.19155-6-jagan@amarulasolutions.com>
+Subject: [PATCH v2 6/6] rk3399: Add ROC-RK3399-PC Mezzanine board
+Date: Tue, 28 Apr 2020 15:30:19 +0530
+Message-Id: <20200428100019.19155-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200428100019.19155-1-jagan@amarulasolutions.com>
 References: <20200428100019.19155-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_030050_891268_D38598B5 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20200428_030054_428630_8270A5E3 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,131 +103,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Sync Firefly ROC-RK3399-PC Mezzanine Board dts file
-from Linux v5.7-rc1.
+From: Suniel Mahesh <sunil@amarulasolutions.com>
+
+Add Firefly ROC-RK3399-PC Mezzanine board which is an
+extension board on top of roc-rk3399-pc.
+
+Will drop the separate defconfig file, once we support
+the board detection at runtime.
 
 Signed-off-by: Suniel Mahesh <sunil@amarulasolutions.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v2:
-- none
+- include rk3399-roc-pc-u-boot.dtsi
 
- arch/arm/dts/Makefile                    |  1 +
- arch/arm/dts/rk3399-roc-pc-mezzanine.dts | 93 ++++++++++++++++++++++++
- 2 files changed, 94 insertions(+)
- create mode 100644 arch/arm/dts/rk3399-roc-pc-mezzanine.dts
+ .../dts/rk3399-roc-pc-mezzanine-u-boot.dtsi   |  6 ++
+ board/firefly/roc-pc-rk3399/MAINTAINERS       |  2 +
+ configs/roc-pc-mezzanine-rk3399_defconfig     | 67 +++++++++++++++++++
+ 3 files changed, 75 insertions(+)
+ create mode 100644 arch/arm/dts/rk3399-roc-pc-mezzanine-u-boot.dtsi
+ create mode 100644 configs/roc-pc-mezzanine-rk3399_defconfig
 
-diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index af7d804b66..409b0d1b3f 100644
---- a/arch/arm/dts/Makefile
-+++ b/arch/arm/dts/Makefile
-@@ -131,6 +131,7 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
- 	rk3399-puma-ddr1600.dtb \
- 	rk3399-puma-ddr1866.dtb \
- 	rk3399-roc-pc.dtb \
-+	rk3399-roc-pc-mezzanine.dtb \
- 	rk3399-rock-pi-4.dtb \
- 	rk3399-rock960.dtb \
- 	rk3399-rockpro64.dtb
-diff --git a/arch/arm/dts/rk3399-roc-pc-mezzanine.dts b/arch/arm/dts/rk3399-roc-pc-mezzanine.dts
+diff --git a/arch/arm/dts/rk3399-roc-pc-mezzanine-u-boot.dtsi b/arch/arm/dts/rk3399-roc-pc-mezzanine-u-boot.dtsi
 new file mode 100644
-index 0000000000..2acb3d500f
+index 0000000000..f50c18dd3d
 --- /dev/null
-+++ b/arch/arm/dts/rk3399-roc-pc-mezzanine.dts
-@@ -0,0 +1,93 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++++ b/arch/arm/dts/rk3399-roc-pc-mezzanine-u-boot.dtsi
+@@ -0,0 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0+
 +/*
-+ * Copyright (c) 2017 T-Chip Intelligent Technology Co., Ltd
-+ * Copyright (c) 2019 Markus Reichl <m.reichl@fivetechno.de>
++ * Copyright (c) 2020 Amarula Solutions(India)
 + */
 +
-+/dts-v1/;
-+#include "rk3399-roc-pc.dtsi"
-+
-+/ {
-+	model = "Firefly ROC-RK3399-PC Mezzanine Board";
-+	compatible = "firefly,roc-rk3399-pc-mezzanine", "rockchip,rk3399";
-+
-+	vcc3v3_ngff: vcc3v3-ngff {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_ngff";
-+		enable-active-high;
-+		gpio = <&gpio4 RK_PD3 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc3v3_ngff_en>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&dc_12v>;
-+	};
-+
-+	vcc3v3_pcie: vcc3v3-pcie {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_pcie";
-+		enable-active-high;
-+		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc3v3_pcie_en>;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&dc_12v>;
-+	};
-+};
-+
-+&pcie_phy {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	ep-gpios = <&gpio4 RK_PD1 GPIO_ACTIVE_HIGH>;
-+	num-lanes = <4>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_perst>;
-+	vpcie3v3-supply = <&vcc3v3_pcie>;
-+	vpcie1v8-supply = <&vcc1v8_pmu>;
-+	vpcie0v9-supply = <&vcca_0v9>;
-+	status = "okay";
-+};
-+
-+&pinctrl {
-+	ngff {
-+		vcc3v3_ngff_en: vcc3v3-ngff-en {
-+			rockchip,pins = <4 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
-+	pcie {
-+		vcc3v3_pcie_en: vcc3v3-pcie-en {
-+			rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		pcie_perst: pcie-perst {
-+			rockchip,pins = <4 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+};
-+
-+&sdio0 {
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	cap-sdio-irq;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+	non-removable;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-+	sd-uhs-sdr104;
-+	vmmc-supply = <&vcc3v3_ngff>;
-+	vqmmc-supply = <&vcc_1v8>;
-+	status = "okay";
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
-+	status = "okay";
-+};
++#include "rk3399-roc-pc-u-boot.dtsi"
+diff --git a/board/firefly/roc-pc-rk3399/MAINTAINERS b/board/firefly/roc-pc-rk3399/MAINTAINERS
+index 7564dd252d..68a5b757d1 100644
+--- a/board/firefly/roc-pc-rk3399/MAINTAINERS
++++ b/board/firefly/roc-pc-rk3399/MAINTAINERS
+@@ -1,6 +1,8 @@
+ ROC-RK3399-PC
+ M:	Levin Du <djw@t-chip.com.cn>
++M:	Suniel Mahesh <sunil@amarulasolutions.com>
+ S:	Maintained
+ F:	board/firefly/roc-pc-rk3399
+ F:	include/configs/roc-pc-rk3399.h
+ F:	configs/roc-pc-rk3399_defconfig
++F:	configs/roc-pc-mezzanine-rk3399_defconfig
+diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
+new file mode 100644
+index 0000000000..5a694edc03
+--- /dev/null
++++ b/configs/roc-pc-mezzanine-rk3399_defconfig
+@@ -0,0 +1,67 @@
++CONFIG_ARM=y
++CONFIG_ARCH_ROCKCHIP=y
++CONFIG_SYS_TEXT_BASE=0x00200000
++CONFIG_ENV_OFFSET=0x3F8000
++CONFIG_ROCKCHIP_RK3399=y
++CONFIG_TARGET_ROC_PC_RK3399=y
++CONFIG_NR_DRAM_BANKS=1
++CONFIG_DEBUG_UART_BASE=0xFF1A0000
++CONFIG_DEBUG_UART_CLOCK=24000000
++CONFIG_DEBUG_UART=y
++CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc-mezzanine.dtb"
++CONFIG_DISPLAY_BOARDINFO_LATE=y
++# CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
++CONFIG_SPL_STACK_R=y
++CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
++CONFIG_TPL=y
++CONFIG_TPL_GPIO_SUPPORT=y
++CONFIG_CMD_BOOTZ=y
++CONFIG_CMD_GPT=y
++CONFIG_CMD_MMC=y
++CONFIG_CMD_USB=y
++# CONFIG_CMD_SETEXPR is not set
++CONFIG_CMD_TIME=y
++CONFIG_SPL_OF_CONTROL=y
++CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc-mezzanine"
++CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
++CONFIG_ENV_IS_IN_MMC=y
++CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++CONFIG_ROCKCHIP_GPIO=y
++CONFIG_SYS_I2C_ROCKCHIP=y
++CONFIG_MMC_DW=y
++CONFIG_MMC_DW_ROCKCHIP=y
++CONFIG_MMC_SDHCI=y
++CONFIG_MMC_SDHCI_ROCKCHIP=y
++CONFIG_SPI_FLASH_WINBOND=y
++CONFIG_DM_ETH=y
++CONFIG_ETH_DESIGNWARE=y
++CONFIG_GMAC_ROCKCHIP=y
++CONFIG_PMIC_RK8XX=y
++CONFIG_REGULATOR_PWM=y
++CONFIG_REGULATOR_RK8XX=y
++CONFIG_PWM_ROCKCHIP=y
++CONFIG_RAM_RK3399_LPDDR4=y
++CONFIG_BAUDRATE=1500000
++CONFIG_DEBUG_UART_SHIFT=2
++CONFIG_ROCKCHIP_SPI=y
++CONFIG_SYSRESET=y
++CONFIG_USB=y
++CONFIG_USB_XHCI_HCD=y
++CONFIG_USB_XHCI_DWC3=y
++CONFIG_USB_EHCI_HCD=y
++CONFIG_USB_EHCI_GENERIC=y
++CONFIG_USB_HOST_ETHER=y
++CONFIG_USB_ETHER_ASIX=y
++CONFIG_USB_ETHER_ASIX88179=y
++CONFIG_USB_ETHER_MCS7830=y
++CONFIG_USB_ETHER_RTL8152=y
++CONFIG_USB_ETHER_SMSC95XX=y
++CONFIG_USB_KEYBOARD=y
++CONFIG_SPL_TINY_MEMSET=y
++CONFIG_ERRNO_STR=y
++CONFIG_DM_VIDEO=y
++CONFIG_VIDEO_BPP16=y
++CONFIG_VIDEO_BPP32=y
++CONFIG_DISPLAY=y
++CONFIG_VIDEO_ROCKCHIP=y
++CONFIG_DISPLAY_ROCKCHIP_HDMI=y
 -- 
 2.17.1
 
