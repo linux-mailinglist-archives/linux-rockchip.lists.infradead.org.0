@@ -2,56 +2,75 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9D9D1BE4B5
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 19:04:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A8F21BECCB
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 02:00:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=664cK7aXT8P540sBI0xRwfJ0ciJEa56zooULAb2bWlQ=; b=BuD3LkRAr6oa/h
-	XYo89d2/3B/TwDwrNzbx/nLGVQ8R4J6QMgfSJGX4TqUuozdDRgh5O0jRL0wvl3cyYsGtiNRC9p81s
-	WXAL7kcsmq+O8Or6Vh24TM3cWZTKPi0TW3bvX+ywbZ/ZtUP6S7KpPDEFVZhdXfUeQ/KLSCnigPeiW
-	he06dLcHKwbgMy43H6Pnxdq8rvqWRdVNEwTEMrsNgEJLdqU+BJFmPOKwDCRoUDTlz9ltRzijMyQxP
-	9kPuLr4cdBGej2uasONaO+Wt3aABHT4rgK5t7ddeQaj437Kek+G8V/AtA131vCUMLH1JHMur512yq
-	uaTS8SKzntcj7J8aidNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4m34kok1EXoCQUn9v3/gAHUTRTiKNEfQ0G3Iv1wb0gM=; b=VwqiWs6kHElDAi1I37QKMh9wh
+	rABSBevcmn460J65s1prC9Wu7qUYC1GpW0QQskmgVJ6nzeZAe6AndZLUCyQlfgzJt5TdkEk+pI5SH
+	Ru2wt+XzMcQ9bPFluy/FEq5pwNs1emJVDjBNZM5sonrjGYGDKcM5WP7hajnI4gpeg1WWlWA9hiF/A
+	rOVf39e85vnmyHYDx8M8Lc/CAUupEEkI89rZjxbkgAIko/xVCat3VJDz7uf13VF/t50EzNasr6R7T
+	ayGv6cQW4QqSnt5aILypECAnMWUfsaLWY3bNp6Roh2iuul7DSS5qoHVU2BZtYFDmHLqKgl2ptslyI
+	hE6GQ1F4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTq8f-00059J-Ay; Wed, 29 Apr 2020 17:04:49 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1jTwcv-0000eC-It; Thu, 30 Apr 2020 00:00:29 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTq8R-0004zZ-Vc; Wed, 29 Apr 2020 17:04:37 +0000
-X-Originating-IP: 91.224.148.103
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 8AA9BFF804;
- Wed, 29 Apr 2020 17:04:30 +0000 (UTC)
-Date: Wed, 29 Apr 2020 19:04:28 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v5 2/7] mtd: rawnand: rockchip: NFC drivers for RK3308,
- RK3188 and others
-Message-ID: <20200429190428.33ca0523@xps13>
-In-Reply-To: <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
-References: <20200426100250.14678-1-yifeng.zhao@rock-chips.com>
- <20200426100250.14678-3-yifeng.zhao@rock-chips.com>
- <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jTwcs-0006G7-4D; Thu, 30 Apr 2020 00:00:27 +0000
+IronPort-SDR: P34F8ffkXSXz++5uMV+63I3KO7HP5z7Pl99BQwdJy2R79QntKs44oZRiNMqzJm+XJCS8yFkC0U
+ cZBCpdVSmwgw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 29 Apr 2020 16:58:25 -0700
+IronPort-SDR: jB3X6OfrFEd5jL85tzJQ7Kivv2gZUnM+5dHl+h4S2HlmkJN7B4gQQLNvquQI6pSZuDssxpDugH
+ dzAsxaFwPNPA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,333,1583222400"; d="scan'208";a="293374327"
+Received: from chenw5-mobl1.ccr.corp.intel.com (HELO [10.254.209.112])
+ ([10.254.209.112])
+ by fmsmga002.fm.intel.com with ESMTP; 29 Apr 2020 16:58:19 -0700
+Subject: Re: [PATCH v3 04/34] iommu/vt-d: Wire up iommu_ops->def_domain_type
+To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, David Woodhouse
+ <dwmw2@infradead.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>
+References: <20200429133712.31431-1-joro@8bytes.org>
+ <20200429133712.31431-5-joro@8bytes.org>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <b091a9e0-4bbb-2cd9-861e-e958bc691f73@linux.intel.com>
+Date: Thu, 30 Apr 2020 07:58:18 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200429133712.31431-5-joro@8bytes.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_100436_149290_9CAA00A4 
-X-CRM114-Status: GOOD (  11.90  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200429_170026_177096_8B018002 
+X-CRM114-Status: GOOD (  17.70  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,59 +83,50 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
- Yifeng Zhao <yifeng.zhao@rock-chips.com>, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-mtd@lists.infradead.org, heiko@sntech.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Daniel Drake <drake@endlessm.com>, linux-rockchip@lists.infradead.org,
+ iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ virtualization@lists.linux-foundation.org, jonathan.derrick@intel.com,
+ baolu.lu@linux.intel.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgWWlmZW5nLAoKSm9oYW4gSm9ua2VyIDxqYng2MjQ0QGdtYWlsLmNvbT4gd3JvdGUgb24gV2Vk
-LCAyOSBBcHIgMjAyMCAxNzo1NTo1NgorMDIwMDoKCj4gSGkgWWlmZW5nLAo+IAo+IEEgZmV3IG1v
-cmUgY29tbWVudHMgYmVsb3cgZm9yIG5vdyAocGFydCAyKS4KPiAKPiBPbiA0LzI2LzIwIDEyOjAy
-IFBNLCBZaWZlbmcgWmhhbyB3cm90ZToKPiAKPiBbLi5dCj4gCj4gPiArI2RlZmluZQlUSElTX05B
-TUUJCSJyay1uYW5kIiAgCj4gCj4gPiArc3RhdGljIGludCBya19uZmNfbmFuZF9jaGlwX2luaXQo
-c3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgcmtfbmZjICpuZmMsCj4gPiArCQkJCSBzdHJ1Y3Qg
-ZGV2aWNlX25vZGUgKm5wKQo+ID4gK3sKPiA+ICsJc3RydWN0IHJrX25mY19uYW5kX2NoaXAgKm5h
-bmQ7Cj4gPiArCXN0cnVjdCBuYW5kX2NoaXAgKmNoaXA7Cj4gPiArCXN0cnVjdCBtdGRfaW5mbyAq
-bXRkOwo+ID4gKwlpbnQgbnNlbHM7Cj4gPiArCXUzMiB0bXA7Cj4gPiArCWludCByZXQ7Cj4gPiAr
-CWludCBpOwo+ID4gKwo+ID4gKwlpZiAoIW9mX2dldF9wcm9wZXJ0eShucCwgInJlZyIsICZuc2Vs
-cykpCj4gPiArCQlyZXR1cm4gLUVOT0RFVjsKPiA+ICsJbnNlbHMgLz0gc2l6ZW9mKHUzMik7Cj4g
-PiArCWlmICghbnNlbHMgfHwgbnNlbHMgPiBORkNfTUFYX05TRUxTKSB7Cj4gPiArCQlkZXZfZXJy
-KGRldiwgImludmFsaWQgcmVnIHByb3BlcnR5IHNpemUgJWRcbiIsIG5zZWxzKTsKPiA+ICsJCXJl
-dHVybiAtRUlOVkFMOwo+ID4gKwl9Cj4gPiArCj4gPiArCW5hbmQgPSBkZXZtX2t6YWxsb2MoZGV2
-LCBzaXplb2YoKm5hbmQpICsgbnNlbHMgKiBzaXplb2YodTgpLAo+ID4gKwkJCSAgICBHRlBfS0VS
-TkVMKTsKPiA+ICsJaWYgKCFuYW5kKQo+ID4gKwkJcmV0dXJuIC1FTk9NRU07Cj4gPiArCj4gPiAr
-CW5hbmQtPm5zZWxzID0gbnNlbHM7Cj4gPiArCWZvciAoaSA9IDA7IGkgPCBuc2VsczsgaSsrKSB7
-Cj4gPiArCQlyZXQgPSBvZl9wcm9wZXJ0eV9yZWFkX3UzMl9pbmRleChucCwgInJlZyIsIGksICZ0
-bXApOwo+ID4gKwkJaWYgKHJldCkgewo+ID4gKwkJCWRldl9lcnIoZGV2LCAicmVnIHByb3BlcnR5
-IGZhaWx1cmUgOiAlZFxuIiwgcmV0KTsKPiA+ICsJCQlyZXR1cm4gcmV0Owo+ID4gKwkJfQo+ID4g
-Kwo+ID4gKwkJaWYgKHRtcCA+PSBORkNfTUFYX05TRUxTKSB7Cj4gPiArCQkJZGV2X2VycihkZXYs
-ICJpbnZhbGlkIENTOiAldVxuIiwgdG1wKTsKPiA+ICsJCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJ
-CX0KPiA+ICsKPiA+ICsJCWlmICh0ZXN0X2FuZF9zZXRfYml0KHRtcCwgJm5mYy0+YXNzaWduZWRf
-Y3MpKSB7Cj4gPiArCQkJZGV2X2VycihkZXYsICJDUyAldSBhbHJlYWR5IGFzc2lnbmVkXG4iLCB0
-bXApOwo+ID4gKwkJCXJldHVybiAtRUlOVkFMOwo+ID4gKwkJfQo+ID4gKwo+ID4gKwkJbmFuZC0+
-c2Vsc1tpXSA9IHRtcDsKPiA+ICsJfQo+ID4gKwo+ID4gKwljaGlwID0gJm5hbmQtPmNoaXA7Cj4g
-PiArCWNoaXAtPmNvbnRyb2xsZXIgPSAmbmZjLT5jb250cm9sbGVyOwo+ID4gKwo+ID4gKwluYW5k
-X3NldF9mbGFzaF9ub2RlKGNoaXAsIG5wKTsKPiA+ICsJbmFuZF9zZXRfY29udHJvbGxlcl9kYXRh
-KGNoaXAsIG5mYyk7Cj4gPiArCj4gPiArCWNoaXAtPm9wdGlvbnMgfD0gTkFORF9VU0VfQk9VTkNF
-X0JVRkZFUiB8IE5BTkRfTk9fU1VCUEFHRV9XUklURTsKPiA+ICsJY2hpcC0+YmJ0X29wdGlvbnMg
-PSBOQU5EX0JCVF9VU0VfRkxBU0ggfCBOQU5EX0JCVF9OT19PT0I7Cj4gPiArCj4gPiArCS8qIHNl
-dCBkZWZhdWx0IG1vZGUgaW4gY2FzZSBkdCBlbnRyeSBpcyBtaXNzaW5nICovCj4gPiArCWNoaXAt
-PmVjYy5tb2RlID0gTkFORF9FQ0NfSFc7Cj4gPiArCj4gPiArCW10ZCA9IG5hbmRfdG9fbXRkKGNo
-aXApOwo+ID4gKwltdGQtPm93bmVyID0gVEhJU19NT0RVTEU7Cj4gPiArCW10ZC0+ZGV2LnBhcmVu
-dCA9IGRldjsgIAo+IAo+ID4gKwltdGQtPm5hbWUgPSBUSElTX05BTUU7ICAKPiAKPiBUaGUgJ210
-ZC0+bmFtZScgc2hvd3MgdXAgc29tZXdoZXJlIGluIGZpbGUgdHJlZS4KCkdvb2QgY2F0Y2guCgo+
-IFRoZSByazMyODggaGFzIDIgbmZjJ3MuIEluIHRoZW9yeSAyIHByb2JlcyBhbmQgYWxzbyAyIGRl
-dmljZSBuYW1lcywgc28gSQo+IHRoaW5rIHRoYXQgd2Ugc2hvdWxkbid0IHVzZSBhIGZpeGVkIGRl
-ZmluZSBmb3IgJ210ZC0+bmFtZScuCj4gTWF5YmUgdXNlIHNvbWV0aGluZyBsaWtlIHRoaXM6CgpZ
-aWZlbmcsIHBsZWFzZSB1c2UgdGhlIE5BTkQgY2hpcCAibGFiZWwiIERUIHByb3BlcnR5LCB3aGlj
-aCBpcyBwYXJzZWQKYnkgdGhlIGNvcmUgYXV0b21hdGljYWxseSBhbmQgd2lsbCBnaXZlIHlvdSBt
-ZWFuaW5nZnVsIG5hbWVzIGZvciBldmVyeQpjaGlwOgoKbmFuZF9zZXRfZmxhc2hfbm9kZShjaGlw
-LCBucCk7CmlmICghbXRkLT5uYW1lKSB7CglkZXZfZXJyKG5mYy0+ZGV2LCAiTkFORCBsYWJlbCBw
-cm9wZXJ0eSBpcyBtYW5kYXRvcnlcbiIpOwoJcmV0dXJuIC1FSU5WQUw7Cn0KCgpUaGFua3MsCk1p
-cXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
-bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
-a2NoaXAK
+On 2020/4/29 21:36, Joerg Roedel wrote:
+> From: Joerg Roedel <jroedel@suse.de>
+> 
+> The Intel VT-d driver already has a matching function to determine the
+> default domain type for a device. Wire it up in intel_iommu_ops.
+> 
+> Signed-off-by: Joerg Roedel <jroedel@suse.de>
+
+Reviewed-by: Lu Baolu <baolu.lu@linux.intel.com>
+
+Best regards,
+baolu
+
+> ---
+>   drivers/iommu/intel-iommu.c | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
+> index ef0a5246700e..b9f905a55dda 100644
+> --- a/drivers/iommu/intel-iommu.c
+> +++ b/drivers/iommu/intel-iommu.c
+> @@ -6209,6 +6209,7 @@ const struct iommu_ops intel_iommu_ops = {
+>   	.dev_enable_feat	= intel_iommu_dev_enable_feat,
+>   	.dev_disable_feat	= intel_iommu_dev_disable_feat,
+>   	.is_attach_deferred	= intel_iommu_is_attach_deferred,
+> +	.def_domain_type	= device_def_domain_type,
+>   	.pgsize_bitmap		= INTEL_IOMMU_PGSIZES,
+>   };
+>   
+> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
