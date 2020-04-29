@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B16051BDE02
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:38:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D6F21BDEA3
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:39:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,20 +11,20 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FDmvx9xqG7Bzg3AShNJjJPZTfp/Qf9Ti4jKd0og/k6Q=; b=j8248yUtc5iWFc52ygHo0PfIZx
-	c1+2RXsvFQUHpgacmM6MUMSE2RDXwbds3mpsAv/J0DU8D4MEJaDsoeX/WQ7rVpWv+9/qaT1sm+Ktg
-	eAdC5s1Uz5b1K6QTR8vZSutgqj+nF3tVvE+7onCVyQ3wCpANXxaO9Nlv0Zjilc9D1Whq86cUadD/G
-	8/ydtVtCcKJHnVOoRR9RhCQzhv3Gj4FodA5seYxzjRj3t07+ykFCoJA4xEvGRYutmRIGvo6B7PYoH
-	yH/rLQoQVHJTwU+BPrxWIR45hsG4EI0hkxtE4so1jwTnTfEynue1voRS7YWo5VCqG4eGXdlsinApO
-	HgqrPjLw==;
+	bh=sBExY2nk3fJunGVZBwMPqTqKrYQ5eozASq6+94uXYi0=; b=Ho/nAezlkH1cJQ02+QNmp25jBA
+	DIvL5uGk0T7myN1SyL0VzzMBzEylsmF4/Rmx9/x6EqGFssftQsmgrvtCNXsThy2KTrKyMhfGgw3VR
+	HjV7xWcsB6UFlsGwBHlhLQGaXD+HWu0dE0MONGcBZn6eOXQaFEu8ID/mb1Kjf8i3ZalwtJJ2S1Vp7
+	8AhrrR7F5fYBOsCeTXakPvsGb6EIe0gKTOEcuYe7T34uYMY07FRVihe8i+jPMw7HSWh+MJYLjAlSL
+	1gS6iJSB04H7SEj0nH+6ln9+k0+55so1TKw/Hvk0RDMCBfP7CWK4+9O89mtzgHQpTdGGKHnjkvutk
+	JY3B5Deg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTmum-0006qi-Jh; Wed, 29 Apr 2020 13:38:16 +0000
+	id 1jTmvz-0000Fj-Ja; Wed, 29 Apr 2020 13:39:31 +0000
 Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTmuF-0006Ct-16; Wed, 29 Apr 2020 13:37:45 +0000
+ id 1jTmuJ-0006GQ-Cj; Wed, 29 Apr 2020 13:37:50 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 0084D70B; Wed, 29 Apr 2020 15:37:35 +0200 (CEST)
+ id 34E20791; Wed, 29 Apr 2020 15:37:36 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -39,15 +39,15 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v3 04/34] iommu/vt-d: Wire up iommu_ops->def_domain_type
-Date: Wed, 29 Apr 2020 15:36:42 +0200
-Message-Id: <20200429133712.31431-5-joro@8bytes.org>
+Subject: [PATCH v3 05/34] iommu/amd: Remove dma_mask check from check_device()
+Date: Wed, 29 Apr 2020 15:36:43 +0200
+Message-Id: <20200429133712.31431-6-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200429133712.31431-1-joro@8bytes.org>
 References: <20200429133712.31431-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_063743_217116_A2AE0C76 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20200429_063747_601899_7FF2A4B8 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -83,26 +83,27 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-The Intel VT-d driver already has a matching function to determine the
-default domain type for a device. Wire it up in intel_iommu_ops.
+The check was only needed for the DMA-API implementation in the AMD
+IOMMU driver, which no longer exists.
 
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/intel-iommu.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/iommu/amd_iommu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-index ef0a5246700e..b9f905a55dda 100644
---- a/drivers/iommu/intel-iommu.c
-+++ b/drivers/iommu/intel-iommu.c
-@@ -6209,6 +6209,7 @@ const struct iommu_ops intel_iommu_ops = {
- 	.dev_enable_feat	= intel_iommu_dev_enable_feat,
- 	.dev_disable_feat	= intel_iommu_dev_disable_feat,
- 	.is_attach_deferred	= intel_iommu_is_attach_deferred,
-+	.def_domain_type	= device_def_domain_type,
- 	.pgsize_bitmap		= INTEL_IOMMU_PGSIZES,
- };
+diff --git a/drivers/iommu/amd_iommu.c b/drivers/iommu/amd_iommu.c
+index 73b4f84cf449..504f2db75eda 100644
+--- a/drivers/iommu/amd_iommu.c
++++ b/drivers/iommu/amd_iommu.c
+@@ -326,7 +326,7 @@ static bool check_device(struct device *dev)
+ {
+ 	int devid;
  
+-	if (!dev || !dev->dma_mask)
++	if (!dev)
+ 		return false;
+ 
+ 	devid = get_device_id(dev);
 -- 
 2.17.1
 
