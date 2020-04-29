@@ -2,99 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6633E1BD83D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 11:28:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC5DC1BDE08
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:38:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0teYuiQbxfXL9NBWYTCX6iDNrSYR5f8lrYBCZiCq190=; b=Mp3eDwgwh/2eZG
-	kTeOzy0KzGUk+SB7unz4b3Ljy6AHeKpfgOyp0bjK6TC4BNWzBXQHzi0QgdhTMYL9Xow2eVsyRAUaC
-	xqEK8W+RkRm4wXTWM9yeEIyXQBPduySbfptDxefFPPJm0xJjaR2Od3VCNu69wDmiWyC+tNTFFaWvq
-	BbZbRSDOek6jGX/GQiEObfj/zqHjGiSSlGj2SQ8+TS2Kdzy7FMrnBG64TuyWP8wvTP+Qg9INKGFE9
-	As3JAlMr68tv2Vl3xLOlAhk0ytK3bkH4fDyM7Zr9XZ69aWpwm38xr0qXzg9UzdH13Zm84IZcNueCJ
-	vBIZhdPIsBFFpBd75Zdw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1OlJticW5+vreYhsUvoq6Xvo1hWgMvQgEbKnGNKyYh8=; b=pD8
+	e9WrScIzLKFK4T1JzLiPyiD4rygm+1RuEE6V3+UUxf2r2H/c5KaTW0doF+heocwriCtXcOULdqr17
+	iXZ8KnkiufZjKbtaLydrdsJDTC71GJStQ90KenqUB9ElAWwyzBH/HjX5DXIb+GWkCJ05HfmdMfgTG
+	bW7LkZU70Kgtk1/BHPJAP6E1BMg+kI6YD5zIv6u78YzaMqMfws+63ergdVMGaWYM8exWgEgdV/TIE
+	nXh1/J++VtmwXNRV1uCcaFM9Mt1Slo7xqPt6qQGn0707UNVKyFje+Tj0MEHmiwCIV0SRmfzi17ElP
+	yTUlQVPCCNCGrqlKS/8FPT+e32DpGNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTj19-0000BS-5r; Wed, 29 Apr 2020 09:28:35 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jTmus-0006vu-BV; Wed, 29 Apr 2020 13:38:22 +0000
+Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
+ helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTj16-0000AQ-2i; Wed, 29 Apr 2020 09:28:33 +0000
-Received: by mail-wm1-x341.google.com with SMTP id u127so1241997wmg.1;
- Wed, 29 Apr 2020 02:28:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=UeUVwObSkM6EFVAzScmIyMGT/gPf7YTekn6m0H+ie8w=;
- b=ejwhGHj3Y5NZCDzmcm3w8UM0m5vKpiydbk8ev228iv3dQxNch/UX6yK/Faq6WKXXhE
- ZfDqOa2pLA+KioOpoYsQh3NtsKUsYkMnsqN4phoKcrQabCC0GNAQJdq1s5UvDxcFjEKm
- Bvjqf03wydSLN21yQE9QQDBGgfug50XFzNgN6SVa5uqG5KS6Zi01nfXht1Xahj7hthIQ
- hp9F1qnFFQj4ixE7MoA/pNVnQJiez9l6ISoE8FXbzPDioNIJLn/R/Hsutn15pWbRw3Zs
- JDr2I9casLccS7vLFpshf+um/Dd1UEGO9tFXZQOkbhPEThexvbNmnTcZAptURxMPhSku
- ZeZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=UeUVwObSkM6EFVAzScmIyMGT/gPf7YTekn6m0H+ie8w=;
- b=UUxmmRpn4HWp7LwDjEAeFkn2ExMhAArKKdPRTDEBO1XjBlgwWmZTnhIzdPNQBYCtgn
- oCF/zXQkPtV2OZwJDiW1LcYFOOLs11Sko+CnOwiRqKonglxcC1XLeZA3kmael6lCbS8O
- NO5WGAffB3ppRSkfX1zDg7LdM9rOiE3jDqF4J9m+oHDIue9ie43zWoD1WUTwyvhBLaIt
- eYZZZ4l2OHWZchDcXG8QXuG0q434AdSlRBOmOYbqR53AUjiRHOrXnaRwgzHCeqh42Yru
- 0m6PmW+BaHRBmdpR1WLU/H4eafuQ0A4Tmy0UNR/2mZS8AVbEgcjjEEH2JB7LKNz9c/tB
- vO2w==
-X-Gm-Message-State: AGi0Pua40K4QnNFT8H336V0efMcrbIghUCebQ7nsU0d3Zp6j0QmB4BBG
- iNJ1b8WcRqJS+hYwhBW8nW3aaZ/k
-X-Google-Smtp-Source: APiQypKUQaJgSoMixHmfMayvIF7NPOrs0jASPDWStT/ot5oGircRfIYNDPagR39Q27smhLgHapbrAw==
-X-Received: by 2002:a05:600c:2214:: with SMTP id
- z20mr2363156wml.189.1588152510143; 
- Wed, 29 Apr 2020 02:28:30 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g74sm7058726wme.44.2020.04.29.02.28.29
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 29 Apr 2020 02:28:29 -0700 (PDT)
-Subject: Re: [PATCH v5 1/7] dt-bindings: mtd: Describe Rockchip RK3xxx NAND
- flash controller
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-References: <20200426100250.14678-1-yifeng.zhao@rock-chips.com>
- <20200426100250.14678-2-yifeng.zhao@rock-chips.com>
- <4a83e5d2-90cc-1db7-cdfd-47b7ceb4fcef@gmail.com>
- <20200429111314.5f15d72b@xps13>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <21ecb12e-43d9-581a-7d85-79b62be358e8@gmail.com>
-Date: Wed, 29 Apr 2020 11:28:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200429111314.5f15d72b@xps13>
-Content-Language: en-US
+ id 1jTmuF-0006CM-1o; Wed, 29 Apr 2020 13:37:46 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 49DD72E2; Wed, 29 Apr 2020 15:37:35 +0200 (CEST)
+From: Joerg Roedel <joro@8bytes.org>
+To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>,
+ Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: [PATCH v3 00/34] iommu: Move iommu_group setup to IOMMU core code
+Date: Wed, 29 Apr 2020 15:36:38 +0200
+Message-Id: <20200429133712.31431-1-joro@8bytes.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_022832_141294_B6912BBC 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200429_063743_398744_C8401725 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,48 +65,116 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
- Yifeng Zhao <yifeng.zhao@rock-chips.com>, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-mtd@lists.infradead.org, heiko@sntech.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Daniel Drake <drake@endlessm.com>, linux-rockchip@lists.infradead.org,
+ iommu@lists.linux-foundation.org, linux-mediatek@lists.infradead.org,
+ linux-tegra@vger.kernel.org, virtualization@lists.linux-foundation.org,
+ jonathan.derrick@intel.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgTWlxdWVsLAoKT24gNC8yOS8yMCAxMToxMyBBTSwgTWlxdWVsIFJheW5hbCB3cm90ZToKPiBI
-aSBKb2hhbiwKPiAKPiBKb2hhbiBKb25rZXIgPGpieDYyNDRAZ21haWwuY29tPiB3cm90ZSBvbiBX
-ZWQsIDI5IEFwciAyMDIwIDEwOjUzOjMwCj4gKzAyMDA6Cj4gCj4+IEhpIFlpZmVuZywKPj4KPj4+
-IE9uIFN1biwgQXByIDI2LCAyMDIwIGF0IDA2OjAyOjQ0UE0gKzA4MDAsIFlpZmVuZyBaaGFvIHdy
-b3RlOiAgCj4+Pj4gRG9jdW1lbnRhdGlvbiBzdXBwb3J0IGZvciBSb2NrY2hpcCBSSzN4eHggTkFO
-RCBmbGFzaCBjb250cm9sbGVycwo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogWWlmZW5nIFpoYW8g
-PHlpZmVuZy56aGFvQHJvY2stY2hpcHMuY29tPgo+Pj4+IC0tLQo+Pj4+Cj4+Pj4gQ2hhbmdlcyBp
-biB2NToKPj4+PiAtIEZpeCBzb21lIHdyb25nIGRlZmluZQo+Pj4+IC0gQWRkIGJvb3QtbWVkaXVt
-IGRlZmluZQo+Pj4+IC0gUmVtb3ZlIHNvbWUgY29tcGF0aWJsZSBkZWZpbmUKPj4+Pgo+Pj4+IENo
-YW5nZXMgaW4gdjQ6Cj4+Pj4gLSBUaGUgY29tcGF0aWJsZSBkZWZpbmUgd2l0aCBya3h4X25mYwo+
-Pj4+IC0gQWRkIGFzc2lnbmVkLWNsb2Nrcwo+Pj4+IC0gRml4IHNvbWUgd3JvbmcgZGVmaW5lCj4+
-Pj4KPj4+PiBDaGFuZ2VzIGluIHYzOgo+Pj4+IC0gQ2hhbmdlIHRoZSB0aXRsZSBmb3IgdGhlIGR0
-LWJpbmRpbmdzCj4+Pj4KPj4+PiBDaGFuZ2VzIGluIHYyOiBOb25lCj4+Pj4KPj4+PiAgLi4uL210
-ZC9yb2NrY2hpcCxuYW5kLWNvbnRyb2xsZXIueWFtbCAgICAgICAgIHwgMTI0ICsrKysrKysrKysr
-KysrKysrKwo+Pj4+ICAxIGZpbGUgY2hhbmdlZCwgMTI0IGluc2VydGlvbnMoKykKPj4+PiAgY3Jl
-YXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tdGQvcm9j
-a2NoaXAsbmFuZC1jb250cm9sbGVyLnlhbWwKPj4+Pgo+Pj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbXRkL3JvY2tjaGlwLG5hbmQtY29udHJvbGxlci55
-YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL210ZC9yb2NrY2hpcCxuYW5k
-LWNvbnRyb2xsZXIueWFtbCAgCj4+Cj4+IFRoZSBuYW1lIG9mIHRoaXMgZmlsZSBpcyBiYXNlZCBv
-biBNaXF1ZWwncyBvcGluaW9uLCBidXQgdGhlCj4+IGNvbXBhdGliaWxpdHkgc3RyaW5ncywgKGZv
-ciB3aGljaCByb2JoIGhhcyBnaXZlbiBhICdyZXZpZXdlZCBieScgdGFnKSBpbgo+PiB2ZXJzaW9u
-IDQgZG9uJ3QgZml0IHdpdGggdGhpcyBmb3JtYXQuCj4gCj4gV2hhdCBkbyB5b3UgbWVhbj8gSXMg
-dGhlIGZpbGUgbmFtZSByZXN0cmljdGVkIHNvbWVob3c/IEkganVzdCBkb24ndAo+IHdhbnQgYSBj
-b21wYXRpYmxlIHdpdGgganVzdCAibmFuZCIgaW4gaXQgYmVjYXVzZSB0aGlzIHdvcmQgaXMgdG9v
-IHZhZ3VlCj4gYXMgaXQgZGVmaW5lczogYSBidXMsIGEgc3BlYywgYSBjaGlwLCBwZW9wbGUgYXJl
-IGFsc28gY29uZnVzaW5nIGl0IHdpdGgKPiB0aGUgY29udHJvbGxlciBhbmQgc29tZXRpbWVzIHdp
-dGggdGhlIEVDQyBlbmdpbmUgdG9vLiAibmZjIiBpcyBva2F5Cj4gdGhvdWdoLgo+IAo+IFRoYW5r
-cywKPiBNaXF1w6hsCj4gCgpXaXRoIHRoZSByZXZpZXcgb2YgbXkgYmluZGluZyBzdHJpbmcgcm9j
-a2NoaXAscmszMDY2LWhkbWkgcm9iaCBhZHZpc2VkCnRvIHVzZSB0aGUgYmluZGluZyBjb21wYXRp
-YmxlIHN0cmluZyBhbmQgYWRkICcudHh0JyB0byBpdCBmb3IgdGhlIGZpbGUgbmFtZS4KCklzIGl0
-IE9LIGZvciB5b3UgdG8gaGF2ZSBhIGZpbGUgbmFtZToKICByb2NrY2hpcCxuYW5kLWNvbnRyb2xs
-ZXIueWFtbAoKYW5kIGEgbGl0dGxlIGJpdCBkaWZmZXJlbnQgY29tcGF0aWJpbGl0eSBzdHJpbmc6
-CiAgcm9ja2NoaXAscmszMDY2LW5mYwoKS2luZCByZWdhcmRzLAoKSm9oYW4KCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxp
-bmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+Hi,
+
+here is the third version of this patch-set. Older versions can be found
+here:
+
+	v1: https://lore.kernel.org/lkml/20200407183742.4344-1-joro@8bytes.org/
+	    (Has some more introductory text)
+
+	v2: https://lore.kernel.org/lkml/20200414131542.25608-1-joro@8bytes.org/
+
+Changes v2 -> v3:
+
+	* Rebased v5.7-rc3
+
+	* Added a missing iommu_group_put() as reported by Lu Baolu.
+
+	* Added a patch to consolidate more initialization work in
+	  __iommu_probe_device(), fixing a bug where no 'struct
+	  device_iommu' was allocated in the hotplug path.
+
+There is also a git-branch available with these patches applied:
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/joro/linux.git/log/?h=iommu-probe-device-v3
+
+Please review. If there are no objections I plan to put these patches
+into the IOMMU tree early next week.
+
+Thanks,
+
+	Joerg
+
+Joerg Roedel (33):
+  iommu: Move default domain allocation to separate function
+  iommu/amd: Implement iommu_ops->def_domain_type call-back
+  iommu/vt-d: Wire up iommu_ops->def_domain_type
+  iommu/amd: Remove dma_mask check from check_device()
+  iommu/amd: Return -ENODEV in add_device when device is not handled by
+    IOMMU
+  iommu: Add probe_device() and release_device() call-backs
+  iommu: Move default domain allocation to iommu_probe_device()
+  iommu: Keep a list of allocated groups in __iommu_probe_device()
+  iommu: Move new probe_device path to separate function
+  iommu: Split off default domain allocation from group assignment
+  iommu: Move iommu_group_create_direct_mappings() out of
+    iommu_group_add_device()
+  iommu: Export bus_iommu_probe() and make is safe for re-probing
+  iommu/amd: Remove dev_data->passthrough
+  iommu/amd: Convert to probe/release_device() call-backs
+  iommu/vt-d: Convert to probe/release_device() call-backs
+  iommu/arm-smmu: Convert to probe/release_device() call-backs
+  iommu/pamu: Convert to probe/release_device() call-backs
+  iommu/s390: Convert to probe/release_device() call-backs
+  iommu/virtio: Convert to probe/release_device() call-backs
+  iommu/msm: Convert to probe/release_device() call-backs
+  iommu/mediatek: Convert to probe/release_device() call-backs
+  iommu/mediatek-v1 Convert to probe/release_device() call-backs
+  iommu/qcom: Convert to probe/release_device() call-backs
+  iommu/rockchip: Convert to probe/release_device() call-backs
+  iommu/tegra: Convert to probe/release_device() call-backs
+  iommu/renesas: Convert to probe/release_device() call-backs
+  iommu/omap: Remove orphan_dev tracking
+  iommu/omap: Convert to probe/release_device() call-backs
+  iommu/exynos: Use first SYSMMU in controllers list for IOMMU core
+  iommu/exynos: Convert to probe/release_device() call-backs
+  iommu: Remove add_device()/remove_device() code-paths
+  iommu: Move more initialization to __iommu_probe_device()
+  iommu: Unexport iommu_group_get_for_dev()
+
+Sai Praneeth Prakhya (1):
+  iommu: Add def_domain_type() callback in iommu_ops
+
+ drivers/iommu/amd_iommu.c       |  97 ++++----
+ drivers/iommu/amd_iommu_types.h |   1 -
+ drivers/iommu/arm-smmu-v3.c     |  38 +---
+ drivers/iommu/arm-smmu.c        |  39 ++--
+ drivers/iommu/exynos-iommu.c    |  24 +-
+ drivers/iommu/fsl_pamu_domain.c |  22 +-
+ drivers/iommu/intel-iommu.c     |  68 +-----
+ drivers/iommu/iommu.c           | 387 +++++++++++++++++++++++++-------
+ drivers/iommu/ipmmu-vmsa.c      |  60 ++---
+ drivers/iommu/msm_iommu.c       |  34 +--
+ drivers/iommu/mtk_iommu.c       |  24 +-
+ drivers/iommu/mtk_iommu_v1.c    |  50 ++---
+ drivers/iommu/omap-iommu.c      |  99 ++------
+ drivers/iommu/qcom_iommu.c      |  24 +-
+ drivers/iommu/rockchip-iommu.c  |  26 +--
+ drivers/iommu/s390-iommu.c      |  22 +-
+ drivers/iommu/tegra-gart.c      |  24 +-
+ drivers/iommu/tegra-smmu.c      |  31 +--
+ drivers/iommu/virtio-iommu.c    |  41 +---
+ include/linux/iommu.h           |  21 +-
+ 20 files changed, 531 insertions(+), 601 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
