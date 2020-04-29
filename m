@@ -2,60 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C9CD1BDEBA
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:40:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B5D31BE33D
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 17:58:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QH1F988QumhMesOk8wJqa5RNingluAOX6qxXD5Yp170=; b=GfdSRGOooE+VLBxQQRYmbZMleZ
-	PkX/k5BP7HxnqzpN8Sj+q75DasZkBESZfEiiO3XR9pkvv3UfgqPUWUhmncDAyW2vSjulZMQ9on6id
-	IIiE2qCS5yM8eojFpb7K5YJV4rTKZ63cUj5Y3eKKeD5bI5iBZT34KGz/UyY0JxObOT7siiQCssaf0
-	MLEFgs9nbx+FFS9YqQYUCx+sJwKxbTw0w9R/4+g3AAzHufPPmrnfFwH7nxDK1Qr2x5AagW8fvExPN
-	c7DuAhh3sNN2FAWRsCC6IaM/i6I3JnGFDkbXWE+GhyKS7gdEMKPzFNvLeK9L6/mEepsHkVttMkRFn
-	GmlZjxLg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H2I/ebK2/emV+bj9GURGDociRoHdczOBM4Ba6JfPHao=; b=BVWv2oqYIqkUYW
+	dtJHhMMWTP4yqRoHXA3bZ34RXvw31zFpXGGNVRIiBshw9L2DozjgZ26eES0Ja9crDMV0vNrc0ZxXt
+	A58Fl7nuEVNp8OsWVPgNKYiLYYzRfv+FsMymjgevH3ml/P48Ztl82GdpchpBHVKBFVn0UuSxOmH+9
+	7CYTp7RXoG2OuW9GXRx0tV3fqy+xW5LuMXwSD++fNQDh/stFacXhU4JyB48tg+KAdraKIMRNAbzpn
+	5XYVkGlJ6plPeRpN6Ykida4cnr8CU6d5ohi+JnHYjfl+RFG18XeLKxFkO42xxHW0889m5EHcEiio8
+	ZZKTXzlfgxhdbQIaErkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTmwk-0003MO-Ax; Wed, 29 Apr 2020 13:40:19 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1jTp6p-0006ac-Dw; Wed, 29 Apr 2020 15:58:51 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTmuS-0006Rs-Cs; Wed, 29 Apr 2020 13:38:01 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id E8433F15; Wed, 29 Apr 2020 15:37:41 +0200 (CEST)
-From: Joerg Roedel <joro@8bytes.org>
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>, Lu Baolu <baolu.lu@linux.intel.com>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v3 34/34] iommu: Unexport iommu_group_get_for_dev()
-Date: Wed, 29 Apr 2020 15:37:12 +0200
-Message-Id: <20200429133712.31431-35-joro@8bytes.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200429133712.31431-1-joro@8bytes.org>
-References: <20200429133712.31431-1-joro@8bytes.org>
+ id 1jTp47-00044t-8X; Wed, 29 Apr 2020 15:56:06 +0000
+Received: by mail-wr1-x441.google.com with SMTP id f13so3117166wrm.13;
+ Wed, 29 Apr 2020 08:56:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=6SbdIQ59kmcGdHm6ojgp2EzHoqCR0BLaadGaF/oBCog=;
+ b=NcCceDfsh6sgDHZl6ErrCGTPbtJPu1JvJRXxiNVGG8LDez75AzT38KKF1LCgL9aM+f
+ HgkSxvwiWX973V8d3628Muidr+dsvtKcsiJ4aTUdWW0g/R4ORU8Vuz9AbrvJkoVWUr8u
+ jQL8l8XpBeuFWi1m5hq83MDgyLiEf7k1TkKHLMxTsCTOXqnctEDpDUYYGpgu5hTB112L
+ frji5sfqUQUx/rJfHOKtlb8oZ0YHTZoN0IkbAq1CNJji0n3ew8EhTaRV54jEC83YnwoW
+ dcMySUL2J71K0ZlOD3nSQtLDZU3gcspJv5iHXO4W02ItvsWZs4Rp8/t2S1+2EmQgaH/U
+ t9sg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=6SbdIQ59kmcGdHm6ojgp2EzHoqCR0BLaadGaF/oBCog=;
+ b=KIHdlfkI1tGGRaln3k1CyPtNcaFs0XgSiE42YKwpTHaoUKrRUBFvXaV5bXU7lpsgdF
+ 8af7nRh54mS7Xl3ScTRi+h99EEPhyJ6SkouvfruP9bvOPGqi5IEs4jioUfkwihrzXcSF
+ Q4bZq7ombORVVkWZkLQqXCxp7o/4spBdrYmK0UpqhUx05dusyK7bK61bemWyP/VpRKpm
+ MqI66XhF5D2EH6y4gG51tfo/A1p3rJ3qo182rm9VK7cQrrsOerbbKn6iHUILodujkG4l
+ 858XTaUUCHWodRedPfKjNn/TDJbagpSxZ6+pZ+P0/Eaw9pwdn+V8zqizdxvL1FZUUO0D
+ lgCw==
+X-Gm-Message-State: AGi0Pubp0f+P3pUFAWsW07Es+yJM1LVj8RUfYMIjhvFlFhc0k0thUyoD
+ ICaPS9moPBocTq3gS5zJbT0DJBfx
+X-Google-Smtp-Source: APiQypIeTQJgeOACveLBv3JF4+7B9bbhTyJzFntbOd4yG43dHQDhNkjcBoFSOugsyQu7gsz6pwucBg==
+X-Received: by 2002:a5d:4748:: with SMTP id o8mr39187903wrs.422.1588175759874; 
+ Wed, 29 Apr 2020 08:55:59 -0700 (PDT)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i6sm33180448wrc.82.2020.04.29.08.55.58
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 29 Apr 2020 08:55:59 -0700 (PDT)
+Subject: Re: [PATCH v5 2/7] mtd: rawnand: rockchip: NFC drivers for RK3308,
+ RK3188 and others
+To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, miquel.raynal@bootlin.com,
+ richard@nod.at, vigneshr@ti.com, robh+dt@kernel.org
+References: <20200426100250.14678-1-yifeng.zhao@rock-chips.com>
+ <20200426100250.14678-3-yifeng.zhao@rock-chips.com>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
+Date: Wed, 29 Apr 2020 17:55:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200426100250.14678-3-yifeng.zhao@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_063756_676571_DC6B20BC 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200429_085603_494984_86D117BD 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,74 +105,148 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Daniel Drake <drake@endlessm.com>, linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
- virtualization@lists.linux-foundation.org, jonathan.derrick@intel.com
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-mtd@lists.infradead.org, heiko@sntech.de,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Joerg Roedel <jroedel@suse.de>
+Hi Yifeng,
 
-The function is now only used in IOMMU core code and shouldn't be used
-outside of it anyway, so remove the export for it.
+A few more comments below for now (part 2).
 
-Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Acked-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Signed-off-by: Joerg Roedel <jroedel@suse.de>
----
- drivers/iommu/iommu.c | 4 ++--
- include/linux/iommu.h | 1 -
- 2 files changed, 2 insertions(+), 3 deletions(-)
+On 4/26/20 12:02 PM, Yifeng Zhao wrote:
 
-diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 48a95f7d7999..a9e5618cde80 100644
---- a/drivers/iommu/iommu.c
-+++ b/drivers/iommu/iommu.c
-@@ -91,6 +91,7 @@ static void __iommu_detach_group(struct iommu_domain *domain,
- 				 struct iommu_group *group);
- static int iommu_create_device_direct_mappings(struct iommu_group *group,
- 					       struct device *dev);
-+static struct iommu_group *iommu_group_get_for_dev(struct device *dev);
- 
- #define IOMMU_GROUP_ATTR(_name, _mode, _show, _store)		\
- struct iommu_group_attribute iommu_group_attr_##_name =		\
-@@ -1500,7 +1501,7 @@ static int iommu_alloc_default_domain(struct device *dev)
-  * to the returned IOMMU group, which will already include the provided
-  * device.  The reference should be released with iommu_group_put().
-  */
--struct iommu_group *iommu_group_get_for_dev(struct device *dev)
-+static struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- {
- 	const struct iommu_ops *ops = dev->bus->iommu_ops;
- 	struct iommu_group *group;
-@@ -1531,7 +1532,6 @@ struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- 
- 	return ERR_PTR(ret);
- }
--EXPORT_SYMBOL(iommu_group_get_for_dev);
- 
- struct iommu_domain *iommu_group_default_domain(struct iommu_group *group)
- {
-diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index dd076366383f..7cfd2dddb49d 100644
---- a/include/linux/iommu.h
-+++ b/include/linux/iommu.h
-@@ -527,7 +527,6 @@ extern int iommu_page_response(struct device *dev,
- 			       struct iommu_page_response *msg);
- 
- extern int iommu_group_id(struct iommu_group *group);
--extern struct iommu_group *iommu_group_get_for_dev(struct device *dev);
- extern struct iommu_domain *iommu_group_default_domain(struct iommu_group *);
- 
- extern int iommu_domain_get_attr(struct iommu_domain *domain, enum iommu_attr,
--- 
-2.17.1
+[..]
+
+> +#define	THIS_NAME		"rk-nand"
+
+> +static int rk_nfc_nand_chip_init(struct device *dev, struct rk_nfc *nfc,
+> +				 struct device_node *np)
+> +{
+> +	struct rk_nfc_nand_chip *nand;
+> +	struct nand_chip *chip;
+> +	struct mtd_info *mtd;
+> +	int nsels;
+> +	u32 tmp;
+> +	int ret;
+> +	int i;
+> +
+> +	if (!of_get_property(np, "reg", &nsels))
+> +		return -ENODEV;
+> +	nsels /= sizeof(u32);
+> +	if (!nsels || nsels > NFC_MAX_NSELS) {
+> +		dev_err(dev, "invalid reg property size %d\n", nsels);
+> +		return -EINVAL;
+> +	}
+> +
+> +	nand = devm_kzalloc(dev, sizeof(*nand) + nsels * sizeof(u8),
+> +			    GFP_KERNEL);
+> +	if (!nand)
+> +		return -ENOMEM;
+> +
+> +	nand->nsels = nsels;
+> +	for (i = 0; i < nsels; i++) {
+> +		ret = of_property_read_u32_index(np, "reg", i, &tmp);
+> +		if (ret) {
+> +			dev_err(dev, "reg property failure : %d\n", ret);
+> +			return ret;
+> +		}
+> +
+> +		if (tmp >= NFC_MAX_NSELS) {
+> +			dev_err(dev, "invalid CS: %u\n", tmp);
+> +			return -EINVAL;
+> +		}
+> +
+> +		if (test_and_set_bit(tmp, &nfc->assigned_cs)) {
+> +			dev_err(dev, "CS %u already assigned\n", tmp);
+> +			return -EINVAL;
+> +		}
+> +
+> +		nand->sels[i] = tmp;
+> +	}
+> +
+> +	chip = &nand->chip;
+> +	chip->controller = &nfc->controller;
+> +
+> +	nand_set_flash_node(chip, np);
+> +	nand_set_controller_data(chip, nfc);
+> +
+> +	chip->options |= NAND_USE_BOUNCE_BUFFER | NAND_NO_SUBPAGE_WRITE;
+> +	chip->bbt_options = NAND_BBT_USE_FLASH | NAND_BBT_NO_OOB;
+> +
+> +	/* set default mode in case dt entry is missing */
+> +	chip->ecc.mode = NAND_ECC_HW;
+> +
+> +	mtd = nand_to_mtd(chip);
+> +	mtd->owner = THIS_MODULE;
+> +	mtd->dev.parent = dev;
+
+> +	mtd->name = THIS_NAME;
+
+The 'mtd->name' shows up somewhere in file tree.
+The rk3288 has 2 nfc's. In theory 2 probes and also 2 device names, so I
+think that we shouldn't use a fixed define for 'mtd->name'.
+Maybe use something like this:
+
+	mtd->name = devm_kasprintf(ctrl->dev, GFP_KERNEL, "%s",
+				   dev_name(ctrl->dev));
+
+> +	mtd_set_ooblayout(mtd, &rk_nfc_ooblayout_ops);
+> +	rk_nfc_hw_init(nfc);
+> +	ret = nand_scan(chip, nsels);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (chip->options & NAND_IS_BOOT_MEDIUM) {
+> +		ret = of_property_read_u32(np, "rockchip-boot-blks", &tmp);
+> +		nand->boot_blks = ret ? 0 : tmp;
+> +
+> +		ret = of_property_read_u32(np, "rockchip-boot-ecc-strength",
+> +					   &tmp);
+> +		nand->boot_ecc = ret ? chip->ecc.strength : tmp;
+> +	}
+> +
+> +	ret = mtd_device_register(mtd, NULL, 0);
+> +	if (ret) {
+> +		dev_err(dev, "mtd parse partition error\n");
+> +		nand_release(chip);
+> +		return ret;
+> +	}
+> +
+> +	list_add_tail(&nand->node, &nfc->chips);
+> +
+> +	return 0;
+> +}
+
+[..]
+
+> +static struct platform_driver rk_nfc_driver = {
+> +	.probe  = rk_nfc_probe,
+> +	.remove = rk_nfc_remove,
+> +	.driver = {
+
+> +		.name  = THIS_NAME,
+
+		.name  = "rockchip-nfc",
+		.name  = "rockchip-nand-controller",
+
+The driver name shows up in the kernel log and is used in combination
+with 'greb'.
+This name should stay in line with all other rockchip drivers.
+
+rockchip-drm
+rockchip-rk3066-hdmi
+rockchip-pm-domain
+rockchip-u3phy
+rockchip-thermal
+
+> +		.of_match_table = rk_nfc_id_table,
+> +		.pm = &rk_nfc_pm_ops,
+> +	},
+> +};
+
 
 
 _______________________________________________
