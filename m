@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAF321BDE75
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32FA21BDEAA
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 15:39:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,20 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=AQCuEScbV5LD2yTwu4GBGbYx4cM0KZZCcw79FoaF60Q=; b=ISfswh0RaGXQizya/jLBR6XlQW
-	aPzDj9j/OHnp7HFFNOnfVbGCgiRWaAdE1ZwYHuWvDGK0HXpQrRojKFYRtZSBl1uYTcBFCqbuNbLXN
-	hYyBAvKtyZaYAzh+qFzkAd+dhRaKWj6R/T+mkNxjO1SaAWiydNnMMQksJMYNA4ng2liRaCoCWGrwM
-	otFsEAM5D+EqxYBFNvYjha223HxVVjQrb3cnd/KuxrkR1sHAYNLapJ+E3RzsNiUsB3DpV4uiU6T4o
-	YVKKDdZengMS8DbAEuKe9RV8KdzeI3WEPhXSbxhGcP3kRm6jcNLmargQbPg3Gzht2Nx7PoPL02xzO
-	P9JlFeig==;
+	bh=ZAoiFwIbTPIXJDqEBVe8rfO2PAGtiQCWrjwk04ds1go=; b=DMTYeUFDffF9BfdEbzvtQmkobb
+	jmA5K4cQ6Wmbvi/KhMs2f3CIn/uyv7YNzUeCuxYX8GqJe3rff21TAKSULOQhJo0e7Io/H+y5JUkg7
+	Lr9L+uUkdSXo3pnkDenCzK/KKj9TtL1Ui12CG2E5YAGAekoe7UzHuILYQkmB7zT8NCGDZht3CxQuW
+	jErfxkoq0lTQeUKlmOcv7zig16VQJ+O2hP6zsCL4tTTJkTARvJa9EIwcrR96fDhgRve1PhuJ08Amw
+	OnjKVAu4/Ait1N7j3fwb3AsjGhSNew+YKzKmxsdG5SAXuNbj2z7p4WPkHxMKNn2EYInpysGJsEnZw
+	bpfQ6ctA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTmvb-000886-8J; Wed, 29 Apr 2020 13:39:07 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1jTmwA-0000R8-1P; Wed, 29 Apr 2020 13:39:42 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTmuI-0006FT-OH; Wed, 29 Apr 2020 13:37:51 +0000
+ id 1jTmuQ-0006Om-UO; Wed, 29 Apr 2020 13:37:59 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 85A05CD1; Wed, 29 Apr 2020 15:37:37 +0200 (CEST)
+ id BBE82BFC; Wed, 29 Apr 2020 15:37:37 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>,
@@ -40,21 +39,23 @@ To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
  Thierry Reding <thierry.reding@gmail.com>,
  Jonathan Hunter <jonathanh@nvidia.com>,
  Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: [PATCH v3 12/34] iommu: Move iommu_group_create_direct_mappings() out
- of iommu_group_add_device()
-Date: Wed, 29 Apr 2020 15:36:50 +0200
-Message-Id: <20200429133712.31431-13-joro@8bytes.org>
+Subject: [PATCH v3 13/34] iommu: Export bus_iommu_probe() and make is safe for
+ re-probing
+Date: Wed, 29 Apr 2020 15:36:51 +0200
+Message-Id: <20200429133712.31431-14-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200429133712.31431-1-joro@8bytes.org>
 References: <20200429133712.31431-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_063747_115791_8622B000 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20200429_063755_144141_6BC61499 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -83,133 +84,63 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Joerg Roedel <jroedel@suse.de>
 
-After the previous changes the iommu group may not have a default
-domain when iommu_group_add_device() is called. With no default domain
-iommu_group_create_direct_mappings() will do nothing and no direct
-mappings will be created.
-
-Rename iommu_group_create_direct_mappings() to
-iommu_create_device_direct_mappings() to better reflect that the
-function creates direct mappings only for one device and not for all
-devices in the group. Then move the call to the places where a default
-domain actually exists.
+Add a check to the bus_iommu_probe() call-path to make sure it ignores
+devices which have already been successfully probed. Then export the
+bus_iommu_probe() function so it can be used by IOMMU drivers.
 
 Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
 Acked-by: Marek Szyprowski <m.szyprowski@samsung.com>
 Signed-off-by: Joerg Roedel <jroedel@suse.de>
 ---
- drivers/iommu/iommu.c | 35 ++++++++++++++++++++++++++++++-----
- 1 file changed, 30 insertions(+), 5 deletions(-)
+ drivers/iommu/iommu.c | 10 +++++++++-
+ include/linux/iommu.h |  1 +
+ 2 files changed, 10 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 7de0e29db333..834a45da0ed0 100644
+index 834a45da0ed0..397fd4fd0c32 100644
 --- a/drivers/iommu/iommu.c
 +++ b/drivers/iommu/iommu.c
-@@ -89,6 +89,8 @@ static int __iommu_attach_group(struct iommu_domain *domain,
- 				struct iommu_group *group);
- static void __iommu_detach_group(struct iommu_domain *domain,
- 				 struct iommu_group *group);
-+static int iommu_create_device_direct_mappings(struct iommu_group *group,
-+					       struct device *dev);
- 
- #define IOMMU_GROUP_ATTR(_name, _mode, _show, _store)		\
- struct iommu_group_attribute iommu_group_attr_##_name =		\
-@@ -243,6 +245,8 @@ static int __iommu_probe_device_helper(struct device *dev)
- 	if (group->default_domain)
- 		ret = __iommu_attach_device(group->default_domain, dev);
- 
-+	iommu_create_device_direct_mappings(group, dev);
-+
- 	iommu_group_put(group);
- 
- 	if (ret)
-@@ -263,6 +267,7 @@ static int __iommu_probe_device_helper(struct device *dev)
- int iommu_probe_device(struct device *dev)
+@@ -1610,11 +1610,19 @@ static int probe_iommu_group(struct device *dev, void *data)
  {
  	const struct iommu_ops *ops = dev->bus->iommu_ops;
+ 	struct list_head *group_list = data;
 +	struct iommu_group *group;
  	int ret;
  
- 	WARN_ON(dev->iommu_group);
-@@ -285,6 +290,10 @@ int iommu_probe_device(struct device *dev)
- 	if (ret)
- 		goto err_module_put;
+ 	if (!dev_iommu_get(dev))
+ 		return -ENOMEM;
  
++	/* Device is probed already if in a group */
 +	group = iommu_group_get(dev);
-+	iommu_create_device_direct_mappings(group, dev);
-+	iommu_group_put(group);
++	if (group) {
++		iommu_group_put(group);
++		return 0;
++	}
 +
- 	if (ops->probe_finalize)
- 		ops->probe_finalize(dev);
- 
-@@ -736,8 +745,8 @@ int iommu_group_set_name(struct iommu_group *group, const char *name)
- }
- EXPORT_SYMBOL_GPL(iommu_group_set_name);
- 
--static int iommu_group_create_direct_mappings(struct iommu_group *group,
--					      struct device *dev)
-+static int iommu_create_device_direct_mappings(struct iommu_group *group,
-+					       struct device *dev)
- {
- 	struct iommu_domain *domain = group->default_domain;
- 	struct iommu_resv_region *entry;
-@@ -841,8 +850,6 @@ int iommu_group_add_device(struct iommu_group *group, struct device *dev)
- 
- 	dev->iommu_group = group;
- 
--	iommu_group_create_direct_mappings(group, dev);
--
- 	mutex_lock(&group->mutex);
- 	list_add_tail(&device->list, &group->devices);
- 	if (group->domain)
-@@ -1736,6 +1743,7 @@ static void probe_alloc_default_domain(struct bus_type *bus,
- 		gtype.type = iommu_def_domain_type;
- 
- 	iommu_group_alloc_default_domain(bus, group, gtype.type);
-+
+ 	if (!try_module_get(ops->owner)) {
+ 		ret = -EINVAL;
+ 		goto err_free_dev_iommu;
+@@ -1783,7 +1791,7 @@ static int iommu_group_create_direct_mappings(struct iommu_group *group)
+ 					  iommu_do_create_direct_mappings);
  }
  
- static int iommu_group_do_dma_attach(struct device *dev, void *data)
-@@ -1760,6 +1768,21 @@ static int __iommu_group_dma_attach(struct iommu_group *group)
- 					  iommu_group_do_dma_attach);
- }
- 
-+static int iommu_do_create_direct_mappings(struct device *dev, void *data)
-+{
-+	struct iommu_group *group = data;
-+
-+	iommu_create_device_direct_mappings(group, dev);
-+
-+	return 0;
-+}
-+
-+static int iommu_group_create_direct_mappings(struct iommu_group *group)
-+{
-+	return __iommu_group_for_each_dev(group, group,
-+					  iommu_do_create_direct_mappings);
-+}
-+
- static int bus_iommu_probe(struct bus_type *bus)
+-static int bus_iommu_probe(struct bus_type *bus)
++int bus_iommu_probe(struct bus_type *bus)
  {
  	const struct iommu_ops *ops = bus->iommu_ops;
-@@ -1792,6 +1815,8 @@ static int bus_iommu_probe(struct bus_type *bus)
- 				continue;
- 			}
+ 	int ret;
+diff --git a/include/linux/iommu.h b/include/linux/iommu.h
+index 30170d191e5e..fea1622408ad 100644
+--- a/include/linux/iommu.h
++++ b/include/linux/iommu.h
+@@ -445,6 +445,7 @@ static inline void iommu_iotlb_gather_init(struct iommu_iotlb_gather *gather)
+ #define IOMMU_GROUP_NOTIFY_UNBOUND_DRIVER	6 /* Post Driver unbind */
  
-+			iommu_group_create_direct_mappings(group);
-+
- 			ret = __iommu_group_dma_attach(group);
- 
- 			mutex_unlock(&group->mutex);
-@@ -2632,7 +2657,7 @@ request_default_domain_for_dev(struct device *dev, unsigned long type)
- 		iommu_domain_free(group->default_domain);
- 	group->default_domain = domain;
- 
--	iommu_group_create_direct_mappings(group, dev);
-+	iommu_create_device_direct_mappings(group, dev);
- 
- 	dev_info(dev, "Using iommu %s mapping\n",
- 		 type == IOMMU_DOMAIN_DMA ? "dma" : "direct");
+ extern int bus_set_iommu(struct bus_type *bus, const struct iommu_ops *ops);
++extern int bus_iommu_probe(struct bus_type *bus);
+ extern bool iommu_present(struct bus_type *bus);
+ extern bool iommu_capable(struct bus_type *bus, enum iommu_cap cap);
+ extern struct iommu_domain *iommu_domain_alloc(struct bus_type *bus);
 -- 
 2.17.1
 
