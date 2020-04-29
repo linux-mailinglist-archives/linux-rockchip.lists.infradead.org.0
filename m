@@ -2,97 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B5D31BE33D
-	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 17:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9D9D1BE4B5
+	for <lists+linux-rockchip@lfdr.de>; Wed, 29 Apr 2020 19:04:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H2I/ebK2/emV+bj9GURGDociRoHdczOBM4Ba6JfPHao=; b=BVWv2oqYIqkUYW
-	dtJHhMMWTP4yqRoHXA3bZ34RXvw31zFpXGGNVRIiBshw9L2DozjgZ26eES0Ja9crDMV0vNrc0ZxXt
-	A58Fl7nuEVNp8OsWVPgNKYiLYYzRfv+FsMymjgevH3ml/P48Ztl82GdpchpBHVKBFVn0UuSxOmH+9
-	7CYTp7RXoG2OuW9GXRx0tV3fqy+xW5LuMXwSD++fNQDh/stFacXhU4JyB48tg+KAdraKIMRNAbzpn
-	5XYVkGlJ6plPeRpN6Ykida4cnr8CU6d5ohi+JnHYjfl+RFG18XeLKxFkO42xxHW0889m5EHcEiio8
-	ZZKTXzlfgxhdbQIaErkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=664cK7aXT8P540sBI0xRwfJ0ciJEa56zooULAb2bWlQ=; b=BuD3LkRAr6oa/h
+	XYo89d2/3B/TwDwrNzbx/nLGVQ8R4J6QMgfSJGX4TqUuozdDRgh5O0jRL0wvl3cyYsGtiNRC9p81s
+	WXAL7kcsmq+O8Or6Vh24TM3cWZTKPi0TW3bvX+ywbZ/ZtUP6S7KpPDEFVZhdXfUeQ/KLSCnigPeiW
+	he06dLcHKwbgMy43H6Pnxdq8rvqWRdVNEwTEMrsNgEJLdqU+BJFmPOKwDCRoUDTlz9ltRzijMyQxP
+	9kPuLr4cdBGej2uasONaO+Wt3aABHT4rgK5t7ddeQaj437Kek+G8V/AtA131vCUMLH1JHMur512yq
+	uaTS8SKzntcj7J8aidNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTp6p-0006ac-Dw; Wed, 29 Apr 2020 15:58:51 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jTq8f-00059J-Ay; Wed, 29 Apr 2020 17:04:49 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTp47-00044t-8X; Wed, 29 Apr 2020 15:56:06 +0000
-Received: by mail-wr1-x441.google.com with SMTP id f13so3117166wrm.13;
- Wed, 29 Apr 2020 08:56:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6SbdIQ59kmcGdHm6ojgp2EzHoqCR0BLaadGaF/oBCog=;
- b=NcCceDfsh6sgDHZl6ErrCGTPbtJPu1JvJRXxiNVGG8LDez75AzT38KKF1LCgL9aM+f
- HgkSxvwiWX973V8d3628Muidr+dsvtKcsiJ4aTUdWW0g/R4ORU8Vuz9AbrvJkoVWUr8u
- jQL8l8XpBeuFWi1m5hq83MDgyLiEf7k1TkKHLMxTsCTOXqnctEDpDUYYGpgu5hTB112L
- frji5sfqUQUx/rJfHOKtlb8oZ0YHTZoN0IkbAq1CNJji0n3ew8EhTaRV54jEC83YnwoW
- dcMySUL2J71K0ZlOD3nSQtLDZU3gcspJv5iHXO4W02ItvsWZs4Rp8/t2S1+2EmQgaH/U
- t9sg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=6SbdIQ59kmcGdHm6ojgp2EzHoqCR0BLaadGaF/oBCog=;
- b=KIHdlfkI1tGGRaln3k1CyPtNcaFs0XgSiE42YKwpTHaoUKrRUBFvXaV5bXU7lpsgdF
- 8af7nRh54mS7Xl3ScTRi+h99EEPhyJ6SkouvfruP9bvOPGqi5IEs4jioUfkwihrzXcSF
- Q4bZq7ombORVVkWZkLQqXCxp7o/4spBdrYmK0UpqhUx05dusyK7bK61bemWyP/VpRKpm
- MqI66XhF5D2EH6y4gG51tfo/A1p3rJ3qo182rm9VK7cQrrsOerbbKn6iHUILodujkG4l
- 858XTaUUCHWodRedPfKjNn/TDJbagpSxZ6+pZ+P0/Eaw9pwdn+V8zqizdxvL1FZUUO0D
- lgCw==
-X-Gm-Message-State: AGi0Pubp0f+P3pUFAWsW07Es+yJM1LVj8RUfYMIjhvFlFhc0k0thUyoD
- ICaPS9moPBocTq3gS5zJbT0DJBfx
-X-Google-Smtp-Source: APiQypIeTQJgeOACveLBv3JF4+7B9bbhTyJzFntbOd4yG43dHQDhNkjcBoFSOugsyQu7gsz6pwucBg==
-X-Received: by 2002:a5d:4748:: with SMTP id o8mr39187903wrs.422.1588175759874; 
- Wed, 29 Apr 2020 08:55:59 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i6sm33180448wrc.82.2020.04.29.08.55.58
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 29 Apr 2020 08:55:59 -0700 (PDT)
+ id 1jTq8R-0004zZ-Vc; Wed, 29 Apr 2020 17:04:37 +0000
+X-Originating-IP: 91.224.148.103
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 8AA9BFF804;
+ Wed, 29 Apr 2020 17:04:30 +0000 (UTC)
+Date: Wed, 29 Apr 2020 19:04:28 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Johan Jonker <jbx6244@gmail.com>
 Subject: Re: [PATCH v5 2/7] mtd: rawnand: rockchip: NFC drivers for RK3308,
  RK3188 and others
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>, miquel.raynal@bootlin.com,
- richard@nod.at, vigneshr@ti.com, robh+dt@kernel.org
+Message-ID: <20200429190428.33ca0523@xps13>
+In-Reply-To: <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
 References: <20200426100250.14678-1-yifeng.zhao@rock-chips.com>
  <20200426100250.14678-3-yifeng.zhao@rock-chips.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
-Date: Wed, 29 Apr 2020 17:55:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ <4dbe907c-a6c2-a163-0cab-234b08336b5c@gmail.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200426100250.14678-3-yifeng.zhao@rock-chips.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_085603_494984_86D117BD 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200429_100436_149290_9CAA00A4 
+X-CRM114-Status: GOOD (  11.90  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,151 +64,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mtd@lists.infradead.org, heiko@sntech.de,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
+ Yifeng Zhao <yifeng.zhao@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-mtd@lists.infradead.org, heiko@sntech.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Yifeng,
-
-A few more comments below for now (part 2).
-
-On 4/26/20 12:02 PM, Yifeng Zhao wrote:
-
-[..]
-
-> +#define	THIS_NAME		"rk-nand"
-
-> +static int rk_nfc_nand_chip_init(struct device *dev, struct rk_nfc *nfc,
-> +				 struct device_node *np)
-> +{
-> +	struct rk_nfc_nand_chip *nand;
-> +	struct nand_chip *chip;
-> +	struct mtd_info *mtd;
-> +	int nsels;
-> +	u32 tmp;
-> +	int ret;
-> +	int i;
-> +
-> +	if (!of_get_property(np, "reg", &nsels))
-> +		return -ENODEV;
-> +	nsels /= sizeof(u32);
-> +	if (!nsels || nsels > NFC_MAX_NSELS) {
-> +		dev_err(dev, "invalid reg property size %d\n", nsels);
-> +		return -EINVAL;
-> +	}
-> +
-> +	nand = devm_kzalloc(dev, sizeof(*nand) + nsels * sizeof(u8),
-> +			    GFP_KERNEL);
-> +	if (!nand)
-> +		return -ENOMEM;
-> +
-> +	nand->nsels = nsels;
-> +	for (i = 0; i < nsels; i++) {
-> +		ret = of_property_read_u32_index(np, "reg", i, &tmp);
-> +		if (ret) {
-> +			dev_err(dev, "reg property failure : %d\n", ret);
-> +			return ret;
-> +		}
-> +
-> +		if (tmp >= NFC_MAX_NSELS) {
-> +			dev_err(dev, "invalid CS: %u\n", tmp);
-> +			return -EINVAL;
-> +		}
-> +
-> +		if (test_and_set_bit(tmp, &nfc->assigned_cs)) {
-> +			dev_err(dev, "CS %u already assigned\n", tmp);
-> +			return -EINVAL;
-> +		}
-> +
-> +		nand->sels[i] = tmp;
-> +	}
-> +
-> +	chip = &nand->chip;
-> +	chip->controller = &nfc->controller;
-> +
-> +	nand_set_flash_node(chip, np);
-> +	nand_set_controller_data(chip, nfc);
-> +
-> +	chip->options |= NAND_USE_BOUNCE_BUFFER | NAND_NO_SUBPAGE_WRITE;
-> +	chip->bbt_options = NAND_BBT_USE_FLASH | NAND_BBT_NO_OOB;
-> +
-> +	/* set default mode in case dt entry is missing */
-> +	chip->ecc.mode = NAND_ECC_HW;
-> +
-> +	mtd = nand_to_mtd(chip);
-> +	mtd->owner = THIS_MODULE;
-> +	mtd->dev.parent = dev;
-
-> +	mtd->name = THIS_NAME;
-
-The 'mtd->name' shows up somewhere in file tree.
-The rk3288 has 2 nfc's. In theory 2 probes and also 2 device names, so I
-think that we shouldn't use a fixed define for 'mtd->name'.
-Maybe use something like this:
-
-	mtd->name = devm_kasprintf(ctrl->dev, GFP_KERNEL, "%s",
-				   dev_name(ctrl->dev));
-
-> +	mtd_set_ooblayout(mtd, &rk_nfc_ooblayout_ops);
-> +	rk_nfc_hw_init(nfc);
-> +	ret = nand_scan(chip, nsels);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (chip->options & NAND_IS_BOOT_MEDIUM) {
-> +		ret = of_property_read_u32(np, "rockchip-boot-blks", &tmp);
-> +		nand->boot_blks = ret ? 0 : tmp;
-> +
-> +		ret = of_property_read_u32(np, "rockchip-boot-ecc-strength",
-> +					   &tmp);
-> +		nand->boot_ecc = ret ? chip->ecc.strength : tmp;
-> +	}
-> +
-> +	ret = mtd_device_register(mtd, NULL, 0);
-> +	if (ret) {
-> +		dev_err(dev, "mtd parse partition error\n");
-> +		nand_release(chip);
-> +		return ret;
-> +	}
-> +
-> +	list_add_tail(&nand->node, &nfc->chips);
-> +
-> +	return 0;
-> +}
-
-[..]
-
-> +static struct platform_driver rk_nfc_driver = {
-> +	.probe  = rk_nfc_probe,
-> +	.remove = rk_nfc_remove,
-> +	.driver = {
-
-> +		.name  = THIS_NAME,
-
-		.name  = "rockchip-nfc",
-		.name  = "rockchip-nand-controller",
-
-The driver name shows up in the kernel log and is used in combination
-with 'greb'.
-This name should stay in line with all other rockchip drivers.
-
-rockchip-drm
-rockchip-rk3066-hdmi
-rockchip-pm-domain
-rockchip-u3phy
-rockchip-thermal
-
-> +		.of_match_table = rk_nfc_id_table,
-> +		.pm = &rk_nfc_pm_ops,
-> +	},
-> +};
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgWWlmZW5nLAoKSm9oYW4gSm9ua2VyIDxqYng2MjQ0QGdtYWlsLmNvbT4gd3JvdGUgb24gV2Vk
+LCAyOSBBcHIgMjAyMCAxNzo1NTo1NgorMDIwMDoKCj4gSGkgWWlmZW5nLAo+IAo+IEEgZmV3IG1v
+cmUgY29tbWVudHMgYmVsb3cgZm9yIG5vdyAocGFydCAyKS4KPiAKPiBPbiA0LzI2LzIwIDEyOjAy
+IFBNLCBZaWZlbmcgWmhhbyB3cm90ZToKPiAKPiBbLi5dCj4gCj4gPiArI2RlZmluZQlUSElTX05B
+TUUJCSJyay1uYW5kIiAgCj4gCj4gPiArc3RhdGljIGludCBya19uZmNfbmFuZF9jaGlwX2luaXQo
+c3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgcmtfbmZjICpuZmMsCj4gPiArCQkJCSBzdHJ1Y3Qg
+ZGV2aWNlX25vZGUgKm5wKQo+ID4gK3sKPiA+ICsJc3RydWN0IHJrX25mY19uYW5kX2NoaXAgKm5h
+bmQ7Cj4gPiArCXN0cnVjdCBuYW5kX2NoaXAgKmNoaXA7Cj4gPiArCXN0cnVjdCBtdGRfaW5mbyAq
+bXRkOwo+ID4gKwlpbnQgbnNlbHM7Cj4gPiArCXUzMiB0bXA7Cj4gPiArCWludCByZXQ7Cj4gPiAr
+CWludCBpOwo+ID4gKwo+ID4gKwlpZiAoIW9mX2dldF9wcm9wZXJ0eShucCwgInJlZyIsICZuc2Vs
+cykpCj4gPiArCQlyZXR1cm4gLUVOT0RFVjsKPiA+ICsJbnNlbHMgLz0gc2l6ZW9mKHUzMik7Cj4g
+PiArCWlmICghbnNlbHMgfHwgbnNlbHMgPiBORkNfTUFYX05TRUxTKSB7Cj4gPiArCQlkZXZfZXJy
+KGRldiwgImludmFsaWQgcmVnIHByb3BlcnR5IHNpemUgJWRcbiIsIG5zZWxzKTsKPiA+ICsJCXJl
+dHVybiAtRUlOVkFMOwo+ID4gKwl9Cj4gPiArCj4gPiArCW5hbmQgPSBkZXZtX2t6YWxsb2MoZGV2
+LCBzaXplb2YoKm5hbmQpICsgbnNlbHMgKiBzaXplb2YodTgpLAo+ID4gKwkJCSAgICBHRlBfS0VS
+TkVMKTsKPiA+ICsJaWYgKCFuYW5kKQo+ID4gKwkJcmV0dXJuIC1FTk9NRU07Cj4gPiArCj4gPiAr
+CW5hbmQtPm5zZWxzID0gbnNlbHM7Cj4gPiArCWZvciAoaSA9IDA7IGkgPCBuc2VsczsgaSsrKSB7
+Cj4gPiArCQlyZXQgPSBvZl9wcm9wZXJ0eV9yZWFkX3UzMl9pbmRleChucCwgInJlZyIsIGksICZ0
+bXApOwo+ID4gKwkJaWYgKHJldCkgewo+ID4gKwkJCWRldl9lcnIoZGV2LCAicmVnIHByb3BlcnR5
+IGZhaWx1cmUgOiAlZFxuIiwgcmV0KTsKPiA+ICsJCQlyZXR1cm4gcmV0Owo+ID4gKwkJfQo+ID4g
+Kwo+ID4gKwkJaWYgKHRtcCA+PSBORkNfTUFYX05TRUxTKSB7Cj4gPiArCQkJZGV2X2VycihkZXYs
+ICJpbnZhbGlkIENTOiAldVxuIiwgdG1wKTsKPiA+ICsJCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJ
+CX0KPiA+ICsKPiA+ICsJCWlmICh0ZXN0X2FuZF9zZXRfYml0KHRtcCwgJm5mYy0+YXNzaWduZWRf
+Y3MpKSB7Cj4gPiArCQkJZGV2X2VycihkZXYsICJDUyAldSBhbHJlYWR5IGFzc2lnbmVkXG4iLCB0
+bXApOwo+ID4gKwkJCXJldHVybiAtRUlOVkFMOwo+ID4gKwkJfQo+ID4gKwo+ID4gKwkJbmFuZC0+
+c2Vsc1tpXSA9IHRtcDsKPiA+ICsJfQo+ID4gKwo+ID4gKwljaGlwID0gJm5hbmQtPmNoaXA7Cj4g
+PiArCWNoaXAtPmNvbnRyb2xsZXIgPSAmbmZjLT5jb250cm9sbGVyOwo+ID4gKwo+ID4gKwluYW5k
+X3NldF9mbGFzaF9ub2RlKGNoaXAsIG5wKTsKPiA+ICsJbmFuZF9zZXRfY29udHJvbGxlcl9kYXRh
+KGNoaXAsIG5mYyk7Cj4gPiArCj4gPiArCWNoaXAtPm9wdGlvbnMgfD0gTkFORF9VU0VfQk9VTkNF
+X0JVRkZFUiB8IE5BTkRfTk9fU1VCUEFHRV9XUklURTsKPiA+ICsJY2hpcC0+YmJ0X29wdGlvbnMg
+PSBOQU5EX0JCVF9VU0VfRkxBU0ggfCBOQU5EX0JCVF9OT19PT0I7Cj4gPiArCj4gPiArCS8qIHNl
+dCBkZWZhdWx0IG1vZGUgaW4gY2FzZSBkdCBlbnRyeSBpcyBtaXNzaW5nICovCj4gPiArCWNoaXAt
+PmVjYy5tb2RlID0gTkFORF9FQ0NfSFc7Cj4gPiArCj4gPiArCW10ZCA9IG5hbmRfdG9fbXRkKGNo
+aXApOwo+ID4gKwltdGQtPm93bmVyID0gVEhJU19NT0RVTEU7Cj4gPiArCW10ZC0+ZGV2LnBhcmVu
+dCA9IGRldjsgIAo+IAo+ID4gKwltdGQtPm5hbWUgPSBUSElTX05BTUU7ICAKPiAKPiBUaGUgJ210
+ZC0+bmFtZScgc2hvd3MgdXAgc29tZXdoZXJlIGluIGZpbGUgdHJlZS4KCkdvb2QgY2F0Y2guCgo+
+IFRoZSByazMyODggaGFzIDIgbmZjJ3MuIEluIHRoZW9yeSAyIHByb2JlcyBhbmQgYWxzbyAyIGRl
+dmljZSBuYW1lcywgc28gSQo+IHRoaW5rIHRoYXQgd2Ugc2hvdWxkbid0IHVzZSBhIGZpeGVkIGRl
+ZmluZSBmb3IgJ210ZC0+bmFtZScuCj4gTWF5YmUgdXNlIHNvbWV0aGluZyBsaWtlIHRoaXM6CgpZ
+aWZlbmcsIHBsZWFzZSB1c2UgdGhlIE5BTkQgY2hpcCAibGFiZWwiIERUIHByb3BlcnR5LCB3aGlj
+aCBpcyBwYXJzZWQKYnkgdGhlIGNvcmUgYXV0b21hdGljYWxseSBhbmQgd2lsbCBnaXZlIHlvdSBt
+ZWFuaW5nZnVsIG5hbWVzIGZvciBldmVyeQpjaGlwOgoKbmFuZF9zZXRfZmxhc2hfbm9kZShjaGlw
+LCBucCk7CmlmICghbXRkLT5uYW1lKSB7CglkZXZfZXJyKG5mYy0+ZGV2LCAiTkFORCBsYWJlbCBw
+cm9wZXJ0eSBpcyBtYW5kYXRvcnlcbiIpOwoJcmV0dXJuIC1FSU5WQUw7Cn0KCgpUaGFua3MsCk1p
+cXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
+bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
+a2NoaXAK
