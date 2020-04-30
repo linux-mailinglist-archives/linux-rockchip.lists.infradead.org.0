@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE3F11C02E8
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 18:44:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FF651C02E7
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 18:44:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q6gGdmXhGxXqb0Xn7dRrWrzFDEtU7tgGLjvOB0UP/Wg=; b=Pv1zreQhQC+8hL
-	obhI1VFDJ1AUrlvf0+k0ajRmc/x6eyTCS7+FFO8Phgt4Agzj3ZEyJiCbxsf2CXhTbEJBfGXjIgEDF
-	bfhx4vy5a/ECaeXh7qT3W888LOLKAMHBaQ6/bU2oJxh0DO+Hqzy3ariaH1iMWq0QsuaSuUOUR2APy
-	Nljna3+TRiMwkbpfw8Kwh8NFtqapZ59LXw1amUsnMcoyDjdNVuui0rVfjBqw6mR9LB9rL33/Y9gbc
-	Q5pg4wpds8aZnPiPeXVNSg/1oZNsz6NRa2F/Rjm3M+AnZXw8InQerh5Z4CZdfbyMF7j+XXfrTYdMm
-	GT6Qe5DKIqfxFN/Uy07Q==;
+	List-Owner; bh=sqh3qiSRltW1RkvG7PNJXu70qvVqV5kTfofrEHzfmgw=; b=fTuhrX7zvh5O6N
+	K6SMIHKNtOQEE/TVqfq5a06RN8hzfPndWn54+wr2je+TXEzpLMAcZb39VWtP+0Mfahknwi8GZ6BYT
+	Ury6nL4O59YH6IaGlIqL7gOxmjSBJjEmblmEv9gLaSxG3st9d3JEvX7LR+wIIAJthLJMMNbqFWH/m
+	tTXchpbEQX62unHEe748SAOAlKJlwCo7rJV1iGvWEFt2EFTF4S8W9lpIQ4D1tO/uyxp1d0w8IuqvV
+	2ZepOb6OwZsJtg7LhthxZWTF4lyGXkrDYJrwlxfOS7idVyOyUM7C5WjFvIfrNqrqnBkCBs9c9cfA+
+	hRJmvDoC1bL1yEUJrUJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCIb-0007aM-N4; Thu, 30 Apr 2020 16:44:33 +0000
+	id 1jUCIZ-0007XM-AR; Thu, 30 Apr 2020 16:44:31 +0000
 Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCHB-00067z-0e; Thu, 30 Apr 2020 16:43:07 +0000
+ id 1jUCHA-00068U-Uf; Thu, 30 Apr 2020 16:43:07 +0000
 X-Originating-IP: 93.29.109.196
 Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
  [93.29.109.196])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 2DEF11C0006;
- Thu, 30 Apr 2020 16:43:01 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 285FE1C000C;
+ Thu, 30 Apr 2020 16:43:02 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3 3/4] media: rockchip: rga: Introduce color fmt macros and
- refactor CSC mode logic
-Date: Thu, 30 Apr 2020 18:42:44 +0200
-Message-Id: <20200430164245.1630174-4-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v3 4/4] media: rockchip: rga: Only set output CSC mode for RGB
+ input
+Date: Thu, 30 Apr 2020 18:42:45 +0200
+Message-Id: <20200430164245.1630174-5-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
 References: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_094305_184963_03B8E126 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200430_094305_114833_214ECBEF 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -75,72 +75,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This introduces two macros: RGA_COLOR_FMT_IS_YUV and RGA_COLOR_FMT_IS_RGB
-which allow quick checking of the colorspace familily of a RGA color format.
+Setting the output CSC mode is required for a YUV output, but must not
+be set when the input is also YUV. Doing this (as tested with a YUV420P
+to YUV420P conversion) results in wrong colors.
 
-These macros are then used to refactor the logic for CSC mode selection.
-The two nested tests for input colorspace are simplified into a single one,
-with a logical and, making the whole more readable.
+Adapt the logic to only set the output CSC mode when the output is YUV and
+the input is RGB. Also add a comment to clarify the rationale.
 
+Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- drivers/media/platform/rockchip/rga/rga-hw.c | 23 +++++++++-----------
- drivers/media/platform/rockchip/rga/rga-hw.h |  5 +++++
- 2 files changed, 15 insertions(+), 13 deletions(-)
+ drivers/media/platform/rockchip/rga/rga-hw.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
-index 4be6dcf292ff..5607ee8d1917 100644
+index 5607ee8d1917..aaa96f256356 100644
 --- a/drivers/media/platform/rockchip/rga/rga-hw.c
 +++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-@@ -200,22 +200,19 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
+@@ -200,6 +200,11 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
  	dst_info.data.format = ctx->out.fmt->hw_format;
  	dst_info.data.swap = ctx->out.fmt->color_swap;
  
--	if (ctx->in.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
--		if (ctx->out.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
--			switch (ctx->in.colorspace) {
--			case V4L2_COLORSPACE_REC709:
--				src_info.data.csc_mode =
--					RGA_SRC_CSC_MODE_BT709_R0;
--				break;
--			default:
--				src_info.data.csc_mode =
--					RGA_SRC_CSC_MODE_BT601_R0;
--				break;
--			}
-+	if (RGA_COLOR_FMT_IS_YUV(ctx->in.fmt->hw_format) &&
-+	    RGA_COLOR_FMT_IS_RGB(ctx->out.fmt->hw_format)) {
-+		switch (ctx->in.colorspace) {
-+		case V4L2_COLORSPACE_REC709:
-+			src_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
-+			break;
-+		default:
-+			src_info.data.csc_mode = RGA_SRC_CSC_MODE_BT601_R0;
-+			break;
++	/*
++	 * CSC mode must only be set when the colorspace families differ between
++	 * input and output. It must remain unset (zeroed) if both are the same.
++	 */
++
+ 	if (RGA_COLOR_FMT_IS_YUV(ctx->in.fmt->hw_format) &&
+ 	    RGA_COLOR_FMT_IS_RGB(ctx->out.fmt->hw_format)) {
+ 		switch (ctx->in.colorspace) {
+@@ -212,7 +217,8 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
  		}
  	}
  
--	if (ctx->out.fmt->hw_format >= RGA_COLOR_FMT_YUV422SP) {
-+	if (RGA_COLOR_FMT_IS_YUV(ctx->out.fmt->hw_format)) {
+-	if (RGA_COLOR_FMT_IS_YUV(ctx->out.fmt->hw_format)) {
++	if (RGA_COLOR_FMT_IS_RGB(ctx->in.fmt->hw_format) &&
++	    RGA_COLOR_FMT_IS_YUV(ctx->out.fmt->hw_format)) {
  		switch (ctx->out.colorspace) {
  		case V4L2_COLORSPACE_REC709:
  			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
-diff --git a/drivers/media/platform/rockchip/rga/rga-hw.h b/drivers/media/platform/rockchip/rga/rga-hw.h
-index 96cb0314dfa7..e8917e5630a4 100644
---- a/drivers/media/platform/rockchip/rga/rga-hw.h
-+++ b/drivers/media/platform/rockchip/rga/rga-hw.h
-@@ -95,6 +95,11 @@
- #define RGA_COLOR_FMT_CP_8BPP 15
- #define RGA_COLOR_FMT_MASK 15
- 
-+#define RGA_COLOR_FMT_IS_YUV(fmt) \
-+	(((fmt) >= RGA_COLOR_FMT_YUV422SP) && ((fmt) < RGA_COLOR_FMT_CP_1BPP))
-+#define RGA_COLOR_FMT_IS_RGB(fmt) \
-+	((fmt) < RGA_COLOR_FMT_YUV422SP)
-+
- #define RGA_COLOR_NONE_SWAP 0
- #define RGA_COLOR_RB_SWAP 1
- #define RGA_COLOR_ALPHA_SWAP 2
 -- 
 2.26.0
 
