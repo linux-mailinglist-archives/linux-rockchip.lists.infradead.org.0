@@ -2,86 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B238A1C091F
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 23:24:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24ACC1C099D
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 23:45:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=es84SCQushtLEfrk4rVc+MS+XW+9F6btXpEmP+JGJks=; b=nIqOA5GMEQVfVO
-	TQKtujse3ZnpNz5toSjNNd1SIVQxA8Whd7zmaZDdVluL0AIv9AAq+BW94u16zc16b9aFWj+f3ROOs
-	7JnJCkYI3fIgOVsZLzhU9LYtAhuqF8TOOsy4GbcGQlNMoSx8k9OFA501rBNh+VMvhWyB58W+aATvW
-	ovSI6extwXpKmdGy3w7J2OsNJRQ0ZuFINOxDkNo2OavoEnm0rf8sSXWt9eKnJN0PzVFxqWBBPNKJj
-	KoKYLxebuiIlQva2LWFb8dKXOVBCfELg30gx9xaCIw8BhMTIBZZCF781Na8zurnmCbyueDtxtd2hT
-	9q2Hq11d+qAMj5My3/Yg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5xy8x5KnwJ3iiZviVP/VyYVIZ+QawCsnwVx6g8gJrgE=; b=B9J
+	gpKVbMykChdL0T6uE2ErhW5mZGIMceL8/fMMT2eXoBLEaU4xsmy90iCiX3jSgKoisFthUy8j5Gmyp
+	aIt/yKXDq6/wSDnQrrJYwdt50cACWCGbUQ0Nmp5phpJp5DYxJgzYDokwCAw5+IHbXWI62EY1Hg1jE
+	hJttV5ynIu975OjAGGjo0QYs3QxYKuorQMV/4R8POVqLn9w3sarSwfnjygiFJzVn+BY4V5IYq98ZI
+	sH4J3OGr9RqS+qT/KrzS+eW63ERbP+m1O0e88PL+TmhyGcBA/I6OTODVfuyD9hX65heuS0VBKIAnG
+	cCfbHgY0ZwmzF2K7+uYNhG8E8oY+HRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGfQ-0006Cy-CK; Thu, 30 Apr 2020 21:24:24 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jUH0D-0006rN-PB; Thu, 30 Apr 2020 21:45:53 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGfN-0006CG-IV; Thu, 30 Apr 2020 21:24:22 +0000
-Received: by mail-wr1-x443.google.com with SMTP id k1so9084285wrx.4;
- Thu, 30 Apr 2020 14:24:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=PyH2w2vQ2/ttTCu1gA9N4CJ/i81Ue6gR/CAS7sMwVvo=;
- b=IoQmpO3GmJlAH/aoZ8tWtIO9clTTbyYXCHpE2M77/yadwdU0QcXochTT58EyZDHPfo
- 6Ky3UClDTBEDZlamB61fgp8qZ8OCa76ZhRK7PCf1ZYSRN8zSKzqPhG8h0VPaGqZTXUL2
- yje20nDGT3vNOE0lzNFrLnkDlkIS/Lxep7a8e+fkTXlTHDWUjttPDuIgBnL7f3PWCqp9
- avT6HHDbqVptfl4xXRqNLgAk6IcykEH///zA92BxQTXvxA7iRPE7W92qEzXE0sOvvLvp
- 0jXXGlrGL1ihnwZ2ONmbCaOgoV2X5rbGStpJWh0J+zX62jGXhLc2ZMzx9VtOUdIoz0VQ
- g4Sw==
+ id 1jUH0A-0006qA-5Q
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 21:45:51 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id mq3so1456668pjb.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 14:45:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=Mft02k1EWwZ/HNm5maq7S/AAnogxHFeoUgCVQnPuQmY=;
+ b=Iys5N08DBcAMZUael1/ZNC5oEgGfgMOGnJ9j9ubYKnAB9ppgowY04VQGH4lTzls3Yr
+ KgFwTWNh0Yqf7NCEA7QJk38TSmEBAFTdKcu2AUFjQ05lfNvO+tS5/UNdeZjdkOzeVsZO
+ RTMmLpviSC0Y5xSs/gcIqxhgGsEtgWBzNuxM4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=PyH2w2vQ2/ttTCu1gA9N4CJ/i81Ue6gR/CAS7sMwVvo=;
- b=kUxLfWJkRPg8eEmX2oZiwvzvqR//SjUrQz79/yn/j7uum4LB+IhmbKBYnvWv7znTEP
- 53DQ2vbmBC3UN4vGDe9WcxcQ5KtiZ6xnpRm5s9SdQ9QFfvmyoZqauDul5ZZj9N41qTbG
- EXyWUL0hQ8drk423p4YPC83CAjj9EYyxGXSNjXc3VtQ9Oe4jO2evKu96DEl8Jaqac+wv
- hUNKVprZ1oR39h1JcLCIsX2fXDUpyZUhLPB3KtYmb9UtvE6SbdXuN8xycSTSpfu9ZHhL
- K+WEX6XRFLj72kcSwppvuf2TWYhrn77LxruRE/Cl3XRMcMAzklak9GWwtFj1agHvJEcQ
- RPLQ==
-X-Gm-Message-State: AGi0PubG2bjlR5br8YMVEeMeY2ff8SWBdDml+M2gTeR1kvPu60LMOiit
- VhJ7+sM2JjVxt/qW2qsgwQo=
-X-Google-Smtp-Source: APiQypJ38a1LjrxqECLlYtfvpgXWAwQDQASib0V5TWlj0xUr7UPGEVPRcz1A/vXoxpgrmLk5qeo7cA==
-X-Received: by 2002:adf:ec09:: with SMTP id x9mr560156wrn.364.1588281860038;
- Thu, 30 Apr 2020 14:24:20 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id z22sm1237653wma.20.2020.04.30.14.24.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 14:24:19 -0700 (PDT)
-To: paul.kocialkowski@bootlin.com
-References: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
-Subject: Re: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
-Date: Thu, 30 Apr 2020 23:24:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
-Content-Language: en-US
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Mft02k1EWwZ/HNm5maq7S/AAnogxHFeoUgCVQnPuQmY=;
+ b=pOBwY2dba292Pt4Pm9K1JCsJWqerZK8s0nFuTeLF5WONTkT8lFNAdirzkRHZL9jtIG
+ 1UPs2qGpkaTKpvKJUyKgLvyaAp381jRkHI2pdZnli4owW9mllOj/P2D9zi1fatuA310w
+ OL2fhJeGdo3JF4q1HkVAcYTxZujZZg5oZsfqYfUd66z5NgXrQ+ajJMgbTxHS2uQTKSQe
+ nGJfZ2Ebq+FyFpSREFR5lor7mSImKjkNx+GP4lD7Hc2w7LCaDEZJZyhYmf+q6i+T+4K3
+ rNAW3pGgrG9HHDFzjCNyRzSFBWdsY0XysAM4VQCmNG3v61LicjXj4Gw4XOZvZurdWB7N
+ umVA==
+X-Gm-Message-State: AGi0PubzwYHr8kwr5Yc+AA4q19IdG9Lph7jJNx2rbtgI4TqeosMnO1z+
+ Q4QhBo2GQkt26RfiPbTiqw0PyPWLltiOhQ==
+X-Google-Smtp-Source: APiQypKme2Itd8ALJWqD2tlv2NC1Jrsk0NKHs7EfzCvqJ2oJEyFVo6PbjyEwWqA6gGTqnLGM0d4Xjg==
+X-Received: by 2002:a17:902:bf46:: with SMTP id
+ u6mr1044774pls.318.1588283148229; 
+ Thu, 30 Apr 2020 14:45:48 -0700 (PDT)
+Received: from localhost.localdomain ([2405:201:c809:c7d5:a9f2:11c6:8c6c:2861])
+ by smtp.gmail.com with ESMTPSA id p64sm615243pjp.7.2020.04.30.14.45.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 30 Apr 2020 14:45:47 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Tom Rini <trini@konsulko.com>, Frank Wang <frank.wang@rock-chips.com>,
+ William Wu <william.wu@rock-chips.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
+ Patrice Chotard <patrice.chotard@st.com>
+Subject: [RFC 0/7] rockchip: Add PHY drivers
+Date: Fri,  1 May 2020 03:15:22 +0530
+Message-Id: <20200430214529.18887-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_142421_645220_E982FE40 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200430_144550_343830_1AD09EC9 
+X-CRM114-Status: GOOD (  10.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,53 +95,114 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- hansverk@cisco.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- thomas.petazzoni@bootlin.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: u-boot@lists.denx.de, linux-amarula@amarulasolutions.com,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Paul,
+This patch add support for USB2PHY and PCIe PHY driver
+on rockchip platform and tested the same in rk3399.
 
-> 
-> Add a new compatible for the PX30 Rockchip SoC, which also features
-> a RGA block. It is compatible with the RK3288 RGA block.
-> 
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> index dd645ddccb07..740586299da9 100644
-> --- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> @@ -23,6 +23,9 @@ properties:
+Basic code is referenced from Linux, hence all the
+license SPDX are reused.
 
+The reason behind sending this as RFC is PHY devices 
+for u2phy, pcie_phy nodes are unable to get via 
+Generic PHY framework. The observed reasons are
+1) u2phy is not part of root node.
+2) pcie_phy is not part of root node and also parent
+   is of non-PHY type.
 
->        - items:
->            - const: rockchip,rk3228-rga
->            - const: rockchip,rk3288-rga
-> +      - items:
-> +          - const: rockchip,px30-rga
-> +          - const: rockchip,rk3288-rga
+This is sample PHY provider topology that Generic PHY
+is failed to get PHY device.
 
-Use enum.
+   /{ 
+      grf: syscon@ff770000 {
+	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+	reg = <0x0 0xff770000 0x0 0x10000>;
+	#address-cells = <1>;
+	#size-cells = <1>;
 
-      - items:
-          - enum:
-            - rockchip,px30-rga
-            - rockchip,rk3228-rga
-          - const: rockchip,rk3288-rga
+	u2phy0: usb2-phy@e450 {
+		compatible = "rockchip,rk3399-usb2phy";
+		reg = <0xe450 0x10>;
+		clocks = <&cru SCLK_USB2PHY0_REF>;
+		clock-names = "phyclk";
+		#clock-cells = <0>;
+		clock-output-names = "clk_usbphy0_480m";
+		status = "disabled";
 
->  
->    reg:
->      maxItems: 1
-> -- 
-> 2.26.0
+		u2phy0_host: host-port {
+			#phy-cells = <0>;
+			interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH 0>;
+			interrupt-names = "linestate";
+			status = "disabled";
+		};
+
+		u2phy0_otg: otg-port {
+			#phy-cells = <0>;
+			interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH 0>,
+				     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH 0>,
+				     <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH 0>;
+			interrupt-names = "otg-bvalid", "otg-id",
+					  "linestate";
+			status = "disabled";
+		};
+	};
+
+	pcie_phy: pcie-phy {
+		compatible = "rockchip,rk3399-pcie-phy";
+		clocks = <&cru SCLK_PCIEPHY_REF>;
+		clock-names = "refclk";
+		#phy-cells = <1>;
+		resets = <&cru SRST_PCIEPHY>;
+		drive-impedance-ohm = <50>;
+		reset-names = "phy";
+		status = "disabled";
+	};
+   };
+
+So, this series moved these nodes as part of root 
+to make it work but of course any suggestions on this 
+will be taken into consideration.
+
+Any inputs?
+Jagan.
+
+Jagan Teki (7):
+  phy: Add Rockchip PCIe PHY driver
+  clk: rk3399: Enable/Disable the USB2PHY clk
+  phy: rockchip: Add Rockchip USB2PHY driver
+  arm64: dts: rk3399: Move u2phy into root port
+  arm64: dts: rk3399: Move pcie_phy into root port
+  pci: rockchip: Switch to generic-phy
+  pci: rockchip: Drop legacy PHY driver
+
+ arch/arm/dts/rk3399.dtsi                      | 118 +++----
+ drivers/Kconfig                               |   2 +
+ drivers/Makefile                              |   1 +
+ drivers/clk/rockchip/clk_rk3399.c             |  12 +
+ drivers/pci/Makefile                          |   2 +-
+ drivers/pci/pcie_rockchip.c                   |  95 +++++-
+ drivers/pci/pcie_rockchip.h                   | 142 --------
+ drivers/pci/pcie_rockchip_phy.c               | 205 ------------
+ drivers/phy/rockchip/Kconfig                  |  16 +
+ drivers/phy/rockchip/Makefile                 |   7 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 312 ++++++++++++++++++
+ drivers/phy/rockchip/phy-rockchip-pcie.c      | 271 +++++++++++++++
+ 12 files changed, 764 insertions(+), 419 deletions(-)
+ delete mode 100644 drivers/pci/pcie_rockchip.h
+ delete mode 100644 drivers/pci/pcie_rockchip_phy.c
+ create mode 100644 drivers/phy/rockchip/Kconfig
+ create mode 100644 drivers/phy/rockchip/Makefile
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-pcie.c
+
+-- 
+2.17.1
 
 
 _______________________________________________
