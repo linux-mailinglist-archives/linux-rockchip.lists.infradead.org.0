@@ -2,55 +2,53 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EBEB1BFA16
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 15:51:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F16351BFA8C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 15:54:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=unkpoJYAalIMQ1e6EH9q/ws0QJZvRz2MOJ7c2Xk141c=; b=Tisb38uEkwSECy
-	CSIXxja2xh2swlr6+5E/tdAG778QiXPMRNSeWnIDTXPD+JbYyAchEpsJjDIopWN/o7n8ZZW0lO/Nc
-	YcUCswCBR48eI+7jgisd92P7ofWGrqH/VxaW4OhT1UHchRWiWHfraow1YD2Hyv0uZRGejmn2uc6NJ
-	H+fZ0BqjmOBPXVxaaN+umCGMKePY9RzUSOKn5d5/Ndy6lYpXCYoi7smqzt77ZzLcn6BckUmXMx6kz
-	qw2QNE/D+/BPGRLB4exSP1fw/150dutuNBxBXmL7rglVF0PRdqm0cYCPaSIPRwrMA2o1CA21wUoVf
-	13ZTI2oUkTFt0zwyphXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4m/pcCCMTl9/aE/JM3Nc1fZ0RqMjDxgIXbNwQwX7ku8=; b=UbUf/pv2IbU7X7
+	l8TCVncWPYXcq36Op2YFMn3WuH+LcREifzhX6vheFpIM0RyY5OAVu71fqAuTuO9mi+t7Nlkt14yA3
+	3dQ7Pwukv9ymHNHUEVPodk6ll1M4LUxl/IlhOq1cJg4SDiFYvdzwysPQWbxO38tw0mKZHpMd6VK1U
+	F3KmcoQTwm2J4g6XIHKKdKWd8h6LfIGMQcN2YnTiBx86XUtnnxorb8j5Cl4rw9UGTXUdKJEll2v3+
+	M9kFAAJe6z/pyzPlhlwSXOv4QVNNMOpKzflfQXyMpSbXfzB1v//mncg3Rtq68jdvKjL/C+oc2nebD
+	L138IoXhtoalU1mE4c+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9bA-0000UA-Bb; Thu, 30 Apr 2020 13:51:32 +0000
+	id 1jU9eB-00031b-Bb; Thu, 30 Apr 2020 13:54:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9aR-0008Me-N4; Thu, 30 Apr 2020 13:50:49 +0000
+ id 1jU9bx-00019Y-EM; Thu, 30 Apr 2020 13:52:24 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5CD0E20870;
- Thu, 30 Apr 2020 13:50:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BB13220873;
+ Thu, 30 Apr 2020 13:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588254647;
- bh=Xe0y0cDtMRZyEN2ZJvIc5rY7z05TCohRNzocgE76WF8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wDfFDhx3NbAElH6wCJoV5QjNTRlSYiTf3k9rNx3GJiwC9PRS/oguSHTJrAya9QBvI
- yof39TwQGKPw4DlEk6NtXB6Yvnz8qmYhPQSkpzJlsS8hRGq/BcL8ZmEHamE8vfv5DM
- pEMRvDWDHAEXjNsy42pihkQM9xm2Uh/HEzb5rtj8=
+ s=default; t=1588254740;
+ bh=r2EjWEVUPezkNE5CyIxnKq1/Poy/iWkkjjfp4PKowvA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Ldzs+/sa3HaFDnbxRwBTC7b7qp7tI2rorGr1ub5AnOC8qyFuB/Ms5Ih+h/+1Ac7jE
+ KRJ0BP/HGu21UUWpTsxtdFrfoUJCaZS2MWr668wdb1T5Cg5jQ+2BE3oTSsqnAyoMWH
+ CuRMJIQgCRcKzMxzUELU3suXpG/33F7zZn8US7r0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 02/79] drm/bridge: analogix_dp: Split bind() into
+Subject: [PATCH AUTOSEL 5.4 01/57] drm/bridge: analogix_dp: Split bind() into
  probe() and real bind()
-Date: Thu, 30 Apr 2020 09:49:26 -0400
-Message-Id: <20200430135043.19851-2-sashal@kernel.org>
+Date: Thu, 30 Apr 2020 09:51:22 -0400
+Message-Id: <20200430135218.20372-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200430135043.19851-1-sashal@kernel.org>
-References: <20200430135043.19851-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_065047_801987_89E87DF3 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20200430_065221_559022_C2E8F4F1 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -141,10 +139,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  4 files changed, 61 insertions(+), 42 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-index 6effe532f8200..461eff94d2767 100644
+index 22885dceaa177..1f26890a8da6e 100644
 --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
 +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-@@ -1636,8 +1636,7 @@ static ssize_t analogix_dpaux_transfer(struct drm_dp_aux *aux,
+@@ -1635,8 +1635,7 @@ static ssize_t analogix_dpaux_transfer(struct drm_dp_aux *aux,
  }
  
  struct analogix_dp_device *
@@ -154,7 +152,7 @@ index 6effe532f8200..461eff94d2767 100644
  {
  	struct platform_device *pdev = to_platform_device(dev);
  	struct analogix_dp_device *dp;
-@@ -1740,22 +1739,30 @@ analogix_dp_bind(struct device *dev, struct drm_device *drm_dev,
+@@ -1739,22 +1738,30 @@ analogix_dp_bind(struct device *dev, struct drm_device *drm_dev,
  					irq_flags, "analogix-dp", dp);
  	if (ret) {
  		dev_err(&pdev->dev, "failed to request irq\n");
@@ -189,7 +187,7 @@ index 6effe532f8200..461eff94d2767 100644
  
  	ret = analogix_dp_create_bridge(drm_dev, dp);
  	if (ret) {
-@@ -1763,13 +1770,12 @@ analogix_dp_bind(struct device *dev, struct drm_device *drm_dev,
+@@ -1762,13 +1769,12 @@ analogix_dp_bind(struct device *dev, struct drm_device *drm_dev,
  		goto err_disable_pm_runtime;
  	}
  
@@ -206,7 +204,7 @@ index 6effe532f8200..461eff94d2767 100644
  }
  EXPORT_SYMBOL_GPL(analogix_dp_bind);
  
-@@ -1786,10 +1792,15 @@ void analogix_dp_unbind(struct analogix_dp_device *dp)
+@@ -1785,10 +1791,15 @@ void analogix_dp_unbind(struct analogix_dp_device *dp)
  
  	drm_dp_aux_unregister(&dp->aux);
  	pm_runtime_disable(dp->dev);
@@ -224,7 +222,7 @@ index 6effe532f8200..461eff94d2767 100644
  int analogix_dp_suspend(struct analogix_dp_device *dp)
  {
 diff --git a/drivers/gpu/drm/exynos/exynos_dp.c b/drivers/gpu/drm/exynos/exynos_dp.c
-index 4785885c0f4f9..065a1cb2a5444 100644
+index 3a0f0ba8c63a0..e0cfae744afc9 100644
 --- a/drivers/gpu/drm/exynos/exynos_dp.c
 +++ b/drivers/gpu/drm/exynos/exynos_dp.c
 @@ -158,15 +158,8 @@ static int exynos_dp_bind(struct device *dev, struct device *master, void *data)
