@@ -2,65 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E435D1BF0C0
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 09:04:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C1F21BF0C1
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 09:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XE9vtX5S1S2rTqDS6G+Nj1QeA5ieQyBaI6t0q4uhPUQ=; b=g8q
-	f/3dfxFe/1eBkP2/gaiXYnyvSX0YO5NbbzAfW9ephwwJ3JAAFXlOxSNWl3pcbbJvZMKROry9DxIW8
-	JrIpsXddECd3H8RlZtL+yXPDgCuc9WlI5ISxIbYrAKQm6W+T/HleIOtiqYcc9cWptJ2HVuSYXOwYK
-	rcUQU0JpACxHk6iUGLSIGK/umO1L7G1wWD3/mYUqq2YDBwkpZeZTOhJhfT3/5yKpvPwJV4AYcrDf/
-	E6+iw8YRemeUFN0OB98nxtrdNtICy451jQAejwnecqWAqYxqA1v26+i14Fx0hwIrTqCDnRP4Dz+21
-	J2wSASYvxzo89gLmE3pcqlu6CsPOdlA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=QFJu2bjV8i7NU50OxJjMNKgpsdenXz+RsB28oyZL6B8=; b=oOWDbu6x+iOMUfhW8QVdx6+2J9
+	ehq6ILtYR4DT2E2LHJkjJIlQRhRdE+EhXqzsq7OWugjOGfk2Rt2VyGYPNgGbVYhufFyQWQ187e8XJ
+	bc6R7vEzK33IjWJOxHxXOgSpV+m70tOw4aejDB7z9kmVEigcLRu2plxYsH4AHm5eWF/ayLz+yfyhd
+	1lUo2TOKYanhTLbiMVjqqirkw6cZMIApSvGJ7MazTNitfoLK+w4qiS8kjFmwEaXtGdsXwVO1+sCeW
+	3kyyczVPEbXS1pbidNdg1LO0S/hXG9il90nG2F98ApjtZlGJ2XJAXDXXz09zL4YCjTGfD9SG+Flaq
+	Wlproi7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU3FE-00066o-Dd; Thu, 30 Apr 2020 07:04:28 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jU3FH-00068b-1O; Thu, 30 Apr 2020 07:04:31 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU3F9-00065n-TA
- for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 07:04:25 +0000
-Received: by mail-pf1-x444.google.com with SMTP id w65so2443682pfc.12
- for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 00:04:22 -0700 (PDT)
+ id 1jU3FD-00066r-Sl
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 07:04:29 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id h12so3289747pjz.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 00:04:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=li/Zb4mnPfD0Nmbji9RC2oKn/VTNSvLAxiaobEeGvYM=;
- b=HgyYiIuuBO99mFXsWDA/vGGozZvmRAzyds3rMtzn0NN9rhzhVLf5F5dPiGgQ1EWIHK
- tlOC+ksmm9MEBIaJP/SO3ka/AimFJB9LyHAPNILqNgR6E69eK6Gba213gaqfGY9O59qi
- gpjr19+5zqkm3l+2GtcNqmES+Zs1Y3IuKFO+Y=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=QZQxIM9Lp5gBpYd0vuqexfM8OFH70HyOZiX2o76/vfc=;
+ b=iY+ebA4CDb9OF+/YPw8g6jHpWsbp5C3gkz28Njb0RR0hesLCnUbSHxOSUNRVedYsVg
+ ErnvoRGVtWQhq6sH+2r7bQkQ6IsaxwDze6xIneaH00mF+kS3oBxfrqMErT4YR6yKBCLA
+ K1V046ufPO+B7HaXz5KTh0prOIfG8vDpNlesg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=li/Zb4mnPfD0Nmbji9RC2oKn/VTNSvLAxiaobEeGvYM=;
- b=J9OBCupskX3VRD6TGD4hW2xXHacKjXq925ibxzYMEvhE11BD3wDO/O8z8doi0urSyc
- aDr8iBzRXOIvtQaJRF/RROe6sjxC/WjK+FrWVJIgqmMGSY3ex4ZVDDMj6HyM65Lvo/HU
- MhkortQCy6S5JFSjd8nza+yV81vflvb21B7S7buljvwgRjge+c08bFDJAAKSShTvLQOy
- Mpz1SaGv242kKzH7GSKHQbxFYZo9Ontipj9nSkaVIj5WxQDGANufrlONrMIe+wcpV6b7
- RK5pZZYb+YOk7Sprp1AjDRFo/nXHly7aVGdfsE8URFqsil3d7/zkr+2JMc6UFw8X0ruI
- VRnw==
-X-Gm-Message-State: AGi0PuYx1/+QNU1wsSS7G0zC4FKjcN+8DHV5HihervPPmxi7h9e1q+wh
- 55xyRb+1ib/80H7ZOdkXu8xGcg==
-X-Google-Smtp-Source: APiQypKWx8PMVWFLKNfliUiNeyZIXxqk8FaJhdZFo8n0bGc9A5tw7XFnRfgX1f0KEEnOTMRmImOVYA==
-X-Received: by 2002:a63:e210:: with SMTP id q16mr1973617pgh.26.1588230262313; 
- Thu, 30 Apr 2020 00:04:22 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=QZQxIM9Lp5gBpYd0vuqexfM8OFH70HyOZiX2o76/vfc=;
+ b=iN9O32jZlUe4/3kjGa6AOxcSRr7xNn8GZZU2DbjIAov5sXOLamOG7SwEZ9mi0Izt1D
+ 2r5mPzHfFr/f1AIE0xpWWpIGy+MnAjNsLpozT0F/JCAi24CXBAGEpHYy1EXP6hDmXeX6
+ FoeD6lIj+0lPWsFkAb3/IuAfMzHn4Ofz78hP5VUAUCTyRfU9M7NeapLUtGmy7mTNtDf3
+ +PKWuKVszmze6fT6yZ7jvepzlzXsIEBhHb6SOpt8809XiQcg7S3IvtoPgRu4BhBtnvHu
+ i+ZTUCRqemLPF2bCaBclg3d+x6CR52Vv+TPC6PxgBSoANGBFGFSZvxqDwzPRlKIoK3Ph
+ umuw==
+X-Gm-Message-State: AGi0PuZs8fWbWAulRArcX2MSdBWagPT9SwrKA4n1V91aHjZxwQr4FCE6
+ tYl6NG9TOkuos43d8JXOgZFaGQ==
+X-Google-Smtp-Source: APiQypLKYFQB/YTkxNvf23yqX8rVNrC4fvi2+ZbgRyE1HUnYKISw3o3N8KHXT0CMhV5j5nspU21+Zg==
+X-Received: by 2002:a17:90a:fc8a:: with SMTP id
+ ci10mr1307246pjb.152.1588230267082; 
+ Thu, 30 Apr 2020 00:04:27 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:6514:3619:d1af:85f6])
- by smtp.gmail.com with ESMTPSA id p64sm964143pjp.7.2020.04.30.00.04.18
+ by smtp.gmail.com with ESMTPSA id p64sm964143pjp.7.2020.04.30.00.04.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 00:04:21 -0700 (PDT)
+ Thu, 30 Apr 2020 00:04:25 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 0/8] rockchip: Add PCIe host support
-Date: Thu, 30 Apr 2020 12:34:04 +0530
-Message-Id: <20200430070412.12499-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 1/8] iopoll: Add dealy to read poll
+Date: Thu, 30 Apr 2020 12:34:05 +0530
+Message-Id: <20200430070412.12499-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200430070412.12499-1-jagan@amarulasolutions.com>
+References: <20200430070412.12499-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_000424_371134_57DB452D 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20200430_000427_947695_3E713967 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -68,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -91,7 +96,8 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: patrick@blueri.se, linux-rockchip@lists.infradead.org, u-boot@lists.denx.de,
+Cc: Tom Rini <trini@konsulko.com>, patrick@blueri.se,
+ linux-rockchip@lists.infradead.org, u-boot@lists.denx.de,
  Jagan Teki <jagan@amarulasolutions.com>, sunil@amarulasolutions.com,
  linux-amarula@amarulasolutions.com
 MIME-Version: 1.0
@@ -100,52 +106,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This series support PCIe host controller support
-on rockchip rk3399 platform.
+Some drivers and other bsp code not only poll the
+register with timeout but also required to delay
+on each transaction.
 
-It is based on previous version[1] changes.
+This patch add that requirement by adding sleep_us
+variable so-that read_poll_timeout now support
+delay as well.
 
-Works well on rk3399 boards like rock960, nanopc-t4 
-and roc-kr3399-pc-mezzanine board as Gen1 configurable 
-host with M.2 SSD.
-
+Cc: Tom Rini <trini@konsulko.com>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
 Changes for v2:
-- handle USB, GMAC clocks
-- collect kever r-o-b tag
-- simplify rd and wr conf API 
+- none
 
-[1] http://patchwork.ozlabs.org/project/uboot/cover/20200425110354.12381-1-jagan@amarulasolutions.com/
+ include/linux/iopoll.h | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-Any inputs?
-Jagan.
-
-Jagan Teki (8):
-  iopoll: Add dealy to read poll
-  iopoll: Add readl_poll_sleep_timeout
-  clk: rk3399: Add enable/disable clks
-  clk: rk3399: Enable/Disable the PCIEPHY clk
-  pci: Add Rockchip PCIe controller driver
-  pci: Add Rockchip PCIe PHY controller driver
-  rockchip: Enable PCIe/M.2 on rk3399 board w/ M.2
-  rockchip: Enable PCIe/M.2 on rock960 board
-
- arch/arm/dts/rk3399-u-boot.dtsi             |   1 +
- board/vamrs/rock960_rk3399/rock960-rk3399.c |  20 +
- configs/nanopc-t4-rk3399_defconfig          |   4 +
- configs/roc-pc-mezzanine-rk3399_defconfig   |   4 +
- configs/rock960-rk3399_defconfig            |   5 +
- drivers/clk/rockchip/clk_rk3399.c           | 154 ++++++
- drivers/pci/Kconfig                         |   8 +
- drivers/pci/Makefile                        |   1 +
- drivers/pci/pcie_rockchip.c                 | 491 ++++++++++++++++++++
- drivers/pci/pcie_rockchip.h                 | 142 ++++++
- drivers/pci/pcie_rockchip_phy.c             | 205 ++++++++
- include/linux/iopoll.h                      |  23 +-
- 12 files changed, 1049 insertions(+), 9 deletions(-)
- create mode 100644 drivers/pci/pcie_rockchip.c
- create mode 100644 drivers/pci/pcie_rockchip.h
- create mode 100644 drivers/pci/pcie_rockchip_phy.c
-
+diff --git a/include/linux/iopoll.h b/include/linux/iopoll.h
+index ab0ae1969a..0bbd757939 100644
+--- a/include/linux/iopoll.h
++++ b/include/linux/iopoll.h
+@@ -16,6 +16,7 @@
+  * @addr: Address to poll
+  * @val: Variable to read the value into
+  * @cond: Break condition (usually involving @val)
++ * @sleep_us: Maximum time to sleep in us
+  * @timeout_us: Timeout in us, 0 means never timeout
+  *
+  * Returns 0 on success and -ETIMEDOUT upon a timeout. In either
+@@ -24,7 +25,7 @@
+  * When available, you'll probably want to use one of the specialized
+  * macros defined below rather than this macro directly.
+  */
+-#define readx_poll_timeout(op, addr, val, cond, timeout_us)	\
++#define readx_poll_timeout(op, addr, val, cond, sleep_us, timeout_us)	\
+ ({ \
+ 	unsigned long timeout = timer_get_us() + timeout_us; \
+ 	for (;;) { \
+@@ -35,33 +36,34 @@
+ 			(val) = op(addr); \
+ 			break; \
+ 		} \
++		if (sleep_us) \
++			udelay(sleep_us); \
+ 	} \
+ 	(cond) ? 0 : -ETIMEDOUT; \
+ })
+ 
+-
+ #define readb_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readb, addr, val, cond, timeout_us)
++	readx_poll_timeout(readb, addr, val, cond, false, timeout_us)
+ 
+ #define readw_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readw, addr, val, cond, timeout_us)
++	readx_poll_timeout(readw, addr, val, cond, false, timeout_us)
+ 
+ #define readl_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readl, addr, val, cond, timeout_us)
++	readx_poll_timeout(readl, addr, val, cond, false, timeout_us)
+ 
+ #define readq_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readq, addr, val, cond, timeout_us)
++	readx_poll_timeout(readq, addr, val, cond, false, timeout_us)
+ 
+ #define readb_relaxed_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readb_relaxed, addr, val, cond, timeout_us)
++	readx_poll_timeout(readb_relaxed, addr, val, cond, false, timeout_us)
+ 
+ #define readw_relaxed_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readw_relaxed, addr, val, cond, timeout_us)
++	readx_poll_timeout(readw_relaxed, addr, val, cond, false, timeout_us)
+ 
+ #define readl_relaxed_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readl_relaxed, addr, val, cond, timeout_us)
++	readx_poll_timeout(readl_relaxed, addr, val, cond, false, timeout_us)
+ 
+ #define readq_relaxed_poll_timeout(addr, val, cond, timeout_us) \
+-	readx_poll_timeout(readq_relaxed, addr, val, cond, timeout_us)
++	readx_poll_timeout(readq_relaxed, addr, val, cond, false, timeout_us)
+ 
+ #endif /* _LINUX_IOPOLL_H */
 -- 
 2.17.1
 
