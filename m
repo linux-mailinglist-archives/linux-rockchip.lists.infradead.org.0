@@ -2,86 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15C601C09D9
-	for <lists+linux-rockchip@lfdr.de>; Fri,  1 May 2020 00:05:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 551781C09E5
+	for <lists+linux-rockchip@lfdr.de>; Fri,  1 May 2020 00:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/eM1o7WB8JtNLbyaKOqaWNi5RGrHiw+J2TBGA4Io+PY=; b=Eu+XOSrmHDimHf
-	3nbyGB8quwEksaw6zrG2nRbP/tqg/WzgHdNaRcYOT6jcvVidHxrl6di8WP8qLQStyztegRKCpGMW5
-	PwdV4cFFIvX3SIlUTjoLUUHAAF52+piJJqdMZUDbcT7l3Fqxs0RLOKDEhRZDOZsGRm/LtY8KFRNSj
-	uNklyBGRRlaJ/tvTdzQRmRMMs4Pdu5daVQ1Wev0vLD4RzfhFn6R0Zz8DHwVMYDA4FDyOvRgOjkQXh
-	aEHlYt6/VwXSEs1ibD/whKnNCaKAy4VLCQvSfZrpVMxxnN559kEzTuMgnj770Upn9PzX27QRb3k+u
-	7VMQKHmWz0F+HUkW6HmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=afrqHv1TSVNHOExOKg7eym2/JujjZGJ0P+R7qmmnNWw=; b=Na3BW+aze9oDcBldKP9rQTlVV
+	4KCYRQVnGwHw90WbCSM7oWkI7hueFrZSpI+8bjyUcgDMdITOhylGtPGOgGLlVcwqLWiac6mwOZYy7
+	Mx9ufmXJ1w69n/j7U/V8U2UqAkTGZrgIiqZUKYiq9/YjT7mKLBmIxc3oI/HiCmVxDo1DTYMDtWQHx
+	1Mq9r+cWxTC1kNRiRzxXWmtV43XcIiCjynbCE6KFI+24OMr7pAhXtRmTaOs4M6hl6+C/jpCLxVaUJ
+	gH4wyTZjsI501Z0+7k78IJppyb6n9yoANXR4PLfPizqQlUi/88MtZBxCVy8d5J3dowFWo9P3/rC9f
+	eS/EavQnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUHJA-0003bO-55; Thu, 30 Apr 2020 22:05:28 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jUHKX-00043k-8y; Thu, 30 Apr 2020 22:06:53 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUHJ6-0003aG-Tg; Thu, 30 Apr 2020 22:05:26 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f13so9203895wrm.13;
- Thu, 30 Apr 2020 15:05:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Bw4xMsQlAdPbT32r9q7KuZwpeyRP0cX6BzQXI90BCN8=;
- b=ByMRGswMWLGAUKHPhoXAN3w1R8HdhxRP4M/4ODXWHCLj7gYMAP0FIEG2VqZCmshrr6
- ZxcQIkG1T7h6W+jiuTCvDA10h0s8VD84v2h8QRMFeZu/qfrIKB+Uf6h+12/CbKynlICf
- XNk18X5SKhxKXwdNGquQa/hSPFITAtjQ2q9I3W3xtod8hG+zWp/XrtdH1ATUccOE+/PA
- LwfjyOfhhEjlVSrZE6E/E52lAXBWSi0DbyFnfVI5a5ZKdj3P3rrRARsdm3Gj+9uBhenn
- J1wOiuWUe4NZE0eIccydcbVmM32Y86b4ca+CnqPfBoC95swggbnNpNkvRPLbH8pjqXWP
- E/OQ==
+ id 1jUHKT-00042R-I2
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 22:06:52 +0000
+Received: by mail-qt1-x844.google.com with SMTP id e17so6468588qtp.7
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 15:06:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3M51FFw1qgZn/HGqEUqbxSXrxISO0/8C9vIjfHkZHME=;
+ b=JsVgtW9BLemTIi86ARudIl7TotoEdhwElb7ahyxPxzR0k4SYoeWnwhAmGij942q1wW
+ batN0k3YpP/E2JJKPQ0yT4jTPTH7Sut+3O3sj8e4nuWmECR5VYN6WVp6byxEfiQFYFJi
+ QEy/WkYMNyKcL1GAGX2KQHI6l5OtKEs1oJxpI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Bw4xMsQlAdPbT32r9q7KuZwpeyRP0cX6BzQXI90BCN8=;
- b=ggG5WzhnLBr2EL7ooM5QOk/9wCNFFN7mCgSIcqU2zb2nQcdCvYueuxxpK1xSw/ayNq
- FVdTYUolaeN48LJ4E4omJ/UyemFskZzTg/siVFY2a6krnDKTWO7xE5BDfOt4M1W1IcDi
- sE611kK05mEDQKaYZwpkwDvOjX4K/BhtrzZ3yD9fVnr2UYNh8fumqtKhZfQpUSXWR0Pk
- Ox6q9NjUhEW2qW+dk0M85Z1rp85WwLIsqlZlianee/jpH9eEQsonyZaEufB66DZme2fW
- 1AEyAqWVy6zm+7HuAVanTJ04Yd8qBu8Y9ZFkYea893oh72vRrvumCVsCJARnu00ECLiK
- tMzA==
-X-Gm-Message-State: AGi0PuYe3myaMpqTq/a5ouVAeML0KlpK48o9ip2AwWUz9nuTxHvNiBzo
- eyJeRUTgkhhaswTvDy0ExqU=
-X-Google-Smtp-Source: APiQypLYqUO31tqU0YvMTIn8//k5oBDvmrxtqm2vFUpCvHub7k63ls1fdFvzV0p5CULjKqkXhDeoag==
-X-Received: by 2002:adf:d0ca:: with SMTP id z10mr818677wrh.172.1588284317856; 
- Thu, 30 Apr 2020 15:05:17 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id t67sm1475693wmg.40.2020.04.30.15.05.16
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 15:05:17 -0700 (PDT)
-To: paul.kocialkowski@bootlin.com
-References: <20200430164245.1630174-3-paul.kocialkowski@bootlin.com>
-Subject: Re: [PATCH v3 2/4] arm64: dts: rockchip: Add RGA support to the PX30
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <c3954924-c220-73ef-06dd-85b6876be819@gmail.com>
-Date: Fri, 1 May 2020 00:05:15 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3M51FFw1qgZn/HGqEUqbxSXrxISO0/8C9vIjfHkZHME=;
+ b=O1f8Vq5w5k0g9ybXLl9vnA+7RGyhzdKLHrQcMuCoZzPoGCdmUUqyvBofnUFTDQl6h1
+ wNFZJbTXFWaDj26QBT/dcOWHzOLrQGzn1q7rIPssJR+Iren9GEixYQjgnfp+1g3FFsYr
+ G0aqrsfT5LnNGGl5087AM20Ue3UrakS/hpgvbziBugT3S8pGkAWA9JCe08GOtenKfeta
+ YBoWZ7guoEhAd/9kC1K3Iqmrbk2OyynU3yM7JLrBWWl7pbj037hociPn4HdawCUSMaYl
+ xgMQegalNVOJqqh1gHOTU8t9bn4n1b0TTuJa1+iWAEDUHFk5g7S0kDIISlpCCg9lADOr
+ YrGQ==
+X-Gm-Message-State: AGi0PuaEwC4egDG7fICotCW6QHqyFwqjUHG9TCt9m2XR6Gkwlq5d3TWA
+ kRkOi6AFzaR5X/G0cBF95K8OHA==
+X-Google-Smtp-Source: APiQypLjJhRHBugH23OI26ESmJrFCYIwcDaTbR6PKeJYpdctnNqZwtBJ7pCO5BCTgPQBGs1vWTCh+g==
+X-Received: by 2002:ac8:4e2c:: with SMTP id d12mr746254qtw.204.1588284408290; 
+ Thu, 30 Apr 2020 15:06:48 -0700 (PDT)
+Received: from bill-the-cat
+ (2606-a000-1401-826f-b0c9-f05d-9676-99b1.inf6.spectrum.com.
+ [2606:a000:1401:826f:b0c9:f05d:9676:99b1])
+ by smtp.gmail.com with ESMTPSA id o67sm1229522qkc.2.2020.04.30.15.06.46
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 30 Apr 2020 15:06:46 -0700 (PDT)
+Date: Thu, 30 Apr 2020 18:06:44 -0400
+From: Tom Rini <trini@konsulko.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v2 1/8] iopoll: Add dealy to read poll
+Message-ID: <20200430220644.GC4468@bill-the-cat>
+References: <20200430070412.12499-1-jagan@amarulasolutions.com>
+ <20200430070412.12499-2-jagan@amarulasolutions.com>
+ <20200430144628.GU4468@bill-the-cat>
+ <CAMty3ZA77GU+f=_J23m65=RwRY3L3bibqgdzZyLR_HBejfsoTg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200430164245.1630174-3-paul.kocialkowski@bootlin.com>
-Content-Language: en-US
+In-Reply-To: <CAMty3ZA77GU+f=_J23m65=RwRY3L3bibqgdzZyLR_HBejfsoTg@mail.gmail.com>
+X-Clacks-Overhead: GNU Terry Pratchett
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_150524_958905_24B60B7B 
-X-CRM114-Status: GOOD (  15.75  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200430_150649_603652_88B03482 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,61 +99,88 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- hansverk@cisco.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- thomas.petazzoni@bootlin.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick Wildt <patrick@blueri.se>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
+ U-Boot-Denx <u-boot@lists.denx.de>, Suniel Mahesh <sunil@amarulasolutions.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
+Content-Type: multipart/mixed; boundary="===============8421361628756751876=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Paul,
 
-> The PX30 features a RGA block: add the necessary node to support it.
-> 
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> ---
->  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index f809dd6d5dc3..3de70aa4f1ce 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -1102,6 +1102,17 @@ vopl_mmu: iommu@ff470f00 {
->  		status = "disabled";
->  	};
->  
-> +	rga: rga@ff480000 {
-> +		compatible = "rockchip,px30-rga", "rockchip,rk3288-rga";
-> +		reg = <0x0 0xff480000 0x0 0x10000>;
-> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
-> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
-> +		clock-names = "aclk", "hclk", "sclk";
-
-> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-> +		reset-names = "core", "axi", "ahb";
-> +		power-domains = <&power PX30_PD_VO>;
-
-sort
-
-		power-domains = <&power PX30_PD_VO>;
-		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
-		reset-names = "core", "axi", "ahb";
+--===============8421361628756751876==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="5YKxbtAlDq2FnV+Q"
+Content-Disposition: inline
 
 
+--5YKxbtAlDq2FnV+Q
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> +	};
-> +
->  	qos_gmac: qos@ff518000 {
->  		compatible = "syscon";
->  		reg = <0x0 0xff518000 0x0 0x20>;
-> -- 
-> 2.26.0
+On Fri, May 01, 2020 at 02:33:17AM +0530, Jagan Teki wrote:
+> On Thu, Apr 30, 2020 at 8:16 PM Tom Rini <trini@konsulko.com> wrote:
+> >
+> > On Thu, Apr 30, 2020 at 12:34:05PM +0530, Jagan Teki wrote:
+> >
+> > > Some drivers and other bsp code not only poll the
+> > > register with timeout but also required to delay
+> > > on each transaction.
+> > >
+> > > This patch add that requirement by adding sleep_us
+> > > variable so-that read_poll_timeout now support
+> > > delay as well.
+> > >
+> > > Cc: Tom Rini <trini@konsulko.com>
+> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> >
+> > This (and 2/8) need to say what kernel commit you're taking this from,
+> > thanks.
+>=20
+> Linux supports sleep_us at the beginning where read_poll_timeout
+> supports, i.e. the reason I didn't add the sha1. If that works, I will
+> add the same sha1 and apply via my tree (since it has some SPI changes
+> dependency patch)?
 
+Yes, I think that sounds right, thanks!
+
+--=20
+Tom
+
+--5YKxbtAlDq2FnV+Q
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAABCgAdFiEEGjx/cOCPqxcHgJu/FHw5/5Y0tywFAl6rS/QACgkQFHw5/5Y0
+tyyMLQv/W889DXRmlyXPVfzhMERv1e0eY9cfXOV/ZpIJfPBOXojy7J8emAb/zEbj
+G4U/+66r0VAtQIAn5ceFacDYGUVq0YE0MLAosv1GzJQib0+RSlCovr0OGcM7XS9a
+9rfEOmScK6Ao5qhG1DrIHLuMiPgnOLaVSuC1yoooaezGN04oYsgEgDjZxLpJxkFt
+zPcT8dw8HaqBh+JDhI9JuO6LxJUnrUXryuNk7YbwTEw+6DKcGPOuHYVzJTAmhy0b
+foUVybqnUhtOoO24O3i2xNU80hj4f7R+VM17VCXnce9zXC3gP4xa55sA54qQ/1Al
+cIifsKJw4fMwewIY5INy0oC+gJlETz+5trDrf7dycvIhbFapvDYP/RAcO52KL4Vv
+fSt8oYCHeBHgpjXs+ofP6sD52iwHuaVds3KaqO72Y5C7WozTVDyxHvIO5AOSP127
+ITY3zLD2zAPn04YIzDWn3l0DDQd8/Vb4R3szdHFaBE4Zy5a1hWNjKF8BdAV1Fjsx
+0uaQWC79
+=gJIO
+-----END PGP SIGNATURE-----
+
+--5YKxbtAlDq2FnV+Q--
+
+
+--===============8421361628756751876==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============8421361628756751876==--
+
