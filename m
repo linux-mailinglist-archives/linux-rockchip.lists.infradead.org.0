@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEE081BF0C6
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 09:04:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1C781BF0C7
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 09:04:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,60 +11,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=AI0RfuJdyOt6MvtwOUjwrVdeMIo7kbBwmACbQyuI11c=; b=SYSvbyi/+eVxaM74FaIg6EFEMu
-	0rUyJzFXEqkCjkhQtUskULXTB6/B4BMCzp164hBvJvswWNTNvMuWqWw5+kuos0REL/7o4oJAp2bxi
-	1Tqznr9e3Dby6WmolTNcjqtjEKknAjHunwMy5KKaaLRqhnl7IM14ipumzVPuDgfAP0WHWgKtrtU1g
-	c5znlLOkil6IEfNnzq61nRVIX6f8Zz/P9SCcXJwee6ORwvoQZ+oQNMGde0oZXqSMpHdVTsbUSIQ0Q
-	qbtFanVlTUzuCl7kOg40oRyqkGg4RNnqG9WOssSRhN29uugxXowb1c9w0FM6Fj2TJR0eoTkDIROxx
-	kT2P61Sg==;
+	bh=Bc7Luk2uWwXAhVHhbPvwXmF/R/rpp3DOTcHGUYX9WGc=; b=iISq7zsRGdrNz5i6Vg6WiSpx2v
+	XXYPyOnSVlj5ol5SJUuQwopQnav4OCcqaFrlDYGShAmjoP8mrE80Vhx+5PxNI5megedSX3idS+Z7b
+	jD6tBxUy6Q7KkRRt0GmFai3/GCv8TWqtxbLx7ENMCG26PKn/jB546Dsk4gxjo6Y5wuA/BEaw2QM0n
+	0KSo0AfyMG/rhO5C96YENQ4DAJgrurD7fujN9T1FsM3xOetm9v7pl9RN3fHHE3gCsfP2+9nlu95UQ
+	kiwRGebPmAm9dq2ALTMHAmlzzrTUaevJpuQTuAVrSBRXwm9Q5QAYpCzjcj3/A9jzW1sIcyLLYZm4o
+	XB3MGsHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU3FO-0006FS-2z; Thu, 30 Apr 2020 07:04:38 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jU3FV-0006Ji-Rw; Thu, 30 Apr 2020 07:04:45 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU3FL-0006Db-KV
- for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 07:04:37 +0000
-Received: by mail-pg1-x544.google.com with SMTP id q124so2319391pgq.13
- for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 00:04:35 -0700 (PDT)
+ id 1jU3FS-0006Gx-I4
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 07:04:43 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id ms17so344095pjb.0
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 00:04:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=kx3DvM6u34JnEdDKGfdUYWp2iOjqdjfvFB3xF13lJxo=;
- b=CIWLUVZ5Yj2oF9VwGKshMXjQ74ZqZoDqRBBDgka2DNF8a/H96aJBz+oIm1Kcwu3g/Q
- HsRJvXhtZtP84FbkRazIyiESwz13EpbLOv5kJbypdRinHBQtnd1Wqg7vy6qhCq8UJ4Uj
- GzmSn4BrWmxiL9/zhE2klYZscFhdbWM/e2U/0=
+ bh=GPV3Zk54Uc5uKzvhitTdYhJEIJtNWZE8p1htkX1ToAY=;
+ b=dOK6+5AcNzwpD0ub/iMOj90UdVGBN2A5ZYt+JYVAlL2DSrUUaQKnOau0ErOKXzu9KZ
+ x5bhr3luWv+pAuWBCcE4RFQJ5UjaeTJ1eV361zlZ/tWOAyzDMdssD3hAwizuMX20nw/k
+ cL2SVCi00+kBbmN7KcPjvgOG/4p0w0Luw+SJk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=kx3DvM6u34JnEdDKGfdUYWp2iOjqdjfvFB3xF13lJxo=;
- b=JdBm+MHEjP/1pNJLinGpCpxRlOc5zMCImREjjSyJhYdhE8aTPoy0QU5gqnQZL2U2nN
- NCmgibjie0X4s4CdAHPXQnhTqjX5QUDfZ2PPi0MfSIWOD1wqg/uW6JwkbYejLevd8vHt
- JMxyps4aXJh9k0U5lX9xm8tG6qvWQjHXBsqD2NtI+gAdA+6ARkW/6fVKxj8Vy5LJ7zYI
- PeV44g2vMTranPERuTlgLUMuikVe2xAZe5LCFlVT8XOwppsi99xZslD5fMcRx3UP1acc
- 9nNf9KklRiCQ44WY+mUU3ks5760zgZrTAgKhlUUILDLHG3obzypm7XCv9oqwRS2eiSMd
- PfQQ==
-X-Gm-Message-State: AGi0PuaKQ7gh5a2oJOL+5FKYiSyFOcEF0z5YJ98oTJjFZ5hG4My395wd
- htTJy/Z9sOi3eJiJk0N5v97Wgg==
-X-Google-Smtp-Source: APiQypJmewSE4An5A1zy/68STun6moYmoWjx0XvcnMOPcjCDa6Cw89qHpxKW7mCFmJs55xAl3d1Nzw==
-X-Received: by 2002:a63:d804:: with SMTP id b4mr1938666pgh.127.1588230274920; 
- Thu, 30 Apr 2020 00:04:34 -0700 (PDT)
+ bh=GPV3Zk54Uc5uKzvhitTdYhJEIJtNWZE8p1htkX1ToAY=;
+ b=aeBQdifGo1xN47GruzgMFCe89nNc1T/+b8fqC3yS3NMcJGTvJiA3nPYoAoNOyNxTn5
+ ZXwy8PungMQECbPLlb2SDkEr9x+bq3iVmIxxmqPmV+LwVuvBQ1xfDIEIL1DvsFOVqYyl
+ pQRqB3BYPHDReQqLkIBqYrp4eIjR9FiXQy5nfGM7Ib4gYdfdqJQVTf+cZhT4UZvp8+R8
+ FM+jdA4eBBjSi00+VWN7yfLjxPDr7HqteY/QmkbBQaeb4nUenj/BHW2gYaEA9GyqT7PG
+ 8KHrfMiwoTHNxcKm8ksREnuOmQPwB9QdCAK6bSEPl84XmyRef+H2gKF1houZZMxHNjdw
+ tvYg==
+X-Gm-Message-State: AGi0Pub0MWiRIndF2SgrHqJC2RdUPrPbqfxonRvQT2FPtQgvgnMuO1a6
+ LO7x3Lc43l2b3uzSTzLpARRZaQ==
+X-Google-Smtp-Source: APiQypIu+8DsiWT8mVcalHVovnFxzXlDC2xVimGV1H9P5VUIJh5LnQ1naV8VdWFVbqZw3giuygaYow==
+X-Received: by 2002:a17:90a:cb86:: with SMTP id
+ a6mr1306326pju.127.1588230278676; 
+ Thu, 30 Apr 2020 00:04:38 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:6514:3619:d1af:85f6])
- by smtp.gmail.com with ESMTPSA id p64sm964143pjp.7.2020.04.30.00.04.31
+ by smtp.gmail.com with ESMTPSA id p64sm964143pjp.7.2020.04.30.00.04.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 00:04:34 -0700 (PDT)
+ Thu, 30 Apr 2020 00:04:37 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2 3/8] clk: rk3399: Add enable/disable clks
-Date: Thu, 30 Apr 2020 12:34:07 +0530
-Message-Id: <20200430070412.12499-4-jagan@amarulasolutions.com>
+Subject: [PATCH v2 4/8] clk: rk3399: Enable/Disable the PCIEPHY clk
+Date: Thu, 30 Apr 2020 12:34:08 +0530
+Message-Id: <20200430070412.12499-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430070412.12499-1-jagan@amarulasolutions.com>
 References: <20200430070412.12499-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_000435_674542_F4AB5541 
-X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-CacheID: sfid-20200430_000442_592761_8330228A 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,188 +105,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Yes, most of the high speed peripheral clocks
-in rk3399 enabled by default.
+Enable/Disable the PCIEPHY clk for rk3399.
 
-But it would be better to handle them via clk
-enable/disable API for handling proper reset
-conditions like 'usb reset' over command line.
-
-So, enable USB, GMAC clock via enable/disable ops.
+CLK is clear in both enable and disable functionality.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v2:
-- new patch
+- clear the clk in enable
 
- drivers/clk/rockchip/clk_rk3399.c | 148 ++++++++++++++++++++++++++++++
- 1 file changed, 148 insertions(+)
+ drivers/clk/rockchip/clk_rk3399.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/drivers/clk/rockchip/clk_rk3399.c b/drivers/clk/rockchip/clk_rk3399.c
-index d822acace1..df70e9fa88 100644
+index df70e9fa88..7feba92f9e 100644
 --- a/drivers/clk/rockchip/clk_rk3399.c
 +++ b/drivers/clk/rockchip/clk_rk3399.c
-@@ -1071,12 +1071,160 @@ static int __maybe_unused rk3399_clk_set_parent(struct clk *clk,
- 	return -ENOENT;
- }
- 
-+static int rk3399_clk_enable(struct clk *clk)
-+{
-+	struct rk3399_clk_priv *priv = dev_get_priv(clk->dev);
-+
-+	switch (clk->id) {
-+	case SCLK_MAC:
-+		rk_clrreg(&priv->cru->clkgate_con[5], BIT(5));
+@@ -1136,6 +1136,9 @@ static int rk3399_clk_enable(struct clk *clk)
+ 	case HCLK_HOST1_ARB:
+ 		rk_clrreg(&priv->cru->clksel_con[20], BIT(8));
+ 		break;
++	case SCLK_PCIEPHY_REF:
++		rk_clrreg(&priv->cru->clksel_con[18], BIT(10));
 +		break;
-+	case SCLK_MAC_RX:
-+		rk_clrreg(&priv->cru->clkgate_con[5], BIT(8));
+ 	default:
+ 		debug("%s: unsupported clk %ld\n", __func__, clk->id);
+ 		return -ENOENT;
+@@ -1209,6 +1212,9 @@ static int rk3399_clk_disable(struct clk *clk)
+ 	case HCLK_HOST1_ARB:
+ 		rk_setreg(&priv->cru->clksel_con[20], BIT(8));
+ 		break;
++	case SCLK_PCIEPHY_REF:
++		rk_clrreg(&priv->cru->clksel_con[18], BIT(10));
 +		break;
-+	case SCLK_MAC_TX:
-+		rk_clrreg(&priv->cru->clkgate_con[5], BIT(9));
-+		break;
-+	case SCLK_MACREF:
-+		rk_clrreg(&priv->cru->clkgate_con[5], BIT(7));
-+		break;
-+	case SCLK_MACREF_OUT:
-+		rk_clrreg(&priv->cru->clkgate_con[5], BIT(6));
-+		break;
-+	case ACLK_GMAC:
-+		rk_clrreg(&priv->cru->clkgate_con[32], BIT(0));
-+		break;
-+	case PCLK_GMAC:
-+		rk_clrreg(&priv->cru->clkgate_con[32], BIT(2));
-+		break;
-+	case SCLK_USB3OTG0_REF:
-+		rk_clrreg(&priv->cru->clksel_con[12], BIT(1));
-+		break;
-+	case SCLK_USB3OTG1_REF:
-+		rk_clrreg(&priv->cru->clksel_con[12], BIT(2));
-+		break;
-+	case SCLK_USB3OTG0_SUSPEND:
-+		rk_clrreg(&priv->cru->clkgate_con[12], BIT(3));
-+		break;
-+	case SCLK_USB3OTG1_SUSPEND:
-+		rk_clrreg(&priv->cru->clkgate_con[12], BIT(4));
-+		break;
-+	case ACLK_USB3OTG0:
-+		rk_clrreg(&priv->cru->clkgate_con[30], BIT(1));
-+		break;
-+	case ACLK_USB3OTG1:
-+		rk_clrreg(&priv->cru->clkgate_con[30], BIT(2));
-+		break;
-+	case ACLK_USB3_RKSOC_AXI_PERF:
-+		rk_clrreg(&priv->cru->clkgate_con[30], BIT(3));
-+		break;
-+	case ACLK_USB3:
-+		rk_clrreg(&priv->cru->clkgate_con[12], BIT(0));
-+		break;
-+	case ACLK_USB3_GRF:
-+		rk_clrreg(&priv->cru->clkgate_con[30], BIT(4));
-+		break;
-+	case HCLK_HOST0:
-+		rk_clrreg(&priv->cru->clksel_con[20], BIT(5));
-+		break;
-+	case HCLK_HOST0_ARB:
-+		rk_clrreg(&priv->cru->clksel_con[20], BIT(6));
-+		break;
-+	case HCLK_HOST1:
-+		rk_clrreg(&priv->cru->clksel_con[20], BIT(7));
-+		break;
-+	case HCLK_HOST1_ARB:
-+		rk_clrreg(&priv->cru->clksel_con[20], BIT(8));
-+		break;
-+	default:
-+		debug("%s: unsupported clk %ld\n", __func__, clk->id);
-+		return -ENOENT;
-+	}
-+
-+	return 0;
-+}
-+
-+static int rk3399_clk_disable(struct clk *clk)
-+{
-+	struct rk3399_clk_priv *priv = dev_get_priv(clk->dev);
-+
-+	switch (clk->id) {
-+	case SCLK_MAC:
-+		rk_setreg(&priv->cru->clkgate_con[5], BIT(5));
-+		break;
-+	case SCLK_MAC_RX:
-+		rk_setreg(&priv->cru->clkgate_con[5], BIT(8));
-+		break;
-+	case SCLK_MAC_TX:
-+		rk_setreg(&priv->cru->clkgate_con[5], BIT(9));
-+		break;
-+	case SCLK_MACREF:
-+		rk_setreg(&priv->cru->clkgate_con[5], BIT(7));
-+		break;
-+	case SCLK_MACREF_OUT:
-+		rk_setreg(&priv->cru->clkgate_con[5], BIT(6));
-+		break;
-+	case ACLK_GMAC:
-+		rk_setreg(&priv->cru->clkgate_con[32], BIT(0));
-+		break;
-+	case PCLK_GMAC:
-+		rk_setreg(&priv->cru->clkgate_con[32], BIT(2));
-+		break;
-+	case SCLK_USB3OTG0_REF:
-+		rk_setreg(&priv->cru->clksel_con[12], BIT(1));
-+		break;
-+	case SCLK_USB3OTG1_REF:
-+		rk_setreg(&priv->cru->clksel_con[12], BIT(2));
-+		break;
-+	case SCLK_USB3OTG0_SUSPEND:
-+		rk_setreg(&priv->cru->clkgate_con[12], BIT(3));
-+		break;
-+	case SCLK_USB3OTG1_SUSPEND:
-+		rk_setreg(&priv->cru->clkgate_con[12], BIT(4));
-+		break;
-+	case ACLK_USB3OTG0:
-+		rk_setreg(&priv->cru->clkgate_con[30], BIT(1));
-+		break;
-+	case ACLK_USB3OTG1:
-+		rk_setreg(&priv->cru->clkgate_con[30], BIT(2));
-+		break;
-+	case ACLK_USB3_RKSOC_AXI_PERF:
-+		rk_setreg(&priv->cru->clkgate_con[30], BIT(3));
-+		break;
-+	case ACLK_USB3:
-+		rk_setreg(&priv->cru->clkgate_con[12], BIT(0));
-+		break;
-+	case ACLK_USB3_GRF:
-+		rk_setreg(&priv->cru->clkgate_con[30], BIT(4));
-+		break;
-+	case HCLK_HOST0:
-+		rk_setreg(&priv->cru->clksel_con[20], BIT(5));
-+		break;
-+	case HCLK_HOST0_ARB:
-+		rk_setreg(&priv->cru->clksel_con[20], BIT(6));
-+		break;
-+	case HCLK_HOST1:
-+		rk_setreg(&priv->cru->clksel_con[20], BIT(7));
-+		break;
-+	case HCLK_HOST1_ARB:
-+		rk_setreg(&priv->cru->clksel_con[20], BIT(8));
-+		break;
-+	default:
-+		debug("%s: unsupported clk %ld\n", __func__, clk->id);
-+		return -ENOENT;
-+	}
-+
-+	return 0;
-+}
-+
- static struct clk_ops rk3399_clk_ops = {
- 	.get_rate = rk3399_clk_get_rate,
- 	.set_rate = rk3399_clk_set_rate,
- #if CONFIG_IS_ENABLED(OF_CONTROL) && !CONFIG_IS_ENABLED(OF_PLATDATA)
- 	.set_parent = rk3399_clk_set_parent,
- #endif
-+	.enable = rk3399_clk_enable,
-+	.disable = rk3399_clk_disable,
- };
- 
- #ifdef CONFIG_SPL_BUILD
+ 	default:
+ 		debug("%s: unsupported clk %ld\n", __func__, clk->id);
+ 		return -ENOENT;
 -- 
 2.17.1
 
