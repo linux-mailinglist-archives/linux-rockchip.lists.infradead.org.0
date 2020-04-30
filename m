@@ -2,58 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32B381C09A2
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 23:46:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 568FD1C09A3
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 23:46:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPLYG/235JYOmrUZVRACLCoP58dTOo5yiKuro/UjUw0=; b=eXQDkCw8PFgFiW
-	SbY3Q5XxJGcTilzUFxmKjKpRDojURa0CMC4NiAoMgWM4EmUZsbx3FHWpi6HPw/m36ag0rjidpiDjs
-	g5sVHG9FMVJLrWNhEkIxOXFLL4AedHefLdAIjCTjM6cdS44owjSM5FcJi6501Ol00Kx3t9atlMFJr
-	sjoQ06d52rBFLwWYa2pKAYwrb13INb8Z0hrxgb5ii2Kv9+9j5tJixedvC/gWqEeDMUcdbPTIuEyrN
-	DchTiXwTcYTNHz8WvtHKSwoUkvddPg3MVFEMRm8+i4emkdBsFgdqYXa9X8aBBA/gzN1cWFreOHpXT
-	Ywr9pCK61VNnDq3ILJAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ddgsTIrS9nbXBeKL37Ce2lh5/Te1pS528qvCCC3XDUE=; b=i3vMfNwkavx11qjnj7EgidZXR5
+	D9Gz7vqKuGyjKTtOrnmtzWfyplsnF5cPxXfyrNdQmTe8zqUMQj6t3++MGU+lXvKq/KvqioaNck9yq
+	omt32JvL+vVMoiPdCA9LgcG/SgNPF32apjtr8mnx82+zev3PUEIxZui5//OnzkXnBpK5K1CS4ZjtX
+	7tICXARSBxB+rf2Q6Sq4/RubUOAJ7OLHRrWHECMRsJIcbDBwGSJ+dxtUrBW49h8l1bkEH5u34mdnQ
+	LUpkMi7Ujx7ek/4zXCtmkxPAZq7vM44BUOxZD93vhPYVWr0inTtTcMV23ngEYIBW/bPjAhAQKjx+J
+	h+L13VhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUH0Z-00079G-K0; Thu, 30 Apr 2020 21:46:15 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jUH0d-0007Cb-NX; Thu, 30 Apr 2020 21:46:19 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUH0W-00076z-Li
- for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 21:46:14 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id hi11so1452029pjb.3
- for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 14:46:12 -0700 (PDT)
+ id 1jUH0a-0007Av-P6
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 21:46:18 +0000
+Received: by mail-pl1-x644.google.com with SMTP id h11so2831128plr.11
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 14:46:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=O57oZmFtIDGFaxieo8Ue9ldC2XvrWM9IRe2TgB3VW1I=;
- b=FjlRFlzNjJ4QTAz88BGvH8yu5KbIB7JZ5s9l4AsGwaDA6lHpuaU/KA1T1PzocQgiZe
- qWy6qC7pbGdcHvNY3K+WotxKwPtmRtwFpDN+cE/1YgFYmYQFp11pL0WehBKdmv3hAIak
- /EapCJDMQiwfzjUGrWFPVFVWyEWVM4eloWeFU=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=GHqGyS+RUNZNqKAv2qm8I0WbTjNQhsUbrp1rtNyYubk=;
+ b=Amp9dCYNq2Jqi5j1lGLikHCt+3FAkFX2u1fmA1DAuJWOskANXrjeqi2A3QhnQJqRkO
+ AOeYeeAmGwdpoOEJRXVjHWL4PiG74pfTRAuFQ1PXIrtvvMxuJUFID+qPQ7+Chu/bY1JC
+ uFif488aX09YLg87JiVHmRwzrhMjZYj4dKzZc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=O57oZmFtIDGFaxieo8Ue9ldC2XvrWM9IRe2TgB3VW1I=;
- b=UGJjjIoS4AaQrD8F7J6ml7IQ+NL+PX2d6VAUiDyGVbF9yqhGVZnq1+j2wOl4mTRz10
- rJc6LQUEuvI+34diNxZdJxRWpXB3wGvcDdyH/jRFnAaxkVYyAVp58WTEiHYfDV2ImyU4
- 4VShk6n9HrdXKkb6YWHYtRQiLCF2reoFFCByViidVdbK3ds6ugky7yVGbagVev2CDARW
- eJRCNQ2n7ObjdQ7OOlet0/7N5bjMfQcgBC73oSqzJPACZdQNW7bs3i7znBj5bDDej1DR
- uu6uYoCFE+DKX53WcjU+H0SBoL1GusmVA64T3E6cPriA6QR9XzPvbPu8tVM50UKZi24y
- U+4w==
-X-Gm-Message-State: AGi0PuYBk/k/vEbgNhPHi1lo7jw8milVfqu1zC4VwRJg9r7gYT8PuAXa
- 2fhj3D6boNb17O9zn8vFsgkqhQ==
-X-Google-Smtp-Source: APiQypLzM74/M2BaKixpzy6nbEGMLTrFmBjhc1AhWnvuSaZkp04y6tBVsDpfPjfapjCX6BqCriwYTA==
-X-Received: by 2002:a17:902:8202:: with SMTP id
- x2mr1084618pln.287.1588283171707; 
- Thu, 30 Apr 2020 14:46:11 -0700 (PDT)
+ :references;
+ bh=GHqGyS+RUNZNqKAv2qm8I0WbTjNQhsUbrp1rtNyYubk=;
+ b=ryJ+V1j2NKM+slauVKXPK6mf0tPACIxHDjpYfvxSKZHHepOKfs76kCBAh4DS4OW0q7
+ TFmfDptZs+Odw9r5/pzghuRW1YOA24j/CNn0PipKjpwwExm4itwDvl65nXHi6mtnnifH
+ rCBuNc88mIIHEc5beHog0ekqmcttBwM/mwGu83nXvZmzWAdIXcxaueIHK7Z7D8a9J6lu
+ cK58JSh948xQjAMaz6iUJgUcUw1oS87g2+WUK2bPb+x//uMwVy6IlINtL6LIxo4d8oaj
+ vzPNRYXOoeqRjAjjZQPj0BBAJ+12nxnaMLTXyN5X74jeCM8xEzzg1aljtQUBWBMmOheT
+ 5YQQ==
+X-Gm-Message-State: AGi0PuYI2FoUQOuBSp6xot4oXTYRRrK4s4H2vsXRRn23iHFCaX2X27s4
+ jcMs5OdIxpdZ1DmaaTjzaXKiaA==
+X-Google-Smtp-Source: APiQypILla+f5XhFs2P0a25DFWI4zk1Fe0UXIougKpkLB47+mVXL3wiMRFv0JI2H3GyqhASGd1evEw==
+X-Received: by 2002:a17:90a:8c3:: with SMTP id 3mr946549pjn.147.1588283176252; 
+ Thu, 30 Apr 2020 14:46:16 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:a9f2:11c6:8c6c:2861])
- by smtp.gmail.com with ESMTPSA id p64sm615243pjp.7.2020.04.30.14.46.07
+ by smtp.gmail.com with ESMTPSA id p64sm615243pjp.7.2020.04.30.14.46.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 14:46:10 -0700 (PDT)
+ Thu, 30 Apr 2020 14:46:15 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
@@ -61,23 +60,22 @@ To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  William Wu <william.wu@rock-chips.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
  Patrice Chotard <patrice.chotard@st.com>
-Subject: [RFC 5/7] arm64: dts: rk3399: Move pcie_phy into root port
-Date: Fri,  1 May 2020 03:15:27 +0530
-Message-Id: <20200430214529.18887-6-jagan@amarulasolutions.com>
+Subject: [RFC 6/7] pci: rockchip: Switch to generic-phy
+Date: Fri,  1 May 2020 03:15:28 +0530
+Message-Id: <20200430214529.18887-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430214529.18887-1-jagan@amarulasolutions.com>
 References: <20200430214529.18887-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_144612_719842_C4DC40EE 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20200430_144616_819384_BDECE823 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,35 +100,116 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>,
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: u-boot@lists.denx.de, linux-amarula@amarulasolutions.com,
  Jagan Teki <jagan@amarulasolutions.com>, linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-WWVzLCBUaGlzIGlzIGNoYW5naW5nIHRoZSBhY3R1YWwgZGV2aWNlIHRyZWUgcGNpZV9waHkKc3Ry
-dWN0dXJlIGJ1dCB0aGUgcHJvYmxlbSB3aXRoIHRoZSBjdXJyZW50IEdlbmVyaWMgUEhZCnN1YnN5
-c3RlbSBpcyB1bmFibGUgdG8gZmluZCBQSFkgaWYgdGhlIFBIWSBub2RlIGlzIG5vdApwYXJ0IG9m
-IHRoZSByb290IHN0cnVjdHVyZSBhbmQgYWxzbyBQSFkgcGFyZW50IGlzCm5vbi1QSFkgdHlwZS4K
-ClRoaXMgd2lsbCBiZSByZXZlcnRlZCBvbmNlIHdlIHN1cHBvcnQgdGhlIFBIWSBzdWJzeXN0ZW0K
-dG8gZ2V0IHRoZSBQSFkgd2hvc2UgcGFyZW50IGhhcyBub24tUEhZIHR5cGUgb3IgYW55IG90aGVy
-CnJlbGV2YW50IHNvbHV0aW9uLsKgIMKgCgpTaWduZWQtb2ZmLWJ5OiBKYWdhbiBUZWtpIDxqYWdh
-bkBhbWFydWxhc29sdXRpb25zLmNvbT4KLS0tCiBhcmNoL2FybS9kdHMvcmszMzk5LmR0c2kgfCAy
-MCArKysrKysrKysrLS0tLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKyks
-IDEwIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2R0cy9yazMzOTkuZHRzaSBi
-L2FyY2gvYXJtL2R0cy9yazMzOTkuZHRzaQppbmRleCA2Yzc3ZjI1ZjIzLi5kZWE3NjAzMmJmIDEw
-MDY0NAotLS0gYS9hcmNoL2FybS9kdHMvcmszMzk5LmR0c2kKKysrIGIvYXJjaC9hcm0vZHRzL3Jr
-MzM5OS5kdHNpCkBAIC0xMzk1LDE3ICsxMzk1LDE3IEBACiAJCQkjcGh5LWNlbGxzID0gPDA+Owog
-CQkJc3RhdHVzID0gImRpc2FibGVkIjsKIAkJfTsKKwl9OwogCi0JCXBjaWVfcGh5OiBwY2llLXBo
-eSB7Ci0JCQljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1wY2llLXBoeSI7Ci0JCQljbG9j
-a3MgPSA8JmNydSBTQ0xLX1BDSUVQSFlfUkVGPjsKLQkJCWNsb2NrLW5hbWVzID0gInJlZmNsayI7
-Ci0JCQkjcGh5LWNlbGxzID0gPDE+OwotCQkJcmVzZXRzID0gPCZjcnUgU1JTVF9QQ0lFUEhZPjsK
-LQkJCWRyaXZlLWltcGVkYW5jZS1vaG0gPSA8NTA+OwotCQkJcmVzZXQtbmFtZXMgPSAicGh5IjsK
-LQkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Ci0JCX07CisJcGNpZV9waHk6IHBjaWUtcGh5IHsKKwkJ
-Y29tcGF0aWJsZSA9ICJyb2NrY2hpcCxyazMzOTktcGNpZS1waHkiOworCQljbG9ja3MgPSA8JmNy
-dSBTQ0xLX1BDSUVQSFlfUkVGPjsKKwkJY2xvY2stbmFtZXMgPSAicmVmY2xrIjsKKwkJI3BoeS1j
-ZWxscyA9IDwxPjsKKwkJcmVzZXRzID0gPCZjcnUgU1JTVF9QQ0lFUEhZPjsKKwkJZHJpdmUtaW1w
-ZWRhbmNlLW9obSA9IDw1MD47CisJCXJlc2V0LW5hbWVzID0gInBoeSI7CisJCXN0YXR1cyA9ICJk
-aXNhYmxlZCI7CiAJfTsKIAogCXUycGh5MDogdXNiMi1waHlAZTQ1MCB7Ci0tIAoyLjE3LjEKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2Nr
-Y2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+Now, we have a PCIe PHY driver as part of the Generic
+PHY framework. Let's use it instead of legacy PHY driver.
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ drivers/pci/pcie_rockchip.c | 20 ++++++++++----------
+ drivers/pci/pcie_rockchip.h |  5 +++++
+ 2 files changed, 15 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/pci/pcie_rockchip.c b/drivers/pci/pcie_rockchip.c
+index 82a8396e42..3e4ba9635f 100644
+--- a/drivers/pci/pcie_rockchip.c
++++ b/drivers/pci/pcie_rockchip.c
+@@ -159,8 +159,6 @@ static int rockchip_pcie_atr_init(struct rockchip_pcie *priv)
+ static int rockchip_pcie_init_port(struct udevice *dev)
+ {
+ 	struct rockchip_pcie *priv = dev_get_priv(dev);
+-	struct rockchip_pcie_phy *phy = pcie_get_phy(priv);
+-	struct rockchip_pcie_phy_ops *ops = phy_get_ops(phy);
+ 	u32 cr, val, status;
+ 	int ret;
+ 
+@@ -185,7 +183,7 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 		return ret;
+ 	}
+ 
+-	ret = ops->init(phy);
++	ret = generic_phy_init(&priv->pcie_phy);
+ 	if (ret) {
+ 		dev_err(dev, "failed to init phy (ret=%d)\n", ret);
+ 		goto err_exit_phy;
+@@ -242,7 +240,7 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 	cr |= PCIE_CLIENT_CONF_ENABLE | PCIE_CLIENT_MODE_RC;
+ 	writel(cr, priv->apb_base + PCIE_CLIENT_CONFIG);
+ 
+-	ret = ops->power_on(phy);
++	ret = generic_phy_power_on(&priv->pcie_phy);
+ 	if (ret) {
+ 		dev_err(dev, "failed to power on phy (ret=%d)\n", ret);
+ 		goto err_power_off_phy;
+@@ -311,9 +309,9 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 	return 0;
+ 
+ err_power_off_phy:
+-	ops->power_off(phy);
++	generic_phy_power_off(&priv->pcie_phy);
+ err_exit_phy:
+-	ops->exit(phy);
++	generic_phy_exit(&priv->pcie_phy);
+ 	return ret;
+ }
+ 
+@@ -436,6 +434,12 @@ static int rockchip_pcie_parse_dt(struct udevice *dev)
+ 		return ret;
+ 	}
+ 
++	ret = generic_phy_get_by_index(dev, 0, &priv->pcie_phy);
++	if (ret) {
++		dev_err(dev, "failed to get pcie-phy (ret=%d)\n", ret);
++		return ret;
++	}
++
+ 	return 0;
+ }
+ 
+@@ -453,10 +457,6 @@ static int rockchip_pcie_probe(struct udevice *dev)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = rockchip_pcie_phy_get(dev);
+-	if (ret)
+-		return ret;
+-
+ 	ret = rockchip_pcie_set_vpcie(dev);
+ 	if (ret)
+ 		return ret;
+diff --git a/drivers/pci/pcie_rockchip.h b/drivers/pci/pcie_rockchip.h
+index c3a0a2846d..4b06110bfe 100644
+--- a/drivers/pci/pcie_rockchip.h
++++ b/drivers/pci/pcie_rockchip.h
+@@ -9,6 +9,8 @@
+  *
+  */
+ 
++#include <generic-phy.h>
++
+ #define HIWORD_UPDATE(mask, val)        (((mask) << 16) | (val))
+ #define HIWORD_UPDATE_BIT(val)          HIWORD_UPDATE(val, val)
+ 
+@@ -126,6 +128,9 @@ struct rockchip_pcie {
+ 	struct udevice *vpcie3v3;
+ 	struct udevice *vpcie1v8;
+ 	struct udevice *vpcie0v9;
++
++	/* phy */
++	struct phy pcie_phy;
+ };
+ 
+ int rockchip_pcie_phy_get(struct udevice *dev);
+-- 
+2.17.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
