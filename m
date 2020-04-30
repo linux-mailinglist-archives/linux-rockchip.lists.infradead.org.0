@@ -2,76 +2,83 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D39B41BECDC
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 02:08:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E435D1BF0C0
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 09:04:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fDe5zRUqmH49zQLZXRb0NgL3o1KlQUuDsvfETXVDZWc=; b=pj41zhoWcO2Comjud0+QRRT5S
-	QJHuY+y6jNAz47oqT5ztC93oDYl8H/M88Ng/U3A3awAxcssE1QHEPJitwxCLyOtpxgUxwMqNZSqtm
-	C2/yWyJzT21KAA5efGEJ9/90IvewA6amfPcZYynehiE0xtBviXkCF4lxbm1W36ToqoFoqGXJDwdZg
-	1diBxb+P1b4vaekERn/ijioAgEAUavfJ/ljn6DpVXS5T/zWjelNN4btk45XKGlqsif0U1Zi+b3y+g
-	LhMKX2wLr60HN3iA7BspTh5arsMVujeXu2XGll8zOULxwN8w72c8UnBKROlbpadJMPgnUtSuaz9Sy
-	6HdC0e6Aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XE9vtX5S1S2rTqDS6G+Nj1QeA5ieQyBaI6t0q4uhPUQ=; b=g8q
+	f/3dfxFe/1eBkP2/gaiXYnyvSX0YO5NbbzAfW9ephwwJ3JAAFXlOxSNWl3pcbbJvZMKROry9DxIW8
+	JrIpsXddECd3H8RlZtL+yXPDgCuc9WlI5ISxIbYrAKQm6W+T/HleIOtiqYcc9cWptJ2HVuSYXOwYK
+	rcUQU0JpACxHk6iUGLSIGK/umO1L7G1wWD3/mYUqq2YDBwkpZeZTOhJhfT3/5yKpvPwJV4AYcrDf/
+	E6+iw8YRemeUFN0OB98nxtrdNtICy451jQAejwnecqWAqYxqA1v26+i14Fx0hwIrTqCDnRP4Dz+21
+	J2wSASYvxzo89gLmE3pcqlu6CsPOdlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTwkK-0004n3-FP; Thu, 30 Apr 2020 00:08:08 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jU3FE-00066o-Dd; Thu, 30 Apr 2020 07:04:28 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTwkG-0004kr-I3; Thu, 30 Apr 2020 00:08:05 +0000
-IronPort-SDR: eQ3iH6yGLJzIQf09CDm1fnd7BXeiYXIEIFhz+8O0d67so05IO3RiZ/RzrvlX3u6/SSQizTqTag
- c5ViY6nsKaew==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 29 Apr 2020 17:08:04 -0700
-IronPort-SDR: 8lZrsl0wLt7oFUoHi7W//Bntkm29bKrQORzcH1MPPrhb7F9mbLEACH08RrTi8X5hI+ByAQQnM5
- BwXN4hf/V26g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,333,1583222400"; d="scan'208";a="293378354"
-Received: from chenw5-mobl1.ccr.corp.intel.com (HELO [10.254.209.112])
- ([10.254.209.112])
- by fmsmga002.fm.intel.com with ESMTP; 29 Apr 2020 17:07:58 -0700
-Subject: Re: [PATCH v3 16/34] iommu/vt-d: Convert to probe/release_device()
- call-backs
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, David Woodhouse
- <dwmw2@infradead.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>
-References: <20200429133712.31431-1-joro@8bytes.org>
- <20200429133712.31431-17-joro@8bytes.org>
-From: Lu Baolu <baolu.lu@linux.intel.com>
-Message-ID: <7ceca31f-cf24-d4f8-04fd-74691dd3c11a@linux.intel.com>
-Date: Thu, 30 Apr 2020 08:07:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200429133712.31431-17-joro@8bytes.org>
-Content-Language: en-US
+ id 1jU3F9-00065n-TA
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 07:04:25 +0000
+Received: by mail-pf1-x444.google.com with SMTP id w65so2443682pfc.12
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 00:04:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=li/Zb4mnPfD0Nmbji9RC2oKn/VTNSvLAxiaobEeGvYM=;
+ b=HgyYiIuuBO99mFXsWDA/vGGozZvmRAzyds3rMtzn0NN9rhzhVLf5F5dPiGgQ1EWIHK
+ tlOC+ksmm9MEBIaJP/SO3ka/AimFJB9LyHAPNILqNgR6E69eK6Gba213gaqfGY9O59qi
+ gpjr19+5zqkm3l+2GtcNqmES+Zs1Y3IuKFO+Y=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=li/Zb4mnPfD0Nmbji9RC2oKn/VTNSvLAxiaobEeGvYM=;
+ b=J9OBCupskX3VRD6TGD4hW2xXHacKjXq925ibxzYMEvhE11BD3wDO/O8z8doi0urSyc
+ aDr8iBzRXOIvtQaJRF/RROe6sjxC/WjK+FrWVJIgqmMGSY3ex4ZVDDMj6HyM65Lvo/HU
+ MhkortQCy6S5JFSjd8nza+yV81vflvb21B7S7buljvwgRjge+c08bFDJAAKSShTvLQOy
+ Mpz1SaGv242kKzH7GSKHQbxFYZo9Ontipj9nSkaVIj5WxQDGANufrlONrMIe+wcpV6b7
+ RK5pZZYb+YOk7Sprp1AjDRFo/nXHly7aVGdfsE8URFqsil3d7/zkr+2JMc6UFw8X0ruI
+ VRnw==
+X-Gm-Message-State: AGi0PuYx1/+QNU1wsSS7G0zC4FKjcN+8DHV5HihervPPmxi7h9e1q+wh
+ 55xyRb+1ib/80H7ZOdkXu8xGcg==
+X-Google-Smtp-Source: APiQypKWx8PMVWFLKNfliUiNeyZIXxqk8FaJhdZFo8n0bGc9A5tw7XFnRfgX1f0KEEnOTMRmImOVYA==
+X-Received: by 2002:a63:e210:: with SMTP id q16mr1973617pgh.26.1588230262313; 
+ Thu, 30 Apr 2020 00:04:22 -0700 (PDT)
+Received: from localhost.localdomain ([2405:201:c809:c7d5:6514:3619:d1af:85f6])
+ by smtp.gmail.com with ESMTPSA id p64sm964143pjp.7.2020.04.30.00.04.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 30 Apr 2020 00:04:21 -0700 (PDT)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+Subject: [PATCH v2 0/8] rockchip: Add PCIe host support
+Date: Thu, 30 Apr 2020 12:34:04 +0530
+Message-Id: <20200430070412.12499-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_170804_621264_A31C1B6F 
-X-CRM114-Status: GOOD (  22.19  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200430_000424_371134_57DB452D 
+X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,146 +91,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Daniel Drake <drake@endlessm.com>, linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org, Joerg Roedel <jroedel@suse.de>,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
- virtualization@lists.linux-foundation.org, jonathan.derrick@intel.com,
- baolu.lu@linux.intel.com
+Cc: patrick@blueri.se, linux-rockchip@lists.infradead.org, u-boot@lists.denx.de,
+ Jagan Teki <jagan@amarulasolutions.com>, sunil@amarulasolutions.com,
+ linux-amarula@amarulasolutions.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On 2020/4/29 21:36, Joerg Roedel wrote:
-> From: Joerg Roedel <jroedel@suse.de>
-> 
-> Convert the Intel IOMMU driver to use the probe_device() and
-> release_device() call-backs of iommu_ops, so that the iommu core code
-> does the group and sysfs setup.
-> 
-> Signed-off-by: Joerg Roedel <jroedel@suse.de>
+This series support PCIe host controller support
+on rockchip rk3399 platform.
 
-Reviewed-by: Lu Baolu <baolu.lu@linux.intel.com>
+It is based on previous version[1] changes.
 
-Best regards,
-baolu
+Works well on rk3399 boards like rock960, nanopc-t4 
+and roc-kr3399-pc-mezzanine board as Gen1 configurable 
+host with M.2 SSD.
 
-> ---
->   drivers/iommu/intel-iommu.c | 67 ++++---------------------------------
->   1 file changed, 6 insertions(+), 61 deletions(-)
-> 
-> diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-> index b9f905a55dda..b906727f5b85 100644
-> --- a/drivers/iommu/intel-iommu.c
-> +++ b/drivers/iommu/intel-iommu.c
-> @@ -5781,78 +5781,27 @@ static bool intel_iommu_capable(enum iommu_cap cap)
->   	return false;
->   }
->   
-> -static int intel_iommu_add_device(struct device *dev)
-> +static struct iommu_device *intel_iommu_probe_device(struct device *dev)
->   {
-> -	struct dmar_domain *dmar_domain;
-> -	struct iommu_domain *domain;
->   	struct intel_iommu *iommu;
-> -	struct iommu_group *group;
->   	u8 bus, devfn;
-> -	int ret;
->   
->   	iommu = device_to_iommu(dev, &bus, &devfn);
->   	if (!iommu)
-> -		return -ENODEV;
-> -
-> -	iommu_device_link(&iommu->iommu, dev);
-> +		return ERR_PTR(-ENODEV);
->   
->   	if (translation_pre_enabled(iommu))
->   		dev->archdata.iommu = DEFER_DEVICE_DOMAIN_INFO;
->   
-> -	group = iommu_group_get_for_dev(dev);
-> -
-> -	if (IS_ERR(group)) {
-> -		ret = PTR_ERR(group);
-> -		goto unlink;
-> -	}
-> -
-> -	iommu_group_put(group);
-> -
-> -	domain = iommu_get_domain_for_dev(dev);
-> -	dmar_domain = to_dmar_domain(domain);
-> -	if (domain->type == IOMMU_DOMAIN_DMA) {
-> -		if (device_def_domain_type(dev) == IOMMU_DOMAIN_IDENTITY) {
-> -			ret = iommu_request_dm_for_dev(dev);
-> -			if (ret) {
-> -				dmar_remove_one_dev_info(dev);
-> -				dmar_domain->flags |= DOMAIN_FLAG_LOSE_CHILDREN;
-> -				domain_add_dev_info(si_domain, dev);
-> -				dev_info(dev,
-> -					 "Device uses a private identity domain.\n");
-> -			}
-> -		}
-> -	} else {
-> -		if (device_def_domain_type(dev) == IOMMU_DOMAIN_DMA) {
-> -			ret = iommu_request_dma_domain_for_dev(dev);
-> -			if (ret) {
-> -				dmar_remove_one_dev_info(dev);
-> -				dmar_domain->flags |= DOMAIN_FLAG_LOSE_CHILDREN;
-> -				if (!get_private_domain_for_dev(dev)) {
-> -					dev_warn(dev,
-> -						 "Failed to get a private domain.\n");
-> -					ret = -ENOMEM;
-> -					goto unlink;
-> -				}
-> -
-> -				dev_info(dev,
-> -					 "Device uses a private dma domain.\n");
-> -			}
-> -		}
-> -	}
-> -
->   	if (device_needs_bounce(dev)) {
->   		dev_info(dev, "Use Intel IOMMU bounce page dma_ops\n");
->   		set_dma_ops(dev, &bounce_dma_ops);
->   	}
->   
-> -	return 0;
-> -
-> -unlink:
-> -	iommu_device_unlink(&iommu->iommu, dev);
-> -	return ret;
-> +	return &iommu->iommu;
->   }
->   
-> -static void intel_iommu_remove_device(struct device *dev)
-> +static void intel_iommu_release_device(struct device *dev)
->   {
->   	struct intel_iommu *iommu;
->   	u8 bus, devfn;
-> @@ -5863,10 +5812,6 @@ static void intel_iommu_remove_device(struct device *dev)
->   
->   	dmar_remove_one_dev_info(dev);
->   
-> -	iommu_group_remove_device(dev);
-> -
-> -	iommu_device_unlink(&iommu->iommu, dev);
-> -
->   	if (device_needs_bounce(dev))
->   		set_dma_ops(dev, NULL);
->   }
-> @@ -6198,8 +6143,8 @@ const struct iommu_ops intel_iommu_ops = {
->   	.map			= intel_iommu_map,
->   	.unmap			= intel_iommu_unmap,
->   	.iova_to_phys		= intel_iommu_iova_to_phys,
-> -	.add_device		= intel_iommu_add_device,
-> -	.remove_device		= intel_iommu_remove_device,
-> +	.probe_device		= intel_iommu_probe_device,
-> +	.release_device		= intel_iommu_release_device,
->   	.get_resv_regions	= intel_iommu_get_resv_regions,
->   	.put_resv_regions	= generic_iommu_put_resv_regions,
->   	.apply_resv_region	= intel_iommu_apply_resv_region,
-> 
+Changes for v2:
+- handle USB, GMAC clocks
+- collect kever r-o-b tag
+- simplify rd and wr conf API 
+
+[1] http://patchwork.ozlabs.org/project/uboot/cover/20200425110354.12381-1-jagan@amarulasolutions.com/
+
+Any inputs?
+Jagan.
+
+Jagan Teki (8):
+  iopoll: Add dealy to read poll
+  iopoll: Add readl_poll_sleep_timeout
+  clk: rk3399: Add enable/disable clks
+  clk: rk3399: Enable/Disable the PCIEPHY clk
+  pci: Add Rockchip PCIe controller driver
+  pci: Add Rockchip PCIe PHY controller driver
+  rockchip: Enable PCIe/M.2 on rk3399 board w/ M.2
+  rockchip: Enable PCIe/M.2 on rock960 board
+
+ arch/arm/dts/rk3399-u-boot.dtsi             |   1 +
+ board/vamrs/rock960_rk3399/rock960-rk3399.c |  20 +
+ configs/nanopc-t4-rk3399_defconfig          |   4 +
+ configs/roc-pc-mezzanine-rk3399_defconfig   |   4 +
+ configs/rock960-rk3399_defconfig            |   5 +
+ drivers/clk/rockchip/clk_rk3399.c           | 154 ++++++
+ drivers/pci/Kconfig                         |   8 +
+ drivers/pci/Makefile                        |   1 +
+ drivers/pci/pcie_rockchip.c                 | 491 ++++++++++++++++++++
+ drivers/pci/pcie_rockchip.h                 | 142 ++++++
+ drivers/pci/pcie_rockchip_phy.c             | 205 ++++++++
+ include/linux/iopoll.h                      |  23 +-
+ 12 files changed, 1049 insertions(+), 9 deletions(-)
+ create mode 100644 drivers/pci/pcie_rockchip.c
+ create mode 100644 drivers/pci/pcie_rockchip.h
+ create mode 100644 drivers/pci/pcie_rockchip_phy.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
