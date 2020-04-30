@@ -2,54 +2,82 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DE471C02F1
-	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 18:44:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 909B31C08B4
+	for <lists+linux-rockchip@lfdr.de>; Thu, 30 Apr 2020 23:03:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5gCsgwUiE08DwXPINM16DV3LatpX4z/Ffh7oBShKrZ4=; b=fCqjy0yPu00axt3vjLva+LGzl
-	usuVXTzBUSL3e0LuayX0/JafnCpL+QQJZ5L4QIwvvFQmnGmEHdMuAGD6zT/f1+s+qv0d1zC3x525V
-	1KuXkNljE+OFB+r7/2hSn6F5cfCVaAOiU/q4R4aZ8OigzANUbIfZ+360ve3bizivvcFhKmk2z5ear
-	Iasj+wXgulMXyu+UWGXpLmyrn1dFS+x3ASWE/ILhlXUc0JnF2oyjDOpF/8WHgDNHqSeQLbES6gSNh
-	bfHs5Z57GG1T1/keasJapMztKcMAn8yfAlKWTfUqa7zsX3tw1rpTZ2GRxR+ihhdWYa7ePrFyZB0Bm
-	mhLm6KAXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7FUzZtGLOQij/INEISx/k8OT/Ng+eUKb6IGp4ur5WaY=; b=DYgoZj0+Kl60W9
+	duJDPncMnRe+lnNEWk1ATpROH7/X99emyJHXeBoBcmqC3C7SJOaxRVdyqHmPQRR4hf8PdBPBtzU/3
+	Dk3OPvhyl9TuCQi7KeMyd/hGIHPvCWxZvtIYpvLklpTIQrsn4WugonIA9CClu8D1/l5TkhfMuNf6E
+	UigCkL5U7Fi+5OkYobb3ANpAzbHZdWJT4qcr2TUGT3p8w034l8+WY0jcInMbS7f0F3TBtEG2nGD4f
+	N7PFKPYX7Txbz8xOp//4h/P+xSX97Cb7s6xV34QpFIdRfaa9Z+AQfVGDKnDgQHa2RkZEdsfof7l1N
+	hbaFXOjMl7cEM25RSxBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCIv-0007zQ-Da; Thu, 30 Apr 2020 16:44:53 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1jUGLH-0005pA-OE; Thu, 30 Apr 2020 21:03:35 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCHu-0006mM-29; Thu, 30 Apr 2020 16:43:54 +0000
-X-Originating-IP: 93.29.109.196
-Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id CB8E11BF203;
- Thu, 30 Apr 2020 16:43:43 +0000 (UTC)
-Date: Thu, 30 Apr 2020 18:43:43 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH v2 4/4] media: rockchip: rga: Only set output CSC mode
- for RGB input
-Message-ID: <20200430164343.GB1526319@aptenodytes>
-References: <20200423200937.1039257-1-paul.kocialkowski@bootlin.com>
- <20200423200937.1039257-5-paul.kocialkowski@bootlin.com>
- <c49a060e7f5da9564e375fdd47117d3f901e5d00.camel@collabora.com>
+ id 1jUGLE-0005oU-6i
+ for linux-rockchip@lists.infradead.org; Thu, 30 Apr 2020 21:03:33 +0000
+Received: by mail-ed1-x544.google.com with SMTP id d16so5715306edv.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 30 Apr 2020 14:03:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Gbalphc8YN/xmbgvFn1yK/9uIU9u6Gk0r/ELS6buWQY=;
+ b=MFLF3uPTPfdvJ60m5Y7vHaEs8A4WTtuS2OTs0oAdrbDYydAjn5Kf+e2r4L4QXOR4VO
+ qIXyWFBm9FdhG+nBgNaSO/5LceoOrhV9m0yKtv7pAihf/eC5bh7l4ojCvagq8evZPe3Y
+ sGILX+POIVgdhWjnV24Rv6WIW20ugoZ33dSm0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Gbalphc8YN/xmbgvFn1yK/9uIU9u6Gk0r/ELS6buWQY=;
+ b=NyYXKeFnZ/E3lPhHebJOZJ3/7jOX08wRcXC0PIShEEVYnUwdAeyZjfZGCBZm4960qf
+ Kq8QioLSYRPp0a7QCxhXcRlUeAbmLiLPTUlTzQxu4WITZglA3JBmflSXG+izaOvxh0CA
+ 5MttIsnZ7ZBSqH5ZiJ9DTD6++1wvPUhyqKWlcoiE2iIzUhIcsNB3r8mKc0NQRRmJdO4a
+ nRxd1xiomSEG3SeX890DCNFxFRDkkZ652PKXK3XGq8XVpgffSyR1untBX2HIWd8bvqb1
+ e8ez8YCQqWOyzxCrlCB2nIeeFvMJf7REV+NB3LjJKcrbJiJQCrQxLL7U/pzRMIfLPcB4
+ kTBw==
+X-Gm-Message-State: AGi0Pubb0sa9KNqVAO/n4cStwbauyZQ8HlN1rGHqRWWcpZqQYMTnQ7Ej
+ 2ZEjpOTDlvCFf4xUm5EkW570nbLmEXD2SA8m/D9hNQ==
+X-Google-Smtp-Source: APiQypLli+fAbfkafTYBsejWIPS6cyPcs0OFqfuRrfslOWiEZY4u1+on2j4HZr1Gm6yZPXd5zHPOS28ug1P9B7Q+reQ=
+X-Received: by 2002:aa7:d9d8:: with SMTP id v24mr841705eds.27.1588280609328;
+ Thu, 30 Apr 2020 14:03:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <c49a060e7f5da9564e375fdd47117d3f901e5d00.camel@collabora.com>
+References: <20200430070412.12499-1-jagan@amarulasolutions.com>
+ <20200430070412.12499-2-jagan@amarulasolutions.com>
+ <20200430144628.GU4468@bill-the-cat>
+In-Reply-To: <20200430144628.GU4468@bill-the-cat>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Fri, 1 May 2020 02:33:17 +0530
+Message-ID: <CAMty3ZA77GU+f=_J23m65=RwRY3L3bibqgdzZyLR_HBejfsoTg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/8] iopoll: Add dealy to read poll
+To: Tom Rini <trini@konsulko.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_094350_404608_4B37DF9B 
-X-CRM114-Status: GOOD (  23.36  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200430_140332_673348_7F4AE609 
+X-CRM114-Status: GOOD (  10.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,151 +90,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, justin.swartz@risingedge.co.za,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Hans Verkuil <hansverk@cisco.com>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Johan Jonker <jbx6244@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============7257700101074610458=="
+Cc: Patrick Wildt <patrick@blueri.se>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Simon Glass <sjg@chromium.org>, Kever Yang <kever.yang@rock-chips.com>,
+ U-Boot-Denx <u-boot@lists.denx.de>, Suniel Mahesh <sunil@amarulasolutions.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Thu, Apr 30, 2020 at 8:16 PM Tom Rini <trini@konsulko.com> wrote:
+>
+> On Thu, Apr 30, 2020 at 12:34:05PM +0530, Jagan Teki wrote:
+>
+> > Some drivers and other bsp code not only poll the
+> > register with timeout but also required to delay
+> > on each transaction.
+> >
+> > This patch add that requirement by adding sleep_us
+> > variable so-that read_poll_timeout now support
+> > delay as well.
+> >
+> > Cc: Tom Rini <trini@konsulko.com>
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+>
+> This (and 2/8) need to say what kernel commit you're taking this from,
+> thanks.
 
---===============7257700101074610458==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="eRtJSFbw+EEWtPj3"
-Content-Disposition: inline
+Linux supports sleep_us at the beginning where read_poll_timeout
+supports, i.e. the reason I didn't add the sha1. If that works, I will
+add the same sha1 and apply via my tree (since it has some SPI changes
+dependency patch)?
 
-
---eRtJSFbw+EEWtPj3
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Ezequiel,
-
-On Sat 25 Apr 20, 10:46, Ezequiel Garcia wrote:
-> Hi Paul,
->=20
-> Thanks a lot for the patch.
->=20
-> I haven't had the chance to test this,
-> but I'd say you are fixing a long time issue here.
->=20
-> I really appreciate that.
->=20
-> On Thu, 2020-04-23 at 22:09 +0200, Paul Kocialkowski wrote:
-> > Setting the output CSC mode is required for a YUV output, but must not
-> > be set when the input is also YUV. Doing this (as tested with a YUV420P
-> > to YUV420P conversion) results in wrong colors.
-> >=20
-> > Adapt the logic to only set the CSC mode when the output is YUV and the
-> > input is RGB.
-> >=20
-> > Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > ---
-> >  drivers/media/platform/rockchip/rga/rga-hw.c | 18 +++++++++++-------
-> >  1 file changed, 11 insertions(+), 7 deletions(-)
-> >=20
-> > diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/med=
-ia/platform/rockchip/rga/rga-hw.c
-> > index 4be6dcf292ff..cbffcf986ccf 100644
-> > --- a/drivers/media/platform/rockchip/rga/rga-hw.c
-> > +++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-> > @@ -216,13 +216,17 @@ static void rga_cmd_set_trans_info(struct rga_ctx=
- *ctx)
-> >  	}
-> > =20
-> >  	if (ctx->out.fmt->hw_format >=3D RGA_COLOR_FMT_YUV422SP) {
->=20
-> Since we are already here touching this code, would you mind
-> adding another patch, to do some cleaning first?
->=20
-> First, replace the nested ifs with a boolean operator.
-> Then, introduce some IS_YUV (or IS_RGB) macro, making the above test
-> more like IS_YUV(out_hw_format).
->=20
-> Finally, perhaps a comment along the lines of your commit message:
->=20
-> """
-> Setting the output CSC mode is required for a YUV output,
-> but must not be set when the input is also YUV.
-> """
->=20
-> Details up to you :-)
->=20
-> After the clean-up patch, which would be just cosmetics,
-> your fix should be cleaner and more clear.
-
-All done in v3, thanks for the feedback :)
-
-Cheers,
-
-Paul
-
-> Thanks,
-> Ezequiel
-> =20
-> > -		switch (ctx->out.colorspace) {
-> > -		case V4L2_COLORSPACE_REC709:
-> > -			dst_info.data.csc_mode =3D RGA_SRC_CSC_MODE_BT709_R0;
-> > -			break;
-> > -		default:
-> > -			dst_info.data.csc_mode =3D RGA_DST_CSC_MODE_BT601_R0;
-> > -			break;
-> > +		if (ctx->in.fmt->hw_format < RGA_COLOR_FMT_YUV422SP) {
-> > +			switch (ctx->out.colorspace) {
-> > +			case V4L2_COLORSPACE_REC709:
-> > +				dst_info.data.csc_mode =3D
-> > +					RGA_SRC_CSC_MODE_BT709_R0;
-> > +				break;
-> > +			default:
-> > +				dst_info.data.csc_mode =3D
-> > +					RGA_DST_CSC_MODE_BT601_R0;
-> > +				break;
-> > +			}
-> >  		}
-> >  	}
-> > =20
->=20
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---eRtJSFbw+EEWtPj3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6rAD8ACgkQ3cLmz3+f
-v9EZUgf/ZXVht/wSchF8mkR6JIJf2Oywvx2GVKvvg/AmHfOt1XTsRKHpmGz8hQEH
-NbOjsdq8EVD+tGKnOgP/DyjN4cTtkpNFJj89Bi95hb+7AyBu+ixbDH25hV2jYija
-hYHjahA0/MqEN6hFxB4JKlYtd642n5RZ14NCxWqerWKha6LmfsLFT5tdytpQQ/8W
-2DTfATXGqnDr5Mmds+uFfRoXGhN9D9OxH+XLSmKsVOtsYurEShfPLIXscec00Mdn
-gjvMhqTTat/ttKD1OWnT6C3wuxAE0QrxHg0VvZ2LchjGq4VZbRdF/iQ+DJ4TlASi
-5NDfLWJCRezzUYzh000lLcAHVxOAQw==
-=2n7E
------END PGP SIGNATURE-----
-
---eRtJSFbw+EEWtPj3--
-
-
---===============7257700101074610458==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Jagan.
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============7257700101074610458==--
-
