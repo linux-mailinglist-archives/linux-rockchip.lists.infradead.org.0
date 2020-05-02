@@ -2,85 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 944C81C1E64
-	for <lists+linux-rockchip@lfdr.de>; Fri,  1 May 2020 22:26:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 710E91C27C3
+	for <lists+linux-rockchip@lfdr.de>; Sat,  2 May 2020 20:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XXRzsnZPc/RE+MOhmNbIU/Ja/PjUwwnMNN8yD8dOffI=; b=LhcquJpRnE8lkf
-	ukNyckCZHikxPZIt5NYH+kQZO6T+tN5ZxUXMB/pub8Uhp1yFJTEYQL0xdamn5mo2mRUT4VGbrP3uj
-	K2cTYooGVR/i2vv62Kr520gerX+lh/l9NFUFr6FFkrZ7++pUBvgZZi3obGDh1bfTFzXDL1Q35foN2
-	oX4Gklq9i0cWlc2lrcVguKrG0t/Q1rmTa/DWnQC8yTvHC4DXRWncBp1poUBrdf09wHofpuy9Nih2X
-	DcriQtW648WfuZxR8T3YHJq/xIzjjdiWnC+aJhRPKRJfeOFn7PTh0agMtxIkDpQY7REQptoRh3p11
-	IvbkLf91y6b6CgDh85Eg==;
+	List-Owner; bh=NPX0kAUeu18uN0MxO4pS4B3Pn0cYu/QUwrOrlFiBbEY=; b=soPI24rBvqKMxj
+	4EUKDe2X87tZs315QBz9z9I3ndCQ8ud1rFtXT9qwzCu3wFhCOzfAdylDF3dYTUwVZqQJwqa5P5sx2
+	0V+RBPZGpg9ZUdzbvTX7sVSP+4Qqa91/BvavNcjF/bK/b0+5ZpcasBDYIZd9QFEC84Mh3h3ubz9BZ
+	9HTGihcx3EFB6x1EAgykGnunBTbkWozpTTLU1epViMN6az3b/AvRk9zZc6FZEaiMzOeSvQPTJps/8
+	E4RBgYEOOhcwpFvbenc0IQA8dMngJ5/aioF4Q93KkfK6KiLRqFO0Y/a3YT8Bj8UQjMuSm/dXoO989
+	NEeTfD9KtxqbJIg4Cj5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUcEn-0007PX-2E; Fri, 01 May 2020 20:26:21 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1jUx0n-000496-3H; Sat, 02 May 2020 18:37:17 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUcEf-0007Db-EL; Fri, 01 May 2020 20:26:15 +0000
-Received: by mail-oi1-f195.google.com with SMTP id x10so809025oie.1;
- Fri, 01 May 2020 13:26:09 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3KGOcilJxikkL+Nmr3AHMzqEO+ivM6wapTQZZpbzgL8=;
- b=LYAvKkLCrEbJDQRv4QIivQYKae73msDX0OP8fT6dzB3i8RkLjCLvKW8yb1/gN0seHp
- n3M1NsH71aQROkXTzjv9BYRXUdH0101zVaZ/9++9/f6Cz0sYk+uAO/A9MOa8YRhWNgrn
- MFQ44jCBPgQ4roxOfUExyuhegb7Zm1Qbdj1p3xzbG7tCjCF4Zwkh976FSRCyK93OBf2M
- 8YsADKTMYDz8oSTKMS7QQBZbdhgtsGkQByyaMV+OESHaVJARNqFmP7+KJ8JWbzk4oQAG
- 8sDzNdEqzr9Lk0hMXlHMzR2mVMKKgcLoGWfOKib1UAJuiWAWYJ5YUC91NRquZkM0ul+Z
- ja3A==
-X-Gm-Message-State: AGi0PuZWx5T3pERK2YVipASG1JDHX2y+ZRYrD4aQdmw+4i10P/g8KKeH
- wmFC/Ch/36m4O+fTefPfLw==
-X-Google-Smtp-Source: APiQypKuIa2EayO6sRtISWTj8/Remk+FnQ3MtRzI4m9kvti4r3vQ9LWm9cRMPxzpDhc6m14oEPwVGg==
-X-Received: by 2002:aca:c311:: with SMTP id t17mr986175oif.169.1588364769215; 
- Fri, 01 May 2020 13:26:09 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id f21sm213498oig.41.2020.05.01.13.26.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 May 2020 13:26:08 -0700 (PDT)
-Received: (nullmailer pid 23725 invoked by uid 1000);
- Fri, 01 May 2020 20:26:07 -0000
-Date: Fri, 1 May 2020 15:26:07 -0500
-From: Rob Herring <robh@kernel.org>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
-Subject: Re: [PATCH v8 07/10] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-Message-ID: <20200501202607.GA13720@bogus>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
- <20200427081952.3536741-8-adrian.ratiu@collabora.com>
+ id 1jUx0j-000482-HK
+ for linux-rockchip@lists.infradead.org; Sat, 02 May 2020 18:37:15 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id CD91C2683D0;
+ Sat,  2 May 2020 19:37:10 +0100 (BST)
+Date: Sat, 2 May 2020 20:37:07 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Ezequiel Garcia <ezequiel@collabora.com>
+Subject: Re: [PATCH v2 2/3] media: uapi: Add VP9 stateless decoder controls
+Message-ID: <20200502203707.402ea3cd@collabora.com>
+In-Reply-To: <bf475e70cca6f9ebf645aed51276e57668eaf43b.camel@collabora.com>
+References: <20200410115113.31728-1-ezequiel@collabora.com>
+ <20200410115113.31728-3-ezequiel@collabora.com>
+ <9126475c-275d-71ab-0308-6ae85e22446b@xs4all.nl>
+ <bf475e70cca6f9ebf645aed51276e57668eaf43b.camel@collabora.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427081952.3536741-8-adrian.ratiu@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_132613_481095_85EE90C6 
-X-CRM114-Status: GOOD (  20.81  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200502_113713_705060_F373249A 
+X-CRM114-Status: GOOD (  13.39  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,232 +66,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Martyn Welch <martyn.welch@collabora.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
+Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ linux-rockchip@lists.infradead.org,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 11:19:49AM +0300, Adrian Ratiu wrote:
-> This provides an example DT binding for the MIPI DSI host controller
-> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
-> 
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Neil Armstrong <narmstrong@baylibre.com>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: devicetree@vger.kernel.org
-> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-> ---
-> Changes since v7:
->   - Clarified port@0,1 descriptions, marked them as required and
->   added missing port@0 in example (Laurent)
-> 
-> Changes since v6:
->   - Added ref to the newly created snps,dw-mipi-dsi.yaml (Laurent)
->   - Moved *-cells properties outside patternProperties (Laurent)
->   - Removed the panel port documentation (Laurent)
->   - Wrapped lines at 80 chars, typo fixes, sort includes (Laurent)
-> 
-> Changes since v5:
->   - Fixed missing reg warning (Fabio)
->   - Updated dt-schema and fixed warnings (Rob)
-> 
-> Changes since v4:
->   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
->   and addressed received binding feedback (Rob)
-> 
-> Changes since v3:
->   - Added commit message (Neil)
->   - Converted to yaml format (Neil)
->   - Minor dt node + driver fixes (Rob)
->   - Added small panel example to the host controller binding
-> 
-> Changes since v2:
->   - Fixed commit tags (Emil)
-> ---
->  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 145 ++++++++++++++++++
->  1 file changed, 145 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> new file mode 100644
-> index 0000000000000..c2c3489e63fa3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> @@ -0,0 +1,145 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX6 DW MIPI DSI Host Controller
-> +
-> +maintainers:
-> +  - Adrian Ratiu <adrian.ratiu@collabora.com>
-> +
-> +description: |
-> +  The i.MX6 DSI host controller is a Synopsys DesignWare MIPI DSI v1.01
-> +  IP block with a companion PHY IP.
-> +
-> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-> +  the following device-specific properties.
-> +
-> +allOf:
-> +  - $ref: ../bridge/snps,dw-mipi-dsi.yaml#
-> +
-> +properties:
-> +  '#address-cells':
-> +    const: 1
-> +
-> +  '#size-cells':
-> +    const: 0
-> +
-> +  compatible:
-> +    items:
-> +      - const: fsl,imx6q-mipi-dsi
-> +      - const: snps,dw-mipi-dsi
+On Fri, 01 May 2020 13:57:49 -0300
+Ezequiel Garcia <ezequiel@collabora.com> wrote:
 
-This schema is going to be applied on any node with 'snps,dw-mipi-dsi'. 
-You'll need a custom 'select' with only 'fsl,imx6q-mipi-dsi'. There's a 
-few examples in the tree.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: Module Clock
-> +      - description: DSI bus clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ref
-> +      - const: pclk
-> +
-> +  fsl,gpr:
-> +    description:
-> +      Phandle to the iomuxc-gpr region containing the multiplexer ctrl register.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  ports:
-> +    type: object
-> +    description: |
-> +      A node containing DSI input & output port nodes with endpoint
-> +      definitions as documented in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> +      Documentation/devicetree/bindings/graph.txt
-> +    properties:
-> +      port@0:
-> +        type: object
-> +        description:
-> +          DSI input port connected to a parallel RGB LTDC output port.
-> +
-> +      port@1:
-> +        type: object
-> +        description:
-> +          DSI serial RGB output port connected to a panel or bridge input port.
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +additionalProperties: false
-
-When including other schemas, you need 'unevalatedProperties: false' 
-instead. Then you can drop anything here that doesn't have more 
-constraints like the next property:
-
-> +
-> +patternProperties:
-> +  "^panel@[0-3]$":
-> +    type: object
-> +
-> +required:
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - ports
-> +
-> +examples:
-> +  - |+
-> +    #include <dt-bindings/clock/imx6qdl-clock.h>
-> +    #include <dt-bindings/gpio/gpio.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    dsi: dsi@21e0000 {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +        compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-> +        reg = <0x021e0000 0x4000>;
-> +        interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-> +        fsl,gpr = <&gpr>;
-> +        clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-> +                 <&clks IMX6QDL_CLK_MIPI_IPG>;
-> +        clock-names = "ref", "pclk";
-> +
-> +        ports {
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +            port@0 {
-> +                reg = <0>;
-> +                mipi_mux_0: endpoint {
-> +                    remote-endpoint = <&ipu1_di0_mipi>;
-> +                };
-> +            };
-> +            port@1 {
-> +                reg = <1>;
-> +                dsi_out: endpoint {
-> +                    remote-endpoint = <&panel_in>;
-> +                };
-> +            };
-> +        };
-> +
-> +        panel@0 {
-> +            compatible = "sharp,ls032b3sx01";
-> +            reg = <0>;
-> +            reset-gpios = <&gpio6 8 GPIO_ACTIVE_LOW>;
-> +            ports {
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +                port@0 {
-> +                    reg = <0>;
-> +                    panel_in: endpoint {
-> +                        remote-endpoint = <&dsi_out>;
-> +                    };
-> +                };
-> +            };
-> +        };
-> +    };
-> +
-> +...
-> -- 
-> 2.26.0
+> > > +
+> > > +.. tabularcolumns:: |p{1.5cm}|p{6.3cm}|p{9.4cm}|
+> > > +
+> > > +.. flat-table:: enum v4l2_vp9_reset_frame_context
+> > > +    :header-rows:  0
+> > > +    :stub-columns: 0
+> > > +    :widths:       1 2
+> > > +
+> > > +    * - ``V4L2_VP9_RESET_FRAME_CTX_NONE``
+> > > +      - Do not reset any frame context.
+> > > +    * - ``V4L2_VP9_RESET_FRAME_CTX_NONE_ALT``
+> > > +      - Do not reset any frame context. This is an alternative value for
+> > > +        V4L2_VP9_RESET_FRAME_CTX_NONE.  
+> > 
+> > Add `` around V4L2_VP9_RESET_FRAME_CTX_NONE.
+> >   
 > 
+> Hm, now that I look closer, what's the point
+> of having the NONE_ALT in our uAPI if it
+> has same meaning as NONE?
+> 
+> I think it can be removed.
+
+The intent was to match the spec so that one can pass the value
+extracted from the bitstream directly.
+
+> > 
+> > I got several smatch warnings:
+> > 
+> > smatch: ERRORS
+> > drivers/media/v4l2-core/v4l2-ctrls.c:1880 validate_vp9_frame_decode_params() warn: was && intended here instead of ||?
+> > 
+> > (Commented on this ^^^ one above)
+> > 
+> > drivers/staging/media/rkvdec/rkvdec-vp9.c:426 init_intra_only_probs() error: buffer overflow 'ptr' 9 <= 69
+> > drivers/staging/media/rkvdec/rkvdec-vp9.c:1478 rkvdec_vp9_done() error: potentially dereferencing uninitialized 'ctrl'.
+> > drivers/staging/media/rkvdec/rkvdec-vp9.c:1483 rkvdec_vp9_done() error: uninitialized symbol 'dec_dst_buf'.
+> > drivers/staging/media/rkvdec/rkvdec-vp9.c:941:6: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+> > drivers/staging/media/rkvdec/rkvdec-vp9.c:1466:40: warning: variable 'fctx' set but not used [-Wunused-but-set-variable]
+> >   
+> 
+> Oh, I'll run smatch and fix them all.
+
+Oops!
 
 _______________________________________________
 Linux-rockchip mailing list
