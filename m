@@ -2,58 +2,69 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E7601C4615
-	for <lists+linux-rockchip@lfdr.de>; Mon,  4 May 2020 20:38:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 240871C46AD
+	for <lists+linux-rockchip@lfdr.de>; Mon,  4 May 2020 21:04:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
-	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YGj5uXhQDTWMUn9CKkxyxAFGNl8OpO71XkEBq2IY/PQ=; b=kjdsxTJ2L3xty9zndx745o+cU
-	iKTLWB71UirCGRGMr4+mOjuMwJqbZNUWFu2oZ7yPgeWZ9HMzSovOaKFshV3LuPJC6G48FtX3tmrMI
-	uCvqc9DbJPTndKjd9zMaSdHrFCmq+JFi+QBIUWm0N31ucw8SGVjbK5/t0kODyE4atJF7LLlkjPbYy
-	WtLWLcuz0jPFksKkfZ3Ks2BEaQ9+2GWCqQoAZyCOt8073sOVh3+0PGVkaki+VfnsAv5eyLw9s1TeB
-	sSeCFz0UeiHY7r0h+19G3KHtnbYrOywaSchc3PUl1RrmoIoItCSFSeuSkA0sN6PR0l7NaYM9mwFQ3
-	4C6niWb3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IFXqhQJDpTUmV6YHLahzKBg1L36L5MjWcIU5E+XYc0k=; b=C3w7uA6zaoXX+4
+	G7PVb3SG9l+Qj74rH+ta9fgpPXOvVB6xn5lMvYPpLADS5bt1AaJsFFv2i260lzYQkg/KsYGicj7CA
+	/lMaMMlxQhTV1Ql52jE5+EmKGCI9tDEVVdj7zia/i1mJZCcEaVgoSUa6cJElzzBIVm4QeXOB4+aq+
+	IPndqrLwpBB1ULgXfd1RCDhdO40cFrxXDjYq7fXVE3JtDlkdC57WzDO0h3Ooa0cfYYBho1i+Khw/U
+	PfNENP7QlBaHU8PDBuJmGfe5S05CRWJ7pJVP9nac5xRFQIoEVroU3eqHqnw+SLrbC6xLJI4g7gvce
+	cVNgMQhVj5leEmXAo19g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVfz7-0006pI-Ce; Mon, 04 May 2020 18:38:33 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jVgOC-0000wS-IC; Mon, 04 May 2020 19:04:28 +0000
+Received: from smtprelay0128.hostedemail.com ([216.40.44.128]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVfz4-0006o3-27
- for linux-rockchip@lists.infradead.org; Mon, 04 May 2020 18:38:31 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: nicolas) with ESMTPSA id 53FE82A0773
-Message-ID: <98946a03023451d44c2ebb2da719fa7dd3e530f6.camel@collabora.com>
-Subject: Re: [PATCH v2 2/3] media: uapi: Add VP9 stateless decoder controls
-From: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-To: Ezequiel Garcia <ezequiel@collabora.com>, Boris Brezillon
- <boris.brezillon@collabora.com>
-Date: Mon, 04 May 2020 14:38:23 -0400
-In-Reply-To: <e53824aed3eeb27419e5399576cce028f0ba8203.camel@collabora.com>
-References: <20200410115113.31728-1-ezequiel@collabora.com>
- <20200410115113.31728-3-ezequiel@collabora.com>
- <9126475c-275d-71ab-0308-6ae85e22446b@xs4all.nl>
- <bf475e70cca6f9ebf645aed51276e57668eaf43b.camel@collabora.com>
- <20200502203707.402ea3cd@collabora.com>
- <db9fa91be8084fe9c87f263a4a97dc38d46f9bd1.camel@collabora.com>
- <e53824aed3eeb27419e5399576cce028f0ba8203.camel@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.1 (3.36.1-1.fc32) 
+ id 1jVgNv-0000hL-QL; Mon, 04 May 2020 19:04:13 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay06.hostedemail.com (Postfix) with ESMTP id 90A1018022F46;
+ Mon,  4 May 2020 19:04:05 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1540:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2553:2559:2562:2693:2731:2828:2895:2902:3138:3139:3140:3141:3142:3352:3622:3867:3868:3870:3872:3874:4321:5007:6742:6743:7903:10004:10400:10848:11232:11658:11914:12043:12297:12740:12895:13069:13075:13161:13229:13311:13357:13439:13894:14096:14097:14180:14659:14721:14777:21060:21080:21627:21939:30026:30054:30060:30070:30090:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:2, LUA_SUMMARY:none
+X-HE-Tag: scarf42_6021543c5600
+X-Filterd-Recvd-Size: 2806
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf07.hostedemail.com (Postfix) with ESMTPA;
+ Mon,  4 May 2020 19:04:01 +0000 (UTC)
+Message-ID: <7af4a2979fb5c060af769a996d3e5917b4d265d0.camel@perches.com>
+Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
+From: Joe Perches <joe@perches.com>
+To: Uwe =?ISO-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>, 
+ Sam Ravnborg <sam@ravnborg.org>
+Date: Mon, 04 May 2020 12:04:00 -0700
+In-Reply-To: <20200504175553.jdm7a7aabloevxba@pengutronix.de>
+References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+ <20200504174522.GA3383@ravnborg.org>
+ <20200504175553.jdm7a7aabloevxba@pengutronix.de>
+User-Agent: Evolution 3.36.1-2 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_113830_236036_F44069E2 
-X-CRM114-Status: GOOD (  19.26  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200504_120411_909976_F924065E 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.128 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [216.40.44.128 listed in wl.mailspike.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,138 +77,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
- Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, Hans Verkuil <hverkuil@xs4all.nl>,
- linux-rockchip@lists.infradead.org,
- Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============1316023976994075055=="
+Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
+ devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ Jyri Sarha <jsarha@ti.com>, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, netdev@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+On Mon, 2020-05-04 at 19:55 +0200, Uwe Kleine-K=F6nig wrote:
+> Hi Sam,
+> =
 
---===============1316023976994075055==
-Content-Type: multipart/signed; micalg="pgp-sha1"; protocol="application/pgp-signature";
-	boundary="=-EyYe3EysLdTBugQZatPp"
+> On Mon, May 04, 2020 at 07:45:22PM +0200, Sam Ravnborg wrote:
+> > On Mon, May 04, 2020 at 11:30:20AM +0200, Mauro Carvalho Chehab wrote:
+> > > There are some new broken doc links due to yaml renames
+> > > at DT. Developers should really run:
+> > > =
 
+> > > 	./scripts/documentation-file-ref-check
+> > > =
 
---=-EyYe3EysLdTBugQZatPp
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+> > > in order to solve those issues while submitting patches.
+> > Would love if some bot could do this for me on any patches that creates
+> > .yaml files or so.
+> > I know I will forget this and it can be automated.
+> > If I get a bot mail that my patch would broke a link I would
+> > have it fixed before it hits any tree.
+> =
 
-Le lundi 04 mai 2020 =C3=A0 14:01 -0400, Nicolas Dufresne a =C3=A9crit :
-> Le samedi 02 mai 2020 =C3=A0 19:55 -0300, Ezequiel Garcia a =C3=A9crit :
-> > +Nicolas
-> >=20
-> > On Sat, 2020-05-02 at 20:37 +0200, Boris Brezillon wrote:
-> > > On Fri, 01 May 2020 13:57:49 -0300
-> > > Ezequiel Garcia <ezequiel@collabora.com> wrote:
-> > >=20
-> > > > > > +
-> > > > > > +.. tabularcolumns:: |p{1.5cm}|p{6.3cm}|p{9.4cm}|
-> > > > > > +
-> > > > > > +.. flat-table:: enum v4l2_vp9_reset_frame_context
-> > > > > > +    :header-rows:  0
-> > > > > > +    :stub-columns: 0
-> > > > > > +    :widths:       1 2
-> > > > > > +
-> > > > > > +    * - ``V4L2_VP9_RESET_FRAME_CTX_NONE``
-> > > > > > +      - Do not reset any frame context.
-> > > > > > +    * - ``V4L2_VP9_RESET_FRAME_CTX_NONE_ALT``
-> > > > > > +      - Do not reset any frame context. This is an alternative=
- value for
-> > > > > > +        V4L2_VP9_RESET_FRAME_CTX_NONE. =20
-> > > > >=20
-> > > > > Add `` around V4L2_VP9_RESET_FRAME_CTX_NONE.
-> > > > >  =20
-> > > >=20
-> > > > Hm, now that I look closer, what's the point
-> > > > of having the NONE_ALT in our uAPI if it
-> > > > has same meaning as NONE?
-> > > >=20
-> > > > I think it can be removed.
-> > >=20
-> > > The intent was to match the spec so that one can pass the value
-> > > extracted from the bitstream directly.
->=20
-> reset_frame_contextspecifies whether the frame context should be reset
-> to default values:
->   =E2=88=92 0 or 1 means do not reset any frame context
->   =E2=88=92 2 resets just the context specified in the frame header
->   =E2=88=92 3 resets all cont
->=20
-> But aren't we going too far by making this an emum ? In Microsfot DXVA,
-> we pass that value without interpreting it in userspace. For the
-> following RKVDEC, it is (suspiciously ?) ignored. Maybe just passing
-> over the value would make more sense, less work ?
+> What about adding a check to check_patch?
 
-I have looked deeper. So basically when 2 and 3, that needs to be done
-by userspace is set back the associated probs arrays to their default
-values (see section 10.5 or the spec).
+There's already a checkpatch warning when a patch renames
+a file without a MAINTAINERS update.
 
-https://github.com/rockchip-linux/mpp/blob/develop/mpp/codec/dec/vp9/vp9d_p=
-arser.c#L1021
-
-It seems that for both VAAPI And DXVA, the drivers takes care of that
-reset. So I'd like to ask, shall we code these defaults inside the
-driver ? I think we do similar things in JPEG side. But if we keep it
-the way it is, this should be strictly documented, otherwise anyone
-porting from DXVA or VAAPI will be tricked by this.
-
->=20
-> > > > > I got several smatch warnings:
-> > > > >=20
-> > > > > smatch: ERRORS
-> > > > > drivers/media/v4l2-core/v4l2-ctrls.c:1880 validate_vp9_frame_deco=
-de_params() warn: was && intended here instead of ||?
-> > > > >=20
-> > > > > (Commented on this ^^^ one above)
-> > > > >=20
-> > > > > drivers/staging/media/rkvdec/rkvdec-vp9.c:426 init_intra_only_pro=
-bs() error: buffer overflow 'ptr' 9 <=3D 69
-> > > > > drivers/staging/media/rkvdec/rkvdec-vp9.c:1478 rkvdec_vp9_done() =
-error: potentially dereferencing uninitialized 'ctrl'.
-> > > > > drivers/staging/media/rkvdec/rkvdec-vp9.c:1483 rkvdec_vp9_done() =
-error: uninitialized symbol 'dec_dst_buf'.
-> > > > > drivers/staging/media/rkvdec/rkvdec-vp9.c:941:6: warning: variabl=
-e 'ret' set but not used [-Wunused-but-set-variable]
-> > > > > drivers/staging/media/rkvdec/rkvdec-vp9.c:1466:40: warning: varia=
-ble 'fctx' set but not used [-Wunused-but-set-variable]
-> > > > >  =20
-> > > >=20
-> > > > Oh, I'll run smatch and fix them all.
-> > >=20
-> > > Oops!
-
---=-EyYe3EysLdTBugQZatPp
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iF0EABECAB0WIQSScpfJiL+hb5vvd45xUwItrAaoHAUCXrBhHwAKCRBxUwItrAao
-HH8LAJ9aosLvF3M9LdhkX81jDPOwCl6TeACgsfbMRb5H7BOUvQ1h1XZSCTi02FY=
-=j3aC
------END PGP SIGNATURE-----
-
---=-EyYe3EysLdTBugQZatPp--
-
-
-
---===============1316023976994075055==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
---===============1316023976994075055==--
-
-
