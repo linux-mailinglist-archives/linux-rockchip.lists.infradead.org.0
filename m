@@ -2,61 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFE041C4D00
-	for <lists+linux-rockchip@lfdr.de>; Tue,  5 May 2020 06:08:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D5091C4E4D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  5 May 2020 08:24:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X2mxGXNDFl8bsDbpvMEXvRxLV4iuMfSo8+PYV8pm+bs=; b=nixIVnrUY3a+d4
-	553ddpFzgyLUhdRTxUqvlnQi5unRmYz8RgRxj3f0tD+oLuGivf/ByDIS3S/kwu9ng4AzVlPgFR/GN
-	+wHf+7KkdeWegEA+fbEeqAeJIHSE1E+583/hy0YbFhGBbdPCuKUgQ5qDvt2BmBHnC/bo0jUiRLa02
-	e/Vs2h2idZvySHB7iiOtHXmTIJ1OQg/c0ZvC8Rtn9XLk/3W6oJudFFVWU87UgU+d7Bk3H3aDhUPKj
-	trF7M64F8S1RwxWu8q3TCJhkYhlYbzOKntr974DwCLeeToJV3j829qkrfBF7ytxIDP55ATWgGg3sG
-	bzzjFeqgPac9BmiBhrVQ==;
+	List-Owner; bh=GKEXGcpX5U33zlFo2BvA8MtHvqrkbbg5S3/zTwzHTIo=; b=oTAr5F4sN5zOnF
+	qNtamp0CqOBhnbgFjowppQ2IzRIfov5/+OKGN4p25/dQsvxcxQPN1T0PFGOP8IcXqZhrD8pGWMyDa
+	2+bsRLr2xuVXdWYUyz0O2eVUmtvigyf9tBwuIlwiDOtJJbMerpjNEz5SygCNhyheW5jvQfk5HEJIh
+	fz593DZiPyAmVFFO+bCocitKWvPCYe2T2TwW3FNM01chG1AtplvT4DKYA+9K30JhjKSk+uQsavSED
+	MCTH03nuJtBdImFvD3yU27V8Rs3/xEoZVIYS4t7WxtYsF6FNQyCc+1NdAGnd6IRHm7joMpBuqGGmJ
+	kyVh3y8akr4kmOUJmO9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVosi-0000Yz-JJ; Tue, 05 May 2020 04:08:32 +0000
+	id 1jVr0c-0005Us-1k; Tue, 05 May 2020 06:24:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVosO-0000JY-Lt; Tue, 05 May 2020 04:08:13 +0000
-Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com
- [209.85.210.53])
+ id 1jVr0S-0005Md-2g; Tue, 05 May 2020 06:24:41 +0000
+Received: from mail-lf1-f46.google.com (mail-lf1-f46.google.com
+ [209.85.167.46])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2E8CE2075E;
- Tue,  5 May 2020 04:08:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3967E206E6;
+ Tue,  5 May 2020 06:24:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588651690;
- bh=uzzMCgqE/O5IIYjUlJGPkxkNrxePxpFGbx62v87B1yk=;
+ s=default; t=1588659879;
+ bh=32C1+bQS5q6+j/8l19A7TyTRYN77WVbVh7KpTlSe7i4=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BN6Cy/3HpCwbAGqGdvC+qqnnmWcpBeTMOV+avy7c5MqADF8o2RkgcRkJzIQXdsCsk
- 1Afk3jIt/KQM3TnQcStiKfqzuLsewX65wxQohWJds/+9oXyCCJshgXhqgUpXBb3dvp
- Pj9E/11iNOGPIQykmHB/KEKg0M4b5I2GMOZkNt/o=
-Received: by mail-ot1-f53.google.com with SMTP id g19so573527otk.5;
- Mon, 04 May 2020 21:08:10 -0700 (PDT)
-X-Gm-Message-State: AGi0PubU+SP5SF8IO2yFaAdilkn5SRvXTWArqDfvJIGY+ELZxAch16C/
- G+3Fd5z/9KfSmcVFkTYCDP9wZ3GnlNQ04AIhaA==
-X-Google-Smtp-Source: APiQypKr0Hhrl0+e44U31hazXs0o4bScaIuGYf4nCgkUWwDdJ4zYt2nRLPemlwjIE7S1TGeNHXWRAj+I7RpOjlh+8dk=
-X-Received: by 2002:a9d:7d85:: with SMTP id j5mr690540otn.107.1588651689440;
- Mon, 04 May 2020 21:08:09 -0700 (PDT)
+ b=VLK98zWjpJ7DE5THs3mA29Bq0s5miWiy9BzXVlZAhc+ses/cxYMXaVK441pdJJlNM
+ LEVsEvqzpk0UiJ5YgX5WXSEBjm43Q9bmJeMvz7mEAhHehGOMM79pYm5GE9PwLi8uQl
+ WudJ97DCBV9P9Q0z3mL3PhcNhFuHREMX48UznvJI=
+Received: by mail-lf1-f46.google.com with SMTP id x73so402982lfa.2;
+ Mon, 04 May 2020 23:24:39 -0700 (PDT)
+X-Gm-Message-State: AGi0Puayf0Lx5gvTQgjV8CQvGGOIlfJ48jIJa6JFgN3HsgmDlGTFX9Wk
+ epzJ8DeuOB/Gf5HHjT9giaUgZI7C3jTOF7VOrsM=
+X-Google-Smtp-Source: APiQypLIfMst1tqU1q00DeK98YpKK9mzmYw+EV1sJq0vvQCmBBobl8Z6eq/WglAR6rmBcFTqBtT7DYFqXPxaX4MtqcE=
+X-Received: by 2002:a19:c515:: with SMTP id w21mr565410lfe.186.1588659877383; 
+ Mon, 04 May 2020 23:24:37 -0700 (PDT)
 MIME-Version: 1.0
-References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
- <20200504174522.GA3383@ravnborg.org>
- <20200504175553.jdm7a7aabloevxba@pengutronix.de>
-In-Reply-To: <20200504175553.jdm7a7aabloevxba@pengutronix.de>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 4 May 2020 23:07:57 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJuRrhEtt5uxaQ=7WvDKiF_2v025GiYUvrrFE5jxBr-Xg@mail.gmail.com>
-Message-ID: <CAL_JsqJuRrhEtt5uxaQ=7WvDKiF_2v025GiYUvrrFE5jxBr-Xg@mail.gmail.com>
-Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
- Sam Ravnborg <sam@ravnborg.org>
+References: <20200427073132.29997-1-wens@kernel.org>
+In-Reply-To: <20200427073132.29997-1-wens@kernel.org>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 5 May 2020 14:24:25 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67jPJA0hqXQg1Ufpkxt=7bqwoaQATRVuNg2AC5RZ9Os3w@mail.gmail.com>
+Message-ID: <CAGb2v67jPJA0hqXQg1Ufpkxt=7bqwoaQATRVuNg2AC5RZ9Os3w@mail.gmail.com>
+Subject: Re: [PATCH v2 0/3] arm64: dts: rockchip: misc. cleanups and
+ improvements
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>, 
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ Dan Murphy <dmurphy@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_210812_759554_D5688D5A 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20200504_232440_134815_C44E0037 
+X-CRM114-Status: GOOD (  17.19  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,51 +86,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- Olivier Moysan <olivier.moysan@st.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
- Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Sandy Huang <hjc@rock-chips.com>, devicetree@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, Jyri Sarha <jsarha@ti.com>,
- Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Chen-Yu Tsai <wens@kernel.org>, linux-leds@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBNYXkgNCwgMjAyMCBhdCAxMjo1NiBQTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
-bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IEhpIFNhbSwKPgo+IE9uIE1vbiwg
-TWF5IDA0LCAyMDIwIGF0IDA3OjQ1OjIyUE0gKzAyMDAsIFNhbSBSYXZuYm9yZyB3cm90ZToKPiA+
-IE9uIE1vbiwgTWF5IDA0LCAyMDIwIGF0IDExOjMwOjIwQU0gKzAyMDAsIE1hdXJvIENhcnZhbGhv
-IENoZWhhYiB3cm90ZToKPiA+ID4gVGhlcmUgYXJlIHNvbWUgbmV3IGJyb2tlbiBkb2MgbGlua3Mg
-ZHVlIHRvIHlhbWwgcmVuYW1lcwo+ID4gPiBhdCBEVC4gRGV2ZWxvcGVycyBzaG91bGQgcmVhbGx5
-IHJ1bjoKPiA+ID4KPiA+ID4gICAgIC4vc2NyaXB0cy9kb2N1bWVudGF0aW9uLWZpbGUtcmVmLWNo
-ZWNrCj4gPiA+Cj4gPiA+IGluIG9yZGVyIHRvIHNvbHZlIHRob3NlIGlzc3VlcyB3aGlsZSBzdWJt
-aXR0aW5nIHBhdGNoZXMuCj4gPiBXb3VsZCBsb3ZlIGlmIHNvbWUgYm90IGNvdWxkIGRvIHRoaXMg
-Zm9yIG1lIG9uIGFueSBwYXRjaGVzIHRoYXQgY3JlYXRlcwo+ID4gLnlhbWwgZmlsZXMgb3Igc28u
-Cj4gPiBJIGtub3cgSSB3aWxsIGZvcmdldCB0aGlzIGFuZCBpdCBjYW4gYmUgYXV0b21hdGVkLgo+
-ID4gSWYgSSBnZXQgYSBib3QgbWFpbCB0aGF0IG15IHBhdGNoIHdvdWxkIGJyb2tlIGEgbGluayBJ
-IHdvdWxkCj4gPiBoYXZlIGl0IGZpeGVkIGJlZm9yZSBpdCBoaXRzIGFueSB0cmVlLgoKSSBjYW4g
-cHJvYmFibHkgYWRkIHRoaXMgdG8gd2hhdCBJJ20gYWxyZWFkeSBjaGVja2luZy4gTm90IGNvbXBs
-ZXRlbHkKYXV0b21hdGVkIHRob3VnaCBhcyBpdCBkZXBlbmRzIG9uIG1lIHRvIHJldmlldyBiZWZv
-cmUgc2VuZGluZy4KCj4gV2hhdCBhYm91dCBhZGRpbmcgYSBjaGVjayB0byBjaGVja19wYXRjaD8K
-ClRoYXQgd291bGQgYmUgdGhlIGJlc3Qgd2F5IHRvIGdldCBzdWJtaXR0ZXJzIHRvIGRvIHRoaXMu
-CgpSb2IKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
-bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
-a2NoaXAK
+Hi,
+
+On Mon, Apr 27, 2020 at 3:31 PM Chen-Yu Tsai <wens@kernel.org> wrote:
+>
+> From: Chen-Yu Tsai <wens@csie.org>
+>
+> Hi,
+>
+> Here is the remaining patch for roc-rk3399-pc, along with a few other
+> new patches.
+>
+>   - Based on discussions from v1, patch one, newly added, drops the list
+>     of valid values for linux,default-triggers.
+>
+>   - Patch two is the same as in v1
+>
+>   - Patch three, new, sets dr_mode to "host" to the dwc2 OTG controller,
+>     matching what the board uses it for, a host port. This gets rid of
+>     a warning from the kernel.
+>
+> Please have a look.
+
+Are there any comments from the maintainers?
+
+I feel like this is getting needlessly sidetracked by the endless discussion
+about GPIO LED node names which I left untouched on purpose in this series.
+
+ChenYu
+
+
+> Regards
+> ChenYu
+>
+>
+> Chen-Yu Tsai (3):
+>   dt-bindings: leds: common: Drop enumeration for linux,default-triggers
+>   arm64: dts: rockchip: rk3399-roc-pc: Fix MMC numbering for LED
+>     triggers
+>   arm64: dts: rockchip: rk3328-roc-cc: Set dr_mode to "host" for OTG
+>
+>  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
+>  .../arm64/boot/dts/rockchip/rk3328-roc-cc.dts |  1 +
+>  .../dts/rockchip/rk3399-roc-pc-mezzanine.dts  |  8 +++++++
+>  .../boot/dts/rockchip/rk3399-roc-pc.dtsi      |  4 ++--
+>  4 files changed, 12 insertions(+), 22 deletions(-)
+>
+> --
+> 2.26.0
+>
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
