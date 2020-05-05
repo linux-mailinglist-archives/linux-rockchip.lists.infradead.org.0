@@ -2,133 +2,57 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1E9C1C513F
-	for <lists+linux-rockchip@lfdr.de>; Tue,  5 May 2020 10:50:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F3F81C521D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  5 May 2020 11:44:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zaatg+a74GyhF4OiiLP9Qn8i0dkGFQ/sPeAWbbEqYSQ=; b=RbBsvSHVvd0a923ZMz88A3ZNtJ
-	WZgz9bn29aQ7GnP/53f2zyyHARd7HZmtYe+uo5o2v8c3xC/zr+BMv4UuzEo4Bob/KkgfZlGNnTS/Z
-	9sBpgOQDwc79hL1y4YQpCBZeUDuy/wtQiczKEj/1vPSXhtsFunyYBcGKHeaMrAWU1nhsuEmyaw0kj
-	D5TbAGzNBZQiitxV5cWBsNez1LHLQs75Wb98O3WUbYwUqlkKm1cWnDYgtDB7k65I9j4LRmPu6mYNM
-	dWrJXxf8JQxyO8RJgzsAKGWzVnsxr4tA6qebrxDuTAbkwOlnH1yrsoN8/lW3eBbMigM/k97Mkc9xf
-	kheKB+OA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Ec/W6hbzcT+6tEbHFbIlev4H6VnjoRrjb5fRWSMquE=; b=EyS7uF7lmf1aUV
+	VL3YK/z3yD/pCZ0p84WS3MZFNZTZtg9DIobrDy4r8AhYCpYn+OV16a8y6He9IxUlmLNtLgjfp3AD8
+	jxC8URhLBm3xjR8uc3egkO+UUTox4Lvnz/1vjhS/ne4enud0FQmJooyaFTqUiYSxBI7AcsSEOu1xb
+	Fz6WNJ9LAtLTz13jqBf7iNzU9pz5EeKl+ZZQRaUS8hFvDdYdqs4x0fktA126wkqNi9s7lrI1SyMjk
+	NnvKQNAjW33zLiaW5m238BTdKwtEF0ZVqJUtN/5g7nKL6goFdX6euUNF6EfEljZSU0E3cgayggFO+
+	RstM2Ae9+HAnOdwU2CtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVtHn-0006bv-A1; Tue, 05 May 2020 08:50:43 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVtDl-0000Ve-JE
- for linux-rockchip@lists.infradead.org; Tue, 05 May 2020 08:46:36 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200505084631euoutp0255f184db129ded394b7db788213e25bf~MFXwv4OqO2636226362euoutp02W
- for <linux-rockchip@lists.infradead.org>; Tue,  5 May 2020 08:46:31 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200505084631euoutp0255f184db129ded394b7db788213e25bf~MFXwv4OqO2636226362euoutp02W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1588668391;
- bh=TWyjNbzcAqu4w5jR6CJEvjjAGbRJaCh1PCu4try6g44=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mLoaz6u80wps/y4JbykU4nh4TLmkOV8emGNILG7nFKS7xgzolVN3MMfA3Rd+RomoB
- vjU/Xga/12Z2ZdpDFLauewsKLSFMGCmAK8rY4eCYqO3Kk1rlk/trhuZj4ue91saYUc
- CptKtWinGxA+GprP2q1QTGpUAs9G4D+wOLC1gPDM=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200505084631eucas1p2ff09db1c335f96f84aa635e65beca1c3~MFXwWiVvO1349613496eucas1p2q;
- Tue,  5 May 2020 08:46:31 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 20.11.60698.7E721BE5; Tue,  5
- May 2020 09:46:31 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200505084630eucas1p2199401486591b681b84a4b24496295fb~MFXv_2LdP1349613496eucas1p2p;
- Tue,  5 May 2020 08:46:30 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200505084630eusmtrp1d4e2b4f85f2fa3b85a8291c81b5e1d8a~MFXv_MUvM0942309423eusmtrp1b;
- Tue,  5 May 2020 08:46:30 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-3b-5eb127e78af2
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 0A.21.07950.6E721BE5; Tue,  5
- May 2020 09:46:30 +0100 (BST)
-Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200505084630eusmtip1ab284a34c04f7bc07a3ec27e3b008a46~MFXvZpThe0580805808eusmtip19;
- Tue,  5 May 2020 08:46:30 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v3 12/25] drm: rockchip: fix common struct sg_table related
- issues
-Date: Tue,  5 May 2020 10:46:01 +0200
-Message-Id: <20200505084614.30424-12-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200505084614.30424-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSfyyUcRzH973nnucel9PjKN9RabddRfNr+uMpzWpr7fmnTUXFSl08wzg/
- 7vyIrbJ+SlychQwT5vy6cDh2TWI4JTfDjCg/pzBjzsnvy3mi/96f9+f1+bw/++6LI/wm1BYP
- CY+mJeGiMAHGZas71nROv07W+Luu1fHIVN0XFlmTXYWSRnU6QvYbFjCyrKKdRRon5lAyT/6Q
- LGj2IJf7x1mkanIAJfs0uRi5NGZESGXbDw7ZsjiFXrCgKvMrAdW0UsCmGlbGUGr0tZZF1RY/
- poa3JxEqY1ABqI9DiRi1ldPMpmR15YBqGMhHKL3qmJe5H/d8IB0WEktLXDzvcYOn5qo5kfV2
- D77/VmOJYPFwMjDDIXEGbjS9QpMBF+cTpQB2zZawmGIZwJcToxhT6AHUNxqRvZGkjmmEaSgA
- rF6dZu+P1P7U7FIY4QaT55Mxk7YmngPYmWpu0giRicByw2WTtiK8YcaCcofHcTYhhO9LhSab
- R3jCQt0mxoTZw4rqz7srzXb8yd6R3YsgMcCBX9tmUNMsJC7BNIMPw1vBWW0dh9FHYFdGCpvh
- nwI4rlNymCIFwL4n2YChPOCIbh0zLUIIB1ilcWHsi7BuQwGY/RZwcN6SOd8CytVZCGPzYNIL
- PkOfgDnaD/uxLT29/xAKLsu9mddpB7BIuYamAfuc/1kFAJQDGzpGKg6ipe7hdJyzVCSWxoQH
- OQdEiFVg51N1bWsNjeDT5v1WQOBAYM67pa/y56OiWGm8uBVAHBFY80pWq/35vEBRfAItibgr
- iQmjpa3ADmcLbHjuhTN3+ESQKJoOpelIWrLXZeFmtomgs/+0p4NPVOmQrZsiwato9e21o7fn
- cqMO2CpPhYq2fJ5pNhXf8v54dJdd9Qg7dH3kLCE0XxJaH4+xkXsXuhx85Js23nUl040rW79p
- SO9NtCcU5+xjb2xuxwXI5DU9QZJBz7Rix3qZDeGqGnbivgtV+8WHLne/IS1lmVm+CyHcVQFb
- Gixyc0QkUtFfx8PWW1ADAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIIsWRmVeSWpSXmKPExsVy+t/xu7rP1DfGGUzqNLLoPXeSyWLjjPWs
- Fv+3TWS2uPL1PZvFytVHmSz+P3rNajF3Uq3Fgv3WFl+uPGSy2PT4GqvF5V1z2Cw+PfjPbLH2
- yF12i4MfnrA68HmsmbeG0WPvtwUsHtu/PWD1uN99nMlj85J6j9v/HjN7TL6xnNFj980GNo+/
- s/azePRtWcXosf3aPGaPz5vkAnii9GyK8ktLUhUy8otLbJWiDS2M9AwtLfSMTCz1DI3NY62M
- TJX07WxSUnMyy1KL9O0S9DKevN7AXrBVuuLWi21sDYwfxLoYOTkkBEwkOo49Y+5i5OIQEljK
- KNH9/D4rREJG4uS0BihbWOLPtS42iKJPjBK9U28zgSTYBAwlut5CJEQEOhklpnV/ZAdxmAXm
- MUssX3UYrEpYIEji7qU3QDYHB4uAqsTCFaogYV4BO4lF5/6wQWyQl1i94QAziM0JFH986Q5Y
- XEigUOLD+e+sExj5FjAyrGIUSS0tzk3PLTbSK07MLS7NS9dLzs/dxAiMnm3Hfm7Zwdj1LvgQ
- owAHoxIP74av6+OEWBPLiitzDzFKcDArifAu+7EhTog3JbGyKrUoP76oNCe1+BCjKdBNE5ml
- RJPzgZGdVxJvaGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mDU6qBUUzl6rk/
- s19LXp615XHX5oVC+bKG5RM+pFcacDS0/lmmumzyxQf70muXbapwvzI9wXnifrkHzzZGbL+q
- /bSGdb3iY+27M55I/LrG3euSJB7MNPn6s+4z9549X75I0jZG9tr7LY//6upP25+5j+veb6US
- oWPl9avmPf+p0dBw9Vmwh9889fUtJ0uUWIozEg21mIuKEwE9GvK2tAIAAA==
-X-CMS-MailID: 20200505084630eucas1p2199401486591b681b84a4b24496295fb
-X-Msg-Generator: CA
-X-RootMTR: 20200505084630eucas1p2199401486591b681b84a4b24496295fb
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200505084630eucas1p2199401486591b681b84a4b24496295fb
-References: <20200505083926.28503-1-m.szyprowski@samsung.com>
- <20200505084614.30424-1-m.szyprowski@samsung.com>
- <CGME20200505084630eucas1p2199401486591b681b84a4b24496295fb@eucas1p2.samsung.com>
+	id 1jVu7z-0001ak-KY; Tue, 05 May 2020 09:44:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVu7m-0001Jz-3r; Tue, 05 May 2020 09:44:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B249630E;
+ Tue,  5 May 2020 02:44:24 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 472BB3F305;
+ Tue,  5 May 2020 02:44:22 -0700 (PDT)
+Date: Tue, 5 May 2020 10:44:16 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Subject: Re: [PATCH v9 0/8] Add endpoint driver for R-Car PCIe controller
+Message-ID: <20200505094416.GA12543@e121166-lin.cambridge.arm.com>
+References: <1587666159-6035-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CA+V-a8u1rEF1DMAVkZ1=-d_MjLa_49X2Nny_VaEN0Y398GOJhw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CA+V-a8u1rEF1DMAVkZ1=-d_MjLa_49X2Nny_VaEN0Y398GOJhw@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_014634_199074_54B916FA 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_024426_261272_617033AF 
+X-CRM114-Status: GOOD (  29.89  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,104 +65,161 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci <linux-pci@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
-numer of the created entries in the DMA address space. However the
-subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
-called with the original number of the entries passed to dma_map_sg. The
-sg_table->nents in turn holds the result of the dma_map_sg call as stated
-in include/linux/scatterlist.h. A common mistake was to ignore a result
-of the dma_map_sg function and don't use the sg_table->orig_nents at all.
+On Thu, Apr 30, 2020 at 09:43:20AM +0100, Lad, Prabhakar wrote:
+> Hi Kishon,
+> 
+> On Thu, Apr 23, 2020 at 7:23 PM Lad Prabhakar
+> <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+> >
+> > Hi All,
+> >
+> > This patch series adds support for endpoint driver for R-Car PCIe controller on
+> > R-Car/RZ-G2x SoC's, this also extends the epf framework to handle multiple windows
+> > supported by the controller for mapping PCI address locally.
+> >
+> > Note:
+> > The cadence/rockchip/designware endpoint drivers are build tested only.
+> >
+> > Changes for v9 (Re-spun this series as there were minimal changes requested):
+> > * Rebased patches on top of v5.7.rc1
+> > * Replaced mdelay(1) with usleep_range(1000, 1001) in rcar_pcie_ep_assert_intx()
+> > * Added a check for max_functions read from DT to restrict with
+> >   RCAR_EPC_MAX_FUNCTIONS
+> > * Replaced MSICAP0_MMENUM with MSICAP0_MMESE
+> > * Retry ioremap for other windows on failure in pci_epc_mem_alloc_addr()
+> > * Fixed looping for number windows in pci_epc_mem_exit()
+> > * Set maximum to 1 for max-functions in DT binding (I have restored the acks
+> >   from  Rob and Shimoda-san)
+> > * Sorted the entry in MAINTAINERS
+> >
+> > Changes for v8:
+> > * Dropped adding R8A774C0 (0x002d) pci-id in pci_ids.h
+> > * Fixed typo in commit message for patch 2/8
+> > * Reworded commit message for patch 5/8 as suggested by Bjorn
+> > * Split up patch to add pci_epc_mem_init() interface to add page_size argument
+> >   as suggested by Bjorn.
+> >
+> > Changes for v7:
+> > * Fixed review comments pointed by Shimoda-san
+> >   1] Made DT bindings dual licensed, added Shimoda-san as maintainer and fixed
+> >      the example as its built with #{address,size}-cells = <1>. I have still
+> >      restored the Ack from Rob and Shimoda-san with these changes.
+> >   2] Split up the patches so that they can be picked up by respective subsystem
+> >      patches 1/4-9/11 are now part of this series.
+> >   3] Dropped altering a comment in pci-epc.h
+> >   4] Used a local variable align_size in pci_epc_mem_alloc_addr() so that size
+> >      variable doesn't get overwritten in the loop.
+> >   5] Replaced i-=1 with i--
+> >   6] Replaced rcar with R-Car in patch subject and description.
+> >   7] Set MACCTLR in init() callback
+> >
+> > Changes for v6:
+> > 1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
+> >    scm/linux/kernel/git/lpieralisi/pci.git/
+> > 2] Fixed review comments from Shimoda-san
+> >    a] Made sure defconfig changes were in separate patch
+> >    b] Created rcar_pcie_host/rcar_pcie_ep structures
+> >    c] Added pci-id for R8A774C0
+> >    d] Added entry in MAINTAINERS for dt-binding
+> >    e] Dropped unnecessary braces
+> > 3] Added support for msi.
+> >
+> > Changes for v5:
+> > 1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
+> >    linux/kernel/git/helgaas/pci.git
+> > 2] Fixed review comments reported by Kishon while fetching the matching
+> >    window in function pci_epc_get_matching_window()
+> > 3] Fixed review comments reported by Bjorn
+> >    a] Split patch up first patch so that its easier to review and incremental
+> >    b] Fixed typos
+> > 4] Included Reviewed tag from Rob for the dt-binding patch
+> > 5] Fixed issue reported by Nathan for assigning variable to itself
+> >
+> > Changes for v4:
+> > 1] Fixed dtb_check error reported by Rob
+> > 2] Fixed review comments reported by Kishon
+> >    a] Dropped pci_epc_find_best_fit_window()
+> >    b] Fixed initializing mem ptr in __pci_epc_mem_init()
+> >    c] Dropped map_size from pci_epc_mem_window structure
+> >
+> > Changes for v3:
+> > 1] Fixed review comments from Bjorn and Kishon.
+> > 3] Converted to DT schema
+> >
+> > Changes for v2:
+> > 1] Fixed review comments from Biju for dt-bindings to include an example
+> >    for a tested platform.
+> > 2] Fixed review comments from Kishon to extend the features of outbound
+> >    regions in epf framework.
+> > 3] Added support to parse outbound-ranges in OF.
+> >
+> > Lad Prabhakar (8):
+> >   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+> >   PCI: rcar: Move shareable code to a common file
+> >   PCI: rcar: Fix calculating mask for PCIEPAMR register
+> >   PCI: endpoint: Pass page size as argument to pci_epc_mem_init()
+> >   PCI: endpoint: Add support to handle multiple base for mapping
+> >     outbound memory
+> Could you please do the needy for the above two patches, so that this
+> can be picked up by Lorenzo.
 
-To avoid such issues, lets use common dma-mapping wrappers operating
-directly on the struct sg_table objects and adjust references to the
-nents and orig_nents respectively.
+Yes please. I would kindly ask you to rebase it on top of my
+pci/rcar branch - with Kishon's ACK when provided.
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
----
-For more information, see '[PATCH v3 00/25] DRM: fix struct sg_table nents
-vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/5/187
----
- drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 26 ++++++++++++--------------
- 1 file changed, 12 insertions(+), 14 deletions(-)
+Thanks,
+Lorenzo
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-index 0d18846..9df7d7d 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-@@ -36,8 +36,8 @@ static int rockchip_gem_iommu_map(struct rockchip_gem_object *rk_obj)
- 
- 	rk_obj->dma_addr = rk_obj->mm.start;
- 
--	ret = iommu_map_sg(private->domain, rk_obj->dma_addr, rk_obj->sgt->sgl,
--			   rk_obj->sgt->nents, prot);
-+	ret = iommu_map_sgtable(private->domain, rk_obj->dma_addr, rk_obj->sgt,
-+				prot);
- 	if (ret < rk_obj->base.size) {
- 		DRM_ERROR("failed to map buffer: size=%zd request_size=%zd\n",
- 			  ret, rk_obj->base.size);
-@@ -98,11 +98,10 @@ static int rockchip_gem_get_pages(struct rockchip_gem_object *rk_obj)
- 	 * TODO: Replace this by drm_clflush_sg() once it can be implemented
- 	 * without relying on symbols that are not exported.
- 	 */
--	for_each_sg(rk_obj->sgt->sgl, s, rk_obj->sgt->nents, i)
-+	for_each_sg(rk_obj->sgt->sgl, s, rk_obj->sgt->orig_nents, i)
- 		sg_dma_address(s) = sg_phys(s);
- 
--	dma_sync_sg_for_device(drm->dev, rk_obj->sgt->sgl, rk_obj->sgt->nents,
--			       DMA_TO_DEVICE);
-+	dma_sync_sgtable_for_device(drm->dev, rk_obj->sgt, DMA_TO_DEVICE);
- 
- 	return 0;
- 
-@@ -350,8 +349,8 @@ void rockchip_gem_free_object(struct drm_gem_object *obj)
- 		if (private->domain) {
- 			rockchip_gem_iommu_unmap(rk_obj);
- 		} else {
--			dma_unmap_sg(drm->dev, rk_obj->sgt->sgl,
--				     rk_obj->sgt->nents, DMA_BIDIRECTIONAL);
-+			dma_unmap_sgtable(drm->dev, rk_obj->sgt,
-+					  DMA_BIDIRECTIONAL);
- 		}
- 		drm_prime_gem_destroy(obj, rk_obj->sgt);
- 	} else {
-@@ -493,15 +492,14 @@ static unsigned long rockchip_sg_get_contiguous_size(struct sg_table *sgt,
- 			struct sg_table *sg,
- 			struct rockchip_gem_object *rk_obj)
- {
--	int count = dma_map_sg(drm->dev, sg->sgl, sg->nents,
--			       DMA_BIDIRECTIONAL);
--	if (!count)
--		return -EINVAL;
-+	int err = dma_map_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL);
-+	if (err)
-+		return err;
- 
--	if (rockchip_sg_get_contiguous_size(sg, count) < attach->dmabuf->size) {
-+	if (rockchip_sg_get_contiguous_size(sg, sg->nents) <
-+	    attach->dmabuf->size) {
- 		DRM_ERROR("failed to map sg_table to contiguous linear address.\n");
--		dma_unmap_sg(drm->dev, sg->sgl, sg->nents,
--			     DMA_BIDIRECTIONAL);
-+		dma_unmap_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL);
- 		return -EINVAL;
- 	}
- 
--- 
-1.9.1
-
+> Cheers,
+> --Prabhakar
+> 
+> >   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+> >     controller
+> >   PCI: rcar: Add endpoint mode support
+> >   MAINTAINERS: Add file patterns for rcar PCI device tree bindings
+> >
+> >  .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   77 ++
+> >  MAINTAINERS                                   |    1 +
+> >  drivers/pci/controller/Kconfig                |   18 +
+> >  drivers/pci/controller/Makefile               |    3 +-
+> >  .../pci/controller/cadence/pcie-cadence-ep.c  |    2 +-
+> >  .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
+> >  drivers/pci/controller/pcie-rcar-ep.c         |  557 ++++++++
+> >  drivers/pci/controller/pcie-rcar-host.c       | 1065 +++++++++++++++
+> >  drivers/pci/controller/pcie-rcar.c            | 1206 +----------------
+> >  drivers/pci/controller/pcie-rcar.h            |  140 ++
+> >  drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
+> >  drivers/pci/endpoint/pci-epc-mem.c            |  204 ++-
+> >  include/linux/pci-epc.h                       |   38 +-
+> >  13 files changed, 2078 insertions(+), 1251 deletions(-)
+> >  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> >  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+> >  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+> >  create mode 100644 drivers/pci/controller/pcie-rcar.h
+> >
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 Linux-rockchip mailing list
