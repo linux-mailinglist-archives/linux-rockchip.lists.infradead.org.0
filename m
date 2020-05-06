@@ -2,51 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBD651C6ECC
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 12:57:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D58051C6FD1
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 14:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O02ecdd7Zn7DFUC6NodLzyrJeXUBCqxUHr58dQ3gxnc=; b=gWTVVm11rLS2u5
-	lESSYki9XWik4SWmaYmVIkJzjsYXM/OJpB/N9ADwqlpQw00q155Z8nGGUin8KFtvq3SHaC3SoaF0y
-	UntGXwFQlgieN7VZivx1MkGbupR/247Mc7PToLK0mw7Etys5aseN2omW5Vhnk6KGlkNUXhhQNBT3h
-	KaF0oWWVtc/DkpfinYjyB7Ds7Sok5qMxHp++YJF2B5Ye7lfIvvIozseFdkeWBpnOmEXuCIC334Ift
-	o00ivOawdVKhE0907WQQB9dpe7rg8WkM+Pw/3rTD1uciqGoOwhCGJ+97urBRjXonIcgPWx0cZ4ezF
-	AC5Z0TCD6jr3koGuFSbA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CRncTfwk6v3C8gDXwS9AFUNGylt2y03hWjHrX8cwmcQ=; b=UMzsPiwcvAOtNs
+	xr1BOyZ0ujELUO6CmwnpgKEhMDVVwhjfKoodIU+WQMKW7p9jou5RW13yFZsuZiJ/jW3xVApwDy0P5
+	xlkvnKQsuwrX0Zmc4WYIEgQORZWclAkiHgSuqOSqAfNEK/Gvwclay+YRUDs0nnst6snRlheNZHLF2
+	aOV2kDqQgmrhikxxrriYXFdiygtDjgYQmuHQ+svoL5EaireMR/9lXE7l7dTXOLAJc2KRTxanKUGAc
+	k5dAOCrmJ4sT8ZBqiZOTskg2MxcOvnaiYgwIq2iqu9wYu0ijSHAhVqAps0llUJnx63um15ql6F28/
+	mJWUpenFWRP1w6TaE9sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHkH-0006Jh-89; Wed, 06 May 2020 10:57:45 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jWIit-0002yd-Dr; Wed, 06 May 2020 12:00:23 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHkE-0006J8-Oq
- for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 10:57:43 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jWHkD-0001j5-JN; Wed, 06 May 2020 12:57:41 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH] pinctrl: rockchip: fix memleak in rockchip_dt_node_to_map
-Date: Wed, 06 May 2020 12:57:41 +0200
-Message-ID: <12037872.zK0gPHFAvL@diego>
-In-Reply-To: <20200506100903.15420-1-dafna.hirschfeld@collabora.com>
-References: <20200506100903.15420-1-dafna.hirschfeld@collabora.com>
+ id 1jWIiV-0000JO-JM
+ for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 12:00:01 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49HFWv3p4wz1r571;
+ Wed,  6 May 2020 13:59:55 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49HFWv1zkNz1qv7p;
+ Wed,  6 May 2020 13:59:55 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id b5ZluXu9PlqG; Wed,  6 May 2020 13:59:54 +0200 (CEST)
+X-Auth-Info: LfB1O5fn8VLCEVoq/YMs1ByNCP7j1Rx9HBF5lfSfANk=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed,  6 May 2020 13:59:54 +0200 (CEST)
+Subject: Re: [PATCH v2 7/7] usb: dwc3: add dis_del_phy_power_chg_quirk
+To: Jagan Teki <jagan@amarulasolutions.com>, kever.yang@rock-chips.com,
+ philipp.tomsich@theobroma-systems.com, Simon Glass <sjg@chromium.org>,
+ Frank Wang <frank.wang@rock-chips.com>, wmc@rock-chips.com,
+ chenjh@rock-chips.com, heiko@sntech.de
+References: <20200506075025.1677-1-jagan@amarulasolutions.com>
+ <20200506075025.1677-8-jagan@amarulasolutions.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <d23b5bc0-381a-d9ff-44fa-b50506c313dc@denx.de>
+Date: Wed, 6 May 2020 13:44:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200506075025.1677-8-jagan@amarulasolutions.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_035742_802953_9E5E3B0F 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200506_045959_797895_D2DD0BBB 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,32 +82,24 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, dafna3@gmail.com,
- linux-gpio@vger.kernel.org, helen.koike@collabora.com, kernel@collabora.com,
- ezequiel@collabora.com, linus.walleij@linaro.org
+Cc: u-boot@lists.denx.de, Belisko Marek <marek.belisko@gmail.com>,
+ linux-amarula@amarulasolutions.com, linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 6. Mai 2020, 12:09:03 CEST schrieb Dafna Hirschfeld:
-> In function rockchip_dt_node_to_map, a new_map variable is
-> allocated by:
+On 5/6/20 9:50 AM, Jagan Teki wrote:
+> Add a quirk to clear the GUSB3PIPECTL.DELAYP1TRANS bit,
+> which specifies whether disable delay PHY power change
+> from P0 to P1/P2/P3 when link state changing from U0
+> to U1/U2/U3 respectively.
 > 
-> new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
-> 		       GFP_KERNEL);
+> Reference from below Linux commit,
 > 
-> This uses devres and attaches new_map to the pinctrl driver.
-> This cause a leak since new_map is not released when the probed
-> driver is removed. Fix it by using kcalloc to allocate new_map
-> and free it in `rockchip_dt_free_map`
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> commit <00fe081dc3a3> ("usb: dwc3: add dis_del_phy_power_chg_quirk")
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-
-
-
+Applied, thanks.
 
 _______________________________________________
 Linux-rockchip mailing list
