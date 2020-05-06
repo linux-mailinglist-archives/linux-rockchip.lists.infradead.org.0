@@ -2,42 +2,40 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8E231C6514
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 02:28:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16F551C6517
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 02:30:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vtIh5Jz+NZIuX5MOMbrWCUi/M2glkBkvoTVTBz2vhwA=; b=GyDShOjrQuGvXo
-	RBQCRcQzsRc/27SV7V104jczbe2jWmv/9WkJhNh30eHyJgvNk9DRVaiV90VukTXZBF4TYqoP/xDAV
-	2VsoIk4UOS0c+QP1Cqos8gpkcthkAvZx8wXsSA1e9QDBUFLckUCpJUPY4t91qp8DiB01jEal3pdgy
-	Wx94gCgB3B6mT1gAPv2L6K+pLbCsGUvW8JmUa1sWjgBKewmqhbL4zrgpV0HcCoXyh2XNPjk9STo1c
-	m0ulgtoDWDD7or0zcUeiWU0dSbAAPB24h066yEPvGIW/P/AqHpJj9/mi9DgbweM8rQIPgheigsEJ1
-	h3EDnW9l0kD4m06LhhZw==;
+	List-Owner; bh=qtr3lGhV64Lk/nELtrNCMR3dwXvQC2BUP9Sj9AZxC5w=; b=JAhjM66NQEHzFq
+	HjpfMUl8m7Rkn8CNzLUefnJej3FrLIC/Y1XydHHGLVyGjDHQUAdBkFzMyCdfoztvUh+IjfzzSi5x3
+	Mxe7l1jfE/EsuyDPxS7UDLgAAJeqZj2boMuoa0Eq/DXNBkexL51wsF3iQuA1SeQZi/nvVBdjHSllg
+	4UKTkq/YTsdOM5oq6MBhMcJ3udpcj5BhLECR7MQd7upIcNzOFBXQVQl9265OfLKuRr5Usxm5HkUl1
+	KcGflVwTsxgodUMml51ATjwTCZY9fp5C+B169xq6/8oiTyl0xjZ2teAThzOda1m4dyFDwjKZhQfrW
+	0rXsBRMcAPrOfZiF2g0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW7vf-00009t-GF; Wed, 06 May 2020 00:28:51 +0000
+	id 1jW7xK-0002xy-9b; Wed, 06 May 2020 00:30:34 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW7vb-00008O-TA
- for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 00:28:50 +0000
+ id 1jW7xG-0002wI-DH; Wed, 06 May 2020 00:30:31 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jW7vV-0005g9-E9; Wed, 06 May 2020 02:28:41 +0200
+ id 1jW7xF-0005gu-AI; Wed, 06 May 2020 02:30:29 +0200
 From: Heiko Stuebner <heiko@sntech.de>
-To: mturquette@baylibre.com, Stephen Boyd <sboyd@kernel.org>
-Subject: [GIT PULL] Rockchip clock fix for 5.7
-Date: Wed, 06 May 2020 02:28:40 +0200
-Message-ID: <2256140.alkMTrVvHO@phil>
+To: arm@kernel.org
+Subject: [GIT PULL] Rockchip dt fixes for 5.7
+Date: Wed, 06 May 2020 02:30:28 +0200
+Message-ID: <1738941.6LdaBJIBqS@phil>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_172847_938795_F5713310 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200505_173030_447821_516B7CD6 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,16 +55,19 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org, soc@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Mike, Stephen,
+Hi Arnd, Kevin, Olof,
 
-please find below a rockchip clock fix for 5.7
-Please pull
+please find below some fixes for the newly added Pinebook pro
+as well as some fixes to make the dtc and the binding check happy.
+
+Please pull!
 
 Thanks
 Heiko
@@ -77,21 +78,54 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.7-rockchip-clk-fixes1
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.7-rockchip-dtsfixes1
 
-for you to fetch changes up to cec9d101d70a3509da9bd2e601e0b242154ce616:
+for you to fetch changes up to 855bdca1781c79eb661f89c8944c4a719ce720e8:
 
-  clk: rockchip: fix incorrect configuration of rk3228 aclk_gpu* clocks (2020-04-13 09:35:24 +0200)
-
-----------------------------------------------------------------
-Fix for wrongly defines rk3228 aclk_gpu*
+  ARM: dts: rockchip: fix pinctrl sub nodename for spi in rk322x.dtsi (2020-04-27 21:36:31 +0200)
 
 ----------------------------------------------------------------
-Justin Swartz (1):
-      clk: rockchip: fix incorrect configuration of rk3228 aclk_gpu* clocks
+Some fixes for the newly added Pinebook Pro and other fixes to
+make dtc and the new dtscheck against yaml bindings happy.
 
- drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
- 1 file changed, 4 insertions(+), 13 deletions(-)
+----------------------------------------------------------------
+Chen-Yu Tsai (5):
+      arm64: dts: rockchip: Replace RK805 PMIC node name with "pmic" on rk3328 boards
+      arm64: dts: rockchip: drop non-existent gmac2phy pinmux options from rk3328
+      arm64: dts: rockchip: drop #address-cells, #size-cells from rk3328 grf node
+      arm64: dts: rockchip: drop #address-cells, #size-cells from rk3399 pmugrf node
+      arm64: dts: rockchip: Rename dwc3 device nodes on rk3399 to make dtc happy
+
+Johan Jonker (7):
+      ARM: dts: rockchip: fix phy nodename for rk3228-evb
+      ARM: dts: rockchip: fix phy nodename for rk3229-xms6
+      arm64: dts: rockchip: remove extra assigned-clocks property from &gmac2phy node in rk3328-evb.dts
+      arm64: dts: rockchip: fix status for &gmac2phy in rk3328-evb.dts
+      arm64: dts: rockchip: swap interrupts interrupt-names rk3399 gpu node
+      ARM: dts: rockchip: swap clock-names of gpu nodes
+      ARM: dts: rockchip: fix pinctrl sub nodename for spi in rk322x.dtsi
+
+Robin Murphy (2):
+      arm64: dts: rockchip: Correct PMU compatibles for PX30 and RK3308
+      arm64: dts: rockchip: Fix Pinebook Pro FUSB302 interrupt
+
+Tobias Schramm (2):
+      arm64: dts: rockchip: fix inverted headphone detection on Pinebook Pro
+      arm64: dts: rockchip: enable DC charger detection pullup on Pinebook Pro
+
+ arch/arm/boot/dts/rk3036.dtsi                        |  2 +-
+ arch/arm/boot/dts/rk3228-evb.dts                     |  2 +-
+ arch/arm/boot/dts/rk3229-xms6.dts                    |  2 +-
+ arch/arm/boot/dts/rk322x.dtsi                        |  6 +++---
+ arch/arm/boot/dts/rk3xxx.dtsi                        |  2 +-
+ arch/arm64/boot/dts/rockchip/px30.dtsi               |  2 +-
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi             |  2 +-
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts          |  5 ++---
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts       |  2 +-
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi             | 18 ------------------
+ arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts |  9 +++++----
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi             | 14 ++++++--------
+ 12 files changed, 23 insertions(+), 43 deletions(-)
 
 
 
