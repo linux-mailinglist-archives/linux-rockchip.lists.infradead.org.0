@@ -2,90 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46B3A1C5E45
-	for <lists+linux-rockchip@lfdr.de>; Tue,  5 May 2020 19:03:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E231C6514
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 02:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=b1F8gkc/gc1/UyFMghtEkjbNPjMSStQ8g0apVnn1sJk=; b=cCZ8OMt2fb/ZNRQc/iVrVN8aWi
-	P3FTmpMPaOsNlsG6w75rMeagR9ty7rL+BWo1/vrkC7nOyVsnTytWvHke9+WUDGKx53dlx2Tcej/q3
-	J+0JF4/GoCEQUH92GxauDE8LNkfsfJUrzbLN6JtcQ0dziPWDqsfsa2/wXWK9k67SWXKjCnGOiH6RD
-	hiO/hVvJIkZQPOUw2++zaxivyfUgRRp1VS/4X05m3AtVT7nsOEo2g7Pwur828meC/H73QteONVP+S
-	jyF6oRjt/arSY5keWANM6dCJv6QkZfeqPrXgDxxikhQvg6fvA8974N81J9rC5IDfwxOgc2ICLBBlM
-	9RFptJOQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vtIh5Jz+NZIuX5MOMbrWCUi/M2glkBkvoTVTBz2vhwA=; b=GyDShOjrQuGvXo
+	RBQCRcQzsRc/27SV7V104jczbe2jWmv/9WkJhNh30eHyJgvNk9DRVaiV90VukTXZBF4TYqoP/xDAV
+	2VsoIk4UOS0c+QP1Cqos8gpkcthkAvZx8wXsSA1e9QDBUFLckUCpJUPY4t91qp8DiB01jEal3pdgy
+	Wx94gCgB3B6mT1gAPv2L6K+pLbCsGUvW8JmUa1sWjgBKewmqhbL4zrgpV0HcCoXyh2XNPjk9STo1c
+	m0ulgtoDWDD7or0zcUeiWU0dSbAAPB24h066yEPvGIW/P/AqHpJj9/mi9DgbweM8rQIPgheigsEJ1
+	h3EDnW9l0kD4m06LhhZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0y8-0003wK-50; Tue, 05 May 2020 17:02:56 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jW7vf-00009t-GF; Wed, 06 May 2020 00:28:51 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0xs-0003gH-T3; Tue, 05 May 2020 17:02:42 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u127so3167224wmg.1;
- Tue, 05 May 2020 10:02:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4Fa9SRX5iGefguq9oBjY0ujY1kxsa+01Ny22B/LnyJg=;
- b=Ota0VHhLwimGfuqQXDT5Cm/ryqh3nix86NndMnb4/lv3yKDFdLDPzSIF3rL/1VCQ8J
- c5JfalcNar2PI5aHHHMY+BVkiHyCgS/qr2yRvC8BUxaoZs/Opr9bgDh2xFrJP+yHb42Z
- kdx2HPpLIBmypvHxR8iRBlw8v1gkOvij88nxQSDewwTherDFxQJ6j7OmpK3SH1fQw3HN
- JR95is0tt0sfsleV0tTGzH+7CKoFhWTSNDUvBySF3MBuNv/wH3VWrpoijovq8iblG4TK
- hz7RBOvoR9VUpVy+vH4y2KnH/cXOX8RqaAUT5ZRUfRHzKwXm5tjdXa2WsQZMSAloY40o
- Oudg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=4Fa9SRX5iGefguq9oBjY0ujY1kxsa+01Ny22B/LnyJg=;
- b=Ho/RJ4HZV7bfBNaVO6wG8WcoP97nfUYKmPVxnqKb+NRrA1pgWb7UaU3dSU9uvuJL68
- p61jy+h+9yh77uh+tJpVT9LP0eHJNuqkDihMnpLAllR4mZqWi9dt09BjAWlwy3TlYlys
- AV9ahRUoHmZP+ztSfedZm61xSBhhZoF/rtWY9kJSTlDtYLsvjony+G09SoVpuWQUMa//
- ubyLIwJ6+5K1zyvjAhwB1Z3rztMwF23QhBWoXwzxGrKJHrLnQumQhUEusKRYT/xOvzvC
- xPNaFOxDe3vyjWNDoxacqRj7LfQDTL5n1Q3D8C1jA6m4D9B7wMe3iefgOGJoBfnLo9h0
- 5L6A==
-X-Gm-Message-State: AGi0PuZg9x8N5cUhJ1Bay/TuFDET7zh5dnV/SNNnrzA4xpUyILh646G+
- 63sJvQnrvYwQrWIen7WX4Bo=
-X-Google-Smtp-Source: APiQypJAuuQIMcmMxXCSbON9abfTYyy02Wjgc8Q38il3f+5HzxAp3b1VaD3sXdGSeZIgUiwFGsXi7Q==
-X-Received: by 2002:a7b:c456:: with SMTP id l22mr4204827wmi.148.1588698156757; 
- Tue, 05 May 2020 10:02:36 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o6sm4397252wrw.63.2020.05.05.10.02.35
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 05 May 2020 10:02:36 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2] arm64: dts: rockchip: fix phy nodename for rk3328
-Date: Tue,  5 May 2020 19:02:27 +0200
-Message-Id: <20200505170227.6503-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200321215423.12176-1-jbx6244@gmail.com>
-References: <20200321215423.12176-1-jbx6244@gmail.com>
+ id 1jW7vb-00008O-TA
+ for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 00:28:50 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1jW7vV-0005g9-E9; Wed, 06 May 2020 02:28:41 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: mturquette@baylibre.com, Stephen Boyd <sboyd@kernel.org>
+Subject: [GIT PULL] Rockchip clock fix for 5.7
+Date: Wed, 06 May 2020 02:28:40 +0200
+Message-ID: <2256140.alkMTrVvHO@phil>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_100240_959539_7D423D27 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200505_172847_938795_F5713310 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,58 +57,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+Hi Mike, Stephen,
 
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: phy@0:
-'#phy-cells' is a required property
+please find below a rockchip clock fix for 5.7
+Please pull
 
-The phy nodename is normally used by a phy-handle.
-This node is however compatible with
-"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
-which is just been added to 'ethernet-phy.yaml'.
-So change nodename to 'ethernet-phy' for which '#phy-cells'
-is not a required property
+Thanks
+Heiko
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
-phy/phy-provider.yaml
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-Changes v2:
-  Reword commit message in the same way as in the patches for
-  'rk3228-evb.dts' and 'rk3229-xms6.dts'
-  that are already aproved.
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
-  Patch 2-6 of version 1 unchanged.
----
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+are available in the Git repository at:
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index 931a9279e..fdf0e1b26 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -935,7 +935,7 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 
--			phy: phy@0 {
-+			phy: ethernet-phy@0 {
- 				compatible = "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22";
- 				reg = <0>;
- 				clocks = <&cru SCLK_MAC2PHY_OUT>;
--- 
-2.11.0
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.7-rockchip-clk-fixes1
+
+for you to fetch changes up to cec9d101d70a3509da9bd2e601e0b242154ce616:
+
+  clk: rockchip: fix incorrect configuration of rk3228 aclk_gpu* clocks (2020-04-13 09:35:24 +0200)
+
+----------------------------------------------------------------
+Fix for wrongly defines rk3228 aclk_gpu*
+
+----------------------------------------------------------------
+Justin Swartz (1):
+      clk: rockchip: fix incorrect configuration of rk3228 aclk_gpu* clocks
+
+ drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
+ 1 file changed, 4 insertions(+), 13 deletions(-)
+
+
 
 
 _______________________________________________
