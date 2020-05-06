@@ -2,39 +2,41 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58DF31C6E16
-	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 12:09:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E87DD1C6E26
+	for <lists+linux-rockchip@lfdr.de>; Wed,  6 May 2020 12:14:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YsD9/8h/gjGWLeu2bRL1Ot10EUZsImX4XKWYEhuZ74Y=; b=ow9
-	i4THvS6L9H20X2PKhhR9cWj0bYR4Xh1EG7AQbYG0Qss6Wb3JQ/5bLt/vAL10wkd4d6hBiA10PiKhE
-	chqSTfEZFFjSVjxTiuovXxDMK4yjal0pBKBGkJ4kssxdTaQ7LvYeWQy46q1eDbepdc1TVPTlMVavL
-	y6Osq7NG99fTd/TOM7e8/OHrjYrsn+3yvvIuGzWQwNblexxVsB1tmoE05qMOJPNuiUMs8LaBvsx1i
-	KQZRK4f3uGAX9Re561MF8OgQUAa+X/PoPbUF++x8ljqadcyNOOGUwN7SKTGd6wxw80MnJnRm+KB4p
-	8t9fjl/ocE1AMwLyXFgRlNRAU2IcgIQ==;
+	References:List-Owner; bh=QRs2t8QJP8sVv+8o9VzkMJydieKWv/FAQk4dELhHkoY=; b=sPe
+	xPa+92NTpcWZ+qkyauFyaMd01AdutHSnzT/iXZ0GBQRQhahh5//Abg9ehrZXFlxOWIkYEQSYTZbu4
+	9y+ftAAY6CoOcChX9yChocR76NflvAxQ37dd6z0mw+Ns2aLVLqGYE3x/tEiM9ZkjF/a3XlMX2koC1
+	chYKJPr6bvNA/82YBjmVUo1ENwUMXjNOlvo5SLFfZ1EGlgAmFVm0S9CL1MrMXmW6gat36/0Fd5dp4
+	Rt8uRlC7Q9qanmD58LbMkjcBpMyNAK0ECc5ftsEYAswZ3Qyp6MOe/ts4Iq2IQfVcTtYrxptJGPIHB
+	6eHj6bmCh2/opAB47o8+GVAnEW0RtBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWGzP-00010F-1g; Wed, 06 May 2020 10:09:19 +0000
+	id 1jWH4Y-0004L0-SM; Wed, 06 May 2020 10:14:38 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWGzL-0000ze-Sb
- for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 10:09:17 +0000
+ id 1jWH4V-0004Ka-LS
+ for linux-rockchip@lists.infradead.org; Wed, 06 May 2020 10:14:36 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id C2D9B2A234E
+ (Authenticated sender: dafna) with ESMTPSA id 975E82A235E
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-gpio@vger.kernel.org,
 	linux-rockchip@lists.infradead.org
-Subject: [PATCH] pinctrl: rockchip: fix memleak in rockchip_dt_node_to_map
-Date: Wed,  6 May 2020 12:09:03 +0200
-Message-Id: <20200506100903.15420-1-dafna.hirschfeld@collabora.com>
+Subject: [PATCH] pinctrl: rockchip: return ENOMEM instead of EINVAL if
+ allocation fails
+Date: Wed,  6 May 2020 12:14:24 +0200
+Message-Id: <20200506101424.15691-1-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_030916_054032_5180481E 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200506_031435_831051_07830A46 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -65,54 +67,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-In function rockchip_dt_node_to_map, a new_map variable is
-allocated by:
-
-new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
-		       GFP_KERNEL);
-
-This uses devres and attaches new_map to the pinctrl driver.
-This cause a leak since new_map is not released when the probed
-driver is removed. Fix it by using kcalloc to allocate new_map
-and free it in `rockchip_dt_free_map`
+The function rockchip_pinctrl_parse_dt returns -EINVAL if
+allocation fails. Change the return error to -ENOMEM
 
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- drivers/pinctrl/pinctrl-rockchip.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/pinctrl/pinctrl-rockchip.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
-index a9299f0bd21e..c07324d1f265 100644
+index 098951346339..a9299f0bd21e 100644
 --- a/drivers/pinctrl/pinctrl-rockchip.c
 +++ b/drivers/pinctrl/pinctrl-rockchip.c
-@@ -508,8 +508,8 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
- 	}
+@@ -2940,14 +2940,14 @@ static int rockchip_pinctrl_parse_dt(struct platform_device *pdev,
+ 					      sizeof(struct rockchip_pmx_func),
+ 					      GFP_KERNEL);
+ 	if (!info->functions)
+-		return -EINVAL;
++		return -ENOMEM;
  
- 	map_num += grp->npins;
--	new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
--								GFP_KERNEL);
-+
-+	new_map = kcalloc(map_num, sizeof(*new_map), GFP_KERNEL);
- 	if (!new_map)
- 		return -ENOMEM;
+ 	info->groups = devm_kcalloc(dev,
+ 					    info->ngroups,
+ 					    sizeof(struct rockchip_pin_group),
+ 					    GFP_KERNEL);
+ 	if (!info->groups)
+-		return -EINVAL;
++		return -ENOMEM;
  
-@@ -519,7 +519,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
- 	/* create mux map */
- 	parent = of_get_parent(np);
- 	if (!parent) {
--		devm_kfree(pctldev->dev, new_map);
-+		kfree(new_map);
- 		return -EINVAL;
- 	}
- 	new_map[0].type = PIN_MAP_TYPE_MUX_GROUP;
-@@ -546,6 +546,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
- static void rockchip_dt_free_map(struct pinctrl_dev *pctldev,
- 				    struct pinctrl_map *map, unsigned num_maps)
- {
-+	kfree(map);
- }
+ 	i = 0;
  
- static const struct pinctrl_ops rockchip_pctrl_ops = {
 -- 
 2.17.1
 
