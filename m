@@ -2,85 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCD4E1C9866
-	for <lists+linux-rockchip@lfdr.de>; Thu,  7 May 2020 19:54:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F5C01C9C41
+	for <lists+linux-rockchip@lfdr.de>; Thu,  7 May 2020 22:24:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mc9fAtcG8IHsAaLXc9iz+BB0VEjHHbTYkpps4MeoeCs=; b=foFoQ1S0glm34n
-	PmQCzYJ5ZIZy8YbzAIS4DWqNpeKjwGU0efynkSL2Qz9WfnYHN2BSQt6kZU82nI/mNa3lZ2E0huEL1
-	K+s+1gPg4i51m5O2kS8IS+fG+DvMxfnr6r5Je2jPYQSQLO5IQ3uCm0fGg8cIRS2JrXjHukbzmE0jq
-	yDAq79kvgH6/P4GbKefCe/LtiBQJW+vBwWZ6BCqI/f1EeJ+ajYt+VM00v1RaIHDQQrZrPxjK2juLT
-	7WVKRAKVGVWqT53eSkn9IgjpwWVDTXVQITZStZn40KaxU81hJbXsVBJg964ul2Mda93W9YWdLRBBd
-	aRXhlVJ3AoEBJ6qxK/xg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wDHNlt5cLd/9e9bssMtJU5VxoO139J7zYwdgNefjAx8=; b=j0fVHosq6jQn64J4Mk2M6TtWg
+	XMGQKoNsm6/JukFadtSPm0o884p1u6aJYy4EU/T+4jI6MGBLDMsLQhzHAzEAoNFDVUl0vw0SL4O2L
+	BqgVCqs7YC+rAo5mrir5eGazh2rfDeA/ySQTXlWD1SRnZzSRdBqhZIsDaY6oto3R0msFTM/rVTtDb
+	7uo95QIzMZhRh2KLfNN7L9dXcjx/E8LS0jXYv3cadcSs6EMZcHxBbKhetFN9LpqCVhfp4huZU9ONC
+	IoCR6lc+cLS/HDCB/wyF1j43HmmU2nNCZleeFx8AaN1Un4B9UPP7OJZVbmtpXQHTFJO3oedcmWlb4
+	8XWhkCzCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWkiy-0003rz-Bm; Thu, 07 May 2020 17:54:20 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jWn3l-0004wf-Kb; Thu, 07 May 2020 20:23:57 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWkiu-0003qQ-L7; Thu, 07 May 2020 17:54:18 +0000
-Received: by mail-ot1-x344.google.com with SMTP id m33so1738591otc.5;
- Thu, 07 May 2020 10:54:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=K9qTr+beRcohA6PMx27iJvmErOKyI82EyxD1O5Dcxzk=;
- b=SVsD6C63OiLwNbOKAQM5ZFhQakJf5wmETFQL9x+dixJ/i776z1xlYBs4MsH37nM2Q/
- rN20lR9IsgpWIANGiiWVwGlmETI6MlQhpuSRDvTmx+GG6KHHYSzcUoNVSnvvH7krGkvj
- Q43/nk2XB+fPJ3E2IE3bqXw22a9vnsjtN/mdP8+cPQfVIfxvSJy+aNEnvd9ILL9vOdUm
- 5La8QEzc3kfhqomZWhA2DoXxQkPpXhtMplOVm0qU37uRCu8S1TmTFKpmv5czDR9NGbtZ
- LigoAd2EISFD3oT6dUZbKvD8dcwnV4wuzzivD++70wK7jNSwQiHi++7UHGS5HfwfnQvw
- i8GQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=K9qTr+beRcohA6PMx27iJvmErOKyI82EyxD1O5Dcxzk=;
- b=Ef1lH9meHvE8HXWa5FK4pxR78nK3qJrE00PFPCN5oHLwTTcZanujmNdIf4LJtLP6n5
- 9LplMi22Q60FGFYGG30T0w0Vc7oS0SQoc/xbkO1Ce8ePqxT4boPV45YdoFkIeJspxxZP
- 7aN76VN7IjvCf03oZqBIlIGLqa+dfrBvdkLPGOwVTTrx/Aoaw1zTjv6yhNQeIZhZzQvj
- SXHHl1+Mg9pIsko44GAScN3EMGbDruvK7L2dv18bgxX2BnFoKPvgvyQt027J00bQcFih
- PrlX4LkQkUK2RMk9VrrmOw57/brv13MHH7EGjBsY/dUSKmGG04rfG2MZR2PXxchaFPWg
- 969Q==
-X-Gm-Message-State: AGi0PuZHQwIURi1bnmqwEDN484MDkvdkEqQYs+m9r7QO5jqGyg2cQWoW
- Hso84doRDIi6D3VqCuqpMmvsx738RF9QPHrmwlE=
-X-Google-Smtp-Source: APiQypIsmJ2T5664lpXTF/RWS8/eux+ZnXoiFN88OHtyHhUrSboY+wgSVo2JHDzVRl08o0T/GlQRWx6bo0sL6qxy4RY=
-X-Received: by 2002:a05:6830:108b:: with SMTP id
- y11mr11230755oto.88.1588874053316; 
- Thu, 07 May 2020 10:54:13 -0700 (PDT)
+ id 1jWn3Y-0004nj-6Z; Thu, 07 May 2020 20:23:45 +0000
+X-Originating-IP: 93.29.109.196
+Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id E845A1C0002;
+ Thu,  7 May 2020 20:23:37 +0000 (UTC)
+Date: Thu, 7 May 2020 22:23:37 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
+Message-ID: <20200507202337.GJ2422122@aptenodytes>
+References: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
+ <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
 MIME-Version: 1.0
-References: <1587666159-6035-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200507174446.GC1216@bug>
-In-Reply-To: <20200507174446.GC1216@bug>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Thu, 7 May 2020 18:53:46 +0100
-Message-ID: <CA+V-a8u00kfN=rNs72y-R4-8fpz4rPYX8xf+DoBMmYYVjUS8fg@mail.gmail.com>
-Subject: Re: [PATCH v9 0/8] Add endpoint driver for R-Car PCIe controller
-To: Pavel Machek <pavel@ucw.cz>
+In-Reply-To: <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_105416_716493_0AC3AE86 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_132344_378956_DE52BADD 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.197 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,68 +62,113 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci <linux-pci@vger.kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Tom Joseph <tjoseph@cadence.com>, Rob Herring <robh+dt@kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, LKML <linux-kernel@vger.kernel.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ hansverk@cisco.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ thomas.petazzoni@bootlin.com, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4393797047186801056=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Pavel,
 
-On Thu, May 7, 2020 at 6:44 PM Pavel Machek <pavel@ucw.cz> wrote:
->
-> Hi!
->
->
-> > R-Car/RZ-G2x SoC's, this also extends the epf framework to handle multiple windows
-> > supported by the controller for mapping PCI address locally.
-> >
-> > Note:
-> > The cadence/rockchip/designware endpoint drivers are build tested only.
-> >
-> > Changes for v9 (Re-spun this series as there were minimal changes requested):
-> ...
-> > * Replaced mdelay(1) with usleep_range(1000, 1001) in rcar_pcie_ep_assert_intx()
->
-> Are you sure that is good idea? You are requesting 1ms sleep time with 1us tolerance,
-> I dont believe common systems can do that.
->
-Agreed the systems cannot do that, but the main reason of replacing
-mdelay(1) with usleep_range(1000, 1001) was since  pci_epc_raise_irq()
-calls mutex_lock() and then this function rcar_pcie_ep_assert_intx(),
-so we can assume this function also can sleep. And, according to
-Documentation/timers/timers-howto.rst, we should use usleep_range()
-instead of mdelay().
+--===============4393797047186801056==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="LQAwcd5tHl0Qlnzi"
+Content-Disposition: inline
+
+
+--LQAwcd5tHl0Qlnzi
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Thu 30 Apr 20, 23:24, Johan Jonker wrote:
+> Hi Paul,
+>=20
+> >=20
+> > Add a new compatible for the PX30 Rockchip SoC, which also features
+> > a RGA block. It is compatible with the RK3288 RGA block.
+> >=20
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > ---
+> >  Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
+> >  1 file changed, 3 insertions(+)
+> >=20
+> > diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml =
+b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > index dd645ddccb07..740586299da9 100644
+> > --- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > @@ -23,6 +23,9 @@ properties:
+>=20
+>=20
+> >        - items:
+> >            - const: rockchip,rk3228-rga
+> >            - const: rockchip,rk3288-rga
+> > +      - items:
+> > +          - const: rockchip,px30-rga
+> > +          - const: rockchip,rk3288-rga
+>=20
+> Use enum.
+>=20
+>       - items:
+>           - enum:
+>             - rockchip,px30-rga
+>             - rockchip,rk3228-rga
+>           - const: rockchip,rk3288-rga
+
+Are you sure about this? The rk3228 above does it as I did it and other exa=
+mples
+like allwinner,sun4i-a10-csi.yaml appear to be doing the same too.
+
+The case with rockchip,rk3288-rga alone already seems covered.
 
 Cheers,
---Prabhakar
+
+Paul
+
+> > =20
+> >    reg:
+> >      maxItems: 1
+> > --=20
+> > 2.26.0
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--LQAwcd5tHl0Qlnzi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl60bkkACgkQ3cLmz3+f
+v9FGRQf+NACpI/Qm8LidCAjDd2uHl97xlPGI/gb4zzpGYeK/t1BGJfLcDSY4MCkK
+srG+0VSic+47U4qA5hlWqq4jXYTLkV5DBpF79lSqNCI6yrPln2oTaZ2bIcY/mF6E
+Q1/AljAuM8pcoBnFdLwJEq7Td82Nb79teutcAlVCSl2uUvVI+bEY5EtLmWjeLnOb
+ejYXlItHF3Od/hKE8C7GPpPazLyb4Oh67ZP1/RpnxkCEmkl/J41nni9NIRi+wV7Q
+1Sz063fVOuzdDdDgmfc7NHdl9pstkqBq/gKyurtSGkpVnAC/qSfSGSRdCk3JX1Om
+QZhzaBXFzWq8bStS1rjzsAz+AHUctA==
+=zYey
+-----END PGP SIGNATURE-----
+
+--LQAwcd5tHl0Qlnzi--
 
 
-
-> Best regards,
->                                                                         Pavel
->
-> --
-> (english) http://www.livejournal.com/~pavelmachek
-> (cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blog.html
+--===============4393797047186801056==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============4393797047186801056==--
+
