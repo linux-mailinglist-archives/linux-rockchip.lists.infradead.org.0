@@ -2,86 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42CEF1CB0A7
-	for <lists+linux-rockchip@lfdr.de>; Fri,  8 May 2020 15:42:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1623F1CB4F2
+	for <lists+linux-rockchip@lfdr.de>; Fri,  8 May 2020 18:26:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mCmXDjQ+nn8Dw9y9gVMWCVjj1tKj69nsN9+bBa4e46o=; b=f+RnZt2Bq3JQ/p
-	dVmieDM5vpcl1AfWQXSH6bHTCEcLHynQaT7dbW3AmytYDAbQ+ZMNw+LhfybAOxdQQBRvn/Ic4AUIw
-	F9oeJIYcogybz/xKTq5PEw8zbi5l32Ds1Py8LLKR+9w3He+qYzvZm+JSoHGf0HGxXtpUW+Uz4MTM1
-	yEwliYO4RMreQblsTGVXHWOSxe2Z/Ruh1Usq4zhfc5WG0TNs1dRQLKl0+qvZ52F7Cdl6ILognlDiu
-	gDjzflrj4xtjz56pWyeKFqWVvQqIXQa7nw4c/s3pBxYSvKAoa8j/GAQQUr70E1jpvRP0ixYLYMgmo
-	seOh06hTrR7uVfYfvwMw==;
+	List-Owner; bh=4YtL+poLgkbx6tLaz2x87yMrFTituwX6dGIPnOe4pkM=; b=RGO5dHEC7IoCCB
+	rGvyHEa+ONhczGarVL7nAsYVxTkOF6lnmEQORB+JLdMlVGJsSBM80K46aKvB7cHY1VF0xPI0PQnmF
+	GVBzhxijLNRE557OnR4zEacZduJ72qrAM2yGNeiznzyLi70/8raSrNYYcNtVW560UdqWTXKeiUwPV
+	OVWMcHMHEOOSWTKRyPv2IXBcTdMOB7qP8VhcMoYIZEEBo66Nwkk+gj4P2L2f7bR34vPC4vJdX7YHV
+	PL/7iT0LaSxxGXDqlagTlE2UBJUSZZWmZjofnI2utdCcrhpGCZgT48w6/9sLwY9s5DngJxkvPLUyF
+	D3N4k1fgsVALDuUh0OXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX3HC-00027o-Bx; Fri, 08 May 2020 13:42:54 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
+	id 1jX5pe-0002yZ-PO; Fri, 08 May 2020 16:26:38 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX3HA-00027M-29; Fri, 08 May 2020 13:42:53 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id d197so951660ybh.6;
- Fri, 08 May 2020 06:42:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pBzNAF/rm7qf9JD/mlsQ0iA9eh+VbbrEwR4tF97TGU0=;
- b=BdKPI5hcsGYeVJ2qAcgoxudFb/SH8PYr5sEVthDkxf5m2TDBAz2c0Q2KnFBcs9vAye
- KgE0EKzHjCXC6wRWMk6S/U/UHJXgz7Za12YEeGR7FXT5T6kJYFbWLnK80VeUg+6c/7yb
- VK4Wd6O2kVyvPLz1Z11l2e7CtJWaVXrKJ8Icu4pbptqGD71IqTu/m/nS/5l/pGmCz87B
- L/6EFRMpVUfAkUMPOM5ZRt1AZjfSopnzh6aXTDK23EhWaM2e6RRsISDF1GoHOpvx4iON
- UbaiWxelgTSYwLNqty6k+rNaj7eA1fztdFYvfOORBjgF4dzGzs/MtVcbkOPy99H+19jO
- b9Ew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pBzNAF/rm7qf9JD/mlsQ0iA9eh+VbbrEwR4tF97TGU0=;
- b=FHcjJch64Ms+Ij9rh/mN70m8ANmU6BW+/K8dLOE6wiDPeeR0nG9U/hNBYNWH0peh73
- YHdpZqk+nrygV2l6jMH0VnldmpVdmWH17OvIH2M9McT6hsON2Vkq8IUZqJiGF3J0cq0D
- JWmQwuDBdlhVNNXQ3yKNoTZt3KJRdvTjh6lkM8iAM/dOOL/bxEMb+fOWuOvBYXZSdjGh
- 8ss4GNsHBEOrNGMkrF4qE806cYSDVNRFHgzoiHETT5QZWBPtB6rgoqEHBO2wWg/DHgF5
- t2bgwZnCGUZQeitRSNRLFfyQ1+CXHmFy9HFSxgk/a87+3ONGd8+UoyYI2j4eDgb3kT3p
- PZ7g==
-X-Gm-Message-State: AGi0PubHMEgCNlXhtkJMFq7pT75zY32ymVRsIEDN/gLeFZR+uRWs5BUx
- +UIXv3rEFh/iIB0DlPO7Hb05uJjHKAg7q8LGVkY=
-X-Google-Smtp-Source: APiQypIX5kfqFGCBsLkvNmM3MXcMOc1ZzFCbC1vb3bZA4gU/cyEFJAiTo63nwaUf5Ac11beleDD7UJGrQ7Oe237J/X8=
-X-Received: by 2002:a25:487:: with SMTP id 129mr4557690ybe.1.1588945370813;
- Fri, 08 May 2020 06:42:50 -0700 (PDT)
+ id 1jX5pb-0002ws-IP
+ for linux-rockchip@lists.infradead.org; Fri, 08 May 2020 16:26:37 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 7F0B72A31EB
+Message-ID: <b2160325f5b9bae5b437a37069db926d2a464e8d.camel@collabora.com>
+Subject: Re: [PATCH v3 3/3] media: rkvdec: Add the VP9 backend
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>, linux-media@vger.kernel.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Fri, 08 May 2020 13:26:21 -0300
+In-Reply-To: <8e8eda07-e5f5-86dc-899b-0823ea0479f2@xs4all.nl>
+References: <20200505134110.3435-1-ezequiel@collabora.com>
+ <20200505134110.3435-4-ezequiel@collabora.com>
+ <8e8eda07-e5f5-86dc-899b-0823ea0479f2@xs4all.nl>
+Organization: Collabora
+User-Agent: Evolution 3.36.0-1 
 MIME-Version: 1.0
-References: <20200508083729.5560-1-chris.ruehl@gtsys.com.hk>
- <20200508083729.5560-2-chris.ruehl@gtsys.com.hk>
- <CANBLGcwA+=OB-_nOYUijWrDBSkLYhR7_PNG1ewO7LZ-zRVGoxg@mail.gmail.com>
-In-Reply-To: <CANBLGcwA+=OB-_nOYUijWrDBSkLYhR7_PNG1ewO7LZ-zRVGoxg@mail.gmail.com>
-From: Emil Renner Berthing <emil.renner.berthing@gmail.com>
-Date: Fri, 8 May 2020 15:42:39 +0200
-Message-ID: <CANBLGcwAhOHVBUrwLat_60D=wwKkXP2==fazQEeJNuB-CizZLQ@mail.gmail.com>
-Subject: Re: [PATCH v0 1/1] spi: spi-rockchip: add support for spi slave_mode
-To: Chris Ruehl <chris.ruehl@gtsys.com.hk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_064252_104892_C6746A18 
-X-CRM114-Status: UNSURE (   7.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200508_092635_881671_5CEAE914 
+X-CRM114-Status: GOOD (  16.63  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [emil.renner.berthing[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,29 +64,134 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Jack Lo <jack.lo@gtsys.com.hk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-spi@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>, Tomasz Figa <tfiga@chromium.org>,
+ gustavo.padovan@collabora.com, Boris Brezillon <boris.brezillon@collabora.com>,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Chris,
+On Fri, 2020-05-08 at 12:34 +0200, Hans Verkuil wrote:
+> On 05/05/2020 15:41, Ezequiel Garcia wrote:
+> > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > 
+> > The Rockchip VDEC supports VP9 profile 0 up to 4096x2304@30fps. Add
+> > a backend for this new format.
+> > 
+> > Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> > Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> > ---
+> >  drivers/staging/media/rkvdec/Makefile     |    2 +-
+> >  drivers/staging/media/rkvdec/rkvdec-vp9.c | 1577 +++++++++++++++++++++
+> >  drivers/staging/media/rkvdec/rkvdec.c     |   56 +-
+> >  drivers/staging/media/rkvdec/rkvdec.h     |    6 +
+> >  4 files changed, 1637 insertions(+), 4 deletions(-)
+> >  create mode 100644 drivers/staging/media/rkvdec/rkvdec-vp9.c
+> > 
+> > diff --git a/drivers/staging/media/rkvdec/Makefile b/drivers/staging/media/rkvdec/Makefile
+> > index c08fed0a39f9..cb86b429cfaa 100644
+> > --- a/drivers/staging/media/rkvdec/Makefile
+> > +++ b/drivers/staging/media/rkvdec/Makefile
+> > @@ -1,3 +1,3 @@
+> >  obj-$(CONFIG_VIDEO_ROCKCHIP_VDEC) += rockchip-vdec.o
+> >  
+> > -rockchip-vdec-y += rkvdec.o rkvdec-h264.o
+> > +rockchip-vdec-y += rkvdec.o rkvdec-h264.o rkvdec-vp9.o
+> > diff --git a/drivers/staging/media/rkvdec/rkvdec-vp9.c b/drivers/staging/media/rkvdec/rkvdec-vp9.c
+> > new file mode 100644
+> > index 000000000000..37d0ea4e3570
+> > --- /dev/null
+> > +++ b/drivers/staging/media/rkvdec/rkvdec-vp9.c
+> > @@ -0,0 +1,1577 @@
+> 
+> <snip>
+> 
+> > +static void init_inter_probs(struct rkvdec_ctx *ctx,
+> > +			     const struct rkvdec_vp9_run *run)
+> > +{
+> > +	const struct v4l2_ctrl_vp9_frame_decode_params *dec_params;
+> > +	struct rkvdec_vp9_ctx *vp9_ctx = ctx->priv;
+> > +	struct rkvdec_vp9_priv_tbl *tbl = vp9_ctx->priv_tbl.cpu;
+> > +	struct rkvdec_vp9_inter_frame_probs *rkprobs;
+> > +	const struct v4l2_vp9_probabilities *probs;
+> > +	unsigned int i, j, k;
+> > +
+> > +	rkprobs = &tbl->probs.inter;
+> > +	dec_params = run->decode_params;
+> > +	probs = &dec_params->probs;
+> > +
+> > +	/*
+> > +	 * inter probs
+> > +	 * 151 x 128 bits, aligned to 152 x 128 bits
+> > +	 * inter only
+> > +	 * intra_y_mode & inter_block info 6 x 128 bits
+> > +	 */
+> > +
+> > +	memcpy(rkprobs->y_mode, probs->y_mode, sizeof(rkprobs->y_mode));
+> > +	memcpy(rkprobs->comp_mode, probs->comp_mode,
+> > +	       sizeof(rkprobs->comp_mode));
+> > +	memcpy(rkprobs->comp_ref, probs->comp_ref,
+> > +	       sizeof(rkprobs->comp_ref));
+> > +	memcpy(rkprobs->single_ref, probs->single_ref,
+> > +	       sizeof(rkprobs->single_ref));
+> > +	memcpy(rkprobs->inter_mode, probs->inter_mode,
+> > +	       sizeof(rkprobs->inter_mode));
+> > +	memcpy(rkprobs->interp_filter, probs->interp_filter,
+> > +	       sizeof(rkprobs->interp_filter));
+> > +
+> > +	/* 128 x 128 bits coeff related */
+> > +	for (i = 0; i < ARRAY_SIZE(probs->coef); i++) {
+> > +		for (j = 0; j < ARRAY_SIZE(probs->coef[0]); j++) {
+> > +			for (k = 0; k < ARRAY_SIZE(probs->coef[0][0]); k++)
+> > +				write_coeff_plane(probs->coef[i][j][k],
+> > +						  rkprobs->coef[k][i][j]);
+> > +		}
+> > +	}
+> > +
+> > +	/* intra uv mode 6 x 128 */
+> > +	memcpy(rkprobs->uv_mode_0_2, &probs->uv_mode[0],
+> > +	       sizeof(rkprobs->uv_mode_0_2));
+> > +	memcpy(rkprobs->uv_mode_3_5, &probs->uv_mode[3],
+> > +	       sizeof(rkprobs->uv_mode_3_5));
+> > +	memcpy(rkprobs->uv_mode_6_8, &probs->uv_mode[6],
+> > +	       sizeof(rkprobs->uv_mode_6_8));
+> > +	memcpy(rkprobs->uv_mode_9, &probs->uv_mode[9],
+> > +	       sizeof(rkprobs->uv_mode_9));
+> > +
+> > +	/* mv related 6 x 128 */
+> > +	memcpy(rkprobs->mv.joint, probs->mv.joint,
+> > +	       sizeof(rkprobs->mv.joint));
+> > +	memcpy(rkprobs->mv.sign, probs->mv.sign,
+> > +	       sizeof(rkprobs->mv.sign));
+> > +	memcpy(rkprobs->mv.class, probs->mv.class,
+> > +	       sizeof(rkprobs->mv.class));
+> > +	memcpy(rkprobs->mv.class0_bit, probs->mv.class0_bit,
+> > +	       sizeof(rkprobs->mv.class0_bit));
+> > +	memcpy(rkprobs->mv.bits, probs->mv.bits,
+> > +	       sizeof(rkprobs->mv.bits));
+> > +	memcpy(rkprobs->mv.class0_fr, probs->mv.class0_fr,
+> > +	       sizeof(rkprobs->mv.class0_fr));
+> > +	memcpy(rkprobs->mv.fr, probs->mv.fr,
+> > +	       sizeof(rkprobs->mv.fr));
+> > +	memcpy(rkprobs->mv.class0_hp, probs->mv.class0_hp,
+> > +	       sizeof(rkprobs->mv.class0_hp));
+> > +	memcpy(rkprobs->mv.hp, probs->mv.hp,
+> > +	       sizeof(rkprobs->mv.hp));
+> 
+> Can't you just do: 'rkprobs->mv = probs->mv'?
+> 
 
-On Fri, 8 May 2020 at 15:13, Emil Renner Berthing
-<emil.renner.berthing@gmail.com> wrote:
-> If you do something like this you won't need the temporary num_cs variable:
->
-> if (of_property_read_u32(np, "num-cs", &master->num_chipselect))
->     master->num_chipselect = 1;
+I think I'd like to keep this as-is.
 
-Sorry, that should be of_property_read_u16, since num_chipselect is a u16.
+Having the memcpy makes it explicit that we are copying
+these structs around. While the assignment would
+bring type checking, it can be misleading for readers.
 
-/Emil
+Thanks,
+Ezequiel
+
 
 _______________________________________________
 Linux-rockchip mailing list
