@@ -2,73 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B05001CC2DA
-	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 18:47:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 994671CC2E7
+	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 18:56:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ar4UT7VvF6W+hmw1lyGCCDGTuRvx397ur3tyEvHr/Xk=; b=fiKbL7AopAcu1k
-	B8NHw64pXr9z2AuUsIEUTU8XqiZ+d8G9rzOM1PEGWNDvq519+dLtULQq0HHXxGkxZBe2hrz9fpnS3
-	4eQHvPwRSrIiNdR0nTOHdCZcuAZOMbVsiJgh8Ae3KcHxgocItde31ebLibYG7VJhAU/YO++k1Y0a6
-	3g2ffXLaG7nExgwtMPXBaV0dKRPPxvJ08exDyCYCiQBEg9ZGbmWd5fC8g0oI48w96Z6PTolWxee7f
-	41ohPp1aPFT7C11xA8ekGIkLZTV34tXmxr+QRkFDQNWgjZNhzNgiA6Dq2/loMd+W/TQzctHkqRYWl
-	sQ4djkN6dkX6PeQJAJlg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Lf5e21R9BaHpKUM3rKFb0I6yxHp519aGB2d5b7xOTRE=; b=Uq7
+	UemP/9ec6+/g3EbKzE8Ya4RlxB6EX0fB4/F4xvWcWGNwUwFoynNdSuXxrEuCdNgrkygewSpdAihx0
+	/nItRNSSI+HuxqOSWoq3Zc+tv4FK+IhwDE35/MMTCd6QoedYLJYVeExWrtTmJX0odYiQxQldULlP0
+	KNUUr0kEaFktJMCs+Yk5HJkU++jAGs/3Zlpdh/5dIaqkBdNHDJZF9GxQkMDvVTfdGtKZQXW8jkgdJ
+	jK8BN/ZS/J13BoypJNW9J7nuTqF3DyfR8ciKAKSVm9NLhZcBuucLIY4d/BAURcUw0A/DrXYX7pO8X
+	PR5S4bFOLDlMtHqDF1HEW+APLPGkaxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXSd5-0005j1-1e; Sat, 09 May 2020 16:47:11 +0000
-Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
+	id 1jXSmK-0002x5-Mi; Sat, 09 May 2020 16:56:44 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXSd1-0005hy-3c
- for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 16:47:09 +0000
-Received: by mail-ej1-x642.google.com with SMTP id n17so4032790ejh.7
- for <linux-rockchip@lists.infradead.org>; Sat, 09 May 2020 09:47:06 -0700 (PDT)
+ id 1jXSmH-0002wA-8D
+ for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 16:56:42 +0000
+Received: by mail-pf1-x444.google.com with SMTP id z1so2601474pfn.3
+ for <linux-rockchip@lists.infradead.org>; Sat, 09 May 2020 09:56:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BtCKp4AGPhPF6KENlaa3wSo8dEmGL1XnJntVOvzmP6g=;
- b=Rg02YZM90SYCZC9+fxwI8qbM+B6KhIXb+pk9DaMhiTsLczUwIeqhAvGNKBxUPVpIVY
- 1CXMdCJxPW70SBHszvfIUWJqEPgTIWjoAxbKqy7saZRT81/TtysCoXllDCPXssUFAXZ0
- PhjzKCL4ZEdyj7gY0uKoxcAHPY5cjdXqz/CnU=
+ h=from:to:cc:subject:date:message-id;
+ bh=B9ZuSY7carRYxZsnl7MNKYtuOx+UchWnWiSMIaXm3x4=;
+ b=GbzWLBCmZcrY6H6L4FoK+tPZIigyZkdob5scS0fOgFLEixNiYSQ63V+shpdtyWJhoK
+ hQSr8vOtoMZGp36/mlItS+jPEfjCjl8qikIcq87rbKKgGzLWM/F5RE/kyYvu7N7Vag6l
+ qvYyM6jBSiMCPXTOu+/V61FK4WHI1QjNdvfss=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BtCKp4AGPhPF6KENlaa3wSo8dEmGL1XnJntVOvzmP6g=;
- b=WL1N/3K8wGhStKDRHCz7Dsdbioyalt2GEN/X7qoSosllkVJ79+Ydn/smxBqlocw9Xi
- 4Wgzc6X0wR9nSLKtR5lxjVqj/C/NzWFJYKyEdSnk3fjPTWHNwCGoQFIP3/jKQPaYPHZC
- zlqXk7KkxDPOc0XIKCyfCaPs/75vYO5m3q+yFjPGdDt0bLWXrIOoCcgtKHvFkR52ifud
- o+aCTXjhXGTPoWPMjmfXJW9V49Ex5nmZvjrveQVuSXgvmsOuasHoWwqSu90C3DDUQ5ZZ
- 0J+E7ujCf15jIB1ZnS3J4kBMkiPrpCp1lPBGyTUY3L1jAKwlu5KQmBB/uogETuU6z+2e
- YFYg==
-X-Gm-Message-State: AGi0PuZFBS4dagPRAMSoBQNINZ2PA43s5zPhulqPfXdHlqkS5dbZs++6
- kv/Mm7QSf9jiQnqYeQ0/FLYA/3Pn/Kd+bwsbkNDmsA==
-X-Google-Smtp-Source: APiQypK3FqLd2lC4TJZWTOcBNhjJUs79wet0GfOLB6nulpAL0sOMrJ3xWfx6wyIh9WwxvnefBhmHG4K9yH0LgDbjVNI=
-X-Received: by 2002:a17:906:1c94:: with SMTP id
- g20mr6535699ejh.319.1589042824802; 
- Sat, 09 May 2020 09:47:04 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200430070412.12499-1-jagan@amarulasolutions.com>
- <20200430070412.12499-9-jagan@amarulasolutions.com>
- <20200503133944.GA28003@Mani-XPS-13-9360>
-In-Reply-To: <20200503133944.GA28003@Mani-XPS-13-9360>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=B9ZuSY7carRYxZsnl7MNKYtuOx+UchWnWiSMIaXm3x4=;
+ b=k6k0RT/ZHX16OL/GvVdpDwMLcsUq/250IAXqtwrC4Nd2IvqJtj9ZedIPb5QtoIv4lc
+ XVyJArQc5SDOBjPPi21QAZg+NZWNjDOZSQfa3FjEIowkZ12r5HvXTyxQ8kFPeaY3c4d8
+ CqoR2Nk3ZFxfg+gUL1qK04z6DTVDoh16aH93WrduA82GZD9mcsbXC0F237ZT/kSpX5fl
+ XvfKr0M744TVGW2wIfkKaRhcbVO8gqegZqEYuAsso5WYYgXJR/MPTs8KoahIv1+fZAag
+ G3MKpOKxlcbUxE9++FYA/vQeZtFNwOnMcN3SaGGpc9atIIHx4m1+Lc6yuvGjdsY2rslL
+ UkWQ==
+X-Gm-Message-State: AGi0PuZCX5k/f4mtn17wShcbCB0xl3zbmARt9BfwQ8F9UXQ+wYRCJeEU
+ dEeUWTp77uS79X6Zm46amx6IFA==
+X-Google-Smtp-Source: APiQypKXFGkORaaxvphNaazRHHzsFJIT7IdIlZVUi4rR7vHC+k8//Gn1ZKMUTQ68jq0Cxg6pjzMXRw==
+X-Received: by 2002:a63:6602:: with SMTP id a2mr7330321pgc.281.1589043397338; 
+ Sat, 09 May 2020 09:56:37 -0700 (PDT)
+Received: from localhost.localdomain ([2405:201:c809:c7d5:21f6:1c8f:ae94:fb04])
+ by smtp.gmail.com with ESMTPSA id x195sm4977098pfc.0.2020.05.09.09.56.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 09 May 2020 09:56:36 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Sat, 9 May 2020 22:16:53 +0530
-Message-ID: <CAMty3ZCsW+XnT7NHh08N8FpTx4XYPnH0_9K_6PbMqG50xAp2vw@mail.gmail.com>
-Subject: Re: [PATCH v2 8/8] rockchip: Enable PCIe/M.2 on rock960 board
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
+Subject: [PATCH v3 0/6] rockchip: Add PCIe host support
+Date: Sat,  9 May 2020 22:26:18 +0530
+Message-Id: <20200509165624.20791-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_094707_587556_1A895520 
-X-CRM114-Status: GOOD (  15.59  )
+X-CRM114-CacheID: sfid-20200509_095641_294599_AA32C35D 
+X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,76 +91,64 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Patrick Wildt <patrick@blueri.se>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Tom Cubie <tom@radxa.com>, Simon Glass <sjg@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, U-Boot-Denx <u-boot@lists.denx.de>,
- Peter Robinson <pbrobinson@gmail.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
+Cc: patrick@blueri.se, u-boot@lists.denx.de, shawn.lin@rock-chips.com,
+ linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
+ sunil@amarulasolutions.com, linux-amarula@amarulasolutions.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sun, May 3, 2020 at 7:09 PM Manivannan Sadhasivam
-<manivannan.sadhasivam@linaro.org> wrote:
->
-> On Thu, Apr 30, 2020 at 12:34:12PM +0530, Jagan Teki wrote:
-> > Due to some on board limitation rock960 PCIe
-> > works only with 1.8V IO domain.
-> >
-> > So, this patch enables grf io_sel explicitly
-> > to make PCIe/M.2 to work.
-> >
-> > Cc: Tom Cubie <tom@radxa.com>
-> > Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> > Changes for v2:
-> > - none
-> >
-> >  board/vamrs/rock960_rk3399/rock960-rk3399.c | 20 ++++++++++++++++++++
-> >  configs/rock960-rk3399_defconfig            |  5 +++++
-> >  2 files changed, 25 insertions(+)
-> >
-> > diff --git a/board/vamrs/rock960_rk3399/rock960-rk3399.c b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> > index 68a127b9ac..98d62e89ca 100644
-> > --- a/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> > +++ b/board/vamrs/rock960_rk3399/rock960-rk3399.c
-> > @@ -2,3 +2,23 @@
-> >  /*
-> >   * Copyright (C) 2018 Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> >   */
-> > +
-> > +#include <common.h>
-> > +#include <syscon.h>
-> > +#include <asm/io.h>
-> > +#include <asm/arch-rockchip/clock.h>
-> > +#include <asm/arch-rockchip/grf_rk3399.h>
-> > +#include <asm/arch-rockchip/hardware.h>
-> > +
-> > +#ifdef CONFIG_MISC_INIT_R
-> > +int misc_init_r(void)
-> > +{
-> > +     struct rk3399_grf_regs *grf =
-> > +         syscon_get_first_range(ROCKCHIP_SYSCON_GRF);
-> > +
-> > +     /* BT565 is in 1.8v domain */
->
-> From where this BT565 comes in?
+This series support PCIe host controller support
+on rockchip rk3399 platform.
 
-If my understanding was correct, some SSD's to work on this board do
-require this explicit domain voltage change. Usually it requires GPIO
-enablement followed by grf voltage domain update [1] but in my case it
-worked w/o gpio.
+It is based on previous version[1] changes.
 
-Maybe I will update this details in the commit message and also in the code.
+Works well on rk3399 boards like rock960, nanopc-t4 
+and roc-kr3399-pc-mezzanine board as Gen1 configurable 
+host with M.2 SSD.
 
-[1] https://github.com/radxa/u-boot/blob/stable-4.4-rockpi4/board/rockchip/evb_rk3399/evb-rk3399.c#L194
+Changes for v3:
+- fix few clock register values
+- collect mani a-b
+Changes for v2:
+- handle USB, GMAC clocks
+- collect kever r-o-b tag
+- simplify rd and wr conf API 
 
+[1] https://patchwork.ozlabs.org/project/uboot/cover/20200430070412.12499-1-jagan@amarulasolutions.com/
+
+Any inputs?
 Jagan.
+
+Jagan Teki (6):
+  clk: rk3399: Add enable/disable clks
+  clk: rk3399: Enable/Disable the PCIEPHY clk
+  pci: Add Rockchip PCIe controller driver
+  pci: Add Rockchip PCIe PHY controller driver
+  rockchip: Enable PCIe/M.2 on rk3399 board w/ M.2
+  rockchip: Enable PCIe/M.2 on rock960 board
+
+ arch/arm/dts/rk3399-u-boot.dtsi             |   1 +
+ board/vamrs/rock960_rk3399/rock960-rk3399.c |  23 +
+ configs/nanopc-t4-rk3399_defconfig          |   4 +
+ configs/roc-pc-mezzanine-rk3399_defconfig   |   4 +
+ configs/rock960-rk3399_defconfig            |   5 +
+ drivers/clk/rockchip/clk_rk3399.c           | 154 ++++++
+ drivers/pci/Kconfig                         |   8 +
+ drivers/pci/Makefile                        |   1 +
+ drivers/pci/pcie_rockchip.c                 | 491 ++++++++++++++++++++
+ drivers/pci/pcie_rockchip.h                 | 142 ++++++
+ drivers/pci/pcie_rockchip_phy.c             | 205 ++++++++
+ 11 files changed, 1038 insertions(+)
+ create mode 100644 drivers/pci/pcie_rockchip.c
+ create mode 100644 drivers/pci/pcie_rockchip.h
+ create mode 100644 drivers/pci/pcie_rockchip_phy.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
