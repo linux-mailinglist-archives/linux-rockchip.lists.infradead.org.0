@@ -2,40 +2,43 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22B961CC265
-	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 17:29:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96FE51CC267
+	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 17:29:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=MD0azc3h5srYuKxP9VOFRsaJoo/ZEF/vdDHiOtS2DiU=; b=Pa/
-	crV1V343vok/eOkqDalaEXIzxXPDjWzwQEQjMcZSVA23j52coOGKLDDLA4EzSoeivZ7NCSJvCWUdp
-	qHk95KJcUPO0bcJQBc/ncWB4Eb6u9Hy4f3HA4rcs29Lq5ZjdBn7YnUjGWG/yyRC+M46GAQlHf9o/X
-	VX+b2f+pON6CshlL90IG9YrcGY/6wPCbL91AdmIDzIY6/m1RnbVuQs2lj4k5I9QI9QfdTjliEQ/lH
-	hzvdnLpMNGyjckFdm0wiLNY4igKXnJWbi/3ksHQGmuf4UdSjahmGoQ25TP1/bBvzM0HMUUaCfUtUV
-	+X6cCvcnNVjEhcFP+cIwNn904D+dlnA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=QmKCtDUkKQTs+TA3LxpSevOpASNGko42hsI0lntwU0E=; b=h3Kejtp5yetY9n9WZqewmo6irc
+	R24EEQTy+obCjF6X7bVF6bEY+sP5JkjNICA1Up+noiDtkHm3tK/gJiWCeqdtGhC2V6vWzCpM8EqEq
+	vt4iqzR3r3RcyDSOP7rO4EY1xSxAxg54a5bWSRKHmFc+b9Iiiz8DXiBSlQ2sj5NkQbJoXj0mmLBnb
+	pPewOG/7tPbPKWCn6OhxJtxmx3xa4M9fBiO1yvk0Njhvw462whXjqaSk+T837It1Dq6zdnf7RL3qE
+	IJRpYj1ytUzyo+fJ7zE8MmBorqII3rPdGJo1l2IZsWmLezzlVbnA86Fk4OJT/kOsH8e2UZcbDfuxG
+	YiNdQuCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXRPi-0001nZ-Ka; Sat, 09 May 2020 15:29:18 +0000
+	id 1jXRPs-0001qB-3q; Sat, 09 May 2020 15:29:28 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXRPf-0001n2-E8
- for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 15:29:17 +0000
+ id 1jXRPo-0001pR-Ut
+ for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 15:29:26 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id AA4A3260E88
+ (Authenticated sender: dafna) with ESMTPSA id 645A0260E88
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org,
 	linux-rockchip@lists.infradead.org
-Subject: [PATCH 1/2] media: staging: rkisp1 stats: set a measure flag with
- '|=' instead of '='
-Date: Sat,  9 May 2020 17:29:03 +0200
-Message-Id: <20200509152904.26348-1-dafna.hirschfeld@collabora.com>
+Subject: [PATCH 2/2] media: staging: rkisp1: stats: don't set stats flags in
+ rkisp1_stats_send_measurement
+Date: Sat,  9 May 2020 17:29:04 +0200
+Message-Id: <20200509152904.26348-2-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200509152904.26348-1-dafna.hirschfeld@collabora.com>
+References: <20200509152904.26348-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_082915_608983_EA3133D7 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20200509_082925_140323_3CFAB1C3 
+X-CRM114-Status: UNSURE (   7.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,28 +73,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The flag RKISP1_CIF_ISP_STAT_AFM_FIN that indicates a type of
-statistics is mistakenly set with '=' instead of '|='
-this might set off previous flags.
+The flags that indicate which statistics are read are already
+set in the functions that read them so there is no need to
+set them in the function rkisp1_stats_send_measurement.
 
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 ---
- drivers/staging/media/rkisp1/rkisp1-stats.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/staging/media/rkisp1/rkisp1-stats.c | 13 +++----------
+ 1 file changed, 3 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/staging/media/rkisp1/rkisp1-stats.c b/drivers/staging/media/rkisp1/rkisp1-stats.c
-index 6dfcbdc3deb8..8351bda0be03 100644
+index 8351bda0be03..0616793ae395 100644
 --- a/drivers/staging/media/rkisp1/rkisp1-stats.c
 +++ b/drivers/staging/media/rkisp1/rkisp1-stats.c
-@@ -253,7 +253,7 @@ static void rkisp1_stats_get_afc_meas(struct rkisp1_stats *stats,
- 	struct rkisp1_device *rkisp1 = stats->rkisp1;
- 	struct rkisp1_cif_isp_af_stat *af;
+@@ -356,26 +356,19 @@ rkisp1_stats_send_measurement(struct rkisp1_stats *stats,
+ 	cur_stat_buf =
+ 		(struct rkisp1_stat_buffer *)(cur_buf->vaddr[0]);
  
--	pbuf->meas_type = RKISP1_CIF_ISP_STAT_AFM_FIN;
-+	pbuf->meas_type |= RKISP1_CIF_ISP_STAT_AFM_FIN;
+-	if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE) {
++	if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE)
+ 		rkisp1_stats_get_awb_meas(stats, cur_stat_buf);
+-		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AWB;
+-	}
  
- 	af = &pbuf->params.af;
- 	af->window[0].sum = rkisp1_read(rkisp1, RKISP1_CIF_ISP_AFM_SUM_A);
+-	if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN) {
++	if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN)
+ 		rkisp1_stats_get_afc_meas(stats, cur_stat_buf);
+-		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AFM_FIN;
+-	}
+ 
+ 	if (meas_work->isp_ris & RKISP1_CIF_ISP_EXP_END) {
+ 		rkisp1_stats_get_aec_meas(stats, cur_stat_buf);
+ 		rkisp1_stats_get_bls_meas(stats, cur_stat_buf);
+-		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AUTOEXP;
+ 	}
+ 
+-	if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY) {
++	if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY)
+ 		rkisp1_stats_get_hst_meas(stats, cur_stat_buf);
+-		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_HIST;
+-	}
+ 
+ 	vb2_set_plane_payload(&cur_buf->vb.vb2_buf, 0,
+ 			      sizeof(struct rkisp1_stat_buffer));
 -- 
 2.17.1
 
