@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A00191CC2E9
-	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 18:56:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B0881CC2EB
+	for <lists+linux-rockchip@lfdr.de>; Sat,  9 May 2020 18:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FVWOl+JbzXfdgAtxvG8K/+9E23XYal1/h7jdlxg2csw=; b=USelWG9q0A3pfkpg6Wu4Exp//J
-	+ft37F/b/N3Ez0t5FP010M/om71a+76R5MjGcSP2vdlwEawX3YEdSutcNZnjIF+siO+jK1iiXcgit
-	OzK0BQU9yVccZw6AaPBkeWFMA0/haZFI6PkZ784gNlSnuZUeSTiNenpCU6+R7KI4yMKiqstOJG4FB
-	XDUmU+l8dPDv+V86+1mZER0pMswlb9Ha8gQjQ3GYlWZ4x9FYQSTpq50lUgIeLqBo3Ez4ELvAZkqGh
-	lGOM+suPv4tatfEAu5jx45b5YUw3cdnrUcoSnXVajvREvo+A3ty70EU+uoC4c6IDdtOYpKwsADqTn
-	6Ok/TKbw==;
+	bh=heNnGPsHGOH1PR6eL15z3JOujozScDnfkSawhTUkcX4=; b=Yz3LJhjBL+QBXsm5MH5vEYbcZr
+	1FHbfzPIfl5tPx0T4s0zkGxhUFQMINEgB9XdJ2Z0eXL/upIvpE1Fvs9GGawcXSDGLC1QyQfR+PJ7X
+	rrioKnGQh6/7gPXAyYrbh+U5bvFv2J6F60+6T4vO69SuOIta9cgj/0qiCFbSKMLiMnQo11MitcDNe
+	rNJQ+SqeetaFPenCyTVvq15HjrsrTUiTScHns7UrtCqZB80VPknLpvtfhDc1Ee6D0gfYanisHjb1h
+	8I7Xq3TjklwuYZhz/Q+Ru5pjYHoNqU/oSr/rnbCEDVdyzyQjOGuUdrCPRh/a7jHeaggl8lBoX+qd2
+	CKcQzyxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXSmV-00034Y-NY; Sat, 09 May 2020 16:56:55 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jXSmY-00036r-Od; Sat, 09 May 2020 16:56:58 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXSmS-00031s-57
- for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 16:56:54 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id a7so5669722pju.2
- for <linux-rockchip@lists.infradead.org>; Sat, 09 May 2020 09:56:49 -0700 (PDT)
+ id 1jXSmT-00033m-Va
+ for linux-rockchip@lists.infradead.org; Sat, 09 May 2020 16:56:55 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id 7so6146895pjo.0
+ for <linux-rockchip@lists.infradead.org>; Sat, 09 May 2020 09:56:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MHdHHDYJKTAE5VPEB6ubYVNXx6dEp2WebpOoJ6AEFX8=;
- b=dWaDiG10GyvZla2hGW5zq/D1sMLHaalcroAS0+FFbEZ6zTRv/6TCzKehpa5MpQTAJ0
- /eEjH/yYXVZQDeNF4ThzBM/3d7SpIbwjzcXa59ajNB6paNkNR2zsjRWrqIsdcHK4oIr1
- EZYpvSGIgA2h6hidt8qho6TvzIEdMxt2UlJNY=
+ bh=12JLHJJoRLxNkpyAhU61EyjuReXe2tUXvBwcr6h09W4=;
+ b=O36e/9QMWxRB8loYpyMi0g/nQH9j6vHLcj92R6W3IKlOLe8sIrV85QpdIL7OuJfYag
+ 1cAiaoOy1sDgMFCnZXvsSYypPWrvYHPS1hpK4w13fd+MCMuf2pnwLN68BajTAS9SvLAZ
+ 6dDZ4UoBukFaCppa5s7dqKNQcbydB3c3dDiPw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MHdHHDYJKTAE5VPEB6ubYVNXx6dEp2WebpOoJ6AEFX8=;
- b=U6Ut61qixvGEdt+ahDErJmqbjI4J9m8+aFoTSqZOxnI2O12PdTTN1s7sDFm5b3+6GH
- zTLjoctgL1gxmFsWIF16nWhRMLFxFm4n1nbEMy4mHlaf1Iq0WyIgSrw5/vn2TG9gXJhJ
- Q1dlsBSkghmj0gpLdjjYRRNCDod7kaAUNLtACiVbX1GDpm8D86H3Y9m0CC+BYYR8jcE7
- mb/xPyQUWWqIk33EagPMok4vH3n0mF/5q8dS3WpjWudoo8msL/YMb10gSkyZQvXAe3Rm
- 9TN09rZWurvLUfpuh6byIGKskqyFzBhT6UiRU/VgY9/WmNihnXQEg4zy/g3JbPPk6OQr
- vh1g==
-X-Gm-Message-State: AGi0Pub0flrcFcx5NBQy8JCpjQBjT1mBbtluiWWDCig5mtLczbLt4ZaY
- 0KObZ8SP02bHU+LmZq4kqi7C9w==
-X-Google-Smtp-Source: APiQypLEUBMqpp5H+sVM87WQJbX6UNL62nQSbD65pjt92EBk414iPoq5vcQDzjLVi48lhtKAxOrL/g==
-X-Received: by 2002:a17:902:8688:: with SMTP id
- g8mr8023843plo.268.1589043409178; 
- Sat, 09 May 2020 09:56:49 -0700 (PDT)
+ bh=12JLHJJoRLxNkpyAhU61EyjuReXe2tUXvBwcr6h09W4=;
+ b=Iz2eiUlWxN1l5L7NPtdnyMcxhpspLkg3Ty/Iipb/5vg5aWg+JDkn/9MvcuPGHY++5K
+ jM9KD7Li0HWq+j5qhnoPxyn6JkR6acbM52kQ3GWXzetWE3roPnzAA+8tBt3DkK/bkBkG
+ 7bD4uehUn0uR6L8R141J6/jW3QVwiFaBU1KgvPbxVYyxifxrJLc/2FfSKVMSfsjTKI2f
+ D9A0IzX5qfH3euK4m/UIC/kTSrv7Iz8n4ja0437TtYcADLqnqcjxLFdJcm6e0SrVz+UA
+ IeX9h9N+L5cZtCdDyxfng2ImRkn0rrO/2ENIfDY7gb7hZU3iA0ECGErpEmOMsCAhqP5S
+ +xXw==
+X-Gm-Message-State: AGi0PuZJpFnVuv7AqQKCH1HzT8YbkTTPp/amJud7SlgiszFnq7ixVthB
+ LT5DUUb8JcjAR4ejzzH89UwJhw==
+X-Google-Smtp-Source: APiQypJIaCb/nb1UFuKtTwFczvyGRrBXBzlosRfiAPIan37cm7Rcw3MNhvkeZRIZYIYlg5I5PtUiZQ==
+X-Received: by 2002:a17:90a:e28c:: with SMTP id
+ d12mr12704645pjz.19.1589043413026; 
+ Sat, 09 May 2020 09:56:53 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:21f6:1c8f:ae94:fb04])
- by smtp.gmail.com with ESMTPSA id x195sm4977098pfc.0.2020.05.09.09.56.45
+ by smtp.gmail.com with ESMTPSA id x195sm4977098pfc.0.2020.05.09.09.56.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 09 May 2020 09:56:48 -0700 (PDT)
+ Sat, 09 May 2020 09:56:52 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v3 3/6] pci: Add Rockchip PCIe controller driver
-Date: Sat,  9 May 2020 22:26:21 +0530
-Message-Id: <20200509165624.20791-4-jagan@amarulasolutions.com>
+Subject: [PATCH v3 4/6] pci: Add Rockchip PCIe PHY controller driver
+Date: Sat,  9 May 2020 22:26:22 +0530
+Message-Id: <20200509165624.20791-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200509165624.20791-1-jagan@amarulasolutions.com>
 References: <20200509165624.20791-1-jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_095652_196493_7BCEBEC6 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20200509_095654_013690_5ED064D6 
+X-CRM114-Status: GOOD (  21.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,611 +104,515 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add Rockchip PCIe controller driver for rk3399 platform.
+Yes, it is possible to have a dedicated UCLASS PHY driver
+for this Rockchip PCIe PHY but there are some issues on
+Generic PHY framework to support the same.
 
-Driver support Gen1 by operating as a Root complex.
+The Generic PHY framework is unable to get the PHY if
+the PHY parent is of a different uclass.
 
-Thanks to Patrick for initial work.
+Say if we try to get the PCIe PHY then the phy-uclass
+will look for PHY in the first instance if it is not
+in the root node it will try to probe the parent by
+assuming that the actual PHY is inside the parent PHY
+of UCLASS_PHY. But, in rk3399 hardware representation
+PHY like emmc, usb and pcie are part of syscon which
+is completely a different of UCLASS_SYSCON.
 
-Signed-off-by: Patrick Wildt <patrick@blueri.se>
+Example:
+
+grf: syscon@ff770000 {
+   compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+   reg = <0x0 0xff770000 0x0 0x10000>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   pcie_phy: pcie-phy {
+       compatible = "rockchip,rk3399-pcie-phy";
+       clocks = <&cru SCLK_PCIEPHY_REF>;
+       clock-names = "refclk";
+       #phy-cells = <1>;
+       resets = <&cru SRST_PCIEPHY>;
+       drive-impedance-ohm = <50>;
+       reset-names = "phy";
+       status = "disabled";
+   };
+};
+
+Due to this limitation, this patch adds a separate PHY
+driver for Rockchip PCIe. This might be removed in future
+once Generic PHY supports this limitation.
+
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 ---
 Changes for v3:
 - none
 
- drivers/pci/Kconfig         |   8 +
- drivers/pci/Makefile        |   1 +
- drivers/pci/pcie_rockchip.c | 467 ++++++++++++++++++++++++++++++++++++
- drivers/pci/pcie_rockchip.h |  79 ++++++
- 4 files changed, 555 insertions(+)
- create mode 100644 drivers/pci/pcie_rockchip.c
- create mode 100644 drivers/pci/pcie_rockchip.h
+ drivers/pci/Makefile            |   2 +-
+ drivers/pci/pcie_rockchip.c     |  50 ++++++--
+ drivers/pci/pcie_rockchip.h     |  63 ++++++++++
+ drivers/pci/pcie_rockchip_phy.c | 205 ++++++++++++++++++++++++++++++++
+ 4 files changed, 306 insertions(+), 14 deletions(-)
+ create mode 100644 drivers/pci/pcie_rockchip_phy.c
 
-diff --git a/drivers/pci/Kconfig b/drivers/pci/Kconfig
-index 437cd9a055..3dba84103b 100644
---- a/drivers/pci/Kconfig
-+++ b/drivers/pci/Kconfig
-@@ -197,4 +197,12 @@ config PCIE_MEDIATEK
- 	  Say Y here if you want to enable Gen2 PCIe controller,
- 	  which could be found on MT7623 SoC family.
- 
-+config PCIE_ROCKCHIP
-+	bool "Enable Rockchip PCIe driver"
-+	select DM_PCI
-+	default y if ROCKCHIP_RK3399
-+	help
-+	  Say Y here if you want to enable PCIe controller support on
-+	  Rockchip SoCs.
-+
- endif
 diff --git a/drivers/pci/Makefile b/drivers/pci/Makefile
-index c051ecc9f3..493e9354dd 100644
+index 493e9354dd..955351c5c2 100644
 --- a/drivers/pci/Makefile
 +++ b/drivers/pci/Makefile
-@@ -43,3 +43,4 @@ obj-$(CONFIG_PCI_PHYTIUM) += pcie_phytium.o
+@@ -43,4 +43,4 @@ obj-$(CONFIG_PCI_PHYTIUM) += pcie_phytium.o
  obj-$(CONFIG_PCIE_INTEL_FPGA) += pcie_intel_fpga.o
  obj-$(CONFIG_PCI_KEYSTONE) += pcie_dw_ti.o
  obj-$(CONFIG_PCIE_MEDIATEK) += pcie_mediatek.o
-+obj-$(CONFIG_PCIE_ROCKCHIP) += pcie_rockchip.o
+-obj-$(CONFIG_PCIE_ROCKCHIP) += pcie_rockchip.o
++obj-$(CONFIG_PCIE_ROCKCHIP) += pcie_rockchip.o pcie_rockchip_phy.o
 diff --git a/drivers/pci/pcie_rockchip.c b/drivers/pci/pcie_rockchip.c
-new file mode 100644
-index 0000000000..3f06f783ca
---- /dev/null
+index 3f06f783ca..82a8396e42 100644
+--- a/drivers/pci/pcie_rockchip.c
 +++ b/drivers/pci/pcie_rockchip.c
-@@ -0,0 +1,467 @@
+@@ -159,6 +159,8 @@ static int rockchip_pcie_atr_init(struct rockchip_pcie *priv)
+ static int rockchip_pcie_init_port(struct udevice *dev)
+ {
+ 	struct rockchip_pcie *priv = dev_get_priv(dev);
++	struct rockchip_pcie_phy *phy = pcie_get_phy(priv);
++	struct rockchip_pcie_phy_ops *ops = phy_get_ops(phy);
+ 	u32 cr, val, status;
+ 	int ret;
+ 
+@@ -183,29 +185,35 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 		return ret;
+ 	}
+ 
++	ret = ops->init(phy);
++	if (ret) {
++		dev_err(dev, "failed to init phy (ret=%d)\n", ret);
++		goto err_exit_phy;
++	}
++
+ 	ret = reset_assert(&priv->core_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to assert core reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	ret = reset_assert(&priv->mgmt_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to assert mgmt reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	ret = reset_assert(&priv->mgmt_sticky_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to assert mgmt-sticky reset (ret=%d)\n",
+ 			ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	ret = reset_assert(&priv->pipe_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to assert pipe reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	udelay(10);
+@@ -213,19 +221,19 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 	ret = reset_deassert(&priv->pm_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert pm reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	ret = reset_deassert(&priv->aclk_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert aclk reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	ret = reset_deassert(&priv->pclk_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert pclk reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_exit_phy;
+ 	}
+ 
+ 	/* Select GEN1 for now */
+@@ -234,29 +242,35 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 	cr |= PCIE_CLIENT_CONF_ENABLE | PCIE_CLIENT_MODE_RC;
+ 	writel(cr, priv->apb_base + PCIE_CLIENT_CONFIG);
+ 
++	ret = ops->power_on(phy);
++	if (ret) {
++		dev_err(dev, "failed to power on phy (ret=%d)\n", ret);
++		goto err_power_off_phy;
++	}
++
+ 	ret = reset_deassert(&priv->mgmt_sticky_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert mgmt-sticky reset (ret=%d)\n",
+ 			ret);
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	ret = reset_deassert(&priv->core_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert core reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	ret = reset_deassert(&priv->mgmt_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert mgmt reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	ret = reset_deassert(&priv->pipe_rst);
+ 	if (ret) {
+ 		dev_err(dev, "failed to deassert pipe reset (ret=%d)\n", ret);
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	/* Enable Gen1 training */
+@@ -271,7 +285,7 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 			status, PCIE_LINK_UP(status), 20, 500 * 1000);
+ 	if (ret) {
+ 		dev_err(dev, "PCIe link training gen1 timeout!\n");
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	/* Initialize Root Complex registers. */
+@@ -291,10 +305,16 @@ static int rockchip_pcie_init_port(struct udevice *dev)
+ 	ret = rockchip_pcie_atr_init(priv);
+ 	if (ret) {
+ 		dev_err(dev, "PCIE-%d: ATR init failed\n", dev->seq);
+-		return ret;
++		goto err_power_off_phy;
+ 	}
+ 
+ 	return 0;
++
++err_power_off_phy:
++	ops->power_off(phy);
++err_exit_phy:
++	ops->exit(phy);
++	return ret;
+ }
+ 
+ static int rockchip_pcie_set_vpcie(struct udevice *dev)
+@@ -433,6 +453,10 @@ static int rockchip_pcie_probe(struct udevice *dev)
+ 	if (ret)
+ 		return ret;
+ 
++	ret = rockchip_pcie_phy_get(dev);
++	if (ret)
++		return ret;
++
+ 	ret = rockchip_pcie_set_vpcie(dev);
+ 	if (ret)
+ 		return ret;
+diff --git a/drivers/pci/pcie_rockchip.h b/drivers/pci/pcie_rockchip.h
+index 6ded5c9553..c3a0a2846d 100644
+--- a/drivers/pci/pcie_rockchip.h
++++ b/drivers/pci/pcie_rockchip.h
+@@ -53,11 +53,61 @@
+ #define PCIE_ATR_OB_REGION0_SIZE	(32 * 1024 * 1024)
+ #define PCIE_ATR_OB_REGION_SIZE		(1 * 1024 * 1024)
+ 
++/*
++ * The higher 16-bit of this register is used for write protection
++ * only if BIT(x + 16) set to 1 the BIT(x) can be written.
++ */
++#define HIWORD_UPDATE_MASK(val, mask, shift) \
++		((val) << (shift) | (mask) << ((shift) + 16))
++
++#define PHY_CFG_DATA_SHIFT    7
++#define PHY_CFG_ADDR_SHIFT    1
++#define PHY_CFG_DATA_MASK     0xf
++#define PHY_CFG_ADDR_MASK     0x3f
++#define PHY_CFG_RD_MASK       0x3ff
++#define PHY_CFG_WR_ENABLE     1
++#define PHY_CFG_WR_DISABLE    1
++#define PHY_CFG_WR_SHIFT      0
++#define PHY_CFG_WR_MASK       1
++#define PHY_CFG_PLL_LOCK      0x10
++#define PHY_CFG_CLK_TEST      0x10
++#define PHY_CFG_CLK_SCC       0x12
++#define PHY_CFG_SEPE_RATE     BIT(3)
++#define PHY_CFG_PLL_100M      BIT(3)
++#define PHY_PLL_LOCKED        BIT(9)
++#define PHY_PLL_OUTPUT        BIT(10)
++#define PHY_LANE_IDLE_OFF     0x1
++#define PHY_LANE_IDLE_MASK    0x1
++#define PHY_LANE_IDLE_A_SHIFT 3
++#define PHY_LANE_IDLE_B_SHIFT 4
++#define PHY_LANE_IDLE_C_SHIFT 5
++#define PHY_LANE_IDLE_D_SHIFT 6
++
++#define PCIE_PHY_CONF		0xe220
++#define PCIE_PHY_STATUS		0xe2a4
++#define PCIE_PHY_LANEOFF	0xe214
++
++struct rockchip_pcie_phy {
++	void *reg_base;
++	struct clk refclk;
++	struct reset_ctl phy_rst;
++	struct rockchip_pcie_phy_ops *ops;
++};
++
++struct rockchip_pcie_phy_ops {
++	int (*init)(struct rockchip_pcie_phy *phy);
++	int (*exit)(struct rockchip_pcie_phy *phy);
++	int (*power_on)(struct rockchip_pcie_phy *phy);
++	int (*power_off)(struct rockchip_pcie_phy *phy);
++};
++
+ struct rockchip_pcie {
+ 	fdt_addr_t axi_base;
+ 	fdt_addr_t apb_base;
+ 	int first_busno;
+ 	struct udevice *dev;
++	struct rockchip_pcie_phy rk_phy;
++	struct rockchip_pcie_phy *phy;
+ 
+ 	/* resets */
+ 	struct reset_ctl core_rst;
+@@ -77,3 +127,16 @@ struct rockchip_pcie {
+ 	struct udevice *vpcie1v8;
+ 	struct udevice *vpcie0v9;
+ };
++
++int rockchip_pcie_phy_get(struct udevice *dev);
++
++inline struct rockchip_pcie_phy *pcie_get_phy(struct rockchip_pcie *pcie)
++{
++	return pcie->phy;
++}
++
++inline
++struct rockchip_pcie_phy_ops *phy_get_ops(struct rockchip_pcie_phy *phy)
++{
++	return (struct rockchip_pcie_phy_ops *)phy->ops;
++}
+diff --git a/drivers/pci/pcie_rockchip_phy.c b/drivers/pci/pcie_rockchip_phy.c
+new file mode 100644
+index 0000000000..47f5d6c7e3
+--- /dev/null
++++ b/drivers/pci/pcie_rockchip_phy.c
+@@ -0,0 +1,205 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
-+ * Rockchip AXI PCIe host controller driver
++ * Rockchip PCIe PHY driver
 + *
 + * Copyright (c) 2016 Rockchip, Inc.
 + * Copyright (c) 2020 Amarula Solutions(India)
-+ * Copyright (c) 2020 Jagan Teki <jagan@amarulasolutions.com>
-+ * Copyright (c) 2019 Patrick Wildt <patrick@blueri.se>
-+ * Copyright (c) 2018 Mark Kettenis <kettenis@openbsd.org>
-+ *
-+ * Bits taken from Linux Rockchip PCIe host controller.
 + */
 +
 +#include <common.h>
 +#include <clk.h>
 +#include <dm.h>
 +#include <dm/device_compat.h>
-+#include <pci.h>
-+#include <power-domain.h>
-+#include <power/regulator.h>
 +#include <reset.h>
 +#include <syscon.h>
++#include <asm/gpio.h>
 +#include <asm/io.h>
-+#include <asm-generic/gpio.h>
-+#include <asm/arch-rockchip/clock.h>
 +#include <linux/iopoll.h>
++#include <asm/arch-rockchip/clock.h>
 +
 +#include "pcie_rockchip.h"
 +
 +DECLARE_GLOBAL_DATA_PTR;
 +
-+static int rockchip_pcie_off_conf(pci_dev_t bdf, uint offset)
++static void phy_wr_cfg(struct rockchip_pcie_phy *phy, u32 addr, u32 data)
 +{
-+	unsigned int bus = PCI_BUS(bdf);
-+	unsigned int dev = PCI_DEV(bdf);
-+	unsigned int func = PCI_FUNC(bdf);
++	u32 reg;
 +
-+	return (bus << 20) | (dev << 15) | (func << 12) | (offset & ~0x3);
++	reg = HIWORD_UPDATE_MASK(data, PHY_CFG_DATA_MASK, PHY_CFG_DATA_SHIFT);
++	reg |= HIWORD_UPDATE_MASK(addr, PHY_CFG_ADDR_MASK, PHY_CFG_ADDR_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_CONF);
++
++	udelay(1);
++
++	reg = HIWORD_UPDATE_MASK(PHY_CFG_WR_ENABLE,
++				 PHY_CFG_WR_MASK,
++				 PHY_CFG_WR_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_CONF);
++
++	udelay(1);
++
++	reg = HIWORD_UPDATE_MASK(PHY_CFG_WR_DISABLE,
++				 PHY_CFG_WR_MASK,
++				 PHY_CFG_WR_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_CONF);
 +}
 +
-+static int rockchip_pcie_rd_conf(const struct udevice *udev, pci_dev_t bdf,
-+				 uint offset, ulong *valuep,
-+				 enum pci_size_t size)
++static int rockchip_pcie_phy_power_on(struct rockchip_pcie_phy *phy)
 +{
-+	struct rockchip_pcie *priv = dev_get_priv(udev);
-+	unsigned int bus = PCI_BUS(bdf);
-+	unsigned int dev = PCI_DEV(bdf);
-+	int where = rockchip_pcie_off_conf(bdf, offset);
-+	ulong value;
++	int ret = 0;
++	u32 reg, status;
 +
-+	if (bus == priv->first_busno && dev == 0) {
-+		value = readl(priv->apb_base + PCIE_RC_NORMAL_BASE + where);
-+		*valuep = pci_conv_32_to_size(value, offset, size);
-+		return 0;
-+	}
-+
-+	if ((bus == priv->first_busno + 1) && dev == 0) {
-+		value = readl(priv->axi_base + where);
-+		*valuep = pci_conv_32_to_size(value, offset, size);
-+		return 0;
-+	}
-+
-+	*valuep = pci_get_ff(size);
-+
-+	return 0;
-+}
-+
-+static int rockchip_pcie_wr_conf(struct udevice *udev, pci_dev_t bdf,
-+				 uint offset, ulong value,
-+				 enum pci_size_t size)
-+{
-+	struct rockchip_pcie *priv = dev_get_priv(udev);
-+	unsigned int bus = PCI_BUS(bdf);
-+	unsigned int dev = PCI_DEV(bdf);
-+	int where = rockchip_pcie_off_conf(bdf, offset);
-+	ulong old;
-+
-+	if (bus == priv->first_busno && dev == 0) {
-+		old = readl(priv->apb_base + PCIE_RC_NORMAL_BASE + where);
-+		value = pci_conv_size_to_32(old, value, offset, size);
-+		writel(value, priv->apb_base + PCIE_RC_NORMAL_BASE + where);
-+		return 0;
-+	}
-+
-+	if ((bus == priv->first_busno + 1) && dev == 0) {
-+		old = readl(priv->axi_base + where);
-+		value = pci_conv_size_to_32(old, value, offset, size);
-+		writel(value, priv->axi_base + where);
-+		return 0;
-+	}
-+
-+	return 0;
-+}
-+
-+static int rockchip_pcie_atr_init(struct rockchip_pcie *priv)
-+{
-+	struct udevice *ctlr = pci_get_controller(priv->dev);
-+	struct pci_controller *hose = dev_get_uclass_priv(ctlr);
-+	u64 addr, size, offset;
-+	u32 type;
-+	int i, region;
-+
-+	/* Use region 0 to map PCI configuration space. */
-+	writel(25 - 1, priv->apb_base + PCIE_ATR_OB_ADDR0(0));
-+	writel(0, priv->apb_base + PCIE_ATR_OB_ADDR1(0));
-+	writel(PCIE_ATR_HDR_CFG_TYPE0 | PCIE_ATR_HDR_RID,
-+	       priv->apb_base + PCIE_ATR_OB_DESC0(0));
-+	writel(0, priv->apb_base + PCIE_ATR_OB_DESC1(0));
-+
-+	for (i = 0; i < hose->region_count; i++) {
-+		if (hose->regions[i].flags == PCI_REGION_SYS_MEMORY)
-+			continue;
-+
-+		if (hose->regions[i].flags == PCI_REGION_IO)
-+			type = PCIE_ATR_HDR_IO;
-+		else
-+			type = PCIE_ATR_HDR_MEM;
-+
-+		/* Only support identity mappings. */
-+		if (hose->regions[i].bus_start !=
-+		    hose->regions[i].phys_start)
-+			return -EINVAL;
-+
-+		/* Only support mappings aligned on a region boundary. */
-+		addr = hose->regions[i].bus_start;
-+		if (addr & (PCIE_ATR_OB_REGION_SIZE - 1))
-+			return -EINVAL;
-+
-+		/* Mappings should lie between AXI and APB regions. */
-+		size = hose->regions[i].size;
-+		if (addr < (u64)priv->axi_base + PCIE_ATR_OB_REGION0_SIZE)
-+			return -EINVAL;
-+		if (addr + size > (u64)priv->apb_base)
-+			return -EINVAL;
-+
-+		offset = addr - (u64)priv->axi_base - PCIE_ATR_OB_REGION0_SIZE;
-+		region = 1 + (offset / PCIE_ATR_OB_REGION_SIZE);
-+		while (size > 0) {
-+			writel(32 - 1,
-+			       priv->apb_base + PCIE_ATR_OB_ADDR0(region));
-+			writel(0, priv->apb_base + PCIE_ATR_OB_ADDR1(region));
-+			writel(type | PCIE_ATR_HDR_RID,
-+			       priv->apb_base + PCIE_ATR_OB_DESC0(region));
-+			writel(0, priv->apb_base + PCIE_ATR_OB_DESC1(region));
-+
-+			addr += PCIE_ATR_OB_REGION_SIZE;
-+			size -= PCIE_ATR_OB_REGION_SIZE;
-+			region++;
-+		}
-+	}
-+
-+	/* Passthrough inbound translations unmodified. */
-+	writel(32 - 1, priv->apb_base + PCIE_ATR_IB_ADDR0(2));
-+	writel(0, priv->apb_base + PCIE_ATR_IB_ADDR1(2));
-+
-+	return 0;
-+}
-+
-+static int rockchip_pcie_init_port(struct udevice *dev)
-+{
-+	struct rockchip_pcie *priv = dev_get_priv(dev);
-+	u32 cr, val, status;
-+	int ret;
-+
-+	if (dm_gpio_is_valid(&priv->ep_gpio))
-+		dm_gpio_set_value(&priv->ep_gpio, 0);
-+
-+	ret = reset_assert(&priv->aclk_rst);
++	ret = reset_deassert(&phy->phy_rst);
 +	if (ret) {
-+		dev_err(dev, "failed to assert aclk reset (ret=%d)\n", ret);
++		dev_err(dev, "failed to assert phy reset\n");
 +		return ret;
 +	}
 +
-+	ret = reset_assert(&priv->pclk_rst);
++	reg = HIWORD_UPDATE_MASK(PHY_CFG_PLL_LOCK,
++				 PHY_CFG_ADDR_MASK,
++				 PHY_CFG_ADDR_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_CONF);
++
++	reg = HIWORD_UPDATE_MASK(!PHY_LANE_IDLE_OFF,
++				 PHY_LANE_IDLE_MASK,
++				 PHY_LANE_IDLE_A_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_LANEOFF);
++
++	ret = -EINVAL;
++	ret = readl_poll_sleep_timeout(phy->reg_base + PCIE_PHY_STATUS,
++				       status,
++				       status & PHY_PLL_LOCKED,
++				       20 * 1000,
++				       50);
 +	if (ret) {
-+		dev_err(dev, "failed to assert pclk reset (ret=%d)\n", ret);
-+		return ret;
++		dev_err(&phy->dev, "pll lock timeout!\n");
++		goto err_pll_lock;
 +	}
 +
-+	ret = reset_assert(&priv->pm_rst);
++	phy_wr_cfg(phy, PHY_CFG_CLK_TEST, PHY_CFG_SEPE_RATE);
++	phy_wr_cfg(phy, PHY_CFG_CLK_SCC, PHY_CFG_PLL_100M);
++
++	ret = -ETIMEDOUT;
++	ret = readl_poll_sleep_timeout(phy->reg_base + PCIE_PHY_STATUS,
++				       status,
++				       !(status & PHY_PLL_OUTPUT),
++				       20 * 1000,
++				       50);
 +	if (ret) {
-+		dev_err(dev, "failed to assert pm reset (ret=%d)\n", ret);
-+		return ret;
++		dev_err(&phy->dev, "pll output enable timeout!\n");
++		goto err_pll_lock;
 +	}
 +
-+	ret = reset_assert(&priv->core_rst);
++	reg = HIWORD_UPDATE_MASK(PHY_CFG_PLL_LOCK,
++				 PHY_CFG_ADDR_MASK,
++				 PHY_CFG_ADDR_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_CONF);
++
++	ret = -EINVAL;
++	ret = readl_poll_sleep_timeout(phy->reg_base + PCIE_PHY_STATUS,
++				       status,
++				       status & PHY_PLL_LOCKED,
++				       20 * 1000,
++				       50);
 +	if (ret) {
-+		dev_err(dev, "failed to assert core reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_assert(&priv->mgmt_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to assert mgmt reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_assert(&priv->mgmt_sticky_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to assert mgmt-sticky reset (ret=%d)\n",
-+			ret);
-+		return ret;
-+	}
-+
-+	ret = reset_assert(&priv->pipe_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to assert pipe reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	udelay(10);
-+
-+	ret = reset_deassert(&priv->pm_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert pm reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_deassert(&priv->aclk_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert aclk reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_deassert(&priv->pclk_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert pclk reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	/* Select GEN1 for now */
-+	cr = PCIE_CLIENT_GEN_SEL_1;
-+	/* Set Root complex mode */
-+	cr |= PCIE_CLIENT_CONF_ENABLE | PCIE_CLIENT_MODE_RC;
-+	writel(cr, priv->apb_base + PCIE_CLIENT_CONFIG);
-+
-+	ret = reset_deassert(&priv->mgmt_sticky_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert mgmt-sticky reset (ret=%d)\n",
-+			ret);
-+		return ret;
-+	}
-+
-+	ret = reset_deassert(&priv->core_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert core reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_deassert(&priv->mgmt_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert mgmt reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_deassert(&priv->pipe_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to deassert pipe reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	/* Enable Gen1 training */
-+	writel(PCIE_CLIENT_LINK_TRAIN_ENABLE,
-+	       priv->apb_base + PCIE_CLIENT_CONFIG);
-+
-+	if (dm_gpio_is_valid(&priv->ep_gpio))
-+		dm_gpio_set_value(&priv->ep_gpio, 1);
-+
-+	ret = readl_poll_sleep_timeout
-+			(priv->apb_base + PCIE_CLIENT_BASIC_STATUS1,
-+			status, PCIE_LINK_UP(status), 20, 500 * 1000);
-+	if (ret) {
-+		dev_err(dev, "PCIe link training gen1 timeout!\n");
-+		return ret;
-+	}
-+
-+	/* Initialize Root Complex registers. */
-+	writel(PCIE_LM_VENDOR_ROCKCHIP, priv->apb_base + PCIE_LM_VENDOR_ID);
-+	writel(PCI_CLASS_BRIDGE_PCI << 16,
-+	       priv->apb_base + PCIE_RC_BASE + PCI_CLASS_REVISION);
-+	writel(PCIE_LM_RCBARPIE | PCIE_LM_RCBARPIS,
-+	       priv->apb_base + PCIE_LM_RCBAR);
-+
-+	if (dev_read_bool(dev, "aspm-no-l0s")) {
-+		val = readl(priv->apb_base + PCIE_RC_PCIE_LCAP);
-+		val &= ~PCIE_RC_PCIE_LCAP_APMS_L0S;
-+		writel(val, priv->apb_base + PCIE_RC_PCIE_LCAP);
-+	}
-+
-+	/* Configure Address Translation. */
-+	ret = rockchip_pcie_atr_init(priv);
-+	if (ret) {
-+		dev_err(dev, "PCIE-%d: ATR init failed\n", dev->seq);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int rockchip_pcie_set_vpcie(struct udevice *dev)
-+{
-+	struct rockchip_pcie *priv = dev_get_priv(dev);
-+	int ret;
-+
-+	if (!IS_ERR(priv->vpcie3v3)) {
-+		ret = regulator_set_enable(priv->vpcie3v3, true);
-+		if (ret) {
-+			dev_err(dev, "failed to enable vpcie3v3 (ret=%d)\n",
-+				ret);
-+			return ret;
-+		}
-+	}
-+
-+	ret = regulator_set_enable(priv->vpcie1v8, true);
-+	if (ret) {
-+		dev_err(dev, "failed to enable vpcie1v8 (ret=%d)\n", ret);
-+		goto err_disable_3v3;
-+	}
-+
-+	ret = regulator_set_enable(priv->vpcie0v9, true);
-+	if (ret) {
-+		dev_err(dev, "failed to enable vpcie0v9 (ret=%d)\n", ret);
-+		goto err_disable_1v8;
++		dev_err(&phy->dev, "pll relock timeout!\n");
++		goto err_pll_lock;
 +	}
 +
 +	return 0;
 +
-+err_disable_1v8:
-+	regulator_set_enable(priv->vpcie1v8, false);
-+err_disable_3v3:
-+	if (!IS_ERR(priv->vpcie3v3))
-+		regulator_set_enable(priv->vpcie3v3, false);
++err_pll_lock:
++	reset_assert(&phy->phy_rst);
 +	return ret;
 +}
 +
-+static int rockchip_pcie_parse_dt(struct udevice *dev)
++static int rockchip_pcie_phy_power_off(struct rockchip_pcie_phy *phy)
 +{
-+	struct rockchip_pcie *priv = dev_get_priv(dev);
 +	int ret;
++	u32 reg;
 +
-+	priv->axi_base = dev_read_addr_name(dev, "axi-base");
-+	if (!priv->axi_base)
-+		return -ENODEV;
++	reg = HIWORD_UPDATE_MASK(PHY_LANE_IDLE_OFF,
++				 PHY_LANE_IDLE_MASK,
++				 PHY_LANE_IDLE_A_SHIFT);
++	writel(reg, phy->reg_base + PCIE_PHY_LANEOFF);
 +
-+	priv->apb_base = dev_read_addr_name(dev, "apb-base");
-+	if (!priv->axi_base)
-+		return -ENODEV;
-+
-+	ret = gpio_request_by_name(dev, "ep-gpios", 0,
-+				   &priv->ep_gpio, GPIOD_IS_OUT);
++	ret = reset_assert(&phy->phy_rst);
 +	if (ret) {
-+		dev_err(dev, "failed to find ep-gpios property\n");
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "core", &priv->core_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get core reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "mgmt", &priv->mgmt_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get mgmt reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "mgmt-sticky", &priv->mgmt_sticky_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get mgmt-sticky reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "pipe", &priv->pipe_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get pipe reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "pm", &priv->pm_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get pm reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "pclk", &priv->pclk_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get pclk reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = reset_get_by_name(dev, "aclk", &priv->aclk_rst);
-+	if (ret) {
-+		dev_err(dev, "failed to get aclk reset (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = device_get_supply_regulator(dev, "vpcie3v3-supply",
-+					  &priv->vpcie3v3);
-+	if (ret && ret != -ENOENT) {
-+		dev_err(dev, "failed to get vpcie3v3 supply (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = device_get_supply_regulator(dev, "vpcie1v8-supply",
-+					  &priv->vpcie1v8);
-+	if (ret) {
-+		dev_err(dev, "failed to get vpcie1v8 supply (ret=%d)\n", ret);
-+		return ret;
-+	}
-+
-+	ret = device_get_supply_regulator(dev, "vpcie0v9-supply",
-+					  &priv->vpcie0v9);
-+	if (ret) {
-+		dev_err(dev, "failed to get vpcie0v9 supply (ret=%d)\n", ret);
++		dev_err(dev, "failed to assert phy reset\n");
 +		return ret;
 +	}
 +
 +	return 0;
 +}
 +
-+static int rockchip_pcie_probe(struct udevice *dev)
++static int rockchip_pcie_phy_init(struct rockchip_pcie_phy *phy)
 +{
-+	struct rockchip_pcie *priv = dev_get_priv(dev);
-+	struct udevice *ctlr = pci_get_controller(dev);
-+	struct pci_controller *hose = dev_get_uclass_priv(ctlr);
 +	int ret;
 +
-+	priv->first_busno = dev->seq;
-+	priv->dev = dev;
-+
-+	ret = rockchip_pcie_parse_dt(dev);
-+	if (ret)
++	ret = clk_enable(&phy->refclk);
++	if (ret) {
++		dev_err(dev, "failed to enable refclk clock\n");
 +		return ret;
++	}
 +
-+	ret = rockchip_pcie_set_vpcie(dev);
-+	if (ret)
-+		return ret;
++	ret = reset_assert(&phy->phy_rst);
++	if (ret) {
++		dev_err(dev, "failed to assert phy reset\n");
++		goto err_reset;
++	}
 +
-+	ret = rockchip_pcie_init_port(dev);
-+	if (ret)
-+		return ret;
++	return 0;
 +
-+	dev_info(dev, "PCIE-%d: Link up (Bus%d)\n",
-+		 dev->seq, hose->first_busno);
++err_reset:
++	clk_disable(&phy->refclk);
++	return ret;
++}
++
++static int rockchip_pcie_phy_exit(struct rockchip_pcie_phy *phy)
++{
++	clk_disable(&phy->refclk);
 +
 +	return 0;
 +}
 +
-+static const struct dm_pci_ops rockchip_pcie_ops = {
-+	.read_config	= rockchip_pcie_rd_conf,
-+	.write_config	= rockchip_pcie_wr_conf,
++static struct rockchip_pcie_phy_ops pcie_phy_ops = {
++	.init = rockchip_pcie_phy_init,
++	.power_on = rockchip_pcie_phy_power_on,
++	.power_off = rockchip_pcie_phy_power_off,
++	.exit = rockchip_pcie_phy_exit,
 +};
 +
-+static const struct udevice_id rockchip_pcie_ids[] = {
-+	{ .compatible = "rockchip,rk3399-pcie" },
-+	{ }
-+};
++int rockchip_pcie_phy_get(struct udevice *dev)
++{
++	struct rockchip_pcie *priv = dev_get_priv(dev);
++	struct rockchip_pcie_phy *phy_priv = &priv->rk_phy;
++	ofnode phy_node;
++	u32 phandle;
++	int ret;
 +
-+U_BOOT_DRIVER(rockchip_pcie) = {
-+	.name			= "rockchip_pcie",
-+	.id			= UCLASS_PCI,
-+	.of_match		= rockchip_pcie_ids,
-+	.ops			= &rockchip_pcie_ops,
-+	.probe			= rockchip_pcie_probe,
-+	.priv_auto_alloc_size	= sizeof(struct rockchip_pcie),
-+};
-diff --git a/drivers/pci/pcie_rockchip.h b/drivers/pci/pcie_rockchip.h
-new file mode 100644
-index 0000000000..6ded5c9553
---- /dev/null
-+++ b/drivers/pci/pcie_rockchip.h
-@@ -0,0 +1,79 @@
-+/* SPDX-License-Identifier: GPL-2.0+ */
-+/*
-+ * Rockchip PCIe Headers
-+ *
-+ * Copyright (c) 2016 Rockchip, Inc.
-+ * Copyright (c) 2020 Amarula Solutions(India)
-+ * Copyright (c) 2020 Jagan Teki <jagan@amarulasolutions.com>
-+ * Copyright (c) 2019 Patrick Wildt <patrick@blueri.se>
-+ *
-+ */
++	phandle = dev_read_u32_default(dev, "phys", 0);
++	phy_node = ofnode_get_by_phandle(phandle);
++	if (!ofnode_valid(phy_node)) {
++		dev_err(dev, "failed to found pcie-phy\n");
++		return -ENODEV;
++	}
 +
-+#define HIWORD_UPDATE(mask, val)        (((mask) << 16) | (val))
-+#define HIWORD_UPDATE_BIT(val)          HIWORD_UPDATE(val, val)
++	phy_priv->reg_base = syscon_get_first_range(ROCKCHIP_SYSCON_GRF);
 +
-+#define ENCODE_LANES(x)                 ((((x) >> 1) & 3) << 4)
-+#define PCIE_CLIENT_BASE                0x0
-+#define PCIE_CLIENT_CONFIG              (PCIE_CLIENT_BASE + 0x00)
-+#define PCIE_CLIENT_CONF_ENABLE         HIWORD_UPDATE_BIT(0x0001)
-+#define PCIE_CLIENT_LINK_TRAIN_ENABLE   HIWORD_UPDATE_BIT(0x0002)
-+#define PCIE_CLIENT_MODE_RC             HIWORD_UPDATE_BIT(0x0040)
-+#define PCIE_CLIENT_GEN_SEL_1           HIWORD_UPDATE(0x0080, 0)
-+#define PCIE_CLIENT_BASIC_STATUS1	0x0048
-+#define PCIE_CLIENT_LINK_STATUS_UP	GENMASK(21, 20)
-+#define PCIE_CLIENT_LINK_STATUS_MASK	GENMASK(21, 20)
-+#define PCIE_LINK_UP(x) \
-+	(((x) & PCIE_CLIENT_LINK_STATUS_MASK) == PCIE_CLIENT_LINK_STATUS_UP)
-+#define PCIE_RC_NORMAL_BASE		0x800000
-+#define PCIE_LM_BASE			0x900000
-+#define PCIE_LM_VENDOR_ID              (PCIE_LM_BASE + 0x44)
-+#define PCIE_LM_VENDOR_ROCKCHIP		0x1d87
-+#define PCIE_LM_RCBAR			(PCIE_LM_BASE + 0x300)
-+#define PCIE_LM_RCBARPIE		BIT(19)
-+#define PCIE_LM_RCBARPIS		BIT(20)
-+#define PCIE_RC_BASE			0xa00000
-+#define PCIE_RC_CONFIG_DCR		(PCIE_RC_BASE + 0x0c4)
-+#define PCIE_RC_CONFIG_DCR_CSPL_SHIFT	18
-+#define PCIE_RC_CONFIG_DCR_CPLS_SHIFT	26
-+#define PCIE_RC_PCIE_LCAP		(PCIE_RC_BASE + 0x0cc)
-+#define PCIE_RC_PCIE_LCAP_APMS_L0S	BIT(10)
-+#define PCIE_ATR_BASE			0xc00000
-+#define PCIE_ATR_OB_ADDR0(i)		(PCIE_ATR_BASE + 0x000 + (i) * 0x20)
-+#define PCIE_ATR_OB_ADDR1(i)		(PCIE_ATR_BASE + 0x004 + (i) * 0x20)
-+#define PCIE_ATR_OB_DESC0(i)		(PCIE_ATR_BASE + 0x008 + (i) * 0x20)
-+#define PCIE_ATR_OB_DESC1(i)		(PCIE_ATR_BASE + 0x00c + (i) * 0x20)
-+#define PCIE_ATR_IB_ADDR0(i)		(PCIE_ATR_BASE + 0x800 + (i) * 0x8)
-+#define PCIE_ATR_IB_ADDR1(i)		(PCIE_ATR_BASE + 0x804 + (i) * 0x8)
-+#define PCIE_ATR_HDR_MEM		0x2
-+#define PCIE_ATR_HDR_IO			0x6
-+#define PCIE_ATR_HDR_CFG_TYPE0		0xa
-+#define PCIE_ATR_HDR_CFG_TYPE1		0xb
-+#define PCIE_ATR_HDR_RID		BIT(23)
++	ret = clk_get_by_index_nodev(phy_node, 0, &phy_priv->refclk);
++	if (ret) {
++		dev_err(dev, "failed to get refclk clock phandle\n");
++		return ret;
++	}
 +
-+#define PCIE_ATR_OB_REGION0_SIZE	(32 * 1024 * 1024)
-+#define PCIE_ATR_OB_REGION_SIZE		(1 * 1024 * 1024)
++	ret = reset_get_by_index_nodev(phy_node, 0, &phy_priv->phy_rst);
++	if (ret) {
++		dev_err(dev, "failed to get phy reset phandle\n");
++		return ret;
++	}
 +
-+struct rockchip_pcie {
-+	fdt_addr_t axi_base;
-+	fdt_addr_t apb_base;
-+	int first_busno;
-+	struct udevice *dev;
++	phy_priv->ops = &pcie_phy_ops;
++	priv->phy = phy_priv;
 +
-+	/* resets */
-+	struct reset_ctl core_rst;
-+	struct reset_ctl mgmt_rst;
-+	struct reset_ctl mgmt_sticky_rst;
-+	struct reset_ctl pipe_rst;
-+	struct reset_ctl pm_rst;
-+	struct reset_ctl pclk_rst;
-+	struct reset_ctl aclk_rst;
-+
-+	/* gpio */
-+	struct gpio_desc ep_gpio;
-+
-+	/* vpcie regulators */
-+	struct udevice *vpcie12v;
-+	struct udevice *vpcie3v3;
-+	struct udevice *vpcie1v8;
-+	struct udevice *vpcie0v9;
-+};
++	return 0;
++}
 -- 
 2.17.1
 
