@@ -2,78 +2,61 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F3481CD376
-	for <lists+linux-rockchip@lfdr.de>; Mon, 11 May 2020 09:58:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68BAF1CD3F4
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 May 2020 10:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Csgcr2HvvdAs2iAq4vb1Gupvyh2T65XRgDMzbKhuRZk=; b=q311vyQDvjWZQMmQqmhZzXX4l9
-	NB73z068Ta/i/ssLNtCG43FqJ/9GF//0ovAmUkElcy82rRDyclJoKEGibtBTOrqcfBVnRA1tW9HEX
-	JHPbBuateAYRa4nivBOmESdix8nEiB3wqPiVKO8tHORpzdeXb4x/L1yLLvhmlqRrctIu0YjHYluiN
-	RfaZP1DgA666roT6y8D0FuFiLurFxDD2T4NDC4FDM5PsAhmbhVXfyFITH11KvviksntVtpF7Aojjk
-	YPKrjNb7cUS8suaxXfcW3VvMQz6twsKDrZueSY/DOzWBmlif32MiePhGvJOCb5XQtHgLJBGk9/Wie
-	lfaDuEIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nkiMyVK0zRQ8O57sO9+D9BvIAln3i2ap471aUIn668E=; b=CBIiK3/+KBrl5V
+	tBE3tHTi5UVhh+kbnOz2F0mBXqrDmcd2p5GBhEe4Izrq3kN+Bxg2dvVSMG/KWsrc9KWhQmbLAdJMA
+	SFgFvyOoVKsdbMK1TLEpO/PN60ebjXYBP0fOUhjmeKNlgqT+ePelqO6kQd5BDhg7+BJNxw5ci6IiT
+	LWQLyyjv9/zWnEpoXs1ib7+vV/YK376MZBFt/6+I1dhISBhAHDHHY8/w8z9QluI4b+rDj52SUe7eZ
+	xEmNClPpgjHBaDuMggpOp4rqDGw3GBo5faQr3LaRrI43YUOFzKTul5A3JJ+EyZRnD0xPVTWQpffAA
+	N6kreXedDYT8DMgPsdbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY3Kl-0002eB-EZ; Mon, 11 May 2020 07:58:43 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1jY3qK-00005g-OK; Mon, 11 May 2020 08:31:20 +0000
+Received: from [27.111.83.178] (helo=mail.gtsys.com.hk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY3Kg-0002ci-2i
- for linux-rockchip@lists.infradead.org; Mon, 11 May 2020 07:58:41 +0000
-Received: from localhost (unknown [192.168.167.13])
- by lucky1.263xmail.com (Postfix) with ESMTP id DFCB0CD5AE;
- Mon, 11 May 2020 15:58:34 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P7429T140153204791040S1589183912455749_; 
- Mon, 11 May 2020 15:58:35 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <6db34b28beb8ddaa1a30bb965a6d8750>
-X-RL-SENDER: frank.wang@rock-chips.com
-X-SENDER: wmc@rock-chips.com
-X-LOGIN-NAME: frank.wang@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Frank Wang <frank.wang@rock-chips.com>
-To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
- philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
- jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-Subject: [PATCH v4 16/16] roc-rk3399-pc: Enable USB3.0 Host
-Date: Mon, 11 May 2020 15:58:30 +0800
-Message-Id: <20200511075830.26754-2-frank.wang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200511075830.26754-1-frank.wang@rock-chips.com>
-References: <20200511075330.26462-1-frank.wang@rock-chips.com>
- <20200511075830.26754-1-frank.wang@rock-chips.com>
+ id 1jY3pn-00082W-5D; Mon, 11 May 2020 08:30:48 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id C7A462002518;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+X-Virus-Scanned: Debian amavisd-new at gtsys.com.hk
+Received: from mail.gtsys.com.hk ([127.0.0.1])
+ by localhost (mail.gtsys.com.hk [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id AuE0Dfh_okQ8; Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: from s01.gtsys.com.hk (unknown [10.128.4.2])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id A2E5320020CB;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: from armhf2.gtsys.com.hk (unknown [10.128.4.15])
+ by s01.gtsys.com.hk (Postfix) with ESMTP id 96943C01F94;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: by armhf2.gtsys.com.hk (Postfix, from userid 1000)
+ id 3F6272001DE; Mon, 11 May 2020 16:30:40 +0800 (HKT)
+From: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+To: Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+	Jack Lo <jack.lo@gtsys.com.hk>
+Subject: [PATCH v1 0/3] spi: spi-rockchip spi slave mode
+Date: Mon, 11 May 2020 16:30:19 +0800
+Message-Id: <20200511083022.23678-1-chris.ruehl@gtsys.com.hk>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_005840_274381_1E97DC4E 
-X-CRM114-Status: UNSURE (   6.87  )
+X-CRM114-CacheID: sfid-20200511_013047_354670_0B1DD665 
+X-CRM114-Status: UNSURE (   6.59  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.132 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,152 +69,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
- u-boot@lists.denx.de, william.wu@rock-chips.com,
- linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- chenjh@rock-chips.com
-MIME-Version: 1.0
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jagan Teki <jagan@amarulasolutions.com>
+The spi-rockchip driver does not implement spi slave mode, but the register map
+have a corresponding flag. An example implementation found
+here: https://dev.t-firefly.com/thread-101485-1-1.html
+This patchset clean the compatiblity names and add support slave mode.
+We need the slave mode for our project, but the PCBA is not yet available
+in consequence the code in the patch isn't tested yet but need your review.
 
-Enable USB3.0 Host support for ROC-RK3399-PC boards.
+Patch 1/3
+Cleanup, move from the compatibily layer struct spi_master over
+to struct spi_controller, and rename the related function calls.
 
-Tested USB3.0 SSD on Type C1 port on board.
+Patch 2/3
+Add support for spi slave mode and support function
 
-=> usb start
-starting USB...
-Bus usb@fe380000: USB EHCI 1.00
-Bus usb@fe3c0000: USB EHCI 1.00
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-scanning bus usb@fe380000 for devices... 1 USB Device(s) found
-scanning bus usb@fe3c0000 for devices... 2 USB Device(s) found
-scanning bus dwc3 for devices... 6 USB Device(s) found
-       scanning usb for storage devices... 1 Storage Device(s) found
-=> usb tree
-USB device tree:
-  1  Hub (480 Mb/s, 0mA)
-     u-boot EHCI Host Controller
+Patch 3/3
+Use OF property num-cs and enable support for cs_gpiods
 
-  1  Hub (480 Mb/s, 0mA)
-  |  u-boot EHCI Host Controller
-  |
-  +-2  Hub (480 Mb/s, 100mA)
-        USB 2.0 Hub [MTT]
+IMHO its wrong, that the num_chipselect is set fixed to the amount of 
+native chip-select lines. SPI0 which has two native lines, while the others
+SPIs one native cs line only.
+Set max_native_cs in the controller struct with ROCKCHIP_SPI_MAX_CS_NUM seems
+the correct way to do and let num-cs the OF / dts config set the CS count for
+the boards.
 
-  1  Hub (5 Gb/s, 0mA)
-  |  U-Boot XHCI Host Controller
-  |
-  +-2  Hub (480 Mb/s, 0mA)
-  | |  VIA Labs, Inc. USB2.0 Hub
-  | |
-  | +-4  Hub (480 Mb/s, 100mA)
-  |   |   USB 2.0 Hub
-  |   |
-  |   +-5   (480 Mb/s, 100mA)
-  |        VIA Technologies Inc. USB 2.0 BILLBOARD  0000000000000001
-  |
-  +-3  Hub (5 Gb/s, 0mA)
-    |  VIA Labs, Inc. USB3.0 Hub
-    |
-    +-6  Mass Storage (5 Gb/s, 224mA)
-         JMicron External Disk 3.0 DB12345678A2
+Patch against next-20200508
 
-=> usb reset
-resetting USB...
-Bus usb@fe380000: USB EHCI 1.00
-Bus usb@fe3c0000: USB EHCI 1.00
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-scanning bus usb@fe380000 for devices... 1 USB Device(s) found
-scanning bus usb@fe3c0000 for devices... 2 USB Device(s) found
-scanning bus dwc3 for devices... 6 USB Device(s) found
-       scanning usb for storage devices... 1 Storage Device(s) found
+Thanks for review!
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Happy hacking
+Chris
+
+Signed-off-by: Chris Ruehl <chris.ruehl@gtsys.com.hk>
 ---
- configs/roc-pc-mezzanine-rk3399_defconfig | 5 +++++
- configs/roc-pc-rk3399_defconfig           | 6 ++++++
- 2 files changed, 11 insertions(+)
-
-diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 0b853805f3..1f10856caa 100644
---- a/configs/roc-pc-mezzanine-rk3399_defconfig
-+++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -29,6 +29,7 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -39,6 +40,8 @@ CONFIG_ETH_DESIGNWARE=y
- CONFIG_GMAC_ROCKCHIP=y
- CONFIG_NVME=y
- CONFIG_PCI=y
-+CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-+CONFIG_PHY_ROCKCHIP_TYPEC=y
- CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
-@@ -54,6 +57,8 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_USB_DWC3_GENERIC=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index aff690f039..76e76c160e 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -28,6 +28,7 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -36,11 +37,14 @@ CONFIG_SPI_FLASH_WINBOND=y
- CONFIG_DM_ETH=y
- CONFIG_ETH_DESIGNWARE=y
- CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-+CONFIG_PHY_ROCKCHIP_TYPEC=y
- CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
- CONFIG_RAM_RK3399_LPDDR4=y
-+CONFIG_DM_RESET=y
- CONFIG_BAUDRATE=1500000
- CONFIG_DEBUG_UART_SHIFT=2
- CONFIG_ROCKCHIP_SPI=y
-@@ -50,6 +54,8 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_USB_DWC3_GENERIC=y
- CONFIG_USB_KEYBOARD=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
--- 
-2.17.1
-
-
 
 
 _______________________________________________
