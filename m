@@ -2,72 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB06E1CE80B
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 May 2020 00:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07C841CE8E4
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 May 2020 01:13:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1yPV2CiRqgzHHZ53RoRKdMCXBuKQLQXVyRrpqXtZnlI=; b=RpB6Oukh0oKYBM
-	LqXRbpDr3T7z/+eESaZHn1M78IqTcJoc0/whVNHZ4XJisgcscdynf46t2VLmkxcGU+4I+gUgRsxpl
-	2JbMzdBVm+ld52sorRlBsPc+/AM3Ps+PPqv5A472mUTeYNjXOUT2QaK0pn4tdLuakhjfkTVEYjS17
-	OpzLy5Jz5jTYzDEMuyUrKLHo8PajV7LOUaeZNdgLlbZvW6IyYAMzqPSFv8SKFOJcgqtdhL+uszHIZ
-	Aq5dsx30m5DfO05q/q/VdAX09cDPn3llJhap6amNh0XDLspy5oOlhbq/ZjGfH/QcGeIys1ew/xQ86
-	XPlAFBI2CKkyzTQdWvQQ==;
+	List-Owner; bh=XToWzxogGDiBXwYI0a5CK8kQCtNM3oXoVn+sIDIUbWM=; b=GfJRsQLN8XW0AM
+	udurY8/NXnswGDKy6xBhyuDkQ8tHSUiU1GwVI+fJKIkqLkbw597KFTVH5JZrs/jtfIZUVBSz+R0lr
+	+qae6ahUAMMMls+AX1hZJSxcq2rimSbaXpcjTXJiDEeUVU5oqP5HaNMNOyxd9p3Q3VYIP/Wp79YPE
+	QbHneZ0zPcAvg3ZPUcf0gJqdXgOtD5FcjZm2FaNcl291TWBA6zfqI4xSNZwdi9a+moXd9yu+AL9Tm
+	nemsc78h/OaVl8F8HHnmb4Rdjntl99DqmEl38tG9qvx28nmFXDFP37B9gLt4DanY4Gc4qpZffwsy2
+	28sXLXF8lmHuCtk5qZpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYGry-0001MT-0W; Mon, 11 May 2020 22:25:54 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1jYHbb-000717-8r; Mon, 11 May 2020 23:13:03 +0000
+Received: from mail-oo1-f65.google.com ([209.85.161.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYGru-0001Le-Cx; Mon, 11 May 2020 22:25:51 +0000
-Received: by mail-oi1-f195.google.com with SMTP id a2so16364871oia.11;
- Mon, 11 May 2020 15:25:50 -0700 (PDT)
+ id 1jYHbY-00070H-KU; Mon, 11 May 2020 23:13:01 +0000
+Received: by mail-oo1-f65.google.com with SMTP id c187so938926ooc.2;
+ Mon, 11 May 2020 16:12:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7+5vSNb8IxUA2MM9e6x9N0FrIu+LoC01HvigV+gZqJo=;
- b=WhqLLMGINIPTE2clc/+NolR/8zNbak9rBKNrrQgrFYmVzHWl9ZtHvCbsIxnszQUAZs
- akqnf5rR1e2BljztR+f3AnuQQZm95Xs3kTB3bCgaX+Tz5cBhbhWiUrb8lFp4jqxwO4sv
- fs5cSOD6RuxOteoh5CVjudLRu7cGz1OsVRmaU5jLbqZwTmKWL0FJ82oKSePWoNKSRMI6
- iWHPl+LBxT2hTp9fEhAKkg63RCrRNbB0/QA89+mYwNUMwBDil93QF+tmfYqrqOT8YV8L
- 2mtcxynDez83uXyz1Q/jpDMrg1OP2JKpzxcQEWrV4fXfvORgAm56j4dShk1stywXbvYL
- QBJw==
-X-Gm-Message-State: AGi0PuYFGnT1OVuxg2rOw4al6zOTxcG/NuE7cF9UtGnySL2grgM3n78c
- HiJnzkegj7+thC3vjpGwtRpexa8=
-X-Google-Smtp-Source: APiQypJ9eQAYcH5jaLEtRYYyKWBWFhBc+JEnyD+r1v2xL8VlHzzA3LVNArk2SC8qvGZFebPkJp9VEQ==
-X-Received: by 2002:aca:b2c2:: with SMTP id
- b185mr16208902oif.169.1589235949735; 
- Mon, 11 May 2020 15:25:49 -0700 (PDT)
+ bh=YDsjgW4MArlBA1SB+uZg3khyj2WK0GRuGD4JKeBynv8=;
+ b=jY12Na3ADfUQtCwzsZ9W0JxU4xAhUsWkjfYPgEFQfhyulVFxEq0T11HcWl+HtcCF8d
+ eUyD9e+ktOYMLP54/0HNFvxQieAcVmkxZYeEVplWQhDoVrrxNdUp1vuXb3YOreVpnBkv
+ XTnxwLDkL+0voQpMvTHEyh4qpB+GWxUsoE+uFZUL7HDS4K3ZwguCdEmImn6d15mNlD54
+ 7qMGk49MCKrL6PaMZ3Hfc8U91Gpz/4dSIVAaiC80Ib9e13mMYZ2jB2YP0OY+gNLmCI5E
+ DiCRgaGo/C6R7VU5OVfxOnDMCTrOonbqHVZghWHxaDqEfLBzH4XL1LMiUJV/MlvSD9yg
+ JMKA==
+X-Gm-Message-State: AGi0Pubb2+6KNUVju4N5bMkFb7iyDmysSD5sH2nXsxrV3YAIiAuRsQei
+ W0Jyx6AGSbbh/ehsp3VMEw==
+X-Google-Smtp-Source: APiQypJYcIJELa5zMY/ISbRUVZAa+Q7Ic4+PGG1ZB0L0pvzkPLwl0FKURFdszYQ9BrNGvh3O0VOGQw==
+X-Received: by 2002:a4a:af0d:: with SMTP id w13mr3249600oon.77.1589238776873; 
+ Mon, 11 May 2020 16:12:56 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m16sm3137413oop.40.2020.05.11.15.25.48
+ by smtp.gmail.com with ESMTPSA id m65sm2138476oib.49.2020.05.11.16.12.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 15:25:49 -0700 (PDT)
-Received: (nullmailer pid 26457 invoked by uid 1000);
- Mon, 11 May 2020 22:25:48 -0000
-Date: Mon, 11 May 2020 17:25:48 -0500
+ Mon, 11 May 2020 16:12:56 -0700 (PDT)
+Received: (nullmailer pid 11706 invoked by uid 1000);
+ Mon, 11 May 2020 23:12:55 -0000
+Date: Mon, 11 May 2020 18:12:55 -0500
 From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] dt-bindings: usb: dwc2: add power-domains property
-Message-ID: <20200511222548.GA26381@bogus>
-References: <20200425170833.26718-1-jbx6244@gmail.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for
+ linux,default-triggers
+Message-ID: <20200511231255.GA24112@bogus>
+References: <20200427073132.29997-1-wens@kernel.org>
+ <20200427073132.29997-2-wens@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200425170833.26718-1-jbx6244@gmail.com>
+In-Reply-To: <20200427073132.29997-2-wens@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_152550_443198_E1F8BFC7 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200511_161300_673068_32DB8568 
+X-CRM114-Status: GOOD (  15.01  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.161.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -76,8 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -92,36 +94,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Chen-Yu Tsai <wens@csie.org>, Dan Murphy <dmurphy@ti.com>,
+ Pavel Machek <pavel@ucw.cz>, linux-leds@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Sat, 25 Apr 2020 19:08:33 +0200, Johan Jonker wrote:
-> A test with the command below gives this error:
+On Mon, Apr 27, 2020 at 03:31:30PM +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
 > 
-> arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: usb@ff300000:
-> 'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
-> 
-> With the conversion to yaml it also filters things
-> in a node that are used by other drivers like
-> 'power-domains' for Rockchip px30 usb nodes,
-> so add them to 'dwc2.yaml'.
-> 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/usb/dwc2.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+> The bindings currently list a very small subset of valid triggers for
+> LEDs. Since many drivers or subsystems in Linux register custom
+> triggers, the list would become very hard to maintain.
 
-Applied, thanks!
+The idea was we'll consolidate around standardized names and that new 
+users should use 'function' instead.
+
+There was discussion around this when adding 'function'.
+
+> 
+> Instead, just drop the list and allow free form strings.
+> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
+>  1 file changed, 1 insertion(+), 20 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
+> index 4c270fde4567..3b3cdab3fc15 100644
+> --- a/Documentation/devicetree/bindings/leds/common.yaml
+> +++ b/Documentation/devicetree/bindings/leds/common.yaml
+> @@ -79,26 +79,7 @@ properties:
+>      description:
+>        This parameter, if present, is a string defining the trigger assigned to
+>        the LED.
+> -    allOf:
+> -      - $ref: /schemas/types.yaml#definitions/string
+> -    enum:
+> -        # LED will act as a back-light, controlled by the framebuffer system
+> -      - backlight
+> -        # LED will turn on (but for leds-gpio see "default-state" property in
+> -        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
+> -      - default-on
+> -        # LED "double" flashes at a load average based rate
+> -      - heartbeat
+> -        # LED indicates disk activity
+> -      - disk-activity
+> -        # LED indicates IDE disk activity (deprecated), in new implementations
+> -        # use "disk-activity"
+> -      - ide-disk
+> -        # LED flashes at a fixed, configurable rate
+> -      - timer
+> -        # LED alters the brightness for the specified duration with one software
+> -        # timer (requires "led-pattern" property)
+> -      - pattern
+> +    $ref: /schemas/types.yaml#definitions/string
+>  
+>    led-pattern:
+>      description: |
+> -- 
+> 2.26.0
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
