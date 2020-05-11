@@ -2,86 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D50E1CCC2D
-	for <lists+linux-rockchip@lfdr.de>; Sun, 10 May 2020 18:15:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B810C1CD350
+	for <lists+linux-rockchip@lfdr.de>; Mon, 11 May 2020 09:54:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b0Kop0yKWPGzuYAPyyNvXtq8etwmjBFIdlVbeNrTEeY=; b=jbR4cXMaBpTEb+
-	gbZPMIjuSGb1q5jLcUp7WRd3aEspcCIF7M5lK7bSeiRU7k9RbGkgESO/rpyqyKQkYtErMD0SrDxbC
-	s/4FBAG1UHLguKkbM4YnWmNHPL4Wbe8n8RBXRxRFcVMSBQA9/IYyzK/k9/KMBvtDkj00WytdPqZwe
-	eX5HpXs/qHElshvau2jW7VvAELN1Te/x69cEUea47GgxkGYPwMDZGAbCSlgr5ZJNokdDYasmWGkC1
-	T0UP5hLHOW2ay31pNzYE/99TAjtXFLZO3y4vo+UTQOtFZAsVjPrkY6GCkSJPQVdICkZ4znGAQS8fa
-	Y7JjtBh8kmhy3D8AHgUQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qloqPxDktyd7wQCkOJca3MHfAnfBlSO6cXT3TaO5a0o=; b=Kt3
+	wSNuK9IEwgJwHIuzGgkj78tTtzLxfl3TPSrY28zKlqabgDJOeMWbV5MQNsipQgI04V86E+Zgt8jBY
+	dTzUZ9yanyA0CmJA56VCHbyD5ebmvMqFTDs2d4+16V8KdxhJc8Aij7KphVq/ktm2FBltreEcphN/I
+	AwPWwMpkGnRFzS/LasV8K2WZWfaHjYTYyUSSXMJua6ePcqNyqCALCG7JiftGCCpNsVoatebk/85oU
+	ZeUWIc95WuV4P1gOQ9WNj1ctdX3Kuaux42dHL0Q6F7iY/PGEOnQsVsJseHOMv6auWDS0ieQ99F2m5
+	d+8GkhydW6jHK1njM/+wj1D1/Uevotg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXocC-0007Ek-7O; Sun, 10 May 2020 16:15:44 +0000
-Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
+	id 1jY3GA-0007k1-1h; Mon, 11 May 2020 07:53:58 +0000
+Received: from lucky1.263xmail.com ([211.157.147.132])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXoc8-0007Dp-S7; Sun, 10 May 2020 16:15:42 +0000
-Received: by mail-yb1-xb41.google.com with SMTP id r14so3815262ybm.12;
- Sun, 10 May 2020 09:15:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jP2OppdWYHG9ae8C528jnvGRJr3i8WffS/Btmm79ef4=;
- b=UJVMboicOJwIStVUYHd58OCXInFzut0XWyCZVxttgKZS7QWuKI0cEuXq7+Otzj1xrF
- RI28MvZ4wnyR66Y5SdApVlL5bynlIkreJTc81Fv1wpZwmFmaec0E+v0Nt05DpO6RKKvK
- PdYhAi45YwJkA+fGV8ZfQWIMJq3AOC49pZVKWc/vh2zpYchQH1QOZG08kzCYoSdLaDNl
- Iy5qNC73aV9h0lKQZiXNfJqTkb3VzLJfW+z0tNwNd4Nzx7lnupcarj2UpL9jr/FmlFrc
- 5puOqeRv4QCSYTBmng7kukOsXQjCcAtguVqoRY4ta+ETqJtjZInii+dm5nGDCW69Lc8s
- wtpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jP2OppdWYHG9ae8C528jnvGRJr3i8WffS/Btmm79ef4=;
- b=JatYV6Vbhk9VD2voAPSM2MPfEfyTeXMIYgSrY1cYnDwRsbw3DR/SxcDQSB8GYz60x2
- Whc8MyyzP21V++Qd3zFnXGuAkKFnJsbY6ttUSfx6netdPKgNqC2YyC8sjOjG5CV8RwAl
- ZnHWHzszEQrv+cqOZUxkKaR0whK7DebvswzBpVK08pNOc0kdWbkjBvZiJIhLpatKHe9n
- 5EtNmCLGacsWaUZz3LA9XWnEEwWNFOt8wduVZBkBU/aflbpzV1rVgWSvJwg/L6b3HWuQ
- iA1jov9SmGWmJI9Yj8w5c1AYeg+cg9VLf1rrqM2ul+0rOko16XBiN+ML50SLuHX3vkMD
- cXTA==
-X-Gm-Message-State: AGi0PuYfr3kzcHp7RZRGxkqVkBQh7i1axOpcNlkVhzrtPvF0JZmHkU1h
- 7hB42VntBNmuzuD7cUtT9SeovgsZ3J3xchV2HYE=
-X-Google-Smtp-Source: APiQypKywA8Hib3xDA/OXgsS2tECxAn+F0IIkb1c1aowKuxjItssElORtZsiGLY5OvroP4pQlIXgPV/MwEp4L+XvpK4=
-X-Received: by 2002:a25:c402:: with SMTP id u2mr18775323ybf.231.1589127339046; 
- Sun, 10 May 2020 09:15:39 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200508083729.5560-1-chris.ruehl@gtsys.com.hk>
- <20200508083729.5560-2-chris.ruehl@gtsys.com.hk>
- <CANBLGcwA+=OB-_nOYUijWrDBSkLYhR7_PNG1ewO7LZ-zRVGoxg@mail.gmail.com>
- <3890ba80-f9f7-7f22-5cb5-5b78bbf042e7@gtsys.com.hk>
-In-Reply-To: <3890ba80-f9f7-7f22-5cb5-5b78bbf042e7@gtsys.com.hk>
-From: Emil Renner Berthing <emil.renner.berthing@gmail.com>
-Date: Sun, 10 May 2020 18:15:27 +0200
-Message-ID: <CANBLGcxmAyPhnUB0hKdxcg7dQCfQLaHYY1Uxc6-GOmmF6rvK8Q@mail.gmail.com>
-Subject: Re: [PATCH v0 1/1] spi: spi-rockchip: add support for spi slave_mode
-To: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+ id 1jY3G1-0007cl-Md
+ for linux-rockchip@lists.infradead.org; Mon, 11 May 2020 07:53:52 +0000
+Received: from localhost (unknown [192.168.167.69])
+ by lucky1.263xmail.com (Postfix) with ESMTP id D1888CCABB;
+ Mon, 11 May 2020 15:53:32 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P27329T140438906509056S1589183610459145_; 
+ Mon, 11 May 2020 15:53:32 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <226d11f8b02a0d7c9c78d134a12f2e29>
+X-RL-SENDER: frank.wang@rock-chips.com
+X-SENDER: wmc@rock-chips.com
+X-LOGIN-NAME: frank.wang@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+From: Frank Wang <frank.wang@rock-chips.com>
+To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
+ philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
+ jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
+Subject: [PATCH v4 00/16] Add Rockchip RK3399 USB3.0 Host support
+Date: Mon, 11 May 2020 15:53:14 +0800
+Message-Id: <20200511075330.26462-1-frank.wang@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_091540_909996_5782670C 
-X-CRM114-Status: GOOD (  30.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200511_005350_183543_66704884 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [emil.renner.berthing[at]gmail.com]
+ no trust [211.157.147.132 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.132 listed in wl.mailspike.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,202 +81,94 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Jack Lo <jack.lo@gtsys.com.hk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-spi@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: jianing.ren@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>,
+ marek.belisko@gmail.com, wmc@rock-chips.com, u-boot@lists.denx.de,
+ william.wu@rock-chips.com, linux-rockchip@lists.infradead.org,
+ linux-amarula@amarulasolutions.com, chenjh@rock-chips.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Chris,
+This series add quirks for DWC3 and add Rockchip RK3399 USB3.0 host support.
 
-On Sat, 9 May 2020 at 02:10, Chris Ruehl <chris.ruehl@gtsys.com.hk> wrote:
->
-> Hi Emil,
->
-> thanks for the review and your comments
->
-> On 8/5/2020 9:13 pm, Emil Renner Berthing wrote:
-> > Hi Chris,
-> >
-> > On Fri, 8 May 2020 at 10:47, Chris Ruehl <chris.ruehl@gtsys.com.hk> wrote:
-> >> This patch aim to add spi slave mode support to the rockchip driver.
-> >> Fix the wrong usage of num_cs set fix to ROCKCHIP_SPI_MAX_CS_NUM,
-> >> instead use max_native_cs flag to set the limit of native chip-select.
-> >> Enable use_gpio_descriptors to have cs_gpiod for gpio based chip-selects.
-> >>
-> >> Signed-off-by: Chris Ruehl <chris.ruehl@gtsys.com.hk>
-> >> ---
-> >>   drivers/spi/spi-rockchip.c | 46 +++++++++++++++++++++++++++++++++-----
-> >>   1 file changed, 41 insertions(+), 5 deletions(-)
-> >>
-> >> diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
-> >> index 70ef63e0b6b8..9c1ff52c0f85 100644
-> >> --- a/drivers/spi/spi-rockchip.c
-> >> +++ b/drivers/spi/spi-rockchip.c
-> >> @@ -183,6 +183,9 @@ struct rockchip_spi {
-> >>          u8 rsd;
-> >>
-> >>          bool cs_asserted[ROCKCHIP_SPI_MAX_CS_NUM];
-> >> +
-> >> +       bool slave_mode;
-> >> +       bool slave_abort;
-> >>   };
-> >>
-> >>   static inline void spi_enable_chip(struct rockchip_spi *rs, bool enable)
-> >> @@ -359,7 +362,7 @@ static void rockchip_spi_dma_rxcb(void *data)
-> >>          struct rockchip_spi *rs = spi_master_get_devdata(master);
-> >>          int state = atomic_fetch_andnot(RXDMA, &rs->state);
-> >>
-> >> -       if (state & TXDMA)
-> >> +       if (state & TXDMA && !rs->slave_abort)
-> >>                  return;
-> >>
-> >>          spi_enable_chip(rs, false);
-> >> @@ -372,7 +375,7 @@ static void rockchip_spi_dma_txcb(void *data)
-> >>          struct rockchip_spi *rs = spi_master_get_devdata(master);
-> >>          int state = atomic_fetch_andnot(TXDMA, &rs->state);
-> >>
-> >> -       if (state & RXDMA)
-> >> +       if (state & RXDMA && !rs->slave_abort)
-> >>                  return;
-> >>
-> >>          /* Wait until the FIFO data completely. */
-> >> @@ -466,6 +469,10 @@ static void rockchip_spi_config(struct rockchip_spi *rs,
-> >>          u32 cr1;
-> >>          u32 dmacr = 0;
-> >>
-> >> +       if (rs->slavemode)
-> >> +               cr0 |= CR0_OPM_SLAVE << CR0_OPM_OFFSET;
-> >> +       rs->slave_abort = false;
-> >> +
-> >>          cr0 |= rs->rsd << CR0_RSD_OFFSET;
-> >>          cr0 |= (spi->mode & 0x3U) << CR0_SCPH_OFFSET;
-> >>          if (spi->mode & SPI_LSB_FIRST)
-> >> @@ -535,6 +542,16 @@ static size_t rockchip_spi_max_transfer_size(struct spi_device *spi)
-> >>          return ROCKCHIP_SPI_MAX_TRANLEN;
-> >>   }
-> >>
-> >> +static int rockchip_spi_slave_abort(struct spi_master *master)
-> >> +{
-> >> +       struct rockchip_spi *rs = spi_master_get_devdata(master);
-> >> +
-> >> +       rs->slave_abort = true;
-> >> +       complete(master);
-> >> +
-> >> +       return 0;
-> >> +}
-> >> +
-> >>   static int rockchip_spi_transfer_one(
-> >>                  struct spi_master *master,
-> >>                  struct spi_device *spi,
-> >> @@ -589,14 +606,25 @@ static int rockchip_spi_probe(struct platform_device *pdev)
-> >>          struct spi_master *master;
-> >>          struct resource *mem;
-> >>          u32 rsd_nsecs;
-> >> +       bool slave_mode;
-> >> +       u32 num_cs = 1;
-> >> +
-> >> +       slave_mode = of_property_read_bool(np, "spi-slave");
-> >> +
-> >> +       if (slave_mode)
-> >> +               master = spi_alloc_slave(&pdev->dev,
-> >> +                               sizeof(struct rockchip_spi));
-> >> +       else
-> >> +               master = spi_alloc_master(&pdev->dev,
-> >> +                               sizeof(struct rockchip_spi));
-> >>
-> >> -       master = spi_alloc_master(&pdev->dev, sizeof(struct rockchip_spi));
-> >>          if (!master)
-> >>                  return -ENOMEM;
-> >>
-> >>          platform_set_drvdata(pdev, master);
-> >>
-> >>          rs = spi_master_get_devdata(master);
-> >> +       rs->slave_mode = slave_mode;
-> > This entry doesn't seem to be read from any of your code, and even it
-> > it was, the same information is available in master->slave, so I don't
-> > see why you need it in the rockchip_spi struct.
-> I haven't see the slave flag in the spi_controller struct, I will store the
-> information
-> there.
-> >
-> > Also spi_master is just #defined to spi_controller in spi.h, so maybe
-> > consider changing all 'struct spi_master *master' to 'struct
-> > spi_controller *ctrl' now that the driver supports both modes.
-> Can do,  but I think that is better to have a separate patch for it,
-> make it easier for review.
+The function has been tested pass on rk3399-evb and roc-rk3399-pc board.
 
-Yes, you should probably do something like
+For V4 update:
+ - Collect Jagan's all fixed patches [1].
+ - Amend specific u-boot changes from dts to dtsi for [PATCH v3 6/7].
 
-patch 1/3: change struct spi_master *master to struct spi_controller *ctrl
-patch 2/3: add slave slave mode
-patch 3/3: use num-cs property for ctrl->num_chipselect
+For V3 update:
+ - Fix compile error for [PATCH v2 1/9].
+ - Use Jagan's Type-C driver instead of [PATCH v2 5/9].
+ - Cleanup dts changes for [PATCH v2 7/9].
+ - Cleanup config changes for [PATCH v2 8/9] and [PATCH v2 9/9].
 
-> >
-> >>          /* Get basic io resource and map it */
-> >>          mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> >> @@ -676,7 +704,16 @@ static int rockchip_spi_probe(struct platform_device *pdev)
-> >>          master->auto_runtime_pm = true;
-> >>          master->bus_num = pdev->id;
-> >>          master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_LOOP | SPI_LSB_FIRST;
-> >> -       master->num_chipselect = ROCKCHIP_SPI_MAX_CS_NUM;
-> >> +       if (slave_mode) {
-> >> +               master->mode_bits |= SPI_NO_CS;
-> >> +               master->slave_abort = rockchip_spi_slave_abort;
-> >> +       } else {
-> >> +               of_property_read_u32(np, "num-cs", &num_cs);
-> >> +               master->num_chipselect = num_cs;
-> > If you do something like this you won't need the temporary num_cs variable:
-> >
-> > if (of_property_read_u32(np, "num-cs", &master->num_chipselect))
-> >      master->num_chipselect = 1;
-> Like it , can see clearly the fallback to a default if num-cs isn't set in the
-> dts.
-> >
-> > Also it seems like you're changing the default from
-> > ROCKCHIP_SPI_MAX_CS_NUM to 1 if there is no num-cs property. Did you
-> > check that all boards either have the num-cs property defined or only
-> > needs num_chipselect = 1?
-> Only spi0 of the rockchip has a 2nd native chip select, all others a single only
-> therefore I find it less evil to use 1 vs. ROCKCHIP_SPI_MAX_CS_NUM
->
-> >> +               master->use_gpio_descriptors = true;
-> >> +               master->max_native_cs = ROCKCHIP_SPI_MAX_CS_NUM;
-> >> +               master->flags = SPI_MASTER_GPIO_SS;
-> >> +       }
-> >>          master->dev.of_node = pdev->dev.of_node;
-> >>          master->bits_per_word_mask = SPI_BPW_MASK(16) | SPI_BPW_MASK(8) | SPI_BPW_MASK(4);
-> >>          master->min_speed_hz = rs->freq / BAUDR_SCKDV_MAX;
-> >> @@ -686,7 +723,6 @@ static int rockchip_spi_probe(struct platform_device *pdev)
-> >>          master->transfer_one = rockchip_spi_transfer_one;
-> >>          master->max_transfer_size = rockchip_spi_max_transfer_size;
-> >>          master->handle_err = rockchip_spi_handle_err;
-> >> -       master->flags = SPI_MASTER_GPIO_SS;
-> >>
-> >>          master->dma_tx = dma_request_chan(rs->dev, "tx");
-> >>          if (IS_ERR(master->dma_tx)) {
-> >> --
-> >> 2.20.1
-> >>
-> >>
-> >> _______________________________________________
-> >> Linux-rockchip mailing list
-> >> Linux-rockchip@lists.infradead.org
-> >> http://lists.infradead.org/mailman/listinfo/linux-rockchip
->
-> --
-> GTSYS Limited RFID Technology
-> 9/F, Unit E, R07, Kwai Shing Industrial Building Phase 2,
-> 42-46 Tai Lin Pai Road, Kwai Chung, N.T., Hong Kong
-> Tel (852) 9079 9521
->
-> Disclaimer: https://www.gtsys.com.hk/email/classified.html
->
+For V2 update:
+ - Amend type-c driver followed Jagan's comments for [PATCH 5/8].
+ - Fix dts commit for [PATCH 7/8].
+ - Split RK3399 default config for [PATCH 8/8].
+ - Add 'Reviewed-by' tag for [PATCH 1/8], [PATCH 2/8] and [PATCH 3/8].
+
+[1] https://patchwork.ozlabs.org/project/uboot/cover/20200506075025.1677-1-jagan@amarulasolutions.com
+
+BR,
+Frank
+
+Frank Wang (7):
+  usb: dwc3: add dis_enblslpm_quirk
+  usb: dwc3: add dis_u2_freeclk_exists_quirk
+  usb: dwc3: amend UTMI/UTMIW phy interface setup
+  usb: dwc3: add make compatible for rockchip platform
+  driver: usb: drop legacy rockchip xhci driver
+  ARM: dts: rk3399-evb: usb3.0 host support
+  configs: evb-rk3399: update support usb3.0 host
+
+Jagan Teki (9):
+  clk: rk3399: Enable/Disable the USB2PHY clk
+  clk: rk3399: Set empty for TCPHY assigned-clocks
+  clk: rk3399: Enable/Disable TCPHY clocks
+  phy: rockchip: Add Rockchip USB2PHY driver
+  arm64: dts: rk3399: Move u2phy into root port
+  phy: rockchip: Add Rockchip USB TypeC PHY driver
+  usb: dwc3: Add disable u2mac linestate check quirk
+  usb: dwc3: Enable AutoRetry feature in the controller
+  roc-rk3399-pc: Enable USB3.0 Host
+
+ arch/arm/dts/rk3399-evb-u-boot.dtsi           |  13 +
+ arch/arm/dts/rk3399.dtsi                      | 108 +--
+ configs/evb-rk3399_defconfig                  |   6 +
+ configs/roc-pc-mezzanine-rk3399_defconfig     |   5 +
+ configs/roc-pc-rk3399_defconfig               |   6 +
+ drivers/Makefile                              |   1 +
+ drivers/clk/rockchip/clk_rk3399.c             |  38 +
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/rockchip/Kconfig                  |  21 +
+ drivers/phy/rockchip/Makefile                 |   7 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 312 +++++++
+ drivers/phy/rockchip/phy-rockchip-typec.c     | 796 ++++++++++++++++++
+ drivers/usb/common/common.c                   |  25 +
+ drivers/usb/dwc3/core.c                       | 106 ++-
+ drivers/usb/dwc3/core.h                       |  19 +
+ drivers/usb/dwc3/dwc3-generic.c               |  33 +-
+ drivers/usb/host/Kconfig                      |   9 -
+ drivers/usb/host/Makefile                     |   1 -
+ drivers/usb/host/xhci-rockchip.c              | 196 -----
+ include/dwc3-uboot.h                          |   3 +
+ include/linux/usb/phy.h                       |  18 +
+ 21 files changed, 1427 insertions(+), 297 deletions(-)
+ create mode 100644 drivers/phy/rockchip/Kconfig
+ create mode 100644 drivers/phy/rockchip/Makefile
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-typec.c
+ delete mode 100644 drivers/usb/host/xhci-rockchip.c
+
+-- 
+2.17.1
+
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
