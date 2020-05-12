@@ -2,74 +2,70 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015651CF97A
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 May 2020 17:42:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32BDB1CFB23
+	for <lists+linux-rockchip@lfdr.de>; Tue, 12 May 2020 18:43:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
 	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
 	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NqcvdtOiitcsR5xMq2qre30CdYLhXCqQsXNL750Qbhw=; b=V5pxhH9/QAfC6EaNm3T6269nH
-	RU6yR3z8emiK1aE+BTKXyeiM0ty30QMK4vRMwRgTmB2aJgudJzAO7E+A5WkIYDqZInc6tFeEexapK
-	GG6RwnoiKyk+8VuBHDpv8zZ1xYWnthe71JloVzYFjnCMJng1g4ephiKSvAm6Tp5e8hndDQUHZ9cg2
-	55CtO+sudBG8LZ1HqiXpcnBMr/I2SQ096asQSOMLII6nWI4fdwJC4hTEUd4HDc0mWVAkhb3zg1vOF
-	gPGb8Co+TJdOALEh46rUXFNYSKdpQAta1jT9R1punN947aDl+kepaq59wtJJDwCaOXN891I+7b5RF
-	TYY1bh+4g==;
+	 bh=exUo0H+ufT6EVXcbRiCX9gm+fCBn+/0Y0nJ/sbPtMHU=; b=iPhwu2W5BmkJ0PY0yCfaeza2P
+	tCm++HeopKqb/1AakfH33GUnnHsZk5Wgt06UxHHMvDs2CK4NButcemtdVrDB3lotkVQvcIJUgdb1U
+	emBWYM7EwgZ7JjZ4+ixL61NTr+cwnXPsUggDsaSOtfW2eNw7b0lTA6trv8mlN9N6OJsWTWXdHVB0Z
+	Aqmuc6W6dMPtpWwHLGYW4Wc2nBcvly6SZ9HpTeH2bJDXl9aClJLY5s1HVwZrzGM65SCFxJlxYd3bY
+	p6CUzxC8tpLNb2wPc2bYNsZvyaH5OiW6CnZUR0LJxue1XeyKrPTJNVUekmCPDITQyEs868hOZ0ew4
+	VLwgdU2sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYX39-0001Q8-IN; Tue, 12 May 2020 15:42:31 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jYXzd-0006Ad-OV; Tue, 12 May 2020 16:42:57 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYX35-0001PG-LP
- for linux-rockchip@lists.infradead.org; Tue, 12 May 2020 15:42:29 +0000
-IronPort-SDR: CNc0cduEgPMmpvhalTGoeGDc08n8yOxZ02FCs8VthYsvk+gPPsS6ABEG2tOto9qBMNuGO2rMrA
- rIDMs43mHlZg==
+ id 1jYXyQ-000530-Ta
+ for linux-rockchip@lists.infradead.org; Tue, 12 May 2020 16:41:48 +0000
+IronPort-SDR: Os66CJLavoKCM0bfsQN56ABEqCTokVc2XC/7egS68TxQqN6V+poqU6MSlB+FgM+Hwj113DDi5U
+ ZEwK4N5a9Vyw==
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 12 May 2020 08:42:26 -0700
-IronPort-SDR: 8n0WqDEYCBDv2JHFnpBRhssX4GuHqeaxAMWNML0ZRMyRTdIqVjiBP/ZlSQSXMv22iGI+rMMV5P
- NWoF6yWoBFdg==
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 12 May 2020 09:41:41 -0700
+IronPort-SDR: AvAiHKvmXpg/SUJ7kdm3R0olK3NVWzNJ37CO/YqlRjZDQJBPOLIBmKPcS7J0IXF2jI+BTtCIQy
+ 5Snx262zGlCw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="5.73,384,1583222400"; 
- d="gz'50?scan'50,208,50";a="252924932"
+ d="gz'50?scan'50,208,50";a="250952857"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 12 May 2020 08:42:22 -0700
+ by orsmga007.jf.intel.com with ESMTP; 12 May 2020 09:41:36 -0700
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1jYX30-000DJc-0I; Tue, 12 May 2020 23:42:22 +0800
-Date: Tue, 12 May 2020 23:42:09 +0800
+ id 1jYXyK-0006FV-5h; Wed, 13 May 2020 00:41:36 +0800
+Date: Wed, 13 May 2020 00:41:11 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  linux-media@vger.kernel.org
-Subject: Re: [PATCH 1/5] media: staging: rkisp1: return IRQ_NONE in isr when
- irq isn't for ISP
-Message-ID: <202005122313.veIpO2OH%lkp@intel.com>
-References: <20200512120522.25960-2-dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH 5/5] media: staging: rkisp1: replace workqueue with
+ threaded irq for reading statistics registers
+Message-ID: <202005130014.6crueEVz%lkp@intel.com>
+References: <20200512120522.25960-6-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="sdtB3X0nJg68CQEu"
+Content-Type: multipart/mixed; boundary="7AUc2qLy4jB3hD7Z"
 Content-Disposition: inline
-In-Reply-To: <20200512120522.25960-2-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200512120522.25960-6-dafna.hirschfeld@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_084227_750476_B3747C2C 
-X-CRM114-Status: UNSURE (   7.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200512_094143_120557_02B2A546 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,13 +86,13 @@ Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 
---sdtB3X0nJg68CQEu
+--7AUc2qLy4jB3hD7Z
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
 Hi Dafna,
 
-I love your patch! Yet something to improve:
+Thank you for the patch! Yet something to improve:
 
 [auto build test ERROR on linuxtv-media/master]
 [also build test ERROR on v5.7-rc5 next-20200512]
@@ -120,103 +116,170 @@ Reported-by: kbuild test robot <lkp@intel.com>
 
 All error/warnings (new ones prefixed by >>):
 
-In file included from drivers/staging/media/rkisp1/rkisp1-capture.c:21:
->> drivers/staging/media/rkisp1/rkisp1-common.h:308:1: error: unknown type name 'irqreturn_t'
-308 | irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
-| ^~~~~~~~~~~
+In file included from drivers/staging/media/rkisp1/rkisp1-stats.c:14:
 drivers/staging/media/rkisp1/rkisp1-common.h:309:1: error: unknown type name 'irqreturn_t'
-309 | irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1);
+309 | irqreturn_t rkisp1_read_stats_threaded_irq(int irq, void *ctx);
 | ^~~~~~~~~~~
 drivers/staging/media/rkisp1/rkisp1-common.h:310:1: error: unknown type name 'irqreturn_t'
-310 | irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1);
+310 | irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
 | ^~~~~~~~~~~
->> drivers/staging/media/rkisp1/rkisp1-capture.c:652:1: error: unknown type name 'irqreturn_t'
-652 | irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1)
+drivers/staging/media/rkisp1/rkisp1-common.h:311:1: error: unknown type name 'irqreturn_t'
+311 | irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1);
 | ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-capture.c: In function 'rkisp1_capture_isr':
->> drivers/staging/media/rkisp1/rkisp1-capture.c:659:10: error: 'IRQ_NONE' undeclared (first use in this function)
-659 |   return IRQ_NONE;
-|          ^~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-capture.c:659:10: note: each undeclared identifier is reported only once for each function it appears in
->> drivers/staging/media/rkisp1/rkisp1-capture.c:689:9: error: 'IRQ_HANDLED' undeclared (first use in this function)
-689 |  return IRQ_HANDLED;
-|         ^~~~~~~~~~~
->> drivers/staging/media/rkisp1/rkisp1-capture.c:690:1: warning: control reaches end of non-void function [-Wreturn-type]
-690 | }
-| ^
---
-In file included from drivers/staging/media/rkisp1/rkisp1-common.c:10:
->> drivers/staging/media/rkisp1/rkisp1-common.h:308:1: error: unknown type name 'irqreturn_t'
-308 | irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
+drivers/staging/media/rkisp1/rkisp1-common.h:312:1: error: unknown type name 'irqreturn_t'
+312 | irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1);
 | ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-common.h:309:1: error: unknown type name 'irqreturn_t'
-309 | irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1);
+drivers/staging/media/rkisp1/rkisp1-common.h:313:1: error: unknown type name 'irqreturn_t'
+313 | irqreturn_t rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris);
 | ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-common.h:310:1: error: unknown type name 'irqreturn_t'
-310 | irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1);
+>> drivers/staging/media/rkisp1/rkisp1-stats.c:313:1: error: unknown type name 'irqreturn_t'
+313 | irqreturn_t rkisp1_read_stats_threaded_irq(int irq, void *ctx)
 | ^~~~~~~~~~~
---
-In file included from drivers/staging/media/rkisp1/rkisp1-isp.c:19:
->> drivers/staging/media/rkisp1/rkisp1-common.h:308:1: error: unknown type name 'irqreturn_t'
-308 | irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
+drivers/staging/media/rkisp1/rkisp1-stats.c: In function 'rkisp1_read_stats_threaded_irq':
+>> drivers/staging/media/rkisp1/rkisp1-stats.c:326:10: error: 'IRQ_HANDLED' undeclared (first use in this function)
+326 |   return IRQ_HANDLED;
+|          ^~~~~~~~~~~
+drivers/staging/media/rkisp1/rkisp1-stats.c:326:10: note: each undeclared identifier is reported only once for each function it appears in
+drivers/staging/media/rkisp1/rkisp1-stats.c: At top level:
+drivers/staging/media/rkisp1/rkisp1-stats.c:382:1: error: unknown type name 'irqreturn_t'
+382 | irqreturn_t rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris)
 | ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-common.h:309:1: error: unknown type name 'irqreturn_t'
-309 | irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1);
-| ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-common.h:310:1: error: unknown type name 'irqreturn_t'
-310 | irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1);
-| ^~~~~~~~~~~
->> drivers/staging/media/rkisp1/rkisp1-isp.c:1049:1: error: unknown type name 'irqreturn_t'
-1049 | irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1)
-| ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c: In function 'rkisp1_mipi_isr':
->> drivers/staging/media/rkisp1/rkisp1-isp.c:1055:10: error: 'IRQ_NONE' undeclared (first use in this function)
-1055 |   return IRQ_NONE;
-|          ^~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c:1055:10: note: each undeclared identifier is reported only once for each function it appears in
->> drivers/staging/media/rkisp1/rkisp1-isp.c:1091:9: error: 'IRQ_HANDLED' undeclared (first use in this function)
-1091 |  return IRQ_HANDLED;
-|         ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c: At top level:
-drivers/staging/media/rkisp1/rkisp1-isp.c:1111:1: error: unknown type name 'irqreturn_t'
-1111 | irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1)
-| ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c: In function 'rkisp1_isp_isr':
-drivers/staging/media/rkisp1/rkisp1-isp.c:1117:10: error: 'IRQ_NONE' undeclared (first use in this function)
-1117 |   return IRQ_NONE;
-|          ^~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c:1154:9: error: 'IRQ_HANDLED' undeclared (first use in this function)
-1154 |  return IRQ_HANDLED;
-|         ^~~~~~~~~~~
-drivers/staging/media/rkisp1/rkisp1-isp.c: In function 'rkisp1_mipi_isr':
->> drivers/staging/media/rkisp1/rkisp1-isp.c:1092:1: warning: control reaches end of non-void function [-Wreturn-type]
-1092 | }
-| ^
-drivers/staging/media/rkisp1/rkisp1-isp.c: In function 'rkisp1_isp_isr':
-drivers/staging/media/rkisp1/rkisp1-isp.c:1155:1: warning: control reaches end of non-void function [-Wreturn-type]
-1155 | }
+drivers/staging/media/rkisp1/rkisp1-stats.c: In function 'rkisp1_stats_isr':
+drivers/staging/media/rkisp1/rkisp1-stats.c:387:2: error: unknown type name 'irqreturn_t'
+387 |  irqreturn_t ret = IRQ_HANDLED;
+|  ^~~~~~~~~~~
+drivers/staging/media/rkisp1/rkisp1-stats.c:387:20: error: 'IRQ_HANDLED' undeclared (first use in this function)
+387 |  irqreturn_t ret = IRQ_HANDLED;
+|                    ^~~~~~~~~~~
+>> drivers/staging/media/rkisp1/rkisp1-stats.c:409:10: error: 'IRQ_WAKE_THREAD' undeclared (first use in this function); did you mean 'RUSAGE_THREAD'?
+409 |    ret = IRQ_WAKE_THREAD;
+|          ^~~~~~~~~~~~~~~
+|          RUSAGE_THREAD
+drivers/staging/media/rkisp1/rkisp1-stats.c: In function 'rkisp1_read_stats_threaded_irq':
+>> drivers/staging/media/rkisp1/rkisp1-stats.c:379:1: warning: control reaches end of non-void function [-Wreturn-type]
+379 | }
 | ^
 
-vim +/irqreturn_t +308 drivers/staging/media/rkisp1/rkisp1-common.h
+vim +/irqreturn_t +313 drivers/staging/media/rkisp1/rkisp1-stats.c
 
-   307	
- > 308	irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
-   309	irqreturn_t rkisp1_mipi_isr(struct rkisp1_device *rkisp1);
-   310	irqreturn_t rkisp1_capture_isr(struct rkisp1_device *rkisp1);
-   311	void rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris);
-   312	void rkisp1_params_isr(struct rkisp1_device *rkisp1, u32 isp_mis);
-   313	
+   312	
+ > 313	irqreturn_t rkisp1_read_stats_threaded_irq(int irq, void *ctx)
+   314	{
+   315		struct device *dev = ctx;
+   316		struct rkisp1_device *rkisp1 = dev_get_drvdata(dev);
+   317		struct rkisp1_stats *stats = &rkisp1->stats;
+   318		struct rkisp1_kstats_buffer *kstats_buf = NULL;
+   319		struct rkisp1_stat_buffer *cur_stat_buf;
+   320		unsigned long flags;
+   321		u64 timestamp = ktime_get_ns();
+   322	
+   323		spin_lock_irqsave(&stats->stats_lock, flags);
+   324		if (!stats->is_streaming) {
+   325			spin_unlock_irqrestore(&stats->stats_lock, flags);
+ > 326			return IRQ_HANDLED;
+   327		}
+   328		if (list_empty(&stats->stat)) {
+   329			spin_unlock_irqrestore(&stats->stats_lock, flags);
+   330			WARN("%s: threaded irq waked but there are no buffers",
+   331			     __func__);
+   332			return IRQ_HANDLED;
+   333		}
+   334		kstats_buf = list_first_entry(&stats->stat,
+   335					      struct rkisp1_kstats_buffer, buff.queue);
+   336	
+   337		/*
+   338		 * each waked irq thread reads exactly one ready statistics
+   339		 * so it is a bug  if no statistics are ready
+   340		 */
+   341		if (!kstats_buf->ris) {
+   342			spin_unlock_irqrestore(&stats->stats_lock, flags);
+   343			WARN("%s: threaded irq waked but buffer holds no measures",
+   344			     __func__);
+   345			return IRQ_HANDLED;
+   346		}
+   347		list_del(&kstats_buf->buff.queue);
+   348		spin_unlock_irqrestore(&stats->stats_lock, flags);
+   349	
+   350		cur_stat_buf =
+   351			(struct rkisp1_stat_buffer *)(kstats_buf->buff.vaddr[0]);
+   352	
+   353		if (kstats_buf->ris & RKISP1_CIF_ISP_AWB_DONE) {
+   354			rkisp1_stats_get_awb_meas(stats, cur_stat_buf);
+   355			cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AWB;
+   356		}
+   357	
+   358		if (kstats_buf->ris & RKISP1_CIF_ISP_AFM_FIN) {
+   359			rkisp1_stats_get_afc_meas(stats, cur_stat_buf);
+   360			cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AFM_FIN;
+   361		}
+   362	
+   363		if (kstats_buf->ris & RKISP1_CIF_ISP_EXP_END) {
+   364			rkisp1_stats_get_aec_meas(stats, cur_stat_buf);
+   365			rkisp1_stats_get_bls_meas(stats, cur_stat_buf);
+   366			cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AUTOEXP;
+   367		}
+   368	
+   369		if (kstats_buf->ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY) {
+   370			rkisp1_stats_get_hst_meas(stats, cur_stat_buf);
+   371			cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_HIST;
+   372		}
+   373	
+   374		vb2_set_plane_payload(&kstats_buf->buff.vb.vb2_buf, 0,
+   375				      sizeof(struct rkisp1_stat_buffer));
+   376		kstats_buf->buff.vb.vb2_buf.timestamp = timestamp;
+   377		vb2_buffer_done(&kstats_buf->buff.vb.vb2_buf, VB2_BUF_STATE_DONE);
+   378		return IRQ_HANDLED;
+ > 379	}
+   380	
+   381	
+   382	irqreturn_t rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris)
+   383	{
+   384		struct rkisp1_device *rkisp1 = stats->rkisp1;
+   385		struct rkisp1_isp *isp = &rkisp1->isp;
+   386		struct rkisp1_kstats_buffer *buf = NULL;
+ > 387		irqreturn_t ret = IRQ_HANDLED;
+   388		unsigned int isp_mis_tmp = 0;
+   389		unsigned long flags;
+   390		u32 val;
+   391	
+   392		spin_lock_irqsave(&stats->stats_lock, flags);
+   393	
+   394		val = RKISP1_STATS_MEAS_MASK;
+   395		rkisp1_write(rkisp1, val, RKISP1_CIF_ISP_ICR);
+   396	
+   397		isp_mis_tmp = rkisp1_read(rkisp1, RKISP1_CIF_ISP_MIS);
+   398		if (isp_mis_tmp & RKISP1_STATS_MEAS_MASK)
+   399			rkisp1->debug.stats_error++;
+   400	
+   401		if (!stats->is_streaming || !(isp_ris & RKISP1_STATS_MEAS_MASK))
+   402			goto unlock;
+   403	
+   404		list_for_each_entry(buf, &stats->stat, buff.queue) {
+   405			if (!buf->ris) {
+   406				buf->buff.vb.sequence =
+   407					atomic_read(&isp->frame_sequence);
+   408				buf->ris = isp_ris;
+ > 409				ret = IRQ_WAKE_THREAD;
+   410				break;
+   411			}
+   412		}
+   413	
+   414	unlock:
+   415		spin_unlock_irqrestore(&stats->stats_lock, flags);
+   416		return ret;
+   417	}
+   418	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
 https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
---sdtB3X0nJg68CQEu
+--7AUc2qLy4jB3hD7Z
 Content-Type: application/gzip
 Content-Disposition: attachment; filename=".config.gz"
 Content-Transfer-Encoding: base64
 
-H4sICACvul4AAy5jb25maWcAjFxLc+M2Er7nV6gml91DEj9mlMlu+QCSIImILxOgbPnC0ng0
+H4sICFvMul4AAy5jb25maWcAjFxLc+M2Er7nV6gml91DEj9mlMlu+QCSIImILxOgbPnC0ng0
 E1c8lsuSs8m/327whQZAeVKpGrO/Bgg0Gv0CqB9/+HHBXo/7b9vjw/328fGfxdfd0+5le9x9
 Xnx5eNz9dxGVi6JUCx4J9TMwZw9Pr3//8vSwP1wsPvz8689nP73cXyxWu5en3eMi3D99efj6
 Cs0f9k8//PgD/P8jEL89Q08v/1noVj89Yg8/fb2/X/wrCcN/L377+fLnM+AMyyIWSRuGrZAt
@@ -1247,7 +1310,7 @@ sqOfWUcpBg0rT2+lfR9rrdeszrSd+Zrf4hJsXoopwepefS/WPwK14bx++OaVu0yywGk6tFLx
 oM37srMvJttvoMwW2Sd8yIyjANhy2dn9yzHSaZ62qXym/bajrUbmV3jLgOvv/wFPLW9M3pED
 AA==
 
---sdtB3X0nJg68CQEu
+--7AUc2qLy4jB3hD7Z
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -1258,5 +1321,5 @@ Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
---sdtB3X0nJg68CQEu--
+--7AUc2qLy4jB3hD7Z--
 
