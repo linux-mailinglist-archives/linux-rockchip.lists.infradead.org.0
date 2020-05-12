@@ -2,91 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B300F1CFF6D
-	for <lists+linux-rockchip@lfdr.de>; Tue, 12 May 2020 22:36:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8D5B1D02A8
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 00:58:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UDfk/ySaECkIE8TH7q33nbZknSaGfPejBVLfi2RDW0w=; b=R2WDlEbauV6b88To8kG1k2JP9u
-	8OvQTvaGz6Hmh7/2ciz12FH4tlgHJVBd9YQn8QUUQKQKFa0xpePhLXG+4g4q/wCFqfGL01p3tXhL3
-	M5p7xWSfhtRO++w1e8o3LT6j9L4UjhOruYqqF98IVn8DT7xCxOH2Xu0Djyem0jxVlUqjSk/423DJM
-	HEuAN8i4XSRbKKJ9w6baOcpOl+S5PQNoMDQhAZ1tPoVn1H4ZSYTH+INkh+oQ/cWcBpv1zqMibacT6
-	L3rAsV19zGq/vP8+g8VyMAsWbGtFoaLx8Ov0pLjkMrXXXGRcu0fyN2+gnFBLzUFm3120sAG8Npr5v
-	Bmz9zZYQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nxG4zA++euXc7JLLwQbVxU2t5i2J3L+e+ZmIq0UbJpU=; b=rCB+9QxwsRNTYi
+	WAz5yG1mqau6ISw+P7fcKHRU1h5PS4kMVfD95YcjwBidmALW0BB8ek0aGZoYaxsOG5d4ZRnimRDeV
+	sY73h9wMEnlhXDgTX3HQ56XSfgCUPidvmdD9PS1yhHDtsXZ6q3AEqM4TcQsvJzg529icCUczkJLhG
+	HBmqufWNLG8BrH1n5UbpWjGd9nHfbVB/MRmh88OQe0HdP0UO13apPTA1ZSblteI8lsIOKHqx0W98z
+	j37BCRX5WQKxwC1U0pQsi0dUGHxAago13LhcPLUGarnheyDw0IcTA8qJB52AMJGgO0S0KZLF4c7WH
+	Nv7tsCpa2ceCMPAsvc6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYbdV-0006lf-RF; Tue, 12 May 2020 20:36:21 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jYdr1-00020o-Pr; Tue, 12 May 2020 22:58:27 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYbcn-000649-JX; Tue, 12 May 2020 20:35:38 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e1so3599988wrt.5;
- Tue, 12 May 2020 13:35:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=B1auPUCQJ6jnhcwlo7ZQktJWdnEzk2MQBv9Xkb5qeSw=;
- b=nceJPZeojs6qraZ8fSw/SYQJlTdlVDPgIYgLp301owRsMMVQaScvhpVAbEBY7DoCen
- hM6a+G6qSjNbGrcDnjjcTJVIOaUysZAmQi5H/IFhXPUL82iFLfqDtCYuocwh9pXjU/Dc
- 2g2Noow6pWxBbO/xkfGqnDoUXDqtf+EkarqnDTP5Ob4t7zFEP4nu850SIu8tX1gRL31d
- Hlxj23K5dXKqFmbKlaw3c9/AIOF83gCJgyq5LY+nYIn6SXGYLavTaxRPJ7HUoqQZpPLn
- 6PONYfvWuCpA02crwLMom9YiLzUOXwRmFlhZ84fQdsI/cgNwjgTFs1hOanrSQzkktKMy
- HjgA==
+ id 1jYdqp-0001s1-PW; Tue, 12 May 2020 22:58:17 +0000
+Received: by mail-ot1-f65.google.com with SMTP id a68so3436015otb.10;
+ Tue, 12 May 2020 15:58:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=B1auPUCQJ6jnhcwlo7ZQktJWdnEzk2MQBv9Xkb5qeSw=;
- b=H/9p1ACKhY7ncWUrMmGRmaRpk0JjR1i+DAcRt//ptEnM26FLxYsBfinlaKtpsaJPPj
- ETQ2PSOZTN4878BI2jpWnVAdiRpuTZVw9Dvx1PQksfsqBQ3GOE+lUuaPrsvq+byIp5l8
- MO41VSefegRFZx+aAybL+p7lm/OANK8aKSnTUEzkhqAYNXpnBdbiaP03YbKXb6J2YyHE
- Ht2vQMrJ+LPglbV9TPYFqPDcFUsjtgwj/4Py3xEuhYG0P0T0UYIvDb723tgq1a7pYW73
- CFqWuwqMJpjB8c2kBe9/6Uin77iYgcxwChMMYr3vtnZ9YGU0dZq2shCPD4ZLjmPUhe69
- 3izg==
-X-Gm-Message-State: AGi0PuYYC+TZ3/bZ/cGDSsvBWp46zdgdRXg6u6ZOB3d1+Bcib6NRoPsd
- qqyYszBUNFnPUBylHrjBScAVfctaLuY=
-X-Google-Smtp-Source: APiQypLmrnkToJDCa/tZNLkmV4SRoLb0lnQbv6DphIFu9wMNPlB73GP2mZkrvbhGxQJldgXB7izfsA==
-X-Received: by 2002:a5d:400f:: with SMTP id n15mr15743833wrp.419.1589315736169; 
- Tue, 12 May 2020 13:35:36 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id k131sm418219wma.2.2020.05.12.13.35.35
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 12 May 2020 13:35:35 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 3/3] include: dt-bindings: rockchip: remove unused defines
-Date: Tue, 12 May 2020 22:35:24 +0200
-Message-Id: <20200512203524.7317-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200512203524.7317-1-jbx6244@gmail.com>
-References: <20200512203524.7317-1-jbx6244@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cBiUIrWE+UaIH5tajkgyIKVaNp7k7WAC/qZUFSsrV2E=;
+ b=PU1D0Y7YRsuUVkBracmEyuRildm2JDhHafPSg36s1phREsFai3LoCy4D+4d8o0JFNZ
+ kfrurmjdTcaTaXx8itrfnDWVCFTy1US6uzUuwJlosRJu/PoJJ3fXp9WVyzbbL9ySNkX5
+ j0ACi5H3kc9lWjw69PqWFucADwaI9vhrfVY+jLK8Ok44OeEISXdxhfiHKO+CqVQw1TTE
+ abIjEAyAQ1tvTHM68zRf7U/E0fGzhYuHRKcl8Y6S8Dj0waV/8Z8cU4vEHHoGfkQq09/l
+ NY+Pm/qyGClb4fx4y4YscxXNcqpOiun765RN3My0fyHTM4jrYTwNSYm1HUCqsK/ZlJPx
+ ma5A==
+X-Gm-Message-State: AGi0Pubcg3exGqx1TVYvOLATx3PPZdnQ1A8QZSXTR6ltI1/LJOTpA/0x
+ LtQtFXsf8cUo3HDyMLzlHQ==
+X-Google-Smtp-Source: APiQypL7PdOIK7Is7Nz5WrJlgO2HUyJLl2vgiulZfCULhki8ejQCn9T9ykjPsFKJznmjeuGro1Uq+g==
+X-Received: by 2002:a05:6830:22f8:: with SMTP id
+ t24mr18122890otc.148.1589324294619; 
+ Tue, 12 May 2020 15:58:14 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w62sm5632505oia.32.2020.05.12.15.58.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 12 May 2020 15:58:13 -0700 (PDT)
+Received: (nullmailer pid 32342 invoked by uid 1000);
+ Tue, 12 May 2020 22:58:12 -0000
+Date: Tue, 12 May 2020 17:58:12 -0500
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
+Message-ID: <20200512225812.GA28862@bogus>
+References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_133537_638884_9B3215F3 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200512_155815_830254_B5A6CC93 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,58 +93,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-gpio@vger.kernel.org,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Sandy Huang <hjc@rock-chips.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, linux-rockchip@lists.infradead.org,
+ linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, Jyri Sarha <jsarha@ti.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Rockchip dtsi and dts files have been bulk-converted for the
-remaining raw gpio numbers into their descriptive counterparts and
-also got rid of the unhelpful RK_FUNC_x -> x and RK_GPIOx -> x
-mappings, so remove the unused defines in 'rockchip.h' to prevent
-that someone start using them again.
+On Mon, May 04, 2020 at 11:30:20AM +0200, Mauro Carvalho Chehab wrote:
+> There are some new broken doc links due to yaml renames
+> at DT. Developers should really run:
+> 
+> 	./scripts/documentation-file-ref-check
+> 
+> in order to solve those issues while submitting patches.
+> This tool can even fix most of the issues with:
+> 
+> 	./scripts/documentation-file-ref-check --fix
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+> 
+> PS.: This patch is against today's linux-next.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- include/dt-bindings/pinctrl/rockchip.h | 11 -----------
- 1 file changed, 11 deletions(-)
+That's not a base anyone can apply this patch against.
 
-diff --git a/include/dt-bindings/pinctrl/rockchip.h b/include/dt-bindings/pinctrl/rockchip.h
-index 6d6bac1c2..5f291045e 100644
---- a/include/dt-bindings/pinctrl/rockchip.h
-+++ b/include/dt-bindings/pinctrl/rockchip.h
-@@ -9,13 +9,6 @@
- #ifndef __DT_BINDINGS_ROCKCHIP_PINCTRL_H__
- #define __DT_BINDINGS_ROCKCHIP_PINCTRL_H__
- 
--#define RK_GPIO0	0
--#define RK_GPIO1	1
--#define RK_GPIO2	2
--#define RK_GPIO3	3
--#define RK_GPIO4	4
--#define RK_GPIO6	6
--
- #define RK_PA0		0
- #define RK_PA1		1
- #define RK_PA2		2
-@@ -50,9 +43,5 @@
- #define RK_PD7		31
- 
- #define RK_FUNC_GPIO	0
--#define RK_FUNC_1	1 /* deprecated */
--#define RK_FUNC_2	2 /* deprecated */
--#define RK_FUNC_3	3 /* deprecated */
--#define RK_FUNC_4	4 /* deprecated */
- 
- #endif
--- 
-2.11.0
-
+> 
+> 
+>  .../devicetree/bindings/display/bridge/sii902x.txt          | 2 +-
+>  .../devicetree/bindings/display/rockchip/rockchip-drm.yaml  | 2 +-
+>  .../devicetree/bindings/net/mediatek-bluetooth.txt          | 2 +-
+>  .../devicetree/bindings/sound/audio-graph-card.txt          | 2 +-
+>  .../devicetree/bindings/sound/st,sti-asoc-card.txt          | 2 +-
+>  Documentation/mips/ingenic-tcu.rst                          | 2 +-
+>  MAINTAINERS                                                 | 6 +++---
+>  7 files changed, 9 insertions(+), 9 deletions(-)
 
 _______________________________________________
 Linux-rockchip mailing list
