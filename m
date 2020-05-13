@@ -2,77 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF5EE1D09C2
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 09:18:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B8B41D1199
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 13:41:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Csgcr2HvvdAs2iAq4vb1Gupvyh2T65XRgDMzbKhuRZk=; b=RJMMAJUtFcDg3KwpKqMDAghkpq
-	zZGxjZK6lCHaRVYWVIvzvup7PUXbiviXr0kZhgmE8mueyn+zCrk49lj7iDod1Vt0oSyGgYOiJ8h0F
-	b880+FeJUV3u+3mFT1nvoQcgiLJNBSTmMjTsXB24ccGCKpEgsqJVn2u2HW30pEKIbyofnHDjl5kaK
-	HTW4mmrEJgmeu4BTfigTsC1Aeu1Kv3YaVQELFKQ14bJd524Ua2BWsjjH+46jY98vz8m3Q2dOVZpXH
-	4wlzu6cvvHYuZzg+AY1bHqEBWbVRb86XPoB1aZdpGbfjoL4sYhmUTNZ380ng00LbSv7Ga2dzq/FIV
-	2wM2qEwg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=91bv1VX2x4fWu7oshTazEbCC8N+K6LH/fbAYoNinTCY=; b=a74jYVKgK7c+cZ
+	iHkP93xK6tE9GxntDD8QsRBx85hVMYyV1iJl0KXoPVJUXqpvsh++Gep7/PIPauKWoSMQ6o8n0kvjG
+	8WUtE/XvnXKJbynfmPB61/VmwFv/tn7RmazDBQEp3qKhVK16SwzZTasKU5CTo8hf8lIQzowQvli3z
+	ePcKtTILO7qXv8m3/NQHG1oBj6QupXPox1eWtEZPOFkrDpXnmI3KG4DcO7iUtPp0XZNjwup9pLxbr
+	1Hmi9cWSBGAtbnsu2N0lk06aMFRm6RLYBRMbWzGIvthACoQojOkcUVNyCg9+q7j3S+lM+hnxxb+O6
+	YetIUxp4qcZgHBH2UM8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYler-0000w9-7n; Wed, 13 May 2020 07:18:25 +0000
-Received: from lucky1.263xmail.com ([211.157.147.134])
+	id 1jYplA-0000jd-2Y; Wed, 13 May 2020 11:41:12 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYleb-0000hX-3H
- for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 07:18:11 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 4F244A50C8;
- Wed, 13 May 2020 15:18:06 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P21665T139938758653696S1589354284745427_; 
- Wed, 13 May 2020 15:18:06 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <388cc3502defd8890569081d8ad8ee2c>
-X-RL-SENDER: frank.wang@rock-chips.com
-X-SENDER: wmc@rock-chips.com
-X-LOGIN-NAME: frank.wang@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Frank Wang <frank.wang@rock-chips.com>
-To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
- philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
- jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-Subject: [PATCH v5 16/16] roc-rk3399-pc: Enable USB3.0 Host
-Date: Wed, 13 May 2020 15:18:03 +0800
-Message-Id: <20200513071803.5781-1-frank.wang@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200513071344.5430-1-frank.wang@rock-chips.com>
-References: <20200513071344.5430-1-frank.wang@rock-chips.com>
+ id 1jYpl6-0000iH-HO
+ for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 11:41:10 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49MXmw3vcrz1qsb5;
+ Wed, 13 May 2020 13:41:04 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49MXmw1xXLz1r6DW;
+ Wed, 13 May 2020 13:41:04 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id wBbkQvoTOhbT; Wed, 13 May 2020 13:41:02 +0200 (CEST)
+X-Auth-Info: qKA/iPUrIT56iK91sMKVsm/ZolDITKMREbjrClxFNok=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Wed, 13 May 2020 13:41:02 +0200 (CEST)
+Subject: Re: [PATCH v4 12/16] usb: dwc3: add make compatible for rockchip
+ platform
+To: Frank Wang <frank.wang@rock-chips.com>, heiko@sntech.de,
+ bmeng.cn@gmail.com, philipp.tomsich@theobroma-systems.com,
+ klaus.goger@theobroma-systems.com, jagan@amarulasolutions.com,
+ sjg@chromium.org, kever.yang@rock-chips.com
+References: <20200511075330.26462-1-frank.wang@rock-chips.com>
+ <20200511075725.26665-1-frank.wang@rock-chips.com>
+ <20200511075725.26665-3-frank.wang@rock-chips.com>
+ <502d8fff-5ae2-b47f-f483-62cd24177ed1@denx.de>
+ <618d46f5-7970-9b27-e912-36f21b24a957@rock-chips.com>
+ <6f0482e0-eedc-b7e4-f6ab-cf82b26c22ec@denx.de>
+ <9d80fda2-9760-0aec-6bb7-5680279b3a0f@rock-chips.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <16a2e9f6-45e5-cbc3-6d2c-d53c4b0afc0d@denx.de>
+Date: Wed, 13 May 2020 13:41:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <9d80fda2-9760-0aec-6bb7-5680279b3a0f@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_001809_641045_9108B136 
-X-CRM114-Status: UNSURE (   6.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200513_044108_726597_3E596E1E 
+X-CRM114-Status: GOOD (  11.71  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.134 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.134 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,151 +92,26 @@ Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
  u-boot@lists.denx.de, william.wu@rock-chips.com,
  linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
  chenjh@rock-chips.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jagan Teki <jagan@amarulasolutions.com>
-
-Enable USB3.0 Host support for ROC-RK3399-PC boards.
-
-Tested USB3.0 SSD on Type C1 port on board.
-
-=> usb start
-starting USB...
-Bus usb@fe380000: USB EHCI 1.00
-Bus usb@fe3c0000: USB EHCI 1.00
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-scanning bus usb@fe380000 for devices... 1 USB Device(s) found
-scanning bus usb@fe3c0000 for devices... 2 USB Device(s) found
-scanning bus dwc3 for devices... 6 USB Device(s) found
-       scanning usb for storage devices... 1 Storage Device(s) found
-=> usb tree
-USB device tree:
-  1  Hub (480 Mb/s, 0mA)
-     u-boot EHCI Host Controller
-
-  1  Hub (480 Mb/s, 0mA)
-  |  u-boot EHCI Host Controller
-  |
-  +-2  Hub (480 Mb/s, 100mA)
-        USB 2.0 Hub [MTT]
-
-  1  Hub (5 Gb/s, 0mA)
-  |  U-Boot XHCI Host Controller
-  |
-  +-2  Hub (480 Mb/s, 0mA)
-  | |  VIA Labs, Inc. USB2.0 Hub
-  | |
-  | +-4  Hub (480 Mb/s, 100mA)
-  |   |   USB 2.0 Hub
-  |   |
-  |   +-5   (480 Mb/s, 100mA)
-  |        VIA Technologies Inc. USB 2.0 BILLBOARD  0000000000000001
-  |
-  +-3  Hub (5 Gb/s, 0mA)
-    |  VIA Labs, Inc. USB3.0 Hub
-    |
-    +-6  Mass Storage (5 Gb/s, 224mA)
-         JMicron External Disk 3.0 DB12345678A2
-
-=> usb reset
-resetting USB...
-Bus usb@fe380000: USB EHCI 1.00
-Bus usb@fe3c0000: USB EHCI 1.00
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-scanning bus usb@fe380000 for devices... 1 USB Device(s) found
-scanning bus usb@fe3c0000 for devices... 2 USB Device(s) found
-scanning bus dwc3 for devices... 6 USB Device(s) found
-       scanning usb for storage devices... 1 Storage Device(s) found
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- configs/roc-pc-mezzanine-rk3399_defconfig | 5 +++++
- configs/roc-pc-rk3399_defconfig           | 6 ++++++
- 2 files changed, 11 insertions(+)
-
-diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 0b853805f3..1f10856caa 100644
---- a/configs/roc-pc-mezzanine-rk3399_defconfig
-+++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -29,6 +29,7 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -39,6 +40,8 @@ CONFIG_ETH_DESIGNWARE=y
- CONFIG_GMAC_ROCKCHIP=y
- CONFIG_NVME=y
- CONFIG_PCI=y
-+CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-+CONFIG_PHY_ROCKCHIP_TYPEC=y
- CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
-@@ -54,6 +57,8 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_USB_DWC3_GENERIC=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index aff690f039..76e76c160e 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -28,6 +28,7 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -36,11 +37,14 @@ CONFIG_SPI_FLASH_WINBOND=y
- CONFIG_DM_ETH=y
- CONFIG_ETH_DESIGNWARE=y
- CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-+CONFIG_PHY_ROCKCHIP_TYPEC=y
- CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
- CONFIG_RAM_RK3399_LPDDR4=y
-+CONFIG_DM_RESET=y
- CONFIG_BAUDRATE=1500000
- CONFIG_DEBUG_UART_SHIFT=2
- CONFIG_ROCKCHIP_SPI=y
-@@ -50,6 +54,8 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_USB_DWC3_GENERIC=y
- CONFIG_USB_KEYBOARD=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
--- 
-2.17.1
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gNS8xMy8yMCAyOjQ3IEFNLCBGcmFuayBXYW5nIHdyb3RlOgo+IEhpIE1hcmVrLAo+IAo+IE9u
+IDIwMjAvNS8xMiAxNToyNiwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+IE9uIDUvMTIvMjAgMzowOCBB
+TSwgRnJhbmsgV2FuZyB3cm90ZToKPj4+IEhpIE1hcmVrLAo+Pj4KPj4+IE9uIDIwMjAvNS8xMSAx
+Nzo0OCwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+Pj4gT24gNS8xMS8yMCA5OjU3IEFNLCBGcmFuayBX
+YW5nIHdyb3RlOgo+Pj4+IFsuLi5dCj4+Pj4KPj4+Pj4gQEAgLTM5NCw2ICs0MDcsMTIgQEAgc3Rh
+dGljIGludCBkd2MzX2dsdWVfcHJvYmUoc3RydWN0IHVkZXZpY2UgKmRldikKPj4+Pj4gwqDCoMKg
+wqDCoMKgIGlmIChyZXQpCj4+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+
+Pj4+IMKgwqAgK8KgwqDCoCBpZiAoZ2x1ZS0+cmVzZXRzLmNvdW50IDwgMSkgewo+Pj4+IFRoaXMg
+Y29uZGl0aW9uIGlzIG9ubHkgdHJ1ZSBpZiBjb3VudCA9PSAwID8KPj4+PiBXaGF0J3MgdGhlIHB1
+cnBvc2Ugb2YgdGhpcyB0ZXN0ID8KPj4+IEZvciBwcmV2aW91cyBkdHMgb2YgdGhlIExpbnV4IGtl
+cm5lbCwgdGhlIHJlc2V0IHBoYW5kbGVzIHdlcmUgaW4KPj4+IGR3YzMtZ2x1ZSBub2RlcywgaG93
+ZXZlciwgdGhleSBhcmUgbW92ZWQgcmVjZW50bHkgaW50byBkd2MzIHRoYXQgaXMgYQo+Pj4gY2hp
+bGQgbm9kZSBvZiBkd2MzLWdsdWUuCj4+Pgo+Pj4gU28gdGhlIGFib3ZlIGNvZGVzIGlzIHRvIG1h
+a2UgY29tcGF0aWJsZS4KPj4gV2h5IGRvZXNuJ3QgaXQgY2hlY2sgZm9yIGNvdW50ID09IDAgdGhl
+biA/Cj4+Cj4gV2lsbCBmaXguCgpUaGFua3MuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9j
+a2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
