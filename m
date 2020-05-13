@@ -2,85 +2,86 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8D5B1D02A8
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 00:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24CFD1D03E6
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 02:47:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nxG4zA++euXc7JLLwQbVxU2t5i2J3L+e+ZmIq0UbJpU=; b=rCB+9QxwsRNTYi
-	WAz5yG1mqau6ISw+P7fcKHRU1h5PS4kMVfD95YcjwBidmALW0BB8ek0aGZoYaxsOG5d4ZRnimRDeV
-	sY73h9wMEnlhXDgTX3HQ56XSfgCUPidvmdD9PS1yhHDtsXZ6q3AEqM4TcQsvJzg529icCUczkJLhG
-	HBmqufWNLG8BrH1n5UbpWjGd9nHfbVB/MRmh88OQe0HdP0UO13apPTA1ZSblteI8lsIOKHqx0W98z
-	j37BCRX5WQKxwC1U0pQsi0dUGHxAago13LhcPLUGarnheyDw0IcTA8qJB52AMJGgO0S0KZLF4c7WH
-	Nv7tsCpa2ceCMPAsvc6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nsYZ6zKFkb9lSxTGdRxgxfdcEX0jdzUoyxMxiJWqsuc=; b=itlAf0dNoEd8QYfQuENRtx+2A
+	axhV5KMnxwPpCK5c8RP5yBLnOJH7njKfbdyr5hvLCRI7jjKfcbBR+/tNJqmHOUT8hX9pxP0y1NHCk
+	elBGYjzxHHelnVTB4QB8WKg+SrFW3HvWm8mH7PKSdJqpXRtYH3HA5+P2toXEFxf3hrQVumLoQE7ta
+	BiekRS7icfMygaJv47STOjZ3XpkeuWb+qOlM625P8NPtlj9DOOm+LwrP5cbRhL1kRsO3m0HLjb7f1
+	+118diSL0ywpTKGIfKfmfsR6ZDnCzLdaXe4uM1dhucCKZvgiDK2QCKkGOv386YiJMmAlcKUcpDX1W
+	7DU9Cricw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYdr1-00020o-Pr; Tue, 12 May 2020 22:58:27 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jYfYr-00041j-Bn; Wed, 13 May 2020 00:47:49 +0000
+Received: from regular1.263xmail.com ([211.150.70.202])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYdqp-0001s1-PW; Tue, 12 May 2020 22:58:17 +0000
-Received: by mail-ot1-f65.google.com with SMTP id a68so3436015otb.10;
- Tue, 12 May 2020 15:58:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cBiUIrWE+UaIH5tajkgyIKVaNp7k7WAC/qZUFSsrV2E=;
- b=PU1D0Y7YRsuUVkBracmEyuRildm2JDhHafPSg36s1phREsFai3LoCy4D+4d8o0JFNZ
- kfrurmjdTcaTaXx8itrfnDWVCFTy1US6uzUuwJlosRJu/PoJJ3fXp9WVyzbbL9ySNkX5
- j0ACi5H3kc9lWjw69PqWFucADwaI9vhrfVY+jLK8Ok44OeEISXdxhfiHKO+CqVQw1TTE
- abIjEAyAQ1tvTHM68zRf7U/E0fGzhYuHRKcl8Y6S8Dj0waV/8Z8cU4vEHHoGfkQq09/l
- NY+Pm/qyGClb4fx4y4YscxXNcqpOiun765RN3My0fyHTM4jrYTwNSYm1HUCqsK/ZlJPx
- ma5A==
-X-Gm-Message-State: AGi0Pubcg3exGqx1TVYvOLATx3PPZdnQ1A8QZSXTR6ltI1/LJOTpA/0x
- LtQtFXsf8cUo3HDyMLzlHQ==
-X-Google-Smtp-Source: APiQypL7PdOIK7Is7Nz5WrJlgO2HUyJLl2vgiulZfCULhki8ejQCn9T9ykjPsFKJznmjeuGro1Uq+g==
-X-Received: by 2002:a05:6830:22f8:: with SMTP id
- t24mr18122890otc.148.1589324294619; 
- Tue, 12 May 2020 15:58:14 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w62sm5632505oia.32.2020.05.12.15.58.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:58:13 -0700 (PDT)
-Received: (nullmailer pid 32342 invoked by uid 1000);
- Tue, 12 May 2020 22:58:12 -0000
-Date: Tue, 12 May 2020 17:58:12 -0500
-From: Rob Herring <robh@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
-Message-ID: <20200512225812.GA28862@bogus>
-References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+ id 1jYfYm-0003qW-Sy
+ for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 00:47:46 +0000
+Received: from localhost (unknown [192.168.167.32])
+ by regular1.263xmail.com (Postfix) with ESMTP id 4EB2E35B;
+ Wed, 13 May 2020 08:47:34 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [172.16.12.33] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P33517T140425700570880S1589330852399684_; 
+ Wed, 13 May 2020 08:47:33 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <7b837838c52197469d661e66f218d576>
+X-RL-SENDER: frank.wang@rock-chips.com
+X-SENDER: wmc@rock-chips.com
+X-LOGIN-NAME: frank.wang@rock-chips.com
+X-FST-TO: wmc@rock-chips.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+Subject: Re: [PATCH v4 12/16] usb: dwc3: add make compatible for rockchip
+ platform
+To: Marek Vasut <marex@denx.de>, heiko@sntech.de, bmeng.cn@gmail.com,
+ philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
+ jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
+References: <20200511075330.26462-1-frank.wang@rock-chips.com>
+ <20200511075725.26665-1-frank.wang@rock-chips.com>
+ <20200511075725.26665-3-frank.wang@rock-chips.com>
+ <502d8fff-5ae2-b47f-f483-62cd24177ed1@denx.de>
+ <618d46f5-7970-9b27-e912-36f21b24a957@rock-chips.com>
+ <6f0482e0-eedc-b7e4-f6ab-cf82b26c22ec@denx.de>
+From: Frank Wang <frank.wang@rock-chips.com>
+Message-ID: <9d80fda2-9760-0aec-6bb7-5680279b3a0f@rock-chips.com>
+Date: Wed, 13 May 2020 08:47:32 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <6f0482e0-eedc-b7e4-f6ab-cf82b26c22ec@denx.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_155815_830254_B5A6CC93 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200512_174745_135073_4AEBC563 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ no trust [211.150.70.202 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.150.70.202 listed in wl.mailspike.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,59 +94,29 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Sandy Huang <hjc@rock-chips.com>, Andrzej Hajda <a.hajda@samsung.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Jonathan Corbet <corbet@lwn.net>, linux-rockchip@lists.infradead.org,
- linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, Jyri Sarha <jsarha@ti.com>,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
+ u-boot@lists.denx.de, william.wu@rock-chips.com,
+ linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ chenjh@rock-chips.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 11:30:20AM +0200, Mauro Carvalho Chehab wrote:
-> There are some new broken doc links due to yaml renames
-> at DT. Developers should really run:
-> 
-> 	./scripts/documentation-file-ref-check
-> 
-> in order to solve those issues while submitting patches.
-> This tool can even fix most of the issues with:
-> 
-> 	./scripts/documentation-file-ref-check --fix
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
-> 
-> PS.: This patch is against today's linux-next.
-
-That's not a base anyone can apply this patch against.
-
-> 
-> 
->  .../devicetree/bindings/display/bridge/sii902x.txt          | 2 +-
->  .../devicetree/bindings/display/rockchip/rockchip-drm.yaml  | 2 +-
->  .../devicetree/bindings/net/mediatek-bluetooth.txt          | 2 +-
->  .../devicetree/bindings/sound/audio-graph-card.txt          | 2 +-
->  .../devicetree/bindings/sound/st,sti-asoc-card.txt          | 2 +-
->  Documentation/mips/ingenic-tcu.rst                          | 2 +-
->  MAINTAINERS                                                 | 6 +++---
->  7 files changed, 9 insertions(+), 9 deletions(-)
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgTWFyZWssCgpPbiAyMDIwLzUvMTIgMTU6MjYsIE1hcmVrIFZhc3V0IHdyb3RlOgo+IE9uIDUv
+MTIvMjAgMzowOCBBTSwgRnJhbmsgV2FuZyB3cm90ZToKPj4gSGkgTWFyZWssCj4+Cj4+IE9uIDIw
+MjAvNS8xMSAxNzo0OCwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+PiBPbiA1LzExLzIwIDk6NTcgQU0s
+IEZyYW5rIFdhbmcgd3JvdGU6Cj4+PiBbLi4uXQo+Pj4KPj4+PiBAQCAtMzk0LDYgKzQwNywxMiBA
+QCBzdGF0aWMgaW50IGR3YzNfZ2x1ZV9wcm9iZShzdHJ1Y3QgdWRldmljZSAqZGV2KQo+Pj4+ICDC
+oMKgwqDCoMKgIGlmIChyZXQpCj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmV0Owo+
+Pj4+ICDCoCArwqDCoMKgIGlmIChnbHVlLT5yZXNldHMuY291bnQgPCAxKSB7Cj4+PiBUaGlzIGNv
+bmRpdGlvbiBpcyBvbmx5IHRydWUgaWYgY291bnQgPT0gMCA/Cj4+PiBXaGF0J3MgdGhlIHB1cnBv
+c2Ugb2YgdGhpcyB0ZXN0ID8KPj4gRm9yIHByZXZpb3VzIGR0cyBvZiB0aGUgTGludXgga2VybmVs
+LCB0aGUgcmVzZXQgcGhhbmRsZXMgd2VyZSBpbgo+PiBkd2MzLWdsdWUgbm9kZXMsIGhvd2V2ZXIs
+IHRoZXkgYXJlIG1vdmVkIHJlY2VudGx5IGludG8gZHdjMyB0aGF0IGlzIGEKPj4gY2hpbGQgbm9k
+ZSBvZiBkd2MzLWdsdWUuCj4+Cj4+IFNvIHRoZSBhYm92ZSBjb2RlcyBpcyB0byBtYWtlIGNvbXBh
+dGlibGUuCj4gV2h5IGRvZXNuJ3QgaXQgY2hlY2sgZm9yIGNvdW50ID09IDAgdGhlbiA/Cj4KV2ls
+bCBmaXguCgoKQlIsCkZyYW5rCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
