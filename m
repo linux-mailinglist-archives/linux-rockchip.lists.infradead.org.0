@@ -2,133 +2,91 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 375AC1D15F7
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 15:40:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99B0A1D232C
+	for <lists+linux-rockchip@lfdr.de>; Thu, 14 May 2020 01:38:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kKMHD/0nhQu7x05vincIGB7Vuk4p9NWXGxWDbvPq1S4=; b=dPaZeslorU6zUMW1SFM6W25Bpy
-	/YWON/j3NuqadweEm21cLVZQLQZLvz15G7/9w8qkkIME3AISQhpPu/8I8iZ4UlspoJo4ueYvXhLYb
-	Km///9K0hPgk7J/IhiOjTId20wK5oCD/+kRMrP9q9ROHhwyF3dWwbfNpTrxVNBnnWA7YxG1uU+e1n
-	U9iExe/tCasX66ghJ2J7igvOEuXs3lF5rfFp4KDfZJ45oYLbDy6HBERk71OFiNWSRJyuPM58AwXGu
-	kpHD3nmlxg2/GfrJOnx5UQXKbih65MugYdFYsefDRiz/UHMEpoxh0FImsOWNnVOofsQoUCzoH8IFh
-	zsqvtlsQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qU+g2OMaGcR+gaxTekdpk052MJzASKAiey//WwtDY/4=; b=CcWoZVZyOMLcRJ
+	j3sFX4XLMbFPba/cxCAtr8TIu5E0m0jogI7vE4RuYA/2FnkJOSm5ow7fQSYc+XKB/GWF9NJBE2joM
+	BfZlFANT2erJVyCEwvg3bxb0q/qsOY8avGx1vc7ca6avk+hc6NkLbqnFSVU+VcxmS02En+hm9Lpm4
+	cE7qkuMpTw1xgye0O58wwioeZ9kHAaWRWDpAeaSRtljEojEnBYOSI1AAIJ5a8G/GA3B8U2JHa/8kO
+	6HUe7sDRNL2A+8PK6QhGWu+y241Z5QbO7Qq9dVu+i0PcOoqz5AK/7TbEoGtP3eXYSQqXWmj3smo5r
+	0uXb2RIBN4s42l+p9KGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYrcb-00044Y-E5; Wed, 13 May 2020 13:40:29 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jZ0xZ-0000iy-BP; Wed, 13 May 2020 23:38:45 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrVa-0001aC-RA
- for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 13:33:24 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200513133313euoutp01b27d6de689929d59adbb7805580afdd0~OmcXbj07-2234622346euoutp01W
- for <linux-rockchip@lists.infradead.org>; Wed, 13 May 2020 13:33:13 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200513133313euoutp01b27d6de689929d59adbb7805580afdd0~OmcXbj07-2234622346euoutp01W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589376793;
- bh=iJsOj7yiyEFeyetX/zCHD13aCbDDq1L8pigjwt4kk7A=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=M7tywKAGKgP3waAOZ1nVNG8hgqJz/IkFpsml/rWyrzZDF8Ll75Wbt7L27PuVGZTUD
- gjY4Zc5rZKhkZDg/MggjbN/iKrnc81dx0Z6EnlSkAwGk28X8ucDrsU2uINn4gfWNTd
- L9IdEX2TOSp+QqRC4a+ts0+KwmCrEtB5Z8DfiyDs=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200513133313eucas1p14755da98e4c430f99840ffbf4b524ebf~OmcXHUczV2164721647eucas1p17;
- Wed, 13 May 2020 13:33:13 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id EF.C5.61286.917FBBE5; Wed, 13
- May 2020 14:33:13 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200513133312eucas1p2fc1186c0aeee2367898fc0c146f1ed52~OmcWwDzS91832718327eucas1p2b;
- Wed, 13 May 2020 13:33:12 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200513133312eusmtrp1bfa286fa54fc03c086370de9c5f8d92e~OmcWvQqNV1050610506eusmtrp1Q;
- Wed, 13 May 2020 13:33:12 +0000 (GMT)
-X-AuditID: cbfec7f2-ef1ff7000001ef66-60-5ebbf71926ff
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 3B.1A.08375.817FBBE5; Wed, 13
- May 2020 14:33:12 +0100 (BST)
-Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200513133312eusmtip12e592ada7c238820e4b042f9c6a599c2~OmcWEljUR0693406934eusmtip1W;
- Wed, 13 May 2020 13:33:12 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v5 22/38] drm: rockchip: fix common struct sg_table related
- issues
-Date: Wed, 13 May 2020 15:32:29 +0200
-Message-Id: <20200513133245.6408-22-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200513133245.6408-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSbUhTURzGPbt3d9fhxm0zPJppDCws0tQ+3FKjoJf7SaKMwtDc9KKSb2y+
- QySuTJbapmgiZVKmOd9q6hSXLG02TTFT0/mGmvYhxXw3LNK83Znfnv/vPA/P/xwOjohauU54
- VGwCLY+VRkswPqr/sPnpuONPQ8iJRQ1O5vR2ccg3RXVccluvQcjB9UWMrKzq4JDbX+e55NO8
- O2Sp0ZdcG5zmkLqZIS450PIEI1emthGyxjTBI9uWZrlnhVR1STWgWjdKUappY4pLTT40c6j6
- srvU2NYMQuVbKgBlGEnHqD/FRpTKbdACqmmoBKFWdS6X7YL4fuF0dFQSLfc8E8qPzOxTceLn
- XVJe5M+BdDDsqAK2OCROwo5FA0cF+LiIeAVgo3aaxw5rABYZhjHGJSJWARxQeu8mdEMPENZU
- AWBG89peQvOxHGVcGOEFVQuqf2l74j6AnTl2jEaIQgRq1y+qAI6LiUD4uyCAwSjhBh9NjnEY
- LSD8oUb5ErBlrrDq9TuE0bY7fG7ciDJdkOjnwfllDY81nYcTz+ZQVovhnLnByp1hd362NaAE
- cLq3hscO2TvXySiyVvjC8d5fGLMRQrjDuhZPFp+DK6YNHoMhIYSWhX3s/kKYp3+MsFgAszJF
- rPswLDbX/q9t6+u3WihY8C2FfZ73ACrzKoAauBbvdZUCoAUOdKIiJoJWeMXSyR4KaYwiMTbC
- IywuRgd2PlX3lnmlGaz3y9oBgQOJnYAcNYSIuNIkRWpMO4A4IrEXBNTtIEG4NDWNlsfdkidG
- 04p2cABHJQ4Cn+ffg0VEhDSBvk3T8bR895SD2zqlA1hu6CnI+9x4Xb3s7bZpCRXeaxze3+Xi
- 9qU4IDfeOOtzRe1/DdKXVIJKpDPrRkmCz+klmT5Yxjcd8gRmi196d8VIzdsgYZisetX5YKdI
- 7V5uY6yu90/mJY6KsZu14U2nUn/YUDVp8YViU3JgT6s++WoqNXThyLNj3mXaBSUmQRWRUq+j
- iFwh/QsZ/Y7HUAMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIIsWRmVeSWpSXmKPExsVy+t/xu7oS33fHGby8YGjRe+4kk8XGGetZ
- Lf5vm8hsceXrezaLlauPMln8f/Sa1WLupFqLBfutLb5cechksenxNVaLy7vmsFl8evCf2WLt
- kbvsFgc/PGF14PNYM28No8febwtYPLZ/e8Dqcb/7OJPH5iX1Hrf/PWb2mHxjOaPH7psNbB5/
- Z+1n8ejbsorRY/u1ecwenzfJBfBE6dkU5ZeWpCpk5BeX2CpFG1oY6RlaWugZmVjqGRqbx1oZ
- mSrp29mkpOZklqUW6dsl6GW0XehiKngtV7F48ivGBsbrkl2MnBwSAiYSm661M3cxcnEICSxl
- lPgw9zQTREJG4uS0BlYIW1jiz7UuNhBbSOATo0T33SoQm03AUKLrLUici0NEoJNRYlr3R3YQ
- h1lgHrPE8lWHwSYJCwRJTJm1iB3EZhFQlei/fxsszitgKzGxeSkjxAZ5idUbDjCD2JxA8Vd3
- 9rNAbMuX2Lt4H9sERr4FjAyrGEVSS4tz03OLDfWKE3OLS/PS9ZLzczcxAqNn27Gfm3cwXtoY
- fIhRgINRiYfX4tbuOCHWxLLiytxDjBIczEoivH7rgUK8KYmVValF+fFFpTmpxYcYTYGOmsgs
- JZqcD4zsvJJ4Q1NDcwtLQ3Njc2MzCyVx3g6BgzFCAumJJanZqakFqUUwfUwcnFINjCIrr1u/
- +6//X++dqIbX03TRc6/T2lP/HRBYve2vT4+12vQb03cGybs7WvcmfN15IC+UNT8/SrRyzo+Z
- t/ZXz5piE2zfOV03Sfqzv51Un2Hx4++KNmqRy3zUH/NNaw9T+LB2hrOoltv+JbIhkQdCHjqE
- L8z+W726dDFDQt3rliUS21hPvD16T4mlOCPRUIu5qDgRAEdPIEG0AgAA
-X-CMS-MailID: 20200513133312eucas1p2fc1186c0aeee2367898fc0c146f1ed52
-X-Msg-Generator: CA
-X-RootMTR: 20200513133312eucas1p2fc1186c0aeee2367898fc0c146f1ed52
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200513133312eucas1p2fc1186c0aeee2367898fc0c146f1ed52
-References: <20200513132114.6046-1-m.szyprowski@samsung.com>
- <20200513133245.6408-1-m.szyprowski@samsung.com>
- <CGME20200513133312eucas1p2fc1186c0aeee2367898fc0c146f1ed52@eucas1p2.samsung.com>
+ id 1jZ0xW-0000iP-3l
+ for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 23:38:43 +0000
+Received: by mail-qk1-x742.google.com with SMTP id s1so1247907qkf.9
+ for <linux-rockchip@lists.infradead.org>; Wed, 13 May 2020 16:38:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ndufresne-ca.20150623.gappssmtp.com; s=20150623;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :user-agent:mime-version:content-transfer-encoding;
+ bh=gXX/nwUhWX5Ah6+4F5B0DqfcQzEJjwlK8RQjDyFdkkw=;
+ b=IDTCvW/h15nfvqhHfob9E+czlTHbAFdazhK0hjKukexcmuenAmDFnJg1UoJW7KyurL
+ CVJqdKa8QR/aRWlPMccAbqKCLUib954fp9xaRtsBnmy+K284h34GyaYQ8uPDbdGwUaHa
+ FHy6snYwlWiAL5oKoLO1InN+p2u0w+ZMwi8otHVMyx+3aIgEV+4n4PYAFAVRalVpk5IH
+ CO97cb9WSypDXjvdL5TocfDreScUhjcPcgY3oVIIgL/t7p7XSFQNXlaAgmUB07sHIX1f
+ c8IwDZB/B7Z1ihqEOpc7N0Zwgd/2Nob4GJYvmTudsLePuAPIux4PNemN8ei7P8P9LGPr
+ R/AA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:user-agent:mime-version:content-transfer-encoding;
+ bh=gXX/nwUhWX5Ah6+4F5B0DqfcQzEJjwlK8RQjDyFdkkw=;
+ b=kV3vmQOTW8odbKEamNvj0r68+uIYMW6x0Q9rY3GJq58kgP4QWvnsofTItfeJUa44rL
+ 2PA74724W6hWj72VA5DfRsDG0+HPlPNFJR5GX0msYLeyJPJRDc0aSuieClyaINL//7Ti
+ Q6phCZ1Sn6vNF5HPEyBFkGlhXNj5g4jSPTkYQv/WBsNCuVCFDQbhLmhmGOKagAfR6wAB
+ x4Wvh0U3zNO+jQDLiculfIFpaz4prbs9werdrqoQqBUhbk2pxylAo6t5/q50TJnPi69n
+ QeZOc5SED4aVBn4+MULSKrw78W0QG3Lg255YnQDbsMJ3LfvsUrGhwDA/s6PScYW5OstA
+ 7ajQ==
+X-Gm-Message-State: AOAM5310LTCXSXMmaA1p8pgL+qyJFTwNTGnA8v+swB1HhlonSDuenIwI
+ 197OjFszeMObkxA0Go3P1k9SjA==
+X-Google-Smtp-Source: ABdhPJzd/lwwcWhuSA6CCvJywL/X0Z4NV50aTy2l6Sg9uvPjGXI626hmPK4B2VCEGG3fDbtl86XIgg==
+X-Received: by 2002:a05:620a:1472:: with SMTP id
+ j18mr2011402qkl.363.1589413114645; 
+ Wed, 13 May 2020 16:38:34 -0700 (PDT)
+Received: from skullcanyon ([192.222.193.21])
+ by smtp.gmail.com with ESMTPSA id y21sm1154975qkb.95.2020.05.13.16.38.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 16:38:33 -0700 (PDT)
+Message-ID: <b7122cb49cfa0bcfa433c154f6cb64ee0dba55da.camel@ndufresne.ca>
+Subject: Re: [PATCH v3 1/3] media: rkvdec: Fix .buf_prepare
+From: Nicolas Dufresne <nicolas@ndufresne.ca>
+To: Ezequiel Garcia <ezequiel@collabora.com>, Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 13 May 2020 19:38:32 -0400
+In-Reply-To: <ac6e162a24a8e2b2180b1a743e5ecd9a2023ac65.camel@collabora.com>
+References: <20200505134110.3435-1-ezequiel@collabora.com>
+ <20200505134110.3435-2-ezequiel@collabora.com>
+ <CAAFQd5AWZFoPk2YTp2k8M7LvJshxw46-z+wK2VoM9EzB2CqiFA@mail.gmail.com>
+ <c29fcc922a4917ac695043e605973ba9649f9c9b.camel@collabora.com>
+ <CAAFQd5A458E8iqwakKTDEyTHC+NYY-M1SaTS3m0MARwPaRyOuw@mail.gmail.com>
+ <ac6e162a24a8e2b2180b1a743e5ecd9a2023ac65.camel@collabora.com>
+User-Agent: Evolution 3.36.2 (3.36.2-1.fc32) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_063315_015518_55647201 
-X-CRM114-Status: GOOD (  14.42  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200513_163842_157145_35DCB000 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,116 +99,56 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>, Alexandre Courbot <acourbot@chromium.org>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, "open
+ list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Jeffrey Kardatzke <jkardatzke@chromium.org>, kernel@collabora.com,
+ Gustavo Padovan <gustavo.padovan@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
-returns the number of the created entries in the DMA address space.
-However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
-dma_unmap_sg must be called with the original number of the entries
-passed to the dma_map_sg().
-
-struct sg_table is a common structure used for describing a non-contiguous
-memory buffer, used commonly in the DRM and graphics subsystems. It
-consists of a scatterlist with memory pages and DMA addresses (sgl entry),
-as well as the number of scatterlist entries: CPU pages (orig_nents entry)
-and DMA mapped pages (nents entry).
-
-It turned out that it was a common mistake to misuse nents and orig_nents
-entries, calling DMA-mapping functions with a wrong number of entries or
-ignoring the number of mapped entries returned by the dma_map_sg()
-function.
-
-To avoid such issues, lets use a common dma-mapping wrappers operating
-directly on the struct sg_table objects and use scatterlist page
-iterators where possible. This, almost always, hides references to the
-nents and orig_nents entries, making the code robust, easier to follow
-and copy/paste safe.
-
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
----
-For more information, see '[PATCH v5 00/38] DRM: fix struct sg_table nents
-vs. orig_nents misuse' thread:
-https://lore.kernel.org/linux-iommu/20200513132114.6046-1-m.szyprowski@samsung.com/T/
----
- drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 23 ++++++++++-------------
- 1 file changed, 10 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-index 21f8cb2..566557b 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-@@ -36,8 +36,8 @@ static int rockchip_gem_iommu_map(struct rockchip_gem_object *rk_obj)
- 
- 	rk_obj->dma_addr = rk_obj->mm.start;
- 
--	ret = iommu_map_sg(private->domain, rk_obj->dma_addr, rk_obj->sgt->sgl,
--			   rk_obj->sgt->nents, prot);
-+	ret = iommu_map_sgtable(private->domain, rk_obj->dma_addr, rk_obj->sgt,
-+				prot);
- 	if (ret < rk_obj->base.size) {
- 		DRM_ERROR("failed to map buffer: size=%zd request_size=%zd\n",
- 			  ret, rk_obj->base.size);
-@@ -98,11 +98,10 @@ static int rockchip_gem_get_pages(struct rockchip_gem_object *rk_obj)
- 	 * TODO: Replace this by drm_clflush_sg() once it can be implemented
- 	 * without relying on symbols that are not exported.
- 	 */
--	for_each_sg(rk_obj->sgt->sgl, s, rk_obj->sgt->nents, i)
-+	for_each_sgtable_sg(rk_obj->sgt, s, i)
- 		sg_dma_address(s) = sg_phys(s);
- 
--	dma_sync_sg_for_device(drm->dev, rk_obj->sgt->sgl, rk_obj->sgt->nents,
--			       DMA_TO_DEVICE);
-+	dma_sync_sgtable_for_device(drm->dev, rk_obj->sgt, DMA_TO_DEVICE);
- 
- 	return 0;
- 
-@@ -350,8 +349,8 @@ void rockchip_gem_free_object(struct drm_gem_object *obj)
- 		if (private->domain) {
- 			rockchip_gem_iommu_unmap(rk_obj);
- 		} else {
--			dma_unmap_sg(drm->dev, rk_obj->sgt->sgl,
--				     rk_obj->sgt->nents, DMA_BIDIRECTIONAL);
-+			dma_unmap_sgtable(drm->dev, rk_obj->sgt,
-+					  DMA_BIDIRECTIONAL, 0);
- 		}
- 		drm_prime_gem_destroy(obj, rk_obj->sgt);
- 	} else {
-@@ -476,15 +475,13 @@ struct sg_table *rockchip_gem_prime_get_sg_table(struct drm_gem_object *obj)
- 			struct sg_table *sg,
- 			struct rockchip_gem_object *rk_obj)
- {
--	int count = dma_map_sg(drm->dev, sg->sgl, sg->nents,
--			       DMA_BIDIRECTIONAL);
--	if (!count)
--		return -EINVAL;
-+	int err = dma_map_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL, 0);
-+	if (err)
-+		return err;
- 
- 	if (drm_prime_get_contiguous_size(sg) < attach->dmabuf->size) {
- 		DRM_ERROR("failed to map sg_table to contiguous linear address.\n");
--		dma_unmap_sg(drm->dev, sg->sgl, sg->nents,
--			     DMA_BIDIRECTIONAL);
-+		dma_unmap_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL, 0);
- 		return -EINVAL;
- 	}
- 
--- 
-1.9.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+TGUgbWFyZGkgMDUgbWFpIDIwMjAgw6AgMTE6MjcgLTAzMDAsIEV6ZXF1aWVsIEdhcmNpYSBhIMOp
+Y3JpdCA6Cj4gT24gVHVlLCAyMDIwLTA1LTA1IGF0IDE2OjA1ICswMjAwLCBUb21hc3ogRmlnYSB3
+cm90ZToKPiA+IE9uIFR1ZSwgTWF5IDUsIDIwMjAgYXQgMzo1OSBQTSBFemVxdWllbCBHYXJjaWEg
+PGV6ZXF1aWVsQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+ID4gPiBPbiBUdWUsIDIwMjAtMDUtMDUg
+YXQgMTU6NTYgKzAyMDAsIFRvbWFzeiBGaWdhIHdyb3RlOgo+ID4gPiA+IEhpIEV6ZXF1aWVsLAo+
+ID4gPiA+IAo+ID4gPiA+IE9uIFR1ZSwgTWF5IDUsIDIwMjAgYXQgMzo0MSBQTSBFemVxdWllbCBH
+YXJjaWEgPGV6ZXF1aWVsQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+ID4gPiA+ID4gVGhlIGRyaXZl
+ciBzaG91bGQgb25seSBzZXQgdGhlIHBheWxvYWQgb24gLmJ1Zl9wcmVwYXJlCj4gPiA+ID4gPiBp
+ZiB0aGUgYnVmZmVyIGlzIENBUFRVUkUgdHlwZSwgb3IgaWYgYW4gT1VUUFVUIGJ1ZmZlcgo+ID4g
+PiA+ID4gaGFzIGEgemVyb2VkIHBheWxvYWQuCj4gPiA+ID4gCj4gPiA+ID4gVGhhbmtzIGZvciB0
+aGUgcGF0Y2guIEp1c3Qgb25lIHF1ZXN0aW9uIGJlbG93Lgo+ID4gPiA+IAo+ID4gPiA+IFdoZXJl
+IGRvZXMgdGhlIHJlcXVpcmVtZW50IHRvIHNldCBPVVRQVVQgYnVmZmVyIGJ5dGVzdXNlZCB0byBz
+aXplaW1hZ2UKPiA+ID4gPiBpZiB0aGUgb3JpZ2luYWwgYnl0ZXN1c2VkIGlzIDAgY29tZSBmcm9t
+Pwo+ID4gPiA+IAo+ID4gPiAKPiA+ID4gSWYgSSdtIHJlYWRpbmcgZW5nbGlzaCBjb3JyZWN0bHks
+IGl0J3MgaGVyZToKPiA+ID4gCj4gPiA+IGh0dHBzOi8vd3d3Lmtlcm5lbC5vcmcvZG9jL2h0bWwv
+bGF0ZXN0L21lZGlhL3VhcGkvdjRsL2J1ZmZlci5odG1sCj4gPiA+IAo+ID4gPiAiIiIKPiA+ID4g
+VGhlIG51bWJlciBvZiBieXRlcyBvY2N1cGllZCBieSB0aGUgZGF0YSBpbiB0aGUgYnVmZmVyLiBJ
+dCBkZXBlbmRzIG9uIHRoZSBuZWdvdGlhdGVkIGRhdGEgZm9ybWF0IGFuZCBtYXkgY2hhbmdlIHdp
+dGggZWFjaCBidWZmZXIgZm9yIGNvbXByZXNzZWQKPiA+ID4gdmFyaWFibGUgc2l6ZSBkYXRhIGxp
+a2UgSlBFRyBpbWFnZXMuIERyaXZlcnMgbXVzdCBzZXQgdGhpcyBmaWVsZCB3aGVuIHR5cGUgcmVm
+ZXJzIHRvIGEgY2FwdHVyZSBzdHJlYW0sIGFwcGxpY2F0aW9ucyB3aGVuIGl0IHJlZmVycyB0byBh
+biBvdXRwdXQKPiA+ID4gc3RyZWFtLiBJZiB0aGUgYXBwbGljYXRpb24gc2V0cyB0aGlzIHRvIDAg
+Zm9yIGFuIG91dHB1dCBzdHJlYW0sIHRoZW4gYnl0ZXN1c2VkIHdpbGwgYmUgc2V0IHRvIHRoZSBz
+aXplIG9mIHRoZSBidWZmZXIgKHNlZSB0aGUgbGVuZ3RoIGZpZWxkIG9mIHRoaXMKPiA+ID4gc3Ry
+dWN0KSBieSB0aGUgZHJpdmVyLiBGb3IgbXVsdGlwbGFuYXIgZm9ybWF0cyB0aGlzIGZpZWxkIGlz
+IGlnbm9yZWQgYW5kIHRoZSBwbGFuZXMgcG9pbnRlciBpcyB1c2VkIGluc3RlYWQuCj4gPiA+ICIi
+Igo+ID4gCj4gPiBPa2F5LCB0aGFua3MuIEkgd29uZGVyIGlmIHRoaXMgc2hvdWxkbid0IGJlIGhh
+bmRsZWQgYnkgdGhlIGNvcmUsCj4gPiB0aG91Z2guIEVzcGVjaWFsbHkgZ2l2ZW4gdGhhdCB0aGUg
+ZG9jdW1lbnQgcmVmZXJzIHRvIHRoZSBsZW5ndGggZmllbGQKPiA+IHNwZWNpZmljYWxseSBhbmQg
+bm90IHRoZSBzaXplaW1hZ2Ugc2V0IGluIHRoZSBmb3JtYXQuCj4gPiAKPiAKPiBZZXMsIGVpdGhl
+ciBjb3JlIG9yIGhlbHBlciwgdGhpcyBkZWZpbml0ZWx5IGNhbGxzIGZvciBhIGdlbmVyaWMgc29s
+dXRpb24uCgpGb3IgdGhlIGNvbnRleHQsIHRoaXMgaXMgZm9yIGJhY2t3YXJkIGNvbXBhdGliaWxp
+dHkuIEknbSBub3QgY2VydGFpbiBpdAptYWtlIHNlbnNlIGZvciBuZXcgZHJpdmVyIGludGVyZmFj
+ZSBsaWtlIFJLVkRFQy4gU3BlY2lhbGx5IHRoYXQgaWYgdGhlCnVzZXIgZGlkIHBhc3MgYW4gZW1w
+dHkgYnVmZmVyIGJ5IGFjY2lkZW50LCB0aGlzIHdpbGwgcHVzaCBnYXJiYWdlIGludG8KdGhlIGRy
+aXZlci4gVGhhdCBiZWluZyBzYWlkLCBpdCBzZWVtcyB0byBtYXRjaCB0aGUgc3BlYy4KCj4gCj4g
+RXplcXVpZWwKPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LXJvY2tjaGlwCg==
