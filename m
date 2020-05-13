@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC10E1D09B2
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 09:16:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80F3F1D09B6
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 09:17:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WFZm5P9X9WYdXOlJm1qyK8/j1jmzNyExGClKOM3QV+8=; b=YDsSwz/Lh4IQYvkZCPjmmmkxMH
-	TCa6RrRaPvh3C0YWtQQ3eYTtCt7JyRFbOlwuLHWOMKgXfgDi3Aip4CI17GQrb3FM0rrAdTeuerWpu
-	ojaCEkKJr8VQh8zZtPm6w9ReK44EOJn1au72zvVvB6EKP1J3Lznt/Bg+3yJ30upnpG0YDKBndfXnn
-	q2b/pCbN5VH+FhffQnA/yWMLHD3lJOzUk2op+Z3SHqw/pBYW4VxTBnV+M77wp4AFjk/WX1MEg5ckQ
-	VR/3MGba+WN5ToFaMoBs25cDG+hkqxZX7xAM8110VkiOgxQFQw31o8IR4BHm/nVOaAaWHS2Tps4DC
-	pVylxUHw==;
+	bh=eZC9szOsdKMKNDSAAVYzCxEIrSiJTktsIYZMWArFGI0=; b=gc1OvTY69gmq8JuUwqSWBFEHoY
+	nlfJW6977PqRQJYG7QNVudFQMg/pPF0BcTW5AFJHGThj5TUIDEn1q9YuDfiUhIFXh3FB/zEb48P3g
+	NZXiZT1jau5F1Iaq5zTAdhNiIxi40RRaf0Sacjq90jEuHrNaL2ya9p/57SUX3f+BKFSA+P+4YsXeF
+	hAZuuYwfjqTaIV5Dzq688qMMPHgOUj80x7bM/RcDpTdflHN5rVYvy/ooPuswcAPOQdgO4M3IJixad
+	DOZ7i2evpWoIiv655NdyR3HY4egWWLlvyEuS/6PlEP6TSTygc7QRiYLbtpdDp6x1kPEWRzxAco8AF
+	Jz2y5Vgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYlcc-0008MU-Th; Wed, 13 May 2020 07:16:06 +0000
+	id 1jYldr-00005Y-5F; Wed, 13 May 2020 07:17:23 +0000
 Received: from lucky1.263xmail.com ([211.157.147.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYlcY-0008E6-V3
- for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 07:16:04 +0000
-Received: from localhost (unknown [192.168.167.16])
- by lucky1.263xmail.com (Postfix) with ESMTP id 6FFD982AC8;
- Wed, 13 May 2020 15:15:54 +0800 (CST)
+ id 1jYldn-0008Vn-4N
+ for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 07:17:20 +0000
+Received: from localhost (unknown [192.168.167.13])
+ by lucky1.263xmail.com (Postfix) with ESMTP id D133282755;
+ Wed, 13 May 2020 15:17:15 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -34,10 +34,10 @@ X-ANTISPAM-LEVEL: 2
 X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
- P15407T140446440306432S1589354149129638_; 
- Wed, 13 May 2020 15:15:55 +0800 (CST)
+ P7429T140153093875456S1589354235047068_; 
+ Wed, 13 May 2020 15:17:16 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <3ddc54ec96f37bbc93d37ee0e17b2699>
+X-UNIQUE-TAG: <1432dadebfece3d9d163dcc4f149b5af>
 X-RL-SENDER: frank.wang@rock-chips.com
 X-SENDER: wmc@rock-chips.com
 X-LOGIN-NAME: frank.wang@rock-chips.com
@@ -50,16 +50,16 @@ From: Frank Wang <frank.wang@rock-chips.com>
 To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
  philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
  jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-Subject: [PATCH v5 09/16] usb: dwc3: Add disable u2mac linestate check quirk
-Date: Wed, 13 May 2020 15:15:39 +0800
-Message-Id: <20200513071546.5560-5-frank.wang@rock-chips.com>
+Subject: [PATCH v5 10/16] usb: dwc3: Enable AutoRetry feature in the controller
+Date: Wed, 13 May 2020 15:17:04 +0800
+Message-Id: <20200513071710.5651-1-frank.wang@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200513071546.5560-1-frank.wang@rock-chips.com>
+In-Reply-To: <20200513071344.5430-1-frank.wang@rock-chips.com>
 References: <20200513071344.5430-1-frank.wang@rock-chips.com>
- <20200513071546.5560-1-frank.wang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_001603_425458_95C6BCB9 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20200513_001719_388374_81C09416 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
@@ -97,137 +97,62 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Jagan Teki <jagan@amarulasolutions.com>
 
-This patch adds a quirk to disable USB 2.0 MAC linestate check
-during HS transmit. Refer the dwc3 databook, we can use it for
-some special platforms if the linestate not reflect the expected
-line state(J) during transmission.
+By default when core sees any transaction error (CRC or overflow) it
+replies with terminating retry ACK (Retry=1 and Nump == 0).
 
-When use this quirk, the controller implements a fixed 40-bit
-TxEndDelay after the packet is given on UTMI and ignores the
-linestate during the transmit of a token (during token-to-token
-and token-to-data IPGAP).
+Enabling this Auto Retry feature in controller will make the core send
+a non-terminanting ACK upon such transaction errors. That is, ACK TP
+with Retry=1 and Nump != 0.
 
-On some rockchip platforms (e.g. rk3399), it requires to disable
-the u2mac linestate check to decrease the SSPLIT token to SETUP
-token inter-packet delay from 566ns to 466ns, and fix the issue
-that FS/LS devices not recognized if inserted through USB 3.0 HUB.
+Doing so will give controller a chance to recover from transient error
+conditions.
 
 Reference from below Linux commit,
 
-commit <65db7a0c9816> ("usb: dwc3: add disable u2mac linestate
-check quirk")
+commit <b138e23d3dff> ("usb: dwc3: core: Enable AutoRetry feature
+in the controller")
 
 Cc: Marek Vasut <marex@denx.de>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/usb/dwc3/core.c | 20 ++++++++++++++++++++
- drivers/usb/dwc3/core.h |  7 +++++++
- include/dwc3-uboot.h    |  1 +
- 3 files changed, 28 insertions(+)
+ drivers/usb/dwc3/core.c | 9 +++++++++
+ drivers/usb/dwc3/core.h | 3 +++
+ 2 files changed, 12 insertions(+)
 
 diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index 3cb66515a2..dc92f471c1 100644
+index dc92f471c1..aab6c34c2d 100644
 --- a/drivers/usb/dwc3/core.c
 +++ b/drivers/usb/dwc3/core.c
-@@ -725,6 +725,7 @@ int dwc3_uboot_init(struct dwc3_device *dwc3_dev)
- 	dwc->dis_u3_susphy_quirk = dwc3_dev->dis_u3_susphy_quirk;
- 	dwc->dis_u2_susphy_quirk = dwc3_dev->dis_u2_susphy_quirk;
- 	dwc->dis_del_phy_power_chg_quirk = dwc3_dev->dis_del_phy_power_chg_quirk;
-+	dwc->dis_tx_ipgap_linecheck_quirk = dwc3_dev->dis_tx_ipgap_linecheck_quirk;
- 	dwc->dis_enblslpm_quirk = dwc3_dev->dis_enblslpm_quirk;
- 	dwc->dis_u2_freeclk_exists_quirk = dwc3_dev->dis_u2_freeclk_exists_quirk;
- 
-@@ -934,6 +935,8 @@ void dwc3_of_parse(struct dwc3 *dwc)
- 				"snps,dis_u2_susphy_quirk");
- 	dwc->dis_del_phy_power_chg_quirk = dev_read_bool(dev,
- 				"snps,dis-del-phy-power-chg-quirk");
-+	dwc->dis_tx_ipgap_linecheck_quirk = dev_read_bool(dev,
-+				"snps,dis-tx-ipgap-linecheck-quirk");
- 	dwc->dis_enblslpm_quirk = dev_read_bool(dev,
- 				"snps,dis_enblslpm_quirk");
- 	dwc->dis_u2_freeclk_exists_quirk = dev_read_bool(dev,
-@@ -954,6 +957,7 @@ void dwc3_of_parse(struct dwc3 *dwc)
- int dwc3_init(struct dwc3 *dwc)
- {
- 	int ret;
-+	u32 reg;
- 
- 	dwc3_cache_hwparams(dwc);
- 
-@@ -975,6 +979,22 @@ int dwc3_init(struct dwc3 *dwc)
- 		goto event_fail;
+@@ -995,6 +995,15 @@ int dwc3_init(struct dwc3 *dwc)
+ 		dwc3_writel(dwc->regs, DWC3_GUCTL1, reg);
  	}
  
-+	if (dwc->revision >= DWC3_REVISION_250A) {
-+		reg = dwc3_readl(dwc->regs, DWC3_GUCTL1);
++	if (dwc->dr_mode == USB_DR_MODE_HOST ||
++	    dwc->dr_mode == USB_DR_MODE_OTG) {
++		reg = dwc3_readl(dwc->regs, DWC3_GUCTL);
 +
-+		/*
-+		 * Enable hardware control of sending remote wakeup
-+		 * in HS when the device is in the L1 state.
-+		 */
-+		if (dwc->revision >= DWC3_REVISION_290A)
-+			reg |= DWC3_GUCTL1_DEV_L1_EXIT_BY_HW;
++		reg |= DWC3_GUCTL_HSTINAUTORETRY;
 +
-+		if (dwc->dis_tx_ipgap_linecheck_quirk)
-+			reg |= DWC3_GUCTL1_TX_IPGAP_LINECHECK_DIS;
-+
-+		dwc3_writel(dwc->regs, DWC3_GUCTL1, reg);
++		dwc3_writel(dwc->regs, DWC3_GUCTL, reg);
 +	}
 +
  	ret = dwc3_core_init_mode(dwc);
  	if (ret)
  		goto mode_fail;
 diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index c5e656885a..b510d8a983 100644
+index b510d8a983..2adcaf0029 100644
 --- a/drivers/usb/dwc3/core.h
 +++ b/drivers/usb/dwc3/core.h
-@@ -73,6 +73,7 @@
- #define DWC3_GCTL		0xc110
- #define DWC3_GEVTEN		0xc114
- #define DWC3_GSTS		0xc118
-+#define DWC3_GUCTL1		0xc11c
- #define DWC3_GSNPSID		0xc120
- #define DWC3_GGPIO		0xc124
- #define DWC3_GUID		0xc128
-@@ -159,6 +160,10 @@
+@@ -160,6 +160,9 @@
  #define DWC3_GCTL_GBLHIBERNATIONEN	(1 << 1)
  #define DWC3_GCTL_DSBLCLKGTNG		(1 << 0)
  
-+/* Global User Control 1 Register */
-+#define DWC3_GUCTL1_TX_IPGAP_LINECHECK_DIS	BIT(28)
-+#define DWC3_GUCTL1_DEV_L1_EXIT_BY_HW	BIT(24)
++/* Global User Control Register */
++#define DWC3_GUCTL_HSTINAUTORETRY	BIT(14)
 +
- /* Global USB2 PHY Configuration Register */
- #define DWC3_GUSB2PHYCFG_PHYSOFTRST	(1 << 31)
- #define DWC3_GUSB2PHYCFG_U2_FREECLK_EXISTS	(1 << 30)
-@@ -771,6 +776,7 @@ struct dwc3 {
- #define DWC3_REVISION_260A	0x5533260a
- #define DWC3_REVISION_270A	0x5533270a
- #define DWC3_REVISION_280A	0x5533280a
-+#define DWC3_REVISION_290A	0x5533290a
- 
- 	enum dwc3_ep0_next	ep0_next_event;
- 	enum dwc3_ep0_state	ep0state;
-@@ -824,6 +830,7 @@ struct dwc3 {
- 	unsigned		dis_u3_susphy_quirk:1;
- 	unsigned		dis_u2_susphy_quirk:1;
- 	unsigned		dis_del_phy_power_chg_quirk:1;
-+	unsigned		dis_tx_ipgap_linecheck_quirk:1;
- 	unsigned		dis_enblslpm_quirk:1;
- 	unsigned		dis_u2_freeclk_exists_quirk:1;
- 
-diff --git a/include/dwc3-uboot.h b/include/dwc3-uboot.h
-index 193d225d31..e08530ec4e 100644
---- a/include/dwc3-uboot.h
-+++ b/include/dwc3-uboot.h
-@@ -34,6 +34,7 @@ struct dwc3_device {
- 	unsigned dis_u3_susphy_quirk;
- 	unsigned dis_u2_susphy_quirk;
- 	unsigned dis_del_phy_power_chg_quirk;
-+	unsigned dis_tx_ipgap_linecheck_quirk;
- 	unsigned dis_enblslpm_quirk;
- 	unsigned dis_u2_freeclk_exists_quirk;
- 	unsigned tx_de_emphasis_quirk;
+ /* Global User Control 1 Register */
+ #define DWC3_GUCTL1_TX_IPGAP_LINECHECK_DIS	BIT(28)
+ #define DWC3_GUCTL1_DEV_L1_EXIT_BY_HW	BIT(24)
 -- 
 2.17.1
 
