@@ -2,86 +2,69 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24CFD1D03E6
-	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 02:47:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FB061D0443
+	for <lists+linux-rockchip@lfdr.de>; Wed, 13 May 2020 03:20:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nsYZ6zKFkb9lSxTGdRxgxfdcEX0jdzUoyxMxiJWqsuc=; b=itlAf0dNoEd8QYfQuENRtx+2A
-	axhV5KMnxwPpCK5c8RP5yBLnOJH7njKfbdyr5hvLCRI7jjKfcbBR+/tNJqmHOUT8hX9pxP0y1NHCk
-	elBGYjzxHHelnVTB4QB8WKg+SrFW3HvWm8mH7PKSdJqpXRtYH3HA5+P2toXEFxf3hrQVumLoQE7ta
-	BiekRS7icfMygaJv47STOjZ3XpkeuWb+qOlM625P8NPtlj9DOOm+LwrP5cbRhL1kRsO3m0HLjb7f1
-	+118diSL0ywpTKGIfKfmfsR6ZDnCzLdaXe4uM1dhucCKZvgiDK2QCKkGOv386YiJMmAlcKUcpDX1W
-	7DU9Cricw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E01As4MKX8oG+iHY7Q7H63u/wdi3ENt5Rqc+j36bcnw=; b=kUGEJJsK3Mm31Q
+	HyRW4tZHd1PJYVZw4WK1wOialzouxt2vbJmKuVI2qgPQuuv5fNcPG0BZZAH1vqLJNJ5i3Stp1Ef9W
+	eqtga68h9lfucW9SdgWszNJHvHbaeBG8ENpRjmDyRiB7q8P4lZizRtmS+VA3wAl66WnDKIjxf0mHM
+	jNojqq9eQdS829rscPUtoZC5AwmJiJ0yo/8ByfkOQfwd9aoaz0BKTE0B6skmA2Q4irTLZpXWLGyPO
+	hfPW0N8hgyRw0IHSDGmkWdYdeZcZinA3tJB28YdeA7IqyaSf4HUYD0K9mNjvfgMDYsg1sHiwwOoqq
+	7vcmbdmKtalHHTQPECsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYfYr-00041j-Bn; Wed, 13 May 2020 00:47:49 +0000
-Received: from regular1.263xmail.com ([211.150.70.202])
+	id 1jYg4S-0006su-Lk; Wed, 13 May 2020 01:20:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYfYm-0003qW-Sy
- for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 00:47:46 +0000
-Received: from localhost (unknown [192.168.167.32])
- by regular1.263xmail.com (Postfix) with ESMTP id 4EB2E35B;
- Wed, 13 May 2020 08:47:34 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [172.16.12.33] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P33517T140425700570880S1589330852399684_; 
- Wed, 13 May 2020 08:47:33 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <7b837838c52197469d661e66f218d576>
-X-RL-SENDER: frank.wang@rock-chips.com
-X-SENDER: wmc@rock-chips.com
-X-LOGIN-NAME: frank.wang@rock-chips.com
-X-FST-TO: wmc@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-Subject: Re: [PATCH v4 12/16] usb: dwc3: add make compatible for rockchip
- platform
-To: Marek Vasut <marex@denx.de>, heiko@sntech.de, bmeng.cn@gmail.com,
- philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
- jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-References: <20200511075330.26462-1-frank.wang@rock-chips.com>
- <20200511075725.26665-1-frank.wang@rock-chips.com>
- <20200511075725.26665-3-frank.wang@rock-chips.com>
- <502d8fff-5ae2-b47f-f483-62cd24177ed1@denx.de>
- <618d46f5-7970-9b27-e912-36f21b24a957@rock-chips.com>
- <6f0482e0-eedc-b7e4-f6ab-cf82b26c22ec@denx.de>
-From: Frank Wang <frank.wang@rock-chips.com>
-Message-ID: <9d80fda2-9760-0aec-6bb7-5680279b3a0f@rock-chips.com>
-Date: Wed, 13 May 2020 08:47:32 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jYg4P-0006sS-Qt
+ for linux-rockchip@lists.infradead.org; Wed, 13 May 2020 01:20:27 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B715206D3;
+ Wed, 13 May 2020 01:20:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589332825;
+ bh=aUO4Hd9gwJ7SPhAlEhXeA+zsnUAmGPEMNmhK0lYyhBI=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=TfWbrfb2iKisn7uoK14YHqxFjSGP/7Lj8zLE0sJ8ga6B5D4P7y23ywi6cFupFdup4
+ /i3cc2wN5ZF2jPZeKFXflJMS3SVmj13C36+yO3Hc1e4w+2jIRIYO7iOoqIRA6EURff
+ J9Hs+AAX1vvNN+2oP7iqFbkDZdGBjwstZNH4jSdY=
 MIME-Version: 1.0
-In-Reply-To: <6f0482e0-eedc-b7e4-f6ab-cf82b26c22ec@denx.de>
-Content-Language: en-US
+In-Reply-To: <2256140.alkMTrVvHO@phil>
+References: <2256140.alkMTrVvHO@phil>
+Subject: Re: [GIT PULL] Rockchip clock fix for 5.7
+From: Stephen Boyd <sboyd@kernel.org>
+To: Heiko Stuebner <heiko@sntech.de>, mturquette@baylibre.com
+Date: Tue, 12 May 2020 18:20:24 -0700
+Message-ID: <158933282442.215346.11254945377753790433@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_174745_135073_4AEBC563 
-X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-CacheID: sfid-20200512_182025_891956_C01582D7 
+X-CRM114-Status: UNSURE (   9.05  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.202 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.150.70.202 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,29 +77,38 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
- u-boot@lists.denx.de, william.wu@rock-chips.com,
- linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- chenjh@rock-chips.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-SGkgTWFyZWssCgpPbiAyMDIwLzUvMTIgMTU6MjYsIE1hcmVrIFZhc3V0IHdyb3RlOgo+IE9uIDUv
-MTIvMjAgMzowOCBBTSwgRnJhbmsgV2FuZyB3cm90ZToKPj4gSGkgTWFyZWssCj4+Cj4+IE9uIDIw
-MjAvNS8xMSAxNzo0OCwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+PiBPbiA1LzExLzIwIDk6NTcgQU0s
-IEZyYW5rIFdhbmcgd3JvdGU6Cj4+PiBbLi4uXQo+Pj4KPj4+PiBAQCAtMzk0LDYgKzQwNywxMiBA
-QCBzdGF0aWMgaW50IGR3YzNfZ2x1ZV9wcm9iZShzdHJ1Y3QgdWRldmljZSAqZGV2KQo+Pj4+ICDC
-oMKgwqDCoMKgIGlmIChyZXQpCj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmV0Owo+
-Pj4+ICDCoCArwqDCoMKgIGlmIChnbHVlLT5yZXNldHMuY291bnQgPCAxKSB7Cj4+PiBUaGlzIGNv
-bmRpdGlvbiBpcyBvbmx5IHRydWUgaWYgY291bnQgPT0gMCA/Cj4+PiBXaGF0J3MgdGhlIHB1cnBv
-c2Ugb2YgdGhpcyB0ZXN0ID8KPj4gRm9yIHByZXZpb3VzIGR0cyBvZiB0aGUgTGludXgga2VybmVs
-LCB0aGUgcmVzZXQgcGhhbmRsZXMgd2VyZSBpbgo+PiBkd2MzLWdsdWUgbm9kZXMsIGhvd2V2ZXIs
-IHRoZXkgYXJlIG1vdmVkIHJlY2VudGx5IGludG8gZHdjMyB0aGF0IGlzIGEKPj4gY2hpbGQgbm9k
-ZSBvZiBkd2MzLWdsdWUuCj4+Cj4+IFNvIHRoZSBhYm92ZSBjb2RlcyBpcyB0byBtYWtlIGNvbXBh
-dGlibGUuCj4gV2h5IGRvZXNuJ3QgaXQgY2hlY2sgZm9yIGNvdW50ID09IDAgdGhlbiA/Cj4KV2ls
-bCBmaXguCgoKQlIsCkZyYW5rCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
+Quoting Heiko Stuebner (2020-05-05 17:28:40)
+> Hi Mike, Stephen,
+> 
+> please find below a rockchip clock fix for 5.7
+> Please pull
+> 
+> Thanks
+> Heiko
+> 
+> The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+> 
+>   Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.7-rockchip-clk-fixes1
+> 
+> for you to fetch changes up to cec9d101d70a3509da9bd2e601e0b242154ce616:
+> 
+>   clk: rockchip: fix incorrect configuration of rk3228 aclk_gpu* clocks (2020-04-13 09:35:24 +0200)
+> 
+> ----------------------------------------------------------------
+
+Thanks. Pulled into clk-fixes.
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
