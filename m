@@ -2,44 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 915C71D8AC9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 00:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E59B1D8ADA
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 00:29:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bg8N6bAjZh8ZnwLGJVXepboI1n1WTjnshEG9Brzvqws=; b=Jp889CP3zwMkEE
-	R0HYobqy7bktfQ2k959yuerxFHJeqlYEVsJdLJ/ePWck91fLgNBhF2wiZyFOriJe71lkocC62UJq3
-	ZLJeKCh/NJFOIpa040+CaY9sZnKcP8yyF7dsqK8mgmt/2XzJaDw9MGWfLIcgNBAxoKxT2DN6bT6wc
-	tcGtpsz7pA4ZOqWiLvRj/KteOGvODqEl+yfMcY26HHI7Qvx85l1zFoKnAOyy91PnLPolNaq0Pky3e
-	dxoM7aHtrVra6BvwI5IttDzYrSimwyeJZHTCg05Ay2Qgo5R+B6GygJthue687hO6tuJGgTCoWKb7Q
-	F0SrAgJtD0OKWe5q2DLw==;
+	List-Owner; bh=NKQKUEdJw6TEQx0Z271hfqfVmRLSc2fXgD23fifF3Y4=; b=KaEusDBp9ajK2Q
+	mGOyfTNj9JtIEFodMYmrYoZQ/cgs+zGs6g62Ir1KdaQa1mVZdZ9tjrLFN/GfmGq7VJ2ziuITklzNR
+	Gx1vSgWSWzQD+zhDk2MQGnSFUCsBXVmVUDDq5PEwwrR1/CJWQeqKrfeRb4qCSR8JaxJzFGfS+31SF
+	6BnokUqYCDMfSNciOJS2WbdfmGxslmo+/PeDuUps/q+KMwWLBHPiew0rSHyDQsTn1G8k1RI3Tp/wB
+	qij6z1xEfbBpZsfe0UIm88w43b213rXj+pTZVn54idOgD7B1GJ+JVrGZXlsPE8ZLcqA62+lYBA4u1
+	CJKIfiNbdneclCgvRGhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoF3-0008QD-PK; Mon, 18 May 2020 22:28:13 +0000
+	id 1jaoFv-0000kw-5f; Mon, 18 May 2020 22:29:07 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoF0-0008OB-49; Mon, 18 May 2020 22:28:11 +0000
+ id 1jaoF0-0008OC-4T; Mon, 18 May 2020 22:28:12 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.lan)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jaoEv-00005F-Ff; Tue, 19 May 2020 00:28:05 +0200
+ id 1jaoEv-00005F-OU; Tue, 19 May 2020 00:28:05 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v1 1/2] ARM: dts: rockchip: rename and label gpio-led
- subnodes
-Date: Tue, 19 May 2020 00:27:59 +0200
-Message-Id: <158984064169.2259329.4243090830868839814.b4-ty@sntech.de>
+Subject: Re: [PATCH v2 1/2] arm64: dts: rockchip: fix defines in pd_vio node
+ for rk3399
+Date: Tue, 19 May 2020 00:28:00 +0200
+Message-Id: <158984064169.2259329.3276929143055218816.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200428144933.10953-1-jbx6244@gmail.com>
-References: <20200428144933.10953-1-jbx6244@gmail.com>
+In-Reply-To: <20200428203003.3318-1-jbx6244@gmail.com>
+References: <20200428203003.3318-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_152810_166914_6E02A2CD 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20200518_152810_171770_AD935D68 
+X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -68,22 +68,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, 28 Apr 2020 16:49:32 +0200, Johan Jonker wrote:
-> Current dts files with 'gpio-led' nodes were manually verified.
-> In order to automate this process leds-gpio.txt
-> has been converted to yaml. With this conversion a check
-> for pattern properties was added. A test with the command
-> below gives a screen full of warnings like:
+On Tue, 28 Apr 2020 22:30:02 +0200, Johan Jonker wrote:
+> A test with the command below gives for example this error:
 > 
-> arch/arm/boot/dts/rk3188-radxarock.dt.yaml: gpio-leds:
-> 'blue', 'green', 'sleep'
+> arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: pd_vio@15:
+> 'pd_tcpc0@RK3399_PD_TCPC0', 'pd_tcpc1@RK3399_PD_TCPC1'
 > do not match any of the regexes:
-> '(^led-[0-9a-f]$|led)', 'pinctrl-[0-9]+'
+> '.*-names$', '.*-supply$', '^#.*-cells$',
+> '^#[a-zA-Z0-9,+\\-._]{0,63}$',
+> '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}$',
+> '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-fA-F]+(,[0-9a-fA-F]+)*$',
+> '^__.*__$', 'pinctrl-[0-9]+'
 > 
 > [...]
 
 Applied, thanks!
 
+[1/1] arm64: dts: rockchip: fix defines in pd_vio node for rk3399
+      commit: 84836ded76ec9a6f25d1d0acebaad44977e0ec6f
 
 Best regards,
 -- 
