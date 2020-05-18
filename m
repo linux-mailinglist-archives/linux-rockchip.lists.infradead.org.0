@@ -2,43 +2,44 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1BD31D8AF9
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 00:31:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AE151D8B24
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 00:43:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NxvVOslWe/ZIwtOObdufmZg8uzvNRH83AU5cuq4KiWY=; b=dG2YYy934BgWV2
-	pSB9a8tfF3FzBjWXWLBk8oK4MkMv+FbDEJ3ApGIVMVduAKe6GjtpRSPEIb0o3lS+7T5M6Z0RmOg4B
-	h+B5jN9ZM0BrQeWDoaAfJEq789zfA/0PEUi+1xpfGpFhF4/39c9urtgt2ANisQsTh6psqSvq4VB5v
-	CjJZKK4Lkzbw3x2fYU9Q2xgskCh4TkdzJl5FpCGCPG4l/uNaDR/G523/m55m5ftT5gQzaDQOIV3iK
-	LXxBJ367XhGz2FHyAYTSsYFRwgVCyLwkmiPH5JLAGmFtH/2EyAZ1NjzmtQ9BQaRrK+/xdXZDWeTef
-	idJQc16r+ScrtSLCBMQw==;
+	List-Owner; bh=COTX3G7PBChxrgIzhif5ctNGz15XWhch0cgUza555gQ=; b=Rec3HjVOq2jdvF
+	dBS1ETqMaNwTPiaJ2/MG0SBD3fL/9po10khajqPT757JBsVislWimGH8oMyI7THpDbBvhNaANp/6S
+	+nk/ui3ZA6kMaWGi/6ozia1TE2wf8Wu+CcMSaYjPjABn+W+YvPCjZumKWB3BCpLuQDAC1r8YrL6+l
+	j90TEwD3McSbYCNhoAN+3K0l3fHZMnC0xq2C/iMrLmJoIwBIRnX/aS7npG5cuby8yC6tpYIXnGKd7
+	CjDXpt6FPeuCAHAGi83hyYjruViZS95ifQ/rBfBp8jux7lPkF4hQEdCm1p6VHSkFQbm0kAeeCdR/6
+	Au4klam06xV2gC9VpOcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoHr-00053x-Vc; Mon, 18 May 2020 22:31:07 +0000
+	id 1jaoTK-0003cc-9Y; Mon, 18 May 2020 22:42:58 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoG2-0000vg-3D; Mon, 18 May 2020 22:29:16 +0000
+ id 1jaoSo-0003Ac-Cd; Mon, 18 May 2020 22:42:27 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jaoG0-000081-Ec; Tue, 19 May 2020 00:29:12 +0200
+ id 1jaoSj-0000Ct-Gg; Tue, 19 May 2020 00:42:21 +0200
 From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v3 3/4] arm64: dts: rockchip: remove include for irq.h
-Date: Tue, 19 May 2020 00:29:11 +0200
-Message-ID: <2542759.BOPbJzt3gv@diego>
-In-Reply-To: <20200403180159.13387-3-jbx6244@gmail.com>
-References: <20200403180159.13387-1-jbx6244@gmail.com>
- <20200403180159.13387-3-jbx6244@gmail.com>
+To: Justin Swartz <justin.swartz@risingedge.co.za>
+Subject: Re: [PATCH] ARM: dts: remove disable-wp from rk3229-xms6 emmc
+Date: Tue, 19 May 2020 00:42:20 +0200
+Message-ID: <113583326.smLjuVpvy0@diego>
+In-Reply-To: <20200406135006.23759-2-justin.swartz@risingedge.co.za>
+References: <e602c1b8-3606-a8d3-c64c-ec9e58315974@gmail.com>
+ <20200406135006.23759-2-justin.swartz@risingedge.co.za>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_152914_380805_A89E5311 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20200518_154226_421685_A6A0AB86 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,100 +59,24 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Johan,
-
-Am Freitag, 3. April 2020, 20:01:58 CEST schrieb Johan Jonker:
-> The 'irq.h' file is already included through 'arm-gic.h',
-> so remove them from all Rockchip dtsi files.
-
-I disagree here ... we do use properties from both arm-gic.h and
-the main irq.h an therefore should not rely on the arm-gic.h
-"accidentially" including irq.h
-
-
-Heiko
-
-
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  arch/arm64/boot/dts/rockchip/px30.dtsi   | 1 -
->  arch/arm64/boot/dts/rockchip/rk3308.dtsi | 1 -
->  arch/arm64/boot/dts/rockchip/rk3328.dtsi | 1 -
->  arch/arm64/boot/dts/rockchip/rk3368.dtsi | 1 -
->  arch/arm64/boot/dts/rockchip/rk3399.dtsi | 1 -
->  5 files changed, 5 deletions(-)
+Am Montag, 6. April 2020, 15:50:05 CEST schrieb Justin Swartz:
+> Remove the disable-wp attribute from &emmc as it is, according to
+> Documentation/devicetree/bindings/mmc/mmc-controller.yaml:
 > 
-> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> index 6f7171290..4820edc7f 100644
-> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-> @@ -6,7 +6,6 @@
->  #include <dt-bindings/clock/px30-cru.h>
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
->  #include <dt-bindings/power/px30-power.h>
->  #include <dt-bindings/soc/rockchip,boot-mode.h>
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-> index ac43bc3f7..a9b98555d 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-> @@ -7,7 +7,6 @@
->  #include <dt-bindings/clock/rk3308-cru.h>
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
->  #include <dt-bindings/soc/rockchip,boot-mode.h>
->  #include <dt-bindings/thermal/thermal.h>
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-> index 470783a48..175060695 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-> @@ -6,7 +6,6 @@
->  #include <dt-bindings/clock/rk3328-cru.h>
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
->  #include <dt-bindings/power/rk3328-power.h>
->  #include <dt-bindings/soc/rockchip,boot-mode.h>
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-> index 1ebb0eef4..f22475016 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-> @@ -5,7 +5,6 @@
->  
->  #include <dt-bindings/clock/rk3368-cru.h>
->  #include <dt-bindings/gpio/gpio.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
->  #include <dt-bindings/soc/rockchip,boot-mode.h>
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> index 0d895cff5..123b7402a 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> @@ -6,7 +6,6 @@
->  #include <dt-bindings/clock/rk3399-cru.h>
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
->  #include <dt-bindings/power/rk3399-power.h>
->  #include <dt-bindings/thermal/thermal.h>
+>     "Not used in combination with eMMC or SDIO."
 > 
+> Suggested-by: Johan Jonker <jbx6244@gmail.com>
+> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
 
-
+applied for 5.8
 
 
 
