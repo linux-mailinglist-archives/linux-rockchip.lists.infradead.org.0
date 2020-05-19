@@ -2,87 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE4A1D94FF
-	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 13:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DE781D9C3F
+	for <lists+linux-rockchip@lfdr.de>; Tue, 19 May 2020 18:17:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nzSAaogM/WqunTg51JisYh0//M5oEqtlJ3gowjo/Gcg=; b=J6A
-	kkwbPKMdKofctoOqir41QbPhP1YOKkwD33KmWnuaprU4GMeZcs4QEoLbUtZ64/3JYXCJJCM/CEvvY
-	hClUyq49eIWHLgbnYElYfuOclVd20Vck/Y0fGxD5KVjSvj2Wrny52N0dGHF0c+VP0/obHwAJBjS5T
-	oSY8hWvKOZpoVjGT004oH9V12cLZvNTp/gJy7gsN8QBsVFYAkZDTtNV7M4BP6ObLueQB+cqBBZVPj
-	oOM/wFOlA2XbcrEJs168axYQq30oHO1TfDIS0/AzRbQxB9sVtSzhvAqPn4ZrE9KdZ5vKNAKv6iIYD
-	1OYryhq1wb/WtWjbYvp+uNaYjVuNZ+A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MEGPY+h7JyUO4vkUeyY+FLaQDwNCVNUwuQE/lu/TbE0=; b=WZuYNSfPheiRI6G9IpuOj/j3c+
+	4Cl7HE7OqVwQ5on52ZUAbYZKtgM7ODE/z5xEsTFPZGXflkPvTlqDT8oFRqCL0/o3BWcNBzgEZtXnp
+	ZJNJ6JL7auw1MeOa3EmkGYqb/2FcuZYhxzgU4J48tyH5+rs04tviTApvuDlUkzRYTQCWPxq50go07
+	TxXSA0+x/47SK1xbHN79JYGXgp6P7j6pRume8b4QU8xvufXzs45Ib1tyhPg3Obz1BLuFjDgWdZuSr
+	19C2IslaiTrgcfY7H+9xJKHIemhWS/B1HtRiiw5dH/T/uPBylvgaAW0Co8SpFlUuWxPMi9BOmOVWE
+	oBMNgIKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb0DP-0000w1-Nr; Tue, 19 May 2020 11:15:19 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jb4vm-0002rn-IJ; Tue, 19 May 2020 16:17:26 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb0D2-0006mO-FI; Tue, 19 May 2020 11:14:57 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e16so15423451wra.7;
- Tue, 19 May 2020 04:14:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=of2x5lvAuGZZISiXgz474RwZ3LgUvSAn73pq9BHWecA=;
- b=Q/M4TmMBVodfFqQhaQkwvo8TiGW6wEClscN8kJRFoE88xxzaYjoB+KuWpIzOKcn1OA
- Repf7QesvlYP49vKo/ZTR1i4cjgT4a9kthfPm/43mY0Vc26C/WYVn7SlvsqxKFzQ2tWC
- oBTZ2JHr0yUbVPhgmQRzCyyyM3+Vqr0AfSJwvVqs07mVOJN3sTzsYmOQBMWBaHEX0jfZ
- 1ZEh06YzA9iC9hjkU8k16YT1uWBXmWsLgsRy7InL5kUjWmDXzUDEC72m5yxOarondboH
- HrGBT2AP0bH82SLcjvjQLQ6wwz0iOICNj+YkvSVSZ/OvYqAoRxMwg/boe0sM9teEv9YA
- gJEQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=of2x5lvAuGZZISiXgz474RwZ3LgUvSAn73pq9BHWecA=;
- b=m2AkFa/lAlgn9+b2c8yXLwEToh2SLwfZuUzxrLFOgw1aAYEJPvp9nGzPQlxlf0hj8t
- DUv8JOL4tSW9yMfrv+sxOuqcipfaWVgCDz6bNd+tIoWFn8gJY1oofbfXkDtUA8Lyc5Mw
- zoE1h0yJAtAVqf+zznuL3lm8pu+mTQUQ5s2GNjNEu8CucDD1SrOzOQTZuqRWmelc/N0T
- DSQy0VV+Zn96J5JWITAyvmexKisIGOiApsJx3ROTZrgPMdBobgklfVRzj7HTjh/IUKVJ
- qELPgb32DD3n0gqddWvfNF3yzT5+HkogDt0HSGpxgzjAstYgLwI7KZUcZaioBfCZBEsT
- 0wxw==
-X-Gm-Message-State: AOAM531Ny0nS2vGtx1qYs5McOIXAhqdZSO2WFCMT92eQzoMQtx+D2mUq
- Qk05cOw85mvljl5zNkv6ncfOU8yk4xA=
-X-Google-Smtp-Source: ABdhPJxE6Oeqg3yyLJk9EPIj3I82abb+VGE7ljtS6QE3RtAJ1qmVRcpNZbbmwVH/HoEcmatYQW2A9Q==
-X-Received: by 2002:adf:f1c3:: with SMTP id z3mr26854773wro.201.1589886892590; 
- Tue, 19 May 2020 04:14:52 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id v8sm21041368wrs.45.2020.05.19.04.14.51
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 19 May 2020 04:14:51 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: fix pinctrl-names for gpio-leds node on
- rk3326-odroid-go2
-Date: Tue, 19 May 2020 13:14:44 +0200
-Message-Id: <20200519111444.2208-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jb4vi-0002r9-Um
+ for linux-rockchip@lists.infradead.org; Tue, 19 May 2020 16:17:24 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id C3E642A00A3
+Subject: Re: [PATCH] media: staging: rkisp1: set more precise size errors in
+ debugfs
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ linux-media@vger.kernel.org, ezequiel@collabora.com, hverkuil@xs4all.nl,
+ kernel@collabora.com, dafna3@gmail.com, sakari.ailus@linux.intel.com,
+ linux-rockchip@lists.infradead.org, mchehab@kernel.org,
+ laurent.pinchart@ideasonboard.com
+References: <20200514142102.16111-1-dafna.hirschfeld@collabora.com>
+From: Helen Koike <helen.koike@collabora.com>
+Message-ID: <d78fd01c-6044-4c09-dc44-9df449eb051e@collabora.com>
+Date: Tue, 19 May 2020 13:17:13 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200514142102.16111-1-dafna.hirschfeld@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_041456_508631_DA7687BA 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200519_091723_117496_3919B53E 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,41 +66,93 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The 'pinctrl-names' property should contain a list of names
-to the assigned states. The value 'led_pins' in the gpio-leds
-node on rk3326-odroid-go2 is not a state that is normally used,
-so change it the common name 'default'.
+Hi Dafna,
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Thanks for the patch.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
-index 46826b6e2..b3a8f9365 100644
---- a/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
-@@ -127,7 +127,7 @@
- 
- 	leds: gpio-leds {
- 		compatible = "gpio-leds";
--		pinctrl-names = "led_pins";
-+		pinctrl-names = "default";
- 		pinctrl-0 = <&blue_led_pin>;
- 
- 		blue_led: led-0 {
--- 
-2.11.0
+On 5/14/20 11:21 AM, Dafna Hirschfeld wrote:
+> When a size error is signaled, it is possible to read a register
+> to see where the error comes from. So, in debugfs the general
+> error 'pic_size_err' can be replaced with 3 more precise errors.
+> 
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+>  drivers/staging/media/rkisp1/rkisp1-common.h | 4 +++-
+>  drivers/staging/media/rkisp1/rkisp1-dev.c    | 8 ++++++--
+>  drivers/staging/media/rkisp1/rkisp1-isp.c    | 7 ++++++-
+>  3 files changed, 15 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+> index 0c4fe503adc9..95d54306bae6 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
+> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+> @@ -226,7 +226,9 @@ struct rkisp1_resizer {
+>  struct rkisp1_debug {
+>  	struct dentry *debugfs_dir;
+>  	unsigned long data_loss;
+> -	unsigned long pic_size_error;
+> +	unsigned long outform_size_error;
+> +	unsigned long is_size_error;
 
+I would just do s/is/img_stabilization
+
+otherwise it is easy to read it as a verb, and it feels it's a boolean, and not a counter.
+
+With this:
+
+Acked-by: Helen Koike <helen.koike@collabora.com>
+
+Regards,
+Helen
+
+> +	unsigned long inform_size_error;
+>  	unsigned long mipi_error;
+>  	unsigned long stats_error;
+>  	unsigned long stop_timeout[2];
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-dev.c b/drivers/staging/media/rkisp1/rkisp1-dev.c
+> index 9ac38bafb839..2298d3ae5950 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-dev.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-dev.c
+> @@ -438,8 +438,12 @@ static void rkisp1_debug_init(struct rkisp1_device *rkisp1)
+>  	}
+>  	debugfs_create_ulong("data_loss", 0444, debug->debugfs_dir,
+>  			     &debug->data_loss);
+> -	debugfs_create_ulong("pic_size_error", 0444,  debug->debugfs_dir,
+> -			     &debug->pic_size_error);
+> +	debugfs_create_ulong("outform_size_err", 0444,  debug->debugfs_dir,
+> +			     &debug->outform_size_error);
+> +	debugfs_create_ulong("is_size_error", 0444,  debug->debugfs_dir,
+> +			     &debug->is_size_error);
+> +	debugfs_create_ulong("inform_size_error", 0444,  debug->debugfs_dir,
+> +			     &debug->inform_size_error);
+>  	debugfs_create_ulong("mipi_error", 0444, debug->debugfs_dir,
+>  			     &debug->mipi_error);
+>  	debugfs_create_ulong("stats_error", 0444, debug->debugfs_dir,
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> index dc2b59a0160a..a7e5461e25a5 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> @@ -1123,8 +1123,13 @@ void rkisp1_isp_isr(struct rkisp1_device *rkisp1)
+>  	if (status & RKISP1_CIF_ISP_PIC_SIZE_ERROR) {
+>  		/* Clear pic_size_error */
+>  		isp_err = rkisp1_read(rkisp1, RKISP1_CIF_ISP_ERR);
+> +		if (isp_err & RKISP1_CIF_ISP_ERR_INFORM_SIZE)
+> +			rkisp1->debug.inform_size_error++;
+> +		if (isp_err & RKISP1_CIF_ISP_ERR_IS_SIZE)
+> +			rkisp1->debug.is_size_error++;
+> +		if (isp_err & RKISP1_CIF_ISP_ERR_OUTFORM_SIZE)
+> +			rkisp1->debug.outform_size_error++;
+>  		rkisp1_write(rkisp1, isp_err, RKISP1_CIF_ISP_ERR_CLR);
+> -		rkisp1->debug.pic_size_error++;
+>  	} else if (status & RKISP1_CIF_ISP_DATA_LOSS) {
+>  		/* keep track of data_loss in debugfs */
+>  		rkisp1->debug.data_loss++;
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
