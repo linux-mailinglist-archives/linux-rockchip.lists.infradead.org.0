@@ -2,91 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38BC11DBAE5
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 19:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25AC41DBD1F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 20:42:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IgggLoZLPpn4zry/SpiU8Z/bzsfGWaAM1V7HxPyYtV0=; b=fFWdhjcYMyPzD/
-	Jci6etYGfGj1lFDza9Z14Boo/MeS6Rm0vg955XIRMBIA9Ok/HiUgusupUMFr7IE8vAPzpGCWuk2Oa
-	KRj63sd/rj/3WiruU25mY331Cxtbbv5cDPNKDj6oW+Zgdrv4vCZSJz+GUoIKkPpMEBk81exl6+aQr
-	EiwrDTqy7kruPGi0zSD7gc2ClsALvfeTnbxpTuCp7PBIhc4CHgcQHmM8FtQPXIncJ3TuSMt4uxvWr
-	m/IqXAQCTdYq61kTwCsdoMfAf5mLe13nV/ck87s3l5kT+KKg/Z/PtA+DgASMGgmNCvnWLi/N4fS3z
-	jB5Lj0d81AZm30dVflHQ==;
+	List-Owner; bh=o9HZaudJ33fh3MScnBPtnTy4DdOUTcy1/Go5h6vESIc=; b=kRngJr0263jxlQ
+	p02le2BdoDQoes2z9lWdrWy+aMHG00hUyZkti0FJdKRoBqy9h9Y5u9N7uKzQ34NCU772SY8BuTy/1
+	8C2m5aMmzMt5IaGFQvWvs/QOPfOdKpQd+ynonRKfV1/Eev1Cb062LT3u6dxOBb0S+OPpOGikH1dbZ
+	3sWSfxUeCafQNvH2zcIuJCkDbXRxAkFAYLTTjbyVpIMuLsN8Fk6qVA2r2zE8HFCjvlJLcdHly54Uk
+	aVvhmT9rD0U4/p6ET9rnCGSIzmK4F61PmTEoAzfUf8X6MYy7dQXHcflOOD0A2hB/fsHC/hfpaw3uC
+	wSxMSrjJTR18BjS96xEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbSIi-00016E-RU; Wed, 20 May 2020 17:14:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jbTfQ-000173-Rd; Wed, 20 May 2020 18:42:12 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbSHZ-00006x-2e; Wed, 20 May 2020 17:13:35 +0000
-Received: by mail-pf1-x441.google.com with SMTP id x13so1858600pfn.11;
- Wed, 20 May 2020 10:13:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=arFxXWIilJc8yilr6THATlL+mM94NJsqQ+xYHRPI28o=;
- b=eQ8ZueCAAmKF481dSsTzEfptXR3E56PhUUH9kEaE5lcwybZBOx13OC+Xi9wkqf8yJl
- eMd1L2e88OjzLZqUwjft5kT4q1ykz42UQV6MVOEia2NuXW7QNNZ7A34YWkJl2fTeKnXd
- x57lOvCSMymfWq5CIUCMSTFmCQ+QTFXWfQxGIl0MyJIAsxvIWaGoYNiaL9FYDbjjsASH
- yrczDke/1e9q5QAzunll1NsU34AZd3fkwQAvuZ8SyOMsHhrXwdE+C5ocxHRWMG94nAuo
- mFEYgVnx+pQB6bpLbpXdPCQm3xxHlbpl8IjeNyIIG5xyCXVHShY2DHAh3VorO1Fq2dCg
- 0CDQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=arFxXWIilJc8yilr6THATlL+mM94NJsqQ+xYHRPI28o=;
- b=d3/BYbTd8ailEsr9bN5Nh+daPpn8jix0LTpCOH5sIoPcI4RgLSL6q8miikICoVMLQM
- EAB5H6hfWjo1X2RPpZyrfFQCfAehMU2Kz41b578dLtlb0WfViQPfrHOzTMIXEbiMLW12
- eUrCThnmdcmmi9lO1gZtT2vRKHhr0sMIJM6pMlKH/Z20VTPMTR6CJDO48p3oRvwnyt+k
- BJZ+jgGq4D0Hk2H9KcR4IXoTVvjTr5FjlK2S3Zm8VhIczEhqZrNBEsbBAEJLrARneBdz
- 52Fm48hOAVwICqf7OYZcNYKQ+eFA6nfHSKbv2/aM1cFKBXJiYF7MQIeKeIa0Bp389P4F
- LpfA==
-X-Gm-Message-State: AOAM5331BHF10ev6mSGuubqB+laWd9DnUpYuThUz7xyPV5HsPDcHcDhy
- 4k1L+pElVAAcNJ17vujgvDth31OA
-X-Google-Smtp-Source: ABdhPJzPAJW/ATUYvu+6WYxM82y1cMxLnDMGV4gQ97nd84re0gsoxcS0Os/XSLxbUD3hZDiX3Ghrxw==
-X-Received: by 2002:a05:6a00:150e:: with SMTP id
- q14mr5106146pfu.325.1589994807327; 
- Wed, 20 May 2020 10:13:27 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
- by smtp.gmail.com with ESMTPSA id e1sm2512647pjv.54.2020.05.20.10.13.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 10:13:26 -0700 (PDT)
-Date: Wed, 20 May 2020 10:13:24 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Johan Jonker <jbx6244@gmail.com>
+ id 1jbTfJ-00012M-R7; Wed, 20 May 2020 18:42:07 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1jbTfE-00040R-0g; Wed, 20 May 2020 20:42:00 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
  property
-Message-ID: <20200520171324.GS89269@dtor-ws>
+Date: Wed, 20 May 2020 20:41:59 +0200
+Message-ID: <4727344.YYj2SkWT1V@diego>
+In-Reply-To: <20200520171324.GS89269@dtor-ws>
 References: <20200520073327.6016-1-jbx6244@gmail.com>
+ <20200520171324.GS89269@dtor-ws>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520073327.6016-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_101330_497829_7E7649CE 
-X-CRM114-Status: GOOD (  14.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_114205_875711_75ECFB90 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dmitry.torokhov[at]gmail.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,54 +59,70 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ linux-input@vger.kernel.org, Johan Jonker <jbx6244@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Johan,
+Hi Dmitry,
 
-On Wed, May 20, 2020 at 09:33:27AM +0200, Johan Jonker wrote:
-> A test with the command below gives this error:
+Am Mittwoch, 20. Mai 2020, 19:13:24 CEST schrieb Dmitry Torokhov:
+> Hi Johan,
 > 
-> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
-> touchscreen@3e: reg:0:0: 56 was expected
+> On Wed, May 20, 2020 at 09:33:27AM +0200, Johan Jonker wrote:
+> > A test with the command below gives this error:
+> > 
+> > arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
+> > touchscreen@3e: reg:0:0: 56 was expected
+> > 
+> > The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
+> > was shipped with different addresses then the binding currently allows.
+> > Change the reg property that any address will pass.
+> > 
+> > make ARCH=arm dtbs_check
+> > DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
+> > edt-ft5x06.yaml
+> > 
+> > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> > ---
+> >  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
+> > index 383d64a91..baa8e8f7e 100644
+> > --- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
+> > +++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
+> > @@ -42,7 +42,7 @@ properties:
+> >        - focaltech,ft6236
+> >  
+> >    reg:
+> > -    const: 0x38
+> > +    maxItems: 1
 > 
-> The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
-> was shipped with different addresses then the binding currently allows.
-> Change the reg property that any address will pass.
-> 
-> make ARCH=arm dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
-> edt-ft5x06.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-> index 383d64a91..baa8e8f7e 100644
-> --- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-> +++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-> @@ -42,7 +42,7 @@ properties:
->        - focaltech,ft6236
->  
->    reg:
-> -    const: 0x38
-> +    maxItems: 1
+> Should we have a list of valid addresses instead of allowing any
+> address? Controllers usually have only a couple of addresses that they
+> support.
 
-Should we have a list of valid addresses instead of allowing any
-address? Controllers usually have only a couple of addresses that they
-support.
+from what I've read, the fdt touchscreen controllers are just a generic
+cpu with device-specific (or better panel-specific) firmware, which seems
+to include the address as well - so it looks to be variable.
 
-Thanks.
+But of course that is only 2nd hand knowledge for me ;-)
 
--- 
-Dmitry
+
+But also, the i2c address is something you cannot really mess up,
+either it is correct and your touchscreen works, or it isn't and and
+adding entries to this list every time a new address variant pops up
+feels clumsy.
+
+
+Heiko
+
+
 
 _______________________________________________
 Linux-rockchip mailing list
