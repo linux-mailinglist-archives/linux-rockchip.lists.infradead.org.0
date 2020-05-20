@@ -2,59 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0CF91DA642
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 02:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0226E1DAB07
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 08:48:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+ambd9IIQ2f2sUX8PwWTTzeN6rT3u3TObBvJM1np/b0=; b=Malb34JElhVOad
-	is3rSn+U+eEmFLemAkDWy/7g9vWrdzoeHmXv/v3DQOMsRYUzEDjEcaSewyVH9qO/uMBEtXCznTjx3
-	lwjjca1k3EJc8MZWy7Dc2MkmFXaRyNGOlPAOc6+alWvSFlSb4Z4T0urIoAKnWAFVXU20pkIwDc1zs
-	ZvflwFmmdhRuC9TM7GNsNjq3kfOmNdrYm60AJnnRrl17ryetIEl1a4ca/aNbLHJOLKiPBbq+z+nca
-	g8mp2+wnogS10MnPBsctB4l6MBzAd/rJlX9VW5NLg3cLoMjzy5Xx+0wV6M2WQO0uW3F7C7qAGNK9b
-	UATZCG10bG6bZtvDtqyg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=C5Dru7adBOQ6KhOgXGTOk+GEKeQLMysD/Rd/ZdqsBFU=; b=fQV
+	sFKPFFaJn10ac0ISOlemrgrAkCaZ7+3utezamTk/lozXplmYtH2vFLGkprKauYrisz656rv2SUOS5
+	hkJzvgR9tAGRTXgwmWPNQQ2xuHRSSFYsz8K33Qi8MUf7xe2nOQYCUm9Imc5wtlyI3XKH9Yf0G+fSz
+	nFkTzgHxNA/4u7jrczCX32dkbhn5fn0fBIXn2B3fMHdhQavJD7Rr8njuXWIa/IXp9p8xkoPy4vGZZ
+	x+GqtSuewXcQ3IiVwtZFDr5Dk8L7aBRMTPNvgMmLWkYF4LIqSPAgfoTK9X+fv7s6Zxj3aPD9W6PRN
+	xX80lBpoTeHfz5UeIDrt/pZJTb+UJ3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbCPA-0008UJ-E5; Wed, 20 May 2020 00:16:16 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jbIWp-0003zG-RL; Wed, 20 May 2020 06:48:35 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbCP7-0008TG-ME
- for linux-rockchip@lists.infradead.org; Wed, 20 May 2020 00:16:15 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id BB7BE9CD;
- Wed, 20 May 2020 02:16:11 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1589933771;
- bh=kNTzsKsJx+6g7jMtDq1n/OJWUGzETmvJHDPbq0LJg70=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=M9YQyzvLGLU/iQxCAJ+y68yX+I19svaXWho1aNo8PkT+Bs+TJGvKx2wjLB4pCcOeN
- i+2e8GYNIebs/NVqO4MmDFZ5mWKKfRj0Zr3alAfOeym0flF2RKjlY0zRAl4xNsPVhR
- 3I92zoIETt9I4y2JPnVf0XlUcMhxfCS2W+WVJPDI=
-Date: Wed, 20 May 2020 03:16:01 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH 2/2] media: staging: rkisp1: stats: don't set stats flags
- in rkisp1_stats_send_measurement
-Message-ID: <20200520001601.GN3820@pendragon.ideasonboard.com>
-References: <20200509152904.26348-1-dafna.hirschfeld@collabora.com>
- <20200509152904.26348-2-dafna.hirschfeld@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200509152904.26348-2-dafna.hirschfeld@collabora.com>
+ id 1jbIWf-0003qX-Oo; Wed, 20 May 2020 06:48:26 +0000
+Received: by mail-ej1-x643.google.com with SMTP id se13so2027412ejb.9;
+ Tue, 19 May 2020 23:48:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
+ b=nGd6b7Dmq5fujZcS3MoQfhIQcFbakcZHSlnkHkKOonOhJzlAIQ2EqBFSR3kA9jz6KB
+ bzDKVDex2C2sJ8Mtvle5+hYt82nW1O6fR6uHFL7igg005rcmVQWhZX9wOwhhw40GM2lC
+ oCheyCEbG5K5EK4+9Y+Wdi7YRT9NsPNcTl22+Xg0bSIVuW/ySFzAdMkiCuj/Zmc1tZr9
+ e0RPv0VCcWQfBw7h8bABZnyHYxvLGBCpLpubKm+/b9bNWNgKwtGlbfpXkVYCMjNuA60N
+ JNsy/aWLkK+LlnkWPVNSVosBcT0pszz2Otg4kJIIEn2f501Ja2r2JuR7js38Z04Bx/Ra
+ E6zQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
+ b=alprmmFFrumKA34yizhmz5wG/arPaIJXzu2YopxSDjsPtwy0sbFhJ0ELrUumnqioYw
+ 2K33Zl+tflbry6z5Y6ae1jK/4sa/R+kcDZ9faGmScVlyReYBAQrm/WscTZD7TOq9vz/7
+ PrrQmq1FVTeqPyyBGPlLcJBRSgRlieUGen3YoNF0ISdNW9fOws/CWW7SbL9Ld0E06mAe
+ UwiQtrQ5aZLBAbQz98BaiWzmJSXm+kl2M+iXUMrt8wEA8H175ose9gy8bVZrRW2RW2jp
+ kM8nXtM5V52FQSiefyplzZY50gNJLYoG9xwxb61aCoH3/acYx9QJ14Hfaqc2nkRkx40W
+ 3vMQ==
+X-Gm-Message-State: AOAM530i57r66WAoys2k+BplzzAq4DlaXV+JP+xKQ76tRCaUtD1wjpxo
+ IGM/R8Yb2PN46/Tg7uV0dBTn/Ok2AlM=
+X-Google-Smtp-Source: ABdhPJyoxv+ytT4N7FAeNxPJ21oQAAVQppQVdoT5uByDY/gnRHN6jAIqKTGnnwy5rtDNXvr3TpEVbA==
+X-Received: by 2002:a17:906:c7d9:: with SMTP id
+ dc25mr2412023ejb.305.1589957304221; 
+ Tue, 19 May 2020 23:48:24 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id t23sm953961edr.71.2020.05.19.23.48.23
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 19 May 2020 23:48:23 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [RFC PATCH] arm64: dts: rockchip: fix dmas dma-names for rk3308 i2s
+ node
+Date: Wed, 20 May 2020 08:48:16 +0200
+Message-Id: <20200520064816.3954-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_171613_876121_698D7CD6 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200519_234825_806932_A1234473 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -74,71 +96,46 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
+One of the current rk3308 'i2s' nodes has a different dma layout
+with only 1 item. Table 9-2 DMAC1 Request Mapping Table shows that
+there 2 dma sources available, so fix the dmas and dma-names
+for the rk3308 'i2s' node.
 
-Thank you for the patch.
+10 I2S/PCM_2CH_1 tx High level
+11 I2S/PCM_2CH_1 rx High level
 
-On Sat, May 09, 2020 at 05:29:04PM +0200, Dafna Hirschfeld wrote:
-> The flags that indicate which statistics are read are already
-> set in the functions that read them so there is no need to
-> set them in the function rkisp1_stats_send_measurement.
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> ---
->  drivers/staging/media/rkisp1/rkisp1-stats.c | 13 +++----------
->  1 file changed, 3 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-stats.c b/drivers/staging/media/rkisp1/rkisp1-stats.c
-> index 8351bda0be03..0616793ae395 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-stats.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-stats.c
-> @@ -356,26 +356,19 @@ rkisp1_stats_send_measurement(struct rkisp1_stats *stats,
->  	cur_stat_buf =
->  		(struct rkisp1_stat_buffer *)(cur_buf->vaddr[0]);
->  
-> -	if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE) {
-> +	if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE)
->  		rkisp1_stats_get_awb_meas(stats, cur_stat_buf);
-> -		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AWB;
-> -	}
->  
-> -	if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN) {
-> +	if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN)
->  		rkisp1_stats_get_afc_meas(stats, cur_stat_buf);
-> -		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AFM_FIN;
-> -	}
->  
->  	if (meas_work->isp_ris & RKISP1_CIF_ISP_EXP_END) {
->  		rkisp1_stats_get_aec_meas(stats, cur_stat_buf);
->  		rkisp1_stats_get_bls_meas(stats, cur_stat_buf);
-> -		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AUTOEXP;
->  	}
->  
-> -	if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY) {
-> +	if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY)
->  		rkisp1_stats_get_hst_meas(stats, cur_stat_buf);
-> -		cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_HIST;
-> -	}
->  
->  	vb2_set_plane_payload(&cur_buf->vb.vb2_buf, 0,
->  			      sizeof(struct rkisp1_stat_buffer));
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index ac7f69407..79c1dd1fe 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -564,8 +564,8 @@
+ 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru SCLK_I2S1_2CH>, <&cru HCLK_I2S1_2CH>;
+ 		clock-names = "i2s_clk", "i2s_hclk";
+-		dmas = <&dmac1 11>;
+-		dma-names = "rx";
++		dmas = <&dmac1 10>, <&dmac1 11>;
++		dma-names = "tx", "rx";
+ 		resets = <&cru SRST_I2S1_2CH_M>, <&cru SRST_I2S1_2CH_H>;
+ 		reset-names = "reset-m", "reset-h";
+ 		status = "disabled";
 -- 
-Regards,
+2.11.0
 
-Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
