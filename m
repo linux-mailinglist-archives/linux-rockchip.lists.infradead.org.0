@@ -2,87 +2,117 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A48C1DAC3F
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 09:33:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D33F1DB0DC
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 13:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DuhpCKY5kcYMoliKUIoSfOBJd0OFENl0j7l6wLl7nvA=; b=Hp2
-	87O2wIhVsql9g9dnjZvZeSWoPBHxXk/ZQ/ZuBE0n09lPt4u0ji0HfsID47EnKZDE9DXeGPhmVbpCm
-	Q+jWdgY/LD2Iyoz73F9d990+bSYnDVHklSvR8s55y4oV4B60vnRh1ZrORqGvIUQxfy/0pXABzz6w7
-	JZZqrZi5rldSOBzNhRv/fVgJGbC9/SfumIhvu6Jbv2jadkI1phSZzl2i5jCxX5aggSFllDqk03DeL
-	U0tB7rcG5kBpZ+ygGaKKyGeaeoKmweKeHODRvPN/KpEm5oc1UOQum79gcxAbw+Jr33YyWaVRt2RDe
-	GjUm5uKzYXZitrXFStPtos2lOymN30Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=AQ4dNtPNJNpQ4xueGXsEg3gpuLSyQXCa90rF9eI8c5E=; b=Jrghm48bJW3vTKmDycuWWvj5HZ
+	qwyGDAnwA/f1ESU8jNj8YxnT6Xp6zkLq7PgvsEXukwW2CH0efMYcVLYqrgrayXPAlxYev1Pvh3ODE
+	riphKPP3SYzdJocWDB1XlsuB0677Nl9gMulZ7bjTUiTDkKHaH2tfiseDnMWrMfVZZFKxxwgGZ6vHC
+	whOmy8ZxidyBhACGzIN8/M6GryMz77v13LNR+eqojo0IJw009zaX3S+j3PSV5vqhbslzCzQ8pjX+k
+	0eJMmzi2iaHiNI2jOHGprU5Lw6bGFsE7sFlucKT35tV2k5k1Ddi0QNGxhDgv5AhXq1uoDNoNbx0GJ
+	tG75hj0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbJEc-0002i6-9C; Wed, 20 May 2020 07:33:50 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jbMSr-0003Rz-2n; Wed, 20 May 2020 11:00:45 +0000
+Received: from mail-eopbgr70070.outbound.protection.outlook.com ([40.107.7.70]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbJEN-0002VW-Ap; Wed, 20 May 2020 07:33:36 +0000
-Received: by mail-ed1-x541.google.com with SMTP id h16so1838176eds.5;
- Wed, 20 May 2020 00:33:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=JhMvQ6wT2z/w9jJ1AFzBZlKrPInU1Ytn40KkatChIbI=;
- b=OMMvxKw98HtRI0PuS3gCbRt7U0oBV+X/jYhUXMOzZtBBWsa/2zBaiAzySqnvgAbuUi
- rXiyqAkfovsELMtD4msd6trgfju0pOHGSoBT8VZCDGNAT9XjF3ah2vTD9OM2tgYxED/z
- 4joKMkb917LW6jRKmKdPT6OHqdRIL5Zo3Pc8DqqCiKCb4Y06YOtLsdpG8s7JPa6+QHNB
- k7cxDzlzU8ASGhhBQERLxZYTsEsEROjs+YYtrC46x8k5nl6CtAp3k4uGaMcaa5zV+kAo
- J+VMdZa5vjFOJcp8nW/y73ommkh2dISrDXYp7hr+UhhVopWkTZ5VlGnZt1WKydQHDQus
- wE1g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=JhMvQ6wT2z/w9jJ1AFzBZlKrPInU1Ytn40KkatChIbI=;
- b=LzTrYYlbVTVYO+HLaocGNaybD2MIrR9tqpFM8p8evHW82meodbnUUB959EgTJZSAya
- VqVRpQo2XjOnMdAjykhwQrWYsQnqmAuVvjQNtS4MvVt/v7ojB1KAst00hlsTJnyY3eSW
- bTkZ0G+PHLhT0Fq9dKjZhv0XGIrz6OFhKSa/maJXRO9PbJuIlNBS0a1pIkahtkdHpXjp
- t2Ys5spbMss9W3hAo0+QyC+m8ttWR+kSpDqeKPp4dNT0EB9/cXtsdQZ/l8uDX0nQepBt
- 4IAXtOdq+zqcoo92rlTNQa3zlrIf97C1lTNerHWrSUEMdKsqeY/UrAGd9Fuqn3ISS3rT
- 6sbQ==
-X-Gm-Message-State: AOAM533GOPI5hgf8ypP+1G8fsX6enN1jC+iull1rDbxgqHV+FLqUr5un
- mZklstlkTVmW+SlAVmUpPGk=
-X-Google-Smtp-Source: ABdhPJwB4O0WJOY8eMzSBtHOUZMdLBdwqnBOUTE9viaGo0ldgqm4CzJ5o972WDJ7A+EM4U1tBXuh0Q==
-X-Received: by 2002:aa7:c4da:: with SMTP id p26mr2186573edr.184.1589960013840; 
- Wed, 20 May 2020 00:33:33 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id u10sm1057252edb.65.2020.05.20.00.33.32
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 20 May 2020 00:33:33 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
- property
-Date: Wed, 20 May 2020 09:33:27 +0200
-Message-Id: <20200520073327.6016-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jbLH0-0008C0-6U
+ for linux-rockchip@lists.infradead.org; Wed, 20 May 2020 09:44:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Wq3fGbXQnlCgZfRGQW9j4EiginBoGWFfz6iGWvpy+2cD2BulsovKGiPeUjFEU5HUfRi8KWPAFl7LoDHnor+EaCSvS4EW00k3D0/m48EjAAjR/I8nVyjDvZnkQ0G4OyG4+aAYimG/1t8NZHDpQCm6i7JcQ34tV7N/dxUao+xK1qYOeLQlcQpdFicDQ7HkDnMtjesdE1tt6CMDgnjURTC+lRNsRCyEZTKRD6VpIMX0q7AmPRSqv23CLFHuNoeVgU1br+po5gqM12r8obV8DOZt6MMGPskEI/iy2AZTeJygE1mwX2pgMO0rbroU2/X75rq9CrRhsgoVgeDhJjQf3RLUhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YhpIo5IXICZCc49okWGO7vquKEaBVysIZkHXiyNK3SI=;
+ b=B+QNYldStZYn5NJhKzSWtpi3Locg86nRdYr+HEr0G6j6jNxr3GW2MjJJQ4rBs5HY7rLA2qZpqC2dSYKen0ygYji3z28/fb2jIzWjDfacoLE5mtdJf9EyfSF7yBsxdnta1s3vY0L859+lI3gL+icnOcDg7JRQWwQHILiNJl44trTHfZbI1/pAeUvd6LILduAR1o82AoJ524UEums51y/ihN/bhLlqXZ5rMR77R0tH4aKCsTs6vMm15tzzNmBZGlHwb1AyVCIqlBJ6Flj998mqMJQBejgLaX89kh08cnGSBRjlz895W2fYYHYjb6vLgsnd+zbkFVCLmq6V06yUmDzPmQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nextfour.com; dmarc=pass action=none header.from=nextfour.com;
+ dkim=pass header.d=nextfour.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=NextfourGroupOy.onmicrosoft.com;
+ s=selector2-NextfourGroupOy-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YhpIo5IXICZCc49okWGO7vquKEaBVysIZkHXiyNK3SI=;
+ b=QT5FsSea6nEwF4HFDTSyNI5O4BO9DDQs5KULJLep1Vyn0gMWHkXmqtEZgyWIaK0OGWRTIkIKKBvl41gEzK1mOJlPkEkjOv4556a8D7uiMy+DuedOhmrspGofnzrxnNKaGHQwts+ZlZFN82WZb88T9r/Wzy/O8hklrtBLaQxbsfg=
+Authentication-Results: lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=none action=none
+ header.from=nextfour.com;
+Received: from HE1PR0302MB2682.eurprd03.prod.outlook.com (2603:10a6:3:f5::14)
+ by HE1PR0302MB2652.eurprd03.prod.outlook.com (2603:10a6:3:e9::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.24; Wed, 20 May
+ 2020 09:44:20 +0000
+Received: from HE1PR0302MB2682.eurprd03.prod.outlook.com
+ ([fe80::b10a:8b9d:1a18:6b2]) by HE1PR0302MB2682.eurprd03.prod.outlook.com
+ ([fe80::b10a:8b9d:1a18:6b2%9]) with mapi id 15.20.3000.034; Wed, 20 May 2020
+ 09:44:20 +0000
+To: Johannes Berg <johannes.berg@intel.com>,
+ Emmanuel Grumbach <emmanuel.grumbach@intel.com>
+From: =?UTF-8?Q?Mika_Penttil=c3=a4?= <mika.penttila@nextfour.com>
+Subject: iwlwifi firmware loading problems, rk3399
+Message-ID: <9122588d-683a-936e-1305-c34124e6702c@nextfour.com>
+Date: Wed, 20 May 2020 12:44:18 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+Content-Language: en-US
+X-ClientProxiedBy: HE1PR05CA0235.eurprd05.prod.outlook.com
+ (2603:10a6:3:fb::11) To HE1PR0302MB2682.eurprd03.prod.outlook.com
+ (2603:10a6:3:f5::14)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [10.10.99.2] (194.157.170.35) by
+ HE1PR05CA0235.eurprd05.prod.outlook.com (2603:10a6:3:fb::11) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3021.23 via Frontend Transport; Wed, 20 May 2020 09:44:20 +0000
+X-Originating-IP: [194.157.170.35]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 297a1b3a-eab8-4942-37aa-08d7fca25ef7
+X-MS-TrafficTypeDiagnostic: HE1PR0302MB2652:
+X-Microsoft-Antispam-PRVS: <HE1PR0302MB26525B5FBD492F5BE13855D283B60@HE1PR0302MB2652.eurprd03.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
+X-Forefront-PRVS: 04097B7F7F
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: y9TSfaRDviHYV6RRrBOEmLFwlOUpjoE8lyguXUjedKqnEX2qEgknc5gcZoXE9h21MzbxWudwtM9g3Dm57k5y5+ZqkXtoaA5CI4b/fzbr6G2ioSequxeHP7Ic0sf9FKxoqRIyQHCo73KmyoO120qFOW9qHByfg6HqkPGLjIK/3stbcUQUpIzxeuv/w7kxP57w//V2dJB75xsZFJ3qjUxBibfecdpYbZRz1xeFrL7cH+jgOhpqx3XGEFyvCKeV2EChv1x2pDWoj3Jbu1CP2aiuKM3x3g7noieCzS4tI0+yFMCiFfh8wN8jLAXPYJdN24NMJYfTuSZ4fkgmLFaoEsVDJzIv0nmdULITA00elzDn8JpZKNrNx1vfUmtsWJmZaxzlIFFUQx4Wuu2GzIaEQlB6+n2x46cYG+lsZdscPHsX33TktKyTtT8O8B2HiWkQ5brgj8p37T8mxXpfNv+nzr5PnOSteG+XbXNTwXlQQu6eW9d23m+9jLqAI62xPhFqNW6R
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:HE1PR0302MB2682.eurprd03.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(39830400003)(136003)(346002)(396003)(376002)(366004)(31696002)(8676002)(2616005)(956004)(52116002)(6486002)(316002)(86362001)(16576012)(110136005)(2906002)(8936002)(66556008)(31686004)(186003)(4744005)(66946007)(16526019)(26005)(508600001)(66476007)(4326008)(5660300002)(36756003)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: XG1O4KTqhPk3gW2Mdo+Z1E09CIc1vdTalMcMCa2kYKgvjIsak8rW+xYHHjovZqPYK0G3K1TXj3H6bRhIX9GE0IhWy9+sW03i7yz2QsniyN1Fpm5BEfsZZC7zT5vpAYmnux7FoY0u0XI0um6GhWIoVaCPqi4TT6XuP1c8q6djqYJzQxjZY6/P3lykHXIOkkgxthpgRtwWRgoA+ZugGiw0KhrM42xCsU+JugCKCRb4QaAdZjvd7nVZpTULJWg9mnlzl5S2zKTFEr+kvGB8Ycvx6mK7uBRl87Ewn5M5tu0lEqF9EdFJsgsCcMr8pQZyogPaGzvfBHn0AUDEP7DBR3u3godxYXViBM7NVbr/Yo9YGSc/Au/8eu3Ywt24ThduSiVDUYi1Xn+D/fvzbk6rGthnV+IDHsdLepoNEbmwiAKZ83T25cpXnb32en/5RMcTdE8a9R7iC4XI5VCRz1pliCvRUu3S0FELzsAhNWccJfvkZinjUgM508O2PvsR3FFBJT5V
+X-OriginatorOrg: nextfour.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 297a1b3a-eab8-4942-37aa-08d7fca25ef7
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 09:44:20.6994 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 972e95c2-9290-4a02-8705-4014700ea294
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: SsfbVDY0iMzNNon98Zhx9pS1lPZ95wrGp5J9YzJUPW58yYvxNkKCkGgoLOCHaS79a2YJIyV31mSj3TgScFg7fV4srjL8ySHdX+Xyzq0rSf8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0302MB2652
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_003335_366821_90F4AF76 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200520_024427_019559_B18D5089 
+X-CRM114-Status: UNSURE (   5.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.7.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.7.70 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,52 +125,21 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dmitry.torokhov@gmail.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, linux-wireless@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-A test with the command below gives this error:
-
-arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
-touchscreen@3e: reg:0:0: 56 was expected
-
-The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
-was shipped with different addresses then the binding currently allows.
-Change the reg property that any address will pass.
-
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
-edt-ft5x06.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-index 383d64a91..baa8e8f7e 100644
---- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-+++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
-@@ -42,7 +42,7 @@ properties:
-       - focaltech,ft6236
- 
-   reg:
--    const: 0x38
-+    maxItems: 1
- 
-   interrupts:
-     maxItems: 1
--- 
-2.11.0
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGksCgpXZSBoYXZlIGN1c3RvbSBtYWRlLCBSb2NrY2hpcCByazMzOTkgYmFzZWQgYm9hcmQgd2l0
+aCBhIHN0YW5kYXJkIE0uMiAKc29ja2V0IGZvciB3aWZpL2J0IGNhcmQuCgpXZSBoYXZlIHRyaWVk
+IG1hbiBkaWZmZXJlbnQgY2FyZHMsIGxpa2UgSW50ZWwgOTI2MCBhbmQgSW50ZWwgQVgyMDAsIGJ1
+dCAKYXJlIGV4cGVyaWVuY2luZyBwcm9ibGVtcyB3aGlsZSBsb2FkaW5nIHRoZSBmaXJtd2FyZS4K
+CiDCoCBGYWlsZWQgdG8gbG9hZCBmaXJtd2FyZSBjaHVuayEKCmV0Yy4gSSBoYXZlIGEgbGl0dGxl
+IGRlYnVnZ2VkIGFuZCB0aGUgcHJvYmxlbSBzZWVtcyB0aGF0IHRoZSBpbnRlcnJ1cHRzIAp0aGF0
+IGFja25vd2xlZGdlcyB0aGUgbG9hZCB0byBwcm9jZWVkLCBpcyBub3QgY29taW5nLCByYW5kb21s
+eS4KSSBoYXZlIHRyaWVkIG1hbnkgZmlybXdhcmVzLiBEbyB5b3UgaGF2ZSBhbnkgcG9pbnRlcnMg
+d2hlcmUgdG8gbG9vayBuZXh0PwoKVGhhbmtzLApNaWthCgoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Ckxp
+bnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
