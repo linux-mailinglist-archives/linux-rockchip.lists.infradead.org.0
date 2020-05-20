@@ -2,55 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C769D1DB124
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 13:11:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5EA1DB329
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 14:28:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qtn375gKSgxIZ8Kp4Epo3XxkR6zcIGhf2Gx7apIfzjM=; b=MAS4Geuv9v7ebq
-	zFllGnbayDIj/i5rbY7dp72an0Sq+ZX8jCgBPqvsFKUyW/WKvstxS8E3Xxk5smBu3aluTOJm6/cJx
-	HG0KdiDHbPstLYWyj8oAvFCP28kJpYgDBzCSsBAyutzKqWrggWdaQCFA86k/H3akOPbTd3GgYHvhX
-	WtL7aDhGPdxmnLwBbRJcXOg/KTnBv48dORgSea1a03MrHXOQVzTeoFY6i3vC0KuA0zhF/HsmOJFFm
-	eXYSlb0jzDsgqnSyoK1c50oRI/qSMMX+N5yjpS7L1IgDlXc++/Kb0VVNoaadylR193KmPhGCKQzIC
-	na+m4Pv39a6CZ1ZVwVzg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qwohkwKLUHa09KaCTtxnGNByPLOd5KDXpHVjvyvNqdo=; b=Ed4tI8GyaZfy42
+	9IDg9cPATKVXqgb6oUmbVQ1QcNAlFoj9vCjPTfnVSDCeman99GdA/Pe/P9EatuXAq81uY3MFi0RP9
+	rTyy0MBzIdjlltF1hoigv9xK/pROh02UkeqNgyBCaFbwXLwpHrudmrRgT8I3l1hibKT+9k4f1PBG2
+	5eiRwig4q5lNxoRB2pJl4wN4ckU7vPgmAKfzbzxVl34RCmFEsZYF1EJzkwMFnGqSQWVpTko8eFTay
+	sj+UqTgv2gHgUG9YwnSfA2FFrmwXOkBI9BSyjk71LhKxKJ0wz1p5P2oLklMWongSS6i4NNukOjdIo
+	+NaHbT83Sj2QYKbcK+Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbMdb-00043n-TY; Wed, 20 May 2020 11:11:51 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jbNpL-0003j3-79; Wed, 20 May 2020 12:28:03 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbMdX-0003zv-5r
- for linux-rockchip@lists.infradead.org; Wed, 20 May 2020 11:11:50 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id AA97F2A2B8D
-Subject: Re: [PATCH 3/5] media: staging: rkisp1: stats: use spin_lock_irqsave
- for irq_lock
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
- linux-media@vger.kernel.org
-References: <20200512120522.25960-1-dafna.hirschfeld@collabora.com>
- <20200512120522.25960-4-dafna.hirschfeld@collabora.com>
-From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <2d3f52d2-73d7-1e8d-eee3-669012854491@collabora.com>
-Date: Wed, 20 May 2020 08:11:37 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jbNpI-0003ih-HY
+ for linux-rockchip@lists.infradead.org; Wed, 20 May 2020 12:28:01 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id v192so705516vkd.3
+ for <linux-rockchip@lists.infradead.org>; Wed, 20 May 2020 05:28:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iTSpuOn+eOiS5F2tW+aa6K9KavJrkW2XpL8GASe/3EQ=;
+ b=ZJZF0s47BiUZI+F85ZQ/KV58LF7ji2q+KFLvBJ2XZ302vzJCNJ039/dPO3bHj1ZPtB
+ pJKW5aCXa6blw8zRD8SIaIxTyryOtTan8+Pl+wAHkJ0Xo6b2oDG5O7v5ekwC24jn2y9d
+ nd/b1j13PoD/2ellIblaAg0pBrXGjTZhmT6T6EeuA2yoRwAxcetwnm4SPnngAcdPgf/i
+ MZ3uKXhnpc5ImfzZ3Bp25del2ZqvsrFYMn6WvtwHa6fPvJEP/UPFKK8bQ4DdO/ZKeftt
+ cCqpvHOL5WEMx54c5VCPYSDcjGaOJzqiMJ1tcYhOrtu/XiNs6ti+vowlOzWD2c+cTFrQ
+ D2KA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iTSpuOn+eOiS5F2tW+aa6K9KavJrkW2XpL8GASe/3EQ=;
+ b=Bx9rkN5aSkxhQKn9o49neb3dThipI2i33WhrG2qNV4sUJAhdbqOeXnvpQcI10eZCex
+ 9MWJ/b69+u0gk2vVIYAnQfJoIyGHFFkQwYL0aL7x99Km6V0F1MAnhppcf5ILWOoi+daJ
+ 1nStqXtPs3lQPF2pYvpHstVDoAKpv2kdB5AprGBB5VxmOfVPUVOsDGBWUg3o2dbVO+ST
+ bGv8rUiTk9wlySN8It6+cjddFriJ/BypF/yhP6nN3x2M7mci61sPVsncplQLTC0RAYi2
+ LFPpv7dv7ZOLdEtGrTX/EroupK4w/co5fDNhDjZ1vod44zhiJ1ZMvX6m2C3lChdHWPZB
+ a9IA==
+X-Gm-Message-State: AOAM532rMscnmtt+UCvNgH7zgMQl8crPZNgiaH1dMCkoXj5ceiyzbZfM
+ 4HOFXqHZamyVgW9yqQOZyO9G7rgNJC50Di0ns+g=
+X-Google-Smtp-Source: ABdhPJwi6gO3x2zPlKACBRNtmyz9MZkVP44O+i7txJYBnIyawpLq8rhQvBeFmSWczOcWADb1Cg+F6WhAQyq9T6RAsVg=
+X-Received: by 2002:ac5:c92c:: with SMTP id u12mr3515908vkl.93.1589977679364; 
+ Wed, 20 May 2020 05:27:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200512120522.25960-4-dafna.hirschfeld@collabora.com>
-Content-Language: en-US
+References: <9122588d-683a-936e-1305-c34124e6702c@nextfour.com>
+In-Reply-To: <9122588d-683a-936e-1305-c34124e6702c@nextfour.com>
+From: Emmanuel Grumbach <egrumbach@gmail.com>
+Date: Wed, 20 May 2020 15:27:50 +0300
+Message-ID: <CANUX_P1q22J6ONRqTCDwwEMtmbGbCmS=C1WK6Zz0OqG_v2qcSA@mail.gmail.com>
+Subject: Re: iwlwifi firmware loading problems, rk3399
+To: =?UTF-8?Q?Mika_Penttil=C3=A4?= <mika.penttila@nextfour.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_041147_358727_076BC2C5 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200520_052800_596171_BC5A61FC 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [egrumbach[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,61 +93,37 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com
+Cc: linux-rockchip@lists.infradead.org,
+ Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
+>
+> Hi,
+>
+> We have custom made, Rockchip rk3399 based board with a standard M.2
+> socket for wifi/bt card.
+>
+> We have tried man different cards, like Intel 9260 and Intel AX200, but
+> are experiencing problems while loading the firmware.
+>
+>    Failed to load firmware chunk!
+>
+> etc. I have a little debugged and the problem seems that the interrupts
+> that acknowledges the load to proceed, is not coming, randomly.
+> I have tried many firmwares. Do you have any pointers where to look next?
 
-On 5/12/20 9:05 AM, Dafna Hirschfeld wrote:
-> Currently 'spin_lock' is used in order to lock the 'irq_lock'.
-> This should be replaced with 'spin_lock_irqsave' since it is
-> used in the irq handler.
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> ---
->  drivers/staging/media/rkisp1/rkisp1-stats.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-stats.c b/drivers/staging/media/rkisp1/rkisp1-stats.c
-> index 12998db955e6..5578fdeb8a18 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-stats.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-stats.c
-> @@ -403,9 +403,10 @@ void rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris)
->  	struct rkisp1_device *rkisp1 = stats->rkisp1;
->  	struct rkisp1_isp_readout_work *work;
->  	unsigned int isp_mis_tmp = 0;
-> +	unsigned long flags;
->  	u32 val;
->  
-> -	spin_lock(&stats->irq_lock);
-> +	spin_lock_irqsave(&stats->irq_lock, flags);
+I guess you need to debug your board :)
+The interrupt is not coming, then.. there isn't much the driver can do.
 
-Since you are moving this function to a threaded irq handler, you won't be in interrupt context.
-
-The spin_lock_irqsave() function disable interrupts for the critical section, are you sure this is
-required?
-
-Regards,
-Helen
-
->  
->  	val = RKISP1_STATS_MEAS_MASK;
->  	rkisp1_write(rkisp1, val, RKISP1_CIF_ISP_ICR);
-> @@ -435,7 +436,7 @@ void rkisp1_stats_isr(struct rkisp1_stats *stats, u32 isp_ris)
->  	}
->  
->  unlock:
-> -	spin_unlock(&stats->irq_lock);
-> +	spin_unlock_irqrestore(&stats->irq_lock, flags);
->  }
->  
->  static void rkisp1_init_stats(struct rkisp1_stats *stats)
-> 
+>
+> Thanks,
+> Mika
+>
 
 _______________________________________________
 Linux-rockchip mailing list
