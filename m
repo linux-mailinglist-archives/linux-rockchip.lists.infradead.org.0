@@ -2,74 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0226E1DAB07
-	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 08:48:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A48C1DAC3F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 20 May 2020 09:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C5Dru7adBOQ6KhOgXGTOk+GEKeQLMysD/Rd/ZdqsBFU=; b=fQV
-	sFKPFFaJn10ac0ISOlemrgrAkCaZ7+3utezamTk/lozXplmYtH2vFLGkprKauYrisz656rv2SUOS5
-	hkJzvgR9tAGRTXgwmWPNQQ2xuHRSSFYsz8K33Qi8MUf7xe2nOQYCUm9Imc5wtlyI3XKH9Yf0G+fSz
-	nFkTzgHxNA/4u7jrczCX32dkbhn5fn0fBIXn2B3fMHdhQavJD7Rr8njuXWIa/IXp9p8xkoPy4vGZZ
-	x+GqtSuewXcQ3IiVwtZFDr5Dk8L7aBRMTPNvgMmLWkYF4LIqSPAgfoTK9X+fv7s6Zxj3aPD9W6PRN
-	xX80lBpoTeHfz5UeIDrt/pZJTb+UJ3w==;
+	References:List-Owner; bh=DuhpCKY5kcYMoliKUIoSfOBJd0OFENl0j7l6wLl7nvA=; b=Hp2
+	87O2wIhVsql9g9dnjZvZeSWoPBHxXk/ZQ/ZuBE0n09lPt4u0ji0HfsID47EnKZDE9DXeGPhmVbpCm
+	Q+jWdgY/LD2Iyoz73F9d990+bSYnDVHklSvR8s55y4oV4B60vnRh1ZrORqGvIUQxfy/0pXABzz6w7
+	JZZqrZi5rldSOBzNhRv/fVgJGbC9/SfumIhvu6Jbv2jadkI1phSZzl2i5jCxX5aggSFllDqk03DeL
+	U0tB7rcG5kBpZ+ygGaKKyGeaeoKmweKeHODRvPN/KpEm5oc1UOQum79gcxAbw+Jr33YyWaVRt2RDe
+	GjUm5uKzYXZitrXFStPtos2lOymN30Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbIWp-0003zG-RL; Wed, 20 May 2020 06:48:35 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+	id 1jbJEc-0002i6-9C; Wed, 20 May 2020 07:33:50 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbIWf-0003qX-Oo; Wed, 20 May 2020 06:48:26 +0000
-Received: by mail-ej1-x643.google.com with SMTP id se13so2027412ejb.9;
- Tue, 19 May 2020 23:48:25 -0700 (PDT)
+ id 1jbJEN-0002VW-Ap; Wed, 20 May 2020 07:33:36 +0000
+Received: by mail-ed1-x541.google.com with SMTP id h16so1838176eds.5;
+ Wed, 20 May 2020 00:33:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
- b=nGd6b7Dmq5fujZcS3MoQfhIQcFbakcZHSlnkHkKOonOhJzlAIQ2EqBFSR3kA9jz6KB
- bzDKVDex2C2sJ8Mtvle5+hYt82nW1O6fR6uHFL7igg005rcmVQWhZX9wOwhhw40GM2lC
- oCheyCEbG5K5EK4+9Y+Wdi7YRT9NsPNcTl22+Xg0bSIVuW/ySFzAdMkiCuj/Zmc1tZr9
- e0RPv0VCcWQfBw7h8bABZnyHYxvLGBCpLpubKm+/b9bNWNgKwtGlbfpXkVYCMjNuA60N
- JNsy/aWLkK+LlnkWPVNSVosBcT0pszz2Otg4kJIIEn2f501Ja2r2JuR7js38Z04Bx/Ra
- E6zQ==
+ bh=JhMvQ6wT2z/w9jJ1AFzBZlKrPInU1Ytn40KkatChIbI=;
+ b=OMMvxKw98HtRI0PuS3gCbRt7U0oBV+X/jYhUXMOzZtBBWsa/2zBaiAzySqnvgAbuUi
+ rXiyqAkfovsELMtD4msd6trgfju0pOHGSoBT8VZCDGNAT9XjF3ah2vTD9OM2tgYxED/z
+ 4joKMkb917LW6jRKmKdPT6OHqdRIL5Zo3Pc8DqqCiKCb4Y06YOtLsdpG8s7JPa6+QHNB
+ k7cxDzlzU8ASGhhBQERLxZYTsEsEROjs+YYtrC46x8k5nl6CtAp3k4uGaMcaa5zV+kAo
+ J+VMdZa5vjFOJcp8nW/y73ommkh2dISrDXYp7hr+UhhVopWkTZ5VlGnZt1WKydQHDQus
+ wE1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
- b=alprmmFFrumKA34yizhmz5wG/arPaIJXzu2YopxSDjsPtwy0sbFhJ0ELrUumnqioYw
- 2K33Zl+tflbry6z5Y6ae1jK/4sa/R+kcDZ9faGmScVlyReYBAQrm/WscTZD7TOq9vz/7
- PrrQmq1FVTeqPyyBGPlLcJBRSgRlieUGen3YoNF0ISdNW9fOws/CWW7SbL9Ld0E06mAe
- UwiQtrQ5aZLBAbQz98BaiWzmJSXm+kl2M+iXUMrt8wEA8H175ose9gy8bVZrRW2RW2jp
- kM8nXtM5V52FQSiefyplzZY50gNJLYoG9xwxb61aCoH3/acYx9QJ14Hfaqc2nkRkx40W
- 3vMQ==
-X-Gm-Message-State: AOAM530i57r66WAoys2k+BplzzAq4DlaXV+JP+xKQ76tRCaUtD1wjpxo
- IGM/R8Yb2PN46/Tg7uV0dBTn/Ok2AlM=
-X-Google-Smtp-Source: ABdhPJyoxv+ytT4N7FAeNxPJ21oQAAVQppQVdoT5uByDY/gnRHN6jAIqKTGnnwy5rtDNXvr3TpEVbA==
-X-Received: by 2002:a17:906:c7d9:: with SMTP id
- dc25mr2412023ejb.305.1589957304221; 
- Tue, 19 May 2020 23:48:24 -0700 (PDT)
+ bh=JhMvQ6wT2z/w9jJ1AFzBZlKrPInU1Ytn40KkatChIbI=;
+ b=LzTrYYlbVTVYO+HLaocGNaybD2MIrR9tqpFM8p8evHW82meodbnUUB959EgTJZSAya
+ VqVRpQo2XjOnMdAjykhwQrWYsQnqmAuVvjQNtS4MvVt/v7ojB1KAst00hlsTJnyY3eSW
+ bTkZ0G+PHLhT0Fq9dKjZhv0XGIrz6OFhKSa/maJXRO9PbJuIlNBS0a1pIkahtkdHpXjp
+ t2Ys5spbMss9W3hAo0+QyC+m8ttWR+kSpDqeKPp4dNT0EB9/cXtsdQZ/l8uDX0nQepBt
+ 4IAXtOdq+zqcoo92rlTNQa3zlrIf97C1lTNerHWrSUEMdKsqeY/UrAGd9Fuqn3ISS3rT
+ 6sbQ==
+X-Gm-Message-State: AOAM533GOPI5hgf8ypP+1G8fsX6enN1jC+iull1rDbxgqHV+FLqUr5un
+ mZklstlkTVmW+SlAVmUpPGk=
+X-Google-Smtp-Source: ABdhPJwB4O0WJOY8eMzSBtHOUZMdLBdwqnBOUTE9viaGo0ldgqm4CzJ5o972WDJ7A+EM4U1tBXuh0Q==
+X-Received: by 2002:aa7:c4da:: with SMTP id p26mr2186573edr.184.1589960013840; 
+ Wed, 20 May 2020 00:33:33 -0700 (PDT)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id t23sm953961edr.71.2020.05.19.23.48.23
+ by smtp.gmail.com with ESMTPSA id u10sm1057252edb.65.2020.05.20.00.33.32
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 19 May 2020 23:48:23 -0700 (PDT)
+ Wed, 20 May 2020 00:33:33 -0700 (PDT)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [RFC PATCH] arm64: dts: rockchip: fix dmas dma-names for rk3308 i2s
- node
-Date: Wed, 20 May 2020 08:48:16 +0200
-Message-Id: <20200520064816.3954-1-jbx6244@gmail.com>
+Subject: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
+ property
+Date: Wed, 20 May 2020 09:33:27 +0200
+Message-Id: <20200520073327.6016-1-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_234825_806932_A1234473 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20200520_003335_366821_90F4AF76 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -96,43 +95,47 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, dmitry.torokhov@gmail.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-One of the current rk3308 'i2s' nodes has a different dma layout
-with only 1 item. Table 9-2 DMAC1 Request Mapping Table shows that
-there 2 dma sources available, so fix the dmas and dma-names
-for the rk3308 'i2s' node.
+A test with the command below gives this error:
 
-10 I2S/PCM_2CH_1 tx High level
-11 I2S/PCM_2CH_1 rx High level
+arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
+touchscreen@3e: reg:0:0: 56 was expected
+
+The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
+was shipped with different addresses then the binding currently allows.
+Change the reg property that any address will pass.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
+edt-ft5x06.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index ac7f69407..79c1dd1fe 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -564,8 +564,8 @@
- 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
- 		clocks = <&cru SCLK_I2S1_2CH>, <&cru HCLK_I2S1_2CH>;
- 		clock-names = "i2s_clk", "i2s_hclk";
--		dmas = <&dmac1 11>;
--		dma-names = "rx";
-+		dmas = <&dmac1 10>, <&dmac1 11>;
-+		dma-names = "tx", "rx";
- 		resets = <&cru SRST_I2S1_2CH_M>, <&cru SRST_I2S1_2CH_H>;
- 		reset-names = "reset-m", "reset-h";
- 		status = "disabled";
+diff --git a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
+index 383d64a91..baa8e8f7e 100644
+--- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
++++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml
+@@ -42,7 +42,7 @@ properties:
+       - focaltech,ft6236
+ 
+   reg:
+-    const: 0x38
++    maxItems: 1
+ 
+   interrupts:
+     maxItems: 1
 -- 
 2.11.0
 
