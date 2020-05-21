@@ -2,42 +2,42 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95DE71DC47D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 21 May 2020 03:18:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 050031DC480
+	for <lists+linux-rockchip@lfdr.de>; Thu, 21 May 2020 03:19:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kX3evftk/HH//Us9AV4Pvcw8GEP81LNnfE73JSrJ1kE=; b=R8YuoVJWua8eEe
-	LYLQao2f/jV0b4Ove1+mePe+EL1NUG0bfWXZ2F4SyDocsfazlmzyj59qg8TbnIBgAHgNmqeNO094n
-	IU9WpoZ1K/CpThHAli+QPZ7FMPrnj2Tg7H3F/tCpfPcd1UtWrRKxlg1iQ+oJGe+T4blPIjvb0UimK
-	Z2lrQBdKVnRk+DzfQigOYy0CwFJjkLRfbYxhlkF2XTWsH8wlQcc9u8jg/y/2d0FBAEjB2im69wHgO
-	QsVZZ7iL5Ov3cvEizOTW/fm+hmEgz2KBlMui5VbWKWAnTcmYd2e19M66r1aIPp4yj6Lfzo3QiUUoY
-	G71ZcNvdf5DIOTc+rpfQ==;
+	List-Owner; bh=L7xQV8b0xaWstkSXhT+n3aZUeYhAwkDdluAL8L+nZ1k=; b=XGlWKI0gkjcHhX
+	t/VMvqEpNOJyz9UsTfcmvTHD8YMlrcuMzmaAZ4oznB0h8IJQPIBIUNTk+l48484NQQ+l9Q4bbTyNy
+	BHdEh0X8SoALdR9QJbjMTg6i+69bQblKUAdtMV6O68+iGzwm3MtXdAC0WXRiWnAJuYG6Dm2OJELcT
+	KQXvDtJG4qG3NiILE/FD4UKwsQuslYijcgOBKnRhs2AUsKfZR3KyCWpoqzmUdApu2KKKAzoVqgEtc
+	IbK8UJ1O53qqHYg5jAUVStGQmXUg8XVJmmQcYS0OMYy6i/WZmhUcWqiLZvvF8HrMK0agSMaHK5e5a
+	TKnxBJ8BQqAt6/yFUKsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbZqV-0002sC-V2; Thu, 21 May 2020 01:18:03 +0000
+	id 1jbZrP-0003FV-VF; Thu, 21 May 2020 01:18:59 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbZqS-0002rJ-On; Thu, 21 May 2020 01:18:02 +0000
+ id 1jbZrM-0003EN-UM; Thu, 21 May 2020 01:18:58 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jbZqQ-0005g6-GP; Thu, 21 May 2020 03:17:58 +0200
+ id 1jbZrL-0005gb-R6; Thu, 21 May 2020 03:18:55 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: arm@kernel.org
-Subject: [GIT PULL 2/3] Rockchip dt32 changes for 5.8
-Date: Thu, 21 May 2020 03:17:58 +0200
-Message-ID: <3735080.6Cexqc3t0Y@phil>
+Subject: [GIT PULL 3/3] Rockchip soc32 changes for 5.8
+Date: Thu, 21 May 2020 03:18:55 +0200
+Message-ID: <2307012.mB7vfBFN1M@phil>
 In-Reply-To: <1970481.V9vR1fIhX2@phil>
 References: <1970481.V9vR1fIhX2@phil>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_181800_800633_9FB5071F 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20200520_181856_976269_ACBD5913 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,38 +70,26 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.8-rockchip-dts32-1
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.8-rockchip-soc32-1
 
-for you to fetch changes up to 54b1a4e070330c3fba5becfb0b619bf360bc2657:
+for you to fetch changes up to 0b973c65d2f2da049252bc8370e4cf037b99c7e9:
 
-  ARM: dts: rockchip: add rga node for rk322x (2020-05-19 00:50:21 +0200)
-
-----------------------------------------------------------------
-RGA node for rk322x, wifi node for rk3229-xms6 and some cleanups.
+  ARM: rockchip: fix spelling mistake "to" -> "too" (2020-04-13 09:40:45 +0200)
 
 ----------------------------------------------------------------
-Johan Jonker (2):
-      ARM: dts: rockchip: rename and label gpio-led subnodes
-      ARM: dts: rockchip: remove identical #include from rk3288.dtsi
+A spelling fix and stop using clk_provider.h when of_clk.h is enough
+as the soc file is only a clock user, not a provider.
 
-Justin Swartz (3):
-      ARM: dts: enable WLAN for Mecer Xtreme Mini S6
-      ARM: dts: remove disable-wp from rk3229-xms6 emmc
-      ARM: dts: rockchip: add rga node for rk322x
+----------------------------------------------------------------
+Colin Ian King (1):
+      ARM: rockchip: fix spelling mistake "to" -> "too"
 
- arch/arm/boot/dts/rk3036-kylin.dts          |  2 +-
- arch/arm/boot/dts/rk3066a-mk808.dts         |  2 +-
- arch/arm/boot/dts/rk3188-radxarock.dts      |  6 +++---
- arch/arm/boot/dts/rk3229-xms6.dts           | 19 +++++++++++++++++--
- arch/arm/boot/dts/rk322x.dtsi               | 10 ++++++++++
- arch/arm/boot/dts/rk3288-firefly-reload.dts | 12 ++++++------
- arch/arm/boot/dts/rk3288-firefly.dtsi       | 12 ++++++------
- arch/arm/boot/dts/rk3288-miqi.dts           |  2 +-
- arch/arm/boot/dts/rk3288-phycore-som.dtsi   |  6 +++---
- arch/arm/boot/dts/rk3288-rock2-square.dts   |  4 ++--
- arch/arm/boot/dts/rk3288-tinker.dtsi        |  6 +++---
- arch/arm/boot/dts/rk3288.dtsi               |  1 -
- 12 files changed, 53 insertions(+), 29 deletions(-)
+Geert Uytterhoeven (1):
+      ARM: rockchip: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+
+ arch/arm/mach-rockchip/platsmp.c  | 2 +-
+ arch/arm/mach-rockchip/rockchip.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
 
 
