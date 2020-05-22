@@ -2,80 +2,67 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBFE71DEC62
-	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 17:47:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D105F1DF076
+	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 22:21:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=O25+Ky2n0SQ466kvxO4ScK/JjhNU6NFU3QU+fpSss/c=; b=Roz
-	qUWnKAIt4JqvUtwijYqCqkPSFl33EfYykPfbH8MQhtDheVsZNvioD7NBhk7vyAXhwVGvI2BFAOX9n
-	vc3qUDctF8Y8ths0VDZDIdQ1cHjWWwa0wYBj7Br1UfA2B/fTevzmYCGvAXZh+RkZF7P1QMw4Ju+3s
-	+PaCVVwk+AtZSDQACyaS8nPovFBAZ+rVcwvmJRJ6FYmTa7Yqlw1wWEw0Ja6vD6C4FQWEz/ZeVcb1k
-	Wz+myMYqSFgvDSXMtRo+sekfmYZ8uFvd1XjyWnIno6CCd7boWO8enY89uu04jJP12u+5idc+g4Dws
-	Gj3/jSCwaAqsZfrHkNJpD2lpxqoASag==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mPBHzk/EJ0nUm9+ytykkSzXslhYrWFK8883fzF/w7Qc=; b=FFgKlJdIiY0yAa
+	se0TlXhPlxUPc9+MH0v5iaNsEroirrztWQ1FqVVb8HS38UQvBbcqtXAJIxW01Zan6l1UwPOY8M6Db
+	RhBTd3WE6/Vjyjg9q9/rfskffRbhk0Fc8yjhS+XTQa9Z6uJl/bMGdOVVkPQiIfiHpKaTlEoXuQqMP
+	rSZun1as/LBJFDcLQNNepjr1yff1c6U3lgDczwPdNcp5QovBzOVAUBL1wl6vSWmhfOoIB7CISV5Uv
+	JkZwUApBdnjt9U9a97yCx4VExVOCpyPW9kA+Q8FZ1FfVkh5xC8tccIW9JNMxOqzskzrwcZoqLF4hd
+	qbeQDW6VUnOrqQXqerYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc9tG-0006GL-IF; Fri, 22 May 2020 15:47:18 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jcEAy-0002B8-E6; Fri, 22 May 2020 20:21:52 +0000
+Received: from o1.b.az.sendgrid.net ([208.117.55.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc9t4-00067z-VI; Fri, 22 May 2020 15:47:08 +0000
-Received: by mail-ed1-x541.google.com with SMTP id e10so9599281edq.0;
- Fri, 22 May 2020 08:47:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=qwlZdKUtG9hIaYKjrN5RMCIPKH2TLwxT9v7URTVXs9Y=;
- b=qPa3zQjSEi9a/EsgmMgPl4eA4N+ULhTJsySmjTkW284WWZwDU8Hoc7oKcm9mqGvcms
- Fd7xcHQTzV20f+keATE3oqg1xBlF6SOpc20FDvbGv6G+dCLgQAftHQoUyxQl1CwVP4T/
- Uz35pWmgXnLm348oQp+3M7iKeWKlVYhkYnVogG9Sbs0bPOBLlNmtRFGTVcY7UPnVWovq
- FjtA8LTJt1DrVyqoUI7X5qJxu1lYBvwgXJGCEuCh1OqVVXxW4Gfq316NYhUj4RCHoLl5
- mKriNIM5K2SttvOxpNA9doeGGr4+4agF4PDkuUL1KSdgu5M6Bd//ZY8i6TNdvNyfi7My
- wIpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qwlZdKUtG9hIaYKjrN5RMCIPKH2TLwxT9v7URTVXs9Y=;
- b=cyxx7VGXzjGnm2XTpvmXD7edIZB59dV4grLIw8R1vBiqNtCPHOVOiB7iOKvc6tymoW
- OXQYFK5u/dkposTLwzqJmbb3SwJq2TkPc7vywdVZ4f/E+R1SmliNraahIHF8ijHJI8Hf
- ULQs3DJiMvve2vd7MGpNxqWJhpTpNuprquPXYeU+I7dc+quLGVZUy/MtZn8kku4sPW81
- mAPm6P0gxWQIjY+Tam93KA9r1CRJP/4YtWvOlVELeZllxp+yRJ3oiEsDKxgy38kybl8k
- bAPYzIYNfD2pAjiFzQ4q8KonUyVpWwDegkEEOpYd1HHmZ+FjTAWNQDMhdHGVcbRPA08x
- 7dhA==
-X-Gm-Message-State: AOAM533MJP//Pg7aH1CZcZvmFeugNTKFsVgyehfrcQ3+IiuGusplHY7Y
- 1/d4R91PlZnCNOZA8MCUE5M=
-X-Google-Smtp-Source: ABdhPJzGBHW0gaivOWBdJo79fO66DCHU8peg1XEfk/2EohqKyJyFcXoPlPEhaigApWokLbxCCqly4A==
-X-Received: by 2002:aa7:c0d4:: with SMTP id j20mr3313931edp.155.1590162424129; 
- Fri, 22 May 2020 08:47:04 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id x5sm7283055eds.8.2020.05.22.08.47.02
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 22 May 2020 08:47:03 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: rename and label gpio-led subnodes part
- 2
-Date: Fri, 22 May 2020 17:46:57 +0200
-Message-Id: <20200522154657.9472-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jcEAv-0002Ab-PV
+ for linux-rockchip@lists.infradead.org; Fri, 22 May 2020 20:21:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=from:subject:to:cc:content-type:content-transfer-encoding;
+ s=001; bh=PatGu4e0L35jex+C17yq0C5gkVs5IsVrc2a8WfW6a+Q=;
+ b=Kq7XrgkrQXfTp8d3NfcfqBHPPcsYZoGG6DV9+vp3A1z2aChdHci6ICW12C0aNprkdGIq
+ LiWfnM8BP+kz1Bz71QZiHcKBY9Mv4KyN/6Q0YMg86Q2+gNllk5RUcuKOTBVzKBNTthHasM
+ lu9KmMuyj45RhNBXATdnbXf8LRBNedfrM=
+Received: by filterdrecv-p3mdw1-6dbfd75bfd-t2sth with SMTP id
+ filterdrecv-p3mdw1-6dbfd75bfd-t2sth-19-5EC8344D-9
+ 2020-05-22 20:21:33.151143666 +0000 UTC m=+4994047.240839536
+Received: from bionic.localdomain (unknown)
+ by ismtpd0006p1lon1.sendgrid.net (SG) with ESMTP
+ id l_Bd5uXtT7eVIJYpo_gFxw Fri, 22 May 2020 20:21:32.847 +0000 (UTC)
+From: Jonas Karlman <jonas@kwiboo.se>
+Subject: [PATCH] media: rkvdec: Fix H264 scaling list order
+Date: Fri, 22 May 2020 20:21:33 +0000 (UTC)
+Message-Id: <20200522202130.13306-1-jonas@kwiboo.se>
+X-Mailer: git-send-email 2.17.1
+X-SG-EID: =?us-ascii?Q?TdbjyGynYnRZWhH+7lKUQJL+ZxmxpowvO2O9SQF5CwCVrYgcwUXgU5DKUU3QxA?=
+ =?us-ascii?Q?fZekEeQsTe+RrMu3cja6a0hwUhGxDi=2FyRArtKnh?=
+ =?us-ascii?Q?ioanv+vIiE7e1ehouOJbeenmjctoBV51SaPnRLi?=
+ =?us-ascii?Q?VPL0eGyd9ilFVNczc=2F0T5Re=2FHKGEoX0J=2FY582Oe?=
+ =?us-ascii?Q?wvbO8f2G3yVnZZUj=2FA6iYcrha3KrpfpNOQfJbk7?=
+ =?us-ascii?Q?BLnqg4LtqawW4AZ2Qi2EDAT6UDJNAQyerW0C0uJ?=
+ =?us-ascii?Q?jAEC5L9BpFoVHS3QI5ohw=3D=3D?=
+To: Ezequiel Garcia <ezequiel@collabora.com>, Hans Verkuil
+ <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab <mchehab@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_084707_011912_D7C9A5EC 
-X-CRM114-Status: GOOD (  11.05  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200522_132149_877996_AC25BF1F 
+X-CRM114-Status: GOOD (  10.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ no trust [208.117.55.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [208.117.55.133 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,318 +84,145 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: Jonas Karlman <jonas@kwiboo.se>, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Current dts files with 'gpio-led' nodes were manually verified.
-In order to automate this process leds-gpio.txt
-has been converted to yaml. With this conversion a check
-for pattern properties was added. In part 2 rename and label
-gpio-led subnodes that passed the regex, but still don't have
-the preferred form. Any pin subnode that ends with '-gpio'
-in the pinctrl node generates a warning.
+The Rockchip Video Decoder driver is expecting that the values in a
+scaling list are in zig-zag order and applies the inverse scanning process
+to get the values in matrix order.
 
-Fix with help of the following rules:
+Commit 0b0393d59eb4 ("media: uapi: h264: clarify expected
+scaling_list_4x4/8x8 order") clarified that the values in the scaling list
+should already be in matrix order.
 
-1: Add nodename in the preferred form.
+Fix this by removing the reordering and change to use two memcpy.
 
-2: Always add a label that ends with '_led' to prevent conflicts
-   with other labels such as 'power' and 'mmc'
-
-3: If leds need pinctrl add a label that ends with '_led_pin'
-   also to prevent conflicts with other labels.
-
-patternProperties:
-  # The first form is preferred, but fall back to just 'led'
-  # anywhere in the node name to at least catch some child nodes.
-  "(^led-[0-9a-f]$|led)":
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/leds/
-leds-gpio.yaml
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/
-schemas/gpio/gpio.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Fixes: cd33c830448b ("media: rkvdec: Add the rkvdec driver")
+Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 ---
- arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts  |  6 +++---
- arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi        |  8 ++++----
- arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 10 +++++-----
- arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi     |  6 +++---
- arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts  |  6 +++---
- arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi        |  6 +++---
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi      | 14 +++++++-------
- arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi   | 10 +++++-----
- 8 files changed, 33 insertions(+), 33 deletions(-)
+ drivers/staging/media/rkvdec/rkvdec-h264.c | 70 +++++++---------------
+ 1 file changed, 22 insertions(+), 48 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts b/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
-index cbde279ae..e8774347b 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dts
-@@ -25,9 +25,9 @@
- 	};
+diff --git a/drivers/staging/media/rkvdec/rkvdec-h264.c b/drivers/staging/media/rkvdec/rkvdec-h264.c
+index cd4980d06be7..2719f0c66a4a 100644
+--- a/drivers/staging/media/rkvdec/rkvdec-h264.c
++++ b/drivers/staging/media/rkvdec/rkvdec-h264.c
+@@ -18,11 +18,16 @@
+ /* Size with u32 units. */
+ #define RKV_CABAC_INIT_BUFFER_SIZE	(3680 + 128)
+ #define RKV_RPS_SIZE			((128 + 128) / 4)
+-#define RKV_SCALING_LIST_SIZE		(6 * 16 + 6 * 64 + 128)
+ #define RKV_ERROR_INFO_SIZE		(256 * 144 * 4)
  
- 	leds {
--		pinctrl-0 = <&led_pins_module>, <&led_sd_haikou>;
-+		pinctrl-0 = <&module_led_pins>, <&sd_card_led_pin>;
+ #define RKVDEC_NUM_REFLIST		3
  
--		sd-card-led {
-+		sd_card_led: led-3 {
- 			label = "sd_card_led";
- 			gpios = <&gpio0 RK_PD2 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "mmc0";
-@@ -118,7 +118,7 @@
- 	};
++struct rkvdec_scaling_matrix {
++	u8 scaling_list_4x4[6][16];
++	u8 scaling_list_8x8[6][64];
++	u8 padding[128];
++};
++
+ struct rkvdec_sps_pps_packet {
+ 	u32 info[8];
+ };
+@@ -86,7 +91,7 @@ struct rkvdec_ps_field {
+ /* Data structure describing auxiliary buffer format. */
+ struct rkvdec_h264_priv_tbl {
+ 	s8 cabac_table[4][464][2];
+-	u8 scaling_list[RKV_SCALING_LIST_SIZE];
++	struct rkvdec_scaling_matrix scaling_list;
+ 	u32 rps[RKV_RPS_SIZE];
+ 	struct rkvdec_sps_pps_packet param_set[256];
+ 	u8 err_info[RKV_ERROR_INFO_SIZE];
+@@ -785,56 +790,25 @@ static void assemble_hw_rps(struct rkvdec_ctx *ctx,
+ 	}
+ }
  
- 	leds {
--		led_sd_haikou: led-sd-gpio {
-+		sd_card_led_pin: sd-card-led-pin {
- 			rockchip,pins =
- 				<0 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-index e17311e09..eeef64e35 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-@@ -76,16 +76,16 @@
- 	leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&led_pins_module>;
-+		pinctrl-0 = <&module_led_pins>;
+-/*
+- * NOTE: The values in a scaling list are in zig-zag order, apply inverse
+- * scanning process to get the values in matrix order.
+- */
+-static const u32 zig_zag_4x4[16] = {
+-	0, 1, 4, 8, 5, 2, 3, 6, 9, 12, 13, 10, 7, 11, 14, 15
+-};
+-
+-static const u32 zig_zag_8x8[64] = {
+-	0,  1,  8, 16,  9,  2,  3, 10, 17, 24, 32, 25, 18, 11,  4,  5,
+-	12, 19, 26, 33, 40, 48, 41, 34, 27, 20, 13,  6,  7, 14, 21, 28,
+-	35, 42, 49, 56, 57, 50, 43, 36, 29, 22, 15, 23, 30, 37, 44, 51,
+-	58, 59, 52, 45, 38, 31, 39, 46, 53, 60, 61, 54, 47, 55, 62, 63
+-};
+-
+-static void reorder_scaling_list(struct rkvdec_ctx *ctx,
+-				 struct rkvdec_h264_run *run)
++static void assemble_hw_scaling_list(struct rkvdec_ctx *ctx,
++				     struct rkvdec_h264_run *run)
+ {
+ 	const struct v4l2_ctrl_h264_scaling_matrix *scaling = run->scaling_matrix;
+-	const size_t num_list_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4);
+-	const size_t list_len_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4[0]);
+-	const size_t num_list_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8);
+-	const size_t list_len_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8[0]);
+ 	struct rkvdec_h264_ctx *h264_ctx = ctx->priv;
+ 	struct rkvdec_h264_priv_tbl *tbl = h264_ctx->priv_tbl.cpu;
+-	u8 *dst = tbl->scaling_list;
+-	const u8 *src;
+-	int i, j;
+-
+-	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_4x4) != list_len_4x4);
+-	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_8x8) != list_len_8x8);
+-	BUILD_BUG_ON(ARRAY_SIZE(tbl->scaling_list) <
+-		     num_list_4x4 * list_len_4x4 +
+-		     num_list_8x8 * list_len_8x8);
+-
+-	src = &scaling->scaling_list_4x4[0][0];
+-	for (i = 0; i < num_list_4x4; ++i) {
+-		for (j = 0; j < list_len_4x4; ++j)
+-			dst[zig_zag_4x4[j]] = src[j];
+-		src += list_len_4x4;
+-		dst += list_len_4x4;
+-	}
  
--		module_led1 {
-+		module_led1: led-1 {
- 			label = "module_led1";
- 			gpios = <&gpio2 RK_PB5 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "heartbeat";
- 			panic-indicator;
- 		};
+-	src = &scaling->scaling_list_8x8[0][0];
+-	for (i = 0; i < num_list_8x8; ++i) {
+-		for (j = 0; j < list_len_8x8; ++j)
+-			dst[zig_zag_8x8[j]] = src[j];
+-		src += list_len_8x8;
+-		dst += list_len_8x8;
+-	}
++	BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_4x4) !=
++		     sizeof(scaling->scaling_list_4x4));
++	BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_8x8) !=
++		     sizeof(scaling->scaling_list_8x8));
++
++	memcpy(tbl->scaling_list.scaling_list_4x4,
++	       scaling->scaling_list_4x4,
++	       sizeof(scaling->scaling_list_4x4));
++
++	memcpy(tbl->scaling_list.scaling_list_8x8,
++	       scaling->scaling_list_8x8,
++	       sizeof(scaling->scaling_list_8x8));
+ }
  
--		module_led2 {
-+		module_led2: led-2 {
- 			label = "module_led2";
- 			gpios = <&gpio3 RK_PA3 GPIO_ACTIVE_HIGH>;
- 			default-state = "off";
-@@ -270,7 +270,7 @@
+ /*
+@@ -1126,7 +1100,7 @@ static int rkvdec_h264_run(struct rkvdec_ctx *ctx)
+ 	v4l2_h264_build_b_ref_lists(&reflist_builder, h264_ctx->reflists.b0,
+ 				    h264_ctx->reflists.b1);
  
- &pinctrl {
- 	leds {
--		led_pins_module: led-module-gpio {
-+		module_led_pins: module-led-pins {
- 			rockchip,pins =
- 				<2 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>,
- 				<3 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-index e87a04477..e36837c04 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
-@@ -141,15 +141,15 @@
- 	leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&sys_led_gpio>, <&user_led_gpio>;
-+		pinctrl-0 = <&sys_led_pin>, <&user_led_pin>;
- 
--		sys-led {
-+		sys_led: led-0 {
- 			label = "sys_led";
- 			linux,default-trigger = "heartbeat";
- 			gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_HIGH>;
- 		};
- 
--		user-led {
-+		user_led: led-1 {
- 			label = "user_led";
- 			default-state = "off";
- 			gpios = <&gpio4 RK_PD0 GPIO_ACTIVE_HIGH>;
-@@ -586,11 +586,11 @@
- 	};
- 
- 	leds {
--		sys_led_gpio: sys_led-gpio {
-+		sys_led_pin: sys-led-pin {
- 			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 
--		user_led_gpio: user_led-gpio {
-+		user_led_pin: user-led-pin {
- 			rockchip,pins = <4 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-index c88018a0e..b24d54570 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi
-@@ -117,9 +117,9 @@
- 	leds: gpio-leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&leds_gpio>;
-+		pinctrl-0 = <&status_led_pin>;
- 
--		status {
-+		status_led: led-0 {
- 			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
- 			label = "status_led";
- 			linux,default-trigger = "heartbeat";
-@@ -520,7 +520,7 @@
- 	};
- 
- 	gpio-leds {
--		leds_gpio: leds-gpio {
-+		status_led_pin: status-led-pin {
- 			rockchip,pins = <0 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts b/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-index d80d6b726..a8d363568 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dts
-@@ -15,9 +15,9 @@
- 	};
- 
- 	leds {
--		pinctrl-0 = <&led_pin_module>, <&led_sd_haikou>;
-+		pinctrl-0 = <&module_led_pin>, <&sd_card_led_pin>;
- 
--		sd-card-led {
-+		sd_card_led: led-1 {
- 			label = "sd_card_led";
- 			gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "mmc0";
-@@ -179,7 +179,7 @@
- 	};
- 
- 	leds {
--		led_sd_haikou: led-sd-gpio {
-+		sd_card_led_pin: sd-card-led-pin {
- 			rockchip,pins =
- 			  <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
-index 07694b196..ae31299cb 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
-@@ -11,9 +11,9 @@
- 	leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&led_pin_module>;
-+		pinctrl-0 = <&module_led_pin>;
- 
--		module-led {
-+		module_led: led-0 {
- 			label = "module_led";
- 			gpios = <&gpio2 RK_PD1 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "heartbeat";
-@@ -450,7 +450,7 @@
- 	};
- 
- 	leds {
--		led_pin_module: led-module-gpio {
-+		module_led_pin: module-led-pin {
- 			rockchip,pins =
- 			  <2 RK_PD1 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index 9f225e9c3..cec70f2bf 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -61,23 +61,23 @@
- 	leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&work_led_gpio>, <&diy_led_gpio>, <&yellow_led_gpio>;
-+		pinctrl-0 = <&work_led_pin>, <&diy_led_pin>, <&yellow_led_pin>;
- 
--		work-led {
-+		work_led: led-0 {
- 			label = "green:work";
- 			gpios = <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
- 			default-state = "on";
- 			linux,default-trigger = "heartbeat";
- 		};
- 
--		diy-led {
-+		diy_led: led-1 {
- 			label = "red:diy";
- 			gpios = <&gpio0 RK_PB5 GPIO_ACTIVE_HIGH>;
- 			default-state = "off";
- 			linux,default-trigger = "mmc1";
- 		};
- 
--		yellow-led {
-+		yellow_led: led-2 {
- 			label = "yellow:yellow-led";
- 			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
- 			default-state = "off";
-@@ -595,15 +595,15 @@
- 	};
- 
- 	leds {
--		diy_led_gpio: diy_led-gpio {
-+		diy_led_pin: diy-led-pin {
- 			rockchip,pins = <0 RK_PB5 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 
--		work_led_gpio: work_led-gpio {
-+		work_led_pin: work-led-pin {
- 			rockchip,pins = <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 
--		yellow_led_gpio: yellow_led-gpio {
-+		yellow_led_pin: yellow-led-pin {
- 			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
-index 6788ab28f..c39d0f411 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
-@@ -39,15 +39,15 @@
- 	leds {
- 		compatible = "gpio-leds";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&work_led_gpio>, <&diy_led_gpio>;
-+		pinctrl-0 = <&work_led_pin>, <&diy_led_pin>;
- 
--		work-led {
-+		work_led: led-0 {
- 			label = "work";
- 			default-state = "on";
- 			gpios = <&gpio0 RK_PB3 GPIO_ACTIVE_HIGH>;
- 		};
- 
--		diy-led {
-+		diy_led: led-1 {
- 			label = "diy";
- 			default-state = "off";
- 			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
-@@ -588,11 +588,11 @@
- 	};
- 
- 	leds {
--		work_led_gpio: work_led-gpio {
-+		work_led_pin: work-led-pin {
- 			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 
--		diy_led_gpio: diy_led-gpio {
-+		diy_led_pin: diy-led-pin {
- 			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
- 		};
- 	};
+-	reorder_scaling_list(ctx, &run);
++	assemble_hw_scaling_list(ctx, &run);
+ 	assemble_hw_pps(ctx, &run);
+ 	assemble_hw_rps(ctx, &run);
+ 	config_registers(ctx, &run);
 -- 
-2.11.0
+2.17.1
 
 
 _______________________________________________
