@@ -2,54 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CD4E1DE165
-	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 09:56:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 767C41DE2D8
+	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 11:22:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=snbWFrNI/AQdB+wvFkX51NJGrKDZu6qwdzeZOPIjdWw=; b=LQfV1FmycUtNYuh8Z7WQwnMzKo
-	EL3dNc8irNzb2Kn/bg3SWClp3V/PodikMiMwcNjgczz+NxRDHKHey0F4Q2uLedBKIxK5hXz+2nDP9
-	TiT27bs7y7VworJ9mroYZPgGQvMz/C2C8spgllojIusHuV89TGGH6BuQWgMj07NQ8NH10z0fpz6EQ
-	KPodsv3IQWbZdUOjuQycO18T9vxwi0HvLsemER/WdzUiC3gLqlsFhDd4uTpUXw3ygzkwXh/djPwo+
-	KcLmJVWVebbHMa25fAOWFvHqL5PwJAOeQ+HfLH7oSZy4G38WLr+Ch8THPcEfPp0VPu63O1mNslRyr
-	NqpDvJJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VQtdXOO6ahiiaA74Db/mWWqAU/5u4icya7mU1ZMuV6A=; b=KyoBSN0DrIWyvt
+	lm6dOSBZHJXHJgTMv8XPJ9H+nZ6a6SbQJbSR3vsqEO/pLDtnuh5f+6tMKSGLXdQZUPFMXLgRYzFmV
+	9w2+OKjkN8j2S/KTj5/fX5kSoev0OW6ss4dZT9RbH8JEGEyNwpu/j30IdGJdox0cX3XTX49r/ssvu
+	39fNHQLC8uUd2ZLF/DsZn3Z5Vodhfh7dr3oLiDaXu3mpVdk4HWiwSZ76qx1eqnPR8Rz7WMphoriUk
+	I4fIL7VdMRgwvXz3NALGdLQjsNGjzoXKlaVNgwnTMGwK8YbcE9KHIzlQH5sAdaZwLYDib65ldB4RV
+	evP5DPSCMzXCxPHwo/qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc2XW-0000sF-7d; Fri, 22 May 2020 07:56:22 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jc3sr-00035u-Ak; Fri, 22 May 2020 09:22:29 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc2XN-0000jy-A8
- for linux-rockchip@lists.infradead.org; Fri, 22 May 2020 07:56:15 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 673BE2A357F
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: linux-media@vger.kernel.org,
-	laurent.pinchart@ideasonboard.com
-Subject: [PATCH v4 5/5] media: vimc: use v4l2_pipeline_stream_{enable,
- disable} helpers
-Date: Fri, 22 May 2020 09:55:22 +0200
-Message-Id: <20200522075522.6190-6-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200522075522.6190-1-dafna.hirschfeld@collabora.com>
-References: <20200522075522.6190-1-dafna.hirschfeld@collabora.com>
+ id 1jc3sn-00035B-Kj; Fri, 22 May 2020 09:22:27 +0000
+Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
+ by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04M8XRHS016327; Fri, 22 May 2020 04:36:00 -0400
+Received: from nwd2mta3.analog.com ([137.71.173.56])
+ by mx0a-00128a01.pphosted.com with ESMTP id 312d3655mx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 22 May 2020 04:36:00 -0400
+Received: from SCSQMBX11.ad.analog.com (scsqmbx11.ad.analog.com [10.77.17.10])
+ by nwd2mta3.analog.com (8.14.7/8.14.7) with ESMTP id 04M8ZvJQ040182
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128
+ verify=FAIL); Fri, 22 May 2020 04:35:57 -0400
+Received: from SCSQMBX10.ad.analog.com (10.77.17.5) by SCSQMBX11.ad.analog.com
+ (10.77.17.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1779.2; Fri, 22 May
+ 2020 01:35:55 -0700
+Received: from zeus.spd.analog.com (10.64.82.11) by SCSQMBX10.ad.analog.com
+ (10.77.17.5) with Microsoft SMTP Server id 15.1.1779.2 via Frontend
+ Transport; Fri, 22 May 2020 01:35:55 -0700
+Received: from saturn.ad.analog.com ([10.48.65.112])
+ by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 04M8ZhUO005306;
+ Fri, 22 May 2020 04:35:43 -0400
+From: Alexandru Ardelean <alexandru.ardelean@analog.com>
+To: <bcm-kernel-feedback-list@broadcom.com>, <linux-iio@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-input@vger.kernel.org>,
+ <linux-aspeed@lists.ozlabs.org>, <linux-samsung-soc@vger.kernel.org>,
+ <linux-amlogic@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <linux-arm-msm@vger.kernel.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-pm@vger.kernel.org>,
+ <platform-driver-x86@vger.kernel.org>, <devel@driverdev.osuosl.org>
+Subject: [PATCH 1/5] iio: core: pass parent device as parameter during
+ allocation
+Date: Fri, 22 May 2020 11:22:04 +0300
+Message-ID: <20200522082208.383631-1-alexandru.ardelean@analog.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
+X-ADIRoutedOnPrem: True
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-22_05:2020-05-21,
+ 2020-05-22 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=999
+ suspectscore=2 bulkscore=0 mlxscore=0 phishscore=0 cotscore=-2147483648
+ impostorscore=0 priorityscore=1501 lowpriorityscore=0 spamscore=0
+ clxscore=1011 adultscore=0 malwarescore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005220070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_005613_616185_C4C2D5AD 
-X-CRM114-Status: GOOD (  13.34  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200522_022225_688399_93BC3045 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.135.77 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,205 +93,206 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: niklas.soderlund@ragnatech.se--annotate, mchehab@kernel.org,
- dafna.hirschfeld@collabora.com, dafna3@gmail.com, tfiga@chromium.org,
- hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
- helen.koike@collabora.com, sakari.ailus@linux.intel.com,
- skhan@linuxfoundation.org, kernel@collabora.com, ezequiel@collabora.com
-MIME-Version: 1.0
+Cc: milo.kim@ti.com, tomislav.denis@avl.com, dan@dlrobertson.com,
+ heiko@sntech.de, linus.walleij@linaro.org, eajames@linux.ibm.com,
+ bjorn.andersson@linaro.org, paul@crapouillou.net, lorenzo.bianconi83@gmail.com,
+ srinivas.pandruvada@linux.intel.com, khilman@baylibre.com, krzk@kernel.org,
+ wens@csie.org, kgene@kernel.org, slemieux.tyco@gmail.com, orsonzhai@gmail.com,
+ Alexandru Ardelean <alexandru.ardelean@analog.com>, alexandre.torgue@st.com,
+ tduszyns@gmail.com, rjui@broadcom.com, s.hauer@pengutronix.de,
+ jikos@kernel.org, vilhelm.gray@gmail.com, mripard@kernel.org, vz@mleia.com,
+ hdegoede@redhat.com, ak@it-klinger.de, matthias.bgg@gmail.com,
+ fabrice.gasnier@st.com, sbranden@broadcom.com, rmfrfs@gmail.com,
+ syednwaris@gmail.com, dmitry.torokhov@gmail.com, coproscefalo@gmail.com,
+ agross@kernel.org, songqiang1304521@gmail.com, mcoquelin.stm32@gmail.com,
+ zhang.lyra@gmail.com, baolin.wang7@gmail.com, ktsai@capellamicro.com,
+ shawnguo@kernel.org, peda@axentia.se, jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Helen Koike <helen.koike@collabora.com>
+The change passes the parent device to the iio_device_alloc() call. This
+also updates the devm_iio_device_alloc() call to consider the device object
+as the parent device by default.
 
-Use v4l2_pipeline_stream_{enable,disable} to call .s_stream() subdevice
-callbacks through the pipeline.
+Having it passed like this, should ensure that any IIO device object
+already has a device object as parent, allowing for neater control, like
+passing the 'indio_dev' object for other stuff [like buffers/triggers/etc],
+and potentially creating iiom_xxx(indio_dev) functions.
 
-Tested streaming works with:
+With this patch, only the 'drivers/platform/x86/toshiba_acpi.c' needs an
+update to pass the parent object as a parameter.
 
-media-ctl -d /dev/media0 -V '"Sensor A":0[fmt:SBGGR8_1X8/640x480]'
-media-ctl -d /dev/media0 -V '"Debayer A":0[fmt:SBGGR8_1X8/640x480]'
-media-ctl -d /dev/media0 -V '"Sensor B":0[fmt:SBGGR8_1X8/640x480]'
-media-ctl -d /dev/media0 -V '"Debayer B":0[fmt:SBGGR8_1X8/640x480]'
-media-ctl -d /dev/media0 -V '"Scaler":0[fmt:RGB888_1X24/640x480]'
-media-ctl -d /dev/media0 -V '"Scaler":0[crop:(100,50)/400x150]'
-media-ctl -d /dev/media0 -V '"Scaler":1[fmt:RGB888_1X24/1920x1440]'
-v4l2-ctl -d /dev/video2 -v width=1200,height=450
-v4l2-ctl -d /dev/video0 -v pixelformat=BA81
-v4l2-ctl -d /dev/video1 -v pixelformat=BA81
-v4l2-ctl --stream-mmap --stream-count=10 -d /dev/video2 --stream-to=/tmp/test.raw
+In the next patch all devm_iio_device_alloc() calls will be handled.
 
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
-Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
 ---
- .../media/test-drivers/vimc/vimc-capture.c    | 31 ++++++++----
- .../media/test-drivers/vimc/vimc-streamer.c   | 49 ++-----------------
- 2 files changed, 26 insertions(+), 54 deletions(-)
+ drivers/iio/dummy/iio_simple_dummy.c         | 14 ++++++++------
+ drivers/iio/industrialio-core.c              | 11 ++++++-----
+ drivers/platform/x86/toshiba_acpi.c          |  3 +--
+ drivers/staging/iio/Documentation/device.txt |  4 +---
+ include/linux/iio/iio.h                      |  4 ++--
+ 5 files changed, 18 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/media/test-drivers/vimc/vimc-capture.c b/drivers/media/test-drivers/vimc/vimc-capture.c
-index c63496b17b9a..36ba664db092 100644
---- a/drivers/media/test-drivers/vimc/vimc-capture.c
-+++ b/drivers/media/test-drivers/vimc/vimc-capture.c
-@@ -245,21 +245,27 @@ static int vimc_cap_start_streaming(struct vb2_queue *vq, unsigned int count)
- 
- 	vcap->sequence = 0;
- 
--	/* Start the media pipeline */
- 	ret = media_pipeline_start(entity, &vcap->stream.pipe);
--	if (ret) {
--		vimc_cap_return_all_buffers(vcap, VB2_BUF_STATE_QUEUED);
--		return ret;
--	}
-+	if (ret)
-+		goto err_return_all_buffers;
+diff --git a/drivers/iio/dummy/iio_simple_dummy.c b/drivers/iio/dummy/iio_simple_dummy.c
+index 6cb02299a215..b35ae7c039f7 100644
+--- a/drivers/iio/dummy/iio_simple_dummy.c
++++ b/drivers/iio/dummy/iio_simple_dummy.c
+@@ -566,6 +566,13 @@ static struct iio_sw_device *iio_dummy_probe(const char *name)
+ 	struct iio_dev *indio_dev;
+ 	struct iio_dummy_state *st;
+ 	struct iio_sw_device *swd;
++	struct device *parent = NULL;
 +
-+	ret = v4l2_pipeline_stream_enable(&vcap->vdev);
-+	if (ret)
-+		goto err_stop_media_pipe;
++	/*
++	 * With hardware: Set the parent device.
++	 * parent = &spi->dev;
++	 * parent = &client->dev;
++	 */
  
- 	ret = vimc_streamer_s_stream(&vcap->stream, &vcap->ved, 1);
--	if (ret) {
--		media_pipeline_stop(entity);
--		vimc_cap_return_all_buffers(vcap, VB2_BUF_STATE_QUEUED);
--		return ret;
--	}
-+	if (ret)
-+		goto err_stop_stream;
+ 	swd = kzalloc(sizeof(*swd), GFP_KERNEL);
+ 	if (!swd) {
+@@ -580,7 +587,7 @@ static struct iio_sw_device *iio_dummy_probe(const char *name)
+ 	 * It also has a region (accessed by iio_priv()
+ 	 * for chip specific state information.
+ 	 */
+-	indio_dev = iio_device_alloc(sizeof(*st));
++	indio_dev = iio_device_alloc(parent, sizeof(*st));
+ 	if (!indio_dev) {
+ 		ret = -ENOMEM;
+ 		goto error_ret;
+@@ -590,11 +597,6 @@ static struct iio_sw_device *iio_dummy_probe(const char *name)
+ 	mutex_init(&st->lock);
  
- 	return 0;
-+
-+err_stop_stream:
-+	v4l2_pipeline_stream_disable(&vcap->vdev);
-+err_stop_media_pipe:
-+	media_pipeline_stop(entity);
-+err_return_all_buffers:
-+	vimc_cap_return_all_buffers(vcap, VB2_BUF_STATE_QUEUED);
-+	return ret;
- }
+ 	iio_dummy_init_device(indio_dev);
+-	/*
+-	 * With hardware: Set the parent device.
+-	 * indio_dev->dev.parent = &spi->dev;
+-	 * indio_dev->dev.parent = &client->dev;
+-	 */
  
- /*
-@@ -269,9 +275,14 @@ static int vimc_cap_start_streaming(struct vb2_queue *vq, unsigned int count)
- static void vimc_cap_stop_streaming(struct vb2_queue *vq)
+ 	 /*
+ 	 * Make the iio_dev struct available to remove function.
+diff --git a/drivers/iio/industrialio-core.c b/drivers/iio/industrialio-core.c
+index 1527f01a44f1..75661661aaba 100644
+--- a/drivers/iio/industrialio-core.c
++++ b/drivers/iio/industrialio-core.c
+@@ -1493,7 +1493,7 @@ struct device_type iio_device_type = {
+  * iio_device_alloc() - allocate an iio_dev from a driver
+  * @sizeof_priv:	Space to allocate for private structure.
+  **/
+-struct iio_dev *iio_device_alloc(int sizeof_priv)
++struct iio_dev *iio_device_alloc(struct device *parent, int sizeof_priv)
  {
- 	struct vimc_cap_device *vcap = vb2_get_drv_priv(vq);
-+	int ret;
+ 	struct iio_dev *dev;
+ 	size_t alloc_size;
+@@ -1510,6 +1510,7 @@ struct iio_dev *iio_device_alloc(int sizeof_priv)
+ 	if (!dev)
+ 		return NULL;
  
- 	vimc_streamer_s_stream(&vcap->stream, &vcap->ved, 0);
++	dev->dev.parent = parent;
+ 	dev->dev.groups = dev->groups;
+ 	dev->dev.type = &iio_device_type;
+ 	dev->dev.bus = &iio_bus_type;
+@@ -1551,7 +1552,7 @@ static void devm_iio_device_release(struct device *dev, void *res)
  
-+	ret = v4l2_pipeline_stream_disable(&vcap->vdev);
-+	if (ret)
-+		dev_err(vcap->ved.dev, "stream disable failed: %d\n", ret);
-+
- 	/* Stop the media pipeline */
- 	media_pipeline_stop(&vcap->vdev.entity);
- 
-diff --git a/drivers/media/test-drivers/vimc/vimc-streamer.c b/drivers/media/test-drivers/vimc/vimc-streamer.c
-index 65feb3c596db..c0085f4695c2 100644
---- a/drivers/media/test-drivers/vimc/vimc-streamer.c
-+++ b/drivers/media/test-drivers/vimc/vimc-streamer.c
-@@ -36,33 +36,6 @@ static struct media_entity *vimc_get_source_entity(struct media_entity *ent)
- 	return NULL;
- }
- 
--/**
-- * vimc_streamer_pipeline_terminate - Disable stream in all ved in stream
-- *
-- * @stream: the pointer to the stream structure with the pipeline to be
-- *	    disabled.
-- *
-- * Calls s_stream to disable the stream in each entity of the pipeline
-- *
-- */
--static void vimc_streamer_pipeline_terminate(struct vimc_stream *stream)
--{
--	struct vimc_ent_device *ved;
--	struct v4l2_subdev *sd;
--
--	while (stream->pipe_size) {
--		stream->pipe_size--;
--		ved = stream->ved_pipeline[stream->pipe_size];
--		stream->ved_pipeline[stream->pipe_size] = NULL;
--
--		if (!is_media_entity_v4l2_subdev(ved->ent))
--			continue;
--
--		sd = media_entity_to_v4l2_subdev(ved->ent);
--		v4l2_subdev_call(sd, video, s_stream, 0);
--	}
--}
--
  /**
-  * vimc_streamer_pipeline_init - Initializes the stream structure
+  * devm_iio_device_alloc - Resource-managed iio_device_alloc()
+- * @dev:		Device to allocate iio_dev for
++ * @parent:		Device to allocate iio_dev for, and parent for this IIO device
+  * @sizeof_priv:	Space to allocate for private structure.
   *
-@@ -82,27 +55,15 @@ static int vimc_streamer_pipeline_init(struct vimc_stream *stream,
- 	struct media_entity *entity;
- 	struct video_device *vdev;
- 	struct v4l2_subdev *sd;
--	int ret = 0;
+  * Managed iio_device_alloc. iio_dev allocated with this function is
+@@ -1560,7 +1561,7 @@ static void devm_iio_device_release(struct device *dev, void *res)
+  * RETURNS:
+  * Pointer to allocated iio_dev on success, NULL on failure.
+  */
+-struct iio_dev *devm_iio_device_alloc(struct device *dev, int sizeof_priv)
++struct iio_dev *devm_iio_device_alloc(struct device *parent, int sizeof_priv)
+ {
+ 	struct iio_dev **ptr, *iio_dev;
  
- 	stream->pipe_size = 0;
- 	while (stream->pipe_size < VIMC_STREAMER_PIPELINE_MAX_SIZE) {
- 		if (!ved) {
--			vimc_streamer_pipeline_terminate(stream);
-+			stream->pipe_size = 0;
- 			return -EINVAL;
- 		}
- 		stream->ved_pipeline[stream->pipe_size++] = ved;
+@@ -1569,10 +1570,10 @@ struct iio_dev *devm_iio_device_alloc(struct device *dev, int sizeof_priv)
+ 	if (!ptr)
+ 		return NULL;
  
--		if (is_media_entity_v4l2_subdev(ved->ent)) {
--			sd = media_entity_to_v4l2_subdev(ved->ent);
--			ret = v4l2_subdev_call(sd, video, s_stream, 1);
--			if (ret && ret != -ENOIOCTLCMD) {
--				dev_err(ved->dev, "subdev_call error %s\n",
--					ved->ent->name);
--				vimc_streamer_pipeline_terminate(stream);
--				return ret;
--			}
--		}
--
- 		entity = vimc_get_source_entity(ved->ent);
- 		/* Check if the end of the pipeline was reached */
- 		if (!entity) {
-@@ -111,7 +72,7 @@ static int vimc_streamer_pipeline_init(struct vimc_stream *stream,
- 				dev_err(ved->dev,
- 					"first entity in the pipe '%s' is not a source\n",
- 					ved->ent->name);
--				vimc_streamer_pipeline_terminate(stream);
-+				stream->pipe_size = 0;
- 				return -EPIPE;
- 			}
- 			return 0;
-@@ -129,7 +90,7 @@ static int vimc_streamer_pipeline_init(struct vimc_stream *stream,
- 		}
+-	iio_dev = iio_device_alloc(sizeof_priv);
++	iio_dev = iio_device_alloc(parent, sizeof_priv);
+ 	if (iio_dev) {
+ 		*ptr = iio_dev;
+-		devres_add(dev, ptr);
++		devres_add(parent, ptr);
+ 	} else {
+ 		devres_free(ptr);
  	}
+diff --git a/drivers/platform/x86/toshiba_acpi.c b/drivers/platform/x86/toshiba_acpi.c
+index 808944546739..4a4d09c352dd 100644
+--- a/drivers/platform/x86/toshiba_acpi.c
++++ b/drivers/platform/x86/toshiba_acpi.c
+@@ -3128,7 +3128,7 @@ static int toshiba_acpi_add(struct acpi_device *acpi_dev)
  
--	vimc_streamer_pipeline_terminate(stream);
-+	stream->pipe_size = 0;
- 	return -EINVAL;
+ 	toshiba_accelerometer_available(dev);
+ 	if (dev->accelerometer_supported) {
+-		dev->indio_dev = iio_device_alloc(sizeof(*dev));
++		dev->indio_dev = iio_device_alloc(&acpi_dev->dev, sizeof(*dev));
+ 		if (!dev->indio_dev) {
+ 			pr_err("Unable to allocate iio device\n");
+ 			goto iio_error;
+@@ -3138,7 +3138,6 @@ static int toshiba_acpi_add(struct acpi_device *acpi_dev)
+ 
+ 		dev->indio_dev->info = &toshiba_iio_accel_info;
+ 		dev->indio_dev->name = "Toshiba accelerometer";
+-		dev->indio_dev->dev.parent = &acpi_dev->dev;
+ 		dev->indio_dev->modes = INDIO_DIRECT_MODE;
+ 		dev->indio_dev->channels = toshiba_iio_accel_channels;
+ 		dev->indio_dev->num_channels =
+diff --git a/drivers/staging/iio/Documentation/device.txt b/drivers/staging/iio/Documentation/device.txt
+index ec42544a46aa..0d1275b1eb3f 100644
+--- a/drivers/staging/iio/Documentation/device.txt
++++ b/drivers/staging/iio/Documentation/device.txt
+@@ -8,7 +8,7 @@ The crucial structure for device drivers in iio is iio_dev.
+ 
+ First allocate one using:
+ 
+-struct iio_dev *indio_dev = iio_device_alloc(sizeof(struct chip_state));
++struct iio_dev *indio_dev = iio_device_alloc(parent, sizeof(struct chip_state));
+ where chip_state is a structure of local state data for this instance of
+ the chip.
+ 
+@@ -16,8 +16,6 @@ That data can be accessed using iio_priv(struct iio_dev *).
+ 
+ Then fill in the following:
+ 
+-- indio_dev->dev.parent
+-	Struct device associated with the underlying hardware.
+ - indio_dev->name
+ 	Name of the device being driven - made available as the name
+ 	attribute in sysfs.
+diff --git a/include/linux/iio/iio.h b/include/linux/iio/iio.h
+index a1be82e74c93..91a69f4751aa 100644
+--- a/include/linux/iio/iio.h
++++ b/include/linux/iio/iio.h
+@@ -676,7 +676,7 @@ static inline void *iio_device_get_drvdata(struct iio_dev *indio_dev)
+ 
+ /* Can we make this smaller? */
+ #define IIO_ALIGN L1_CACHE_BYTES
+-struct iio_dev *iio_device_alloc(int sizeof_priv);
++struct iio_dev *iio_device_alloc(struct device *parent, int sizeof_priv);
+ 
+ static inline void *iio_priv(const struct iio_dev *indio_dev)
+ {
+@@ -690,7 +690,7 @@ static inline struct iio_dev *iio_priv_to_dev(void *priv)
  }
  
-@@ -210,7 +171,7 @@ int vimc_streamer_s_stream(struct vimc_stream *stream,
- 		if (IS_ERR(stream->kthread)) {
- 			ret = PTR_ERR(stream->kthread);
- 			dev_err(ved->dev, "kthread_run failed with %d\n", ret);
--			vimc_streamer_pipeline_terminate(stream);
-+			stream->pipe_size = 0;
- 			stream->kthread = NULL;
- 			return ret;
- 		}
-@@ -231,7 +192,7 @@ int vimc_streamer_s_stream(struct vimc_stream *stream,
- 
- 		stream->kthread = NULL;
- 
--		vimc_streamer_pipeline_terminate(stream);
-+		stream->pipe_size = 0;
- 	}
- 
- 	return 0;
+ void iio_device_free(struct iio_dev *indio_dev);
+-struct iio_dev *devm_iio_device_alloc(struct device *dev, int sizeof_priv);
++struct iio_dev *devm_iio_device_alloc(struct device *parent, int sizeof_priv);
+ struct iio_trigger *devm_iio_trigger_alloc(struct device *dev,
+ 						const char *fmt, ...);
+ /**
 -- 
-2.17.1
+2.25.1
 
 
 _______________________________________________
