@@ -2,53 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C7B01DEA68
-	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 16:54:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9658C1DEA70
+	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 16:55:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9Mf/mOTSnTPvW1cNYDAX0jJgFfYxSTQz1fzfGjVpR0U=; b=Avq+Qg7pJuu4hb
-	/lwQi1J2Rf38LrJxo7HahEEMhQm6KqTLxJbiyq3gPAF0ft31JLorHXnpEHdt2AhpqaXNGhSg9+BKL
-	lEndpe+eikY2DPMZ639Jckh85HmYbzLE8eiex9TdyveQC2x/i83yvG8wkyHFZaPa/oAPAD0vt7pDy
-	BNTB/7VCFLyRkn7wKaao3+TO55otWKXRurkQug5/rZvo1jbcJGsMj9O+OKaJmyA2KqR/4uw9Mv2ZL
-	Qdzu4FuBWsbbAgocGcqldjuWXRPMVL4OIKf4uTARMR3oU4/owuYQyNNNw9+bQimPA99cU3L7qdsmn
-	Q+3/WZVHT0U2M9P2Kxmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QV9EzJpmj8NrRZYERDjir5mQbCCgkjwzM+SK0rvwK/s=; b=KjdkqjCwHg699Z
+	ABgWt82UbbQlDU6dXvf7qU161kU0fEWTLSqp0vnm3PBjfUExsywAiBcsKX3c/tVU4iWDbhdodBGdi
+	u+omt2d/KxaQp9kfgJdT0Q1Mf+3dF+5nuEleJtWfd89K16xzQeO6WT317vjh7WcsPwctjRG9eqhYB
+	WDcXdfRhSCe+3F3x7WKLojHaXnvz2YGLt+rSpfyGz/0s1UnE+63VUUogHVxJSQRJClqydIoBNLP+h
+	j6wlN8eeny+lRH9m/7KLx8scGb4X98lFctYmt1J5wgF8L9Y+CVf5zBDlu/nIQz/ffVzqMEQg814ay
+	lT0jCqyrp03Zr6bdO8IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc94R-0005c9-0A; Fri, 22 May 2020 14:54:47 +0000
+	id 1jc95F-0000Ns-Sp; Fri, 22 May 2020 14:55:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc90Z-0001lF-Q6; Fri, 22 May 2020 14:50:50 +0000
+ id 1jc90a-0001mO-OQ; Fri, 22 May 2020 14:50:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0E05221D6C;
- Fri, 22 May 2020 14:50:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 34907221FA;
+ Fri, 22 May 2020 14:50:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159046;
- bh=rgoYLS+WMEIn3HQPScbZElKfuAs0VrEeOrN4VJIZ2TQ=;
- h=From:To:Cc:Subject:Date:From;
- b=1GwWNDEa+PXZEA8rxoz6UFVC7r5nQEAr68p6bEY7+jjUNXtW35QwZhmh7G1VOCa2u
- 8aY3v6EMSUefPZLOxyT9H5tAYdU038/IjW0IxUYWOqOUty3OXNO+7h0c+5dyloekMJ
- lEEi5qncWOvjMLdMWJ6yb0cdlYUtti3dnXbAgUCs=
+ s=default; t=1590159048;
+ bh=GAE2D+tNYqHpOGEnIoN5nD5WiR4WK1GbglOK11YPR98=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=PTMtqRPqk7R5h3mcC4JhuYRjpGZaEQtdOEsoAwIUebRb/V9/jg+yN4/NMhMWM+KeN
+ Xk7OKygvFPsV2Yaz+fmZHHGB5PPNVt9YnUnMgeTFXYVzFzDc+f8vA0/6uNw8Lcgux3
+ +pzgCs006tyXsjcjUVsCCZV2XTTs5cKf/M6Uq8V8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 01/32] ARM: dts: rockchip: fix phy nodename for
- rk3228-evb
-Date: Fri, 22 May 2020 10:50:13 -0400
-Message-Id: <20200522145044.434677-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 02/32] ARM: dts: rockchip: fix phy nodename for
+ rk3229-xms6
+Date: Fri, 22 May 2020 10:50:14 -0400
+Message-Id: <20200522145044.434677-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200522145044.434677-1-sashal@kernel.org>
+References: <20200522145044.434677-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075047_879109_F5B01B9D 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20200522_075049_122347_15789C47 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,11 +90,11 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit 287e0d538fcec2f6e8eb1e565bf0749f3b90186d ]
+[ Upstream commit 621c8d0c233e260232278a4cfd3380caa3c1da29 ]
 
 A test with the command below gives for example this error:
 
-arch/arm/boot/dts/rk3228-evb.dt.yaml: phy@0:
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: phy@0:
 '#phy-cells' is a required property
 
 The phy nodename is normally used by a phy-handle.
@@ -108,25 +110,25 @@ phy/phy-provider.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-Link: https://lore.kernel.org/r/20200416170321.4216-1-jbx6244@gmail.com
+Link: https://lore.kernel.org/r/20200416170321.4216-2-jbx6244@gmail.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3228-evb.dts | 2 +-
+ arch/arm/boot/dts/rk3229-xms6.dts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/rk3228-evb.dts b/arch/arm/boot/dts/rk3228-evb.dts
-index 5670b33fd1bd..aed879db6c15 100644
---- a/arch/arm/boot/dts/rk3228-evb.dts
-+++ b/arch/arm/boot/dts/rk3228-evb.dts
-@@ -46,7 +46,7 @@
+diff --git a/arch/arm/boot/dts/rk3229-xms6.dts b/arch/arm/boot/dts/rk3229-xms6.dts
+index 679fc2b00e5a..933ef69da32a 100644
+--- a/arch/arm/boot/dts/rk3229-xms6.dts
++++ b/arch/arm/boot/dts/rk3229-xms6.dts
+@@ -150,7 +150,7 @@
  		#address-cells = <1>;
  		#size-cells = <0>;
  
 -		phy: phy@0 {
 +		phy: ethernet-phy@0 {
- 			compatible = "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22";
+ 			compatible = "ethernet-phy-id1234.d400",
+ 			             "ethernet-phy-ieee802.3-c22";
  			reg = <0>;
- 			clocks = <&cru SCLK_MAC_PHY>;
 -- 
 2.25.1
 
