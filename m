@@ -2,46 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9E11DEAD7
-	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 16:57:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 422941DEAEA
+	for <lists+linux-rockchip@lfdr.de>; Fri, 22 May 2020 16:57:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JvSdhr+vjBO7wGsql/L1CfsfrqPFLQbzaE/uI8Ok1F8=; b=VgkAVJLkXwT0Dj
-	P638+AhiXXfw9SuVMRJpurmMrnZ0btPS+PPZPLYFASJeh+/GFcee12hfFp70DJqvFGC/9i6ePEJ40
-	blhu0ol3aarmwcqV4rNI8V3hhQxlBdsHyr+WJ/+PKQ3xrXW/n5uvs6ggHNyQnOsnIo7qYjyqcYHA8
-	OubjuJdc33PawmVVLVySpao5gmSY0XJfXTDgDPQtXC4ZIWEO6P7TkwY2SW+TV9VWqSl/DH1MTq0Fp
-	LeIB2i9s3sQ3dKHL6/YXZmr2lbUSTZkIB884foramUMyi6nAwyoAqUyhNuoWC2kYF8OBjC1axa87c
-	Xoo0fEm2iqqSKZUi/g6w==;
+	List-Owner; bh=fviS9MLDXDhjUlXTjfKsZz9tCtGNe19bD7Cy9+RE2/k=; b=QbKh4vhXxbu6uM
+	iYkOdyjJkvir/P115u0gWY7Alcc7V5oOx+59DZKQz67EYm2ypOrz3YUVb12yKABQvSTKkwFaEVSgG
+	f1AwJNjtF7tUclfYdOl+9yVXjcpHqLmR1Et+0ztwXxnIoOdxvS+9dHulIk+QQGcJEn89AgdfCRGVs
+	bkfFxrREFNIgDiOrO+sP+tBPgip3Lw5Y8vOCIjx9wGyj9HtFFFqR5mXVDHfM4ymWQmQScslO7EyDj
+	haqljcTN16TebHludW2a3ZqkJws+Os8jbMD6/lUSh+OpO7qiwTXw56yU3KM7DpMjZilYQjakoLO5p
+	U0KYmAIb9wGlUmGe+jSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc96p-00026N-Po; Fri, 22 May 2020 14:57:15 +0000
+	id 1jc973-0002Pt-VL; Fri, 22 May 2020 14:57:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc91B-0002SD-9n; Fri, 22 May 2020 14:51:27 +0000
+ id 1jc91B-0002TA-MV; Fri, 22 May 2020 14:51:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 82BA2223E0;
- Fri, 22 May 2020 14:51:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A78642240A;
+ Fri, 22 May 2020 14:51:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159083;
- bh=VMPVLPjD0+WHhRDFJyg3MGAJZ62iSw/QNHYKSyeBzd4=;
+ s=default; t=1590159084;
+ bh=ItKeQkSoQTVnFcBr+f9ZOmDE3R/JRfrPNEmeZ6RfQyw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tDchs/XFSFsUzeKcl3LIKfAGmQOS1qcHkJus8b3WwDEHdAy4mGu7tRHagD1XeQ2tK
- I/KPZRFQj//APKDL6Yse/UompKPyNYuWfQzMPZHNMMlOSL92oD41seoLGiiBbNJSYd
- Y2eDamAoBLSsvSWrbgSQSitOJni/zVEnQR1srrNM=
+ b=d8mDBYenZTmdFAyZo78z+Ki287IyGz6u34SEBomKYT7Ath8O9OIBp6/iBiMZIIbiq
+ QxOiF9aMLbAL8Zjn2KGqyF7H0VpohO5xxItYl7DWuCGVuTf06TCfMoI9RISpUrgI2b
+ CySA4MSAbjWDEsWmzjo6swJuLm6bGd0zqZkE045s=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 02/19] arm64: dts: rockchip: fix status for
- &gmac2phy in rk3328-evb.dts
-Date: Fri, 22 May 2020 10:51:03 -0400
-Message-Id: <20200522145120.434921-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 03/19] arm64: dts: rockchip: swap interrupts
+ interrupt-names rk3399 gpu node
+Date: Fri, 22 May 2020 10:51:04 -0400
+Message-Id: <20200522145120.434921-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200522145120.434921-1-sashal@kernel.org>
 References: <20200522145120.434921-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075125_502773_A709D323 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20200522_075125_805936_BF54B68A 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,33 +91,45 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit c617ed88502d0b05149e7f32f3b3fd8a0663f7e2 ]
+[ Upstream commit c604fd810bda667bdc20b2c041917baa7803e0fb ]
 
-The status was removed of the '&gmac2phy' node with the apply
-of a patch long time ago, so fix status for '&gmac2phy'
-in 'rk3328-evb.dts'.
+Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
+In order to automate this process arm,mali-midgard.txt
+has been converted to yaml. In the new setup dtbs_check with
+arm,mali-midgard.yaml expects interrupts and interrupt-names values
+in the same order. Fix this for rk3399.
+
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
+arm,mali-midgard.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200425122345.12902-2-jbx6244@gmail.com
+Link: https://lore.kernel.org/r/20200425143837.18706-1-jbx6244@gmail.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3328-evb.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
-index 212dd8159da9..d89f3451ace5 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
-@@ -86,7 +86,7 @@
- 	assigned-clock-rate = <50000000>;
- 	assigned-clocks = <&cru SCLK_MAC2PHY>;
- 	assigned-clock-parents = <&cru SCLK_MAC2PHY_SRC>;
--
-+	status = "okay";
- };
- 
- &i2c1 {
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 451f00a631c4..f14e8c5c41ac 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -1817,10 +1817,10 @@
+ 	gpu: gpu@ff9a0000 {
+ 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
+ 		reg = <0x0 0xff9a0000 0x0 0x10000>;
+-		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
+-			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
+-		interrupt-names = "gpu", "job", "mmu";
++		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
++		interrupt-names = "job", "mmu", "gpu";
+ 		clocks = <&cru ACLK_GPU>;
+ 		power-domains = <&power RK3399_PD_GPU>;
+ 		status = "disabled";
 -- 
 2.25.1
 
