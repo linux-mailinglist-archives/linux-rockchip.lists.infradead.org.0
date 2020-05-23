@@ -2,46 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFEC1DF92B
-	for <lists+linux-rockchip@lfdr.de>; Sat, 23 May 2020 19:23:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3FA61DF933
+	for <lists+linux-rockchip@lfdr.de>; Sat, 23 May 2020 19:24:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Ja//xNcYtGJjGW/XOxiYS60ZjSGDfETmMpwyd0pgBs=; b=K3Dt1zxmPelkfm
-	Cb3Qi06bGDVQDHI1L+NWaC6XPpxI1qVSUAd/+96B4TEhYwXG0ubWAtSWM2WxfDLr9idDv/YaButrs
-	185bS5+KYvDPMAhP0JdzbcwVKAhWO6UM5bsSsduGMXXyiLp7HQOtujPnGReSri2XQTkqNhoVtFv2c
-	tEwEHb0dYCBPiHag15Q/odAmnlc3E3TkPreoory8TfOzpNx2Ip+WvhTiuY+vc0VDwk8F57jZYWh5F
-	3FA3ZnaVH1C5PXz9YSSQQBCCI2nPr6JbXonTG1Rb9Q07XUpkq7Ifh1Oft/oh2RiCKnnX3yBUrGyKI
-	M3X74lAdiMKeU89jMBbQ==;
+	List-Owner; bh=oevg/bn751e4CKC1cD3kZtZY8fHSDE07l01/QnxCbd8=; b=ETytRYEOu6Ebf1
+	cIEqvCohrAu5lWoxQ/yt4mjsYIrqpHZac/9LAYQYPNwgNOWia3RdwWct5PufON2yR2c5VvRUnViWq
+	pXMAjTJFRIJ0Dy6381XAgcRa9lat3yERms9cUukDTqGUZq4kK9MEEgcGIaK6DK8T8SsbaLvz6oz79
+	FU2JczO5Pjj1V3qtRzHPDD1rMwFVbMVoxtZKZcJaS0Q1lcqrY9r6ogED0pSrYupyZ+MH28YM/LHsL
+	0GlE0GgfeJmAJspUhcDhXloE6y1IGx/YpExm9Q9wmIFOuXDnY2QrJZnHeYr/SuOqA+Sc3hiGya9K8
+	XTx/bqFE0yfySFROlOfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcXsE-0005J6-4P; Sat, 23 May 2020 17:23:50 +0000
+	id 1jcXsp-0005xZ-MO; Sat, 23 May 2020 17:24:27 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcXrB-0004KY-9e
- for linux-rockchip@lists.infradead.org; Sat, 23 May 2020 17:22:48 +0000
+ id 1jcXrR-0004b7-Cq
+ for linux-rockchip@lists.infradead.org; Sat, 23 May 2020 17:23:02 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ukl@pengutronix.de>)
- id 1jcXqr-0001pY-Oc; Sat, 23 May 2020 19:22:25 +0200
+ id 1jcXr7-0001tg-PK; Sat, 23 May 2020 19:22:41 +0200
 Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <ukl@pengutronix.de>)
- id 1jcXqr-00057S-5L; Sat, 23 May 2020 19:22:25 +0200
-Date: Sat, 23 May 2020 19:22:25 +0200
+ id 1jcXr7-00057a-8Z; Sat, 23 May 2020 19:22:41 +0200
+Date: Sat, 23 May 2020 19:22:41 +0200
 From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
 To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 18/32] pwm: tiehrpwm: convert to
+Subject: Re: [PATCH 16/32] pwm: bcm-iproc: convert to
  devm_platform_ioremap_resource
-Message-ID: <20200523172225.6e6zzssw7ne7mlv7@pengutronix.de>
+Message-ID: <20200523172241.kiblyighu36pf4mi@pengutronix.de>
 References: <20191229080610.7597-1-tiny.windzz@gmail.com>
- <20191229080610.7597-18-tiny.windzz@gmail.com>
+ <20191229080610.7597-16-tiny.windzz@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191229080610.7597-18-tiny.windzz@gmail.com>
+In-Reply-To: <20191229080610.7597-16-tiny.windzz@gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
 X-SA-Exim-Mail-From: ukl@pengutronix.de
@@ -49,7 +49,7 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_102245_442447_72C3234F 
+X-CRM114-CacheID: sfid-20200523_102301_535212_9DD628E4 
 X-CRM114-Status: UNSURE (   5.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
@@ -92,7 +92,7 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 Hello,
 
-On Sun, Dec 29, 2019 at 08:05:56AM +0000, Yangtao Li wrote:
+On Sun, Dec 29, 2019 at 08:05:54AM +0000, Yangtao Li wrote:
 > Use devm_platform_ioremap_resource() to simplify code.
 > =
 
