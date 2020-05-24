@@ -2,71 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E163B1E0128
-	for <lists+linux-rockchip@lfdr.de>; Sun, 24 May 2020 19:33:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C0C41E0129
+	for <lists+linux-rockchip@lfdr.de>; Sun, 24 May 2020 19:33:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MGk499aD3oEzZ8Qd7hXo8wOlow41DoZI8f3uJCPUIfQ=; b=alNDI8UraT1Cqs
-	pP51TIgHBsW5bmxSIfcP0M83w8QlEk7y6MMaebael0U5Z4lpCxHjEiIdsYifJMik2O3lpKxSbjuWe
-	RZ8zlhT8KZHM+CGXOOAxEobcMKQEt19cnPTPeXN39P7pX8aY8Z4+IwZYYYMcY1SQQy+l9GlRCFSkF
-	mGE2/jwmCZ5UIK/21a0yaa8w7iO4oZo5UsHkPG1rNDeU6Zo86f9u7DVmBPv5AAGlABVNwZXdAZzxT
-	c260iiclQw3kfASHHccrPKfH8JPIKoNqOodZ71TYq6Qgn2A3Ej/N3tYmXrZPI+6orYqvnj1FUTOqH
-	ztE8a6h6O3cmf1Zdso3A==;
+	List-Owner; bh=BpRJ+9AzHFATRffQidIuTDubLGhc71nG/+IIgbofjCY=; b=LQf7o4mJgzsYRY
+	0Fl4LJEfMyWXI8dqJjF1lh5vcwug+Df1sdKuYbqtHSjYtQG6P+vly3NmdyFqHBZUTmxeYsgQk1YtN
+	MM5WcR3q2rxu/AtgMQsIec7EBaBvrnksoT7flr1NqL/BZOb+F4DSNpdC1e6iMlzEW2Mj2MQm1TkAN
+	HXJSXX1NDvi2c94KZTzvNBRNzusj84o+JQIYDyJJslGMtYWkRKlzWOk3heDxDxbOJvPYYhL9Le/nj
+	nyin+1OtE+FJHgw5o1OLEr57V6OqlC0d7PIuBj6IMJpzll+h6f893DhHsYlx9/GMq6FB4miu7eNRk
+	xMj4ADzZORmP4NzYkVaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcuUq-0004kp-9o; Sun, 24 May 2020 17:33:12 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jcuV9-0004ox-QP; Sun, 24 May 2020 17:33:31 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcuUn-0004kS-8H
- for linux-rockchip@lists.infradead.org; Sun, 24 May 2020 17:33:10 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f21so4703070pgg.12
- for <linux-rockchip@lists.infradead.org>; Sun, 24 May 2020 10:33:08 -0700 (PDT)
+ id 1jcuV5-0004oD-Iy
+ for linux-rockchip@lists.infradead.org; Sun, 24 May 2020 17:33:29 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id q24so7585960pjd.1
+ for <linux-rockchip@lists.infradead.org>; Sun, 24 May 2020 10:33:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ne/8/a9OXvwh91Zw6UxFhdu2CXcMc/kGaJGpUeeEHPo=;
- b=TK/jvCjSMC5qVzlkPVJdOLMJQRQCPXdTC3q2D9nGmkW88vxbsybgtScdL6ZNSjY1HG
- unGM/DJuptETf2Y65jXycGyr8izm/Wqm3sbAr1OlRYS+X4FtBlrsnCKA7AAWX9qj/e7Z
- uCv15JrTu+dUetJ0qvlpQ0N/30vnDCrCuA5GU=
+ bh=lD59mt+Urc8oNiqOxLeBOVU51+Fn4Lh/7rB6OWjHyyA=;
+ b=f2EAXMoZnpnSxHR4tv9vsp5zYnDlOkG7qQK9KJ6+rd3G5VQ84XOoBBc20xu8gEUmUb
+ SOM59NJI03qWhiTemh2/+e1t/rotbwdTastiAsB93IaVZcAZhIBQxt0hYIhjHS5Lmjro
+ ouJaMZBcZh50RULuPVFyXFKJ1Yishsdpc6LN0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ne/8/a9OXvwh91Zw6UxFhdu2CXcMc/kGaJGpUeeEHPo=;
- b=QT2CKz235eZa5e73/NVSW51fYcsFjcgaaUeSOERZeP/1OO3eB18LNxgoDzrNzGRG0l
- 1EOLmmfDN6hktedff/+i7PLsthlgho2RuwMfOGmo/PzSObglrrhvnail0bKp/puuqPq0
- W6Yxh4km74XV7escdTyKoV3ryoevomN+IWcpTBdVtkHIRW8v46m26ERmagYF4MXVaHIa
- IfSFoVi/tSUKFg9Vtd0ddAmsjbibc9gBY/1IAdGFvI1zrxtFgLosOQ94CfW1HKqibRYd
- GXe3clI1WSfxZDt5wABhU9HITXs1n3WYGmJk4UWgYi8ieQcQsQxsQqS3zrKaOF8/rJSp
- D/+Q==
-X-Gm-Message-State: AOAM532VJqi7cj3XuWKGEVICDEhJxeOTD2S7alvmrCVnVRz3DALS+aLS
- cze8mosNe1TYU38Gd7M0VZcjew==
-X-Google-Smtp-Source: ABdhPJyPGDUNMuycugY1/gX2AGd22oNYvmQfpRYLkfKUDhhMyFNAIBWPNx8uE8R/+AgIQku0aBJ0Ww==
-X-Received: by 2002:aa7:9466:: with SMTP id t6mr13857242pfq.299.1590341588529; 
- Sun, 24 May 2020 10:33:08 -0700 (PDT)
+ bh=lD59mt+Urc8oNiqOxLeBOVU51+Fn4Lh/7rB6OWjHyyA=;
+ b=hXzRGzXwbfNLtqKAGTnZf5bhaYRMyXuoc9jpnly5fvsNSg8O9/I6sfvNZHP/1JHGMq
+ kNxXKKGRnTWoHCFcqZORR0/zCiEN3fQp434NlgtMd/fXZv7Opw9qEK+b/gKP4jIMo3DL
+ QMGljLEGu35YgC4YTvUG+/0QRyAl5xpiV35iisd7EEUO0pCR5/uHBPX2iOYHLJKEVek5
+ a1dqs2xhiL9Ba0wIn/bFLkluUX4cGTLT5YsjPpJHq0r2ng/KUJ9by+lI8YbU7G/nD4Bf
+ pMBbHFR+/bm5TMRyEnRqsjq7QbnBSMQ6UNryH9bmdfO1/2AFJWcHvQtK5EtoP1WaSbnt
+ l/gg==
+X-Gm-Message-State: AOAM5335yP6UctUCd9xOOzFKPo4I8fbvo2N3GY4cW/MiET4gatjTTOrC
+ rZmcMy/JXioHcpeGgXvO1EhMwA==
+X-Google-Smtp-Source: ABdhPJznzwkVPko459FVcXtWhIgU7ZupfbV2A/I25NikiiKU9SQvUJtM6WlBR3fRlN9k4wCx7+BQZQ==
+X-Received: by 2002:a17:902:ab8b:: with SMTP id
+ f11mr25341765plr.145.1590341606762; 
+ Sun, 24 May 2020 10:33:26 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:9b1:856c:6c2b:bde7])
  by smtp.gmail.com with ESMTPSA id
- y85sm10617271pfc.24.2020.05.24.10.32.48
+ y85sm10617271pfc.24.2020.05.24.10.33.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 24 May 2020 10:33:07 -0700 (PDT)
+ Sun, 24 May 2020 10:33:26 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH 2/3] nanopc-t4: Enable USB Gadget
-Date: Sun, 24 May 2020 23:02:12 +0530
-Message-Id: <20200524173213.201123-2-jagan@amarulasolutions.com>
+Subject: [PATCH 3/3] doc: rockchip: Document eMMC program steps
+Date: Sun, 24 May 2020 23:02:13 +0530
+Message-Id: <20200524173213.201123-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200524173213.201123-1-jagan@amarulasolutions.com>
 References: <20200524173213.201123-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_103309_289991_F061E1D6 
-X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-CacheID: sfid-20200524_103327_628760_3DB9B79E 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,30 +106,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable DWC3 core, gadget for nanopc-t4 board.
-
-This would help to use fastboot by default.
+Document eMMC partition creation and program steps for
+rockchip platforms.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- configs/nanopc-t4-rk3399_defconfig | 3 +++
- 1 file changed, 3 insertions(+)
+ doc/board/rockchip/rockchip.rst | 32 ++++++++++++++++++++++++++++++--
+ 1 file changed, 30 insertions(+), 2 deletions(-)
 
-diff --git a/configs/nanopc-t4-rk3399_defconfig b/configs/nanopc-t4-rk3399_defconfig
-index 3bb5b498f2..40fb797c49 100644
---- a/configs/nanopc-t4-rk3399_defconfig
-+++ b/configs/nanopc-t4-rk3399_defconfig
-@@ -50,7 +50,10 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_ROCKCHIP_USB2_PHY=y
- CONFIG_USB_KEYBOARD=y
-+CONFIG_USB_GADGET=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
+diff --git a/doc/board/rockchip/rockchip.rst b/doc/board/rockchip/rockchip.rst
+index cd9c8d6dc4..1faa675aa8 100644
+--- a/doc/board/rockchip/rockchip.rst
++++ b/doc/board/rockchip/rockchip.rst
+@@ -117,14 +117,42 @@ To write an image that boots from an SD card (assumed to be /dev/sda)::
+         sudo dd if=u-boot-rockchip.bin of=/dev/sda seek=64
+         sync
+ 
++eMMC
++^^^^
++
++eMMC flash would probe on mmc0 in most of the rockchip platforms.
++
++Create GPT partition layout as defined in configurations::
++
++        mmc dev 0
++        gpt write mmc 0 $partitions
++
++Connect the USB-OTG cable between host and target device.
++
++Launch fastboot at target::
++
++        fastboot 0
++
++Upon successful gadget connection,host show the USB device like::
++
++        lsusb
++        Bus 001 Device 020: ID 2207:330c Fuzhou Rockchip Electronics Company RK3399 in Mask ROM mode
++
++Program the flash::
++
++        sudo fastboot -i 0x2207 flash loader1 idbloader.img
++        sudo fastboot -i 0x2207 flash loader2 u-boot.itb
++
++Note: for rockchip 32-bit platforms the U-Boot proper image
++is u-boot-dtb.img
++
+ TODO
+ ----
+ 
+ - Add rockchip idbloader image building
+ - Add rockchip TPL image building
+ - Document SPI flash boot
+-- Describe steps for eMMC flashing
+ - Add missing SoC's with it boards list
+ 
+ .. Jagan Teki <jagan@amarulasolutions.com>
+-.. Fri Jan 10 00:08:40 IST 2020
++.. Sunday 24 May 2020 10:08:41 PM IST
 -- 
 2.25.1
 
