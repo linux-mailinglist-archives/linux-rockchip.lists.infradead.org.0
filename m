@@ -2,79 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 267601DFF84
-	for <lists+linux-rockchip@lfdr.de>; Sun, 24 May 2020 16:57:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C9D81E0065
+	for <lists+linux-rockchip@lfdr.de>; Sun, 24 May 2020 18:07:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JXpqesZzgLGwKFbxFIDOFN8EgZQfx+WSN5GOsi98eKY=; b=qHlcFPLAX7Sow+
-	I2Vkv8g1x7vn7okXTBTk8tSgFdZxO7pD/6KfzVG+QGBeSiuuZeNUmbu4zToNnBZbCInwBgEvTpRKy
-	zJEcJye68ktZw/ChNmVcwv6cCIllRhQ+gd2cGI01qChjbKSHB0iOgHnZeEGu5Ll6e90GKktbPnpF3
-	9FLHcclBjsSJ71IRJjCoLw437JNKDv+ES0vOv70hhY+IrhC3FjCsB/iQl1NvzJ9iJepDf/6HZzt6A
-	+oQJ11sJHgBFPtz0BldUKTYKSrDvEtYR/pGjTc+vKdRl8S7Cg5Qi9bFNI9IVjKGELOhDgZlczqJ4P
-	Pzl6CnH1qujCiAlqzNXQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8jTtKRPM+Kt+U+o80Z2P95pMU0I4aXjhrVwdW7NMQ/E=; b=PF/
+	MpDkhBsBchiIXhVftG8IC01sJi1RzOYPhSZ3b1qtBtP121+Lc5j0lKu50ogBKLjSes/F4RtXc/Ni2
+	+HVO/IjXjYa6IscmSYS2nx/amEvUW2dEYb9TjDxO6aScRA6pk191jzyT37skRWzFc7nAaFj+z9WqH
+	VccilvvwXDL1+nxFrOFO5hnKlgLcyE6eRHHQ3pTSx/SPqeRgWGzTyPlyD+lXoi0p4FJNyXQo3yTON
+	cfxo8GyKAq4Zrm3culi2JEk9d1Yn6wiG1vPT/N0VKjPapIw51ZdE54fdIJey7pzGNU9bGoA6iUsqj
+	6nbopYBDMv73FrD619Fxhg9YZ2SPBeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcs3n-0003Lh-My; Sun, 24 May 2020 14:57:07 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jct9P-00041L-5h; Sun, 24 May 2020 16:06:59 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcs3k-0003L5-6T
- for linux-rockchip@lists.infradead.org; Sun, 24 May 2020 14:57:06 +0000
-Received: by mail-pg1-x543.google.com with SMTP id j21so7594354pgb.7
- for <linux-rockchip@lists.infradead.org>; Sun, 24 May 2020 07:57:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pctsjZ/mAtUZR10Nqi230zXhBDHFH2SKQuSgTiXpBc8=;
- b=H+hsXRQgzVLraFP7RpdN605Q8F1BnzNxPgBnNAT3fgZzxnTqlDmHu0gn1nKpfu4di3
- TuqXykLOSKZersc3R6bjl9h6q/5Apouiqr+ifA1xhhnqVvVTmavqN9Do50wIhGS79KwS
- yEQ2+/TFhPMkh5SAyPzLmykIt1uwH5MOirz/w=
+ id 1jct9D-0003s8-B8; Sun, 24 May 2020 16:06:48 +0000
+Received: by mail-ej1-x643.google.com with SMTP id s21so18241556ejd.2;
+ Sun, 24 May 2020 09:06:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=sxEJyU9TaXEIp1/fo5xw/QmL2ngVwpIdCduUvrBnplM=;
+ b=sNurkOT5nUX7mei8dVVCD9bx5S0mCWH7rHU9DVn0oa3Vx7AfqWTBIx0aarjsKH5eju
+ L4gExWaOHiGlROrm30c1VnApfd0vAWtc5qimIIAZsDHjzHLWjzm5RQokNDXvE8pOGenZ
+ B+JUKwXawsHXzLtmOvSQ84qWp/YCXb5XRIlW7Bfxie73D3Xyow8yji/3+HMOwYxyCF6w
+ LCslZhGni3ZvD6GVNoA2uDUJWC8DBYJ5U39amRMg2WimQFI+a3wyaJfoN4aIQYFENPiB
+ 3TtM+RBVySGuQlz63QjE6coT9Wh1aanRw5u/3toxXPvulECFDGpjDiLw2McDWlPaJGnV
+ g/2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pctsjZ/mAtUZR10Nqi230zXhBDHFH2SKQuSgTiXpBc8=;
- b=rWitmlOrz1TVVgzJur8rNcaF8J1N45PS4YsTfjjI9yDoDQeyBKCO5F1z2yM8u/0DKv
- ipznA8K0Hlf6IF4l9/lOkRO1brSVRqw62z/gDW9cGLEUqxenl5u1bRFsurG0gUK3feCJ
- /QjMJ/uizTmg5Ok6FkSmKzaSyTnrfOGxtSSWKJwUZBtDC0Gs5//t8KjqqDzIg0XF34Rs
- /hXHnlU1RpYj2aYMEj5l1TsrwWl8B2Q+6qlCvHPahG9xx6VwqpbUohuLJyKVp2QJDPWH
- px62yLPecFfy6V+wraOWEpR88VjP/6CjSbEuKJFC0htdhS4ZOF8AM3l6RrV5RqG+AvuQ
- HS+Q==
-X-Gm-Message-State: AOAM533nyL9C8kkhlbWi0VkJsNfWdjHGO2kVdeVNtf2aVC6nozismlSr
- kAKgq3dC4qr5ApOj4d0QrkmMeQ==
-X-Google-Smtp-Source: ABdhPJwq/UhNu73clUwYljTG7dhOWBRXE+la3/iZRZfEXr2r8uST3s3/BIBqOqOGuSXZ5L+qwG4ABw==
-X-Received: by 2002:a05:6a00:82:: with SMTP id
- c2mr12351101pfj.118.1590332222712; 
- Sun, 24 May 2020 07:57:02 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:9b1:856c:6c2b:bde7])
- by smtp.gmail.com with ESMTPSA id
- w12sm10974245pjy.15.2020.05.24.07.56.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 24 May 2020 07:57:01 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Simon Glass <sjg@chromium.org>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>
-Subject: [PATCH v2] rockchip: Fix spl mmc boot device ofpath
-Date: Sun, 24 May 2020 20:26:18 +0530
-Message-Id: <20200524145618.78951-1-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=sxEJyU9TaXEIp1/fo5xw/QmL2ngVwpIdCduUvrBnplM=;
+ b=M81pXJT662hd+V4yngF1J4BcZYbmyBR15PbRALTsT+BfSvPpvoJlIk7gR6wus11Swg
+ KAM8ZScIYuirXT6l+0kZ0jsPbcuVFWltqj5qgBwbOqFUhhzIRkTb8kdrfe5+O/dOnyjm
+ tvn0GywK3x9RnPqoKVZ6BNRdT4MZOnrva8qqKPm0f8fCEBNTxbZ46/71/8Y31yaH11pS
+ OIRHtKUaSe6LIIZAkha73RsBau8YumxS3DicejzE8LCnTfTGmeBq3disGI67JHcn1Cs2
+ Sp3oz1aruqIo0nyN+OJxWL4eJT8QrfT7xMCqZBaa+tNi+R+ZtHVzy0vOTDwjdiZNujuf
+ QvnA==
+X-Gm-Message-State: AOAM533DhLiWozr/NNJ20xutUm3plUIxd1AT72CfuvDi5o69/HbhmFE6
+ nEgdGJzgSvE2ByCYWQsEJCQ=
+X-Google-Smtp-Source: ABdhPJzppSARRKRiOw707Bp1+PJaCjNmzltSjjaQgRwiUuFBPOVi5G7Fh6mBA5jXNi2qvpZvG8bZSA==
+X-Received: by 2002:a17:906:c943:: with SMTP id
+ fw3mr15404257ejb.288.1590336404894; 
+ Sun, 24 May 2020 09:06:44 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id qn17sm13252855ejb.125.2020.05.24.09.06.43
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 24 May 2020 09:06:44 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] ARM: dts: rockchip: rename label and nodename pinctrl
+ subnodes that end with gpio
+Date: Sun, 24 May 2020 18:06:35 +0200
+Message-Id: <20200524160636.16547-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_075704_669805_1E14D319 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200524_090647_397570_29CBB6E5 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,127 +96,260 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: u-boot@lists.denx.de, linux-rockchip@lists.infradead.org,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>,
- sunil@amarulasolutions.com
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Linux v5.7-rc1 dts(i) sync has changed the sdmmc node from
-dwmmc@fe320000 to mmc@fe320000 and this ofpath is being
-used in rockchip spl bootdevice code.
+A test with the command below gives for example this error:
 
-So, update the ofpath with a new node name and prefix "same-as-spl" 
-to missing u-boot,spl-boot-order.
+arch/arm/boot/dts/rk3288-tinker.dt.yaml: tsadc: otp-gpio:
+{'phandle': [[54]], 'rockchip,pins': [[0, 10, 0, 118]]}
+is not of type 'array'
 
-Bug log:
-U-Boot SPL 2020.07-rc2-00256-g9c5fef5774 (May 24 2020 - 20:20:43 +0530)
-Trying to boot from MMC2
-mmc_load_image_raw_sector: mmc block read error
-Trying to boot from MMC1
-mmc_load_image_raw_sector: mmc block read error
-SPL: failed to boot from all boot devices
+'gpio' is a sort of reserved nodename and should not be used
+for pinctrl in combination with 'rockchip,pins', so change
+nodes that end with 'gpio' to end with 'pin' or 'pins'.
 
-Fixes: 167efc2c7a46 ("arm64: dts: rk3399: Sync v5.7-rc1 from Linux"
-Signed-off-by: Suniel Mahesh <sunil@amarulasolutions.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/
+dtschema/schemas/gpio/gpio.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
-Changes for v2:
-- prefix "same-as-spl" to missing u-boot,spl-boot-order
+ arch/arm/boot/dts/rk322x.dtsi              |  6 +++---
+ arch/arm/boot/dts/rk3288-veyron-jaq.dts    |  2 +-
+ arch/arm/boot/dts/rk3288-veyron-jerry.dts  |  2 +-
+ arch/arm/boot/dts/rk3288-veyron-mighty.dts |  6 +++---
+ arch/arm/boot/dts/rk3288-veyron-minnie.dts |  2 +-
+ arch/arm/boot/dts/rk3288-veyron-pinky.dts  |  6 +++---
+ arch/arm/boot/dts/rk3288-veyron-sdmmc.dtsi |  2 +-
+ arch/arm/boot/dts/rk3288-veyron-speedy.dts |  2 +-
+ arch/arm/boot/dts/rk3288.dtsi              |  6 +++---
+ arch/arm/boot/dts/rv1108.dtsi              | 12 ++++++------
+ 10 files changed, 23 insertions(+), 23 deletions(-)
 
- arch/arm/dts/rk3399-evb-u-boot.dtsi               | 2 +-
- arch/arm/dts/rk3399-ficus-u-boot.dtsi             | 2 +-
- arch/arm/dts/rk3399-rock960-u-boot.dtsi           | 2 +-
- arch/arm/mach-rockchip/rk3399/rk3399.c            | 4 ++--
- board/theobroma-systems/puma_rk3399/puma-rk3399.c | 4 ++--
- 5 files changed, 7 insertions(+), 7 deletions(-)
-
-diff --git a/arch/arm/dts/rk3399-evb-u-boot.dtsi b/arch/arm/dts/rk3399-evb-u-boot.dtsi
-index e5659d7999..0bb50b01da 100644
---- a/arch/arm/dts/rk3399-evb-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-evb-u-boot.dtsi
-@@ -8,7 +8,7 @@
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 7a1a69183..3590ce15a 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -522,9 +522,9 @@
+ 		resets = <&cru SRST_TSADC>;
+ 		reset-names = "tsadc-apb";
+ 		pinctrl-names = "init", "default", "sleep";
+-		pinctrl-0 = <&otp_gpio>;
++		pinctrl-0 = <&otp_pin>;
+ 		pinctrl-1 = <&otp_out>;
+-		pinctrl-2 = <&otp_gpio>;
++		pinctrl-2 = <&otp_pin>;
+ 		#thermal-sensor-cells = <0>;
+ 		rockchip,hw-tshut-temp = <95000>;
+ 		status = "disabled";
+@@ -1103,7 +1103,7 @@
+ 		};
  
- / {
- 	chosen {
--		u-boot,spl-boot-order = &sdhci, &sdmmc;
-+		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
- 	};
+ 		tsadc {
+-			otp_gpio: otp-gpio {
++			otp_pin: otp-pin {
+ 				rockchip,pins = <0 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+ 
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+index 171ba6185..8efba9dea 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
+@@ -47,7 +47,7 @@
+ &sdmmc {
+ 	disable-wp;
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
+ 			&sdmmc_bus4>;
  };
  
-diff --git a/arch/arm/dts/rk3399-ficus-u-boot.dtsi b/arch/arm/dts/rk3399-ficus-u-boot.dtsi
-index f3f7aa7c45..38e0897db9 100644
---- a/arch/arm/dts/rk3399-ficus-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-ficus-u-boot.dtsi
-@@ -8,6 +8,6 @@
- 
- / {
- 	chosen {
--		u-boot,spl-boot-order = &sdhci, &sdmmc;
-+		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
- 	};
- };
-diff --git a/arch/arm/dts/rk3399-rock960-u-boot.dtsi b/arch/arm/dts/rk3399-rock960-u-boot.dtsi
-index 82f2c311af..c190089e26 100644
---- a/arch/arm/dts/rk3399-rock960-u-boot.dtsi
-+++ b/arch/arm/dts/rk3399-rock960-u-boot.dtsi
-@@ -8,7 +8,7 @@
- 
- / {
- 	chosen {
--		u-boot,spl-boot-order = &sdhci, &sdmmc;
-+		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
- 	};
- 
- 	vdd_log: vdd-log {
-diff --git a/arch/arm/mach-rockchip/rk3399/rk3399.c b/arch/arm/mach-rockchip/rk3399/rk3399.c
-index 09b0d6ebe8..4fda93b152 100644
---- a/arch/arm/mach-rockchip/rk3399/rk3399.c
-+++ b/arch/arm/mach-rockchip/rk3399/rk3399.c
-@@ -28,7 +28,7 @@ DECLARE_GLOBAL_DATA_PTR;
- const char * const boot_devices[BROM_LAST_BOOTSOURCE + 1] = {
- 	[BROM_BOOTSOURCE_EMMC] = "/sdhci@fe330000",
- 	[BROM_BOOTSOURCE_SPINOR] = "/spi@ff1d0000",
--	[BROM_BOOTSOURCE_SD] = "/dwmmc@fe320000",
-+	[BROM_BOOTSOURCE_SD] = "/mmc@fe320000",
+diff --git a/arch/arm/boot/dts/rk3288-veyron-jerry.dts b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+index 66f00d288..2c916c50d 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-jerry.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-jerry.dts
+@@ -192,7 +192,7 @@
+ &sdmmc {
+ 	disable-wp;
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
+ 			&sdmmc_bus4>;
  };
  
- static struct mm_region rk3399_mem_map[] = {
-@@ -176,7 +176,7 @@ const char *spl_decode_boot_device(u32 boot_device)
- 		u32 boot_device;
- 		const char *ofpath;
- 	} spl_boot_devices_tbl[] = {
--		{ BOOT_DEVICE_MMC1, "/dwmmc@fe320000" },
-+		{ BOOT_DEVICE_MMC1, "/mmc@fe320000" },
- 		{ BOOT_DEVICE_MMC2, "/sdhci@fe330000" },
- 		{ BOOT_DEVICE_SPI, "/spi@ff1d0000" },
+diff --git a/arch/arm/boot/dts/rk3288-veyron-mighty.dts b/arch/arm/boot/dts/rk3288-veyron-mighty.dts
+index 27fbc0747..fa695a88f 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-mighty.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-mighty.dts
+@@ -18,8 +18,8 @@
+ };
+ 
+ &sdmmc {
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
+-			&sdmmc_wp_gpio &sdmmc_bus4>;
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
++			&sdmmc_wp_pin &sdmmc_bus4>;
+ 	wp-gpios = <&gpio7 10 GPIO_ACTIVE_HIGH>;
+ 
+ 	/delete-property/ disable-wp;
+@@ -27,7 +27,7 @@
+ 
+ &pinctrl {
+ 	sdmmc {
+-		sdmmc_wp_gpio: sdmmc-wp-gpio {
++		sdmmc_wp_pin: sdmmc-wp-pin {
+ 			rockchip,pins = <7 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
  	};
-diff --git a/board/theobroma-systems/puma_rk3399/puma-rk3399.c b/board/theobroma-systems/puma_rk3399/puma-rk3399.c
-index 561579d056..f7f08ae617 100644
---- a/board/theobroma-systems/puma_rk3399/puma-rk3399.c
-+++ b/board/theobroma-systems/puma_rk3399/puma-rk3399.c
-@@ -77,7 +77,7 @@ static int setup_boottargets(void)
- 	}
+diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+index 383fad1a8..f8b69e0a1 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+@@ -114,7 +114,7 @@
+ &sdmmc {
+ 	disable-wp;
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
+ 			&sdmmc_bus4>;
+ };
  
- 	/*
--	 * Only run, if booting from mmc1 (i.e. /dwmmc@fe320000) and
-+	 * Only run, if booting from mmc1 (i.e. /mmc@fe320000) and
- 	 * only consider cases where the default boot-order first
- 	 * tries to boot from mmc0 (eMMC) and then from mmc1
- 	 * (i.e. external SD).
-@@ -85,7 +85,7 @@ static int setup_boottargets(void)
- 	 * In other words: the SD card will be moved to earlier in the
- 	 * order, if U-Boot was also loaded from the SD-card.
- 	 */
--	if (!strcmp(boot_device, "/dwmmc@fe320000")) {
-+	if (!strcmp(boot_device, "/mmc@fe320000")) {
- 		char *mmc0, *mmc1;
+diff --git a/arch/arm/boot/dts/rk3288-veyron-pinky.dts b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+index 71e6629cc..4e9fdb0f7 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-pinky.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-pinky.dts
+@@ -105,7 +105,7 @@
+ 	};
  
- 		debug("%s: booted from SD-Card\n", __func__);
+ 	sdmmc {
+-		sdmmc_wp_gpio: sdmmc-wp-gpio {
++		sdmmc_wp_pin: sdmmc-wp-pin {
+ 			rockchip,pins = <7 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+ 		};
+ 	};
+@@ -126,8 +126,8 @@
+ 
+ &sdmmc {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
+-		     &sdmmc_wp_gpio &sdmmc_bus4>;
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
++		     &sdmmc_wp_pin &sdmmc_bus4>;
+ 	wp-gpios = <&gpio7 RK_PB2 GPIO_ACTIVE_HIGH>;
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288-veyron-sdmmc.dtsi b/arch/arm/boot/dts/rk3288-veyron-sdmmc.dtsi
+index fe950f986..27fb06ce9 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-sdmmc.dtsi
++++ b/arch/arm/boot/dts/rk3288-veyron-sdmmc.dtsi
+@@ -41,7 +41,7 @@
+ 		};
+ 
+ 		/* This is where we actually hook up CD */
+-		sdmmc_cd_gpio: sdmmc-cd-gpio {
++		sdmmc_cd_pin: sdmmc-cd-pin {
+ 			rockchip,pins = <7 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
+diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
+index e354c61a4..4a3ea934d 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
+@@ -54,7 +54,7 @@
+ &sdmmc {
+ 	disable-wp;
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_gpio
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd_disabled &sdmmc_cd_pin
+ 			&sdmmc_bus4>;
+ };
+ 
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 0cd88774d..d052a4758 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -575,9 +575,9 @@
+ 		resets = <&cru SRST_TSADC>;
+ 		reset-names = "tsadc-apb";
+ 		pinctrl-names = "init", "default", "sleep";
+-		pinctrl-0 = <&otp_gpio>;
++		pinctrl-0 = <&otp_pin>;
+ 		pinctrl-1 = <&otp_out>;
+-		pinctrl-2 = <&otp_gpio>;
++		pinctrl-2 = <&otp_pin>;
+ 		#thermal-sensor-cells = <1>;
+ 		rockchip,grf = <&grf>;
+ 		rockchip,hw-tshut-temp = <95000>;
+@@ -1930,7 +1930,7 @@
+ 		};
+ 
+ 		tsadc {
+-			otp_gpio: otp-gpio {
++			otp_pin: otp-pin {
+ 				rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+ 
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index b453f8d0f..f3ff54753 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -352,9 +352,9 @@
+ 		clocks = <&cru SCLK_TSADC>, <&cru PCLK_TSADC>;
+ 		clock-names = "tsadc", "apb_pclk";
+ 		pinctrl-names = "init", "default", "sleep";
+-		pinctrl-0 = <&otp_gpio>;
++		pinctrl-0 = <&otp_pin>;
+ 		pinctrl-1 = <&otp_out>;
+-		pinctrl-2 = <&otp_gpio>;
++		pinctrl-2 = <&otp_pin>;
+ 		resets = <&cru SRST_TSADC>;
+ 		reset-names = "tsadc-apb";
+ 		rockchip,hw-tshut-temp = <120000>;
+@@ -729,7 +729,7 @@
+ 						<0 RK_PC6 3 &pcfg_pull_none>;
+ 			};
+ 
+-			i2c2m1_gpio: i2c2m1-gpio {
++			i2c2m1_pins: i2c2m1-pins {
+ 				rockchip,pins = <0 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>,
+ 						<0 RK_PC6 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+@@ -741,7 +741,7 @@
+ 						<1 RK_PD4 2 &pcfg_pull_none>;
+ 			};
+ 
+-			i2c2m05v_gpio: i2c2m05v-gpio {
++			i2c2m05v_pins: i2c2m05v-pins {
+ 				rockchip,pins = <1 RK_PD5 RK_FUNC_GPIO &pcfg_pull_none>,
+ 						<1 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+@@ -868,7 +868,7 @@
+ 				rockchip,pins = <0 RK_PB7 1 &pcfg_pull_none>;
+ 			};
+ 
+-			otp_gpio: otp-gpio {
++			otp_pin: otp-pin {
+ 				rockchip,pins = <0 RK_PB7 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+ 		};
+@@ -887,7 +887,7 @@
+ 				rockchip,pins = <3 RK_PA3 1 &pcfg_pull_none>;
+ 			};
+ 
+-			uart0_rts_gpio: uart0-rts-gpio {
++			uart0_rts_pin: uart0-rts-pin {
+ 				rockchip,pins = <3 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
+ 			};
+ 		};
 -- 
-2.25.1
+2.11.0
 
 
 _______________________________________________
