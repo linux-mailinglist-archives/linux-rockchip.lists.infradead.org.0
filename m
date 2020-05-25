@@ -2,92 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCD6B1E0DAF
-	for <lists+linux-rockchip@lfdr.de>; Mon, 25 May 2020 13:47:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03ACD1E0E85
+	for <lists+linux-rockchip@lfdr.de>; Mon, 25 May 2020 14:35:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=06lc08nWiaIwnDFOt3znR+rsxweEMUdtyqw3OshOC0M=; b=UdO8GdzOTGt3wg
-	6lUXFLCt9vw2NSJy33+wkol7OQvyHn15xjr5JCweEOJLmfMDchvr8+XMbhw37JXoiZEhXCX7cMxAU
-	kA/NBgCgsaog2xBM7SjzIXfLzC8U2mgvwCR9W7IaozoswTf8zlsvuj5Nu2gPKeI+Ac7xnajHVDTJl
-	Y1WKpGZru/uaARnERtI/jiQCPUF44tLtTH4oVApdKj048YKzACXFz6iDcIATwICGpu87PJYtPHuFD
-	yQoih4YAY1q+jOe0zCTUg1Gzv7tGtDKZsYo4cSp2+kByuvciN3QmBiARgmHI89c8vwZDdUuB35nQu
-	AciIpVIY2Egs43gnZlzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Q377iUWuvgA5T7eMlfAqnecxTBJ4G4FO1i9mHwluMJQ=; b=FG8OFNQlGq1KRYVhOoY5b2Idv
+	6qOelUashBYZt2U+iCjcAmusl7wW0N7JQCIkfISi4R8ooZ0VTGvI74ZrI7QVuvM2lAPfMBgUWV/aG
+	gzZir9Wlo4OrSvy8uWm6eqAu5SebhJvm6CXC/bVYoHtTuEKDRciGKdJXWmoWoEOh3XIr5G7EqwuNJ
+	UW1GyW9gOr2RCHI5zjeFE0VeRuDXlMWEJDlAFIAiIuyxiQXy1r38Dcb7Lw3gmd+1++SXry/a/LkS2
+	7Q+L3ClRBFyhnXCjnPgHgNKnsJgPtUfnt8vh1yQ16eXWfkhBskJCVk46vqIJ82h0WJGGFDUECiOib
+	V94qiCYBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdBaB-0006J1-DN; Mon, 25 May 2020 11:47:51 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdBa8-0006II-Rs
- for linux-rockchip@lists.infradead.org; Mon, 25 May 2020 11:47:50 +0000
-Received: by mail-ed1-x542.google.com with SMTP id i16so14792149edv.1
- for <linux-rockchip@lists.infradead.org>; Mon, 25 May 2020 04:47:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Hl7IW7DWz99YomR3QOZBXmvlxAGPmsXZQwu20AX5v3s=;
- b=buAXv4JEaQqiHrO8/RCz7HUcFTvhmEjLbUZHKrXlRHNck0Rq6D8WUDoq2L3hNja/6v
- t1syq8JezlywvTLr95huE9K/RR3oyutUWhO1IsPHTp6b/xHwqCEXwE4xS0rtsqbZ6SEL
- KwmqiMdE0QJSqHwNi1PaxzQDGEvLE0qUP4uaQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Hl7IW7DWz99YomR3QOZBXmvlxAGPmsXZQwu20AX5v3s=;
- b=iKcHPlNFgu7vjJ2VwzmCrgDI8EcNxd1T1I1W2vTyDCPltbCNjE7qMwQH4WmUtwJ36Q
- 3Rh5OrWqqM9q1XJzS4+wzaTt3U5CxCMGoHrkCFdRKKVhLMFm9LBbxWR4YhR/A93zHn3c
- w4esZHb3f6WsVIkB2hkoegWvofRsWMfAI+yjFiKKWl6FTaMeaztOEqW9Rja7XIPbJSfL
- WO3y5uuxzzuLWV7w3WvMtERFI3jftvh1lY4lN6FYXMux10zbIXgFpCsgsR3BYECtIBjb
- /hYNM4lxGgBkQ0puia31eb5Z8D3bZLdMYDW/hy0bh6OzP0a4VsP49O0dGxRcqnbCptCE
- YNcw==
-X-Gm-Message-State: AOAM533WQkF1loY2M7/gdClaJp4jbMaKOjW3S8VcnorQ7xKcW7ESyoHp
- fTs4CoJElvW5ibKF3QYh9N310ODRCUIKyQ==
-X-Google-Smtp-Source: ABdhPJzr8rwnsP0B7RJwUUXW2lyCVLjt1T4kdx/6dfmAOhDD0O0LjQnxKXWpYVwO8dDgBeMMjFVydQ==
-X-Received: by 2002:aa7:d993:: with SMTP id u19mr14649115eds.358.1590407266870; 
- Mon, 25 May 2020 04:47:46 -0700 (PDT)
-Received: from mail-wr1-f41.google.com (mail-wr1-f41.google.com.
- [209.85.221.41])
- by smtp.gmail.com with ESMTPSA id l1sm3089650ejd.114.2020.05.25.04.47.45
- for <linux-rockchip@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 25 May 2020 04:47:46 -0700 (PDT)
-Received: by mail-wr1-f41.google.com with SMTP id x14so11443877wrp.2
- for <linux-rockchip@lists.infradead.org>; Mon, 25 May 2020 04:47:45 -0700 (PDT)
-X-Received: by 2002:adf:e543:: with SMTP id z3mr14323859wrm.385.1590407265383; 
- Mon, 25 May 2020 04:47:45 -0700 (PDT)
+	id 1jdCKR-0006YR-8m; Mon, 25 May 2020 12:35:39 +0000
+Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdCKN-0006Xf-PN
+ for linux-rockchip@lists.infradead.org; Mon, 25 May 2020 12:35:37 +0000
+Received: from [10.130.0.52] (unknown [113.200.148.30])
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9Dx32qFu8teZuk4AA--.634S3;
+ Mon, 25 May 2020 20:35:18 +0800 (CST)
+Subject: Re: [PATCH 2/2] phy: Remove CONFIG_ARCH_ROCKCHIP check for subdir
+ rockchip
+To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
+References: <1590379739-18729-1-git-send-email-yangtiezhu@loongson.cn>
+ <1590379739-18729-2-git-send-email-yangtiezhu@loongson.cn>
+ <2687194.6AVWON70EC@diego>
+From: Tiezhu Yang <yangtiezhu@loongson.cn>
+Message-ID: <bf02bc5c-84e8-d699-e0fe-8bcf1bbd1030@loongson.cn>
+Date: Mon, 25 May 2020 20:35:17 +0800
+User-Agent: Mozilla/5.0 (X11; Linux mips64; rv:45.0) Gecko/20100101
+ Thunderbird/45.4.0
 MIME-Version: 1.0
-References: <20200522202130.13306-1-jonas@kwiboo.se>
-In-Reply-To: <20200522202130.13306-1-jonas@kwiboo.se>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Mon, 25 May 2020 13:47:33 +0200
-X-Gmail-Original-Message-ID: <CAAFQd5C7SsLET_6yHNpXnG5ozb09znOpRV1Rx8-uDpy=d4+ETQ@mail.gmail.com>
-Message-ID: <CAAFQd5C7SsLET_6yHNpXnG5ozb09znOpRV1Rx8-uDpy=d4+ETQ@mail.gmail.com>
-Subject: Re: [PATCH] media: rkvdec: Fix H264 scaling list order
-To: Jonas Karlman <jonas@kwiboo.se>, Alexandre Courbot <acourbot@chromium.org>,
- Jeffrey Kardatzke <jkardatzke@chromium.org>
+In-Reply-To: <2687194.6AVWON70EC@diego>
+X-CM-TRANSID: AQAAf9Dx32qFu8teZuk4AA--.634S3
+X-Coremail-Antispam: 1UD129KBjvJXoW7Cr4fGF1UuF4xtrW3Xr1DZFb_yoW8WryDpw
+ s5trWUCF95XF4jkFy2va98uFZ5tws3trWvgrW3X3W5XF98GrW3W3ZIgrWUXF4xXr4UArWx
+ K3Z3Ga43uF15Ca7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+ 9KBjDU0xBIdaVrnRJUUUkK14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+ rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+ 1l84ACjcxK6xIIjxv20xvE14v26r4j6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+ 6F4UM28EF7xvwVC2z280aVAFwI0_Cr1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVW0oV
+ Cq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0
+ I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Cr0_Gr1UMcvjeVCFs4IE7xkEbVWUJV
+ W8JwACjcxG0xvEwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7I2V7IY0VAS07AlzVAY
+ IcxG8wCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14
+ v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkG
+ c2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI
+ 0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Gr0_
+ Cr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7VU1fgA7
+ UUUUU==
+X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_044748_903244_6C462DA4 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200525_053536_257630_98E0C4AD 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,154 +79,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Nicolas Dufresne <nicolas.dufresne@collabora.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rockchip@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+ Xuefeng Li <lixuefeng@loongson.cn>, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, May 22, 2020 at 10:21 PM Jonas Karlman <jonas@kwiboo.se> wrote:
+On 05/25/2020 06:48 PM, Heiko St=FCbner wrote:
+> Am Montag, 25. Mai 2020, 06:08:59 CEST schrieb Tiezhu Yang:
+>> If CONFIG_ARCH_ROCKCHIP is not set but COMPILE_TEST is set, the file in
+>> the subdir rockchip can not be built due to CONFIG_ARCH_ROCKCHIP check
+>> in drivers/phy/Makefile.
+>>
+>> Since the related configs in drivers/phy/rockchip/Kconfig depend on
+>> ARCH_ROCKCHIP, so remove CONFIG_ARCH_ROCKCHIP check for subdir rockchip
+>> in drivers/phy/Makefile.
+>>
+>> Signed-off-by: Tiezhu Yang <yangtiezhu@loongson.cn>
+> wouldn't this make more sense to do for all subdirs?
 >
-> The Rockchip Video Decoder driver is expecting that the values in a
-> scaling list are in zig-zag order and applies the inverse scanning process
-> to get the values in matrix order.
+> - allwinner: also has arch_sunxi || compile_test in its Kconfig
+> - amlogic: same
+> - mediatek: same
+> - renesas: same
+> - tega: same
 >
-> Commit 0b0393d59eb4 ("media: uapi: h264: clarify expected
-> scaling_list_4x4/8x8 order") clarified that the values in the scaling list
-> should already be in matrix order.
+> So I think the right way would be to drop all the obj-$(CONFIG_ARCH_...)
+> options and group the separate directories into the generic subdir
+> listing below them.
+
+Hi Heiko,
+
+Thanks for your suggestions. I will check it and then send v2.
+
+Thanks,
+Tiezhu Yang
+
 >
-> Fix this by removing the reordering and change to use two memcpy.
+> Heiko
 >
-> Fixes: cd33c830448b ("media: rkvdec: Add the rkvdec driver")
-> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
-> ---
->  drivers/staging/media/rkvdec/rkvdec-h264.c | 70 +++++++---------------
->  1 file changed, 22 insertions(+), 48 deletions(-)
+>> ---
+>>   drivers/phy/Makefile | 2 +-
+>>   1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+>> index 310c149..e5b4f58 100644
+>> --- a/drivers/phy/Makefile
+>> +++ b/drivers/phy/Makefile
+>> @@ -12,7 +12,7 @@ obj-$(CONFIG_ARCH_SUNXI)		+=3D allwinner/
+>>   obj-$(CONFIG_ARCH_MESON)		+=3D amlogic/
+>>   obj-$(CONFIG_ARCH_MEDIATEK)		+=3D mediatek/
+>>   obj-$(CONFIG_ARCH_RENESAS)		+=3D renesas/
+>> -obj-$(CONFIG_ARCH_ROCKCHIP)		+=3D rockchip/
+>> +obj-y					+=3D rockchip/
+>>   obj-$(CONFIG_ARCH_TEGRA)		+=3D tegra/
+>>   obj-y					+=3D broadcom/	\
+>>   					   cadence/	\
+>>
+>
 >
 
-+Alexandre Courbot +Jeffrey Kardatzke for visibility
-
-> diff --git a/drivers/staging/media/rkvdec/rkvdec-h264.c b/drivers/staging/media/rkvdec/rkvdec-h264.c
-> index cd4980d06be7..2719f0c66a4a 100644
-> --- a/drivers/staging/media/rkvdec/rkvdec-h264.c
-> +++ b/drivers/staging/media/rkvdec/rkvdec-h264.c
-> @@ -18,11 +18,16 @@
->  /* Size with u32 units. */
->  #define RKV_CABAC_INIT_BUFFER_SIZE     (3680 + 128)
->  #define RKV_RPS_SIZE                   ((128 + 128) / 4)
-> -#define RKV_SCALING_LIST_SIZE          (6 * 16 + 6 * 64 + 128)
->  #define RKV_ERROR_INFO_SIZE            (256 * 144 * 4)
->
->  #define RKVDEC_NUM_REFLIST             3
->
-> +struct rkvdec_scaling_matrix {
-> +       u8 scaling_list_4x4[6][16];
-> +       u8 scaling_list_8x8[6][64];
-> +       u8 padding[128];
-> +};
-> +
->  struct rkvdec_sps_pps_packet {
->         u32 info[8];
->  };
-> @@ -86,7 +91,7 @@ struct rkvdec_ps_field {
->  /* Data structure describing auxiliary buffer format. */
->  struct rkvdec_h264_priv_tbl {
->         s8 cabac_table[4][464][2];
-> -       u8 scaling_list[RKV_SCALING_LIST_SIZE];
-> +       struct rkvdec_scaling_matrix scaling_list;
->         u32 rps[RKV_RPS_SIZE];
->         struct rkvdec_sps_pps_packet param_set[256];
->         u8 err_info[RKV_ERROR_INFO_SIZE];
-> @@ -785,56 +790,25 @@ static void assemble_hw_rps(struct rkvdec_ctx *ctx,
->         }
->  }
->
-> -/*
-> - * NOTE: The values in a scaling list are in zig-zag order, apply inverse
-> - * scanning process to get the values in matrix order.
-> - */
-> -static const u32 zig_zag_4x4[16] = {
-> -       0, 1, 4, 8, 5, 2, 3, 6, 9, 12, 13, 10, 7, 11, 14, 15
-> -};
-> -
-> -static const u32 zig_zag_8x8[64] = {
-> -       0,  1,  8, 16,  9,  2,  3, 10, 17, 24, 32, 25, 18, 11,  4,  5,
-> -       12, 19, 26, 33, 40, 48, 41, 34, 27, 20, 13,  6,  7, 14, 21, 28,
-> -       35, 42, 49, 56, 57, 50, 43, 36, 29, 22, 15, 23, 30, 37, 44, 51,
-> -       58, 59, 52, 45, 38, 31, 39, 46, 53, 60, 61, 54, 47, 55, 62, 63
-> -};
-> -
-> -static void reorder_scaling_list(struct rkvdec_ctx *ctx,
-> -                                struct rkvdec_h264_run *run)
-> +static void assemble_hw_scaling_list(struct rkvdec_ctx *ctx,
-> +                                    struct rkvdec_h264_run *run)
->  {
->         const struct v4l2_ctrl_h264_scaling_matrix *scaling = run->scaling_matrix;
-> -       const size_t num_list_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4);
-> -       const size_t list_len_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4[0]);
-> -       const size_t num_list_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8);
-> -       const size_t list_len_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8[0]);
->         struct rkvdec_h264_ctx *h264_ctx = ctx->priv;
->         struct rkvdec_h264_priv_tbl *tbl = h264_ctx->priv_tbl.cpu;
-> -       u8 *dst = tbl->scaling_list;
-> -       const u8 *src;
-> -       int i, j;
-> -
-> -       BUILD_BUG_ON(ARRAY_SIZE(zig_zag_4x4) != list_len_4x4);
-> -       BUILD_BUG_ON(ARRAY_SIZE(zig_zag_8x8) != list_len_8x8);
-> -       BUILD_BUG_ON(ARRAY_SIZE(tbl->scaling_list) <
-> -                    num_list_4x4 * list_len_4x4 +
-> -                    num_list_8x8 * list_len_8x8);
-> -
-> -       src = &scaling->scaling_list_4x4[0][0];
-> -       for (i = 0; i < num_list_4x4; ++i) {
-> -               for (j = 0; j < list_len_4x4; ++j)
-> -                       dst[zig_zag_4x4[j]] = src[j];
-> -               src += list_len_4x4;
-> -               dst += list_len_4x4;
-> -       }
->
-> -       src = &scaling->scaling_list_8x8[0][0];
-> -       for (i = 0; i < num_list_8x8; ++i) {
-> -               for (j = 0; j < list_len_8x8; ++j)
-> -                       dst[zig_zag_8x8[j]] = src[j];
-> -               src += list_len_8x8;
-> -               dst += list_len_8x8;
-> -       }
-> +       BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_4x4) !=
-> +                    sizeof(scaling->scaling_list_4x4));
-> +       BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_8x8) !=
-> +                    sizeof(scaling->scaling_list_8x8));
-> +
-> +       memcpy(tbl->scaling_list.scaling_list_4x4,
-> +              scaling->scaling_list_4x4,
-> +              sizeof(scaling->scaling_list_4x4));
-> +
-> +       memcpy(tbl->scaling_list.scaling_list_8x8,
-> +              scaling->scaling_list_8x8,
-> +              sizeof(scaling->scaling_list_8x8));
->  }
->
->  /*
-> @@ -1126,7 +1100,7 @@ static int rkvdec_h264_run(struct rkvdec_ctx *ctx)
->         v4l2_h264_build_b_ref_lists(&reflist_builder, h264_ctx->reflists.b0,
->                                     h264_ctx->reflists.b1);
->
-> -       reorder_scaling_list(ctx, &run);
-> +       assemble_hw_scaling_list(ctx, &run);
->         assemble_hw_pps(ctx, &run);
->         assemble_hw_rps(ctx, &run);
->         config_registers(ctx, &run);
-> --
-> 2.17.1
->
 
 _______________________________________________
 Linux-rockchip mailing list
