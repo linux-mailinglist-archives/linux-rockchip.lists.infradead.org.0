@@ -2,75 +2,74 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A02511E337A
-	for <lists+linux-rockchip@lfdr.de>; Wed, 27 May 2020 01:09:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB79A1E3388
+	for <lists+linux-rockchip@lfdr.de>; Wed, 27 May 2020 01:15:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xr4t0ySKHF67AGL80SlbKVlStMfw3TRI4vFwlwaZmXY=; b=RD905yGUERGAwC
-	hV/8RsGXtcMTuiceJCKzkb+k31glGa+cEbas0HqbEvOuXBoTugt1mJqa6//kVYCXpJVl2ORCu85tI
-	qMn5yLJc62dldmV+7AET4dmw0sbFPgN80SmL3Ic0BmY1KsFzk00DsHlr2RuxclHoNoy1MkVC6HY3l
-	4F2m73JouDGvbbI8AQcfNttM5y2YCz/L/qkC9Ml9pDpi/iOthR6RN8Xr+mjCq0xpUTtxbdbBAQUgm
-	+WHbf0ZcYRrSmHBqaGIBbWpAr3sA5WMPr1YZKR2+dDEvsS5UgWTCtp/BFXjC5GoY4qSXjXWMJuBA1
-	2Ia/yiLhYT25R9hDwhOw==;
+	List-Owner; bh=qwAL4B85jYfx2SxcdKyNbPOiS3OGAdUq4JMjlnHxaVg=; b=BvWfmm3mMXJKRG
+	BSTal6jUO+cCsi4N6EpfsNlNKKaWFSXfxZLpc2It5es+XiDpheURz2vTzNak/7cO10zWdeOerHYBK
+	zICcaaLfLaA7vHb/61MDJmN0Yo0cRbr87wn/OcDHI7GhBEtw/gv6OZ5RAd4HvzRxCUvrsXHPHlANT
+	Aj2XgSQmKSz+4AZgBPSjmAmPh5EsS2awaydZYL9shXaD1gILgevbhPzgQ9OD3dE1crCzqVqYWMsD0
+	kDxm036ATPAv3f2cEQTRFFpdnOL7VeGue1cfx5A11P3oXFqdnKr6Y6LD2w5RHjHzrrLtVc7PNWgYj
+	pndb6sA4HTq+lUvYs0DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdihJ-0007k4-US; Tue, 26 May 2020 23:09:25 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jdinG-0005F2-HE; Tue, 26 May 2020 23:15:34 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdihG-0007jN-W8
- for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 23:09:24 +0000
-Received: by mail-io1-xd42.google.com with SMTP id c8so3574168iob.6
- for <linux-rockchip@lists.infradead.org>; Tue, 26 May 2020 16:09:20 -0700 (PDT)
+ id 1jdinD-0005Eb-1P
+ for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 23:15:32 +0000
+Received: by mail-il1-x141.google.com with SMTP id w18so22168215ilm.13
+ for <linux-rockchip@lists.infradead.org>; Tue, 26 May 2020 16:15:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cQ3ze+f5b/1ZwQbWOPMMZMeekvLgFjRb8bxIRjsaSd0=;
- b=kdbKxW0bvkN1ZI9nLoxn9sBacbu4KgJJ4FkkYn2QrKvlucVlYtdZ8H4ff6C6eTsE9Z
- MoWXyUvlH0S68teD/K+co02/k/X0AVerTO8ghOoQMxYCCrIY73R/ovJFRE05lJV3wfC0
- tAS5uBYzxc697Qdj+xYMJmeXw+7GV7Wv2p6KQ=
+ :cc; bh=jySBpRhgkSp7FY1LCM2GdR3ZkT18v8dbWVMPb8KTVKQ=;
+ b=jQvVZCuoZLkH0/MONjJCWdYd6HCaaSU40xZChA03I2EIwFahcBDNE9lgIU/8/hSscv
+ Kkkh0A6F6G5Y/1Jr4D4RJBoDTmfu1oB6XPpCoWU46hm2rlP+4xK33JV3kJpC1SdV3cZa
+ +6rMZa8qE1+kCQ8e0X1LGvkHJG6XjbZkBeYbk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=cQ3ze+f5b/1ZwQbWOPMMZMeekvLgFjRb8bxIRjsaSd0=;
- b=sWVtHLXO8YnoNDuQIncH7q3duaSQPuU/NnXZfZbU08eCCcyu0P6wV0gvnaWHI0CBRG
- ROfqUobQ+v8TDF7e9eT2btSBSxYuQnl+V45jUu+6FrWmBLdxyPNgHvieENN0UGT23LK5
- Kifwy2A5tuW1BRYtssPskS6tATorLxCP6j2XpYxVZlEwhUSFzmuIR+1vhvzMh/OMFGGD
- rdddeBLtJ5q4W3gHB0/0Udu8AAndqv6Y+TIW1eilTUYWaOJWPTtrhZKTvF1XGnOSwNhB
- GgvSoWXs2SPhM7lZ/MBOn/ONQmpTAhZuzx0nKZJtlNkqwEzOj68IKCNtdaUAUbX9a6S4
- YboQ==
-X-Gm-Message-State: AOAM531EhIACGuY0xqTzhM1pcUtxoleUFI2g0KLnoswXXPkZVnSdWOLZ
- to7aiZeThzcLeHqpYY8ymEkAiLzQKLObAJbbmWO9rA==
-X-Google-Smtp-Source: ABdhPJzVAtHQErZTvpJ1Saha2x31lQqV2ODlhL29AuDQeCObg4bco1zWako9f6YP6Z2U+CKCwPHPM9Sc7Kp7xNUOIsw=
-X-Received: by 2002:a05:6602:2dca:: with SMTP id
- l10mr18865176iow.163.1590534560425; 
- Tue, 26 May 2020 16:09:20 -0700 (PDT)
+ bh=jySBpRhgkSp7FY1LCM2GdR3ZkT18v8dbWVMPb8KTVKQ=;
+ b=tnnR7nNPmqLCSwTy/pQMiXCtl3xo5f9uqr1zY/DcanUqPJRoMGpjBOmtb4XlzLc67Y
+ iosA1Wxxd64JBwfZTi2pXoib7IjIJj6t+lCXD5THY8uf1ZzpsI9oG85knXJX+0X47Goa
+ xlI7NP9GnW9AOHZTETGjNJkq5tCnby6o8DSI5VeMtthRCD7BkiZw0eo+1sZ8zrwfp5Up
+ miQMrBjaLtdv93YaOA0k4Mh4wlkLxTXTh14uKfm12uLCqXxUPpp9PsoKluZMBlff5XQW
+ JQbfgXuzT3kNUbm/vYLoanWqdm/TXWJBgZvJ2kd39XhSLamQyJfV1vAZPJ9XtFo/Sp+8
+ 8HLw==
+X-Gm-Message-State: AOAM531vJNwv7df9GIvn8YKlu4p7HkRhKDj/0uZ+sqvB1DTSQbu4aOPd
+ sOfE57LX07zo41KH7LuJtPvzNce0yMwOI+/HMCTfug==
+X-Google-Smtp-Source: ABdhPJzUFjqV1LEvDL6VMICWxhJEfLEXJnd1oqfCQQJcRjKaYsMndr5uwWNZ1KljJGIXDsvI2EbJiKzpjaYyIcB48p4=
+X-Received: by 2002:a92:d182:: with SMTP id z2mr3490952ilz.47.1590534929915;
+ Tue, 26 May 2020 16:15:29 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
- <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
-In-Reply-To: <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
+References: <20200509152904.26348-1-dafna.hirschfeld@collabora.com>
+ <20200509152904.26348-2-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200509152904.26348-2-dafna.hirschfeld@collabora.com>
 From: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 27 May 2020 01:09:09 +0200
-Message-ID: <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] media: staging: rkisp1: rsz: set output format to
- YUV422 if cap format is YUV444
+Date: Wed, 27 May 2020 01:15:18 +0200
+Message-ID: <CAHD77Hksw9QmSkNs7qx7fBHWDw7gJjhZAXNZCrMLhEYFFg5e_g@mail.gmail.com>
+Subject: Re: [PATCH 2/2] media: staging: rkisp1: stats: don't set stats flags
+ in rkisp1_stats_send_measurement
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_160923_029959_778039E4 
-X-CRM114-Status: GOOD (  19.14  )
+X-CRM114-CacheID: sfid-20200526_161531_096486_E61BED03 
+X-CRM114-Status: GOOD (  15.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -104,50 +103,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
+On Sat, May 9, 2020 at 5:29 PM Dafna Hirschfeld
 <dafna.hirschfeld@collabora.com> wrote:
 >
-> If the capture format is YUV444M then the memory input format
-> should be YUV422, so the resizer should not change the default
-> hdiv, vdiv in that case.
+> The flags that indicate which statistics are read are already
+> set in the functions that read them so there is no need to
+> set them in the function rkisp1_stats_send_measurement.
 >
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > ---
->  drivers/staging/media/rkisp1/rkisp1-resizer.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
+>  drivers/staging/media/rkisp1/rkisp1-stats.c | 13 +++----------
+>  1 file changed, 3 insertions(+), 10 deletions(-)
 >
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> index 04a29af8cc92..5f9740ddd558 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> @@ -394,10 +394,11 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
->          * (4:2:2 -> 4:2:0 for example). So the width/height of the CbCr
->          * streams should be set according to the pixel format in the capture.
->          * The resizer always gets the input as YUV422. If the capture format
-> -        * is RGB then the memory input (the resizer output) should be YUV422
-> -        * so we use the hdiv, vdiv of the YUV422 info in this case.
-> +        * is RGB or YUV444 then the memory input (the resizer output) should
-> +        * be YUV422 so we use the hdiv, vdiv of the YUV422 info in this case.
->          */
-> -       if (v4l2_is_format_yuv(cap->pix.info)) {
-> +       if (v4l2_is_format_yuv(cap->pix.info) &&
-> +           cap->pix.info->format != V4L2_PIX_FMT_YUV444M) {
->                 src_c.width = cap->pix.info->hdiv;
->                 src_c.height = cap->pix.info->vdiv;
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-stats.c b/drivers/staging/media/rkisp1/rkisp1-stats.c
+> index 8351bda0be03..0616793ae395 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-stats.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-stats.c
+> @@ -356,26 +356,19 @@ rkisp1_stats_send_measurement(struct rkisp1_stats *stats,
+>         cur_stat_buf =
+>                 (struct rkisp1_stat_buffer *)(cur_buf->vaddr[0]);
+>
 
-As pointed out in another thread, this should have been the original
-size divided by the divisor and not just the latter alone.
+Should we perhaps also set cur_stat_buf->meas_type to 0 here?
 
-It seems a bit suspicious to me that we don't need to upscale the
-chroma planes here, because it would mean that the MI itself would be
-doing some horizontal pixel doubling. The hardware documentation
-doesn't really explain this, though.
+> -       if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE) {
+> +       if (meas_work->isp_ris & RKISP1_CIF_ISP_AWB_DONE)
+>                 rkisp1_stats_get_awb_meas(stats, cur_stat_buf);
+> -               cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AWB;
 
-Have you been able to validate that the setting without upscaling
-indeed produces correct output?
+I wonder if it wouldn't be cleaner if this function took care of
+meas_type, rather than sprinkling it all over the measurement
+collection functions.
 
-Best regards,
-Tomasz
+> -       }
+>
+> -       if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN) {
+> +       if (meas_work->isp_ris & RKISP1_CIF_ISP_AFM_FIN)
+>                 rkisp1_stats_get_afc_meas(stats, cur_stat_buf);
+> -               cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AFM_FIN;
+> -       }
+>
+>         if (meas_work->isp_ris & RKISP1_CIF_ISP_EXP_END) {
+>                 rkisp1_stats_get_aec_meas(stats, cur_stat_buf);
+>                 rkisp1_stats_get_bls_meas(stats, cur_stat_buf);
+> -               cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_AUTOEXP;
+>         }
+>
+> -       if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY) {
+> +       if (meas_work->isp_ris & RKISP1_CIF_ISP_HIST_MEASURE_RDY)
+>                 rkisp1_stats_get_hst_meas(stats, cur_stat_buf);
+> -               cur_stat_buf->meas_type |= RKISP1_CIF_ISP_STAT_HIST;
+> -       }
+>
+>         vb2_set_plane_payload(&cur_buf->vb.vb2_buf, 0,
+>                               sizeof(struct rkisp1_stat_buffer));
+> --
+> 2.17.1
+>
 
 _______________________________________________
 Linux-rockchip mailing list
