@@ -2,30 +2,31 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1908F1E19F0
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D3F21E19F2
 	for <lists+linux-rockchip@lfdr.de>; Tue, 26 May 2020 05:32:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=jpo1yTidyfSih+lLDEg2YFDjbrRjYKsmJaY175mkzak=; b=E2i
-	5ZG31L+P5C+ZNbEzaXlsH24+sgbY4hA+i6twg+9LjrfHwt0eus9ORaQeJ2m8G3H21K7JMISOHLX0r
-	mLx1SacEglVmlybkOpFvETdBCAbW3V/tZ8USFk1uLW18Z7I1h3U8dZNIZp26Vogl72r7iTNc+9oGq
-	cexpDN2TQU9ZvpbK7HdpwAk1bNLrUxKQ6/e7UXDzAyqwN0KLwy2i7QGTFAocEMYf8NZ2tk0SJzUpR
-	wOY4nZeUmla9k7cn6syai2mRGxXYtxTfTia8C4lDVGRhZMgnhk4kL50tUb9icrckL0z2daN2aTM85
-	lWrjMsal53g6nShHizeA6gEUQAjd9iw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=g+WjsaeI/pvOy+Kard0Lllqi1Sv8xzzSdLg+6mqnQYw=; b=fhiYOox/bxH3Plw53Add0iqS/7
+	RZXH7UmnRq58MVJoFPOj6oU2/gBBSmKMVeoc6eeLM4FfzGMWMyQmD75uW30W61PO0l4FACPPHfN1b
+	q6muKN3lKNN1nmbJOPX80XtBdK4r1e1lzCK0loUIpZiuJKFrVPkPe3UG78EUNdcN93wxzkDyruzPy
+	/HmiZO4PDii/rM8TvsQJ5uKsJ4AoZAJlt701rSXrIUBwn1dW9I3HYzObCYXbxjyAepiufw27wopMs
+	3ANnLqVmWDJDxE8XLkDAQRc0dPCX0eko+olDRg7j1i/ZOpNFIeqYOVljrbwNDqMo8eN3aT9WZm2LJ
+	Lr/wLxow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdQKb-0003vN-M9; Tue, 26 May 2020 03:32:45 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
+	id 1jdQKa-0003tv-Tb; Tue, 26 May 2020 03:32:44 +0000
+Received: from lucky1.263xmail.com ([211.157.147.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdQKU-0003pB-As
+ id 1jdQKU-0003pE-Gn
  for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 03:32:40 +0000
 Received: from localhost (unknown [192.168.167.8])
- by lucky1.263xmail.com (Postfix) with ESMTP id 1A2B4D5950;
- Tue, 26 May 2020 11:32:23 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 2E220A72BA;
+ Tue, 26 May 2020 11:32:24 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -36,7 +37,7 @@ Received: from localhost.localdomain (unknown [58.22.7.114])
  P21206T140696379496192S1590463941416434_; 
  Tue, 26 May 2020 11:32:23 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <47e9953dffa7647e6a938d540879b68b>
+X-UNIQUE-TAG: <477ef20d92f1293979b75290065dd7e2>
 X-RL-SENDER: frank.wang@rock-chips.com
 X-SENDER: wmc@rock-chips.com
 X-LOGIN-NAME: frank.wang@rock-chips.com
@@ -49,24 +50,27 @@ From: Frank Wang <frank.wang@rock-chips.com>
 To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
  philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
  jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-Subject: [PATCH v6 00/16] Add Rockchip RK3399 USB3.0 Host support
-Date: Tue, 26 May 2020 11:32:04 +0800
-Message-Id: <20200526033220.20047-1-frank.wang@rock-chips.com>
+Subject: [PATCH v6 01/16] clk: rk3399: Enable/Disable the USB2PHY clk
+Date: Tue, 26 May 2020 11:32:05 +0800
+Message-Id: <20200526033220.20047-2-frank.wang@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200526033220.20047-1-frank.wang@rock-chips.com>
+References: <20200526033220.20047-1-frank.wang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_203238_774573_DD525ED1 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20200525_203238_719806_606A7445 
+X-CRM114-Status: UNSURE (   7.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
+ no trust [211.157.147.131 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.131 listed in wl.mailspike.net]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.132 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -81,99 +85,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jianing.ren@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>,
- marek.belisko@gmail.com, wmc@rock-chips.com, u-boot@lists.denx.de,
- william.wu@rock-chips.com, linux-rockchip@lists.infradead.org,
- linux-amarula@amarulasolutions.com, chenjh@rock-chips.com
+Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
+ u-boot@lists.denx.de, william.wu@rock-chips.com,
+ linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ chenjh@rock-chips.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This series add quirks for DWC3 and add Rockchip RK3399 USB3.0 host support.
+From: Jagan Teki <jagan@amarulasolutions.com>
 
-The function has been tested pass on rk3399-evb and roc-rk3399-pc board.
+Enable/Disable the USB2PHY clk for rk3399.
 
-For V6 update:
- - Use [PATCH v6 04/16] instead of [PATCH v5 05/16] to fix that the current
-   Generic PHY subsystem is unable to find PHY if the PHY node is not part of
-   the root structure.
- - Add 'Reviewed-by' tag for all patches except [PATCH v6 04/16].
+CLK is clear in enable and set in disable functionality.
 
-For V5 update:
- - Fix dwc3-generic driver followed Marek's comments for [PATCH v4 12/16].
- - Add 'Reviewed-by' and 'Tested-by' tag for [PATCH v4 07/16] and [PATCH v4 08/16].
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
+---
+ drivers/clk/rockchip/clk_rk3399.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-For V4 update:
- - Collect Jagan's all fixed patches [1].
- - Amend specific u-boot changes from dts to dtsi for [PATCH v3 6/7].
-
-For V3 update:
- - Fix compile error for [PATCH v2 1/9].
- - Use Jagan's Type-C driver instead of [PATCH v2 5/9].
- - Cleanup dts changes for [PATCH v2 7/9].
- - Cleanup config changes for [PATCH v2 8/9] and [PATCH v2 9/9].
-
-For V2 update:
- - Amend type-c driver followed Jagan's comments for [PATCH 5/8].
- - Fix dts commit for [PATCH 7/8].
- - Split RK3399 default config for [PATCH 8/8].
- - Add 'Reviewed-by' tag for [PATCH 1/8], [PATCH 2/8] and [PATCH 3/8].
-
-[1] https://patchwork.ozlabs.org/project/uboot/cover/20200506075025.1677-1-jagan@amarulasolutions.com
-
-BR,
-Frank
-
-Frank Wang (8):
-  arm: mach-rockchip: bind sub-nodes for rk3399_syscon
-  usb: dwc3: add dis_enblslpm_quirk
-  usb: dwc3: add dis_u2_freeclk_exists_quirk
-  usb: dwc3: amend UTMI/UTMIW phy interface setup
-  usb: dwc3: add make compatible for rockchip platform
-  driver: usb: drop legacy rockchip xhci driver
-  ARM: dts: rk3399-evb: usb3.0 host support
-  configs: evb-rk3399: update support usb3.0 host
-
-Jagan Teki (8):
-  clk: rk3399: Enable/Disable the USB2PHY clk
-  clk: rk3399: Set empty for TCPHY assigned-clocks
-  clk: rk3399: Enable/Disable TCPHY clocks
-  phy: rockchip: Add Rockchip USB2PHY driver
-  phy: rockchip: Add Rockchip USB TypeC PHY driver
-  usb: dwc3: Add disable u2mac linestate check quirk
-  usb: dwc3: Enable AutoRetry feature in the controller
-  roc-rk3399-pc: Enable USB3.0 Host
-
- arch/arm/dts/rk3399-evb-u-boot.dtsi           |  13 +
- arch/arm/mach-rockchip/rk3399/syscon_rk3399.c |   3 +
- configs/evb-rk3399_defconfig                  |   6 +
- configs/roc-pc-mezzanine-rk3399_defconfig     |   5 +
- configs/roc-pc-rk3399_defconfig               |   6 +
- drivers/Makefile                              |   1 +
- drivers/clk/rockchip/clk_rk3399.c             |  38 +
- drivers/phy/Kconfig                           |   1 +
- drivers/phy/rockchip/Kconfig                  |  21 +
- drivers/phy/rockchip/Makefile                 |   7 +
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 312 +++++++
- drivers/phy/rockchip/phy-rockchip-typec.c     | 796 ++++++++++++++++++
- drivers/usb/common/common.c                   |  25 +
- drivers/usb/dwc3/core.c                       | 106 ++-
- drivers/usb/dwc3/core.h                       |  19 +
- drivers/usb/dwc3/dwc3-generic.c               |  33 +-
- drivers/usb/host/Kconfig                      |   9 -
- drivers/usb/host/Makefile                     |   1 -
- drivers/usb/host/xhci-rockchip.c              | 196 -----
- include/dwc3-uboot.h                          |   3 +
- include/linux/usb/phy.h                       |  18 +
- 21 files changed, 1376 insertions(+), 243 deletions(-)
- create mode 100644 drivers/phy/rockchip/Kconfig
- create mode 100644 drivers/phy/rockchip/Makefile
- create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb2.c
- create mode 100644 drivers/phy/rockchip/phy-rockchip-typec.c
- delete mode 100644 drivers/usb/host/xhci-rockchip.c
-
+diff --git a/drivers/clk/rockchip/clk_rk3399.c b/drivers/clk/rockchip/clk_rk3399.c
+index 5fb72d83c2..b53f2f984e 100644
+--- a/drivers/clk/rockchip/clk_rk3399.c
++++ b/drivers/clk/rockchip/clk_rk3399.c
+@@ -1091,6 +1091,12 @@ static int rk3399_clk_enable(struct clk *clk)
+ 	case SCLK_MACREF_OUT:
+ 		rk_clrreg(&priv->cru->clkgate_con[5], BIT(6));
+ 		break;
++	case SCLK_USB2PHY0_REF:
++		rk_clrreg(&priv->cru->clkgate_con[6], BIT(5));
++		break;
++	case SCLK_USB2PHY1_REF:
++		rk_clrreg(&priv->cru->clkgate_con[6], BIT(6));
++		break;
+ 	case ACLK_GMAC:
+ 		rk_clrreg(&priv->cru->clkgate_con[32], BIT(0));
+ 		break;
+@@ -1167,6 +1173,12 @@ static int rk3399_clk_disable(struct clk *clk)
+ 	case SCLK_MACREF_OUT:
+ 		rk_setreg(&priv->cru->clkgate_con[5], BIT(6));
+ 		break;
++	case SCLK_USB2PHY0_REF:
++		rk_setreg(&priv->cru->clkgate_con[6], BIT(5));
++		break;
++	case SCLK_USB2PHY1_REF:
++		rk_setreg(&priv->cru->clkgate_con[6], BIT(6));
++		break;
+ 	case ACLK_GMAC:
+ 		rk_setreg(&priv->cru->clkgate_con[32], BIT(0));
+ 		break;
 -- 
 2.17.1
 
