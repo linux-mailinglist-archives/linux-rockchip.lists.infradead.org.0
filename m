@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 783D41E19FD
-	for <lists+linux-rockchip@lfdr.de>; Tue, 26 May 2020 05:34:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D100A1E19FF
+	for <lists+linux-rockchip@lfdr.de>; Tue, 26 May 2020 05:34:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OB1oQH5lSvF+522XZb0/X7kyJbdQbdY1UmTQB/CKPto=; b=Qp5wrLYrIuO+OxcQKMB+Y5dT1f
-	4Yae0sW4O8LIbFx1BmWApB59q9L/RTL4b4jvTFsTl1RS6rd0W8XxLbXpF5IU3WfkfymqqlxN+4Bl+
-	pZrhUc1Igp3bGv2JVLC5ABQqMXVQNA7wFf2JCPurjHxfJm72Mn/zJEeWMV7Op0zoz5FpKsUtZt6if
-	Uk9osPfem8SUX3kFobYTzUrbz5ocUxMe1JdO4TEsq2g8Chldut9TxLQBopbrbAAw1tFEIqZbQMLLJ
-	FkkUhC5xKOwiGZLftPvQTb9xCVMomTtxsfVpYv47SbSd5Us+22K83KzOxZ35HHAmcJs4+K/IePekK
-	bLMmJwZw==;
+	bh=8TfuWI5J4/vUalbLL3DDavoQhp9TJYHa4IuSnQ5ogfo=; b=VKaf6L45JzlRHG+fdsB9pTlUbY
+	GLJ5/KvNAGipV4iTGUOxBwitdQWdxaZnYvA0zaD5t84sN+l/U9TImYwavxkzqyBVsZ38vjxJeqQrT
+	n+S61hU4liDIsWxiiel3B8Tv3y+OhMfM3g3ebQ2guFMjqIM5rylG3tcV1tjjWabxJTMpXv9suNo63
+	Nhac/IJ2lj2RS3l7HLw+MgcpCMhMa9JLSW0TRy3YLeEexnyzzf316J/+3IDhkicG0AJ4wpTjLCvH9
+	t9wdmm+PFTfSzN9nuaAtyT8KEBFHlrhor3DbA8WH9t8eOIGZTAFxBmqyLCpK4kE0kQwCaUKghcIj6
+	IvzkrHzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdQMV-0004Mi-VQ; Tue, 26 May 2020 03:34:43 +0000
-Received: from lucky1.263xmail.com ([211.157.147.130])
+	id 1jdQMY-0004PT-UX; Tue, 26 May 2020 03:34:46 +0000
+Received: from lucky1.263xmail.com ([211.157.147.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdQMS-0004LF-NH
- for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 03:34:42 +0000
+ id 1jdQMU-0004LZ-R2
+ for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 03:34:44 +0000
 Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 1804CBB94C;
+ by lucky1.263xmail.com (Postfix) with ESMTP id 89D6B900EA;
  Tue, 26 May 2020 11:34:39 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -35,9 +35,9 @@ X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P10491T139788594689792S1590464077143166_; 
- Tue, 26 May 2020 11:34:38 +0800 (CST)
+ Tue, 26 May 2020 11:34:39 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <de88d629e8afef0e59296d9f9936ccb4>
+X-UNIQUE-TAG: <2e5546b18a99e6917f78081c8684dea3>
 X-RL-SENDER: frank.wang@rock-chips.com
 X-SENDER: wmc@rock-chips.com
 X-LOGIN-NAME: frank.wang@rock-chips.com
@@ -50,29 +50,29 @@ From: Frank Wang <frank.wang@rock-chips.com>
 To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
  philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
  jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
-Subject: [PATCH v6 10/16] usb: dwc3: Enable AutoRetry feature in the controller
-Date: Tue, 26 May 2020 11:34:29 +0800
-Message-Id: <20200526033435.20235-1-frank.wang@rock-chips.com>
+Subject: [PATCH v6 11/16] usb: dwc3: amend UTMI/UTMIW phy interface setup
+Date: Tue, 26 May 2020 11:34:30 +0800
+Message-Id: <20200526033435.20235-2-frank.wang@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200526033220.20047-1-frank.wang@rock-chips.com>
+In-Reply-To: <20200526033435.20235-1-frank.wang@rock-chips.com>
 References: <20200526033220.20047-1-frank.wang@rock-chips.com>
+ <20200526033435.20235-1-frank.wang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_203440_938023_41BFB3B0 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200525_203443_241567_E26030F2 
+X-CRM114-Status: GOOD (  14.17  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.130 listed in list.dnswl.org]
+ no trust [211.157.147.135 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.130 listed in wl.mailspike.net]
+ [211.157.147.135 listed in wl.mailspike.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,75 +85,243 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
- u-boot@lists.denx.de, william.wu@rock-chips.com,
- linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- chenjh@rock-chips.com
+Cc: jianing.ren@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>,
+ marek.belisko@gmail.com, wmc@rock-chips.com, u-boot@lists.denx.de,
+ william.wu@rock-chips.com, linux-rockchip@lists.infradead.org,
+ linux-amarula@amarulasolutions.com, chenjh@rock-chips.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Jagan Teki <jagan@amarulasolutions.com>
+Let move 8/16-bit UTMI+ interface initialization into DWC3 core init
+that is convenient for both DM_USB and u-boot traditional process.
 
-By default when core sees any transaction error (CRC or overflow) it
-replies with terminating retry ACK (Retry=1 and Nump == 0).
-
-Enabling this Auto Retry feature in controller will make the core send
-a non-terminanting ACK upon such transaction errors. That is, ACK TP
-with Retry=1 and Nump != 0.
-
-Doing so will give controller a chance to recover from transient error
-conditions.
-
-Reference from below Linux commit,
-
-commit <b138e23d3dff> ("usb: dwc3: core: Enable AutoRetry feature
-in the controller")
-
-Cc: Marek Vasut <marex@denx.de>
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 ---
- drivers/usb/dwc3/core.c | 9 +++++++++
- drivers/usb/dwc3/core.h | 3 +++
- 2 files changed, 12 insertions(+)
+ drivers/usb/common/common.c | 25 ++++++++++++++
+ drivers/usb/dwc3/core.c     | 65 +++++++++++++++++++------------------
+ drivers/usb/dwc3/core.h     |  5 +++
+ include/linux/usb/phy.h     | 18 ++++++++++
+ 4 files changed, 82 insertions(+), 31 deletions(-)
 
+diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+index 0db281b970..d4ae18693c 100644
+--- a/drivers/usb/common/common.c
++++ b/drivers/usb/common/common.c
+@@ -10,6 +10,7 @@
+ #include <dm.h>
+ #include <linux/usb/otg.h>
+ #include <linux/usb/ch9.h>
++#include <linux/usb/phy.h>
+ 
+ DECLARE_GLOBAL_DATA_PTR;
+ 
+@@ -64,3 +65,27 @@ enum usb_device_speed usb_get_maximum_speed(ofnode node)
+ 
+ 	return USB_SPEED_UNKNOWN;
+ }
++
++#if CONFIG_IS_ENABLED(DM_USB)
++static const char *const usbphy_modes[] = {
++	[USBPHY_INTERFACE_MODE_UNKNOWN]	= "",
++	[USBPHY_INTERFACE_MODE_UTMI]	= "utmi",
++	[USBPHY_INTERFACE_MODE_UTMIW]	= "utmi_wide",
++};
++
++enum usb_phy_interface usb_get_phy_mode(ofnode node)
++{
++	const char *phy_type;
++	int i;
++
++	phy_type = ofnode_get_property(node, "phy_type", NULL);
++	if (!phy_type)
++		return USBPHY_INTERFACE_MODE_UNKNOWN;
++
++	for (i = 0; i < ARRAY_SIZE(usbphy_modes); i++)
++		if (!strcmp(phy_type, usbphy_modes[i]))
++			return i;
++
++	return USBPHY_INTERFACE_MODE_UNKNOWN;
++}
++#endif
 diff --git a/drivers/usb/dwc3/core.c b/drivers/usb/dwc3/core.c
-index dc92f471c1..aab6c34c2d 100644
+index aab6c34c2d..c8cb9e13b2 100644
 --- a/drivers/usb/dwc3/core.c
 +++ b/drivers/usb/dwc3/core.c
-@@ -995,6 +995,15 @@ int dwc3_init(struct dwc3 *dwc)
- 		dwc3_writel(dwc->regs, DWC3_GUCTL1, reg);
- 	}
+@@ -334,6 +334,34 @@ static void dwc3_cache_hwparams(struct dwc3 *dwc)
+ 	parms->hwparams8 = dwc3_readl(dwc->regs, DWC3_GHWPARAMS8);
+ }
  
-+	if (dwc->dr_mode == USB_DR_MODE_HOST ||
-+	    dwc->dr_mode == USB_DR_MODE_OTG) {
-+		reg = dwc3_readl(dwc->regs, DWC3_GUCTL);
++static void dwc3_hsphy_mode_setup(struct dwc3 *dwc)
++{
++	enum usb_phy_interface hsphy_mode = dwc->hsphy_mode;
++	u32 reg;
 +
-+		reg |= DWC3_GUCTL_HSTINAUTORETRY;
++	/* Set dwc3 usb2 phy config */
++	reg = dwc3_readl(dwc->regs, DWC3_GUSB2PHYCFG(0));
 +
-+		dwc3_writel(dwc->regs, DWC3_GUCTL, reg);
++	switch (hsphy_mode) {
++	case USBPHY_INTERFACE_MODE_UTMI:
++		reg &= ~(DWC3_GUSB2PHYCFG_PHYIF_MASK |
++			DWC3_GUSB2PHYCFG_USBTRDTIM_MASK);
++		reg |= DWC3_GUSB2PHYCFG_PHYIF(UTMI_PHYIF_8_BIT) |
++			DWC3_GUSB2PHYCFG_USBTRDTIM(USBTRDTIM_UTMI_8_BIT);
++		break;
++	case USBPHY_INTERFACE_MODE_UTMIW:
++		reg &= ~(DWC3_GUSB2PHYCFG_PHYIF_MASK |
++			DWC3_GUSB2PHYCFG_USBTRDTIM_MASK);
++		reg |= DWC3_GUSB2PHYCFG_PHYIF(UTMI_PHYIF_16_BIT) |
++			DWC3_GUSB2PHYCFG_USBTRDTIM(USBTRDTIM_UTMI_16_BIT);
++		break;
++	default:
++		break;
 +	}
 +
- 	ret = dwc3_core_init_mode(dwc);
- 	if (ret)
- 		goto mode_fail;
++	dwc3_writel(dwc->regs, DWC3_GUSB2PHYCFG(0), reg);
++}
++
+ /**
+  * dwc3_phy_setup - Configure USB PHY Interface of DWC3 Core
+  * @dwc: Pointer to our controller context structure
+@@ -382,6 +410,8 @@ static void dwc3_phy_setup(struct dwc3 *dwc)
+ 
+ 	dwc3_writel(dwc->regs, DWC3_GUSB3PIPECTL(0), reg);
+ 
++	dwc3_hsphy_mode_setup(dwc);
++
+ 	mdelay(100);
+ 
+ 	reg = dwc3_readl(dwc->regs, DWC3_GUSB2PHYCFG(0));
+@@ -626,35 +656,6 @@ static void dwc3_core_exit_mode(struct dwc3 *dwc)
+ 	dwc3_gadget_run(dwc);
+ }
+ 
+-static void dwc3_uboot_hsphy_mode(struct dwc3_device *dwc3_dev,
+-				  struct dwc3 *dwc)
+-{
+-	enum usb_phy_interface hsphy_mode = dwc3_dev->hsphy_mode;
+-	u32 reg;
+-
+-	/* Set dwc3 usb2 phy config */
+-	reg = dwc3_readl(dwc->regs, DWC3_GUSB2PHYCFG(0));
+-
+-	switch (hsphy_mode) {
+-	case USBPHY_INTERFACE_MODE_UTMI:
+-		reg &= ~(DWC3_GUSB2PHYCFG_PHYIF_MASK |
+-			DWC3_GUSB2PHYCFG_USBTRDTIM_MASK);
+-		reg |= DWC3_GUSB2PHYCFG_PHYIF(UTMI_PHYIF_8_BIT) |
+-			DWC3_GUSB2PHYCFG_USBTRDTIM(USBTRDTIM_UTMI_8_BIT);
+-		break;
+-	case USBPHY_INTERFACE_MODE_UTMIW:
+-		reg &= ~(DWC3_GUSB2PHYCFG_PHYIF_MASK |
+-			DWC3_GUSB2PHYCFG_USBTRDTIM_MASK);
+-		reg |= DWC3_GUSB2PHYCFG_PHYIF(UTMI_PHYIF_16_BIT) |
+-			DWC3_GUSB2PHYCFG_USBTRDTIM(USBTRDTIM_UTMI_16_BIT);
+-		break;
+-	default:
+-		break;
+-	}
+-
+-	dwc3_writel(dwc->regs, DWC3_GUSB2PHYCFG(0), reg);
+-}
+-
+ #define DWC3_ALIGN_MASK		(16 - 1)
+ 
+ /**
+@@ -743,6 +744,8 @@ int dwc3_uboot_init(struct dwc3_device *dwc3_dev)
+ 	dwc->hird_threshold = hird_threshold
+ 		| (dwc->is_utmi_l1_suspend << 4);
+ 
++	dwc->hsphy_mode = dwc3_dev->hsphy_mode;
++
+ 	dwc->index = dwc3_dev->index;
+ 
+ 	dwc3_cache_hwparams(dwc);
+@@ -767,8 +770,6 @@ int dwc3_uboot_init(struct dwc3_device *dwc3_dev)
+ 		goto err0;
+ 	}
+ 
+-	dwc3_uboot_hsphy_mode(dwc3_dev, dwc);
+-
+ 	ret = dwc3_event_buffers_setup(dwc);
+ 	if (ret) {
+ 		dev_err(dwc->dev, "failed to setup event buffers\n");
+@@ -901,6 +902,8 @@ void dwc3_of_parse(struct dwc3 *dwc)
+ 	 */
+ 	hird_threshold = 12;
+ 
++	dwc->hsphy_mode = usb_get_phy_mode(dev->node);
++
+ 	dwc->has_lpm_erratum = dev_read_bool(dev,
+ 				"snps,has-lpm-erratum");
+ 	tmp = dev_read_u8_array_ptr(dev, "snps,lpm-nyet-threshold", 1);
 diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index b510d8a983..2adcaf0029 100644
+index 2adcaf0029..8e562ae6c4 100644
 --- a/drivers/usb/dwc3/core.h
 +++ b/drivers/usb/dwc3/core.h
-@@ -160,6 +160,9 @@
- #define DWC3_GCTL_GBLHIBERNATIONEN	(1 << 1)
- #define DWC3_GCTL_DSBLCLKGTNG		(1 << 0)
+@@ -21,6 +21,7 @@
  
-+/* Global User Control Register */
-+#define DWC3_GUCTL_HSTINAUTORETRY	BIT(14)
+ #include <linux/usb/ch9.h>
+ #include <linux/usb/otg.h>
++#include <linux/usb/phy.h>
+ 
+ #define DWC3_MSG_MAX	500
+ 
+@@ -658,6 +659,9 @@ struct dwc3_scratchpad_array {
+  * @maximum_speed: maximum speed requested (mainly for testing purposes)
+  * @revision: revision register contents
+  * @dr_mode: requested mode of operation
++ * @hsphy_mode: UTMI phy mode, one of following:
++ *		- USBPHY_INTERFACE_MODE_UTMI
++ *		- USBPHY_INTERFACE_MODE_UTMIW
+  * @dcfg: saved contents of DCFG register
+  * @gctl: saved contents of GCTL register
+  * @isoch_delay: wValue from Set Isochronous Delay request;
+@@ -749,6 +753,7 @@ struct dwc3 {
+ 	size_t			regs_size;
+ 
+ 	enum usb_dr_mode	dr_mode;
++	enum usb_phy_interface	hsphy_mode;
+ 
+ 	/* used for suspend/resume */
+ 	u32			dcfg;
+diff --git a/include/linux/usb/phy.h b/include/linux/usb/phy.h
+index 158ca9cd85..1e1217a958 100644
+--- a/include/linux/usb/phy.h
++++ b/include/linux/usb/phy.h
+@@ -10,10 +10,28 @@
+ #ifndef __LINUX_USB_PHY_H
+ #define __LINUX_USB_PHY_H
+ 
++#include <dm/ofnode.h>
 +
- /* Global User Control 1 Register */
- #define DWC3_GUCTL1_TX_IPGAP_LINECHECK_DIS	BIT(28)
- #define DWC3_GUCTL1_DEV_L1_EXIT_BY_HW	BIT(24)
+ enum usb_phy_interface {
+ 	USBPHY_INTERFACE_MODE_UNKNOWN,
+ 	USBPHY_INTERFACE_MODE_UTMI,
+ 	USBPHY_INTERFACE_MODE_UTMIW,
+ };
+ 
++#if CONFIG_IS_ENABLED(DM_USB)
++/**
++ * usb_get_phy_mode - Get phy mode for given device_node
++ * @np:	Pointer to the given device_node
++ *
++ * The function gets phy interface string from property 'phy_type',
++ * and returns the corresponding enum usb_phy_interface
++ */
++enum usb_phy_interface usb_get_phy_mode(ofnode node);
++#else
++static inline enum usb_phy_interface usb_get_phy_mode(ofnode node)
++{
++	return USBPHY_INTERFACE_MODE_UNKNOWN;
++}
++#endif
++
+ #endif /* __LINUX_USB_PHY_H */
 -- 
 2.17.1
 
