@@ -2,52 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 897FC1E1139
-	for <lists+linux-rockchip@lfdr.de>; Mon, 25 May 2020 17:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1908F1E19F0
+	for <lists+linux-rockchip@lfdr.de>; Tue, 26 May 2020 05:32:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UX3ylrNDVzWOcReC7wRPwUKozuu4ETRQEBygwA6/AWw=; b=HKMK/2xyMylF23
-	1efeRqaqXoWsdkPZdxPoMlOxeEB9IFhopi2BX/I6H38HiAiSeaMp4L/Thae1nqybJ+igc+tV+E6UF
-	qeu02kP7lU7k0sq65klgDfmnG0zqWo/3dbl8ntMoeZ2/dNNLO3FuqeO1qdLwsvSbDzyMPVXCGhp4L
-	vV9eIC+2383j6PFk9GOmKHJ+3lGDv6mZHGqBf4dCgsGic1ubCocFUWOVhRi7Fs65gzF0REAfofd8U
-	sdzmKQXDh9rAOf3dejr1QpUH1xe6WAcDw2P7j7g02+Y7rUps0QFH5CMl6OEHr8AjQve9z5+ktnLH1
-	7Y7zG2tW9z5Tw+Nf5pnA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=jpo1yTidyfSih+lLDEg2YFDjbrRjYKsmJaY175mkzak=; b=E2i
+	5ZG31L+P5C+ZNbEzaXlsH24+sgbY4hA+i6twg+9LjrfHwt0eus9ORaQeJ2m8G3H21K7JMISOHLX0r
+	mLx1SacEglVmlybkOpFvETdBCAbW3V/tZ8USFk1uLW18Z7I1h3U8dZNIZp26Vogl72r7iTNc+9oGq
+	cexpDN2TQU9ZvpbK7HdpwAk1bNLrUxKQ6/e7UXDzAyqwN0KLwy2i7QGTFAocEMYf8NZ2tk0SJzUpR
+	wOY4nZeUmla9k7cn6syai2mRGxXYtxTfTia8C4lDVGRhZMgnhk4kL50tUb9icrckL0z2daN2aTM85
+	lWrjMsal53g6nShHizeA6gEUQAjd9iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdEch-0007fx-Cp; Mon, 25 May 2020 15:02:39 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jdQKb-0003vN-M9; Tue, 26 May 2020 03:32:45 +0000
+Received: from lucky1.263xmail.com ([211.157.147.132])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdEbw-0007c0-Sm
- for linux-rockchip@lists.infradead.org; Mon, 25 May 2020 15:01:54 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jdEbk-0000T3-Rx; Mon, 25 May 2020 17:01:40 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Tiezhu Yang <yangtiezhu@loongson.cn>
-Subject: Re: [PATCH v2 2/2] phy: Remove CONFIG_ARCH_* check for related subdir
- in Makefile
-Date: Mon, 25 May 2020 17:01:38 +0200
-Message-ID: <10793802.6Woqi72AOj@diego>
-In-Reply-To: <1590412138-13903-2-git-send-email-yangtiezhu@loongson.cn>
-References: <1590412138-13903-1-git-send-email-yangtiezhu@loongson.cn>
- <1590412138-13903-2-git-send-email-yangtiezhu@loongson.cn>
-MIME-Version: 1.0
+ id 1jdQKU-0003pB-As
+ for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 03:32:40 +0000
+Received: from localhost (unknown [192.168.167.8])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 1A2B4D5950;
+ Tue, 26 May 2020 11:32:23 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P21206T140696379496192S1590463941416434_; 
+ Tue, 26 May 2020 11:32:23 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <47e9953dffa7647e6a938d540879b68b>
+X-RL-SENDER: frank.wang@rock-chips.com
+X-SENDER: wmc@rock-chips.com
+X-LOGIN-NAME: frank.wang@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+From: Frank Wang <frank.wang@rock-chips.com>
+To: heiko@sntech.de, marex@denx.de, bmeng.cn@gmail.com,
+ philipp.tomsich@theobroma-systems.com, klaus.goger@theobroma-systems.com,
+ jagan@amarulasolutions.com, sjg@chromium.org, kever.yang@rock-chips.com
+Subject: [PATCH v6 00/16] Add Rockchip RK3399 USB3.0 Host support
+Date: Tue, 26 May 2020 11:32:04 +0800
+Message-Id: <20200526033220.20047-1-frank.wang@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_080152_928048_FA322DC9 
-X-CRM114-Status: GOOD (  15.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200525_203238_774573_DD525ED1 
+X-CRM114-Status: GOOD (  12.87  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.132 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.132 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,83 +81,101 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Xuefeng Li <lixuefeng@loongson.cn>
+Cc: jianing.ren@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>,
+ marek.belisko@gmail.com, wmc@rock-chips.com, u-boot@lists.denx.de,
+ william.wu@rock-chips.com, linux-rockchip@lists.infradead.org,
+ linux-amarula@amarulasolutions.com, chenjh@rock-chips.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Montag, 25. Mai 2020, 15:08:58 CEST schrieb Tiezhu Yang:
-> If CONFIG_ARCH_ROCKCHIP is not set but COMPILE_TEST is set, the file in
-> the subdir rockchip can not be built due to CONFIG_ARCH_ROCKCHIP check
-> in drivers/phy/Makefile.
-> 
-> Since the related configs in drivers/phy/rockchip/Kconfig depend on
-> ARCH_ROCKCHIP, so remove CONFIG_ARCH_ROCKCHIP check for subdir rockchip
-> in drivers/phy/Makefile.
-> 
-> The other CONFIG_ARCH_* about allwinner, amlogic, mediatek, renesas and
-> tegra have the same situation, so remove them too.
-> 
-> Signed-off-by: Tiezhu Yang <yangtiezhu@loongson.cn>
+This series add quirks for DWC3 and add Rockchip RK3399 USB3.0 host support.
 
-I did check the other vendor directories and all options there do
-seem to depend on some ARCH_foo || COMPILE_TEST variant, so
+The function has been tested pass on rk3399-evb and roc-rk3399-pc board.
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+For V6 update:
+ - Use [PATCH v6 04/16] instead of [PATCH v5 05/16] to fix that the current
+   Generic PHY subsystem is unable to find PHY if the PHY node is not part of
+   the root structure.
+ - Add 'Reviewed-by' tag for all patches except [PATCH v6 04/16].
 
+For V5 update:
+ - Fix dwc3-generic driver followed Marek's comments for [PATCH v4 12/16].
+ - Add 'Reviewed-by' and 'Tested-by' tag for [PATCH v4 07/16] and [PATCH v4 08/16].
 
-Heiko
+For V4 update:
+ - Collect Jagan's all fixed patches [1].
+ - Amend specific u-boot changes from dts to dtsi for [PATCH v3 6/7].
 
-> ---
-> 
-> v2:
->   - Remove all the CONFIG_ARCH_* check for related subdir in Makefile
->   - Modify the patch subject and update commit message
-> 
->  drivers/phy/Makefile | 14 +++++++-------
->  1 file changed, 7 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index 310c149..16e2622 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -8,24 +8,24 @@ obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
->  obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
->  obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
->  obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
-> -obj-$(CONFIG_ARCH_SUNXI)		+= allwinner/
-> -obj-$(CONFIG_ARCH_MESON)		+= amlogic/
-> -obj-$(CONFIG_ARCH_MEDIATEK)		+= mediatek/
-> -obj-$(CONFIG_ARCH_RENESAS)		+= renesas/
-> -obj-$(CONFIG_ARCH_ROCKCHIP)		+= rockchip/
-> -obj-$(CONFIG_ARCH_TEGRA)		+= tegra/
-> -obj-y					+= broadcom/	\
-> +obj-y					+= allwinner/	\
-> +					   amlogic/	\
-> +					   broadcom/	\
->  					   cadence/	\
->  					   freescale/	\
->  					   hisilicon/	\
->  					   intel/	\
->  					   lantiq/	\
->  					   marvell/	\
-> +					   mediatek/	\
->  					   motorola/	\
->  					   mscc/	\
->  					   qualcomm/	\
->  					   ralink/	\
-> +					   renesas/	\
-> +					   rockchip/	\
->  					   samsung/	\
->  					   socionext/	\
->  					   st/		\
-> +					   tegra/	\
->  					   ti/
-> 
+For V3 update:
+ - Fix compile error for [PATCH v2 1/9].
+ - Use Jagan's Type-C driver instead of [PATCH v2 5/9].
+ - Cleanup dts changes for [PATCH v2 7/9].
+ - Cleanup config changes for [PATCH v2 8/9] and [PATCH v2 9/9].
 
+For V2 update:
+ - Amend type-c driver followed Jagan's comments for [PATCH 5/8].
+ - Fix dts commit for [PATCH 7/8].
+ - Split RK3399 default config for [PATCH 8/8].
+ - Add 'Reviewed-by' tag for [PATCH 1/8], [PATCH 2/8] and [PATCH 3/8].
+
+[1] https://patchwork.ozlabs.org/project/uboot/cover/20200506075025.1677-1-jagan@amarulasolutions.com
+
+BR,
+Frank
+
+Frank Wang (8):
+  arm: mach-rockchip: bind sub-nodes for rk3399_syscon
+  usb: dwc3: add dis_enblslpm_quirk
+  usb: dwc3: add dis_u2_freeclk_exists_quirk
+  usb: dwc3: amend UTMI/UTMIW phy interface setup
+  usb: dwc3: add make compatible for rockchip platform
+  driver: usb: drop legacy rockchip xhci driver
+  ARM: dts: rk3399-evb: usb3.0 host support
+  configs: evb-rk3399: update support usb3.0 host
+
+Jagan Teki (8):
+  clk: rk3399: Enable/Disable the USB2PHY clk
+  clk: rk3399: Set empty for TCPHY assigned-clocks
+  clk: rk3399: Enable/Disable TCPHY clocks
+  phy: rockchip: Add Rockchip USB2PHY driver
+  phy: rockchip: Add Rockchip USB TypeC PHY driver
+  usb: dwc3: Add disable u2mac linestate check quirk
+  usb: dwc3: Enable AutoRetry feature in the controller
+  roc-rk3399-pc: Enable USB3.0 Host
+
+ arch/arm/dts/rk3399-evb-u-boot.dtsi           |  13 +
+ arch/arm/mach-rockchip/rk3399/syscon_rk3399.c |   3 +
+ configs/evb-rk3399_defconfig                  |   6 +
+ configs/roc-pc-mezzanine-rk3399_defconfig     |   5 +
+ configs/roc-pc-rk3399_defconfig               |   6 +
+ drivers/Makefile                              |   1 +
+ drivers/clk/rockchip/clk_rk3399.c             |  38 +
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/rockchip/Kconfig                  |  21 +
+ drivers/phy/rockchip/Makefile                 |   7 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 312 +++++++
+ drivers/phy/rockchip/phy-rockchip-typec.c     | 796 ++++++++++++++++++
+ drivers/usb/common/common.c                   |  25 +
+ drivers/usb/dwc3/core.c                       | 106 ++-
+ drivers/usb/dwc3/core.h                       |  19 +
+ drivers/usb/dwc3/dwc3-generic.c               |  33 +-
+ drivers/usb/host/Kconfig                      |   9 -
+ drivers/usb/host/Makefile                     |   1 -
+ drivers/usb/host/xhci-rockchip.c              | 196 -----
+ include/dwc3-uboot.h                          |   3 +
+ include/linux/usb/phy.h                       |  18 +
+ 21 files changed, 1376 insertions(+), 243 deletions(-)
+ create mode 100644 drivers/phy/rockchip/Kconfig
+ create mode 100644 drivers/phy/rockchip/Makefile
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-typec.c
+ delete mode 100644 drivers/usb/host/xhci-rockchip.c
+
+-- 
+2.17.1
 
 
 
