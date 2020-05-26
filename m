@@ -2,72 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE3BD1E3342
-	for <lists+linux-rockchip@lfdr.de>; Wed, 27 May 2020 00:57:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88F9E1E335D
+	for <lists+linux-rockchip@lfdr.de>; Wed, 27 May 2020 01:05:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JIM1NPKqC24yeqVI/+Jttq4SQMUXnqrlEqIjGPPY+XY=; b=oDTSBramHMZaMx
-	prM47odJf3RlLcE9veh8ZomttxFsWdJTYRrGqTUw3Pse9ST4PoHZgziqXw8qlj/sv3ifxmBgSPPdE
-	NVuyn2ucACtAQd6KenNkVeROnsLQXqgko9NeyM/52NDK1f8M92+6o8cPi0JP9mXuLdNQXZj9FQVdm
-	PYrQ2kr0sFmTpCG1PzA3CEpdMsecnexB2OkV2g0BMx6/ZzxX3b40zdKRY/rmvb8jTrTGhPH6z/Vlq
-	0vwXtLMQx1NYU076wbPrsW470vqTTiXbeZn4ilouSTTRfkqDt71DgLjhdtXhtf/MsegResJnG0ryT
-	/BwBPNSmos0qQUOoMFWQ==;
+	List-Owner; bh=4bUBDDwB8JZgOjJ54d0wBUNXANoRmik0pN1XShrx3KU=; b=WahftkghxDDF3t
+	+YpXwMnM9aTZbziuz5P/eQVI90gcLP1b698psPK6BzU4Pa5VKNLG8DpeIg+OrLcjR0hYSsOLf9Zf5
+	tr+jTn/959g/HYUnhFkscFhlwd6MDfiOOuNqLLMC1QXhb95fBijn/EgzswfENLquWM7c6+QtRXMiS
+	GOb5zQ/sg1SGFTlf6hAGCk1/kFJlUlYGpn4Yi+pmpP2YXEtlmbHv/m6zLrX8ejUh0JUSs1vYOVAsc
+	4531wEaZy+E7IWlUJgjQdD42vrXdosD4b7lIkq60QzjfSM06mCz2PqgaHLJZw2laDkgUX3dfivSF6
+	cDQjHjgMjWI67my0e/Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdiVv-0000Fp-Vg; Tue, 26 May 2020 22:57:39 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1jdid2-0003y5-3N; Tue, 26 May 2020 23:05:00 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdiVs-0000F2-5B
- for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 22:57:37 +0000
-Received: by mail-io1-xd44.google.com with SMTP id j8so23865581iog.13
- for <linux-rockchip@lists.infradead.org>; Tue, 26 May 2020 15:57:35 -0700 (PDT)
+ id 1jdicy-0003xT-Gw
+ for linux-rockchip@lists.infradead.org; Tue, 26 May 2020 23:04:57 +0000
+Received: by mail-il1-x143.google.com with SMTP id q18so1082250ilm.5
+ for <linux-rockchip@lists.infradead.org>; Tue, 26 May 2020 16:04:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Sex9OGzN9WT8EWuepq7JqqNxYg08Gjufj9S0qlNx5LU=;
- b=gMjYs7GiAbye4VSvbyZq3xrxCEmJispCUG7lzSx9jGYP530GAkDHnBbH/hGXxJxSTv
- fV8rgnnHs89C8COJy5QTJ3KEW8nHhEvcWAuG6BiBMenOVLCVcf3NxM0SNfN8Yua6miox
- cvoWidbF6cLgIyWVkPohg41L0eABtK+fazhKk=
+ :cc; bh=obH5i5ZLEC+haCrlLvKdZKrgXWxLuGsWc2kPghQguLE=;
+ b=kgVMTXncE2fTzJlKGbZSJKTZ0q/yknIZ8IrO7Pao+r8c6fm+zn9Qh6drDKjywE3p3j
+ fmX7anB6fhoDzBNFPI1DqPh6RsSXRsA3fcg/s4hONt6mNImG3zKYcCxdbPENxn67M79+
+ 3KSC4Ns5EBvHo0NhZGnRQgmKKHkFmokLxvW/A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Sex9OGzN9WT8EWuepq7JqqNxYg08Gjufj9S0qlNx5LU=;
- b=b/ofGImyxeQVLvl0pW2Bde3xx6kWR6kWlSrtXjmjr2IXJdt8f6dAPNCl0Oa3HdZnL7
- thWFN5T3c4EdolWvfDebrcpOWpBEiZegiD7iK8LDDr6tZqc7V4feZPrWczrlB8p+0RUn
- i57VGZe3phTJiJzF6CSHUYGhuPf/G9JuWhKPJPs0wVe/xb3nz59vYxz0TyitufyHK+B7
- 79lkiPgd9vZLoniiAUyvppBeXuoJY+6O5jSI6Yj/vZvEoWjd60Nng7APCi7y5KaErFHu
- V3RN/KGf+nxlm4qcdo8IVBHrfaM0WeywWw6REQETRYL47egoxHlA4CbrEUGpTSJXRiVR
- yU1w==
-X-Gm-Message-State: AOAM530XD5D7DzHemzSPbq+fSe8iFTgO8aYXShYDFkD8WL5BPiS7F5yj
- kPfFLczWOKaGIbP6n6Y+fDqx7dlgdx/VKbjO/bJ3GA==
-X-Google-Smtp-Source: ABdhPJwLBbbapXbf0ED+DUqLSjGQpZPZGpk+3HhYLDWqx/9ECPvOQVi320yVJdmvZWTQTA6oUrjtgHEgJhYh3uAwxrA=
-X-Received: by 2002:a6b:1448:: with SMTP id 69mr15871189iou.83.1590533855234; 
- Tue, 26 May 2020 15:57:35 -0700 (PDT)
+ bh=obH5i5ZLEC+haCrlLvKdZKrgXWxLuGsWc2kPghQguLE=;
+ b=tceOwhODHf1BXccGhzn70Xh04vi95eDA40vGOf4BscVko/qzxorDY51R9x9I/LaDB0
+ 9AS9CDCbG7WHjWVUvoHbCBadRVdh152BmRCeAL/5Psf9VecparUMkYBZbP2sTBrNKcE6
+ PPV4E9pvWcsqYNj2raSFMKa0dwucAtTwP2AMWWeMkTdbrV07RkAzRnnE7khBAaCyATS5
+ j7soB/QOj9HI2HoQ4iwd+7GvV/Phe/rd8u+vY/rwHrq1Sg6nS1fCK14qPPPKeX+jI7ZQ
+ u46BoB9mRmhVrNOXSW/U5+7zxbKdXzieBc5/hLNh27ZHScIoyPyYWfaaQor88HoF2hQj
+ WaLw==
+X-Gm-Message-State: AOAM530MczdWkaxqLfwd0me0uEKa+16yXaZvAPiZM6h33+LivBI83Rxi
+ KURYFlaHPHzZRbkzeFY8qniAcS9KUv00dGfkl7IR3Q==
+X-Google-Smtp-Source: ABdhPJxpG2ydFyfTP4tfz+dav1pL5rV0anMGDvTScjZQp+tf6p7WXzJJnDZYWiTUJMb/ELJvnJzbBcJXg+0ydzz7Rms=
+X-Received: by 2002:a92:b11:: with SMTP id b17mr3390100ilf.257.1590534295569; 
+ Tue, 26 May 2020 16:04:55 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
- <20200515142952.20163-5-dafna.hirschfeld@collabora.com>
- <fc4dbc40-ab57-0ca4-4ac7-5ffdb7f0ad81@collabora.com>
-In-Reply-To: <fc4dbc40-ab57-0ca4-4ac7-5ffdb7f0ad81@collabora.com>
+ <20200515142952.20163-2-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200515142952.20163-2-dafna.hirschfeld@collabora.com>
 From: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 27 May 2020 00:57:24 +0200
-Message-ID: <CAHD77H=iq3BpwD3=yL1DttUH_=vt8nO-5N_Kiu427BrUHJQ-zQ@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] media: staging: rkisp1: cap: remove support of
- BGR666 format
-To: Helen Koike <helen.koike@collabora.com>
+Date: Wed, 27 May 2020 01:04:44 +0200
+Message-ID: <CAHD77H=LhYV31Jw_-cTvXPh0K2ocr6o97ymJ2KkmCdkH_DE7gg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] media: staging: rkisp1: cap: change RGB24 format
+ to XBGR32
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_155736_218082_6CAD5637 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20200526_160456_582269_F13B78AE 
+X-CRM114-Status: GOOD (  15.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,9 +91,9 @@ List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
 Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@collabora.com,
  Ezequiel Garcia <ezequiel@collabora.com>,
@@ -104,58 +103,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 12:35 AM Helen Koike <helen.koike@collabora.com> wrote:
->
->
->
-> On 5/15/20 11:29 AM, Dafna Hirschfeld wrote:
-> > The rkisp1 supports RGB encoding with 6 bits per
-> > color with the following format:
-> > - - b5 b4 b3 b2 b1 b0 - - g5 g4 g3 g2 g1 g0 - - r5 r4 r3 r2 r1 r0 - - - - - - - -
->
-> Is this the same as V4L2_PIX_FMT_XBGR32 format, but with colors range from 0 to 63 ?
->
-> I was wondering what is the usage of such a format. If it is useful, then I'm sad
-> to see this being removed from the driver, since this is a v4l2 api limitation, and not
-> a hw limitation.
+Hi Dafna,
 
-Sounds like some relic of the past. ;)
-
-In general, RGB formats are not very useful in this hardware. One
-wastes the precious bandwidth, but doesn't get more color resolution,
-since the pipeline uses YUV 4:2:2 internally anyway. The typical usage
-scenarios with video or JPEG encoding and preview are much better off
-with the available YUV formats.
-
+On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
+<dafna.hirschfeld@collabora.com> wrote:
 >
-> Regards,
-> Helen
+> According to the TRM, the YUV->RGB conversion outputs
+> "24 bit word". What it means is that 4 bytes are used with
+> 24bit for the RGB and the last byte is ignored.
+
+I don't see this mentioned in the datasheets I have. On the other
+hand, XBGR32 indeed makes much more sense, as the 3-byte RGB isn't a
+very popular format. Have you validated that the hardware behavior
+indeed matches that?
+
+Best regards,
+Tomasz
+
+> This matches format V4L2_PIX_FMT_XBGR32.
 >
-> >
-> > This is not how V4L2_PIX_FMT_BGR666 is defined, so remove
-> > this format from the driver's formats list.
-> >
-> > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> > ---
-> >  drivers/staging/media/rkisp1/rkisp1-capture.c | 4 ----
-> >  1 file changed, 4 deletions(-)
-> >
-> > diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> > index 61b9ebe577b2..2660e44eda88 100644
-> > --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
-> > +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
-> > @@ -283,10 +283,6 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
-> >               .fourcc = V4L2_PIX_FMT_RGB565,
-> >               .write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
-> >               .output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB565,
-> > -     }, {
-> > -             .fourcc = V4L2_PIX_FMT_BGR666,
-> > -             .write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
-> > -             .output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB666,
-> >       },
-> >  };
-> >
-> >
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+>  drivers/staging/media/rkisp1/rkisp1-capture.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> index f69235f82c45..61b9ebe577b2 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+> @@ -276,7 +276,7 @@ static const struct rkisp1_capture_fmt_cfg rkisp1_sp_fmts[] = {
+>         },
+>         /* rgb */
+>         {
+> -               .fourcc = V4L2_PIX_FMT_RGB24,
+> +               .fourcc = V4L2_PIX_FMT_XBGR32,
+>                 .write_format = RKISP1_MI_CTRL_SP_WRITE_PLA,
+>                 .output_format = RKISP1_MI_CTRL_SP_OUTPUT_RGB888,
+>         }, {
+> --
+> 2.17.1
+>
 
 _______________________________________________
 Linux-rockchip mailing list
