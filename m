@@ -2,53 +2,97 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 427841E6AED
-	for <lists+linux-rockchip@lfdr.de>; Thu, 28 May 2020 21:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F274E1E6B22
+	for <lists+linux-rockchip@lfdr.de>; Thu, 28 May 2020 21:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=RJnvGaRVnnZSZkR5Z6n/3GA3I0wmOH4dViVFpPe1CLU=; b=rAwEWGhj+s9D/Y1L63U2iMDNr+
-	Q9EKJ0n+a9+ajUvYk/S98MMIJJl+04lNYudFWpPOT648Imv2rccsugCo0YAWmtUgXQoNNXuXf2Mxy
-	IrCJX9WePAm1pHXz2+6LMIpBZly5zDkZF1PvAUB5XiOV6Szu4se40DnMGLAXQ9mfzJJwVdnHHXTkM
-	/wJnbN3k8loQ4V48Zk2rloJAbzHGy2sBOTv76K9rEZnPQou3HY6aYN3t6FrqBO63P34A6oRF1MNb+
-	5ZZzUVudjE5e6SSINX8LqDRapJMd93TS8CPiV5Tbzbgp3Oi3SikOL4zfUWVp1hf/GBRj+Mqs4MHgZ
-	bSsGeRmw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ICLOxZxcldOh9tz5+1zik6KVoQUFvqqeTgGQWQy0I4M=; b=muSVnCfgbLC35j
+	OuAgmAFeJacT/teK0w0ozYkJ7OMg3e30Q2FuYPZ6ZlN6wtO3VuWXZnI/c7zln3ykGDq8cOl/P9TFJ
+	ml/hUpDdghPUOuDpoC8OFAxh0qLTN1yz10g177Q7p3hN94Uy0EQkiElcItnQfQa9+dvds6g6p+zD2
+	uxSOsh3qpSOAUZH82zIVhk5zWP/FP3ED9PwxhGOMWACM8lc//CvGyugQQ/jZH1RZNUxGOipAZbpCc
+	Pah1mxvvYx9LVOhj4goYKoFc2f6he4LnwZbsPUiM2TZPAAEC8YWrGhGorNTr/ABTLhJXhsMsajxj6
+	3XyA/zBL/YwhTGUJ7Vxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeOCI-0007KH-AL; Thu, 28 May 2020 19:28:10 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jeOJp-0005eo-7K; Thu, 28 May 2020 19:35:57 +0000
+Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeO6b-0007Zx-KC; Thu, 28 May 2020 19:22:20 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 7D42C2A41D7
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- platform-driver-x86@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org
-Subject: [PATCH v4 11/11] thermal: Rename set_mode() to change_mode()
-Date: Thu, 28 May 2020 21:20:51 +0200
-Message-Id: <20200528192051.28034-12-andrzej.p@collabora.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200528192051.28034-1-andrzej.p@collabora.com>
-References: <Message-ID: <4493c0e4-51aa-3907-810c-74949ff27ca4@samsung.com>
- <20200528192051.28034-1-andrzej.p@collabora.com>
+ id 1jeOJm-0005eL-AY
+ for linux-rockchip@lists.infradead.org; Thu, 28 May 2020 19:35:55 +0000
+Received: by mail-ej1-x644.google.com with SMTP id n24so1265634ejd.0
+ for <linux-rockchip@lists.infradead.org>; Thu, 28 May 2020 12:35:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nqW3djALsxiW8xcZNR9N6+CiFQBGXa010/gGbeC7zf8=;
+ b=K+qgDjOPpGOD92TeM0dxJ6BMbDtrbjReB16r6u0byQd6rQEy3yqpjvCHxFBHdRpY75
+ 6VErgrdtkqoziHpDFqqBMXp0OlycSswgYfaZzkjLFVWWFjokayqxACLlsywKG2KBDch/
+ Cs/nedlmJ+cWqKbIB5QlnygYM2rxa/mQIR0T0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nqW3djALsxiW8xcZNR9N6+CiFQBGXa010/gGbeC7zf8=;
+ b=tPdE2XE3o+tcFmE8sbBsAex8Y3ZDWX1usUGAC8Qf1Up3vJbebEpW+FgeEjMbkuE1Ok
+ LPfz13ntWr+u2o5mAEtOWy6f5OQfiFJF3/MBBMGPTqEa9Nr8rBQSX9S4HauOyor2fJcr
+ l4jtq46RMynQXVLpI+ZH1gEQbOCg0XJKFveMaWO/P9ZTdCFyBJlPKc++wzG+M7e7WOXO
+ gcxRedMrcpStgoPE0REyjDw6HzKCuLD6FfphLpLdqv4ziA/Gx5w+jIKDgW0TqYEFgYk1
+ ODSneZDddQpu9HYcqr54y4YaRlUwo2naBnSm0HNVa7zKnJdm6kAu9K5ubh7yk5ULdEP8
+ 7q1g==
+X-Gm-Message-State: AOAM532s4BfiqPeGw/DScpPTObDDSl799lnqGFthGP7GbAUOUVnnqfcT
+ /HnwYy+EdyY4Rq2apfzq2LP+lvA/KPTYJQ==
+X-Google-Smtp-Source: ABdhPJy/NgKLjPO3c/v1+Yb83rF1ypPLTVhCYJ6D4T4m+AGVvLhITXxrdCsJy0RsAop69gvA/BYzcw==
+X-Received: by 2002:a17:906:4303:: with SMTP id
+ j3mr3812548ejm.364.1590694551053; 
+ Thu, 28 May 2020 12:35:51 -0700 (PDT)
+Received: from mail-wm1-f51.google.com (mail-wm1-f51.google.com.
+ [209.85.128.51])
+ by smtp.gmail.com with ESMTPSA id u20sm5258022edy.80.2020.05.28.12.35.50
+ for <linux-rockchip@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 28 May 2020 12:35:50 -0700 (PDT)
+Received: by mail-wm1-f51.google.com with SMTP id f185so288998wmf.3
+ for <linux-rockchip@lists.infradead.org>; Thu, 28 May 2020 12:35:50 -0700 (PDT)
+X-Received: by 2002:a7b:c622:: with SMTP id p2mr4855741wmk.55.1590694549758;
+ Thu, 28 May 2020 12:35:49 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200512120522.25960-1-dafna.hirschfeld@collabora.com>
+ <20200512120522.25960-6-dafna.hirschfeld@collabora.com>
+ <20200521000901.GE25474@pendragon.ideasonboard.com>
+ <CAAFQd5AKrbtYMN+h6phaOYveNoUZptVdy+KD-Ef1+on_HXenyA@mail.gmail.com>
+ <8eaaaf8e-2272-3c74-7c8a-6c320f72bc7a@collabora.com>
+In-Reply-To: <8eaaaf8e-2272-3c74-7c8a-6c320f72bc7a@collabora.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 28 May 2020 21:35:39 +0200
+X-Gmail-Original-Message-ID: <CAAFQd5Dkx6D6RZ3rCiftuXOBpP5Qvv292swQJ8bEBiEZVLaogg@mail.gmail.com>
+Message-ID: <CAAFQd5Dkx6D6RZ3rCiftuXOBpP5Qvv292swQJ8bEBiEZVLaogg@mail.gmail.com>
+Subject: Re: [PATCH 5/5] media: staging: rkisp1: replace workqueue with
+ threaded irq for reading statistics registers
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_122217_958954_78E26403 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200528_123554_382370_69D8C696 
+X-CRM114-Status: GOOD (  36.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,192 +105,153 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
- Heiko Stuebner <heiko@sntech.de>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Vishal Kulkarni <vishal@chelsio.com>, Luca Coelho <luciano.coelho@intel.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Allison Randal <allison@lohutok.net>, NXP Linux Team <linux-imx@nxp.com>,
- Darren Hart <dvhart@infradead.org>, Zhang Rui <rui.zhang@intel.com>,
- Gayatri Kammela <gayatri.kammela@intel.com>, Len Brown <lenb@kernel.org>,
- Johannes Berg <johannes.berg@intel.com>,
- Intel Linux Wireless <linuxwifi@intel.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Ido Schimmel <idosch@mellanox.com>,
- Baolin Wang <baolin.wang7@gmail.com>, Jiri Pirko <jiri@mellanox.com>,
- Orson Zhai <orsonzhai@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Kalle Valo <kvalo@codeaurora.org>,
- Support Opensource <support.opensource@diasemi.com>,
- Enrico Weigelt <info@metux.net>, Peter Kaestle <peter@piie.net>,
- Sebastian Reichel <sre@kernel.org>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- =?UTF-8?q?Niklas=20S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- Shawn Guo <shawnguo@kernel.org>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
-MIME-Version: 1.0
+Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-set_mode() is only called when tzd's mode is about to change. Actual
-setting is performed in thermal_core, in thermal_zone_device_set_mode().
-The meaning of set_mode() callback is actually to notify the driver about
-the mode being changed and giving the driver a chance to oppose such
-change.
+On Thu, May 28, 2020 at 9:19 PM Dafna Hirschfeld
+<dafna.hirschfeld@collabora.com> wrote:
+>
+> Hi, Tomasz, Laurent, and everyone
+>
+> On 21.05.20 12:38, Tomasz Figa wrote:
+> > Hi Dafna,
+> >
+> > On Thu, May 21, 2020 at 2:09 AM Laurent Pinchart
+> > <laurent.pinchart@ideasonboard.com> wrote:
+> >>
+> >> Hi Dafna,
+> >>
+> >> Thank you for the patch.
+> >>
+> >> On Tue, May 12, 2020 at 02:05:22PM +0200, Dafna Hirschfeld wrote:
+> >>> Reading the statistics registers might take too long
+> >>> to run inside the irq handler. Currently it is deferred
+> >>> to bottom half using workqueues. This patch replaces the
+> >>> workqueue with threaded interrupts for reading the
+> >>> statistics registers.
+> >>
+> >> Could you please explain why this is needed/desired ? Removal of the
+> >> kzalloc(GFP_ATOMIC) is very nice, but I'm sure there would have been
+> >> ways to avoid it while keeping a workqueue. I'm not claiming the patch
+> >> is bad, but I'd like to understand the reason.
+> >>
+> >
+> > Thanks a lot for working on this driver!
+> >
+> > I'll second what Laurent said. In general, a description of the patch
+> > should explain why a change is needed, e.g. what issues it fixes or
+> > what improvements it brings.
+>
+> So from what I understand, the correct way to handle bottom half is
+> using threaded interrupts since they run in higher priority.
+> In case of this statistics reading for example, we want to read the stats
+> as fast as possible once we recieve the interrupt. If we read the stats too
+> long after the interrupt was recieved, then the values in the stats registerd
+> might have changed by then. Does that make sense?
+>
+> I use the rockpi4 board to test the code and actually I did an experiment
+> of moving the code that reads the stats into the hard irq and it ran
+> fine. Maybe you know why the code is currently in a work queue and not
+> inside the hard irq? Also, the params struct is of size 5337 bytes and
+> the params subdevice can potentionaly run a lot of registers writing but
+> for some reasone the code of writing to the params registers still runs
+> inside the hard irq.
+>
 
-To better reflect the purpose of the method rename it to change_mode()
+Actually I now recall that we already discussed this in the past with
+Ezequiel and Helen and I even measured the time needed to readout the
+statistics registers and it was consistently taking between 23 to 40
+microseconds. We concluded that it could be just done in the hardirq
+handler.
 
-Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
----
- drivers/platform/x86/acerhdf.c                          | 6 +++---
- drivers/thermal/imx_thermal.c                           | 8 ++++----
- drivers/thermal/intel/int340x_thermal/int3400_thermal.c | 6 +++---
- drivers/thermal/intel/intel_quark_dts_thermal.c         | 6 +++---
- drivers/thermal/thermal_core.c                          | 4 ++--
- include/linux/thermal.h                                 | 2 +-
- 6 files changed, 16 insertions(+), 16 deletions(-)
+I've added you to that email thread.
 
-diff --git a/drivers/platform/x86/acerhdf.c b/drivers/platform/x86/acerhdf.c
-index d33a70af0869..63b562e06d5c 100644
---- a/drivers/platform/x86/acerhdf.c
-+++ b/drivers/platform/x86/acerhdf.c
-@@ -413,8 +413,8 @@ static inline void acerhdf_enable_kernelmode(void)
-  *          the temperature and the fan.
-  * disabled: the BIOS takes control of the fan.
-  */
--static int acerhdf_set_mode(struct thermal_zone_device *thermal,
--			    enum thermal_device_mode mode)
-+static int acerhdf_change_mode(struct thermal_zone_device *thermal,
-+			       enum thermal_device_mode mode)
- {
- 	if (mode == THERMAL_DEVICE_DISABLED && kernelmode)
- 		acerhdf_revert_to_bios_mode();
-@@ -473,7 +473,7 @@ static struct thermal_zone_device_ops acerhdf_dev_ops = {
- 	.bind = acerhdf_bind,
- 	.unbind = acerhdf_unbind,
- 	.get_temp = acerhdf_get_ec_temp,
--	.set_mode = acerhdf_set_mode,
-+	.change_mode = acerhdf_change_mode,
- 	.get_trip_type = acerhdf_get_trip_type,
- 	.get_trip_hyst = acerhdf_get_trip_hyst,
- 	.get_trip_temp = acerhdf_get_trip_temp,
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index a02398118d88..9700ae39feb7 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -330,8 +330,8 @@ static int imx_get_temp(struct thermal_zone_device *tz, int *temp)
- 	return 0;
- }
- 
--static int imx_set_mode(struct thermal_zone_device *tz,
--			enum thermal_device_mode mode)
-+static int imx_change_mode(struct thermal_zone_device *tz,
-+			   enum thermal_device_mode mode)
- {
- 	struct imx_thermal_data *data = tz->devdata;
- 	struct regmap *map = data->tempmon;
-@@ -447,7 +447,7 @@ static struct thermal_zone_device_ops imx_tz_ops = {
- 	.bind = imx_bind,
- 	.unbind = imx_unbind,
- 	.get_temp = imx_get_temp,
--	.set_mode = imx_set_mode,
-+	.change_mode = imx_change_mode,
- 	.get_trip_type = imx_get_trip_type,
- 	.get_trip_temp = imx_get_trip_temp,
- 	.get_crit_temp = imx_get_crit_temp,
-@@ -860,7 +860,7 @@ static int __maybe_unused imx_thermal_suspend(struct device *dev)
- 	 * Need to disable thermal sensor, otherwise, when thermal core
- 	 * try to get temperature before thermal sensor resume, a wrong
- 	 * temperature will be read as the thermal sensor is powered
--	 * down. This is done in set_mode() operation called from
-+	 * down. This is done in change_mode() operation called from
- 	 * thermal_zone_device_disable()
- 	 */
- 	ret = thermal_zone_device_disable(data->tz);
-diff --git a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-index 9af862ab9f65..58870d215471 100644
---- a/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-+++ b/drivers/thermal/intel/int340x_thermal/int3400_thermal.c
-@@ -377,8 +377,8 @@ static int int3400_thermal_get_temp(struct thermal_zone_device *thermal,
- 	return 0;
- }
- 
--static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
--				enum thermal_device_mode mode)
-+static int int3400_thermal_change_mode(struct thermal_zone_device *thermal,
-+				       enum thermal_device_mode mode)
- {
- 	struct int3400_thermal_priv *priv = thermal->devdata;
- 	int result = 0;
-@@ -399,7 +399,7 @@ static int int3400_thermal_set_mode(struct thermal_zone_device *thermal,
- 
- static struct thermal_zone_device_ops int3400_thermal_ops = {
- 	.get_temp = int3400_thermal_get_temp,
--	.set_mode = int3400_thermal_set_mode,
-+	.change_mode = int3400_thermal_change_mode,
- };
- 
- static struct thermal_zone_params int3400_thermal_params = {
-diff --git a/drivers/thermal/intel/intel_quark_dts_thermal.c b/drivers/thermal/intel/intel_quark_dts_thermal.c
-index e29c3e330b17..3eafc6b0e6c3 100644
---- a/drivers/thermal/intel/intel_quark_dts_thermal.c
-+++ b/drivers/thermal/intel/intel_quark_dts_thermal.c
-@@ -298,8 +298,8 @@ static int sys_get_curr_temp(struct thermal_zone_device *tzd,
- 	return 0;
- }
- 
--static int sys_set_mode(struct thermal_zone_device *tzd,
--				enum thermal_device_mode mode)
-+static int sys_change_mode(struct thermal_zone_device *tzd,
-+			   enum thermal_device_mode mode)
- {
- 	int ret;
- 
-@@ -319,7 +319,7 @@ static struct thermal_zone_device_ops tzone_ops = {
- 	.get_trip_type = sys_get_trip_type,
- 	.set_trip_temp = sys_set_trip_temp,
- 	.get_crit_temp = sys_get_crit_temp,
--	.set_mode = sys_set_mode,
-+	.change_mode = sys_change_mode,
- };
- 
- static void free_soc_dts(struct soc_sensor_entry *aux_entry)
-diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
-index e9c0b990e4a9..c00edae7839e 100644
---- a/drivers/thermal/thermal_core.c
-+++ b/drivers/thermal/thermal_core.c
-@@ -482,8 +482,8 @@ int thermal_zone_device_set_mode(struct thermal_zone_device *tz,
- 		return ret;
- 	}
- 
--	if (tz->ops->set_mode)
--		ret = tz->ops->set_mode(tz, mode);
-+	if (tz->ops->change_mode)
-+		ret = tz->ops->change_mode(tz, mode);
- 
- 	if (!ret)
- 		tz->mode = mode;
-diff --git a/include/linux/thermal.h b/include/linux/thermal.h
-index df013c39ba9b..b9efaa780d88 100644
---- a/include/linux/thermal.h
-+++ b/include/linux/thermal.h
-@@ -76,7 +76,7 @@ struct thermal_zone_device_ops {
- 		       struct thermal_cooling_device *);
- 	int (*get_temp) (struct thermal_zone_device *, int *);
- 	int (*set_trips) (struct thermal_zone_device *, int, int);
--	int (*set_mode) (struct thermal_zone_device *,
-+	int (*change_mode) (struct thermal_zone_device *,
- 		enum thermal_device_mode);
- 	int (*get_trip_type) (struct thermal_zone_device *, int,
- 		enum thermal_trip_type *);
--- 
-2.17.1
+> >
+> > Also, would you mind adding me on CC for any patches for this driver?
+> > Since we use this driver in Chrome OS, I'd like to stay on top of any
+> > updates. Thanks in advance!
+> sure!
+>
 
+Thanks!
+
+[snip]
+> >>> -static void
+> >>> -rkisp1_stats_send_measurement(struct rkisp1_stats *stats,
+> >>> -                           struct rkisp1_isp_readout_work *meas_work)
+> >>> +irqreturn_t rkisp1_read_stats_threaded_irq(int irq, void *ctx)
+> >>>   {
+> >>> +     struct device *dev = ctx;
+> >>> +     struct rkisp1_device *rkisp1 = dev_get_drvdata(dev);
+> >>> +     struct rkisp1_stats *stats = &rkisp1->stats;
+> >>> +     struct rkisp1_kstats_buffer *kstats_buf = NULL;
+> >>>        struct rkisp1_stat_buffer *cur_stat_buf;
+> >>> -     struct rkisp1_buffer *cur_buf = NULL;
+> >>> -     unsigned int frame_sequence =
+> >>> -             atomic_read(&stats->rkisp1->isp.frame_sequence);
+> >>> -     u64 timestamp = ktime_get_ns();
+> >>>        unsigned long flags;
+> >>> -
+> >>> -     if (frame_sequence != meas_work->frame_id) {
+> >>> -             dev_warn(stats->rkisp1->dev,
+> >>> -                      "Measurement late(%d, %d)\n",
+> >>> -                      frame_sequence, meas_work->frame_id);
+> >>> -             frame_sequence = meas_work->frame_id;
+> >>> -     }
+> >>> +     u64 timestamp = ktime_get_ns();
+> >>>
+> >>>        spin_lock_irqsave(&stats->stats_lock, flags);
+> >>> -     /* get one empty buffer */
+> >>> -     if (!list_empty(&stats->stat)) {
+> >>> -             cur_buf = list_first_entry(&stats->stat,
+> >>> -                                        struct rkisp1_buffer, queue);
+> >>> -             list_del(&cur_buf->queue);
+> >>> +     if (!stats->is_streaming) {
+> >>> +             spin_unlock_irqrestore(&stats->stats_lock, flags);
+> >>> +             return IRQ_HANDLED;
+> >>> +     }
+> >>> +     if (list_empty(&stats->stat)) {
+> >>> +             spin_unlock_irqrestore(&stats->stats_lock, flags);
+> >>> +             WARN("%s: threaded irq waked but there are no buffers",
+> >>> +                  __func__);
+> >>> +             return IRQ_HANDLED;
+> >>> +     }
+> >>> +     kstats_buf = list_first_entry(&stats->stat,
+> >>> +                                   struct rkisp1_kstats_buffer, buff.queue);
+> >>> +
+> >>> +     /*
+> >>> +      * each waked irq thread reads exactly one ready statistics
+> >>> +      * so it is a bug  if no statistics are ready
+> >>> +      */
+> >>
+> >> What happens if this function takes too long to run ? With the
+> >> workqueue, if the work gets delayed once in a while, the work items will
+> >> accumulate, and all of them will be handled eventually. Here it seems
+> >> that an IRQ could get lost.
+>
+> If the irs runs and there are no available buffers then indeed we lost the interrupt.
+> You think it might be a problem if userspace expect an associated stats buffer
+> for every recieved frame?
+> Also with workqueue we will lose the stats if we don't have an available buffer
+> when the workqueue runs.
+
+I believe this hardware doesn't do any buffering internally, so if one
+doesn't read the statistics in time, the values are lost, because they
+are overridden with the ones coming from the next frame. So actually
+hardirq might be a better context to do the read-out indeed.
+
+Best regards,
+Tomasz
 
 _______________________________________________
 Linux-rockchip mailing list
