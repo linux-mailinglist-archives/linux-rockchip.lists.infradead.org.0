@@ -2,51 +2,95 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF96E1E6E53
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 00:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6AB01E7148
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 02:24:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SBqn/iFvPleYX681ihuPq46GIyvW/ktKF+Ogvy70ubg=; b=pahYRNWX6BGuai
-	vbukYL6/bhOw1NM9MO2xYMmph4p0RmhbUC0Z8kenMZWsNXz/5MQtSI7qM4KV2x2dOn6CcH767AtD/
-	o025YIdS5nt110M9rbBLyz/xgvP4NBzADQtW3zdMvjvcn17hGHaUAN69GbLrjfI1rnrobO8p0cV2T
-	NnQ/yGTl+CJoBAOGo2HBUMZGsHTZzeiLD6JiEnUWInthaGuJxAQUny0dCaHzrqew9Ec0YWXsJbZuK
-	Vk6oZK2N4YcgxbR1BpXplwOYF8XLpVYXCaELh7VEWyXnyV6H8hgEi/QWjAx/fpROBVy6YfEyfz8TJ
-	zVbszvYH455M0+zn3kxw==;
+	List-Owner; bh=kR2gUrFler4qhcvW4xciEK7GucY5BOXL7v765I+fW0g=; b=iS+H93wloYB4rU
+	xNDcnAc+MM2Lvjvo0+HXLQ537oByH9p+3YtrfHEB6jSGhWcTvcOBMcLV6In9k+ao82tgaZMHxAEee
+	2dzepZcwkf4JuOp96aJmiSOghLZ8dZXuYp3RDAk9FIovdxiJA+UTTMa32/GRfBN3H0sdc6nivPR5J
+	0t53A7Cci3y0aWEKLsse/Y1Ih0OLOQN36ctNr7uYnb+bbUM3X8dBapw0dlvFaLFijtbXAY7FuqEYY
+	TiuNugblvLPRMPijJipHUkBx9dN8H7a561OObHcPgkXBVnfloibg2cbp19w6Z7n3p4zZQJK69VYIx
+	A/XYs0yarU96M3rx/mvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeQcJ-0000xl-7i; Thu, 28 May 2020 22:03:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jeSpE-0003MZ-26; Fri, 29 May 2020 00:24:40 +0000
+Received: from [204.191.154.188] (helo=ale.deltatee.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeQc0-0000mj-Oz; Thu, 28 May 2020 22:02:54 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jeQbx-0005Eo-Rk; Fri, 29 May 2020 00:02:49 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
- property
-Date: Fri, 29 May 2020 00:02:49 +0200
-Message-ID: <12739492.Qs6HZxOyHu@diego>
-In-Reply-To: <20200528220136.GA748777@bogus>
-References: <20200520073327.6016-1-jbx6244@gmail.com>
- <4727344.YYj2SkWT1V@diego> <20200528220136.GA748777@bogus>
+ id 1jeSou-0003A2-Rt; Fri, 29 May 2020 00:24:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=deltatee.com; s=20200525; h=Subject:Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Sender:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=SHO6IGYEd6YDcItDhjnlUPf5s8OIRwKvgFq6kM1/DP0=; b=r/axjxYlIiDMYaBSzOJcmN4D8z
+ 5nhVyK5+jkTuLY9r/DkIPGDqA4zBXW2lnj24/75M8PApunP8NH63l8JZKK4zOM+RkgNUjkh8Zu7L0
+ uAWAMjn96WqKiZuaMyo8cBfMY0aRwfiPej4ElwlF0HqAS+905dMVMngwIHFwJNhllq+TXuBP3naK4
+ /r6v4D4I21bAG2X4/zOYuy5cJVYuMqe8ZbDWBeVK1iPsKmEydsM4SFCoqrouhRTbQELtOXUOa1f+x
+ r0Injuuidql/AmLXAXcQzgEff4xFuOZ6W7hJhBwZm1rFF3QVErdj3XcX2phEoDBlDrcVSy7R3MomJ
+ Ro1gd+aA==;
+Received: from s0106602ad0811846.cg.shawcable.net ([68.147.191.165]
+ helo=[192.168.0.12])
+ by ale.deltatee.com with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.92) (envelope-from <logang@deltatee.com>)
+ id 1jeSSD-0001kd-5g; Thu, 28 May 2020 18:00:54 -0600
+To: Tom Murphy <murphyt7@tcd.ie>, iommu@lists.linux-foundation.org
+References: <20191221150402.13868-1-murphyt7@tcd.ie>
+From: Logan Gunthorpe <logang@deltatee.com>
+Message-ID: <465815ae-9292-f37a-59b9-03949cb68460@deltatee.com>
+Date: Thu, 28 May 2020 18:00:44 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20191221150402.13868-1-murphyt7@tcd.ie>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 68.147.191.165
+X-SA-Exim-Rcpt-To: baolu.lu@linux.intel.com, robin.murphy@arm.com,
+ kgene@kernel.org, linux-kernel@vger.kernel.org, cohuck@redhat.com,
+ dwmw2@infradead.org, gerald.schaefer@de.ibm.com,
+ virtualization@lists.linux-foundation.org, tglx@linutronix.de,
+ matthias.bgg@gmail.com, rodrigo.vivi@intel.com,
+ linux-mediatek@lists.infradead.org, alex.williamson@redhat.com,
+ eric.auger@redhat.com, intel-gfx@lists.freedesktop.org,
+ linux-arm-msm@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, agross@kernel.org,
+ linux-rockchip@lists.infradead.org, jonathanh@nvidia.com, krzk@kernel.org,
+ maz@kernel.org, linux-samsung-soc@vger.kernel.org, jean-philippe@linaro.org,
+ m.szyprowski@samsung.com, will@kernel.org, thierry.reding@gmail.com,
+ julien.grall@arm.com, linux-tegra@vger.kernel.org, bjorn.andersson@linaro.org,
+ dri-devel@lists.freedesktop.org, airlied@linux.ie, kvm@vger.kernel.org,
+ iommu@lists.linux-foundation.org, murphyt7@tcd.ie
+X-SA-Exim-Mail-From: logang@deltatee.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+ URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.2
+Subject: Re: [PATCH 0/8] Convert the intel iommu driver to the dma-iommu api
+X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
+X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_150252_814794_4F158293 
-X-CRM114-Status: GOOD (  22.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200528_172420_899712_89C4B095 
+X-CRM114-Status: GOOD (  18.71  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,112 +103,67 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-input@vger.kernel.org, Johan Jonker <jbx6244@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: kvm@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Julien Grall <julien.grall@arm.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>, linux-s390@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ Eric Auger <eric.auger@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ linux-mediatek@lists.infradead.org, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ linux-tegra@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ virtualization@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, David Woodhouse <dwmw2@infradead.org>,
+ Lu Baolu <baolu.lu@linux.intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Am Freitag, 29. Mai 2020, 00:01:36 CEST schrieb Rob Herring:
-> On Wed, May 20, 2020 at 08:41:59PM +0200, Heiko St=FCbner wrote:
-> > Hi Dmitry,
-> > =
-
-> > Am Mittwoch, 20. Mai 2020, 19:13:24 CEST schrieb Dmitry Torokhov:
-> > > Hi Johan,
-> > > =
-
-> > > On Wed, May 20, 2020 at 09:33:27AM +0200, Johan Jonker wrote:
-> > > > A test with the command below gives this error:
-> > > > =
-
-> > > > arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
-> > > > touchscreen@3e: reg:0:0: 56 was expected
-> > > > =
-
-> > > > The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
-> > > > was shipped with different addresses then the binding currently all=
-ows.
-> > > > Change the reg property that any address will pass.
-> > > > =
-
-> > > > make ARCH=3Darm dtbs_check
-> > > > DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/input/touchscre=
-en/
-> > > > edt-ft5x06.yaml
-> > > > =
-
-> > > > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> > > > ---
-> > > >  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yam=
-l | 2 +-
-> > > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > > =
-
-> > > > diff --git a/Documentation/devicetree/bindings/input/touchscreen/ed=
-t-ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5=
-x06.yaml
-> > > > index 383d64a91..baa8e8f7e 100644
-> > > > --- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x0=
-6.yaml
-> > > > +++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x0=
-6.yaml
-> > > > @@ -42,7 +42,7 @@ properties:
-> > > >        - focaltech,ft6236
-> > > >  =
-
-> > > >    reg:
-> > > > -    const: 0x38
-> > > > +    maxItems: 1
-> > > =
-
-> > > Should we have a list of valid addresses instead of allowing any
-> > > address? Controllers usually have only a couple of addresses that they
-> > > support.
-> > =
-
-> > from what I've read, the fdt touchscreen controllers are just a generic
-> > cpu with device-specific (or better panel-specific) firmware, which see=
-ms
-> > to include the address as well - so it looks to be variable.
-> > =
-
-> > But of course that is only 2nd hand knowledge for me ;-)
-> > =
-
-> > =
-
-> > But also, the i2c address is something you cannot really mess up,
-> > either it is correct and your touchscreen works, or it isn't and and
-> > adding entries to this list every time a new address variant pops up
-> > feels clumsy.
-> =
-
-> Is that an Ack?
-
-for the patch itself:
-Acked-by: Heiko Stuebner <heiko@sntech.de>
-
-
-> I'm fine either way. It's really only useful if there's a single =
-
-> address because with a list it could still be wrong just as any other =
-
-> data like an interrupt number could be wrong.
-> =
-
-> Rob
-> =
-
-
-
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgVG9tLAoKT24gMjAxOS0xMi0yMSA4OjAzIGEubS4sIFRvbSBNdXJwaHkgd3JvdGU6Cj4gVGhp
+cyBwYXRjaHNldCBjb252ZXJ0cyB0aGUgaW50ZWwgaW9tbXUgZHJpdmVyIHRvIHRoZSBkbWEtaW9t
+bXUgYXBpLgoKSnVzdCB3YW50ZWQgdG8gbm90ZSB0aGF0IEkndmUgcmViYXNlZCB5b3VyIHNlcmll
+cyBvbiByZWNlbnQga2VybmVscyBhbmQKaGF2ZSBkb25lIHNvbWUgdGVzdGluZyBvbiBteSBvbGQg
+U2FuZHlicmlkZ2UgbWFjaGluZSAod2l0aG91dCB0aGUgRE8gTk9UCk1FUkdFIHBhdGNoKSBhbmQg
+aGF2ZSBmb3VuZCBubyBpc3N1ZXMuIEkgaG9wZSB0aGlzIGNhbiBtYWtlIHByb2dyZXNzCnNvb24g
+YW5kIGdldCBtZXJnZWQgc29vbi4gSWYgeW91IGxpa2UgeW91IGNhbiBhZGQ6CgpUZXN0ZWQtQnk6
+IExvZ2FuIEd1bnRob3JwZSA8bG9nYW5nQGRlbHRhdGVlLmNvbT4KCj4gV2hpbGUgY29udmVydGlu
+ZyB0aGUgZHJpdmVyIEkgZXhwb3NlZCBhIGJ1ZyBpbiB0aGUgaW50ZWwgaTkxNSBkcml2ZXIgd2hp
+Y2ggY2F1c2VzIGEgaHVnZSBhbW91bnQgb2YgYXJ0aWZhY3RzIG9uIHRoZSBzY3JlZW4gb2YgbXkg
+bGFwdG9wLiBZb3UgY2FuIHNlZSBhIHBpY3R1cmUgb2YgaXQgaGVyZToKPiBodHRwczovL2dpdGh1
+Yi5jb20vcGlwcHkzNjAva2VybmVsUGF0Y2hlcy9ibG9iL21hc3Rlci9JTUdfMjAxOTEyMTlfMjI1
+OTIyLmpwZwo+IAo+IFRoaXMgaXNzdWUgaXMgbW9zdCBsaWtlbHkgaW4gdGhlIGk5MTUgZHJpdmVy
+IGFuZCBpcyBtb3N0IGxpa2VseSBjYXVzZWQgYnkgdGhlIGRyaXZlciBub3QgcmVzcGVjdGluZyB0
+aGUgcmV0dXJuIHZhbHVlIG9mIHRoZSBkbWFfbWFwX29wczo6bWFwX3NnIGZ1bmN0aW9uLiBZb3Ug
+Y2FuIHNlZSB0aGUgZHJpdmVyIGlnbm9yaW5nIHRoZSByZXR1cm4gdmFsdWUgaGVyZToKPiBodHRw
+czovL2dpdGh1Yi5jb20vdG9ydmFsZHMvbGludXgvYmxvYi83ZTAxNjViMmYxYTkxMmEwNmUzODFl
+OTFmMGY0ZTQ5NWY0YWMzNzM2L2RyaXZlcnMvZ3B1L2RybS9pOTE1L2dlbS9pOTE1X2dlbV9kbWFi
+dWYuYyNMNTEKPiAKPiBQcmV2aW91c2x5IHRoaXMgZGlkbuKAmXQgY2F1c2UgaXNzdWVzIGJlY2F1
+c2UgdGhlIGludGVsIG1hcF9zZyBhbHdheXMgcmV0dXJuZWQgdGhlIHNhbWUgbnVtYmVyIG9mIGVs
+ZW1lbnRzIGFzIHRoZSBpbnB1dCBzY2F0dGVyIGdhdGhlciBsaXN0IGJ1dCB3aXRoIHRoZSBjaGFu
+Z2UgdG8gdGhpcyBkbWEtaW9tbXUgYXBpIHRoaXMgaXMgbm8gbG9uZ2VyIHRoZSBjYXNlLiBJIHdh
+c27igJl0IGFibGUgdG8gdHJhY2sgdGhlIGJ1ZyBkb3duIHRvIGEgc3BlY2lmaWMgbGluZSBvZiBj
+b2RlIHVuZm9ydHVuYXRlbHkuICAKCkkgZGlkIHNvbWUgZGlnZ2luZyBpbnRvIHRoaXMgbXlzZWxm
+IGFuZCB3aGlsZSBJIGRvbid0IGhhdmUgZnVsbCBwYXRjaCwgSQp0aGluayBJIHRyYWNlZCBpdCBj
+bG9zZXIgdG8gdGhlIHByb2JsZW0uCgpTYWRseSwgaWdub3JpbmcgdGhlIG51bWJlciBvZiBuZW50
+cyByZXR1cm5lZCBieSBtYXBfc2coKSBpcyBlbmRlbWljIHRvCmRtYS1idWYgdXNlcnMsIGJ1dCBB
+TUQncyBHUFUgZHJpdmVyIHNlZW1zIHRvIGRvIHRoZSBzYW1lIHRoaW5nLApwcmVzdW1hYmx5IHdp
+dGhvdXQgaXNzdWVzLgoKRGlnZ2luZyBhIGJpdCBmdXJ0aGVyLCBJIGZvdW5kIHRoYXQgdGhlIGk5
+MTUgaGFzIGFuICJpbm5vdmF0aXZlIiB3YXkgb2YKaXRlcmF0aW5nIHRocm91Z2ggU0dMcywgc2Vl
+IFsxXS4gSSBzdXNwZWN0IGlmIF9fc2d0X2l0ZXIgaXMgY2hhbmdlZCB0bwppbmNyZW1lbnQgd2l0
+aCBzZ19kbWFfbGVuKCkgYW5kIHJldHVybiBOVUxMIHdoZW4gdGhlcmUgaXMgbm8gbGVuZ3RoCmxl
+ZnQsIGl0IG1heSBmaXggdGhlIGlzc3VlLgoKQnV0LCBzb3JyeSwgSSBkb24ndCByZWFsbHkgaGF2
+ZSB0aGUgbWVhbnMgb3IgdGltZSB0byBmaXggYW5kIHRlc3QgdGhpcwpteXNlbGYuCgpUaGFua3Ms
+CgpMb2dhbgoKWzFdCmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y1LjctcmM3L3Nv
+dXJjZS9kcml2ZXJzL2dwdS9kcm0vaTkxNS9pOTE1X3NjYXR0ZXJsaXN0LmgjTDc2CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBt
+YWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
