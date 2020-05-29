@@ -2,81 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFB331E7A31
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 12:13:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25BCF1E7A49
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 12:16:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lM0o2ect9IcCVRRNA0DPCxBmg78/INNXLqnCLzOBD00=; b=rLer2Reo4IGGLtNA8StfsJetV
-	TC866OtayGRfW4V0v3n+l0sptVa/hsuFtsvC8lch/jcgnM2H1b1smnmAETxz4zYmOiQywruNuTcPT
-	vMKw+kTK0STNvia7Rn6DL4ukTAJ+tm2AEsXZWEduBQb+tv29klR6pLbKn9ps6xJWXacpfunwlrCQ5
-	8Ik2DS8hnxj7OfzY1hm/lFX0kTZ6xRQXc+iCYSBTBiOiyjBbJNe9RiO2kiKyuQo4r6MjeZP+LXBCJ
-	rxeNV7IZTS7/puf6bvujyLJ/vWu1URbnml7rlI2TPSQOjfwNt70ICDbu1D9HdJ2fi3OB4/EECC+Mp
-	Bugn+JZHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4QZ3nEdkWjqaDEPZ2Z8QHWJdVpTJzW8XeLhB9Fq7huM=; b=WgWuJV9E/xRkMU
+	k8kWIdS7g9WfiSC+DX+zxc4nvy+X5BP9JJA5s7RnKUm2EtxphZEtPPnS9FGMW7IeUJLDcxjjg/2yz
+	QOS2N9iWESC4L7vZwQpUmfIDJON5iQ/f4kI1N0liE5lJYGqtmGbqgOpztD266DnAgeipom68yP5Hv
+	ZO6ly3JY5HeJxqJo9bzqroA4f0cb6g7fRD/42xHARPe5VApNIAOjKSBWxnia1Bfn9Xhoc02MKACLS
+	k+rCSKdYh8Z5RwDbHjOFczwGkeuW7f2MRVmcNjCT7NPv8jiIEXDvNeExQReW6qn+csrH3zZ9NnjoG
+	bRcy6exR45BE3xQNIdRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jec10-00061Z-TM; Fri, 29 May 2020 10:13:26 +0000
-Received: from regular1.263xmail.com ([211.150.70.198])
+	id 1jec3p-0001Ju-4J; Fri, 29 May 2020 10:16:21 +0000
+Received: from mail-lj1-f193.google.com ([209.85.208.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jec0r-0005zc-P4
- for linux-rockchip@lists.infradead.org; Fri, 29 May 2020 10:13:24 +0000
-Received: from localhost (unknown [192.168.167.13])
- by regular1.263xmail.com (Postfix) with ESMTP id D62514EE;
- Fri, 29 May 2020 18:13:05 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P25393T140143140783872S1590747176877127_; 
- Fri, 29 May 2020 18:13:05 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <c6c0461e05a8a6225243e793eba923b3>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: wmc@rock-chips.com
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-Subject: Re: [PATCH v6 04/16] arm: mach-rockchip: bind sub-nodes for
- rk3399_syscon
-To: Frank Wang <frank.wang@rock-chips.com>, heiko@sntech.de, marex@denx.de,
- bmeng.cn@gmail.com, philipp.tomsich@theobroma-systems.com,
- klaus.goger@theobroma-systems.com, jagan@amarulasolutions.com,
- sjg@chromium.org
-References: <20200526033220.20047-1-frank.wang@rock-chips.com>
- <20200526033220.20047-5-frank.wang@rock-chips.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <575e469a-9b90-6e12-f7b9-95d53aa2487d@rock-chips.com>
-Date: Fri, 29 May 2020 18:12:55 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jec3k-0001HW-4t; Fri, 29 May 2020 10:16:17 +0000
+Received: by mail-lj1-f193.google.com with SMTP id z18so1881452lji.12;
+ Fri, 29 May 2020 03:16:14 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Qb23YrFge2bev6B+pdY5MYpRbBAt1YLbxMOSUywPdHk=;
+ b=QUJHk+rjfRS6Mzozco5dZQcKmlQCv3K+k7fXcHZVtkKN1OsjLSbGXLrDrMqo4kt27X
+ qXJZdsrLnIIVVsbRL6iobjoaxczwLwn+tSEPQT+HkmPKEcREUWjMLoFbbvip4IFI+ps5
+ f+ZC1PV27uIPZ7F9L3NftBBl6dm7Phfz9SEWFLiVu+gx9VDehV2XztHwlKSRomMolEV5
+ cHZXjVrOGS+4krw/wCQ3dVoA9n4pXghfTDoSAn7832VZ+bNtDWZCnug4CDiYx7+zLs2W
+ e7wLbORxEzJTKqt9n9onufO0NSrOPhZIkGSA7ejo28Ia3FTSnDRem0EaLH9FGOrYgSk9
+ IfBg==
+X-Gm-Message-State: AOAM531VKpvp5XfU4otPrV7fh6bPZ8cWv9naqDWS/3wzKKqynDJ79aAv
+ +IE1Gh2KYZj4bZzfgn4pFXY=
+X-Google-Smtp-Source: ABdhPJyb49lJcndlDqUtkrSajYOpqC0lpLBM00Du0tW1RABChW4sreguvSnQJV4+HR28+sDilaHYIw==
+X-Received: by 2002:a05:651c:39b:: with SMTP id
+ e27mr3886282ljp.253.1590747373144; 
+ Fri, 29 May 2020 03:16:13 -0700 (PDT)
+Received: from xi.terra (c-beaee455.07-184-6d6c6d4.bbcust.telenor.se.
+ [85.228.174.190])
+ by smtp.gmail.com with ESMTPSA id h26sm2236339lja.0.2020.05.29.03.16.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 May 2020 03:16:12 -0700 (PDT)
+Received: from johan by xi.terra with local (Exim 4.93.0.4)
+ (envelope-from <johan@kernel.org>)
+ id 1jec3c-0004TR-D6; Fri, 29 May 2020 12:16:08 +0200
+Date: Fri, 29 May 2020 12:16:08 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Subject: Re: [PATCH 4/5] iio: light: lm3533-als: remove explicit parent
+ assignment
+Message-ID: <20200529101608.GC19480@localhost>
+References: <20200522082208.383631-1-alexandru.ardelean@analog.com>
+ <20200522082208.383631-4-alexandru.ardelean@analog.com>
 MIME-Version: 1.0
-In-Reply-To: <20200526033220.20047-5-frank.wang@rock-chips.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200522082208.383631-4-alexandru.ardelean@analog.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_031318_007678_34F96143 
-X-CRM114-Status: GOOD (  12.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200529_031616_190737_B6A4A29F 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [211.150.70.198 listed in wl.mailspike.net]
- 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jhovold[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.193 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,32 +92,72 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
- u-boot@lists.denx.de, william.wu@rock-chips.com,
- linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
- chenjh@rock-chips.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: milo.kim@ti.com, tomislav.denis@avl.com, dan@dlrobertson.com,
+ heiko@sntech.de, linux-aspeed@lists.ozlabs.org, linux-iio@vger.kernel.org,
+ linus.walleij@linaro.org, eajames@linux.ibm.com,
+ platform-driver-x86@vger.kernel.org, paul@crapouillou.net,
+ lorenzo.bianconi83@gmail.com, songqiang1304521@gmail.com,
+ srinivas.pandruvada@linux.intel.com, linux-stm32@st-md-mailman.stormreply.com,
+ devel@driverdev.osuosl.org, linux-samsung-soc@vger.kernel.org,
+ khilman@baylibre.com, tduszyns@gmail.com, krzk@kernel.org,
+ linux-rockchip@lists.infradead.org, wens@csie.org, kgene@kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, agross@kernel.org,
+ linux-input@vger.kernel.org, orsonzhai@gmail.com, alexandre.torgue@st.com,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, jikos@kernel.org, vilhelm.gray@gmail.com,
+ mripard@kernel.org, vz@mleia.com, hdegoede@redhat.com,
+ linux-mediatek@lists.infradead.org, ak@it-klinger.de, matthias.bgg@gmail.com,
+ linux-amlogic@lists.infradead.org, fabrice.gasnier@st.com,
+ linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com, rmfrfs@gmail.com,
+ shawnguo@kernel.org, dmitry.torokhov@gmail.com, coproscefalo@gmail.com,
+ linux-kernel@vger.kernel.org, rjui@broadcom.com, slemieux.tyco@gmail.com,
+ bjorn.andersson@linaro.org, mcoquelin.stm32@gmail.com, zhang.lyra@gmail.com,
+ baolin.wang7@gmail.com, ktsai@capellamicro.com, syednwaris@gmail.com,
+ peda@axentia.se, jic23@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAvNS8yNiDkuIrljYgxMTozMiwgRnJhbmsgV2FuZyB3cm90ZToKPiBUaGVyZSBhcmUg
-c29tZSBzdWItbm9kZXMgdW5kZXIgdGhlIGdyZiBEVCwgc28gYWRkIGJpbmQgY2FsbGJhY2sKPiBm
-dW5jdGlvbiBpbiByazMzOTkgc3lzY29uIGRyaXZlciB0byBzY2FuIHRoZW0gcmVjdXJzaXZlbHku
-Cj4KPiBTaWduZWQtb2ZmLWJ5OiBGcmFuayBXYW5nIDxmcmFuay53YW5nQHJvY2stY2hpcHMuY29t
-PgoKUmV2aWV3ZWQtYnk6IEtldmVyIFlhbmcgPGtldmVyLnlhbmdAcm9jay1jaGlwcy5jb20+CgpU
-aGFua3MsCi0gS2V2ZXIKPiAtLS0KPiAgIGFyY2gvYXJtL21hY2gtcm9ja2NoaXAvcmszMzk5L3N5
-c2Nvbl9yazMzOTkuYyB8IDMgKysrCj4gICAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCsp
-Cj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yazMzOTkvc3lzY29uX3Jr
-MzM5OS5jIGIvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yazMzOTkvc3lzY29uX3JrMzM5OS5jCj4g
-aW5kZXggMjU5Y2E0NGQ2OC4uZjI3YjBjZWQ4MiAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9tYWNo
-LXJvY2tjaGlwL3JrMzM5OS9zeXNjb25fcmszMzk5LmMKPiArKysgYi9hcmNoL2FybS9tYWNoLXJv
-Y2tjaGlwL3JrMzM5OS9zeXNjb25fcmszMzk5LmMKPiBAQCAtMjAsNiArMjAsOSBAQCBzdGF0aWMg
-Y29uc3Qgc3RydWN0IHVkZXZpY2VfaWQgcmszMzk5X3N5c2Nvbl9pZHNbXSA9IHsKPiAgIFVfQk9P
-VF9EUklWRVIoc3lzY29uX3JrMzM5OSkgPSB7Cj4gICAJLm5hbWUgPSAicmszMzk5X3N5c2NvbiIs
-Cj4gICAJLmlkID0gVUNMQVNTX1NZU0NPTiwKPiArI2lmICFDT05GSUdfSVNfRU5BQkxFRChPRl9Q
-TEFUREFUQSkKPiArCS5iaW5kID0gZG1fc2Nhbl9mZHRfZGV2LAo+ICsjZW5kaWYKPiAgIAkub2Zf
-bWF0Y2ggPSByazMzOTlfc3lzY29uX2lkcywKPiAgIH07Cj4gICAKCgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBs
-aXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
+On Fri, May 22, 2020 at 11:22:07AM +0300, Alexandru Ardelean wrote:
+> This assignment is the more peculiar of the bunch as it assigns the parent
+> of the platform-device's device (i.e. pdev->dev.parent) as the IIO device's
+> parent.
+>
+> It's unclear whether this is intentional or not.
+> Hence it is in it's own patch.
+
+Yeah, we have a few mfd drivers whose child drivers registers their
+class devices directly under the parent mfd device rather than the
+corresponding child platform device.
+
+Since it's done consistently I think you need to update them all if you
+really want to change this. 
+
+And it may not be worth it since at least in theory someone could now be
+relying on this topology.
+
+> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
+> ---
+>  drivers/iio/light/lm3533-als.c | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/iio/light/lm3533-als.c b/drivers/iio/light/lm3533-als.c
+> index bc196c212881..0f380ec8d30c 100644
+> --- a/drivers/iio/light/lm3533-als.c
+> +++ b/drivers/iio/light/lm3533-als.c
+> @@ -852,7 +852,6 @@ static int lm3533_als_probe(struct platform_device *pdev)
+>  	indio_dev->channels = lm3533_als_channels;
+>  	indio_dev->num_channels = ARRAY_SIZE(lm3533_als_channels);
+>  	indio_dev->name = dev_name(&pdev->dev);
+> -	indio_dev->dev.parent = pdev->dev.parent;
+>  	indio_dev->modes = INDIO_DIRECT_MODE;
+>  
+>  	als = iio_priv(indio_dev);
+
+Johan
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
