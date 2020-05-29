@@ -2,74 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D16D11E8355
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 18:14:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E3A51E844E
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 19:07:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZSUYv4fRwPz96BQNmXmPVgY/OiZRGzYoqUeTqkiafqs=; b=G0BlMPC01id9o/
-	/eiNe31Vyb7PGtUYcpGO0g97+sDPvYEj/LUMpMiFHzyjlpxEwkHnvNOveOsTl7JuBlkHzrxfEz9Ql
-	bi1XOxnb07FtFlRYCCdhr2g8Xhra7o1cjBtQQAWg0vr3VnGE3HgOXizZfO8lXCIwdV90Ok12MDEue
-	eyHcbzzyOTQ7F3kDIVc6u5sIxHaHd+zmWO4mrzP0h17SJz4Ldz8H7ssxjdZknZjhBUbxxgveAq+9L
-	+3noPpK9Q6LrZAv0nrKDjno15aapK6Lz/3WxWw0Cs8X9h/mrInH3VN30xgVPT+nqjYMpJLkat/CxL
-	p29f7Vs3DN08FeKdLqaw==;
+	List-Owner; bh=aNPa8ud4aDvfiqS+upezc7IefH9LKJFSJxYe0UfOrPQ=; b=u6YXoTspXcO+2A
+	v1OJflFjps5XmFEh78eyiZAnOBUJwEhnuZ3r0Eadqb0cZtydLwTuxti5Bgb9qdzK6aSGGNPzuwp8V
+	zlowH+Cjy5RYbDHDfSgtdFIAgCgZ1CARJBFa6bUSXTuN2NNvjQ+3SamWupbarLh4OEGIsxStzVbqb
+	48tkNEQFF/g1FX76q2zsF/qzPxo/qLbfH5HB/90x5CufHE5kcwRTJWyf+hLMOAxsCMFfG8Z1B+uiA
+	tNBx+7sV24pkliDYhuCh0NiUzXaK/VfZ5XO3R5aVzYTfqivmabAUM2oIJtks0K4/ELBg617Xvx6+j
+	Mq4DZFm0JZGWF3dlLGLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeheI-00081F-GE; Fri, 29 May 2020 16:14:22 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jeiU2-0001jq-Hh; Fri, 29 May 2020 17:07:50 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeheF-000803-4T; Fri, 29 May 2020 16:14:20 +0000
-Received: by mail-il1-f195.google.com with SMTP id h3so2984601ilh.13;
- Fri, 29 May 2020 09:14:18 -0700 (PDT)
+ id 1jeiTz-0001jP-O5; Fri, 29 May 2020 17:07:48 +0000
+Received: by mail-il1-f196.google.com with SMTP id 17so3231084ilj.3;
+ Fri, 29 May 2020 10:07:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=6nfDO8tXYNOep2brkAvXF5zbOelR4aGWgBOnUITKsRY=;
- b=f0ZtBiyvDdiPgJuDPl2LGMuSOvn7QjC5+bxV5DC/v92J6/PjLRs2kCfaAKvfHNGnNU
- 7JAm3RvyfguXMDSQ42xNxs5CqFNNrRwSR14dN3v908I8GmlR0tKKheyXf0h2h3IRVHLt
- 5m1H92vKcXcBGrEO3RYHzpuivRf6w/X/JQYfpiwXEbR8iwB/jmWDwuYzBtLKkDyLZy6f
- ZAGb6TY88ucWjafJEcygaa9Kxc3P4omTz0vM0R7GSVTQzPF5LbWfYQ8aG15Cx088PAy6
- j9wxX6rWgaGIBLm+leIa5wInz5AlvdfiKzl15BQ4dw0b7nNud/JnbvF8oJsPaf0cubxu
- wWRA==
-X-Gm-Message-State: AOAM531Qw1qX2oDdV3TQawKahtOFMInQd5PVv+WgA4XZcUNVzPmqWc2l
- cgIvHpDacFlmfhmVOHaemI0lrmhrzQ==
-X-Google-Smtp-Source: ABdhPJzuA2ktlJSd7UpbtEyBcgxYph+D4vfBmHw7TqTGpIjDXq5GoyDnI8okzTy3qfkjCk3IZhpDPA==
-X-Received: by 2002:a92:c90a:: with SMTP id t10mr8539976ilp.39.1590768857895; 
- Fri, 29 May 2020 09:14:17 -0700 (PDT)
+ bh=MUooCf11G+wzFa88ewKcb5EHAEEa+XEEiZTRljzO3gM=;
+ b=ZyWrXI30CjLcjwvuoOka2tZiaudT4kHja1RvaW1N4A5If+4jRCvEtReQ3u0ecC6ynt
+ gQOXbOV3ypFBgL0AEzBiJssfL8iYAn+P5rLBdsRu48f1ImX6s8Vomq6RnI8JHiaawMs6
+ MM4c+q2aeNpreF0x/3H9yEW2/y7VD9NRFCPd3nBHnL4BG2VJtdQkx2geJQbX4TAXq7u4
+ p+V7oIq4g/ZN7RUmBW5j9DDossT4HGWMsQJAwLK4IJAoqk7F/S9hOjf8e7RxwltexEif
+ ak5wfvChg6gQ8sbfWSvA7qpDDdF3e7KZOisbwfZMCFH03bdtHy5rBD3jDpBGCmkMus/X
+ gCwA==
+X-Gm-Message-State: AOAM531ffAhWt5BfZ0M78CT2YdkaLM/MPzYOQothNTf75sZEPxdKNfU0
+ WS/xFDIV0On7Lj18dvKx8w==
+X-Google-Smtp-Source: ABdhPJxBmlK7urpI9ApsfbfQd7gBioqSkjdj2dSXUO1JzWzfzgFdYXxVnOPUDRqf46kOGQCOV5afxQ==
+X-Received: by 2002:a92:8496:: with SMTP id y22mr1243486ilk.115.1590772067110; 
+ Fri, 29 May 2020 10:07:47 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id 129sm3806916ioy.0.2020.05.29.09.14.15
+ by smtp.gmail.com with ESMTPSA id c23sm3276894ioc.28.2020.05.29.10.07.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 09:14:16 -0700 (PDT)
-Received: (nullmailer pid 2487571 invoked by uid 1000);
- Fri, 29 May 2020 16:14:15 -0000
-Date: Fri, 29 May 2020 10:14:15 -0600
+ Fri, 29 May 2020 10:07:45 -0700 (PDT)
+Received: (nullmailer pid 2577192 invoked by uid 1000);
+ Fri, 29 May 2020 17:07:44 -0000
+Date: Fri, 29 May 2020 11:07:44 -0600
 From: Rob Herring <robh@kernel.org>
-To: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: Re: [PATCH v2 1/3] media: dt-bindings: media: Document Rockchip CIF
- bindings
-Message-ID: <20200529161415.GA2486902@bogus>
-References: <20200529130405.929429-1-maxime.chevallier@bootlin.com>
- <20200529130405.929429-2-maxime.chevallier@bootlin.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
+ property
+Message-ID: <20200529170744.GA2577033@bogus>
+References: <20200520073327.6016-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200529130405.929429-2-maxime.chevallier@bootlin.com>
+In-Reply-To: <20200520073327.6016-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_091419_180788_FC0B4A52 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20200529_100747_783524_E00220BE 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -77,6 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -91,64 +91,36 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, dmitry.torokhov@gmail.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Fri, 29 May 2020 15:04:03 +0200, Maxime Chevallier wrote:
-> Add a documentation for the Rockchip Camera Interface controller
-> binding.
+On Wed, 20 May 2020 09:33:27 +0200, Johan Jonker wrote:
+> A test with the command below gives this error:
 > 
-> This controller can be found on platforms such as the PX30 or the
-> RK3288, the PX30 being the only platform supported so far.
+> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
+> touchscreen@3e: reg:0:0: 56 was expected
 > 
-> Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+> The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
+> was shipped with different addresses then the binding currently allows.
+> Change the reg property that any address will pass.
+> 
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
+> edt-ft5x06.yaml
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
-> 
-> Changes since V1
-> 
->  - Updated the clock and reset names
->  - Added missing includes in the example, so that the make dt_binding_check passes
-> 
->  .../bindings/media/rockchip-cif.yaml          | 100 ++++++++++++++++++
->  1 file changed, 100 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip-cif.yaml
+>  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
-
-My bot found errors running 'make dt_binding_check' on your patch:
-
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clock-names: Additional items are not allowed ('cif_out' was unexpected)
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clock-names:0: 'aclk' was expected
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clock-names:1: 'hclkf' was expected
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clock-names:2: 'pclkin' was expected
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clock-names: ['aclk_cif', 'hclk_cif', 'pclk_cif', 'cif_out'] is too long
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clocks: Additional items are not allowed ([4294967295, 52] was unexpected)
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: clocks: [[4294967295, 179], [4294967295, 249], [4294967295, 352], [4294967295, 52]] is too long
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: reset-names:0: 'axi' was expected
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: reset-names:1: 'ahb' was expected
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/rockchip-cif.example.dt.yaml: cif@ff490000: reset-names:2: 'pclkin' was expected
-
-See https://patchwork.ozlabs.org/patch/1300680
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
-
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
-
-Please check and re-submit.
-
+Applied, thanks!
 
 _______________________________________________
 Linux-rockchip mailing list
