@@ -2,146 +2,106 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 692AD1E81E2
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 17:34:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE1011E8266
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 17:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZRo/aW6GURPbCk5TxzyLZLp4N+YEQdc7aRVexvZmppE=; b=uhhkuVt185kGBI
-	jiV6i7ocH8JnZMJtMqvSvV9gDd1c57YfMvCt0ivRrheXEWG5MgRz69+7fa3goA4eDrLV3+eBT4dXM
-	NYw76eruJR/UbxdzlxYMxFib1/sqYMCcRzW3q+2P8EyiRiFQBvQpUy4Fqa8meSKgitC3r9irJSoqX
-	s74htbd5xS4NOOAoT3Z93uSNqOcH0NVB1rKR/BNTjgz6En64xyL6bBjw0H34bJvqDDqIqhZPPP+qj
-	P6meXV7WwSrUzY60PneIBLS9pJ64b9XsSmktJyUsjPnphn0sKgxhjX/NV3DDt/We5E6Poy99SsvhV
-	4kgrnsz4mzihaAaMnI1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7CsphOXR6yB1f5MKtE2E4RrE4DKt6KPv1r3IYODff1o=; b=cS53TCeAR9e9+E
+	ucfdNGW103+wqfyNp6cXkyrwE6DplkPy04+DUVPKxSxZKhzHbgjt/8vl73I/oPX3p3vyThTbFz4zj
+	3NSXEl4W1U6xOLZPOFuE8OivXCsfrV3zq6ykQSI4PSxJJz7engor4uBZLRA1dzK911vu5vqqmZTbv
+	JrfMtxvwZuageoZxGCk87nxaj5RVhWpqqzxB+RoY5V8iLvNX9xVBNhsBVklii/i6qSVT0E5DhNg/N
+	8/1BdCiNIbbmHf7cT2QNWyExYM4dgd1cxkTEpJ7NWaAR9aDA2DKM+V1ZVMIbN+JrFWUsHC8npofCH
+	/StbZLmimPXGelTNAakQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeh1T-00007Y-JK; Fri, 29 May 2020 15:34:15 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jehCv-0001hU-5N; Fri, 29 May 2020 15:46:05 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeh1Q-000075-8J; Fri, 29 May 2020 15:34:13 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d10so1634109pgn.4;
- Fri, 29 May 2020 08:34:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=H12DLSbS5ql+4QCoW6qfISlZ28ObJ3TH8l0yh2YWIWM=;
- b=tzy3SELPr1cm4n5Ya2wYvTRQgcfZFaRhhRp/md75vN0DI57BtSczskPPOxJV1fdum3
- +xMLQIVsnYQXQ3bAyRDGgaw+0DOsfJbn1Szu8qvipYeGp6U5p9C+YaJFYmWQMo4D+Ybk
- fP9aSU8ZlOx1+7mz5EphtU/kGJq5BEEj29sdaSaEoDqp5RXDIJ40Y1yx3eG5bES0f34V
- MjgAGOLfvOWk7fkfiXIoSQxpfcM+57HqxMP+V9Jo+YH1b1ub1tSJYQLP5reY5jRiFWf0
- G+2KCRA8JMyowoiNbAc6BEETX2FkFZU3bJrs5za9l+7JhQnzQjD9QHI+xVZeKxLMa+mC
- cnMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=H12DLSbS5ql+4QCoW6qfISlZ28ObJ3TH8l0yh2YWIWM=;
- b=BJ7ccNkQbo7lB9HGIgALTHqfVhqTJGdJMeE9RUT81RzPQJ6rfmxI1BUzjOfqNLUU18
- E3p4k+q3hAKm8wu7wu7JEJ9ShJnv3qGmSXHbhkl2zfQepF830gaYc9lJCpFDhWoj4/uT
- Kt5aiQEdnmyUUbdGnEL8SyLjtN6Jy9VQnitZZmX98mtLnjsQiEJBOGs0BYEsrYAyTibR
- nn6aIaUtiFKreT6msfDQE7FjXe1prTEcoyu7XZmq4p7YSkE4Y2U/TmY8rOuXaz9iSjXn
- cStCicUNNKf2Wj2la69l8CdVCPYAFU30iM7Id5ur7/YjT8a0WAiUW7U+ot/iTe7Tenzj
- KlhA==
-X-Gm-Message-State: AOAM531sfhIZLbc0nm1otnek7Kv4CQJDf3kIBkHIOHjHRAqhE2dNQuSj
- 6nKq1ZLeKOzg2vdPkT/EfmY=
-X-Google-Smtp-Source: ABdhPJw6lOp4QHcm5FYLCaSESSZlPknkQhgWREoJNkCQwDbS+Wi5aoqT6fNYG2yjG1WKE9tNCZZ+ZA==
-X-Received: by 2002:a05:6a00:843:: with SMTP id
- q3mr8874190pfk.107.1590766451548; 
- Fri, 29 May 2020 08:34:11 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- co16sm8487408pjb.55.2020.05.29.08.34.08
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 29 May 2020 08:34:11 -0700 (PDT)
-Subject: Re: [PATCH v4 02/11] thermal: Store thermal mode in a dedicated enum
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-References: <4493c0e4-51aa-3907-810c-74949ff27ca4@samsung.com>
- <20200528192051.28034-1-andrzej.p@collabora.com>
- <20200528192051.28034-3-andrzej.p@collabora.com>
- <20200529144821.GA93994@roeck-us.net>
- <e48e5948-51f0-7ce7-265b-d432ea058b7e@collabora.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Autocrypt: addr=linux@roeck-us.net; keydata=
- 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
- mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
-Message-ID: <6829f088-d816-fa7c-da97-cb5fd082d69d@roeck-us.net>
-Date: Fri, 29 May 2020 08:34:08 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <e48e5948-51f0-7ce7-265b-d432ea058b7e@collabora.com>
+ id 1jehCr-0001gT-Vl; Fri, 29 May 2020 15:46:03 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04TFbsGw004565; Fri, 29 May 2020 17:45:49 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=MUqHOgczk7YoJhh076iqGU09+X0d5LSpCvIgcaIw6hU=;
+ b=q0oGSqWCvjiL3B4zk68Matq7A+gu2efgaP+G8uXEWnPc9o93OqEZ1vtb4usPssjrtLVn
+ 3meynMM4VDckBEJXGrXxCWOlCCKGk5K1EZVzmfTIx6kHKYlqVkJe73c3V50QYhqWquCE
+ rutWC0WF5G+S/sDfzfx7nedXU0esELuaNrx5OigSCARnKYp1uhBUh2v/dCQVHaeY0e/F
+ bwLlh6ThmCAdDee8QwGDK7BrpFTZV2a6MUMukwAJSChKy0RfewWwop5Cklp4Jam8y8YA
+ psmO5/z8OTrHe6lPz4UFItkpbhQC0zvpagrl6lH8jYu2gtaF3dCsvNgSm+TN/JfVuwwu bg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316tqhhpwj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 29 May 2020 17:45:48 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48A0E100034;
+ Fri, 29 May 2020 17:45:45 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DFC542B1893;
+ Fri, 29 May 2020 17:45:44 +0200 (CEST)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 May
+ 2020 17:45:44 +0200
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Fri, 29 May 2020 17:45:44 +0200
+From: Philippe CORNU <philippe.cornu@st.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
+ <linux-rockchip@lists.infradead.org>, Laurent Pinchart
+ <Laurent.pinchart@ideasonboard.com>
+Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
+ bridge handle the HW version check
+Thread-Topic: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
+ bridge handle the HW version check
+Thread-Index: AQHWNdA2P+mlUH/UMUatFbM8/3eWsg==
+Date: Fri, 29 May 2020 15:45:44 +0000
+Message-ID: <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-9-adrian.ratiu@collabora.com>
+In-Reply-To: <20200427081952.3536741-9-adrian.ratiu@collabora.com>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <EB516333C6BA834A9DE9BB87A8FFBD44@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-29_08:2020-05-28,
+ 2020-05-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_083412_297442_EF42FA3E 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200529_084602_482143_C7E67258 
+X-CRM114-Status: GOOD (  26.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,68 +114,98 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
- linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
- platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
- Luca Coelho <luciano.coelho@intel.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
- kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
- linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
- =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
- Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
- linux-renesas-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
- Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@collabora.com" <kernel@collabora.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-T24gNS8yOS8yMCA4OjEzIEFNLCBBbmRyemVqIFBpZXRyYXNpZXdpY3ogd3JvdGU6Cj4gSGkgR3Vl
-bnRlciwKPiAKPiBXIGRuaXUgMjkuMDUuMjAyMCBvwqAxNjo0OCwgR3VlbnRlciBSb2VjayBwaXN6
-ZToKPj4gT24gVGh1LCBNYXkgMjgsIDIwMjAgYXQgMDk6MjA6NDJQTSArMDIwMCwgQW5kcnplaiBQ
-aWV0cmFzaWV3aWN6IHdyb3RlOgo+Pj4gUHJlcGFyZSBmb3Igc3RvcmluZyBtb2RlIGluIHN0cnVj
-dCB0aGVybWFsX3pvbmVfZGV2aWNlLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEFuZHJ6ZWogUGll
-dHJhc2lld2ljeiA8YW5kcnplai5wQGNvbGxhYm9yYS5jb20+Cj4+PiAtLS0KPj4+IMKgIGRyaXZl
-cnMvYWNwaS90aGVybWFsLmPCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHwgMjcgKysrKysrKysrLS0tLS0tLS0tLQo+Pj4gwqAgZHJpdmVycy9wbGF0Zm9ybS94
-ODYvYWNlcmhkZi5jwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoCA4ICsrKystLQo+
-Pj4gwqAgLi4uL2ludGVsL2ludDM0MHhfdGhlcm1hbC9pbnQzNDAwX3RoZXJtYWwuY8KgwqAgfCAx
-OCArKysrKy0tLS0tLS0tCj4+PiDCoCAzIGZpbGVzIGNoYW5nZWQsIDI1IGluc2VydGlvbnMoKyks
-IDI4IGRlbGV0aW9ucygtKQo+IAo+IDxzbmlwPgo+IAo+Pj4gQEAgLTU0NCwyNyArNTQzLDI1IEBA
-IHN0YXRpYyBpbnQgdGhlcm1hbF9zZXRfbW9kZShzdHJ1Y3QgdGhlcm1hbF96b25lX2RldmljZSAq
-dGhlcm1hbCwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZW51bSB0aGVy
-bWFsX2RldmljZV9tb2RlIG1vZGUpCj4+PiDCoCB7Cj4+PiDCoMKgwqDCoMKgIHN0cnVjdCBhY3Bp
-X3RoZXJtYWwgKnR6ID0gdGhlcm1hbC0+ZGV2ZGF0YTsKPj4+IC3CoMKgwqAgaW50IGVuYWJsZTsK
-Pj4+IMKgIMKgwqDCoMKgwqAgaWYgKCF0eikKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4g
-LUVJTlZBTDsKPj4+IMKgICvCoMKgwqAgaWYgKG1vZGUgIT0gVEhFUk1BTF9ERVZJQ0VfRElTQUJM
-RUQgJiYKPj4+ICvCoMKgwqDCoMKgwqDCoCBtb2RlICE9IFRIRVJNQUxfREVWSUNFX0VOQUJMRUQp
-Cj4+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+Cj4+IFBlcnNvbmFsbHkgSSBm
-aW5kIHRoaXMgY2hlY2sgdW5uZWNlc3Nhcnk6IFRoZSBlbnVtIGhhcyBubyBvdGhlciB2YWx1ZXMs
-Cj4+IGFuZCBpdCBpcyB2ZXJpZnlhYmxlIHRoYXQgdGhlIGNhbGxlcnMgcHJvdmlkZSB0aGUgZW51
-bSBhbmQgbm90IHNvbWUgb3RoZXIKPj4gdmFsdWUuCj4gCj4gSXQgaXMgZ2V0dGluZyByZW1vdmVk
-IGluIFBBVENIIDEwLzExLgo+IAo+IAo+Pj4gK8KgwqDCoCBpZiAobW9kZSAhPSBUSEVSTUFMX0RF
-VklDRV9FTkFCTEVEICYmCj4+PiArwqDCoMKgwqDCoMKgwqAgbW9kZSAhPSBUSEVSTUFMX0RFVklD
-RV9ESVNBQkxFRCkKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVJTlZBTDsKPj4KPj4g
-U2FtZSBhcyBhYm92ZS4KPiAKPiBkaXR0by4KCkhtbSwgSSB0aGluayB0aGF0IHdvdWxkIGJlIGJl
-dHRlciBkb25lIHdpdGggdGhpcyBwYXRjaC4gQnV0IEkgZ3Vlc3MKdGhhdCBpcyBhIGJpdCBvZiBQ
-b1YsIHNvCgpSZXZpZXdlZC1ieTogR3VlbnRlciBSb2VjayA8bGludXhAcm9lY2stdXMubmV0PgoK
-c2luY2UgSSBkb24ndCBoYXZlIGFueSBvdGhlciBvYmplY3Rpb25zL29ic2VydmF0aW9ucy4KCkd1
-ZW50ZXIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxp
-bnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9j
-a2NoaXAK
+Hi Adrian,
+and thank you very much for the patchset.
+Thank you also for having tested it on STM32F769 and STM32MP1.
+Sorry for the late response, Yannick and I will review it as soon as 
+possible and we will keep you posted.
+Note: Do not hesitate to put us in copy for the next version 
+(philippe.cornu@st.com, yannick.fertre@st.com)
+Regards,
+Philippe :-)
+
+
+On 4/27/20 10:19 AM, Adrian Ratiu wrote:
+> The stm mipi-dsi platform driver added a version test in
+> commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
+> so that HW revisions other than v1.3x get rejected. The rockchip
+> driver had no such check and just assumed register layouts are
+> v1.3x compatible.
+> 
+> Having such tests was a good idea because only v130/v131 layouts
+> were supported at the time, however since adding multiple layout
+> support in the bridge, the version is automatically checked for
+> all drivers, compatible layouts get picked and unsupported HW is
+> automatically rejected by the bridge, so there's no use keeping
+> the test in the stm driver.
+> 
+> The main reason prompting this change is that the stm driver
+> test immediately disabled the peripheral clock after reading
+> the version, making the bridge read version 0x0 immediately
+> after in its own probe(), so we move the clock disabling after
+> the bridge does the version test.
+> 
+> Tested on STM32F769 and STM32MP1.
+> 
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> New in v6.
+> ---
+>   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 12 +++---------
+>   1 file changed, 3 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> index 2e1f2664495d0..7218e405d7e2b 100644
+> --- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> +++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> @@ -402,15 +402,6 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>   		goto err_dsi_probe;
+>   	}
+>   
+> -	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> -	clk_disable_unprepare(pclk);
+> -
+> -	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
+> -		ret = -ENODEV;
+> -		DRM_ERROR("bad dsi hardware version\n");
+> -		goto err_dsi_probe;
+> -	}
+> -
+>   	dw_mipi_dsi_stm_plat_data.base = dsi->base;
+>   	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
+>   
+> @@ -423,6 +414,9 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>   		goto err_dsi_probe;
+>   	}
+>   
+> +	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> +	clk_disable_unprepare(pclk);
+> +
+>   	return 0;
+>   
+>   err_dsi_probe:
+> 
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
