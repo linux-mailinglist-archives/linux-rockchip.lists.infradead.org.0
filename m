@@ -2,106 +2,54 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE1011E8266
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 17:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F6D01E834B
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 18:11:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7CsphOXR6yB1f5MKtE2E4RrE4DKt6KPv1r3IYODff1o=; b=cS53TCeAR9e9+E
-	ucfdNGW103+wqfyNp6cXkyrwE6DplkPy04+DUVPKxSxZKhzHbgjt/8vl73I/oPX3p3vyThTbFz4zj
-	3NSXEl4W1U6xOLZPOFuE8OivXCsfrV3zq6ykQSI4PSxJJz7engor4uBZLRA1dzK911vu5vqqmZTbv
-	JrfMtxvwZuageoZxGCk87nxaj5RVhWpqqzxB+RoY5V8iLvNX9xVBNhsBVklii/i6qSVT0E5DhNg/N
-	8/1BdCiNIbbmHf7cT2QNWyExYM4dgd1cxkTEpJ7NWaAR9aDA2DKM+V1ZVMIbN+JrFWUsHC8npofCH
-	/StbZLmimPXGelTNAakQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7P9sAqplQS3r4oOJ3obDZVV8vz8YILbZ0nUQNcIRdDA=; b=E+/73DesaFtiskPVnFK6qLPRl
+	fc6enFpMZD9PUapZ62XHZYiY+gGXrX1FcHBoEt6wznqr8rOa/MMq6yFLc9+adw8XZyPyC/wijTStA
+	mrEDYWakybjTLnsNykKBs+3fA5Kf1qd4w9bvaZacijRyb011IqghhNaWptGHSTp07S+vQiBiWLixH
+	8BSTbSCbbsFz/Aqrw4V+2P6VAKQVf3WQFcBUNmZBgltgv0jaYWwrf6JM/vK+2k9z/D3slFI3O6VmO
+	gvXZk1/MES8lX7gx+X3e4ffdbNibGjFpVGNgCcUUXuMSW608gN10rySedcxWNjAldKaVNSc2cNsV1
+	7gV/sWvIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehCv-0001hU-5N; Fri, 29 May 2020 15:46:05 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jehbL-0007Ff-Nz; Fri, 29 May 2020 16:11:19 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehCr-0001gT-Vl; Fri, 29 May 2020 15:46:03 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04TFbsGw004565; Fri, 29 May 2020 17:45:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=MUqHOgczk7YoJhh076iqGU09+X0d5LSpCvIgcaIw6hU=;
- b=q0oGSqWCvjiL3B4zk68Matq7A+gu2efgaP+G8uXEWnPc9o93OqEZ1vtb4usPssjrtLVn
- 3meynMM4VDckBEJXGrXxCWOlCCKGk5K1EZVzmfTIx6kHKYlqVkJe73c3V50QYhqWquCE
- rutWC0WF5G+S/sDfzfx7nedXU0esELuaNrx5OigSCARnKYp1uhBUh2v/dCQVHaeY0e/F
- bwLlh6ThmCAdDee8QwGDK7BrpFTZV2a6MUMukwAJSChKy0RfewWwop5Cklp4Jam8y8YA
- psmO5/z8OTrHe6lPz4UFItkpbhQC0zvpagrl6lH8jYu2gtaF3dCsvNgSm+TN/JfVuwwu bg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 316tqhhpwj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 29 May 2020 17:45:48 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48A0E100034;
- Fri, 29 May 2020 17:45:45 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DFC542B1893;
- Fri, 29 May 2020 17:45:44 +0200 (CEST)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 May
- 2020 17:45:44 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 29 May 2020 17:45:44 +0200
-From: Philippe CORNU <philippe.cornu@st.com>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
- <linux-rockchip@lists.infradead.org>, Laurent Pinchart
- <Laurent.pinchart@ideasonboard.com>
-Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
- bridge handle the HW version check
-Thread-Topic: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
- bridge handle the HW version check
-Thread-Index: AQHWNdA2P+mlUH/UMUatFbM8/3eWsg==
-Date: Fri, 29 May 2020 15:45:44 +0000
-Message-ID: <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
- <20200427081952.3536741-9-adrian.ratiu@collabora.com>
-In-Reply-To: <20200427081952.3536741-9-adrian.ratiu@collabora.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <EB516333C6BA834A9DE9BB87A8FFBD44@st.com>
+ id 1jehZ5-000386-NG; Fri, 29 May 2020 16:09:02 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id E130E2A2DFE
+Subject: Re: [PATCH v4 04/11] thermal: Store device mode in struct
+ thermal_zone_device
+To: Guenter Roeck <linux@roeck-us.net>
+References: <20200529154205.GA157653@roeck-us.net>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <5010f7df-59d6-92ef-c99a-0dbd715f0ad2@collabora.com>
+Date: Fri, 29 May 2020 18:08:51 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-29_08:2020-05-28,
- 2020-05-29 signatures=0
+In-Reply-To: <20200529154205.GA157653@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_084602_482143_C7E67258 
-X-CRM114-Status: GOOD (  26.45  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200529_090859_911960_10582E0A 
+X-CRM114-Status: GOOD (  16.90  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,98 +62,68 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
+ linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
+ platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
+ Luca Coelho <luciano.coelho@intel.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
+ linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
+ linux-renesas-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Adrian,
-and thank you very much for the patchset.
-Thank you also for having tested it on STM32F769 and STM32MP1.
-Sorry for the late response, Yannick and I will review it as soon as 
-possible and we will keep you posted.
-Note: Do not hesitate to put us in copy for the next version 
-(philippe.cornu@st.com, yannick.fertre@st.com)
-Regards,
-Philippe :-)
-
-
-On 4/27/20 10:19 AM, Adrian Ratiu wrote:
-> The stm mipi-dsi platform driver added a version test in
-> commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
-> so that HW revisions other than v1.3x get rejected. The rockchip
-> driver had no such check and just assumed register layouts are
-> v1.3x compatible.
-> 
-> Having such tests was a good idea because only v130/v131 layouts
-> were supported at the time, however since adding multiple layout
-> support in the bridge, the version is automatically checked for
-> all drivers, compatible layouts get picked and unsupported HW is
-> automatically rejected by the bridge, so there's no use keeping
-> the test in the stm driver.
-> 
-> The main reason prompting this change is that the stm driver
-> test immediately disabled the peripheral clock after reading
-> the version, making the bridge read version 0x0 immediately
-> after in its own probe(), so we move the clock disabling after
-> the bridge does the version test.
-> 
-> Tested on STM32F769 and STM32MP1.
-> 
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-> ---
-> New in v6.
-> ---
->   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 12 +++---------
->   1 file changed, 3 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> index 2e1f2664495d0..7218e405d7e2b 100644
-> --- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> +++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> @@ -402,15 +402,6 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
->   		goto err_dsi_probe;
->   	}
->   
-> -	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
-> -	clk_disable_unprepare(pclk);
-> -
-> -	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
-> -		ret = -ENODEV;
-> -		DRM_ERROR("bad dsi hardware version\n");
-> -		goto err_dsi_probe;
-> -	}
-> -
->   	dw_mipi_dsi_stm_plat_data.base = dsi->base;
->   	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
->   
-> @@ -423,6 +414,9 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
->   		goto err_dsi_probe;
->   	}
->   
-> +	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
-> +	clk_disable_unprepare(pclk);
-> +
->   	return 0;
->   
->   err_dsi_probe:
-> 
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgR3VlbnRlciwKClcgZG5pdSAyOS4wNS4yMDIwIG/CoDE3OjQyLCBHdWVudGVyIFJvZWNrIHBp
+c3plOgo+IE9uIFRodSwgTWF5IDI4LCAyMDIwIGF0IDA5OjIwOjQ0UE0gKzAyMDAsIEFuZHJ6ZWog
+UGlldHJhc2lld2ljeiB3cm90ZToKPj4gUHJlcGFyZSBmb3IgZWxpbWluYXRpbmcgZ2V0X21vZGUo
+KS4KPj4KPiBNaWdodCBiZSB3b3J0aHdoaWxlIHRvIGV4cGxhaW4gKG5vdCBvbmx5IGluIHRoZSBz
+dWJqZWN0KSB3aGF0IHlvdSBhcmUKPiBkb2luZyBoZXJlLgo+IAo+PiBTaWduZWQtb2ZmLWJ5OiBB
+bmRyemVqIFBpZXRyYXNpZXdpY3ogPGFuZHJ6ZWoucEBjb2xsYWJvcmEuY29tPgo+PiAtLS0KPj4g
+ICBkcml2ZXJzL2FjcGkvdGhlcm1hbC5jICAgICAgICAgICAgICAgICAgICAgICAgfCAxOCArKysr
+KystLS0tLS0tLS0tCj4+ICAgLi4uL2V0aGVybmV0L21lbGxhbm94L21seHN3L2NvcmVfdGhlcm1h
+bC5jICAgIHwgMjEgKysrKysrKy0tLS0tLS0tLS0tLQo+PiAgIGRyaXZlcnMvcGxhdGZvcm0veDg2
+L2FjZXJoZGYuYyAgICAgICAgICAgICAgICB8IDE1ICsrKysrKy0tLS0tLS0KPj4gICBkcml2ZXJz
+L3RoZXJtYWwvZGE5MDYyLXRoZXJtYWwuYyAgICAgICAgICAgICAgfCAgNiArKy0tLS0KPj4gICBk
+cml2ZXJzL3RoZXJtYWwvaW14X3RoZXJtYWwuYyAgICAgICAgICAgICAgICAgfCAxNyArKysrKysr
+LS0tLS0tLS0KPj4gICAuLi4vaW50ZWwvaW50MzQweF90aGVybWFsL2ludDM0MDBfdGhlcm1hbC5j
+ICAgfCAxMiArKystLS0tLS0tLQo+PiAgIC4uLi90aGVybWFsL2ludGVsL2ludGVsX3F1YXJrX2R0
+c190aGVybWFsLmMgICB8IDE2ICsrKysrKystLS0tLS0tCj4+ICAgZHJpdmVycy90aGVybWFsL3Ro
+ZXJtYWxfb2YuYyAgICAgICAgICAgICAgICAgIHwgMTAgKysrLS0tLS0tCj4gCj4gQWZ0ZXIgdGhp
+cyBwYXRjaCBpcyBhcHBsaWVkIG9uIHRvcCBvZiB0aGUgdGhlcm1hbCAndGVzdGluZycgYnJhbmNo
+LAo+IHRoZXJlIGFyZSBzdGlsbCBsb2NhbCBpbnN0YW5jZXMgb2YgdGhlcm1hbF9kZXZpY2VfbW9k
+ZSBpbgo+IAlkcml2ZXJzL3RoZXJtYWwvc3Qvc3RtX3RoZXJtYWwuYwo+IAlkcml2ZXJzL3RoZXJt
+YWwvdGktc29jLXRoZXJtYWwvdGktdGhlcm1hbC1jb21tb24uYwo+IAo+IElmIHRoZXJlIGlzIGEg
+cmVhc29uIG5vdCB0byByZXBsYWNlIHRob3NlLCBpdCBtaWdodCBtYWtlIHNlbnNlIHRvIGV4cGxh
+aW4KPiBpdCBoZXJlLgo+IAoKTXkgdW5kZXJzdGFuZGluZyBpcyB0aGF0IHRoZXNlIHR3byBhcmUg
+c2Vuc29yIGRldmljZXMgd2hpY2ggYXJlICJwbHVnZ2VkIgppbnRvIHRoZWlyICJwYXJlbnQiIHRo
+ZXJtYWwgem9uZSBkZXZpY2UuIFRoZSBsYXR0ZXIgaXMgdGhlICJwcm9wZXIiIHR6ZC4KVGhleSBi
+b3RoIHVzZSB0aGVybWFsX3pvbmVfb2ZfZGV2aWNlX29wcyBpbnN0ZWFkIG9mIHRoZXJtYWxfem9u
+ZV9kZXZpY2Vfb3BzLgpUaGUgZm9ybWVyIGRvZXNuJ3QgZXZlbiBoYXZlIGdldF9tb2RlKCkuIFRo
+ZSB0aGVybWFsIGNvcmUsIHdoZW4gaXQgY2FsbHMKZ2V0X21vZGUoKSwgb3BlcmF0ZXMgb24gdGhl
+ICJwYXJlbnQiIHRoZXJtYWwgem9uZSBkZXZpY2VzLgoKQ29uc2VxdWVudGx5LCB0aGUgZHJpdmVy
+cyB5b3UgbWVudGlvbiB1c2UgdGhlaXIgIm1vZGUiIG1lbWJlcnMgZm9yCnRoZWlyIHByaXZhdGUg
+cHVycG9zZSwgbm90IGZvciB0aGUgcHVycG9zZSBvZiBzdG9yaW5nIHRoZSAicGFyZW50Igp0aGVy
+bWFsIHpvbmUgZGV2aWNlIG1vZGUuCgpBbmRyemVqCgoKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGlu
+dXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
