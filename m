@@ -2,83 +2,55 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E3A51E844E
-	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 19:07:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F49C1E84B4
+	for <lists+linux-rockchip@lfdr.de>; Fri, 29 May 2020 19:22:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aNPa8ud4aDvfiqS+upezc7IefH9LKJFSJxYe0UfOrPQ=; b=u6YXoTspXcO+2A
-	v1OJflFjps5XmFEh78eyiZAnOBUJwEhnuZ3r0Eadqb0cZtydLwTuxti5Bgb9qdzK6aSGGNPzuwp8V
-	zlowH+Cjy5RYbDHDfSgtdFIAgCgZ1CARJBFa6bUSXTuN2NNvjQ+3SamWupbarLh4OEGIsxStzVbqb
-	48tkNEQFF/g1FX76q2zsF/qzPxo/qLbfH5HB/90x5CufHE5kcwRTJWyf+hLMOAxsCMFfG8Z1B+uiA
-	tNBx+7sV24pkliDYhuCh0NiUzXaK/VfZ5XO3R5aVzYTfqivmabAUM2oIJtks0K4/ELBg617Xvx6+j
-	Mq4DZFm0JZGWF3dlLGLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=df3e23i22mUXsK/3YFM8mmdCRHTqrlOGVjjwifBKT9k=; b=pVexhjRcgXZ1lrg7Z8+WUekJ8
+	0RBlNF2TAjkFAadOEqiPbXFXahYfhZ9WqBsrl1PFUr+7cND4v7sRfSbSUlJDp2RPmfpQWWREChuOs
+	ezcQRKM+2jNa4uZcAbed5cuO6bfkezi7XCE3XfKQG7PfxIZOG/eD8CpOaq7NCRFyc75dlWH1AdnEd
+	5C+wWshUvyqbeARZvnTD+6GdXCRYDjnuwAp8cnrBS5p0da/LUzRQBki58kXwvkpC6+dtxZOtHFLqa
+	Fuh2fJT3Yi8yRnHFVI/r7cj1R8yujCHCOwWYjrvzPugYvGeODje6pgEBFSfO4yJKeIHnUd/dk/Usj
+	H5LVcAf8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeiU2-0001jq-Hh; Fri, 29 May 2020 17:07:50 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jeiht-0003Sn-Ql; Fri, 29 May 2020 17:22:09 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeiTz-0001jP-O5; Fri, 29 May 2020 17:07:48 +0000
-Received: by mail-il1-f196.google.com with SMTP id 17so3231084ilj.3;
- Fri, 29 May 2020 10:07:47 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=MUooCf11G+wzFa88ewKcb5EHAEEa+XEEiZTRljzO3gM=;
- b=ZyWrXI30CjLcjwvuoOka2tZiaudT4kHja1RvaW1N4A5If+4jRCvEtReQ3u0ecC6ynt
- gQOXbOV3ypFBgL0AEzBiJssfL8iYAn+P5rLBdsRu48f1ImX6s8Vomq6RnI8JHiaawMs6
- MM4c+q2aeNpreF0x/3H9yEW2/y7VD9NRFCPd3nBHnL4BG2VJtdQkx2geJQbX4TAXq7u4
- p+V7oIq4g/ZN7RUmBW5j9DDossT4HGWMsQJAwLK4IJAoqk7F/S9hOjf8e7RxwltexEif
- ak5wfvChg6gQ8sbfWSvA7qpDDdF3e7KZOisbwfZMCFH03bdtHy5rBD3jDpBGCmkMus/X
- gCwA==
-X-Gm-Message-State: AOAM531ffAhWt5BfZ0M78CT2YdkaLM/MPzYOQothNTf75sZEPxdKNfU0
- WS/xFDIV0On7Lj18dvKx8w==
-X-Google-Smtp-Source: ABdhPJxBmlK7urpI9ApsfbfQd7gBioqSkjdj2dSXUO1JzWzfzgFdYXxVnOPUDRqf46kOGQCOV5afxQ==
-X-Received: by 2002:a92:8496:: with SMTP id y22mr1243486ilk.115.1590772067110; 
- Fri, 29 May 2020 10:07:47 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id c23sm3276894ioc.28.2020.05.29.10.07.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 10:07:45 -0700 (PDT)
-Received: (nullmailer pid 2577192 invoked by uid 1000);
- Fri, 29 May 2020 17:07:44 -0000
-Date: Fri, 29 May 2020 11:07:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
- property
-Message-ID: <20200529170744.GA2577033@bogus>
-References: <20200520073327.6016-1-jbx6244@gmail.com>
+ id 1jeihh-0003KA-Hi; Fri, 29 May 2020 17:21:59 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id F17622A194B
+Subject: Re: [PATCH v4 04/11] thermal: Store device mode in struct
+ thermal_zone_device
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: Guenter Roeck <linux@roeck-us.net>
+References: <20200529154205.GA157653@roeck-us.net>
+ <5010f7df-59d6-92ef-c99a-0dbd715f0ad2@collabora.com>
+Message-ID: <a0c0310f-9870-47be-4ca3-c07e41c380fc@collabora.com>
+Date: Fri, 29 May 2020 19:21:50 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520073327.6016-1-jbx6244@gmail.com>
+In-Reply-To: <5010f7df-59d6-92ef-c99a-0dbd715f0ad2@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_100747_783524_E00220BE 
-X-CRM114-Status: UNSURE (   9.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200529_102157_719612_9FA3BCCA 
+X-CRM114-Status: GOOD (  18.20  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,38 +63,87 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, dmitry.torokhov@gmail.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
+ linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
+ platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
+ Luca Coelho <luciano.coelho@intel.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
+ linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
+ linux-renesas-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Wed, 20 May 2020 09:33:27 +0200, Johan Jonker wrote:
-> A test with the command below gives this error:
-> 
-> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
-> touchscreen@3e: reg:0:0: 56 was expected
-> 
-> The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
-> was shipped with different addresses then the binding currently allows.
-> Change the reg property that any address will pass.
-> 
-> make ARCH=arm dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
-> edt-ft5x06.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-
-Applied, thanks!
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgYWdhaW4sCgpXIGRuaXUgMjkuMDUuMjAyMCBvwqAxODowOCwgQW5kcnplaiBQaWV0cmFzaWV3
+aWN6IHBpc3plOgo+IEhpIEd1ZW50ZXIsCj4gCj4gVyBkbml1IDI5LjA1LjIwMjAgb8KgMTc6NDIs
+IEd1ZW50ZXIgUm9lY2sgcGlzemU6Cj4+IE9uIFRodSwgTWF5IDI4LCAyMDIwIGF0IDA5OjIwOjQ0
+UE0gKzAyMDAsIEFuZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToKPj4+IFByZXBhcmUgZm9yIGVs
+aW1pbmF0aW5nIGdldF9tb2RlKCkuCj4+Pgo+PiBNaWdodCBiZSB3b3J0aHdoaWxlIHRvIGV4cGxh
+aW4gKG5vdCBvbmx5IGluIHRoZSBzdWJqZWN0KSB3aGF0IHlvdSBhcmUKPj4gZG9pbmcgaGVyZS4K
+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEFuZHJ6ZWogUGlldHJhc2lld2ljeiA8YW5kcnplai5wQGNv
+bGxhYm9yYS5jb20+Cj4+PiAtLS0KPj4+IMKgIGRyaXZlcnMvYWNwaS90aGVybWFsLmPCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMTggKysrKysrLS0tLS0t
+LS0tLQo+Pj4gwqAgLi4uL2V0aGVybmV0L21lbGxhbm94L21seHN3L2NvcmVfdGhlcm1hbC5jwqDC
+oMKgIHwgMjEgKysrKysrKy0tLS0tLS0tLS0tLQo+Pj4gwqAgZHJpdmVycy9wbGF0Zm9ybS94ODYv
+YWNlcmhkZi5jwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMTUgKysrKysrLS0tLS0t
+LQo+Pj4gwqAgZHJpdmVycy90aGVybWFsL2RhOTA2Mi10aGVybWFsLmPCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCB8wqAgNiArKy0tLS0KPj4+IMKgIGRyaXZlcnMvdGhlcm1hbC9pbXhfdGhlcm1h
+bC5jwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCAxNyArKysrKysrLS0tLS0tLS0K
+Pj4+IMKgIC4uLi9pbnRlbC9pbnQzNDB4X3RoZXJtYWwvaW50MzQwMF90aGVybWFsLmPCoMKgIHwg
+MTIgKysrLS0tLS0tLS0KPj4+IMKgIC4uLi90aGVybWFsL2ludGVsL2ludGVsX3F1YXJrX2R0c190
+aGVybWFsLmPCoMKgIHwgMTYgKysrKysrKy0tLS0tLS0KPj4+IMKgIGRyaXZlcnMvdGhlcm1hbC90
+aGVybWFsX29mLmPCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMTAgKysrLS0t
+LS0tCj4+Cj4+IEFmdGVyIHRoaXMgcGF0Y2ggaXMgYXBwbGllZCBvbiB0b3Agb2YgdGhlIHRoZXJt
+YWwgJ3Rlc3RpbmcnIGJyYW5jaCwKPj4gdGhlcmUgYXJlIHN0aWxsIGxvY2FsIGluc3RhbmNlcyBv
+ZiB0aGVybWFsX2RldmljZV9tb2RlIGluCj4+IMKgwqDCoMKgZHJpdmVycy90aGVybWFsL3N0L3N0
+bV90aGVybWFsLmMKPj4gwqDCoMKgwqBkcml2ZXJzL3RoZXJtYWwvdGktc29jLXRoZXJtYWwvdGkt
+dGhlcm1hbC1jb21tb24uYwo+Pgo+PiBJZiB0aGVyZSBpcyBhIHJlYXNvbiBub3QgdG8gcmVwbGFj
+ZSB0aG9zZSwgaXQgbWlnaHQgbWFrZSBzZW5zZSB0byBleHBsYWluCj4+IGl0IGhlcmUuCj4+Cj4g
+Cj4gTXkgdW5kZXJzdGFuZGluZyBpcyB0aGF0IHRoZXNlIHR3byBhcmUgc2Vuc29yIGRldmljZXMg
+d2hpY2ggYXJlICJwbHVnZ2VkIgo+IGludG8gdGhlaXIgInBhcmVudCIgdGhlcm1hbCB6b25lIGRl
+dmljZS4gVGhlIGxhdHRlciBpcyB0aGUgInByb3BlciIgdHpkLgo+IFRoZXkgYm90aCB1c2UgdGhl
+cm1hbF96b25lX29mX2RldmljZV9vcHMgaW5zdGVhZCBvZiB0aGVybWFsX3pvbmVfZGV2aWNlX29w
+cy4KPiBUaGUgZm9ybWVyIGRvZXNuJ3QgZXZlbiBoYXZlIGdldF9tb2RlKCkuIFRoZSB0aGVybWFs
+IGNvcmUsIHdoZW4gaXQgY2FsbHMKPiBnZXRfbW9kZSgpLCBvcGVyYXRlcyBvbiB0aGUgInBhcmVu
+dCIgdGhlcm1hbCB6b25lIGRldmljZXMuCj4gCj4gQ29uc2VxdWVudGx5LCB0aGUgZHJpdmVycyB5
+b3UgbWVudGlvbiB1c2UgdGhlaXIgIm1vZGUiIG1lbWJlcnMgZm9yCj4gdGhlaXIgcHJpdmF0ZSBw
+dXJwb3NlLCBub3QgZm9yIHRoZSBwdXJwb3NlIG9mIHN0b3JpbmcgdGhlICJwYXJlbnQiCj4gdGhl
+cm1hbCB6b25lIGRldmljZSBtb2RlLgo+IAoKTGV0IG1lIGFsc28gc2F5IGl0IGRpZmZlcmVudGx5
+LgoKQm90aCBkcml2ZXJzIHdoaWNoIHlvdSBtZW50aW9uIHVzZSBkZXZtX3RoZXJtYWxfem9uZV9v
+Zl9zZW5zb3JfcmVnaXN0ZXIoKS4KSXQgY2FsbHMgdGhlcm1hbF96b25lX29mX3NlbnNvcl9yZWdp
+c3RlcigpLCB3aGljaCAid2lsbCBzZWFyY2ggdGhlIGxpc3Qgb2YKdGhlcm1hbCB6b25lcyBkZXNj
+cmliZWQgaW4gZGV2aWNlIHRyZWUgYW5kIGxvb2sgZm9yIHRoZSB6b25lIHRoYXQgcmVmZXIgdG8K
+dGhlIHNlbnNvciBkZXZpY2UgcG9pbnRlZCBieSBAZGV2LT5vZl9ub2RlIGFzIHRlbXBlcmF0dXJl
+IHByb3ZpZGVycy4gRm9yCnRoZSB6b25lIHBvaW50aW5nIHRvIHRoZSBzZW5zb3Igbm9kZSwgdGhl
+IHNlbnNvciB3aWxsIGJlIGFkZGVkIHRvIHRoZSBEVAp0aGVybWFsIHpvbmUgZGV2aWNlLiIgV2hl
+biBhIG1hdGNoIGlzIGZvdW5kIHRoZXJtYWxfem9uZV9vZl9hZGRfc2Vuc29yKCkKaXMgaW52b2tl
+ZCwgd2hpY2ggKHVzaW5nIHRoZXJtYWxfem9uZV9nZXRfem9uZV9ieV9uYW1lKCkpIGl0ZXJhdGVz
+IG92ZXIKYWxsIHJlZ2lzdGVyZWQgdGhlcm1hbF96b25lX2RldmljZXMuIFRoZSBvbmUgZXZlbnR1
+YWxseSBmb3VuZCB3aWxsIGJlCnJldHVybmVkIGFuZCBwcm9wYWdhdGVkIHRvIHRoZSBvcmlnaW5h
+bCBjYWxsZXIgb2YKZGV2bV90aGVybWFsX3pvbmVfb2Zfc2Vuc29yX3JlZ2lzdGVyKCkuIFRoZSBz
+dGF0ZSBvZiB0aGlzIHJldHVybmVkCmRldmljZSBpcyBtYW5hZ2VkIGVsc2V3aGVyZSAoaW4gdGhh
+dCBkZXZpY2UncyBzdHJ1Y3QgdHpkKS4gVGhlICJtb2RlIgptZW1iZXIgeW91IGFyZSByZWZlcnJp
+bmcgdG8gaXMgdGh1cyB1bnJlbGF0ZWQuCgpSZWdhcmRzLAoKQW5kcnplagoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGlu
+ZyBsaXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
