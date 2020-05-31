@@ -2,141 +2,113 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64AEC1E8B1B
-	for <lists+linux-rockchip@lfdr.de>; Sat, 30 May 2020 00:16:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF03E1E96A6
+	for <lists+linux-rockchip@lfdr.de>; Sun, 31 May 2020 11:44:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2UgLL+M+0ngp03u7CnM1/R0Bhn0u3cbZN2HOIIY5Eis=; b=Epwu+Jk1W3fZJKQQpJJpK8odJ
-	vg17QgOAPSBOQ3bfhyY/jWdB5XdAEzBO2Z88aIv1mrqx92oN7zu6nifmb8Lv1/OWpaq20usZxsIev
-	5fdnKNxpdZ0RC/3XD66FD5VP2Umzmc3tbntGeq/skUErB5sY0C+7QIzhK/3oHpY1qYEE6SBLpK//W
-	ylHwslsDyEic5QeQvEpjWz8sVMEjW/gNxBLjoX27x+cXDs957L5djzvGKVX+57qA0quiV67Ord5+F
-	eo+nM/3ewVDI1yrkA+Mz7pW4SfruWUGXWyPhE4DJhZfX5/XqLGkQOMWiQJEvCnT8M5d3FTEqe4gXZ
-	eL6377amw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Mime-Version:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jZlK4In2GYrX0mwyC26U7Kq2IRg6d3ZndjbYQqAi4mo=; b=VMjNK9U2K7A2Bi
+	RyXO+Sd3d9McU2aX82+BuUn3cNMI7QIY5iAHeL/6CqP60yqlkMoW39EIxjK6eM1ANkgrxeR8nqNC5
+	woZV1fFTzjYaMi1KJZFbbsruw28Hwv0Yk3FFXAOIt7SjTuQcZoIjCSxSbAPytjbJj7VKBNZPPfQxw
+	W4Jam4JhNVXyvmzjkVvR4mgpFVhLiKHcLCbuO9VOUKQrEKjyHJ+N/5NvMUc1u9WaSET5+9hi+n5xA
+	z3p2jXial3qZep1gUGLkeKTTJFbS62aPGl91FMMmtL1GOU2+knnQGYdTWG6ZwpF+DJKoMSEQBNOq7
+	T4VZK8q0cZRGE56EW6OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jenJ1-00035M-8z; Fri, 29 May 2020 22:16:47 +0000
-Received: from merlin.infradead.org ([205.233.59.134])
+	id 1jfKW3-0002US-3H; Sun, 31 May 2020 09:44:27 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jenIy-00033a-Bh
- for linux-rockchip@bombadil.infradead.org; Fri, 29 May 2020 22:16:44 +0000
+ id 1jfKW1-0002Tj-8f
+ for linux-rockchip@bombadil.infradead.org; Sun, 31 May 2020 09:44:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:In-Reply-To:MIME-Version:
- References:Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=RyWRgA39MpCS4B1s1Q6dcjnQ39Nmyes8pkIQMz0S9CE=; b=fRVbYDgul//dtAywOCooXlTzBe
- HIhZmEWJQKxDyrAGunbAXbcR34kN9ZqjirGh+MKeshwPWpA7EkIoDYqGA3KsoyLgPx/+cem7ZJgPv
- pCvXDBmFrLUAYyw2646ospNL5lbJYbsIz7ZShK3ocDqXSSiwPWb0UVIBhnsIW5FrlUk6rApXFF0Er
- S0kstB8iMNfen7LYHLH9D8FEoCyOScMZlNA9RirABkP7VAlnNoinPHEhu+Tv1j2irEAV9eLSUV/Zo
- KNhxzMuNFX1zGwcM6UpXFVhcXl23jIiwoLt9dLewEa1GdvverAYBMSrEL8q//B3ttPqAOc/zuF0/0
- mvuPxfxw==;
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jenIw-00085A-PV
- for linux-rockchip@lists.infradead.org; Fri, 29 May 2020 22:16:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590790592;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:in-reply-to:in-reply-to:  references:references;
- bh=RyWRgA39MpCS4B1s1Q6dcjnQ39Nmyes8pkIQMz0S9CE=;
- b=HyEydRMZTLGrdMZrhync1yjF80RTDrg5tllQ8JcDCwKF5HM1gHuL3kxdX10bl+DQhabkyB
- EDrpC3oDmktZI9oHoT+zfWbnRFMzHocyzPSUi8rG5h98NqPmqzMk5OClHcNQUB2gyoJsoz
- lvtDt5pyQRDGMJtCC3WFSCxzW0AhSkg=
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590790602;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:in-reply-to:in-reply-to:  references:references;
- bh=RyWRgA39MpCS4B1s1Q6dcjnQ39Nmyes8pkIQMz0S9CE=;
- b=TKgWHHsgGCRPy6mIli0Wq7DE5wkUkSdjM+GyB7n9BkN6TmE8hycIcKG6qwUev9uGjvqIg9
- 09iTKw2eJRAZkXE7vzLCMWDMtHxkPxB2iV+srMRcWdvXgkZ5i2RlNgAbMFfPJmAWn61voF
- SBLFLRNT52KQXJJz0qpc/+IxcIsFViM=
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
- [209.85.160.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-508-0yudW9ElNUK10UQGl_nVag-1; Fri, 29 May 2020 18:16:26 -0400
-X-MC-Unique: 0yudW9ElNUK10UQGl_nVag-1
-Received: by mail-qt1-f197.google.com with SMTP id x6so4219646qts.3
- for <linux-rockchip@lists.infradead.org>; Fri, 29 May 2020 15:16:26 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:reply-to
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=RyWRgA39MpCS4B1s1Q6dcjnQ39Nmyes8pkIQMz0S9CE=;
- b=j3hYF/TLzOyb0iZ3bUSvdjRjA3Hzwp2IlJLJt7Uoqw258BKRujgnqvqik8gvtkpjaA
- xbvPhaL1cjxcgAAkW3xaG4gG7JW5Dj/GjdT9HcOObDdZV23jW6JgGEtPFk9mmjCc7QSr
- JaxDLdksIcn9TSsB1qNsO0qASoX6JDn+rjjc21BhFcGKuNQ43mW3lv9JMKthAjG8p7zM
- alY4U2TCiwbbwxmE5Dv+tOAAg/e7JdqXL+q2DHFlUOGK+YQiyn15DBehPaZVnHjVVX6R
- ezYklcUGKLuJ9x1Vs5Lpz6ePG5KFozmfNVXLKXlGnLiNgTUjoFFcCvZsH9tQYM/pj3xs
- cE3Q==
-X-Gm-Message-State: AOAM532pvOlPnrImQZ3w4kUTleerJ6zn+kBKBZYod46g7bb0qyCmLanv
- 6Xd92tk38cJJBDrDOGEso3fOxe/Arf+rmpp3wENu9VZBX5bl06laAw44dXKLQlMYbFKK6Jcy/Jh
- MKIfi/KnW6ykqD6OdRsMf3PGc4IGRORlI
-X-Received: by 2002:a37:6188:: with SMTP id v130mr4562271qkb.138.1590790585935; 
- Fri, 29 May 2020 15:16:25 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJw51w0cnvYWh4WhXmhdM31BK730VJAQnizGJEPYNr8qH289FZOtd/33h3DF8AwAKbkwmoOGzg==
-X-Received: by 2002:a37:6188:: with SMTP id v130mr4562246qkb.138.1590790585671; 
- Fri, 29 May 2020 15:16:25 -0700 (PDT)
-Received: from localhost (ip70-163-223-149.ph.ph.cox.net. [70.163.223.149])
- by smtp.gmail.com with ESMTPSA id w13sm8244813qkb.91.2020.05.29.15.16.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 15:16:24 -0700 (PDT)
-Date: Fri, 29 May 2020 15:16:23 -0700
-From: Jerry Snitselaar <jsnitsel@redhat.com>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v2 00/33] iommu: Move iommu_group setup to IOMMU core code
-Message-ID: <20200529221623.qc6twmpzryh7nkvb@cantor>
-Mail-Followup-To: Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>,
- Lu Baolu <baolu.lu@linux.intel.com>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Rob Clark <robdclark@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org,
- linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
-References: <20200414131542.25608-1-joro@8bytes.org>
-MIME-Version: 1.0
-In-Reply-To: <20200414131542.25608-1-joro@8bytes.org>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ d=infradead.org; s=casper.20170209; h=Message-ID:Date:
+ Content-Transfer-Encoding:Content-Type:Mime-Version:Subject:Cc:To:From:Sender
+ :Reply-To:Content-ID:Content-Description:In-Reply-To:References;
+ bh=WKowgddzaLQq8Bt8paCuGBq0yECTROQmcf6WMFnGt+w=; b=SNjrhP8OHxme3hS5mLED0Pxuo3
+ L4U6UWC2yA+0eFCTxY4chMFHMnUIX1WejXiZAFHOeNCPogxUizqbgZSepd/luKnPrbtPJmGGjywzy
+ Ns7oaIwNop7To7OhJazE1lbXKt3AbuTjmEuHjtIfQr8z5VHYGSaUCvoxZnW+kp5E+cwGoDn3QnyqP
+ BSQZe4D2HVf6ohBSu4ahhCd1104IGM3dHmWtyyIiMAECT8gUcn6A0b/wHbyM24cFwmL1/wKWK9HFx
+ qMbLKQCuVsyqrF69suW5VZdhg1+5qSsJBj/laL4+59dGL5YUhM3zO8/Hzoyo8/zqm+95MyfvzxxcZ
+ 6kUJT5hQ==;
+Received: from smtpbguseast2.qq.com ([54.204.34.130])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jfKVs-0002cn-Kp
+ for linux-rockchip@lists.infradead.org; Sun, 31 May 2020 09:44:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
+ s=s201512; t=1590918218;
+ bh=WKowgddzaLQq8Bt8paCuGBq0yECTROQmcf6WMFnGt+w=;
+ h=From:To:Subject:Mime-Version:Date:Message-ID;
+ b=lnIXi1z+Xj4HTWCtobtog/7no/8WVaDRUgn8NfMQUmHypvOE08w/x1P7iIMH02/GP
+ MzXy3W8nqwNa7XHv/kxI9IA5JZrIK9dhqxKU4tfRRcyMWB+8SAWjbzljmkM85ediUc
+ BcTfn+hcSB8lNmI1AJzjLKNsU7E2MW/BGQxpbwK0=
+X-QQ-FEAT: Rrz2csB1TU3/XrJQC/svz/KQI8nBCqh/7FFEfct9kkm+qmpH94kf/sdPbuw0R
+ ureDUXutoaqIzSh9JIXBlk61BM9A1a0QeMPAd/a23Duv02Kcc2CtEYQmFV6jgW3Mg0KI24t
+ YsJLuCPBxYU8slu7GOMD28G30y5vMmNDJtCh8qTiX62/7Gph4e1n3/5XXuTV9q052hx90a9
+ mCWJ7SKfEH/Po5M4AGSMYhiL+PGaSmwYavp1kRk7Eteoui7Q2YwE7z4wjJ55Z6AzJ7AH96u
+ yVS5QWptEARhQYMLk3WD740Mlmaw5llxafpg==
+X-QQ-SSF: 00000000000000F000000000000000Z
+X-QQ-XMAILINFO: MCieeIuk/bPLJbXY8MxRh3ETXsqNsoRyyXG3CXrq8FCwgTi3XwUphSu2fIUYte
+ bysfF3BcSgsv/ebBwIQtDKDlUwcxBImomB+Nv0QEVuARxDqgM7+wZauI44S2CmdiRVjwbYQHHXcJp
+ +ZnQWwc4siXAetR+AJMFWXoGAZOWF0JPCmg85156yPjrA77M/S+y/XPyuQjqbBbhehJCiDdXrR8EL
+ Zij2cn0/I4KfgFu16QPngWrF5ipQw16HbIYLndMzpiaPKbYNb1vnqpYXkh+dulwfloN2+KJfwd4sE
+ rffDayWoB1qLhzrrjPd/c7iuwFoa9yTcJs07B2zolN/DzS5yFjpNYw9zWYNALz7Qittby9OyAxf14
+ DRd2rg7qTiWVaUR25eVcPU6kWY2gXg2+8k4RgsXs3uY6r8etJ3aoXZ0ZTEa+JR65KNX2cBA1wkU8J
+ 2pug0Ef3Ypn29pEIPElCkkdGNhHuVha/Bh7njbNqKboxXcrQ2eFD4GAlRBw4+s6PATPS4GqB7pi23
+ PY+VxbQRWVzMR+yceFydqp/+SIbhPoxlkYBReG7xQ+kyox5psRczZwfledsYRT5H+D2jmDDI7jEqX
+ LXGKI4qIEasgBMmkwYdDIc+C+ySKkCcjBH1YRnbuepWyi6ic0CLRDMWSs8J9RecChy8RamnHvvetm
+ yIQgWsyooes0hOt+re1nf8u3+zlAzKYzV92hD0oD75SZ8twGG+iQNfpjfQ9xpgjZaivDYhGgI5xQz
+ ZvZQ=
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 255.59.225.149
+X-QQ-STYLE: 
+X-QQ-mid: webmail321t1590918215t1179750
+From: "=?utf-8?B?Yi5sLmh1YW5n?=" <banglang.huang@foxmail.com>
+To: "=?utf-8?B?dS1ib290?=" <u-boot@lists.denx.de>
+Subject: [PATCHv4][1/2] rockchip: rk3328: add rock-pi-e dts file
+Mime-Version: 1.0
+Date: Sun, 31 May 2020 17:43:35 +0800
+X-Priority: 3
+Message-ID: <tencent_512E4A30DC48A95E5030CEDC1E833E38E805@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Received: from qq.com (unknown [127.0.0.1]) by smtp.qq.com (ESMTP) with SMTP
+ id ; Sun, 31 May 2020 17:43:37 +0800 (CST)
+Feedback-ID: webmail:foxmail.com:bgforeign:bgforeign12
+X-QQ-Bgrelay: 1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200531_104417_424800_0D881C0F 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -0.8 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-0.8 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [54.204.34.130 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ 1.3 RCVD_ILLEGAL_IP        Received: contains illegal IP address
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.204.34.130 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [banglang.huang[at]foxmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,138 +121,383 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: Jerry Snitselaar <jsnitsel@redhat.com>
-Cc: Heiko Stuebner <heiko@sntech.de>, virtualization@lists.linux-foundation.org,
- linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- Will Deacon <will@kernel.org>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, iommu@lists.linux-foundation.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
- linux-s390@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-kernel@vger.kernel.org,
- Rob Clark <robdclark@gmail.com>, Kukjin Kim <kgene@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, Lu Baolu <baolu.lu@linux.intel.com>
+Cc: =?utf-8?B?cGhpbGlwcC50b21zaWNo?= <philipp.tomsich@theobroma-systems.com>,
+ =?utf-8?B?dHJpbmk=?= <trini@konsulko.com>,
+ =?utf-8?B?Q2hlbi1ZdSZuYnNwO1RzYWk=?= <wens@kernel.org>,
+ =?utf-8?B?a2V2ZXIueWFuZw==?= <kever.yang@rock-chips.com>,
+ =?utf-8?B?bGludXgtcm9ja2NoaXA=?= <linux-rockchip@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue Apr 14 20, Joerg Roedel wrote:
->Hi,
->
->here is the second version of this patch-set. The first version with
->some more introductory text can be found here:
->
->	https://lore.kernel.org/lkml/20200407183742.4344-1-joro@8bytes.org/
->
->Changes v1->v2:
->
->	* Rebased to v5.7-rc1
->
->	* Re-wrote the arm-smmu changes as suggested by Robin Murphy
->
->	* Re-worked the Exynos patches to hopefully not break the
->	  driver anymore
->
->	* Fixed a missing mutex_unlock() reported by Marek Szyprowski,
->	  thanks for that.
->
->There is also a git-branch available with these patches applied:
->
->	https://git.kernel.org/pub/scm/linux/kernel/git/joro/linux.git/log/?h=iommu-probe-device-v2
->
->Please review.
->
->Thanks,
->
->	Joerg
->
->Joerg Roedel (32):
->  iommu: Move default domain allocation to separate function
->  iommu/amd: Implement iommu_ops->def_domain_type call-back
->  iommu/vt-d: Wire up iommu_ops->def_domain_type
->  iommu/amd: Remove dma_mask check from check_device()
->  iommu/amd: Return -ENODEV in add_device when device is not handled by
->    IOMMU
->  iommu: Add probe_device() and remove_device() call-backs
->  iommu: Move default domain allocation to iommu_probe_device()
->  iommu: Keep a list of allocated groups in __iommu_probe_device()
->  iommu: Move new probe_device path to separate function
->  iommu: Split off default domain allocation from group assignment
->  iommu: Move iommu_group_create_direct_mappings() out of
->    iommu_group_add_device()
->  iommu: Export bus_iommu_probe() and make is safe for re-probing
->  iommu/amd: Remove dev_data->passthrough
->  iommu/amd: Convert to probe/release_device() call-backs
->  iommu/vt-d: Convert to probe/release_device() call-backs
->  iommu/arm-smmu: Convert to probe/release_device() call-backs
->  iommu/pamu: Convert to probe/release_device() call-backs
->  iommu/s390: Convert to probe/release_device() call-backs
->  iommu/virtio: Convert to probe/release_device() call-backs
->  iommu/msm: Convert to probe/release_device() call-backs
->  iommu/mediatek: Convert to probe/release_device() call-backs
->  iommu/mediatek-v1 Convert to probe/release_device() call-backs
->  iommu/qcom: Convert to probe/release_device() call-backs
->  iommu/rockchip: Convert to probe/release_device() call-backs
->  iommu/tegra: Convert to probe/release_device() call-backs
->  iommu/renesas: Convert to probe/release_device() call-backs
->  iommu/omap: Remove orphan_dev tracking
->  iommu/omap: Convert to probe/release_device() call-backs
->  iommu/exynos: Use first SYSMMU in controllers list for IOMMU core
->  iommu/exynos: Convert to probe/release_device() call-backs
->  iommu: Remove add_device()/remove_device() code-paths
->  iommu: Unexport iommu_group_get_for_dev()
->
->Sai Praneeth Prakhya (1):
->  iommu: Add def_domain_type() callback in iommu_ops
->
-> drivers/iommu/amd_iommu.c       |  97 ++++----
-> drivers/iommu/amd_iommu_types.h |   1 -
-> drivers/iommu/arm-smmu-v3.c     |  38 +--
-> drivers/iommu/arm-smmu.c        |  39 ++--
-> drivers/iommu/exynos-iommu.c    |  24 +-
-> drivers/iommu/fsl_pamu_domain.c |  22 +-
-> drivers/iommu/intel-iommu.c     |  68 +-----
-> drivers/iommu/iommu.c           | 393 +++++++++++++++++++++++++-------
-> drivers/iommu/ipmmu-vmsa.c      |  60 ++---
-> drivers/iommu/msm_iommu.c       |  34 +--
-> drivers/iommu/mtk_iommu.c       |  24 +-
-> drivers/iommu/mtk_iommu_v1.c    |  50 ++--
-> drivers/iommu/omap-iommu.c      |  99 ++------
-> drivers/iommu/qcom_iommu.c      |  24 +-
-> drivers/iommu/rockchip-iommu.c  |  26 +--
-> drivers/iommu/s390-iommu.c      |  22 +-
-> drivers/iommu/tegra-gart.c      |  24 +-
-> drivers/iommu/tegra-smmu.c      |  31 +--
-> drivers/iommu/virtio-iommu.c    |  41 +---
-> include/linux/iommu.h           |  21 +-
-> 20 files changed, 533 insertions(+), 605 deletions(-)
->
->-- 
->2.17.1
->
->_______________________________________________
->iommu mailing list
->iommu@lists.linux-foundation.org
->https://lists.linuxfoundation.org/mailman/listinfo/iommu
->
+The ROCK-PI-E is a credit card size SBC based on Rockchip RK3328
+Quad-Core ARM Cortex A53.
 
-Hi Joerg,
+    Net - Dual ethernet port, 1 X Gbe, 1 X 100M
+    USB - USB 3.0
+    DC  - USB-Type C, 5V 2A
+    Storage - TF card, eMMC
 
-With this patchset, I have an epyc system where if I boot with
-iommu=nopt and force a dump I will see some io page faults for a nic
-on the system. The vmcore is harvested and the system reboots. I
-haven't reproduced it on other systems yet, but without the patchset I
-don't see the io page faults during the kdump.
+Just build idbloader.img and u-boot.itb for Rockpi E board and
+follow the blow steps to replace the relevant partition.
 
-Regards,
-Jerry
+    dd if=idbloader.img of=/dev/sdcard seek=64 conv=notrunc
+    dd if=u-boot.itb of=/dev/sdcard seek=16384 conv=notrunc
 
+Signed-off-by: Banglang Huang <banglang.huang@foxmail.com>
+---
 
+Changes for v4
+
+    - separate dts file to another commit
+    - fix bootup on tpl / spl mode
+
+Changes for v3
+
+    - rename to rock-pi-e
+
+Changes for v2
+
+    - add introduction for rockpie in doc/README.rockchip
+    - enable CONFIG_MISC_INIT_R, CONFIG_SMBIOS_MANUFACTURER,
+      and CONFIG_SMBIOS_PRODUCT_NAME
+---
+ arch/arm/dts/Makefile                     |   3 +-
+ arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi |  33 +++
+ arch/arm/dts/rk3328-rock-pi-e.dts         | 267 ++++++++++++++++++++++
+ 3 files changed, 302 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi
+ create mode 100644 arch/arm/dts/rk3328-rock-pi-e.dts
+
+diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
+index 12ec6c71dc..67d1adea2d 100644
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -107,7 +107,8 @@ dtb-$(CONFIG_ROCKCHIP_RK3308) += \
+ dtb-$(CONFIG_ROCKCHIP_RK3328) += \
+ 	rk3328-evb.dtb \
+ 	rk3328-roc-cc.dtb \
+-	rk3328-rock64.dtb
++	rk3328-rock64.dtb \
++	rk3328-rock-pi-e.dtb
+ 
+ dtb-$(CONFIG_ROCKCHIP_RK3368) += \
+ 	rk3368-lion.dtb \
+diff --git a/arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi b/arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi
+new file mode 100644
+index 0000000000..bf5b1f3adc
+--- /dev/null
++++ b/arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi
+@@ -0,0 +1,33 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * (C) Copyright 2020 Radxa
++ */
++
++#include "rk3328-u-boot.dtsi"
++#include "rk3328-sdram-ddr3-666.dtsi"
++
++&gpio0 {
++	u-boot,dm-spl;
++};
++
++&pinctrl {
++	u-boot,dm-spl;
++};
++
++&sdmmc0m1_gpio {
++	u-boot,dm-spl;
++};
++
++&pcfg_pull_up_4ma {
++	u-boot,dm-spl;
++};
++
++&usb_host0_xhci {
++	vbus-supply = <&vcc5v0_host_xhci>;
++	status = "okay";
++};
++
++/* Need this and all the pinctrl/gpio stuff above to set pinmux */
++&vcc_sd {
++	u-boot,dm-spl;
++};
+diff --git a/arch/arm/dts/rk3328-rock-pi-e.dts b/arch/arm/dts/rk3328-rock-pi-e.dts
+new file mode 100644
+index 0000000000..21656b64a2
+--- /dev/null
++++ b/arch/arm/dts/rk3328-rock-pi-e.dts
+@@ -0,0 +1,267 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * (C) Copyright 2020 Radxa
++ */
++
++/dts-v1/;
++#include "rk3328.dtsi"
++
++/ {
++	model = "Radxa Rockpi E";
++	compatible = "radxa,rock-pi-e", "rockchip,rk3328";
++
++	chosen {
++	stdout-path = "serial2:1500000n8";
++	};
++
++	gmac_clkin: external-gmac-clock {
++	compatible = "fixed-clock";
++	clock-frequency = <125000000>;
++	clock-output-names = "gmac_clkin";
++	#clock-cells = <0>;
++	};
++
++	vcc_sd: sdmmc-regulator {
++	compatible = "regulator-fixed";
++	gpio = <&gpio0 RK_PD6 GPIO_ACTIVE_LOW>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc0m1_gpio>;
++	regulator-name = "vcc_sd";
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-min-microvolt = <3300000>;
++	regulator-max-microvolt = <3300000>;
++	vin-supply = <&vcc_io>;
++	};
++
++	vcc5v0_host_xhci: vcc5v0-host-xhci-drv {
++	compatible = "regulator-fixed";
++	enable-active-high;
++	regulator-name = "vcc5v0_host_xhci";
++	gpio = <&gpio3 RK_PA7 GPIO_ACTIVE_HIGH>;
++	regulator-min-microvolt = <5000000>;
++	regulator-max-microvolt = <5000000>;
++	};
++
++	vcc_sys: vcc-sys {
++	compatible = "regulator-fixed";
++	regulator-name = "vcc_sys";
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-min-microvolt = <5000000>;
++	regulator-max-microvolt = <5000000>;
++	};
++};
++
++&cpu0 {
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu1 {
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu2 {
++	cpu-supply = <&vdd_arm>;
++};
++
++&cpu3 {
++	cpu-supply = <&vdd_arm>;
++};
++
++&emmc {
++	bus-width = <8>;
++	cap-mmc-highspeed;
++	mmc-hs200-1_8v;
++	supports-emmc;
++	disable-wp;
++	non-removable;
++	num-slots = <1>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&emmc_clk &emmc_cmd &emmc_bus8>;
++	vmmc-supply = <&vcc_io>;
++	vqmmc-supply = <&vcc18_emmc>;
++	status = "okay";
++};
++
++&gmac2io {
++	assigned-clocks = <&cru SCLK_MAC2IO>, <&cru SCLK_MAC2IO_EXT>;
++	assigned-clock-parents = <&gmac_clkin>, <&gmac_clkin>;
++	clock_in_out = "input";
++	phy-supply = <&vcc_io>;
++	phy-mode = "rgmii";
++	pinctrl-names = "default";
++	pinctrl-0 = <&rgmiim1_pins>;
++	snps,force_thresh_dma_mode;
++	snps,reset-gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_LOW>;
++	snps,reset-active-low;
++	snps,reset-delays-us = <0 10000 50000>;
++	tx_delay = <0x26>;
++	rx_delay = <0x11>;
++	status = "okay";
++};
++
++&i2c1 {
++	status = "okay";
++
++	rk805: rk805@18 {
++	compatible = "rockchip,rk805";
++	status = "okay";
++	reg = <0x18>;
++	interrupt-parent = <&gpio2>;
++	interrupts = <6 IRQ_TYPE_LEVEL_LOW>;
++	#clock-cells = <1>;
++	clock-output-names = "xin32k", "rk805-clkout2";
++	pinctrl-names = "default";
++	pinctrl-0 = <&pmic_int_l>;
++	rockchip,system-power-controller;
++	wakeup-source;
++
++	vcc1-supply = <&vcc_sys>;
++	vcc2-supply = <&vcc_sys>;
++	vcc3-supply = <&vcc_sys>;
++	vcc4-supply = <&vcc_sys>;
++	vcc5-supply = <&vcc_io>;
++	vcc6-supply = <&vcc_sys>;
++
++	regulators {
++	vdd_logic: DCDC_REG1 {
++	regulator-name = "vdd_logic";
++	regulator-min-microvolt = <712500>;
++	regulator-max-microvolt = <1450000>;
++	regulator-ramp-delay = <12500>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <1000000>;
++	};
++	};
++
++	vdd_arm: DCDC_REG2 {
++	regulator-name = "vdd_arm";
++	regulator-min-microvolt = <712500>;
++	regulator-max-microvolt = <1450000>;
++	regulator-ramp-delay = <12500>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <950000>;
++	};
++	};
++
++	vcc_ddr: DCDC_REG3 {
++	regulator-name = "vcc_ddr";
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	};
++	};
++
++	vcc_io: DCDC_REG4 {
++	regulator-name = "vcc_io";
++	regulator-min-microvolt = <3300000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <3300000>;
++	};
++	};
++
++	vcc_18: LDO_REG1 {
++	regulator-name = "vcc_18";
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <1800000>;
++	};
++	};
++
++	vcc18_emmc: LDO_REG2 {
++	regulator-name = "vcc18_emmc";
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <1800000>;
++	};
++	};
++
++	vdd_10: LDO_REG3 {
++	regulator-name = "vdd_10";
++	regulator-min-microvolt = <1000000>;
++	regulator-max-microvolt = <1000000>;
++	regulator-always-on;
++	regulator-boot-on;
++	regulator-state-mem {
++	regulator-on-in-suspend;
++	regulator-suspend-microvolt = <1000000>;
++	};
++	};
++	};
++	};
++};
++
++&io_domains {
++	status = "okay";
++
++	vccio1-supply = <&vcc_io>;
++	vccio2-supply = <&vcc18_emmc>;
++	vccio3-supply = <&vcc_io>;
++	vccio4-supply = <&vcc_io>;
++	vccio5-supply = <&vcc_io>;
++	vccio6-supply = <&vcc_io>;
++	pmuio-supply = <&vcc_io>;
++};
++
++&pinctrl {
++	pmic {
++	pmic_int_l: pmic-int-l {
++	rockchip,pins = <2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>;
++	};
++	};
++};
++
++&sdmmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	card-detect-delay = <200>;
++	disable-wp;
++	max-frequency = <150000000>;
++	num-slots = <1>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc0_clk &sdmmc0_cmd &sdmmc0_dectn &sdmmc0_bus4>;
++	supports-sd;
++	vmmc-supply = <&vcc_sd>;
++	status = "okay";
++};
++
++&saradc {
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&usb20_otg {
++	status = "okay";
++};
++
++&usb_host0_ehci {
++	status = "okay";
++};
++
++&usb_host0_ohci {
++	status = "okay";
++};
+-- 
+2.17.1
 _______________________________________________
 Linux-rockchip mailing list
 Linux-rockchip@lists.infradead.org
