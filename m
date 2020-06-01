@@ -2,90 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7970C1EB065
-	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 22:42:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AE3B1EB216
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 01:20:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L3r/vGM0EhpS0R0iIhxlSwjk7HF2VVoO2XuJ+lad1t8=; b=I4xiACXgQSWplh
-	gi4VNQL8XGz7iK9tnOj/PHAf8ca3ZgXpR9e3wZaP6q6QDFcAjIsiAdrF54CANTc46KpiBHePo9uM6
-	sHBmsEp/mbtQqE/VmV8N8TFx3cs0G13yn/md06k7FrCcYQyVw3zOghea7UcK4jiOJHKI+bB3u6swF
-	1LUEYY8niqn9qcCwHYskB+sHQf9m5mjZhUi+XUk1Shx+kG3kdejteEv3sytAvAT0twUunh5zho8cj
-	bin6HWBgJ8eklYYZzPVOsHze9AllCxLLCGXC5EDwlH9oZ+qhLGozAHVvqkKFWC9J1105G3oldMKbO
-	ChHhFvFeEb83K5F5eHSA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=thNo5b++fJ+AW8ywGmzodKT5Z8yMr5DwBl3z6HYxfnc=; b=tHX3jnV6qQksLhCKX3ueDs8C4
+	3g6TXR3XjhqbnAqqpCgpI3HhHeyoyDj3n+yjP1UOU+7DihcxJn+LI6+4pQudCyeFqXhYykH6GxcJJ
+	YsVuhdlrLOJfG1sVkfjb0XTKkVPgJeOF6BzHY0gPtgEsy5iASNQet/3GlUh/z9vz0stqxP30VtRdH
+	kVBORwppA9T6yhsQlq1NdCXCeVK0Shk133GeaQkBbK/XYHJ0q2z0BEfuaCBTewM2n+KT4Z5qGZtmG
+	GUm2iTz7v9jDzhpQAIRhb1/+k8J00nnAx7ga5Q0CvMPq8S3yTuo7VmQXZefKsRzmMqQCjNGKskHOu
+	vqEUOVrxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfrGp-0002XS-W8; Mon, 01 Jun 2020 20:42:56 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jftj9-00012H-Do; Mon, 01 Jun 2020 23:20:19 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfrGm-0002Vw-E6
- for linux-rockchip@lists.infradead.org; Mon, 01 Jun 2020 20:42:53 +0000
-Received: by mail-pl1-x641.google.com with SMTP id q16so419288plr.2
- for <linux-rockchip@lists.infradead.org>; Mon, 01 Jun 2020 13:42:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=HH7Sg1d2KszYZfdSHi2ym0vvLWaCRPg8r9+mwlDQliw=;
- b=dG9IOu+UbkC9mz0Qyhf8FTz8T+HzBdmQxgqZt03TFJsM7G7oowwHlrHNR2FQTq9Yya
- BffcTy41E0Ytu8wxdgxteYgfdogDCBm3naJe/iyr565e8EhY9of1JDiBvtzcJ2F2kjMr
- 0j8DmmWoynhbtvjtYD7MgepRMHyT9+tFkhJ9o=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=HH7Sg1d2KszYZfdSHi2ym0vvLWaCRPg8r9+mwlDQliw=;
- b=esL7rW/rfNJtgB6YrQ5R71QR0r7B2joShl6/2NkcHPrdJZuN3OwSCHgjDI3mwmdeIf
- XVAnK/9yaQlcH2B6NAm9wRTDZ+tSXoHi9pzQevje1ixH4Bd9cttUfplgB83xZJZY5r59
- FzZyz62YQj2XiawqZaVo8ZH6/y7a5NZchzYPHZPwXgIIp+H0d4tPxl1xfbBWLe8g0AdR
- AJzIjk7ZTCohqUlUAePgCReCYNN8TLsmOTPsbw9TZyk+TSucDf2ATZnsObBML+y485jQ
- HPetWgz3m5NrZWu/dT5ypo058T0MiI5JY2U6QrN3VLpjmnNEZFEUk1fTJEgD63uc//dv
- X4NA==
-X-Gm-Message-State: AOAM532ciLcyFvWpccDXhpYd1zR5REYwtsY0tDNfPkA7CF5rHyUsyPDu
- isL8IyoA/gjyHe7BKV4YlBJ0uw==
-X-Google-Smtp-Source: ABdhPJyfqApA9JhFuf02HQYPOe5x+HH+2sSRzO0z7I9L13AUzrb2JQg6J0U1CL6kYCb8D/k5OMx9tg==
-X-Received: by 2002:a17:90b:4d06:: with SMTP id
- mw6mr1397351pjb.190.1591044171668; 
- Mon, 01 Jun 2020 13:42:51 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:658b:ecbc:7ea4:1996])
- by smtp.gmail.com with ESMTPSA id k7sm283581pga.87.2020.06.01.13.42.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 13:42:50 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Simon Glass <sjg@chromium.org>, Hugh Cole-Baker <sigmaris@gmail.com>
-Subject: [PATCH v2 4/4] doc: rockchip: Document SPI flash program steps
-Date: Tue,  2 Jun 2020 02:12:13 +0530
-Message-Id: <20200601204213.466120-5-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200601204213.466120-1-jagan@amarulasolutions.com>
-References: <20200601204213.466120-1-jagan@amarulasolutions.com>
+ id 1jftj6-00010v-EN; Mon, 01 Jun 2020 23:20:17 +0000
+IronPort-SDR: Xte9pdTqMIxMiMMlp0IFGvwQ02eRwzX7tzs4yYVN8aLd33DGrG5Ffxc2jzTGCWgUsM1V/hozKP
+ b6rmfU0rjaBw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 01 Jun 2020 16:20:15 -0700
+IronPort-SDR: hQbV32JOyjOGeuv1Q2ujjMc5qE5l9DREIL4uxk9IfntVO/uJuHc/R3pmYZg2c3JGkkmIfxg4ig
+ Vk416qdU8nMg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,462,1583222400"; d="scan'208";a="293360328"
+Received: from allen-box.sh.intel.com (HELO [10.239.159.139])
+ ([10.239.159.139])
+ by fmsmga004.fm.intel.com with ESMTP; 01 Jun 2020 16:20:10 -0700
+Subject: Re: [PATCH v2 00/33] iommu: Move iommu_group setup to IOMMU core code
+To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, David Woodhouse
+ <dwmw2@infradead.org>, Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Clark <robdclark@gmail.com>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ virtualization@lists.linux-foundation.org,
+ linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
+References: <20200414131542.25608-1-joro@8bytes.org>
+ <20200529221623.qc6twmpzryh7nkvb@cantor>
+ <20200601104240.7f5xhz7gooqhaq4n@cantor>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <47711845-98ee-95b8-aa95-423a36ed9741@linux.intel.com>
+Date: Tue, 2 Jun 2020 07:16:22 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200601104240.7f5xhz7gooqhaq4n@cantor>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_134252_481452_2ABEDD7D 
-X-CRM114-Status: UNSURE (   8.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200601_162016_497291_59BD9663 
+X-CRM114-Status: GOOD (  21.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,69 +89,43 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: baolu.lu@linux.intel.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Document SPI flash program steps for rockchip platforms.
-
-Suggested-by: Hugh Cole-Baker <sigmaris@gmail.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- doc/board/rockchip/rockchip.rst | 26 +++++++++++++++++++++++++-
- 1 file changed, 25 insertions(+), 1 deletion(-)
-
-diff --git a/doc/board/rockchip/rockchip.rst b/doc/board/rockchip/rockchip.rst
-index 7b72fab496..76b228a046 100644
---- a/doc/board/rockchip/rockchip.rst
-+++ b/doc/board/rockchip/rockchip.rst
-@@ -162,6 +162,30 @@ Program the flash::
- Note: for rockchip 32-bit platforms the U-Boot proper image
- is u-boot-dtb.img
- 
-+SPI
-+^^^
-+
-+Generating idbloader for SPI boot would require to input a multi image
-+image format to mkimage tool instead of concerting (like for MMC boot).
-+
-+SPL-alone SPI boot image::
-+
-+        ./tools/mkimage -n rk3399 -T rkspi -d spl/u-boot-spl.bin idbloader.img
-+
-+TPL+SPL SPI boot image::
-+
-+        ./tools/mkimage -n rk3399 -T rkspi -d tpl/u-boot-tpl.bin:spl/u-boot-spl.bin idbloader.img
-+
-+Copy SPI boot images into SD card and boot from SD::
-+
-+        sf probe
-+        load mmc 1:1 $kernel_addr_r idbloader.img
-+        sf erase 0 +$filesize
-+        sf write $kernel_addr_r 0 ${filesize}
-+        load mmc 1:1 ${kernel_addr_r} u-boot.itb
-+        sf erase 0x60000 +$filesize
-+        sf write $kernel_addr_r 0x60000 ${filesize}
-+
- TODO
- ----
- 
-@@ -171,4 +195,4 @@ TODO
- - Add missing SoC's with it boards list
- 
- .. Jagan Teki <jagan@amarulasolutions.com>
--.. Sunday 24 May 2020 10:08:41 PM IST
-+.. Tuesday 02 June 2020 12:18:57 AM IST
--- 
-2.25.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSmVycnksCgpPbiA2LzEvMjAgNjo0MiBQTSwgSmVycnkgU25pdHNlbGFhciB3cm90ZToKPj4K
+Pj4gSGkgSm9lcmcsCj4+Cj4+IFdpdGggdGhpcyBwYXRjaHNldCwgSSBoYXZlIGFuIGVweWMgc3lz
+dGVtIHdoZXJlIGlmIEkgYm9vdCB3aXRoCj4+IGlvbW11PW5vcHQgYW5kIGZvcmNlIGEgZHVtcCBJ
+IHdpbGwgc2VlIHNvbWUgaW8gcGFnZSBmYXVsdHMgZm9yIGEgbmljCj4+IG9uIHRoZSBzeXN0ZW0u
+IFRoZSB2bWNvcmUgaXMgaGFydmVzdGVkIGFuZCB0aGUgc3lzdGVtIHJlYm9vdHMuIEkKPj4gaGF2
+ZW4ndCByZXByb2R1Y2VkIGl0IG9uIG90aGVyIHN5c3RlbXMgeWV0LCBidXQgd2l0aG91dCB0aGUg
+cGF0Y2hzZXQgSQo+PiBkb24ndCBzZWUgdGhlIGlvIHBhZ2UgZmF1bHRzIGR1cmluZyB0aGUga2R1
+bXAuCj4+Cj4+IFJlZ2FyZHMsCj4+IEplcnJ5Cj4gCj4gSSBqdXN0IGhpdCBhbiBpc3N1ZSBvbiBh
+IHNlcGFyYXRlIGludGVsIGJhc2VkIHN5c3RlbSAoa2R1bXAgaW9tbXU9bm9wdCksCj4gd2hlcmUg
+aXQgcGFuaWNzIGluIGR1cmluZyBpbnRlbF9pb21tdV9hdHRhY2hfZGV2aWNlLCBpbiBpc19hdXhf
+ZG9tYWluLAo+IGR1ZSB0byBkZXZpY2VfZG9tYWluX2luZm8gYmVpbmcgREVGRVJfREVWSUNFX0RP
+TUFJTl9JTkZPLiBUaGF0IGRvZXNuJ3QKPiBnZXQgc2V0IHRvIGEgdmFsaWQgYWRkcmVzcyB1bnRp
+bCB0aGUgZG9tYWluX2FkZF9kZXZfaW5mbyBjYWxsLgo+IAo+IElzIGl0IGFzIHNpbXBsZSBhcyB0
+aGUgZm9sbG93aW5nPwoKSSBndWVzcyB5b3Ugd29uJ3QgaGl0IHRoaXMgaXNzdWUgaWYgeW91IHVz
+ZSBpb21tdS9uZXh0IGJyYW5jaCBvZiBKb2VyZydzCnRyZWUuIFdlJ3ZlIGNoYW5nZWQgdG8gdXNl
+IGEgZ2VuZXJpYyBoZWxwZXIgdG8gcmV0cmlldmUgdGhlIHZhbGlkIHBlcgpkZXZpY2UgaW9tbXUg
+ZGF0YSBvciBOVUxMIChpZiB0aGVyZSdzIG5vKS4KCkJlc3QgcmVnYXJkcywKYmFvbHUKCj4gCj4g
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvaW9tbXUvaW50ZWwtaW9tbXUuYyBiL2RyaXZlcnMvaW9tbXUv
+aW50ZWwtaW9tbXUuYwo+IGluZGV4IDI5ZDM5NDA4NDdkMy4uZjFiYmVlZDQ2YTRjIDEwMDY0NAo+
+IC0tLSBhL2RyaXZlcnMvaW9tbXUvaW50ZWwtaW9tbXUuYwo+ICsrKyBiL2RyaXZlcnMvaW9tbXUv
+aW50ZWwtaW9tbXUuYwo+IEBAIC01MDUzLDggKzUwNTMsOCBAQCBpc19hdXhfZG9tYWluKHN0cnVj
+dCBkZXZpY2UgKmRldiwgc3RydWN0IAo+IGlvbW11X2RvbWFpbiAqZG9tYWluKQo+ICDCoHsKPiAg
+wqDCoMKgwqDCoMKgwqAgc3RydWN0IGRldmljZV9kb21haW5faW5mbyAqaW5mbyA9IGRldi0+YXJj
+aGRhdGEuaW9tbXU7Cj4gCj4gLcKgwqDCoMKgwqDCoCByZXR1cm4gaW5mbyAmJiBpbmZvLT5hdXhk
+X2VuYWJsZWQgJiYKPiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgZG9tYWluLT50eXBlID09IElPTU1VX0RPTUFJTl9VTk1BTkFHRUQ7Cj4gK8KgwqDCoMKgwqDC
+oCByZXR1cm4gaW5mbyAmJiBpbmZvICE9IERFRkVSX0RFVklDRV9ET01BSU5fSU5GTyAmJgo+ICvC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGluZm8tPmF1eGRfZW5hYmxlZCAmJiBkb21haW4t
+PnR5cGUgPT0gCj4gSU9NTVVfRE9NQUlOX1VOTUFOQUdFRDsKPiAgwqB9Cj4gCj4gIMKgc3RhdGlj
+IHZvaWQgYXV4aWxpYXJ5X2xpbmtfZGV2aWNlKHN0cnVjdCBkbWFyX2RvbWFpbiAqZG9tYWluLAo+
+IAo+IAo+IFJlZ2FyZHMsCj4gSmVycnkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hp
+cEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcm9ja2NoaXAK
