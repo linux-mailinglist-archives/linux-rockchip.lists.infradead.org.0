@@ -2,50 +2,49 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F23A71EA2D0
-	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 13:37:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6994A1EA2DB
+	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 13:37:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:To:Subject:
 	Message-ID:From:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fj19B+2X7CDAA3P+7SXp7K9S0dYd2KYdI4HKL4JltMw=; b=g8259mZL2TXUwM
-	cilL8SH5/WKbQFm4LqaQinn87N0wqcZbJFScpHWhN7WGbwiSkXe+caCktnaBQLANQrEpaI+8dYcS5
-	cPHpIMrL+nbPs1SzxuZptk3WNcOEAuqSfe/ncs9rFJAw7c0I0HQGzxi9cYqulac7IBLloQg2U9qLo
-	bcaIAoKlxpgMyaHMZCT3ojTBJKcwX2sL6brLT9LMZ0MvvGwg6ODehv4/TRVvHs465zaN7fsT6z9tV
-	GoiWdzqBC1ftcx2mLNDTZlDqE1oA6AI6MM9mpO3+062Scene3ZwP7bqA76PCJq3DUZNnj7dTU9yWg
-	pku9Yj7LcTR5+MRh8sAg==;
+	List-Owner; bh=rEq0HnkV1CXilD7befHRbo+kAWcp0I/9p5D2lEIOFEc=; b=hzfeo18+dwa2Ik
+	epbL/UULmwttaxEzcY54cfn/j1JEkD6DNq3yR0lSMNZzK+jYmV01SH2i8kfUYHeqqFUHvGUbPctdt
+	+Ksm4mmIuj62OL/4hV3cMlTTBntW/wQPuAKvHjKMrdcK6LWLzeqke6AJyEZHh3gnt1mopx3hn+DGd
+	euhwMWe3m1NAYfcb9J7MXHhrn02GDhsHV2ojgwFOaI7oVvmm70wOtlTw4Bxk+ms89dspZrFwRi3GN
+	foS0kJ+UNlX2sJ13pX3wxxxCHQlVjA4Ay016hu4Jhojn89TQFKunQqex00Fa4EBpP6SkJe8IU/cIe
+	cT+6fDUut/1G8//2PslA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfikc-0006GA-Fv; Mon, 01 Jun 2020 11:37:06 +0000
+	id 1jfilN-0007Cg-T6; Mon, 01 Jun 2020 11:37:53 +0000
 Received: from piie.net ([80.82.223.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfikP-000661-P0; Mon, 01 Jun 2020 11:36:55 +0000
+ id 1jfikt-0006cI-Jz; Mon, 01 Jun 2020 11:37:25 +0000
 Received: from mail.piie.net (localhost.localdomain [127.0.0.1])
  (using TLSv1 with cipher ECDHE-RSA-AES128-SHA (128/128 bits))
  (Client did not present a certificate)
- by piie.net (Postfix) with ESMTPSA id BC5F9163C;
- Mon,  1 Jun 2020 13:36:48 +0200 (CEST)
+ by piie.net (Postfix) with ESMTPSA id 16098163C;
+ Mon,  1 Jun 2020 13:37:19 +0200 (CEST)
 Mime-Version: 1.0
-Date: Mon, 01 Jun 2020 11:36:48 +0000
+Date: Mon, 01 Jun 2020 11:37:19 +0000
 X-Mailer: RainLoop/1.11.3
 From: "=?utf-8?B?UGV0ZXIgS8Okc3RsZQ==?=" <peter@piie.net>
-Message-ID: <679efad9fe803c019d1049fc042e6477@piie.net>
-Subject: Re: [PATCH v4 04/11] thermal: Store device mode in struct
- thermal_zone_device
+Message-ID: <1e979aee396e9d28189b4926af6f4684@piie.net>
+Subject: Re: [PATCH v4 05/11] thermal: remove get_mode() operation of drivers
 To: "Andrzej Pietrasiewicz" <andrzej.p@collabora.com>,
  linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
  platform-driver-x86@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org
-In-Reply-To: <20200528192051.28034-5-andrzej.p@collabora.com>
-References: <20200528192051.28034-5-andrzej.p@collabora.com> <Message-ID:
+In-Reply-To: <20200528192051.28034-6-andrzej.p@collabora.com>
+References: <20200528192051.28034-6-andrzej.p@collabora.com> <Message-ID:
  <4493c0e4-51aa-3907-810c-74949ff27ca4@samsung.com>
  <20200528192051.28034-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_043654_099565_A1A068F5 
-X-CRM114-Status: UNSURE (   2.64  )
+X-CRM114-CacheID: sfid-20200601_043724_153481_B1D38E7F 
+X-CRM114-Status: UNSURE (   3.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -98,14 +97,18 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 28. Mai 2020 21:21, "Andrzej Pietrasiewicz" <andrzej.p@collabora.com> schrieb:
 
-> Prepare for eliminating get_mode().
+> get_mode() is now redundant, as the state is stored in struct
+> thermal_zone_device.
+> 
+> Consequently the "mode" attribute in sysfs can always be visible, because
+> it is always possible to get the mode from struct tzd.
 > 
 > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 > ---
 
 [...]
 
-> drivers/platform/x86/acerhdf.c | 15 ++++++-------
+> drivers/platform/x86/acerhdf.c | 12 --------
 
 Acked-by: Peter Kaestle <peter@piie.net>
 
