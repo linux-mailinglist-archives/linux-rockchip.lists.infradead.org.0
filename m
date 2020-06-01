@@ -2,95 +2,81 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B94B1E98B6
-	for <lists+linux-rockchip@lfdr.de>; Sun, 31 May 2020 18:02:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 960BD1E9B18
+	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 02:55:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Mime-Version:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Sz0Yu7e9Vj8UwSPpVoa+BGIw9S5IXU6P0h1NQ/7K8Uc=; b=ZH0ExCC2BnMEXg
-	G2liaY6FSr370aSgR4rts3rDrLErn7Gh7EZQUYJIMZuquSY/T9a+Dx9r9lsKcJ9BsJW37k0pCFAFA
-	sk8s9WndCRYyp4Tl+5tW8g7qJBAfMu8SgXkLVk7VP/r9yTySk95/Sb4lP+yW04Z9bZCloFMYHgl5Q
-	rYKhsPM/X8afTjMoPZbjkEXVCEILAWCZePfgQQZ9H040Vpma5w7xSfmFfmhekgnW2hmetOMzYTHWE
-	+L9g3Rm+NIZ3dEOo5sAkVDLIxtl3DQBcu4HpK3plz7vS4XiqlnrveB1c9rvymU45UX9AXBiTFokwY
-	l104iB/NPcSdiBzcHDKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CgD9VKcKOIbGozhxI+qax10ecph1Nw8hDfI+KLc+Hl0=; b=tsAqvpGH9bk1268JtL/WGu9tE
+	lamcHv5ub0jsy+H58JBNsApzSxgP2EdLiFcSNbrnOwYw4aGSkPsaGVcvmjLlKcPoja2IClXTLE73M
+	YZPpRK7jwe7NctoJleQaT1bMEp7vm6SU2IuCH/Nl4qraygOG4nqgeL99kyzi/HKuBjGrezqTkA924
+	+oXdfvSxji7yuDuBUZpgclPBhHRfI7YhBZLIOYNIx42Il+L3aaP08Rfs3ALaumoAzRM6+0jyIgsrK
+	+PPRyX7XLuwK2LvlpCwzn7SOcMf7lMOYUUwJZ/VlhEN5DzDiCLnD4Eccjza3HEv9rhG2T24QHMRXw
+	WgrvgA7kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfQPv-0007p2-IQ; Sun, 31 May 2020 16:02:31 +0000
-Received: from smtpbg502.qq.com ([203.205.250.69] helo=smtpbg.qq.com)
+	id 1jfYjH-0005az-2t; Mon, 01 Jun 2020 00:55:03 +0000
+Received: from regular1.263xmail.com ([211.150.70.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfQPr-0007ir-Mk
- for linux-rockchip@lists.infradead.org; Sun, 31 May 2020 16:02:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
- s=s201512; t=1590940932;
- bh=UVR1Hol1CTlcq1lcZfIgKRxgUemN0Vn9Crb6CPKcRq0=;
- h=From:To:Subject:Mime-Version:Date:Message-ID;
- b=hE8qlYd8CWJA5lC7FcX2coBbx72zagYX6aGLNToju2akTMifgXTwudhkBmUK5l5b0
- 8a5OtLTApLCEd/MT6mZbVosD/JiNBgGZW8F06zUyo9b+5qMHJHBBJ7p6VcGaDKD3K3
- Ur1oEZ5f227iRA5flT/AgEMo1IqY8b4s5Wduvd3k=
-X-QQ-FEAT: y+vehiv3GLsQww+Wy+RkyKcF+Na9uWTQOir+MKy65AaYFzc3/THO//onsuCBF
- ++UMPShxU68hXG/mWBFCz7SXbmtMFbvwhe6tPAouEE2iSvcVCJLcw3vDDVUgaj4bg/GJGcA
- Xh6gVN1CTL91s4PguQjHeerPHQ7+4ala+DdruhiU5EKmuh14HSOFDwvWfPSITCW8OZ8NSzM
- JuG6YZoOaJwoTi8HvpXUmZOgVummJcsjkk3Jo19saOmxNat7xK3nRf317Rclh9aI/loqFly
- Oemr+fa4YpSUKOAvD1XIDYxYT/Fly4hMk0+Xv3SYZmbv02
-X-QQ-SSF: 00000000000000F000000000000000Z
-X-QQ-XMAILINFO: NaP/9vkEGeDXYRUsmL86lP7wjL7gazNCrnQVJZSoGRh/l1dp5Qx08K9kRfbly2
- XN7eCk2QkG5aBJ23Yuj7YbxIBC3iXVmmJ1ZjTfhvNtfVs2PG6pla4/+t2v502o7Q3KzlOwSwaA9cM
- YmSPYeQfM7YY89UeM+c/BxkVjiByrIA1lurcXojiNcunmIojZVCf4iy9ZGzUCLmgsf6E3bHm4RLwo
- U9xU5R5mxks8yXI5jD8DXoU56AaqhrQ5rS+L1dPA1WyHUREhLfPtXjddvwPgEET1K381VGbh6pa3a
- QK9CtTozZSI9nRO2bSqYgFzSePaMi5IfN45q9cMIJAHsnIeGEkXlBPwKKGBzWV8ocmGVe1aoVQAdO
- YTa1gn3ewIQKYqp5cQE4WlaJnvIHHP0dYq6n2IoS91YqncGzmNkEpQeFHO5JXclSxBez8YOg21oLI
- IYWkxHVPzZZCJUYuzdyRYW5t1Um00xA6262i57v1N9R3E9ZBJGavkpp3S41/y5GuwXL8iiLaiWQSV
- J+PlzGZupxPxG73p0VANV4MEbMbUckHQwmW2RF7snzbHOKP/QWBytxhyGgPzizXp+c+tTeY8aMAUh
- Mzh7zd+H1e1gc2NnzUw+HkET7jh4dYJyPDOxG5j6ws3gmKwf1m/eA6U8nE2s13QYq3PINpD11UWRm
- QM1vTbBJOitK9cOhaRt4099e2OH0M5VaURLeCNzJaSnKOG4WrnwXGZxYApKmavllh2EnR99akVegr
- iVCjRdKiGt8jpmA==
-X-HAS-ATTACH: no
-X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 255.3.54.152
-X-QQ-STYLE: 
-X-QQ-mid: webmail321t1590940931t7617504
-From: "=?utf-8?B?Yi5sLmh1YW5n?=" <banglang.huang@foxmail.com>
-To: "=?utf-8?B?dS1ib290?=" <u-boot@lists.denx.de>
-Subject: [PATCHv5][2/2] rockchip: rk3328: add rock-pi-e-rk3328_defconfig file
-Mime-Version: 1.0
-Date: Mon, 1 Jun 2020 00:02:11 +0800
-X-Priority: 3
-Message-ID: <tencent_F69432040DE3A0ED4FE96B829EA38AC2BD09@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-QQ-SENDSIZE: 520
-Received: from qq.com (unknown [127.0.0.1]) by smtp.qq.com (ESMTP) with SMTP
- id ; Mon, 01 Jun 2020 00:02:12 +0800 (CST)
-Feedback-ID: webmail:foxmail.com:bgweb:bgweb1
+ id 1jfYjC-0005WZ-Il
+ for linux-rockchip@lists.infradead.org; Mon, 01 Jun 2020 00:55:00 +0000
+Received: from localhost (unknown [192.168.167.139])
+ by regular1.263xmail.com (Postfix) with ESMTP id BF161860;
+ Mon,  1 Jun 2020 08:54:48 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [172.16.12.66] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P25889T140623573141248S1590972885358576_; 
+ Mon, 01 Jun 2020 08:54:47 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <d0beb6f911a35b759a870ce89f4a9b31>
+X-RL-SENDER: kever.yang@rock-chips.com
+X-SENDER: yk@rock-chips.com
+X-LOGIN-NAME: kever.yang@rock-chips.com
+X-FST-TO: wmc@rock-chips.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+Subject: Re: [PATCH v6 00/16] Add Rockchip RK3399 USB3.0 Host support
+To: Frank Wang <frank.wang@rock-chips.com>, heiko@sntech.de, marex@denx.de,
+ bmeng.cn@gmail.com, philipp.tomsich@theobroma-systems.com,
+ klaus.goger@theobroma-systems.com, jagan@amarulasolutions.com,
+ sjg@chromium.org
+References: <20200526033220.20047-1-frank.wang@rock-chips.com>
+From: Kever Yang <kever.yang@rock-chips.com>
+Message-ID: <4e857cda-d776-31d5-0e70-75a01eb0c22f@rock-chips.com>
+Date: Mon, 1 Jun 2020 08:54:45 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+MIME-Version: 1.0
+In-Reply-To: <20200526033220.20047-1-frank.wang@rock-chips.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_090228_054117_F4405316 
-X-CRM114-Status: GOOD (  16.51  )
-X-Spam-Score: 1.9 (+)
+X-CRM114-CacheID: sfid-20200531_175458_968106_E101DF3F 
+X-CRM114-Status: GOOD (  16.47  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.9 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.205.250.69 listed in list.dnswl.org]
- 1.3 RCVD_ILLEGAL_IP        Received: contains illegal IP address
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [banglang.huang[at]foxmail.com]
+ no trust [211.150.70.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [211.150.70.201 listed in wl.mailspike.net]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,167 +89,84 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?utf-8?B?cGhpbGlwcC50b21zaWNo?= <philipp.tomsich@theobroma-systems.com>,
- =?utf-8?B?dHJpbmk=?= <trini@konsulko.com>,
- =?utf-8?B?Q2hlbi1ZdSZuYnNwO1RzYWk=?= <wens@kernel.org>,
- =?utf-8?B?a2V2ZXIueWFuZw==?= <kever.yang@rock-chips.com>,
- =?utf-8?B?bGludXgtcm9ja2NoaXA=?= <linux-rockchip@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jianing.ren@rock-chips.com, marek.belisko@gmail.com, wmc@rock-chips.com,
+ u-boot@lists.denx.de, william.wu@rock-chips.com,
+ linux-rockchip@lists.infradead.org, linux-amarula@amarulasolutions.com,
+ chenjh@rock-chips.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This commit add the default configuration file and relevant description
-for rock-pi-e board
-
-Signed-off-by: Banglang Huang <banglang.huang@foxmail.com>
----
- board/rockchip/evb_rk3328/MAINTAINERS |   7 ++
- configs/rock-pi-e-rk3328_defconfig    | 104 ++++++++++++++++++++++++++
- doc/board/rockchip/rockchip.rst       |   1 +
- 3 files changed, 112 insertions(+)
- create mode 100644 configs/rock-pi-e-rk3328_defconfig
-
-diff --git a/board/rockchip/evb_rk3328/MAINTAINERS b/board/rockchip/evb_rk3328/MAINTAINERS
-index 89becf41c5..e7dd59ff4e 100644
---- a/board/rockchip/evb_rk3328/MAINTAINERS
-+++ b/board/rockchip/evb_rk3328/MAINTAINERS
-@@ -17,3 +17,10 @@ M:      Matwey V. Kornilov <matwey.kornilov@gmail.com>
- S:      Maintained
- F:      configs/rock64-rk3328_defconfig
- F:      arch/arm/dts/rk3328-rock64-u-boot.dtsi
-+
-+ROCKPIE-RK3328
-+M:      Banglang Huang <banglang.huang@foxmail.com>
-+S:      Maintained
-+F:      configs/rock-pi-e-rk3328_defconfig
-+F:      arch/arm/dts/rk3328-rock-pi-e.dts
-+F:      arch/arm/dts/rk3328-rock-pi-e-u-boot.dtsi
-diff --git a/configs/rock-pi-e-rk3328_defconfig b/configs/rock-pi-e-rk3328_defconfig
-new file mode 100644
-index 0000000000..759838775f
---- /dev/null
-+++ b/configs/rock-pi-e-rk3328_defconfig
-@@ -0,0 +1,104 @@
-+CONFIG_ARM=y
-+CONFIG_ARCH_ROCKCHIP=y
-+CONFIG_SYS_TEXT_BASE=0x00200000
-+CONFIG_SPL_GPIO_SUPPORT=y
-+CONFIG_ENV_OFFSET=0x3F8000
-+CONFIG_ROCKCHIP_RK3328=y
-+CONFIG_TPL_ROCKCHIP_COMMON_BOARD=y
-+CONFIG_TPL_LIBCOMMON_SUPPORT=y
-+CONFIG_TPL_LIBGENERIC_SUPPORT=y
-+CONFIG_SPL_DRIVERS_MISC_SUPPORT=y
-+CONFIG_SPL_STACK_R_ADDR=0x4000000
-+CONFIG_SPL_SYS_MALLOC_F_LEN=0x4000
-+CONFIG_NR_DRAM_BANKS=1
-+CONFIG_DEBUG_UART_BASE=0xFF130000
-+CONFIG_DEBUG_UART_CLOCK=24000000
-+CONFIG_SMBIOS_PRODUCT_NAME="rock-pi-e_rk3328"
-+CONFIG_DEBUG_UART=y
-+CONFIG_TPL_SYS_MALLOC_F_LEN=0x800
-+# CONFIG_ANDROID_BOOT_IMAGE is not set
-+CONFIG_FIT=y
-+CONFIG_FIT_VERBOSE=y
-+CONFIG_SPL_LOAD_FIT=y
-+CONFIG_DEFAULT_FDT_FILE="rockchip/rk3328-rock-pi-e.dtb"
-+CONFIG_MISC_INIT_R=y
-+# CONFIG_DISPLAY_CPUINFO is not set
-+CONFIG_DISPLAY_BOARDINFO_LATE=y
-+# CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
-+CONFIG_TPL_SYS_MALLOC_SIMPLE=y
-+CONFIG_SPL_STACK_R=y
-+CONFIG_SPL_I2C_SUPPORT=y
-+CONFIG_SPL_POWER_SUPPORT=y
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_SPL_ATF=y
-+CONFIG_SPL_ATF_NO_PLATFORM_PARAM=y
-+CONFIG_TPL_DRIVERS_MISC_SUPPORT=y
-+CONFIG_CMD_BOOTZ=y
-+CONFIG_CMD_GPT=y
-+CONFIG_CMD_MMC=y
-+CONFIG_CMD_USB=y
-+CONFIG_CMD_TIME=y
-+CONFIG_SPL_OF_CONTROL=y
-+CONFIG_TPL_OF_CONTROL=y
-+CONFIG_DEFAULT_DEVICE_TREE="rk3328-rock-pi-e"
-+CONFIG_OF_SPL_REMOVE_PROPS="clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
-+CONFIG_TPL_OF_PLATDATA=y
-+CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_NET_RANDOM_ETHADDR=y
-+CONFIG_TPL_DM=y
-+CONFIG_REGMAP=y
-+CONFIG_SPL_REGMAP=y
-+CONFIG_TPL_REGMAP=y
-+CONFIG_SYSCON=y
-+CONFIG_SPL_SYSCON=y
-+CONFIG_TPL_SYSCON=y
-+CONFIG_CLK=y
-+CONFIG_SPL_CLK=y
-+CONFIG_FASTBOOT_BUF_ADDR=0x800800
-+CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
-+CONFIG_ROCKCHIP_GPIO=y
-+CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MMC_DW=y
-+CONFIG_MMC_DW_ROCKCHIP=y
-+CONFIG_SF_DEFAULT_SPEED=20000000
-+CONFIG_DM_ETH=y
-+CONFIG_ETH_DESIGNWARE=y
-+CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PHY=y
-+CONFIG_PINCTRL=y
-+CONFIG_SPL_PINCTRL=y
-+CONFIG_DM_PMIC=y
-+CONFIG_PMIC_RK8XX=y
-+CONFIG_SPL_DM_REGULATOR=y
-+CONFIG_REGULATOR_PWM=y
-+CONFIG_SPL_DM_REGULATOR_FIXED=y
-+CONFIG_DM_REGULATOR_FIXED=y
-+CONFIG_REGULATOR_RK8XX=y
-+CONFIG_PWM_ROCKCHIP=y
-+CONFIG_RAM=y
-+CONFIG_SPL_RAM=y
-+CONFIG_TPL_RAM=y
-+CONFIG_DM_RESET=y
-+CONFIG_BAUDRATE=1500000
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_DEBUG_UART_ANNOUNCE=y
-+CONFIG_DEBUG_UART_SKIP_INIT=y
-+CONFIG_SYSRESET=y
-+# CONFIG_TPL_SYSRESET is not set
-+CONFIG_USB=y
-+CONFIG_USB_XHCI_HCD=y
-+CONFIG_USB_XHCI_DWC3=y
-+CONFIG_USB_EHCI_HCD=y
-+CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_OHCI_HCD=y
-+CONFIG_USB_OHCI_GENERIC=y
-+CONFIG_USB_DWC2=y
-+CONFIG_USB_DWC3=y
-+# CONFIG_USB_DWC3_GADGET is not set
-+CONFIG_USB_GADGET=y
-+CONFIG_USB_GADGET_DWC2_OTG=y
-+CONFIG_SPL_TINY_MEMSET=y
-+CONFIG_TPL_TINY_MEMSET=y
-+CONFIG_ERRNO_STR=y
-+CONFIG_SMBIOS_MANUFACTURER="radxa"
-diff --git a/doc/board/rockchip/rockchip.rst b/doc/board/rockchip/rockchip.rst
-index 7b72fab496..e7dee7d0ac 100644
---- a/doc/board/rockchip/rockchip.rst
-+++ b/doc/board/rockchip/rockchip.rst
-@@ -48,6 +48,7 @@ List of mainline supported rockchip boards:
-      - Rockchip Evb-RK3328 (evb-rk3328)
-      - Pine64 Rock64 (rock64-rk3328)
-      - Firefly-RK3328 (roc-cc-rk3328)
-+     - Radxa Rockpi E (rock-pi-e-rk3328)
- * rk3368
-      - GeekBox (geekbox)
-      - PX5 EVB (evb-px5)
--- 
-2.17.1
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+Ck9uIDIwMjAvNS8yNiDkuIrljYgxMTozMiwgRnJhbmsgV2FuZyB3cm90ZToKPiBUaGlzIHNlcmll
+cyBhZGQgcXVpcmtzIGZvciBEV0MzIGFuZCBhZGQgUm9ja2NoaXAgUkszMzk5IFVTQjMuMCBob3N0
+IHN1cHBvcnQuCj4KPiBUaGUgZnVuY3Rpb24gaGFzIGJlZW4gdGVzdGVkIHBhc3Mgb24gcmszMzk5
+LWV2YiBhbmQgcm9jLXJrMzM5OS1wYyBib2FyZC4KPgo+IEZvciBWNiB1cGRhdGU6Cj4gICAtIFVz
+ZSBbUEFUQ0ggdjYgMDQvMTZdIGluc3RlYWQgb2YgW1BBVENIIHY1IDA1LzE2XSB0byBmaXggdGhh
+dCB0aGUgY3VycmVudAo+ICAgICBHZW5lcmljIFBIWSBzdWJzeXN0ZW0gaXMgdW5hYmxlIHRvIGZp
+bmQgUEhZIGlmIHRoZSBQSFkgbm9kZSBpcyBub3QgcGFydCBvZgo+ICAgICB0aGUgcm9vdCBzdHJ1
+Y3R1cmUuCj4gICAtIEFkZCAnUmV2aWV3ZWQtYnknIHRhZyBmb3IgYWxsIHBhdGNoZXMgZXhjZXB0
+IFtQQVRDSCB2NiAwNC8xNl0uCj4KPiBGb3IgVjUgdXBkYXRlOgo+ICAgLSBGaXggZHdjMy1nZW5l
+cmljIGRyaXZlciBmb2xsb3dlZCBNYXJlaydzIGNvbW1lbnRzIGZvciBbUEFUQ0ggdjQgMTIvMTZd
+Lgo+ICAgLSBBZGQgJ1Jldmlld2VkLWJ5JyBhbmQgJ1Rlc3RlZC1ieScgdGFnIGZvciBbUEFUQ0gg
+djQgMDcvMTZdIGFuZCBbUEFUQ0ggdjQgMDgvMTZdLgo+Cj4gRm9yIFY0IHVwZGF0ZToKPiAgIC0g
+Q29sbGVjdCBKYWdhbidzIGFsbCBmaXhlZCBwYXRjaGVzIFsxXS4KPiAgIC0gQW1lbmQgc3BlY2lm
+aWMgdS1ib290IGNoYW5nZXMgZnJvbSBkdHMgdG8gZHRzaSBmb3IgW1BBVENIIHYzIDYvN10uCj4K
+PiBGb3IgVjMgdXBkYXRlOgo+ICAgLSBGaXggY29tcGlsZSBlcnJvciBmb3IgW1BBVENIIHYyIDEv
+OV0uCj4gICAtIFVzZSBKYWdhbidzIFR5cGUtQyBkcml2ZXIgaW5zdGVhZCBvZiBbUEFUQ0ggdjIg
+NS85XS4KPiAgIC0gQ2xlYW51cCBkdHMgY2hhbmdlcyBmb3IgW1BBVENIIHYyIDcvOV0uCj4gICAt
+IENsZWFudXAgY29uZmlnIGNoYW5nZXMgZm9yIFtQQVRDSCB2MiA4LzldIGFuZCBbUEFUQ0ggdjIg
+OS85XS4KPgo+IEZvciBWMiB1cGRhdGU6Cj4gICAtIEFtZW5kIHR5cGUtYyBkcml2ZXIgZm9sbG93
+ZWQgSmFnYW4ncyBjb21tZW50cyBmb3IgW1BBVENIIDUvOF0uCj4gICAtIEZpeCBkdHMgY29tbWl0
+IGZvciBbUEFUQ0ggNy84XS4KPiAgIC0gU3BsaXQgUkszMzk5IGRlZmF1bHQgY29uZmlnIGZvciBb
+UEFUQ0ggOC84XS4KPiAgIC0gQWRkICdSZXZpZXdlZC1ieScgdGFnIGZvciBbUEFUQ0ggMS84XSwg
+W1BBVENIIDIvOF0gYW5kIFtQQVRDSCAzLzhdLgo+Cj4gWzFdIGh0dHBzOi8vcGF0Y2h3b3JrLm96
+bGFicy5vcmcvcHJvamVjdC91Ym9vdC9jb3Zlci8yMDIwMDUwNjA3NTAyNS4xNjc3LTEtamFnYW5A
+YW1hcnVsYXNvbHV0aW9ucy5jb20KPgo+IEJSLAo+IEZyYW5rCj4KPiBGcmFuayBXYW5nICg4KToK
+PiAgICBhcm06IG1hY2gtcm9ja2NoaXA6IGJpbmQgc3ViLW5vZGVzIGZvciByazMzOTlfc3lzY29u
+Cj4gICAgdXNiOiBkd2MzOiBhZGQgZGlzX2VuYmxzbHBtX3F1aXJrCj4gICAgdXNiOiBkd2MzOiBh
+ZGQgZGlzX3UyX2ZyZWVjbGtfZXhpc3RzX3F1aXJrCj4gICAgdXNiOiBkd2MzOiBhbWVuZCBVVE1J
+L1VUTUlXIHBoeSBpbnRlcmZhY2Ugc2V0dXAKPiAgICB1c2I6IGR3YzM6IGFkZCBtYWtlIGNvbXBh
+dGlibGUgZm9yIHJvY2tjaGlwIHBsYXRmb3JtCj4gICAgZHJpdmVyOiB1c2I6IGRyb3AgbGVnYWN5
+IHJvY2tjaGlwIHhoY2kgZHJpdmVyCj4gICAgQVJNOiBkdHM6IHJrMzM5OS1ldmI6IHVzYjMuMCBo
+b3N0IHN1cHBvcnQKPiAgICBjb25maWdzOiBldmItcmszMzk5OiB1cGRhdGUgc3VwcG9ydCB1c2Iz
+LjAgaG9zdAo+Cj4gSmFnYW4gVGVraSAoOCk6Cj4gICAgY2xrOiByazMzOTk6IEVuYWJsZS9EaXNh
+YmxlIHRoZSBVU0IyUEhZIGNsawo+ICAgIGNsazogcmszMzk5OiBTZXQgZW1wdHkgZm9yIFRDUEhZ
+IGFzc2lnbmVkLWNsb2Nrcwo+ICAgIGNsazogcmszMzk5OiBFbmFibGUvRGlzYWJsZSBUQ1BIWSBj
+bG9ja3MKPiAgICBwaHk6IHJvY2tjaGlwOiBBZGQgUm9ja2NoaXAgVVNCMlBIWSBkcml2ZXIKPiAg
+ICBwaHk6IHJvY2tjaGlwOiBBZGQgUm9ja2NoaXAgVVNCIFR5cGVDIFBIWSBkcml2ZXIKPiAgICB1
+c2I6IGR3YzM6IEFkZCBkaXNhYmxlIHUybWFjIGxpbmVzdGF0ZSBjaGVjayBxdWlyawo+ICAgIHVz
+YjogZHdjMzogRW5hYmxlIEF1dG9SZXRyeSBmZWF0dXJlIGluIHRoZSBjb250cm9sbGVyCj4gICAg
+cm9jLXJrMzM5OS1wYzogRW5hYmxlIFVTQjMuMCBIb3N0Cj4KPiAgIGFyY2gvYXJtL2R0cy9yazMz
+OTktZXZiLXUtYm9vdC5kdHNpICAgICAgICAgICB8ICAxMyArCj4gICBhcmNoL2FybS9tYWNoLXJv
+Y2tjaGlwL3JrMzM5OS9zeXNjb25fcmszMzk5LmMgfCAgIDMgKwo+ICAgY29uZmlncy9ldmItcmsz
+Mzk5X2RlZmNvbmZpZyAgICAgICAgICAgICAgICAgIHwgICA2ICsKPiAgIGNvbmZpZ3Mvcm9jLXBj
+LW1lenphbmluZS1yazMzOTlfZGVmY29uZmlnICAgICB8ICAgNSArCj4gICBjb25maWdzL3JvYy1w
+Yy1yazMzOTlfZGVmY29uZmlnICAgICAgICAgICAgICAgfCAgIDYgKwo+ICAgZHJpdmVycy9NYWtl
+ZmlsZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAxICsKPiAgIGRyaXZlcnMvY2xr
+L3JvY2tjaGlwL2Nsa19yazMzOTkuYyAgICAgICAgICAgICB8ICAzOCArCj4gICBkcml2ZXJzL3Bo
+eS9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwo+ICAgZHJpdmVycy9w
+aHkvcm9ja2NoaXAvS2NvbmZpZyAgICAgICAgICAgICAgICAgIHwgIDIxICsKPiAgIGRyaXZlcnMv
+cGh5L3JvY2tjaGlwL01ha2VmaWxlICAgICAgICAgICAgICAgICB8ICAgNyArCj4gICBkcml2ZXJz
+L3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMgfCAzMTIgKysrKysrKwo+ICAg
+ZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXR5cGVjLmMgICAgIHwgNzk2ICsrKysr
+KysrKysrKysrKysrKwo+ICAgZHJpdmVycy91c2IvY29tbW9uL2NvbW1vbi5jICAgICAgICAgICAg
+ICAgICAgIHwgIDI1ICsKPiAgIGRyaXZlcnMvdXNiL2R3YzMvY29yZS5jICAgICAgICAgICAgICAg
+ICAgICAgICB8IDEwNiArKy0KPiAgIGRyaXZlcnMvdXNiL2R3YzMvY29yZS5oICAgICAgICAgICAg
+ICAgICAgICAgICB8ICAxOSArCj4gICBkcml2ZXJzL3VzYi9kd2MzL2R3YzMtZ2VuZXJpYy5jICAg
+ICAgICAgICAgICAgfCAgMzMgKy0KPiAgIGRyaXZlcnMvdXNiL2hvc3QvS2NvbmZpZyAgICAgICAg
+ICAgICAgICAgICAgICB8ICAgOSAtCj4gICBkcml2ZXJzL3VzYi9ob3N0L01ha2VmaWxlICAgICAg
+ICAgICAgICAgICAgICAgfCAgIDEgLQo+ICAgZHJpdmVycy91c2IvaG9zdC94aGNpLXJvY2tjaGlw
+LmMgICAgICAgICAgICAgIHwgMTk2IC0tLS0tCj4gICBpbmNsdWRlL2R3YzMtdWJvb3QuaCAgICAg
+ICAgICAgICAgICAgICAgICAgICAgfCAgIDMgKwo+ICAgaW5jbHVkZS9saW51eC91c2IvcGh5Lmgg
+ICAgICAgICAgICAgICAgICAgICAgIHwgIDE4ICsKPiAgIDIxIGZpbGVzIGNoYW5nZWQsIDEzNzYg
+aW5zZXJ0aW9ucygrKSwgMjQzIGRlbGV0aW9ucygtKQo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRy
+aXZlcnMvcGh5L3JvY2tjaGlwL0tjb25maWcKPiAgIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJz
+L3BoeS9yb2NrY2hpcC9NYWtlZmlsZQo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvcGh5
+L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0
+IGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC10eXBlYy5jCj4gICBkZWxldGUgbW9k
+ZSAxMDA2NDQgZHJpdmVycy91c2IvaG9zdC94aGNpLXJvY2tjaGlwLmMKPgpBcHBsaWVkIHRvIHUt
+Ym9vdC1yb2NrY2hpcCBtYXN0ZXIuCgpUaGFua3MsCi0gS2V2ZXIKCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KTGludXgtcm9ja2NoaXAgbWFpbGluZyBs
+aXN0CkxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAo=
