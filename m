@@ -2,70 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97C661EB061
-	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 22:42:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 398EB1EB062
+	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 22:42:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GZYYprpv3jnMvC5+ELTO/1QOBMj2k2hjNHRRUMPLLnw=; b=CJFBSkvujG/yQH
-	FqCw/HURjzH1+DaUJrWL0yoawywiQGMfsGr5I/ZzfIxzWS9ykL6r8OI8KHSXttpFsqkQNa2K4DSWC
-	I1mv1MxfUHJr5WfbRHqNhsoeb26jMdhWXLcp3qixR3/fJO7zRB3/mJzlmnxiBK5cALwB5108NHAKl
-	2W4BMww89XDdK1YL9xVvpoExer3DuEAnkfYBEdwsA/4c3toPyDm4pysXKcfT9BWV5G/+jgpenwHz/
-	482Rj7fOZ0vGpW/jU+ZNaaOwSR7NztY7HuuzbVC1P6trh7X3cCvwhd2REWnET/P/IZo1KGuDQlPMM
-	DfX8u+b3yKJP+Lu6bVHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zhV/bF7JO27dKU/QhsGewRKF5On8cgRaWRcAL1otncQ=; b=afnXGafJN+7vbw
+	swmgXue/Ym4h0RYQb5+h5MQq6ikC7LDtJMI2lnFTOXOn/IbjltpHSk4rbe/6nTO9XE+j3MOLURN3J
+	omGNxVOiMxS83GaEcxt/z89ixNWk2/r/70CXpMr2XoV8E25FM0Iw0lVH2gmsmKM3dLu7j5vATJlaN
+	HaDzsvAG11wELa7lWuWWdolduPo8QyWljyuXi006GSj16oYHv4TCe1VZJ24WfWXJ+rGAxqcrotqxu
+	/q+pTVOQcRWVKg/oLDIU54T5fFakfg9OsYQZdvRdPycDeUTKj4tysT77BbkA6o875GN+rrc7EIxCN
+	GVwAWmxxebUR2zmKBq2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfrGY-0002MM-11; Mon, 01 Jun 2020 20:42:38 +0000
+	id 1jfrGZ-0002NW-Jp; Mon, 01 Jun 2020 20:42:39 +0000
 Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfrGS-0002LR-IT
- for linux-rockchip@lists.infradead.org; Mon, 01 Jun 2020 20:42:35 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id nm22so323093pjb.4
- for <linux-rockchip@lists.infradead.org>; Mon, 01 Jun 2020 13:42:31 -0700 (PDT)
+ id 1jfrGW-0002M8-M8
+ for linux-rockchip@lists.infradead.org; Mon, 01 Jun 2020 20:42:37 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id 5so363504pjd.0
+ for <linux-rockchip@lists.infradead.org>; Mon, 01 Jun 2020 13:42:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=C6fbGMCB5hmvn3dcBB4ewd17yp4h6go4QFI7dlPchhs=;
- b=J0UKz80QMqRMSdDifNxqxFLh/jL9Ot8U+323UT9xDdIeFN1YUe73If+dRoxqA/YLhp
- OwMnyyzHjx2UfovdZ4DDd2FKeg7FcDTCsEBSSJ8oq1oZLXM2Fz3G+eGeAdphMVvKURsy
- URALfeMveEdFUdCOuBm+D8CLWb1Ckb4PfAaks=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=BNexMqhtjdTh16Uq9oCW3PAfLr/10uATBtmxs/MmdRw=;
+ b=lpM+7QC7A6/oXNUxAXaghs4+w/QTBzzl+mZP5BXCmNM8cNAggn2+bd5BTIRqHH9jl2
+ s0HbBay0AOhlx8AiG5XBwUkU682Bg47nUZzeuoBN63SIkRO0JqrQWws72wBC4WHSOXEw
+ Blhl8jz+Jvwqg+3WQcdSdyjn/NXeq+W0BQkCU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=C6fbGMCB5hmvn3dcBB4ewd17yp4h6go4QFI7dlPchhs=;
- b=mj0+g02xbvtp1Ad8+DZS4GujgAc+u9H/AqsVcHGcrfJ5iYCMe94oB5tuXlVauSBXS3
- rOBF90GQ4oOA1bepkrpFwHiYtnFB4UraAlzZ+ke3FrD4skx7Czj+SX8gMpQ00YBtGotA
- bGuien53ACRuQAMSqkprIcNpfc9v5lyuOJNFvOGdx2KKo+UrJGJE64NDm3PhA9/ov79T
- tQcpQEDbisXBH1TEhVlBK4ULYnoEXjKTYixbVbgUOIrI2Vff+hlLpywaU27b1rHuVfgQ
- EIBwP4E9qwVOe8fFTuVRQ8ylpTvFZqbL4D4wL+J517DbLx1l6877Z05ndcMBfFN6MQXg
- WPdA==
-X-Gm-Message-State: AOAM532g0YPpi8xIyoG9crQoWyBWtADX0DyfEX9HcoDXdEYKhn99E7Al
- p835nHGlBmgqPRVm9bpWnVP6IA==
-X-Google-Smtp-Source: ABdhPJwxSwic44Fq51bepjifWvqD5kc5YxY8fDtQ3Ox0kfDyjN/C1y0NfX2FOfbIUGZFlMuWkesf/g==
-X-Received: by 2002:a17:902:bc86:: with SMTP id
- bb6mr21356684plb.243.1591044151113; 
- Mon, 01 Jun 2020 13:42:31 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=BNexMqhtjdTh16Uq9oCW3PAfLr/10uATBtmxs/MmdRw=;
+ b=DiacEgtnh34pUOMpJ0xr/69Sqy487Ty8LvWNSm0zYTEAbWbT80NgvHQEY730EAdrNo
+ dfjoCcFdBjX8K5dLsPMJ70wARTVFgbSNJbRlri6i+d7pYpWny2QLueTXSJ6LQxmg/vu4
+ 6yOjFW9TMok1BARdlfVLu07b6G0wF+wvsGGkaMef+Q9xfJxoRt5eNynbq12hma9P/oDB
+ SKhuqcl2uQbMYQLWM9wBaWD6VKbcdky4NV9Kr4CzelDZ/aBhioEinzlrfkNrY8YE3gIX
+ 4eZfm/uaJv7+/ET6CakbrzbV6Uw9yQxBKFWPQEqW2fZ+jJw413xhh3Zj2iDI1bGzv/YT
+ HIdQ==
+X-Gm-Message-State: AOAM530K1JrdE6jNpB38OXpEeBMMWXUyrqr6wTekM7NKLXeFs7qgpCbc
+ AL3o4mmLGZK+zA6NruiBUIXkLA==
+X-Google-Smtp-Source: ABdhPJxNwTerv8RZKMN0AWruqEXqCEYJA40YoJ2iptY1HVlJi1bx99QFsXnSTA3Nm1LAjRHYEJWRoQ==
+X-Received: by 2002:a17:90a:1919:: with SMTP id 25mr1196124pjg.7.1591044156215; 
+ Mon, 01 Jun 2020 13:42:36 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:658b:ecbc:7ea4:1996])
- by smtp.gmail.com with ESMTPSA id k7sm283581pga.87.2020.06.01.13.42.25
+ by smtp.gmail.com with ESMTPSA id k7sm283581pga.87.2020.06.01.13.42.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 13:42:30 -0700 (PDT)
+ Mon, 01 Jun 2020 13:42:35 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>, Hugh Cole-Baker <sigmaris@gmail.com>
-Subject: [PATCH v2 0/4] rockchip: rk3399: Add SPI boot
-Date: Tue,  2 Jun 2020 02:12:09 +0530
-Message-Id: <20200601204213.466120-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 1/4] Makefile: Drop to handle rkspi image type
+Date: Tue,  2 Jun 2020 02:12:10 +0530
+Message-Id: <20200601204213.466120-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200601204213.466120-1-jagan@amarulasolutions.com>
+References: <20200601204213.466120-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_134232_742874_2AE1C48D 
-X-CRM114-Status: UNSURE (   5.62  )
+X-CRM114-CacheID: sfid-20200601_134236_719187_1D510C50 
+X-CRM114-Status: UNSURE (   8.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -105,33 +106,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-I have marked this series as v2, since the previous 
-one has SPL SPI boot via different defconfig.
+On rockchip platforms, SPI boot image creation is not
+straightforward like MMC boot image creation where former
+requires to specify tpl, spl in multimage format in mkimage,
+and later simply do a concatenate mkimaged-tpl with spl.
 
-Thanks to Hugh Cole-Baker for inputs about SPI boot
-image creation.
+On this note, let drop rkspi image type creation via kbuild
+and let inform via rockchip.rst
 
-Changes for v2:
-- same defconfig to support both MMC, SPI boot
-- add spi flash program document 
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ Makefile | 11 ++---------
+ 1 file changed, 2 insertions(+), 9 deletions(-)
 
-Any inputs?
-Jagan.
-
-Jagan Teki (4):
-  Makefile: Drop to handle rkspi image type
-  roc-rk3399-pc: Mark default env from SPI
-  roc-rk3399-pc: Add SPI boot
-  doc: rockchip: Document SPI flash program steps
-
- Makefile                                  | 11 ++--------
- arch/arm/dts/rk3399-roc-pc-u-boot.dtsi    | 12 ++++++++++-
- configs/roc-pc-mezzanine-rk3399_defconfig |  3 +++
- configs/roc-pc-rk3399_defconfig           |  6 +++++-
- doc/board/rockchip/rockchip.rst           | 26 ++++++++++++++++++++++-
- include/configs/roc-pc-rk3399.h           |  4 ----
- 6 files changed, 46 insertions(+), 16 deletions(-)
-
+diff --git a/Makefile b/Makefile
+index 3851dd9fa0..db3b6b9991 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1438,22 +1438,15 @@ u-boot-with-spl.bin: $(SPL_IMAGE) $(SPL_PAYLOAD) FORCE
+ 
+ ifeq ($(CONFIG_ARCH_ROCKCHIP),y)
+ 
+-# rockchip image type
+-ifeq ($(CONFIG_SPL_SPI_LOAD),y)
+-ROCKCHIP_IMG_TYPE := rkspi
+-else
+-ROCKCHIP_IMG_TYPE := rksd
+-endif
+-
+ # TPL + SPL
+ ifeq ($(CONFIG_SPL)$(CONFIG_TPL),yy)
+-MKIMAGEFLAGS_u-boot-tpl-rockchip.bin = -n $(CONFIG_SYS_SOC) -T $(ROCKCHIP_IMG_TYPE)
++MKIMAGEFLAGS_u-boot-tpl-rockchip.bin = -n $(CONFIG_SYS_SOC) -T rksd
+ tpl/u-boot-tpl-rockchip.bin: tpl/u-boot-tpl.bin FORCE
+ 	$(call if_changed,mkimage)
+ idbloader.img: tpl/u-boot-tpl-rockchip.bin spl/u-boot-spl.bin FORCE
+ 	$(call if_changed,cat)
+ else
+-MKIMAGEFLAGS_idbloader.img = -n $(CONFIG_SYS_SOC) -T $(ROCKCHIP_IMG_TYPE)
++MKIMAGEFLAGS_idbloader.img = -n $(CONFIG_SYS_SOC) -T rksd
+ idbloader.img: spl/u-boot-spl.bin FORCE
+ 	$(call if_changed,mkimage)
+ endif
 -- 
 2.25.1
 
