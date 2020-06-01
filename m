@@ -2,78 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 221821EA038
-	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 10:43:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 306071EA0A7
+	for <lists+linux-rockchip@lfdr.de>; Mon,  1 Jun 2020 11:14:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M9m7kiNeoiFbObjuF1VxUhYcNxhTeE+InAwd34OXpz8=; b=k3hEyyGcPJZdXvGsYg+Kn1zeh
-	BzqR/bC7tbuhGmNeeF40uUIe1Jj576EcBtyFCZOA5A2rZ/AE3gp0j7nr23Cz8Il0HdAXV6QgXgUWJ
-	N7lK/cGrE/wKl+WVFRCN5eNLj96zTW/TS+DNJsiQZ9wE1EahIrtpp20DRAHWG6cqzMV5wz9W8Adoy
-	j+77ANw9bIOGJR5ibRliLNLEB/oUzSUW8oAP488huSOwvdr6e1wrfIXM71ikFHnfcSUbNh0gbr0i+
-	PmKXGa8dLBW8knTCLu7ueKdT/gOah3gjkXBo7dP7XHcK7I9H5aj6IlvEFHMxUk6prFy9RiEsHzMpj
-	PlIWAHUUA==;
+	 bh=I+7XY8bauwYPe7L6dGQP+XvhKdBju1vY337gilhTfIM=; b=S/LXbqUggKKqhkulbuvk1f4k5
+	a3KOq81w2pS8EflrKpUgzVqmBNOaHUKe4UpbRFsbNfnvXfbyuStssuh6nnf1sQ3xSBNDaph90Ea98
+	C1TvVdssm3Y3WmTe16Q24/dqOAceGjO71MuI+JlNgthgDBOQxuCcYrauNF/pmUI8eEXXQSWhGjEnw
+	c61xtG8fU4CXEfhgnM0CX92PdUQPRBsY+U8Ho5k+R9T/eIZMN4LaGQlcgCTZ6ZypHqDl+gpoDIHMw
+	pcDQYXeImKww6VMWzFASls/w21Gx9rSglAETsi/8/Wcu1wHZkESMWthJesYCw4vKf/ORhM2xC+p/3
+	WNio1icFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfg2h-0000h4-H5; Mon, 01 Jun 2020 08:43:35 +0000
-Received: from regular1.263xmail.com ([211.150.70.199])
+	id 1jfgWO-00051p-1L; Mon, 01 Jun 2020 09:14:16 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfg2d-0000fK-Sz
- for linux-rockchip@lists.infradead.org; Mon, 01 Jun 2020 08:43:33 +0000
-Received: from localhost (unknown [192.168.167.235])
- by regular1.263xmail.com (Postfix) with ESMTP id 5A2E1718;
- Mon,  1 Jun 2020 16:43:27 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-SKE-CHECKED: 1
-X-ABS-CHECKED: 1
-Received: from [192.168.60.65] (unknown [103.29.142.67])
- by smtp.263.net (postfix) whith ESMTP id
- P31256T139912688944896S1591001000600035_; 
- Mon, 01 Jun 2020 16:43:27 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <8bb327fd4ab388d19f50212f35a4b27d>
-X-RL-SENDER: kever.yang@rock-chips.com
-X-SENDER: yk@rock-chips.com
-X-LOGIN-NAME: kever.yang@rock-chips.com
-X-FST-TO: linux-rockchip@lists.infradead.org
-X-SENDER-IP: 103.29.142.67
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-Subject: Re: [PATCHv5][2/2] rockchip: rk3328: add rock-pi-e-rk3328_defconfig
- file
-To: "b.l.huang" <banglang.huang@foxmail.com>, u-boot <u-boot@lists.denx.de>
-References: <tencent_F69432040DE3A0ED4FE96B829EA38AC2BD09@qq.com>
-From: Kever Yang <kever.yang@rock-chips.com>
-Message-ID: <336558d9-2bf5-f4e7-087d-af123ed15cc0@rock-chips.com>
-Date: Mon, 1 Jun 2020 16:43:19 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jfgWA-0004oW-D7; Mon, 01 Jun 2020 09:14:04 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id 52E552A1629
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Philippe CORNU <philippe.cornu@st.com>, Adrian Ratiu
+ <adrian.ratiu@collabora.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
+ <linux-rockchip@lists.infradead.org>, Laurent Pinchart
+ <Laurent.pinchart@ideasonboard.com>
+Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
+ bridge handle the HW version check
+In-Reply-To: <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-9-adrian.ratiu@collabora.com>
+ <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
+Date: Mon, 01 Jun 2020 12:15:02 +0300
+Message-ID: <87blm387vt.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
 MIME-Version: 1.0
-In-Reply-To: <tencent_F69432040DE3A0ED4FE96B829EA38AC2BD09@qq.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_014332_253313_9A27CD9A 
-X-CRM114-Status: GOOD (  14.11  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200601_021402_575314_B0F57C70 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.199 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [211.150.70.199 listed in wl.mailspike.net]
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,102 +66,111 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: "philipp.tomsich" <philipp.tomsich@theobroma-systems.com>,
- trini <trini@konsulko.com>, "Chen-Yu&nbsp, Tsai" <wens@kernel.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@collabora.com" <kernel@collabora.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMjAvNi8xIOS4iuWNiDEyOjAyLCBiLmwuaHVhbmcgd3JvdGU6Cj4gVGhpcyBjb21taXQg
-YWRkIHRoZSBkZWZhdWx0IGNvbmZpZ3VyYXRpb24gZmlsZSBhbmQgcmVsZXZhbnQgZGVzY3JpcHRp
-b24KPiBmb3Igcm9jay1waS1lIGJvYXJkCj4KPiBTaWduZWQtb2ZmLWJ5OiBCYW5nbGFuZyBIdWFu
-ZyA8YmFuZ2xhbmcuaHVhbmdAZm94bWFpbC5jb20+ClJldmlld2VkLWJ5OiBLZXZlciBZYW5nIDxr
-ZXZlci55YW5nQHJvY2stY2hpcHMuY29tPgoKVGhhbmtzLAotIEtldmVyCj4gLS0tCj4gICBib2Fy
-ZC9yb2NrY2hpcC9ldmJfcmszMzI4L01BSU5UQUlORVJTIHwgICA3ICsrCj4gICBjb25maWdzL3Jv
-Y2stcGktZS1yazMzMjhfZGVmY29uZmlnICAgIHwgMTA0ICsrKysrKysrKysrKysrKysrKysrKysr
-KysrCj4gICBkb2MvYm9hcmQvcm9ja2NoaXAvcm9ja2NoaXAucnN0ICAgICAgIHwgICAxICsKPiAg
-IDMgZmlsZXMgY2hhbmdlZCwgMTEyIGluc2VydGlvbnMoKykKPiAgIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBjb25maWdzL3JvY2stcGktZS1yazMzMjhfZGVmY29uZmlnCj4KPiBkaWZmIC0tZ2l0IGEvYm9h
-cmQvcm9ja2NoaXAvZXZiX3JrMzMyOC9NQUlOVEFJTkVSUyBiL2JvYXJkL3JvY2tjaGlwL2V2Yl9y
-azMzMjgvTUFJTlRBSU5FUlMKPiBpbmRleCA4OWJlY2Y0MWM1Li5lN2RkNTlmZjRlIDEwMDY0NAo+
-IC0tLSBhL2JvYXJkL3JvY2tjaGlwL2V2Yl9yazMzMjgvTUFJTlRBSU5FUlMKPiArKysgYi9ib2Fy
-ZC9yb2NrY2hpcC9ldmJfcmszMzI4L01BSU5UQUlORVJTCj4gQEAgLTE3LDMgKzE3LDEwIEBAIE06
-ICAgICAgTWF0d2V5IFYuIEtvcm5pbG92IDxtYXR3ZXkua29ybmlsb3ZAZ21haWwuY29tPgo+ICAg
-UzogICAgICBNYWludGFpbmVkCj4gICBGOiAgICAgIGNvbmZpZ3Mvcm9jazY0LXJrMzMyOF9kZWZj
-b25maWcKPiAgIEY6ICAgICAgYXJjaC9hcm0vZHRzL3JrMzMyOC1yb2NrNjQtdS1ib290LmR0c2kK
-PiArCj4gK1JPQ0tQSUUtUkszMzI4Cj4gK006ICAgICAgQmFuZ2xhbmcgSHVhbmcgPGJhbmdsYW5n
-Lmh1YW5nQGZveG1haWwuY29tPgo+ICtTOiAgICAgIE1haW50YWluZWQKPiArRjogICAgICBjb25m
-aWdzL3JvY2stcGktZS1yazMzMjhfZGVmY29uZmlnCj4gK0Y6ICAgICAgYXJjaC9hcm0vZHRzL3Jr
-MzMyOC1yb2NrLXBpLWUuZHRzCj4gK0Y6ICAgICAgYXJjaC9hcm0vZHRzL3JrMzMyOC1yb2NrLXBp
-LWUtdS1ib290LmR0c2kKPiBkaWZmIC0tZ2l0IGEvY29uZmlncy9yb2NrLXBpLWUtcmszMzI4X2Rl
-ZmNvbmZpZyBiL2NvbmZpZ3Mvcm9jay1waS1lLXJrMzMyOF9kZWZjb25maWcKPiBuZXcgZmlsZSBt
-b2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAuLjc1OTgzODc3NWYKPiAtLS0gL2Rldi9udWxs
-Cj4gKysrIGIvY29uZmlncy9yb2NrLXBpLWUtcmszMzI4X2RlZmNvbmZpZwo+IEBAIC0wLDAgKzEs
-MTA0IEBACj4gK0NPTkZJR19BUk09eQo+ICtDT05GSUdfQVJDSF9ST0NLQ0hJUD15Cj4gK0NPTkZJ
-R19TWVNfVEVYVF9CQVNFPTB4MDAyMDAwMDAKPiArQ09ORklHX1NQTF9HUElPX1NVUFBPUlQ9eQo+
-ICtDT05GSUdfRU5WX09GRlNFVD0weDNGODAwMAo+ICtDT05GSUdfUk9DS0NISVBfUkszMzI4PXkK
-PiArQ09ORklHX1RQTF9ST0NLQ0hJUF9DT01NT05fQk9BUkQ9eQo+ICtDT05GSUdfVFBMX0xJQkNP
-TU1PTl9TVVBQT1JUPXkKPiArQ09ORklHX1RQTF9MSUJHRU5FUklDX1NVUFBPUlQ9eQo+ICtDT05G
-SUdfU1BMX0RSSVZFUlNfTUlTQ19TVVBQT1JUPXkKPiArQ09ORklHX1NQTF9TVEFDS19SX0FERFI9
-MHg0MDAwMDAwCj4gK0NPTkZJR19TUExfU1lTX01BTExPQ19GX0xFTj0weDQwMDAKPiArQ09ORklH
-X05SX0RSQU1fQkFOS1M9MQo+ICtDT05GSUdfREVCVUdfVUFSVF9CQVNFPTB4RkYxMzAwMDAKPiAr
-Q09ORklHX0RFQlVHX1VBUlRfQ0xPQ0s9MjQwMDAwMDAKPiArQ09ORklHX1NNQklPU19QUk9EVUNU
-X05BTUU9InJvY2stcGktZV9yazMzMjgiCj4gK0NPTkZJR19ERUJVR19VQVJUPXkKPiArQ09ORklH
-X1RQTF9TWVNfTUFMTE9DX0ZfTEVOPTB4ODAwCj4gKyMgQ09ORklHX0FORFJPSURfQk9PVF9JTUFH
-RSBpcyBub3Qgc2V0Cj4gK0NPTkZJR19GSVQ9eQo+ICtDT05GSUdfRklUX1ZFUkJPU0U9eQo+ICtD
-T05GSUdfU1BMX0xPQURfRklUPXkKPiArQ09ORklHX0RFRkFVTFRfRkRUX0ZJTEU9InJvY2tjaGlw
-L3JrMzMyOC1yb2NrLXBpLWUuZHRiIgo+ICtDT05GSUdfTUlTQ19JTklUX1I9eQo+ICsjIENPTkZJ
-R19ESVNQTEFZX0NQVUlORk8gaXMgbm90IHNldAo+ICtDT05GSUdfRElTUExBWV9CT0FSRElORk9f
-TEFURT15Cj4gKyMgQ09ORklHX1NQTF9SQVdfSU1BR0VfU1VQUE9SVCBpcyBub3Qgc2V0Cj4gK0NP
-TkZJR19UUExfU1lTX01BTExPQ19TSU1QTEU9eQo+ICtDT05GSUdfU1BMX1NUQUNLX1I9eQo+ICtD
-T05GSUdfU1BMX0kyQ19TVVBQT1JUPXkKPiArQ09ORklHX1NQTF9QT1dFUl9TVVBQT1JUPXkKPiAr
-Q09ORklHX1NQTF9TVEFDS19SX01BTExPQ19TSU1QTEVfTEVOPTB4MTAwMDAKPiArQ09ORklHX1NQ
-TF9BVEY9eQo+ICtDT05GSUdfU1BMX0FURl9OT19QTEFURk9STV9QQVJBTT15Cj4gK0NPTkZJR19U
-UExfRFJJVkVSU19NSVNDX1NVUFBPUlQ9eQo+ICtDT05GSUdfQ01EX0JPT1RaPXkKPiArQ09ORklH
-X0NNRF9HUFQ9eQo+ICtDT05GSUdfQ01EX01NQz15Cj4gK0NPTkZJR19DTURfVVNCPXkKPiArQ09O
-RklHX0NNRF9USU1FPXkKPiArQ09ORklHX1NQTF9PRl9DT05UUk9MPXkKPiArQ09ORklHX1RQTF9P
-Rl9DT05UUk9MPXkKPiArQ09ORklHX0RFRkFVTFRfREVWSUNFX1RSRUU9InJrMzMyOC1yb2NrLXBp
-LWUiCj4gK0NPTkZJR19PRl9TUExfUkVNT1ZFX1BST1BTPSJjbG9jay1uYW1lcyBpbnRlcnJ1cHQt
-cGFyZW50IGFzc2lnbmVkLWNsb2NrcyBhc3NpZ25lZC1jbG9jay1yYXRlcyBhc3NpZ25lZC1jbG9j
-ay1wYXJlbnRzIgo+ICtDT05GSUdfVFBMX09GX1BMQVREQVRBPXkKPiArQ09ORklHX0VOVl9JU19J
-Tl9NTUM9eQo+ICtDT05GSUdfU1lTX1JFTE9DX0dEX0VOVl9BRERSPXkKPiArQ09ORklHX05FVF9S
-QU5ET01fRVRIQUREUj15Cj4gK0NPTkZJR19UUExfRE09eQo+ICtDT05GSUdfUkVHTUFQPXkKPiAr
-Q09ORklHX1NQTF9SRUdNQVA9eQo+ICtDT05GSUdfVFBMX1JFR01BUD15Cj4gK0NPTkZJR19TWVND
-T049eQo+ICtDT05GSUdfU1BMX1NZU0NPTj15Cj4gK0NPTkZJR19UUExfU1lTQ09OPXkKPiArQ09O
-RklHX0NMSz15Cj4gK0NPTkZJR19TUExfQ0xLPXkKPiArQ09ORklHX0ZBU1RCT09UX0JVRl9BRERS
-PTB4ODAwODAwCj4gK0NPTkZJR19GQVNUQk9PVF9DTURfT0VNX0ZPUk1BVD15Cj4gK0NPTkZJR19S
-T0NLQ0hJUF9HUElPPXkKPiArQ09ORklHX1NZU19JMkNfUk9DS0NISVA9eQo+ICtDT05GSUdfTU1D
-X0RXPXkKPiArQ09ORklHX01NQ19EV19ST0NLQ0hJUD15Cj4gK0NPTkZJR19TRl9ERUZBVUxUX1NQ
-RUVEPTIwMDAwMDAwCj4gK0NPTkZJR19ETV9FVEg9eQo+ICtDT05GSUdfRVRIX0RFU0lHTldBUkU9
-eQo+ICtDT05GSUdfR01BQ19ST0NLQ0hJUD15Cj4gK0NPTkZJR19QSFk9eQo+ICtDT05GSUdfUElO
-Q1RSTD15Cj4gK0NPTkZJR19TUExfUElOQ1RSTD15Cj4gK0NPTkZJR19ETV9QTUlDPXkKPiArQ09O
-RklHX1BNSUNfUks4WFg9eQo+ICtDT05GSUdfU1BMX0RNX1JFR1VMQVRPUj15Cj4gK0NPTkZJR19S
-RUdVTEFUT1JfUFdNPXkKPiArQ09ORklHX1NQTF9ETV9SRUdVTEFUT1JfRklYRUQ9eQo+ICtDT05G
-SUdfRE1fUkVHVUxBVE9SX0ZJWEVEPXkKPiArQ09ORklHX1JFR1VMQVRPUl9SSzhYWD15Cj4gK0NP
-TkZJR19QV01fUk9DS0NISVA9eQo+ICtDT05GSUdfUkFNPXkKPiArQ09ORklHX1NQTF9SQU09eQo+
-ICtDT05GSUdfVFBMX1JBTT15Cj4gK0NPTkZJR19ETV9SRVNFVD15Cj4gK0NPTkZJR19CQVVEUkFU
-RT0xNTAwMDAwCj4gK0NPTkZJR19ERUJVR19VQVJUX1NISUZUPTIKPiArQ09ORklHX0RFQlVHX1VB
-UlRfQU5OT1VOQ0U9eQo+ICtDT05GSUdfREVCVUdfVUFSVF9TS0lQX0lOSVQ9eQo+ICtDT05GSUdf
-U1lTUkVTRVQ9eQo+ICsjIENPTkZJR19UUExfU1lTUkVTRVQgaXMgbm90IHNldAo+ICtDT05GSUdf
-VVNCPXkKPiArQ09ORklHX1VTQl9YSENJX0hDRD15Cj4gK0NPTkZJR19VU0JfWEhDSV9EV0MzPXkK
-PiArQ09ORklHX1VTQl9FSENJX0hDRD15Cj4gK0NPTkZJR19VU0JfRUhDSV9HRU5FUklDPXkKPiAr
-Q09ORklHX1VTQl9PSENJX0hDRD15Cj4gK0NPTkZJR19VU0JfT0hDSV9HRU5FUklDPXkKPiArQ09O
-RklHX1VTQl9EV0MyPXkKPiArQ09ORklHX1VTQl9EV0MzPXkKPiArIyBDT05GSUdfVVNCX0RXQzNf
-R0FER0VUIGlzIG5vdCBzZXQKPiArQ09ORklHX1VTQl9HQURHRVQ9eQo+ICtDT05GSUdfVVNCX0dB
-REdFVF9EV0MyX09URz15Cj4gK0NPTkZJR19TUExfVElOWV9NRU1TRVQ9eQo+ICtDT05GSUdfVFBM
-X1RJTllfTUVNU0VUPXkKPiArQ09ORklHX0VSUk5PX1NUUj15Cj4gK0NPTkZJR19TTUJJT1NfTUFO
-VUZBQ1RVUkVSPSJyYWR4YSIKPiBkaWZmIC0tZ2l0IGEvZG9jL2JvYXJkL3JvY2tjaGlwL3JvY2tj
-aGlwLnJzdCBiL2RvYy9ib2FyZC9yb2NrY2hpcC9yb2NrY2hpcC5yc3QKPiBpbmRleCA3YjcyZmFi
-NDk2Li5lN2RlZTdkMGFjIDEwMDY0NAo+IC0tLSBhL2RvYy9ib2FyZC9yb2NrY2hpcC9yb2NrY2hp
-cC5yc3QKPiArKysgYi9kb2MvYm9hcmQvcm9ja2NoaXAvcm9ja2NoaXAucnN0Cj4gQEAgLTQ4LDYg
-KzQ4LDcgQEAgTGlzdCBvZiBtYWlubGluZSBzdXBwb3J0ZWQgcm9ja2NoaXAgYm9hcmRzOgo+ICAg
-ICAgICAtIFJvY2tjaGlwIEV2Yi1SSzMzMjggKGV2Yi1yazMzMjgpCj4gICAgICAgIC0gUGluZTY0
-IFJvY2s2NCAocm9jazY0LXJrMzMyOCkKPiAgICAgICAgLSBGaXJlZmx5LVJLMzMyOCAocm9jLWNj
-LXJrMzMyOCkKPiArICAgICAtIFJhZHhhIFJvY2twaSBFIChyb2NrLXBpLWUtcmszMzI4KQo+ICAg
-KiByazMzNjgKPiAgICAgICAgLSBHZWVrQm94IChnZWVrYm94KQo+ICAgICAgICAtIFBYNSBFVkIg
-KGV2Yi1weDUpCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcm9ja2NoaXAK
+On Fri, 29 May 2020, Philippe CORNU <philippe.cornu@st.com> wrote:
+> Hi Adrian, and thank you very much for the patchset.  Thank you 
+> also for having tested it on STM32F769 and STM32MP1.  Sorry for 
+> the late response, Yannick and I will review it as soon as 
+> possible and we will keep you posted.  Note: Do not hesitate to 
+> put us in copy for the next version  (philippe.cornu@st.com, 
+> yannick.fertre@st.com) Regards, Philippe :-) 
+
+Hi Philippe,
+
+Thank you very much for your previous and future STM testing, 
+really appreciate it! I've CC'd Yannick until now but I'll also CC 
+you sure :)
+
+It's been over a month since I posted v8 and I was just gearing up 
+to address all feedback, rebase & retest to prepare v9 but I'll 
+wait a little longer, no problem, it's no rush.
+
+Have an awesome day,
+Adrian
+
+>
+>
+> On 4/27/20 10:19 AM, Adrian Ratiu wrote:
+>> The stm mipi-dsi platform driver added a version test in
+>> commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
+>> so that HW revisions other than v1.3x get rejected. The rockchip
+>> driver had no such check and just assumed register layouts are
+>> v1.3x compatible.
+>> 
+>> Having such tests was a good idea because only v130/v131 layouts
+>> were supported at the time, however since adding multiple layout
+>> support in the bridge, the version is automatically checked for
+>> all drivers, compatible layouts get picked and unsupported HW is
+>> automatically rejected by the bridge, so there's no use keeping
+>> the test in the stm driver.
+>> 
+>> The main reason prompting this change is that the stm driver
+>> test immediately disabled the peripheral clock after reading
+>> the version, making the bridge read version 0x0 immediately
+>> after in its own probe(), so we move the clock disabling after
+>> the bridge does the version test.
+>> 
+>> Tested on STM32F769 and STM32MP1.
+>> 
+>> Cc: linux-stm32@st-md-mailman.stormreply.com
+>> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
+>> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+>> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+>> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+>> ---
+>> New in v6.
+>> ---
+>>   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 12 +++---------
+>>   1 file changed, 3 insertions(+), 9 deletions(-)
+>> 
+>> diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+>> index 2e1f2664495d0..7218e405d7e2b 100644
+>> --- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+>> +++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+>> @@ -402,15 +402,6 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>>   		goto err_dsi_probe;
+>>   	}
+>>   
+>> -	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+>> -	clk_disable_unprepare(pclk);
+>> -
+>> -	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
+>> -		ret = -ENODEV;
+>> -		DRM_ERROR("bad dsi hardware version\n");
+>> -		goto err_dsi_probe;
+>> -	}
+>> -
+>>   	dw_mipi_dsi_stm_plat_data.base = dsi->base;
+>>   	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
+>>   
+>> @@ -423,6 +414,9 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>>   		goto err_dsi_probe;
+>>   	}
+>>   
+>> +	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+>> +	clk_disable_unprepare(pclk);
+>> +
+>>   	return 0;
+>>   
+>>   err_dsi_probe:
+>> 
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
