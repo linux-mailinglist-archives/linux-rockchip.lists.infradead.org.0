@@ -2,52 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C4591EC5DE
-	for <lists+linux-rockchip@lfdr.de>; Wed,  3 Jun 2020 01:45:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 368D71EC5ED
+	for <lists+linux-rockchip@lfdr.de>; Wed,  3 Jun 2020 01:52:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z5kN61BLCV6G+4ptK4q466WVkfhbHNg4LngOQm3EKGs=; b=AJQ7D+UPxvZ3cs
-	LIa9eGbb+xg3q7BRq7R1yt3KaNmqAVv8lI8PFuXcoaAWK3ZexeeodpIGRK0TY73GT39Tj/gxSUdzj
-	RZ/4xzKDFvax46o+d7Zo25+mbMUZHtkV939PLvbafOeNTcrYDUV9lG5zO6ohYYbhth2CPBta3tWhU
-	vI5X+u+nLJF1ikqtUlHdlkVjgLp6nstrQhQHSKRbQLxGVrSGJOImzH+zMw5RpSZO06TE8UZBgM0+L
-	YjZcy6nWROj6gNdilDRuHAwD4JrdcMlEqgYGmfEHn5ntIp2QUb8NejkUTuGZ/7uQDEM13tPpb+5qG
-	q6+hNClhOAspZYFRycZQ==;
+	List-Owner; bh=jplxHDyyh6ikYDTm2/awE+ySwTJ8LeJbBhh6z6HQPDY=; b=uTixX1yCdZAhRx
+	A4LwtNXVAQhft7TUhRAgYntlnESx0zEVdoy7YvJMEl5QAgF6BUvtaoXF/cPSh4q3+9hVYLH89z8u2
+	t/cilAEMiMVh8SGlHhJLXTXqNVWwZB59nlFazePbewRMY0Jcmll7ICxF/Oe45iG2fT6YByY8ElISX
+	qFPireuy3a7TE7CDvR1znjHQw+NtjN3IG2przrVzL8Dn9N5v17STVXpAwzLHaNKvlt9DChMZEEZWA
+	LPw0IpLieDupxEiNcgLb9/zcirxIqKmy+xxvK5YgHxBrLRAfEIb8QAKz+WsBufbnDDFR7j1XsiQow
+	zI/z6UaAG2AS7OqRw5zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgGah-0007Lv-Ks; Tue, 02 Jun 2020 23:45:07 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jgGhS-0004JB-9p; Tue, 02 Jun 2020 23:52:06 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgGaH-0006vy-1R; Tue, 02 Jun 2020 23:44:42 +0000
+ id 1jgGhI-0004C3-7E; Tue, 02 Jun 2020 23:51:57 +0000
 Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
  [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id F35C52A4;
- Wed,  3 Jun 2020 01:44:37 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 876A22B3;
+ Wed,  3 Jun 2020 01:51:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1591141478;
- bh=0ojJhQ+5X0tRs/HVp41pNWAYkm+b2XP6CmfpaRpOLFY=;
+ s=mail; t=1591141914;
+ bh=Fe8f3kgWX47nIzg78wyxjbab4WD6Saxj6pxZxkB/gRo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oB9Bh2UzB85GNEuF5w63S9wP8P5YAcCEe9txqwibAZuPp4H03fK/jnZJX2mby7zrq
- kPNfdyYlAWtwAmR282cd3qbaUIbNGgpDayWmngUgy9+GRvb/CFtL0lIDPFwpV5J09C
- xdNFBufSSNcU8AU0SCMeNDkNxPsIrvk1n4snIdyU=
-Date: Wed, 3 Jun 2020 02:44:22 +0300
+ b=JhhykH0rs1dR3LZsV2DsnKzuF2z9VlZj4+I2990IxcsJkczDcz7VYPYx26TRo4Hqs
+ pJ3UkFFW7TOPtB1S1AxdP6uT0Jac6CbZ7Z6OJd89o8ZSdD7yQaDvoLg7Lp18AkwXkD
+ rD2FG3r3HaSGN5hYDv+GDvzDB9etxpWO1icCqJDY=
+Date: Wed, 3 Jun 2020 02:51:39 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: sandor.yu@nxp.com
-Subject: Re: [PATCH 7/7] dt-bindings: display: Document Cadence MHDP HDMI/DP
- bindings
-Message-ID: <20200602234422.GR6547@pendragon.ideasonboard.com>
-References: <cover.1590982881.git.Sandor.yu@nxp.com>
- <9fa979f1099f7c02fd746f25002d8a652253d70f.1590982881.git.Sandor.yu@nxp.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v8 04/10] drm: bridge: dw_mipi_dsi: allow bridge daisy
+ chaining
+Message-ID: <20200602235139.GS6547@pendragon.ideasonboard.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-5-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <9fa979f1099f7c02fd746f25002d8a652253d70f.1590982881.git.Sandor.yu@nxp.com>
+In-Reply-To: <20200427081952.3536741-5-adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_164441_239973_69141E1C 
-X-CRM114-Status: GOOD (  20.48  )
+X-CRM114-CacheID: sfid-20200602_165156_408117_D1C56FF0 
+X-CRM114-Status: GOOD (  16.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -74,182 +73,106 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: jernej.skrabec@siol.net, heiko@sntech.de, jonas@kwiboo.se,
- narmstrong@baylibre.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, a.hajda@samsung.com, linux-imx@nxp.com,
- linux-rockchip@lists.infradead.org, dkos@cadence.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Sandor,
+Hi Adrian,
 
 Thank you for the patch.
 
-On Mon, Jun 01, 2020 at 02:17:37PM +0800, sandor.yu@nxp.com wrote:
-> From: Sandor Yu <Sandor.yu@nxp.com>
+On Mon, Apr 27, 2020 at 11:19:46AM +0300, Adrian Ratiu wrote:
+> Up until now the assumption was that the synopsis dsi bridge will
+> directly connect to an encoder provided by the platform driver, but
+> the current practice for drivers is to leave the encoder empty via
+> the simple encoder API and add their logic to their own drm_bridge.
 > 
-> Document the bindings used for the Cadence MHDP HDMI/DP bridge.
+> Thus we need an ablility to connect the DSI bridge to another bridge
+> provided by the platform driver, so we extend the dw_mipi_dsi bind()
+> API with a new "previous bridge" arg instead of just hardcoding NULL.
 > 
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
 > ---
->  .../bindings/display/bridge/cdns,mhdp.yaml    | 46 +++++++++++++++
->  .../devicetree/bindings/display/imx/mhdp.yaml | 59 +++++++++++++++++++
-
-Please split the patch in two.
-
->  2 files changed, 105 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/imx/mhdp.yaml
+> New in v8.
+> ---
+>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c   | 6 ++++--
+>  drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c | 2 +-
+>  include/drm/bridge/dw_mipi_dsi.h                | 5 ++++-
+>  3 files changed, 9 insertions(+), 4 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp.yaml
-> new file mode 100644
-> index 000000000000..aa23feba744a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp.yaml
-> @@ -0,0 +1,46 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause))
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Cadence MHDP TX Encoder
-> +
-> +maintainers:
-> +  - Sandor Yu <Sandoryu@nxp.com>
-> +
-> +description: |
-> +  Cadence MHDP Controller supports one or more of the protocols,
-> +  such as HDMI and DisplayPort.
-> +  Each protocol requires a different FW binaries.
-> +
-> +  This document defines device tree properties for the Cadence MHDP Encoder
-> +  (CDNS MHDP TX). It doesn't constitue a device tree binding
-> +  specification by itself but is meant to be referenced by platform-specific
-> +  device tree bindings.
-> +
-> +  When referenced from platform device tree bindings the properties defined in
-> +  this document are defined as follows. The platform device tree bindings are
-> +  responsible for defining whether each property is required or optional.
-> +
-> +properties:
-> +  reg:
-> +    maxItems: 1
-> +    description: Memory mapped base address and length of the MHDP TX registers.
-> +
-> +  interrupts:
-> +    maxItems: 2
-> +
-> +  interrupt-names:
-> +    - const: plug_in
-> +      description: Hotplug detect interrupter for cable plugin event.
-> +    - const: plug_out
-> +      description: Hotplug detect interrupter for cable plugout event.
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> index 16fd87055e7b7..140ff40fa1b62 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+> @@ -1456,11 +1456,13 @@ EXPORT_SYMBOL_GPL(dw_mipi_dsi_remove);
+>  /*
+>   * Bind/unbind API, used from platforms based on the component framework.
+>   */
+> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct drm_encoder *encoder)
+> +int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi,
+> +		     struct drm_encoder *encoder,
+> +		     struct drm_bridge *prev_bridge)
+>  {
+>  	int ret;
+>  
+> -	ret = drm_bridge_attach(encoder, &dsi->bridge, NULL, 0);
+> +	ret = drm_bridge_attach(encoder, &dsi->bridge, prev_bridge, 0);
 
-Does the IP core really have two different interrupt lines, one for
-hot-plug and one for hot-unplug ? That's a very unusual design.
+Please note that chaining of bridges doesn't work well if multiple
+bridges in the chain try to create a connector. This is why a
+DRM_BRIDGE_ATTACH_NO_CONNECTOR flag has been added, with a helper to
+create a connector for a chain of bridges (drm_bridge_connector_init()).
+This won't play well with the component framework. I would recommend
+using the of_drm_find_bridge() instead in the rockchip driver, and
+deprecating dw_mipi_dsi_bind().
 
-> +
-> +  port:
-> +    type: object
-> +    description: |
-> +      The connectivity of the MHDP TX with the rest of the system is
-> +      expressed in using ports as specified in the device graph bindings defined
-> +      in Documentation/devicetree/bindings/graph.txt. The numbering of the ports
-> +      is platform-specific.
-> diff --git a/Documentation/devicetree/bindings/display/imx/mhdp.yaml b/Documentation/devicetree/bindings/display/imx/mhdp.yaml
-> new file mode 100644
-> index 000000000000..17850cfd1cb1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/mhdp.yaml
-> @@ -0,0 +1,59 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/mhdp.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Cadence MHDP Encoder
-> +
-> +maintainers:
-> +  - Sandor Yu <Sandoryu@nxp.com>
-> +
-> +description: |
-> +  The MHDP transmitter is a Cadence HD Display TX controller IP
-> +  with a companion PHY IP.
-> +  The MHDP supports one or more of the protocols,
-> +  such as HDMI(1.4 & 2.0), DisplayPort(1.2).
-> +  switching between the two modes (HDMI and DisplayPort)
-> +  requires reloading the appropriate FW
-
-Does the IP core integrated in the imx8mp SoCs (as that is what this
-binding targets) support both HDMI and DP ? If not this should be
-reworded to be more specific to the SoC.
-
-> +
-> +  These DT bindings follow the Cadence MHDP TX bindings defined in
-> +  Documentation/devicetree/bindings/display/bridge/cdns,mhdp.yaml with the
-> +  following device-specific properties.
-> +
-> +Properties:
-
-Have you tried validating this with make dt_binding_check ? See
-Documentation/devicetree/writing-schema.rst for more information.
-
-> +  compatible:
-> +    enum:
-> +      - nxp,imx8mq-cdns-hdmi
-> +      - nxp,imx8mq-cdns-dp
-> +
-> +  reg: See cdns,mhdp.yaml.
-
-This isn't how bindings are referenced. You need to reference the parent
-binding with $ref, either globally, or on an individual property basis.
-
-> +
-> +  interrupts: See cdns,mhdp.yaml.
-> +
-> +  interrupt-names: See cdns,mhdp.yaml.
-
-That's it ? No clocks, no power domains, no resets, no PHYs (especially
-given that you mention a PHY companion IP above) ?
-
-> +
-> +  ports: See cdns,mhdp.yaml.
-
-This isn't correct. Please soo of-graph.txt. If can have either one port
-node, or one ports node that contains one of more port subnodes. In this
-case you need at least two ports, one for the input to the HDMI encoder,
-and one for the HDMI output. The latter should be connected to a DT node
-representing the HDMI connector. Yuo can search for "hdmi-connector" in
-the .dts files in the kernel for plenty of examples.
-
-> +
-> +Required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - interrupt-names
-> +  - ports
-> +
-> +Example:
-> +  - |
-> +    mhdp: mhdp@32c00000 {
-> +      compatible = "nxp,imx8mq-cdns-hdmi";
-> +      reg = <0x32c00000 0x100000>;
-> +      interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
-> +                   <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-> +      interrupt-names = "plug_in", "plug_out";
-> +
-> +      ports {
-> +        mhdp_in: endpoint {
-> +          remote-endpoint = <&dcss_out>;
-> +        };
-> +      };
-> +    };
+>  	if (ret) {
+>  		DRM_ERROR("Failed to initialize bridge with drm\n");
+>  		return ret;
+> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> index 3feff0c45b3f7..83ef43be78135 100644
+> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> @@ -929,7 +929,7 @@ static int dw_mipi_dsi_rockchip_bind(struct device *dev,
+>  		return ret;
+>  	}
+>  
+> -	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder);
+> +	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder, NULL);
+>  	if (ret) {
+>  		DRM_DEV_ERROR(dev, "Failed to bind: %d\n", ret);
+>  		return ret;
+> diff --git a/include/drm/bridge/dw_mipi_dsi.h b/include/drm/bridge/dw_mipi_dsi.h
+> index b0e390b3288e8..699b3531f5b36 100644
+> --- a/include/drm/bridge/dw_mipi_dsi.h
+> +++ b/include/drm/bridge/dw_mipi_dsi.h
+> @@ -14,6 +14,7 @@
+>  #include <drm/drm_modes.h>
+>  
+>  struct drm_display_mode;
+> +struct drm_bridge;
+>  struct drm_encoder;
+>  struct dw_mipi_dsi;
+>  struct mipi_dsi_device;
+> @@ -62,7 +63,9 @@ struct dw_mipi_dsi *dw_mipi_dsi_probe(struct platform_device *pdev,
+>  				      const struct dw_mipi_dsi_plat_data
+>  				      *plat_data);
+>  void dw_mipi_dsi_remove(struct dw_mipi_dsi *dsi);
+> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct drm_encoder *encoder);
+> +int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi,
+> +		     struct drm_encoder *encoder,
+> +		     struct drm_bridge *prev_bridge);
+>  void dw_mipi_dsi_unbind(struct dw_mipi_dsi *dsi);
+>  void dw_mipi_dsi_set_slave(struct dw_mipi_dsi *dsi, struct dw_mipi_dsi *slave);
+>  
 
 -- 
 Regards,
