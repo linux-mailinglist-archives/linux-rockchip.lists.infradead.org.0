@@ -2,52 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1D471EB4A0
-	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 06:37:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 563701EB555
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 07:34:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XL8ofInzqYiByrZQRBnmXyKiCIYtfReUnmD3YRbqib8=; b=Py6Nvu6MO3OHjo
-	djEjRX4piA8BfZ8ut1FHuK/bJxpiH9spVnaheZ1aseJVaKQTzeNMbp/fqVMgtFmhCRHgBCbhWkMn5
-	rbJ4WW9K8o+Ut10f5Sb4n7DrUphmFJnPXBv7RflxOspSzke2NkWiTbRQ90ANCa3WH2QuMw4Mv9vh4
-	ODFGti/b+ELsX/aJDCsY2ge1t8sqREucMgQCTuVzOblNaHsLMtEFkhDa0DnQYMAaFdTPdygr798dB
-	4AMsfg2Ku+DKV2+y2UJT+iv32o62t9iIAz+B2MsaYd1DA17gZm7tkCMYaGn/Q8bf3b8OxJH9Pq4Xe
-	LKVKELCQOrg1zzVg1yfw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zFDZ7x3249ZL/vaOqA2ylTM4xNivkageH/9MgRXPD2o=; b=lh8jzWpCUr62i4kOTqiUbkYXI
+	A2cEp7e3I/dBsbcMnMMNqhIVpChLGvj/3HLPaBseVe7IZXMBMzi8wlVIFcNEpyba02T2ZtXnD4rpb
+	iDroHDvR5j8+qOyDnm2CZqEiMkptGRrd6z/s4skscKQOAvCg3GW1l7NCJassxtRWNFDWcxj/2QJa7
+	Dv3wYz6nYYLs5XBwXY+YIzVhFk3ESDAxBuKghTlkVIjc9FZ9UDgvxWfYVtf8A7+/KgITd2j8RANTM
+	/MWdTsXOGAWi9QxmOHIhpZ++f8gMhuyxWl1PX3ws9PKkO63/OH4VNdIckAJPmIHZKD9Tnuth250qw
+	3+GX/6mzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfyfZ-0007gu-2s; Tue, 02 Jun 2020 04:36:57 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jfzZd-0000yS-Q4; Tue, 02 Jun 2020 05:34:53 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfyfU-0007gK-W2
- for linux-rockchip@lists.infradead.org; Tue, 02 Jun 2020 04:36:54 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id D61292A2924
-Message-ID: <0aef6cd5cc7019912a973ad8c5ba5e7b6105baf9.camel@collabora.com>
-Subject: Re: [PATCH] media: rkvdec: Fix H264 scaling list order
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Jonas Karlman <jonas@kwiboo.se>, Hans Verkuil
- <hverkuil-cisco@xs4all.nl>,  Mauro Carvalho Chehab <mchehab@kernel.org>
-Date: Tue, 02 Jun 2020 01:36:37 -0300
-In-Reply-To: <20200522202130.13306-1-jonas@kwiboo.se>
-References: <20200522202130.13306-1-jonas@kwiboo.se>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+ id 1jfzZU-0000rQ-Vi; Tue, 02 Jun 2020 05:34:46 +0000
+Received: from [IPv6:2a01:cb19:8092:cf00:aaa1:59ff:fe08:91d5] (unknown
+ [IPv6:2a01:cb19:8092:cf00:aaa1:59ff:fe08:91d5])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: myjosserand)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id B9CFB2A0C53;
+ Tue,  2 Jun 2020 06:34:39 +0100 (BST)
+Subject: Re: [PATCH v3 1/1] clk: rockchip: rk3288: Handle clock tree for
+ rk3288w
+To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
+References: <20200601151442.156184-1-mylene.josserand@collabora.com>
+ <20200601151442.156184-2-mylene.josserand@collabora.com>
+ <8288442.SvGebX2C5V@diego>
+From: Mylene Josserand <mylene.josserand@collabora.com>
+Message-ID: <f7e98a83-5c4d-6de4-f6bf-1a02d5bfe25a@collabora.com>
+Date: Tue, 2 Jun 2020 07:34:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
+In-Reply-To: <8288442.SvGebX2C5V@diego>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_213653_290052_6C4F2496 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20200601_223445_153510_2BAA5703 
+X-CRM114-Status: GOOD (  20.19  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,195 +66,75 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Courbot <acourbot@chromium.org>, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, linux-rockchip@lists.infradead.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Jeffrey Kardatzke <jkardatzke@chromium.org>,
- Nicolas Dufresne <nicolas.dufresne@collabora.com>, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ kever.yang@rock-chips.com, linux-rockchip@lists.infradead.org,
+ geert@linux-m68k.org, kernel@collabora.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Jonas,
-
-Thanks a lot for the fix! Indeed it fixes
-a few bitstream that had artifacts :)
-
-On Fri, 2020-05-22 at 20:21 +0000, Jonas Karlman wrote:
-> The Rockchip Video Decoder driver is expecting that the values in a
-> scaling list are in zig-zag order and applies the inverse scanning process
-> to get the values in matrix order.
-> 
-> Commit 0b0393d59eb4 ("media: uapi: h264: clarify expected
-> scaling_list_4x4/8x8 order") clarified that the values in the scaling list
-> should already be in matrix order.
-> 
-> Fix this by removing the reordering and change to use two memcpy.
-> 
-> Fixes: cd33c830448b ("media: rkvdec: Add the rkvdec driver")
-> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
-> ---
->  drivers/staging/media/rkvdec/rkvdec-h264.c | 70 +++++++---------------
->  1 file changed, 22 insertions(+), 48 deletions(-)
-> 
-> diff --git a/drivers/staging/media/rkvdec/rkvdec-h264.c b/drivers/staging/media/rkvdec/rkvdec-h264.c
-> index cd4980d06be7..2719f0c66a4a 100644
-> --- a/drivers/staging/media/rkvdec/rkvdec-h264.c
-> +++ b/drivers/staging/media/rkvdec/rkvdec-h264.c
-> @@ -18,11 +18,16 @@
->  /* Size with u32 units. */
->  #define RKV_CABAC_INIT_BUFFER_SIZE	(3680 + 128)
->  #define RKV_RPS_SIZE			((128 + 128) / 4)
-> -#define RKV_SCALING_LIST_SIZE		(6 * 16 + 6 * 64 + 128)
->  #define RKV_ERROR_INFO_SIZE		(256 * 144 * 4)
->  
->  #define RKVDEC_NUM_REFLIST		3
->  
-> +struct rkvdec_scaling_matrix {
-
-How about we call this rkvdec_scaling_list
-or even rkvdec_h264_scaling_list?
-
-It'll make code more readable and easier to grep.
-
-> +	u8 scaling_list_4x4[6][16];
-> +	u8 scaling_list_8x8[6][64];
-> +	u8 padding[128];
-
-Oops, something is wrong here, maybe some
-mistake when porting code around.
-
-Rockchip MPP defines the scaling list size as:
-
-#define RKV_SCALING_LIST_SIZE (6*16 + 2*64 + 128)
-
-Consistently with the fact that 4:4:4 sampling
-is not supported (chroma_format_idc == 3),
-only the first two scaling matrices are used.
-
-Moreover, given all these buffers are specified separately
-(see below), I bet not even the 128 padding bytes
-are needed.
- 
-> +};
-> +
->  struct rkvdec_sps_pps_packet {
->  	u32 info[8];
->  };
-> @@ -86,7 +91,7 @@ struct rkvdec_ps_field {
->  /* Data structure describing auxiliary buffer format. */
->  struct rkvdec_h264_priv_tbl {
->  	s8 cabac_table[4][464][2];
-
-As can be seen, all these buffers can be allocated
-independently, which perhaps could reduce the
-pressure on the DMA allocator.
-
-> -	u8 scaling_list[RKV_SCALING_LIST_SIZE];
-> +	struct rkvdec_scaling_matrix scaling_list;
->  	u32 rps[RKV_RPS_SIZE];
->  	struct rkvdec_sps_pps_packet param_set[256];
->  	u8 err_info[RKV_ERROR_INFO_SIZE];
-
-In particular, I wonder if the error info stuff
-is really required.
-
-I guess we'll want to merge a simple fix,
-so no need to address any of these questions
-for now.
-
-With the struct rkvdec_scaling_matrix rename:
-
-Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
-
-Thanks,
-Ezequiel
-
-> @@ -785,56 +790,25 @@ static void assemble_hw_rps(struct rkvdec_ctx *ctx,
->  	}
->  }
->  
-> -/*
-> - * NOTE: The values in a scaling list are in zig-zag order, apply inverse
-> - * scanning process to get the values in matrix order.
-> - */
-> -static const u32 zig_zag_4x4[16] = {
-> -	0, 1, 4, 8, 5, 2, 3, 6, 9, 12, 13, 10, 7, 11, 14, 15
-> -};
-> -
-> -static const u32 zig_zag_8x8[64] = {
-> -	0,  1,  8, 16,  9,  2,  3, 10, 17, 24, 32, 25, 18, 11,  4,  5,
-> -	12, 19, 26, 33, 40, 48, 41, 34, 27, 20, 13,  6,  7, 14, 21, 28,
-> -	35, 42, 49, 56, 57, 50, 43, 36, 29, 22, 15, 23, 30, 37, 44, 51,
-> -	58, 59, 52, 45, 38, 31, 39, 46, 53, 60, 61, 54, 47, 55, 62, 63
-> -};
-> -
-> -static void reorder_scaling_list(struct rkvdec_ctx *ctx,
-> -				 struct rkvdec_h264_run *run)
-> +static void assemble_hw_scaling_list(struct rkvdec_ctx *ctx,
-> +				     struct rkvdec_h264_run *run)
->  {
->  	const struct v4l2_ctrl_h264_scaling_matrix *scaling = run->scaling_matrix;
-> -	const size_t num_list_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4);
-> -	const size_t list_len_4x4 = ARRAY_SIZE(scaling->scaling_list_4x4[0]);
-> -	const size_t num_list_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8);
-> -	const size_t list_len_8x8 = ARRAY_SIZE(scaling->scaling_list_8x8[0]);
->  	struct rkvdec_h264_ctx *h264_ctx = ctx->priv;
->  	struct rkvdec_h264_priv_tbl *tbl = h264_ctx->priv_tbl.cpu;
-> -	u8 *dst = tbl->scaling_list;
-> -	const u8 *src;
-> -	int i, j;
-> -
-> -	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_4x4) != list_len_4x4);
-> -	BUILD_BUG_ON(ARRAY_SIZE(zig_zag_8x8) != list_len_8x8);
-> -	BUILD_BUG_ON(ARRAY_SIZE(tbl->scaling_list) <
-> -		     num_list_4x4 * list_len_4x4 +
-> -		     num_list_8x8 * list_len_8x8);
-> -
-> -	src = &scaling->scaling_list_4x4[0][0];
-> -	for (i = 0; i < num_list_4x4; ++i) {
-> -		for (j = 0; j < list_len_4x4; ++j)
-> -			dst[zig_zag_4x4[j]] = src[j];
-> -		src += list_len_4x4;
-> -		dst += list_len_4x4;
-> -	}
->  
-> -	src = &scaling->scaling_list_8x8[0][0];
-> -	for (i = 0; i < num_list_8x8; ++i) {
-> -		for (j = 0; j < list_len_8x8; ++j)
-> -			dst[zig_zag_8x8[j]] = src[j];
-> -		src += list_len_8x8;
-> -		dst += list_len_8x8;
-> -	}
-> +	BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_4x4) !=
-> +		     sizeof(scaling->scaling_list_4x4));
-> +	BUILD_BUG_ON(sizeof(tbl->scaling_list.scaling_list_8x8) !=
-> +		     sizeof(scaling->scaling_list_8x8));
-> +
-> +	memcpy(tbl->scaling_list.scaling_list_4x4,
-> +	       scaling->scaling_list_4x4,
-> +	       sizeof(scaling->scaling_list_4x4));
-> +
-> +	memcpy(tbl->scaling_list.scaling_list_8x8,
-> +	       scaling->scaling_list_8x8,
-> +	       sizeof(scaling->scaling_list_8x8));
->  }
->  
->  /*
-> @@ -1126,7 +1100,7 @@ static int rkvdec_h264_run(struct rkvdec_ctx *ctx)
->  	v4l2_h264_build_b_ref_lists(&reflist_builder, h264_ctx->reflists.b0,
->  				    h264_ctx->reflists.b1);
->  
-> -	reorder_scaling_list(ctx, &run);
-> +	assemble_hw_scaling_list(ctx, &run);
->  	assemble_hw_pps(ctx, &run);
->  	assemble_hw_rps(ctx, &run);
->  	config_registers(ctx, &run);
-
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+SGkgSGVpa28sCgpUaGFuayB5b3UgdmVyeSBtdWNoIGZvciB5b3VyIHF1aWNrIHJldmlldyEKCk9u
+IDYvMS8yMCAxMDowOSBQTSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gSGkgTXlsw6huZSwKPiAK
+PiBBbSBNb250YWcsIDEuIEp1bmkgMjAyMCwgMTc6MTQ6NDIgQ0VTVCBzY2hyaWViIE15bMOobmUg
+Sm9zc2VyYW5kOgo+PiBUaGUgcmV2aXNpb24gcmszMjg4dyBoYXMgYSBkaWZmZXJlbnQgY2xvY2sg
+dHJlZSBhYm91dCAiaGNsa192aW8iCj4+IGNsb2NrLCBhY2NvcmRpbmcgdG8gdGhlIEJTUCBrZXJu
+ZWwgY29kZS4KPj4KPj4gVGhpcyBwYXRjaCBoYW5kbGVzIHRoaXMgZGlmZmVyZW5jZSBieSBkZXRl
+Y3Rpbmcgd2hpY2ggZGV2aWNlLXRyZWUKPj4gd2UgYXJlIHVzaW5nLiBJZiBpdCBpcyBhICJyb2Nr
+Y2hpcCxyazMyODgtY3J1IiwgbGV0J3MgcmVnaXN0ZXIKPj4gdGhlIGNsb2NrIHRyZWUgYXMgaXQg
+d2FzIGJlZm9yZS4gSWYgdGhlIGNvbXBhdGlibGUgaXMKPj4gInJvY2tjaGlwLHJrMzI4OHctY3J1
+Iiwgd2Ugd2lsbCBhcHBseSB0aGUgZGlmZmVyZW5jZSBhY2NvcmRpbmcgdG8gdGhpcwo+PiB2ZXJz
+aW9uIG9mIHRoaXMgU29DLgo+Pgo+PiBOb3RpY2VkIHRoYXQgdGhpcyBuZXcgZGV2aWNlLXRyZWUg
+Y29tcGF0aWJsZSBtdXN0IGJlIGhhbmRsZWQgYnkKPj4gYm9vdGxvYWRlci4KPj4KPj4gU2lnbmVk
+LW9mZi1ieTogTXlsw6huZSBKb3NzZXJhbmQgPG15bGVuZS5qb3NzZXJhbmRAY29sbGFib3JhLmNv
+bT4KPiAKPiBhcHByb2FjaCBsb29rcyBnb29kLCBidXQgeW91IHNob3VsZCBhbHNvIHVwZGF0ZSB0
+aGUgY2xvY2stY29udHJvbGxlcgo+IGR0LWJpbmRpbmcgZm9yIHRoZSBuZXcgY29tcGF0aWJsZS4K
+Ck9rYXksIEkgd2lsbC4gQXMgaXQgd2FzIG5vdCBpbXBsZW1lbnRlZCBpbiB0aGUgS2VybmVsLCBJ
+IGRpZG4ndCBrbm93IGlmIApJIHNob3VsZCBhZGQgaXQuCgo+IAo+IFN0eWxlIG5pdHMgYmVsb3cu
+Cj4gCj4gCj4+IC0tLQo+PiAgIGRyaXZlcnMvY2xrL3JvY2tjaGlwL2Nsay1yazMyODguYyB8IDIw
+ICsrKysrKysrKysrKysrKysrKy0tCj4+ICAgMSBmaWxlIGNoYW5nZWQsIDE4IGluc2VydGlvbnMo
+KyksIDIgZGVsZXRpb25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2Nsay9yb2NrY2hp
+cC9jbGstcmszMjg4LmMgYi9kcml2ZXJzL2Nsay9yb2NrY2hpcC9jbGstcmszMjg4LmMKPj4gaW5k
+ZXggY2MyYTE3N2JiZGJmLi41MDE4ZDJmMWU1NGMgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvY2xr
+L3JvY2tjaGlwL2Nsay1yazMyODguYwo+PiArKysgYi9kcml2ZXJzL2Nsay9yb2NrY2hpcC9jbGst
+cmszMjg4LmMKPj4gQEAgLTQyNSw4ICs0MjUsNiBAQCBzdGF0aWMgc3RydWN0IHJvY2tjaGlwX2Ns
+a19icmFuY2ggcmszMjg4X2Nsa19icmFuY2hlc1tdIF9faW5pdGRhdGEgPSB7Cj4+ICAgCUNPTVBP
+U0lURSgwLCAiYWNsa192aW8wIiwgbXV4X3BsbF9zcmNfY3BsbF9ncGxsX3VzYjQ4MG1fcCwgQ0xL
+X0lHTk9SRV9VTlVTRUQsCj4+ICAgCQkJUkszMjg4X0NMS1NFTF9DT04oMzEpLCA2LCAyLCBNRkxB
+R1MsIDAsIDUsIERGTEFHUywKPj4gICAJCQlSSzMyODhfQ0xLR0FURV9DT04oMyksIDAsIEdGTEFH
+UyksCj4+IC0JRElWKDAsICJoY2xrX3ZpbyIsICJhY2xrX3ZpbzAiLCAwLAo+PiAtCQkJUkszMjg4
+X0NMS1NFTF9DT04oMjgpLCA4LCA1LCBERkxBR1MpLAo+PiAgIAlDT01QT1NJVEUoMCwgImFjbGtf
+dmlvMSIsIG11eF9wbGxfc3JjX2NwbGxfZ3BsbF91c2I0ODBtX3AsIENMS19JR05PUkVfVU5VU0VE
+LAo+PiAgIAkJCVJLMzI4OF9DTEtTRUxfQ09OKDMxKSwgMTQsIDIsIE1GTEFHUywgOCwgNSwgREZM
+QUdTLAo+PiAgIAkJCVJLMzI4OF9DTEtHQVRFX0NPTigzKSwgMiwgR0ZMQUdTKSwKPj4gQEAgLTgx
+OSw2ICs4MTcsMTYgQEAgc3RhdGljIHN0cnVjdCByb2NrY2hpcF9jbGtfYnJhbmNoIHJrMzI4OF9j
+bGtfYnJhbmNoZXNbXSBfX2luaXRkYXRhID0gewo+PiAgIAlJTlZFUlRFUigwLCAicGNsa19pc3Ai
+LCAicGNsa19pc3BfaW4iLCBSSzMyODhfQ0xLU0VMX0NPTigyOSksIDMsIElGTEFHUyksCj4+ICAg
+fTsKPj4gICAKPj4gK3N0YXRpYyBzdHJ1Y3Qgcm9ja2NoaXBfY2xrX2JyYW5jaCByazMyODh3X2hj
+bGt2aW9fYnJhbmNoW10gX19pbml0ZGF0YSA9IHsKPj4gKwlESVYoMCwgImhjbGtfdmlvIiwgImFj
+bGtfdmlvMSIsIDAsCj4+ICsJICAgIFJLMzI4OF9DTEtTRUxfQ09OKDI4KSwgOCwgNSwgREZMQUdT
+KSwKPiAKPiBwbGVhc2Uga2VlcCBpbmRlbnRhdGlvbnMgYXMgdGhleSB3ZXJlLCB0aGUgc3ViLWxp
+bmVzIHN0YXJ0aW5nIHdoZXJlIHRoZXkKPiBhcmUgaXMgYWN0dWFsbHkgaW50ZW50aW9uYWwgOi0p
+CgpPdXBzLCBJIGRpZG4ndCBrbm93LCBJIHdpbGwgdXBkYXRlIHRoaXMgaW4gbXkgVjQuCgo+IAo+
+IAo+PiArfTsKPj4gKwo+PiArc3RhdGljIHN0cnVjdCByb2NrY2hpcF9jbGtfYnJhbmNoIHJrMzI4
+OF9oY2xrdmlvX2JyYW5jaFtdIF9faW5pdGRhdGEgPSB7Cj4+ICsJRElWKDAsICJoY2xrX3ZpbyIs
+ICJhY2xrX3ZpbzAiLCAwLAo+PiArCSAgICBSSzMyODhfQ0xLU0VMX0NPTigyOCksIDgsIDUsIERG
+TEFHUyksCj4gCj4gc2FtZSBoZXJlCgpzYW1lIGhlcmUKCj4gCj4+ICt9Owo+PiArCj4+ICAgc3Rh
+dGljIGNvbnN0IGNoYXIgKmNvbnN0IHJrMzI4OF9jcml0aWNhbF9jbG9ja3NbXSBfX2luaXRjb25z
+dCA9IHsKPj4gICAJImFjbGtfY3B1IiwKPj4gICAJImFjbGtfcGVyaSIsCj4+IEBAIC05MzYsNiAr
+OTQ0LDE0IEBAIHN0YXRpYyB2b2lkIF9faW5pdCByazMyODhfY2xrX2luaXQoc3RydWN0IGRldmlj
+ZV9ub2RlICpucCkKPj4gICAJCQkJICAgUkszMjg4X0dSRl9TT0NfU1RBVFVTMSk7Cj4+ICAgCXJv
+Y2tjaGlwX2Nsa19yZWdpc3Rlcl9icmFuY2hlcyhjdHgsIHJrMzI4OF9jbGtfYnJhbmNoZXMsCj4+
+ICAgCQkJCSAgQVJSQVlfU0laRShyazMyODhfY2xrX2JyYW5jaGVzKSk7Cj4+ICsKPj4gKwlpZiAo
+b2ZfZGV2aWNlX2lzX2NvbXBhdGlibGUobnAsICJyb2NrY2hpcCxyazMyODh3LWNydSIpKQo+PiAr
+CQlyb2NrY2hpcF9jbGtfcmVnaXN0ZXJfYnJhbmNoZXMoY3R4LCByazMyODh3X2hjbGt2aW9fYnJh
+bmNoLAo+PiArCQkJCQkgICAgICAgQVJSQVlfU0laRShyazMyODh3X2hjbGt2aW9fYnJhbmNoKSk7
+Cj4+ICsJZWxzZQo+PiArCQlyb2NrY2hpcF9jbGtfcmVnaXN0ZXJfYnJhbmNoZXMoY3R4LCByazMy
+ODhfaGNsa3Zpb19icmFuY2gsCj4+ICsJCQkJCSAgICAgICBBUlJBWV9TSVpFKHJrMzI4OF9oY2xr
+dmlvX2JyYW5jaCkpOwo+PiArCj4+ICAgCXJvY2tjaGlwX2Nsa19wcm90ZWN0X2NyaXRpY2FsKHJr
+MzI4OF9jcml0aWNhbF9jbG9ja3MsCj4+ICAgCQkJCSAgICAgIEFSUkFZX1NJWkUocmszMjg4X2Ny
+aXRpY2FsX2Nsb2NrcykpOwo+PiAgIAo+PgoKQmVzdCByZWdhcmRzLApNeWzDqG5lCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpMaW51eC1yb2NrY2hpcCBt
+YWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXJvY2tjaGlwCg==
