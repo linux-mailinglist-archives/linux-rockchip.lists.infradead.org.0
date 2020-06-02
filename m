@@ -2,53 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4E8D1EB70D
-	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 10:08:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00C5D1EBBD9
+	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 14:39:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O8AOeqWue1XLRt0eKKwZDAutv2LMBNh98tljX9SOa3k=; b=KJt2aUXg+VtQ+F
-	rz4pLGJFGIYW1Esykn3OvR8H9ebgXs7Y1cHDGATYI6RxiuVIklE8kLVEaVpfWP3ww19/BSk0cBrMf
-	rcndp+KhUiMOkgJ0ouf9j3CaaLUV5hEB2+kFF8TnbrXlqigbAS8VywqX6JNE9UAYM4flia5RHxc9F
-	1W07tfJ9uVXyfvB9TjfqYAyp/BrLyhA29eFkpLnUYi6fnSYnVBlYVScoRQQelJFbuOJd8QyI2/xfl
-	TTjfV0P97gzI8VyUBQlegYqoRIkLniI5VFwZZwstUspC3M3S4gTYojuZrXeEDQZafiYgGlLtCjl42
-	u64ODDTloufqbk7OYyHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gdHI2PPyFIgFFYwclRM/9PKsDGRP4Q0Mvzfpcu2ZKOs=; b=nvVILHiTeWJ7bMfjfQhD+ogFV
+	dvnrDzHIFeZ1wanw/uAeReBVeprFYkjprWfWQ2FSCDJX2y0z2NVfzmx70XZOK43Ft28deeMjOEy7X
+	UEQQTjKatUsAQ3Zyf9hiGplgBfOW4SOK3nO7tEWzJNXPDy7HiUdJ+uWgOrte+Eqf9dfgnfOimqyqm
+	KOpO563suLm9SC4S1MvPnIbeykV+I7PFswKdNngAaAm6CPaDvP7FK3mnMiINRymNtKVmSOHNkz+zD
+	z2Mo0JutfNz+8X5IB7dyYupAPsE/0AII/l+yq3pCgRigOLIVS2+IFeulIiDlRbUP5ve2Pg996w4Rk
+	WFdDWkLHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg1xn-0000LY-NH; Tue, 02 Jun 2020 08:07:59 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jg6CX-0002Pm-H3; Tue, 02 Jun 2020 12:39:29 +0000
+Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg1xC-00089N-Kh; Tue, 02 Jun 2020 08:07:24 +0000
-Received: from ni.home (unknown [IPv6:2a01:cb19:8092:cf00:aaa1:59ff:fe08:91d5])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: myjosserand)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 9AADB2A2ADE;
- Tue,  2 Jun 2020 09:07:18 +0100 (BST)
-From: =?UTF-8?q?Myl=C3=A8ne=20Josserand?= <mylene.josserand@collabora.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, heiko@sntech.de,
- robh+dt@kernel.org
-Subject: [PATCH v4 2/2] dt-bindings: clocks: rk3288: add rk3288w compatible
-Date: Tue,  2 Jun 2020 10:06:44 +0200
-Message-Id: <20200602080644.11333-3-mylene.josserand@collabora.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200602080644.11333-1-mylene.josserand@collabora.com>
-References: <20200602080644.11333-1-mylene.josserand@collabora.com>
+ id 1jg6CM-0002GZ-3V; Tue, 02 Jun 2020 12:39:19 +0000
+Received: by mail-ej1-x644.google.com with SMTP id f7so12582967ejq.6;
+ Tue, 02 Jun 2020 05:39:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=F1vjzv7szM2SvYyH6cUhGI5pKgsWnnEULj32MB0yFS4=;
+ b=WYnvAJWjcIH5V3n93yd+hBCgHBYATbMf4IhCsfwQ9Oy1ZM9Z6rPS+WbFRPRAFWV/bF
+ g8NVrkY1eAE3itDiEE0aGbFh82DXnCYGwNCAVEFB9InkZi2h89PET4FN6iEgxXtQf0uv
+ Tx1pit9Jd6xv3AdFKIWO7ZejWVHuRhkC878hAEFOiQFDje52U6ZlKNLeqXVPUoQX4T4e
+ GB7+N4Vxwux1TDzFrN8dajdxWthW3Hz1N2MRMmG9WVU48aO+F4QH0DSedqbufQ+5ESWw
+ ZkycrkFkAvLKMSlCKPX3yzohcyD9cGBxC439RRXOlwZ/WsIsfF6eXyxeDckOKQLJ9FRJ
+ WJtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=F1vjzv7szM2SvYyH6cUhGI5pKgsWnnEULj32MB0yFS4=;
+ b=q1+qlGpbb/ssqPLy9b2OWwkthXEuTpDv0HqmFCRNUxcKCAaxAjHy9nBcTUeQQSW+0u
+ brhggdFI/IH/pJ1OtDQoWQarMpR6H6i046TYiR/hSECy0jfWebbnj/oLkvOpQg27AodJ
+ sf77OG/CGFArvTiVTZhql5fGlg6HdUgeAiu1ZBd5lDMx2xJL+tFct0gwXhhpjksdd9CF
+ U8MbTDBBN6j6HcpE1I76GHGspChs+X8kzx3YcP/B2z0VdQJJ3/n0XQElYhBMo2n9xxpC
+ qfoTVeGbbO2zIVzbYUlFNYgqMU4AOBwOLn6FVdOBzluJTz/MT/iEs7cGzoStCO2oOElk
+ 22Rg==
+X-Gm-Message-State: AOAM530gj8SiY8muuEcm1hm5/QiUPlVIwpZjM42w6u9dIPFl0js9rROY
+ enz8QhpG0xdC8gPUyz9cUBM=
+X-Google-Smtp-Source: ABdhPJy0URsgXsVIryc33w0XdDF5+UsNv9pCt38qFg7zKESxBcV+HSUzFeWuuPBLGmUt+XridHj6UQ==
+X-Received: by 2002:a17:906:7ad3:: with SMTP id
+ k19mr22505707ejo.464.1591101556221; 
+ Tue, 02 Jun 2020 05:39:16 -0700 (PDT)
+Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
+ by smtp.gmail.com with ESMTPSA id dc8sm1522400edb.10.2020.06.02.05.39.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 02 Jun 2020 05:39:14 -0700 (PDT)
+Date: Tue, 2 Jun 2020 14:39:14 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH] pwm: rockchip: simplify rockchip_pwm_get_state()
+Message-ID: <20200602123914.GA3360525@ulmo>
+References: <20190919091728.24756-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
+In-Reply-To: <20190919091728.24756-1-linux@rasmusvillemoes.dk>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_010722_833795_DD9C29BB 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200602_053918_143750_594281F1 
+X-CRM114-Status: GOOD (  13.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,41 +98,79 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mylene.josserand@collabora.com,
+Cc: linux-pwm@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- kernel@collabora.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ David Wu <david.wu@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6619222292248575673=="
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-QWRkIHRoZSBwb3NzaWJsZSBjb21wYXRpYmxlICJyb2NrY2hpcCxyazMyODh3LWNydSIgdGhhdCBo
-YW5kbGVzCnRoZSBkaWZmZXJlbmNlIGJldHdlZW4gdGhlIHJrMzI4OCBhbmQgdGhlIG5ldyByZXZp
-c2lvbiByazMyODh3LgoKVGhpcyBjb21wYXRpYmxlIHdpbGwgYmUgYWRkZWQgYnkgYm9vdGxvYWRl
-cnMuCgpTaWduZWQtb2ZmLWJ5OiBNeWzDqG5lIEpvc3NlcmFuZCA8bXlsZW5lLmpvc3NlcmFuZEBj
-b2xsYWJvcmEuY29tPgotLS0KIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL3JvY2tjaGlw
-LHJrMzI4OC1jcnUudHh0ICAgICB8IDggKysrKysrKy0KIDEgZmlsZSBjaGFuZ2VkLCA3IGluc2Vy
-dGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2Rldmlj
-ZXRyZWUvYmluZGluZ3MvY2xvY2svcm9ja2NoaXAscmszMjg4LWNydS50eHQgYi9Eb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svcm9ja2NoaXAscmszMjg4LWNydS50eHQKaW5k
-ZXggOGNiNDdjMzliYTUzLi5iZjNhOWVjMTkyNDEgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9jbG9jay9yb2NrY2hpcCxyazMyODgtY3J1LnR4dAorKysgYi9E
-b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svcm9ja2NoaXAscmszMjg4LWNy
-dS50eHQKQEAgLTQsOSArNCwxNSBAQCBUaGUgUkszMjg4IGNsb2NrIGNvbnRyb2xsZXIgZ2VuZXJh
-dGVzIGFuZCBzdXBwbGllcyBjbG9jayB0byB2YXJpb3VzCiBjb250cm9sbGVycyB3aXRoaW4gdGhl
-IFNvQyBhbmQgYWxzbyBpbXBsZW1lbnRzIGEgcmVzZXQgY29udHJvbGxlciBmb3IgU29DCiBwZXJp
-cGhlcmFscy4KIAorQSByZXZpc2lvbiBvZiB0aGlzIFNvQyBpcyBhdmFpbGFibGU6IHJrMzI4OHcu
-IFRoZSBjbG9jayB0cmVlIGlzIGEgYml0CitkaWZmZXJlbnQgc28gYW5vdGhlciBkdC1jb21wYXRp
-YmxlIGlzIGF2YWlsYWJsZS4gTm90aWNlZCB0aGF0IGl0IGlzIG9ubHkKK3NldHRpbmcgdGhlIGRp
-ZmZlcmVuY2UgYnV0IHRoZXJlIGlzIG5vIGF1dG9tYXRpYyByZXZpc2lvbiBkZXRlY3Rpb24uIFRo
-aXMKK3Nob3VsZCBiZSBwZXJmb3JtZWQgYnkgYm9vdGxvYWRlcnMuCisKIFJlcXVpcmVkIFByb3Bl
-cnRpZXM6CiAKLS0gY29tcGF0aWJsZTogc2hvdWxkIGJlICJyb2NrY2hpcCxyazMyODgtY3J1Igor
-LSBjb21wYXRpYmxlOiBzaG91bGQgYmUgInJvY2tjaGlwLHJrMzI4OC1jcnUiIG9yICJyb2NrY2hp
-cCxyazMyODh3LWNydSIgaW4KKyAgY2FzZSBvZiB0aGlzIHJldmlzaW9uIG9mIFJvY2tjaGlwIHJr
-MzI4OC4KIC0gcmVnOiBwaHlzaWNhbCBiYXNlIGFkZHJlc3Mgb2YgdGhlIGNvbnRyb2xsZXIgYW5k
-IGxlbmd0aCBvZiBtZW1vcnkgbWFwcGVkCiAgIHJlZ2lvbi4KIC0gI2Nsb2NrLWNlbGxzOiBzaG91
-bGQgYmUgMS4KLS0gCjIuMjYuMgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdApMaW51eC1yb2NrY2hpcEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtcm9ja2NoaXAK
+
+--===============6619222292248575673==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="IJpNTDwzlM2Ie8A6"
+Content-Disposition: inline
+
+
+--IJpNTDwzlM2Ie8A6
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Sep 19, 2019 at 11:17:27AM +0200, Rasmus Villemoes wrote:
+> The way state->enabled is computed is rather convoluted and hard to
+> read - both branches of the if() actually do the exact same thing. So
+> remove the if(), and further simplify "<boolean condition> ? true :
+> false" to "<boolean condition>".
+>=20
+> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> ---
+> I stumbled on this while trying to understand how the pwm subsystem
+> works. This patch is a semantic no-op, but it's also possible that,
+> say, the first branch simply contains a "double negative" so either
+> the !=3D should be =3D=3D or the "false : true" should be "true : false".
+>=20
+>  drivers/pwm/pwm-rockchip.c | 7 +------
+>  1 file changed, 1 insertion(+), 6 deletions(-)
+
+I've applied this. Irrespective of any feedback David would have this is
+correct and a nice simplification.
+
+Thierry
+
+--IJpNTDwzlM2Ie8A6
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7WSHEACgkQ3SOs138+
+s6EIvA//U+YBcRa/yOWyp3jhnv0UxhIHPIk4tcP1l5N4cNtnj23Y4VCdv7baJM4M
+k2OKqKanjnp0AROTYeu150CEqI+xXuND8W7PKRIcCTLkS2Gy7WBXh1ezlCRupzyH
+uYRPi+PY5ZkX/owSFRy+2Ii5o5ywzPc5aH6hqsLfKGzkUrJA/wFsTH85JfmEwwTu
+8WOYkvO8zGqaA32B5Orx42x4jH020aa/PorZsl1WXjEnqN7zc0Ke5CZxZN/puoE+
+YuTAqG9NDMFiZzkeN2vHbuafUyBk0zSRiz+/1KTkKPnubJ0bLncbCZRonghCCCNV
+3hWEB8Fm5pP9mo5Ht4q6Z4or2JkuWbcu3IwyE9SrerLtcTbkbCqaU3kkvKFm72Gy
+QN2iUJiGHk4i7PYqNEAWfQ9i16U7+2nbb6rroHiHcKR8G1boWJcwyg6dwVto5uUN
+47k4J8HTAZBsDysAH4GVavggIig9WwMMqprGhVRA7CLhMtp5i/g+9fyN6OmxmwAO
+9N4Sxs/ScWdReU63b0DbWRdEQa9OVK0BWz13uoESETZcfeH9ggZpY2EDBQ96KRY5
+cG9Ka88WfHJJ7qth/PcHsu94fFnbcPkZeca16guCWoYIi5SdCJeDuPVfbjV1xn9T
+Fu/bhyvbAecyGACpTbIwZb5DhtT4HYr0IX4Q4mJ8PfM8b0BdR4o=
+=OaiW
+-----END PGP SIGNATURE-----
+
+--IJpNTDwzlM2Ie8A6--
+
+
+--===============6619222292248575673==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+--===============6619222292248575673==--
+
