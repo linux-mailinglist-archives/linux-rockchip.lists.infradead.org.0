@@ -2,136 +2,59 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791E61EC43D
-	for <lists+linux-rockchip@lfdr.de>; Tue,  2 Jun 2020 23:17:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 250401EC5B7
+	for <lists+linux-rockchip@lfdr.de>; Wed,  3 Jun 2020 01:29:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Cc:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qB5/RF5jLI9KR7HayaYPu/2CNfS4Jd+NHpGWSXI9//o=; b=FAuo3H9x2mT9x1N1JYJIEJx66
-	/+e2488wHKRI1rG8QD7Eq0A3jLPJX7nWPFDdWMWe+9b0/dLcy2tRgofg27NM8QFK9SDZI/BXDgA6W
-	R8gIlNP6yQZBj3lzXGdeYWPgXN9eu+Kq42ZtNxV/GrgYqPZZK13kysijYdT0GH+DPumkFy4XDf4Ue
-	pKrJG+MFBWu4x32/YZPbbxuoTlDATGjHYZY8miEYgad/qGhyksIq632xei1BDDMcG2O2fufLbKEud
-	nm+hlflLabZYPadsNY61Z8mm39uAmbKAbRZBIIdKHLn/uE/IFe7kW1XzvwiI6+obLDmPzsTzVx93k
-	Yp/+1Fdew==;
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ShMMscB3wmcpL9S81TNmrJxzM3pwWhkfWPAWrTtFxmI=; b=CG44/ZkD10hhnx
+	Zx+yrLZmfuBZQA6lkkUWOwqmw3vbvefV9mcmMxdbXkqN8FlxbOfbdi2Znp5DykdvlhSkAA8chuP9c
+	GErRZsp9wS6BYq/ewgpJUlj7bZajCGE7ot1Y0k20uVC/V9css8mP7IeNdJb62uFrv4mHqNAJowNNy
+	SLv/ouM4eKFI62ofe+divGFZGTbLRoUW5WcSK+wW/r5Ay+xz9B4TbBRxN3GHamIF02Lg1ZyJyewWd
+	PSg/7mfwylgaVGOHUgi9Jiji3XKaymAqHGR8hwx3333THHysvJepradiz7GfzJSvly8sQUtnyhJmc
+	G1DPtJDuOnnua4Tsjurg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgEHr-0005dj-Eq; Tue, 02 Jun 2020 21:17:31 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jgGLK-0005eh-06; Tue, 02 Jun 2020 23:29:14 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgEHo-0005cu-1D
- for linux-rockchip@lists.infradead.org; Tue, 02 Jun 2020 21:17:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591132645;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:mime-version:mime-version:
- content-type:content-type:in-reply-to:in-reply-to:  references:references;
- bh=Ylu/HiOGtyIh3U7JFEU/kaSkFMIS4f2I77a/faIj58k=;
- b=apb7WPvjn+ZpTogqKQgf9Q3eOWQwpMH0QjPyM1BP286Lp273Jz2xnmcrh9sgyocbVJ+kAY
- ehOXabtgSFgqZkkPeyxZWPFSiIwQOGp31x+7Eui7MK33yC+VwO0C6GwjN2yu9klyEGjXmH
- hRLyBBrzxCvoKZBP9/ZeYKm6NynvMX8=
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com
- [209.85.160.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-3-k8B_cuvoMEuYaBo3We9pWQ-1; Tue, 02 Jun 2020 17:17:19 -0400
-X-MC-Unique: k8B_cuvoMEuYaBo3We9pWQ-1
-Received: by mail-qt1-f199.google.com with SMTP id y25so15430921qtb.6
- for <linux-rockchip@lists.infradead.org>; Tue, 02 Jun 2020 14:17:19 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:reply-to
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to;
- bh=Ylu/HiOGtyIh3U7JFEU/kaSkFMIS4f2I77a/faIj58k=;
- b=Fvz49RUPPu4ASrZjo3Ej4zYDe4a94YrzyGVwLlv7RWjD0/WsWu1K+b52BWh6j561Lo
- uCJUn7F+Z0gkiRMlsKv9/wB9dxUXKkrVmW5ceoEcGNJOwLIopT1u6cVuNzJBXd8l+E+u
- RcMnfQoUh31y6s+Y610RZGFbZabde3BeTUw5YvuXZkzbbi7GrsJnWOF3J+7NucZvgqVa
- 8lL3Sxz47SvnapwT3pnIlgdEneyKrLd+103CWFiLII4a44GWXGti+WhEnShGwQTTLCZp
- +GBwJKennV+ZrxpLmc3IWdpZjASXE6hO5KOu/EuTqixs7Npln0EfWA5VrJ+QL+3U9XhF
- vGeA==
-X-Gm-Message-State: AOAM532yt2wPbk9oNawkYxFzTKTt4IXksJT69xJKtYQ/Xzoada0/LzAo
- EPIjWztjMy1UGJXH4JMknFAkRUNuTvpqryf32p8o0/CkxGvY3IkW46wz+EY2zkVG6dxmH4SLkgB
- OQ2/xHLLtRtBj0TU0cI/4vKM6XVWK+WEl
-X-Received: by 2002:ad4:4572:: with SMTP id o18mr4280467qvu.228.1591132639431; 
- Tue, 02 Jun 2020 14:17:19 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJyjUlzm0vhI6fKGjvvF8hVsaVisMes9o90lVEfQF4r2oAsbB6iugyCZPUzy6UK1t6uFVWKiBA==
-X-Received: by 2002:ad4:4572:: with SMTP id o18mr4280428qvu.228.1591132639109; 
- Tue, 02 Jun 2020 14:17:19 -0700 (PDT)
-Received: from localhost (ip70-163-223-149.ph.ph.cox.net. [70.163.223.149])
- by smtp.gmail.com with ESMTPSA id l9sm3244877qki.90.2020.06.02.14.17.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Jun 2020 14:17:18 -0700 (PDT)
-Date: Tue, 2 Jun 2020 14:17:16 -0700
-From: Jerry Snitselaar <jsnitsel@redhat.com>
-To: Joerg Roedel <joro@8bytes.org>, Lu Baolu <baolu.lu@linux.intel.com>,
- Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>, Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Rob Clark <robdclark@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org,
- linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
-Subject: Re: [PATCH v2 00/33] iommu: Move iommu_group setup to IOMMU core code
-Message-ID: <20200602211716.mcwacflxvh7kycya@cantor>
-Mail-Followup-To: Joerg Roedel <joro@8bytes.org>,
- Lu Baolu <baolu.lu@linux.intel.com>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- David Woodhouse <dwmw2@infradead.org>,
- Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Rob Clark <robdclark@gmail.com>, Heiko Stuebner <heiko@sntech.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-s390@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org,
- linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org
-References: <20200414131542.25608-1-joro@8bytes.org>
- <20200529221623.qc6twmpzryh7nkvb@cantor>
- <20200601104240.7f5xhz7gooqhaq4n@cantor>
- <47711845-98ee-95b8-aa95-423a36ed9741@linux.intel.com>
- <20200602000236.j4m3jvluzdhjngdc@cantor>
- <20200602142312.GJ14598@8bytes.org>
- <20200602163806.o5dpj2tpemwdzyiw@cantor>
+ id 1jgGLA-0005Wq-TT; Tue, 02 Jun 2020 23:29:06 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id B9A4F2A4;
+ Wed,  3 Jun 2020 01:28:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1591140535;
+ bh=lXkvj1T0Wpo9a3y6ncv9G8LcEGUh4n2+D7BDgxV7xmQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=O+jYNNIuc7Edhz9qSOLPWtjOOspHJR6sOJ1VTxt8mWv7PTUD4KHv7Bi52BjyGkW/r
+ SPcKr1108TkGVpYbGcMD7VIXIU62iM61DoNwRVoD/AdEqW+0hQ9RoWYbslQsQwt1yr
+ +GtD4Yiq4fY+j0DmdUIkbriof9U9ZSvbUBZh1Hwg=
+Date: Wed, 3 Jun 2020 02:28:40 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Emil Velikov <emil.l.velikov@gmail.com>
+Subject: Re: [PATCH 1/7] drm/rockchip: prepare common code for cdns and rk
+ dpi/dp driver
+Message-ID: <20200602232840.GP6547@pendragon.ideasonboard.com>
+References: <cover.1590982881.git.Sandor.yu@nxp.com>
+ <d3d707cf37e7928a839071242c752779061cc094.1590982881.git.Sandor.yu@nxp.com>
+ <CACvgo52NeUSQV5p8+4DkCjpkv12cs8fCkQqy4MFn8pVaorVaHg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200602163806.o5dpj2tpemwdzyiw@cantor>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <CACvgo52NeUSQV5p8+4DkCjpkv12cs8fCkQqy4MFn8pVaorVaHg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_141728_154666_5AF0DDCF 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200602_162905_099555_C216FD5B 
+X-CRM114-Status: GOOD (  17.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -139,8 +62,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,62 +74,86 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Reply-To: Jerry Snitselaar <jsnitsel@redhat.com>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, sandor.yu@nxp.com,
+ Neil Armstrong <narmstrong@baylibre.com>, Sandy Huang <hjc@rock-chips.com>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>,
+ "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-rockchip <linux-rockchip@lists.infradead.org>, dkos@cadence.com,
+ LAKML <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue Jun 02 20, Jerry Snitselaar wrote:
->On Tue Jun 02 20, Joerg Roedel wrote:
->>Hi Jerry,
->>
->>On Mon, Jun 01, 2020 at 05:02:36PM -0700, Jerry Snitselaar wrote:
->>>
->>>Yeah, that will solve the panic.
->>>
->>
->>If you still see the kdump faults, can you please try with the attached
->>diff? I was not able to reproduce them in my setup.
->>
->>Regards,
->>
->>	Joerg
->>
->
->I have another hp proliant server now, and reproduced. I will have the
->patch below tested shortly. Minor change, I switched group->domain to
->domain since group isn't an argument, and *data being passed in comes
->from group->domain anyways.
->
+On Tue, Jun 02, 2020 at 02:55:52PM +0100, Emil Velikov wrote:
+> On Mon, 1 Jun 2020 at 07:29, <sandor.yu@nxp.com> wrote:
+> >
+> > From: Sandor Yu <Sandor.yu@nxp.com>
+> >
+> > - Extracted common fields from cdn_dp_device to a new cdns_mhdp_device
+> >   structure which will be used by two separate drivers later on.
+> > - Moved some datatypes (audio_format, audio_info, vic_pxl_encoding_format,
+> >   video_info) from cdn-dp-core.c to cdn-dp-reg.h.
+> > - Changed prefixes from cdn_dp to cdns_mhdp
+> >     cdn -> cdns to match the other Cadence's drivers
+> >     dp -> mhdp to distinguish it from a "just a DP" as the IP underneath
+> >       this registers map can be a HDMI (which is internally different,
+> >       but the interface for commands, events is pretty much the same).
+> > - Modified cdn-dp-core.c to use the new driver structure and new function
+> >   names.
+> > - writel and readl are replaced by cdns_mhdp_bus_write and
+> >   cdns_mhdp_bus_read.
+> >
+> The high-level idea is great - split, refactor and reuse the existing drivers.
+> 
+> Although looking at the patches themselves - they seems to be doing
+> multiple things at once.
+> As indicated by the extensive list in the commit log.
+> 
+> I would suggest splitting those up a bit, roughly in line of the
+> itemisation as per the commit message.
+> 
+> Here is one hand wavy way to chunk this patch:
+>  1) use put_unalligned*
+>  2) 'use local variable dev' style of changes (as seem in cdn_dp_clk_enable)
+>  3) add writel/readl wrappers
+>  4) hookup struct cdns_mhdp_device, keep dp->mhdp detail internal.
+> The cdn-dp-reg.h function names/signatures will stay the same.
+>  5) finalize the helpers - use mhdp directly, rename
 
-Looks like it solves problem for both the epyc system, and the hp proliant
-server,
+I second this, otherwise review is very hard.
 
->>diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
->>index b5ea203f6c68..5a6d509f72b6 100644
->>--- a/drivers/iommu/iommu.c
->>+++ b/drivers/iommu/iommu.c
->>@@ -1680,8 +1680,12 @@ static void probe_alloc_default_domain(struct bus_type *bus,
->>static int iommu_group_do_dma_attach(struct device *dev, void *data)
->>{
->>	struct iommu_domain *domain = data;
->>+	int ret = 0;
->>
->>-	return __iommu_attach_device(domain, dev);
->>+	if (!iommu_is_attach_deferred(group->domain, dev))
->>+		ret = __iommu_attach_device(group->domain, dev);
->>+
->>+	return ret;
->>}
->>
->>static int __iommu_group_dma_attach(struct iommu_group *group)
->>_______________________________________________
->>iommu mailing list
->>iommu@lists.linux-foundation.org
->>https://lists.linuxfoundation.org/mailman/listinfo/iommu
->>
+> Examples:
+> 4)
+>  static int cdn_dp_mailbox_read(struct cdn_dp_device *dp)
+>  {
+> +"  struct cdns_mhdp_device *mhdp = dp->mhdp;
+>    int val, ret;
+> 
+> -  ret = readx_poll_timeout(readl, dp->regs + MAILBOX_EMPTY_ADDR,
+> +  ret = readx_poll_timeout(readl, mhdp->regs_base + MAILBOX_EMPTY_ADDR,
+> ...
+>    return fancy_readl(dp, MAILBOX0_RD_DATA) & 0xff;
+>  }
+> 
+> 5)
+> -static int cdn_dp_mailbox_read(struct cdn_dp_device *dp)
+> +static int mhdp_mailbox_read(struct cdns_mhdp_device *mhdp)
+>  {
+> -  struct cdns_mhdp_device *mhdp = dp->mhdp;
+>    int val, ret;
+> ...
+> -  return fancy_readl(dp, MAILBOX0_RD_DATA) & 0xff;
+> +  return cdns_mhdp_bus_read(mhdp, MAILBOX0_RD_DATA) & 0xff;
+>  }
 
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 Linux-rockchip mailing list
