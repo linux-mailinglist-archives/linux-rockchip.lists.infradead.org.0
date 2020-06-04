@@ -2,45 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 844B51EEACD
-	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jun 2020 21:04:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D552D1EEAD9
+	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jun 2020 21:07:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IrLt8nSfYg6BP9MgSS7bqxRMpHGkNs4v6QGBWEZVG7c=; b=LvG/avU5KcEAOQ
-	OiyeRDC1eKtnOnzNZOvgg7T495Hod/jP9+m1ELZAhDXPJYWUP4LTrp3oTniCxJ6rgRp5d73+eqybC
-	NrfX1YPbJn639t6laEHpx4l2uw/ASqyAJy+8HbgXOq6b5FbhLI87RiuxFOfhDb8KIJZcx/3K+Xmm2
-	Q1uhyKWE5rpIxXPsRwzs3GB/I1/ceKFtOxiIoVDr/eKK/QeFXZ3133XPZd7NUNTIg2S7yNNV3Ajoh
-	VTCJQJWRnyrwtqi+IaMboxjCZq/ePDX+hr02JSdubhaqd2ybwwVeqypH8VzHeNCFiMiZnQXnzTTno
-	sYa8JCO1WiVgrmWekgdA==;
+	List-Owner; bh=g36MV9/85ILixKkWTd76QxXuKOKrwDv67NgBRgAyRH8=; b=Bl3dxwkIeAdRkz
+	8XIpRopvkxSYusx12CfmPkQmmRADvMacvMXDUxEgCcO1AOPIhecijCsIy4Xj+Ir1RfrHlfG21xnk1
+	wjF44LoBEdCFtBAS86WLiZR5xU7rwvli43Ttd7PMd12T+oI8XmhYXch7Zc3rt3m5CrO/LB9qPINwq
+	vz4rv5bANPKc1vw7R7MG6ctqeP41pbeagmytLDc6A2B84WDu1CxyZTswMaObE11i5j23Hl/+uLSk8
+	+ZFpdzDLY+/pkFzi6GbN9Z5yH/SgQKq5O4bcevS95zCSvycVBGqU1WbgfwVUyzZxuc/Rs89neKxZO
+	GxxjsEY+NGgjRhOETOZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgvA9-0003jN-BF; Thu, 04 Jun 2020 19:04:25 +0000
+	id 1jgvD7-0006NN-C2; Thu, 04 Jun 2020 19:07:29 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgvA5-0003im-0y
- for linux-rockchip@lists.infradead.org; Thu, 04 Jun 2020 19:04:22 +0000
+ id 1jgvD4-0006Mz-9Z
+ for linux-rockchip@lists.infradead.org; Thu, 04 Jun 2020 19:07:27 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id CDC422A2E44
-Subject: Re: [PATCH 1/2] media: staging: rkisp1: rsz: supported formats are
- the isp's src formats, not sink formats
+ (Authenticated sender: koike) with ESMTPSA id C04B42A47E8
+Subject: Re: [PATCH 2/2] media: staging: rkisp1: rsz: set default format if
+ the given format is not RKISP1_DIR_SRC
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  linux-media@vger.kernel.org, laurent.pinchart@ideasonboard.com
 References: <20200604190015.12069-1-dafna.hirschfeld@collabora.com>
+ <20200604190015.12069-2-dafna.hirschfeld@collabora.com>
 From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <32485b73-f4e7-84c0-1b7c-8608dddccb07@collabora.com>
-Date: Thu, 4 Jun 2020 16:04:05 -0300
+Message-ID: <a89f6269-3270-18fc-298f-7b00fd830039@collabora.com>
+Date: Thu, 4 Jun 2020 16:07:18 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200604190015.12069-1-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200604190015.12069-2-dafna.hirschfeld@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_120421_248839_B619786F 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20200604_120726_481612_0D363BC1 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -71,43 +72,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hello,
+
 
 On 6/4/20 4:00 PM, Dafna Hirschfeld wrote:
-> The rkisp1_resizer's enum callback 'rkisp1_rsz_enum_mbus_code'
-> calls the enum callback of the 'rkisp1_isp' on it's video sink pad.
-> This is a bug, the resizer should support the same formats
-> supported by the 'rkisp1_isp' on the source pad (not the sink pad).
-
-Nice catch!
-
+> When setting the sink format of the 'rkisp1_resizer'
+> the format should be supported by 'rkisp1_isp' on
+> the video source pad. This patch checks this condition
+> and set the format to default if the condition is false.
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+>  drivers/staging/media/rkisp1/rkisp1-common.h  | 4 ++++
+>  drivers/staging/media/rkisp1/rkisp1-isp.c     | 4 ----
+>  drivers/staging/media/rkisp1/rkisp1-resizer.c | 2 +-
+>  3 files changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+> index 0c4fe503adc9..39d8e46d8d8a 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
+> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+> @@ -22,6 +22,10 @@
+>  #include "rkisp1-regs.h"
+>  #include "uapi/rkisp1-config.h"
+>  
+> +#define RKISP1_DIR_SRC BIT(0)
+> +#define RKISP1_DIR_SINK BIT(1)
+> +#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
 
-Acked-by: Helen Koike <helen.koike@collabora.com>
+I think we can rename this macro to state explicitly it is the direction from the rkisp1_isp subdevice node
+point of view.
+
+Maybe prefix it with RKISP1_ISP_SD_ ?
 
 Thanks
 Helen
 
-> ---
->  drivers/staging/media/rkisp1/rkisp1-resizer.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
+> +
+>  #define RKISP1_ISP_MAX_WIDTH		4032
+>  #define RKISP1_ISP_MAX_HEIGHT		3024
+>  #define RKISP1_ISP_MIN_WIDTH		32
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> index dc2b59a0160a..e66e87d6ea8b 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> @@ -23,10 +23,6 @@
+>  
+>  #define RKISP1_ISP_DEV_NAME	RKISP1_DRIVER_NAME "_isp"
+>  
+> -#define RKISP1_DIR_SRC BIT(0)
+> -#define RKISP1_DIR_SINK BIT(1)
+> -#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
+> -
+>  /*
+>   * NOTE: MIPI controller and input MUX are also configured in this file.
+>   * This is because ISP Subdev describes not only ISP submodule (input size,
 > diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> index d049374413dc..d64c064bdb1d 100644
+> index d64c064bdb1d..fa28f4bd65c0 100644
 > --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
 > +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-> @@ -437,8 +437,8 @@ static int rkisp1_rsz_enum_mbus_code(struct v4l2_subdev *sd,
->  	u32 pad = code->pad;
->  	int ret;
->  
-> -	/* supported mbus codes are the same in isp sink pad */
-> -	code->pad = RKISP1_ISP_PAD_SINK_VIDEO;
-> +	/* supported mbus codes are the same in isp video src pad */
-> +	code->pad = RKISP1_ISP_PAD_SOURCE_VIDEO;
->  	ret = v4l2_subdev_call(&rsz->rkisp1->isp.sd, pad, enum_mbus_code,
->  			       &dummy_cfg, code);
->  
+> @@ -542,7 +542,7 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+>  					    which);
+>  	sink_fmt->code = format->code;
+>  	mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+> -	if (!mbus_info) {
+> +	if (!mbus_info || !(mbus_info->direction & RKISP1_DIR_SRC)) {
+>  		sink_fmt->code = RKISP1_DEF_FMT;
+>  		mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+>  	}
 > 
 
 _______________________________________________
