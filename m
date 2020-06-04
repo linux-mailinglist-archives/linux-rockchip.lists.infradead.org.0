@@ -2,71 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C0201EE6F9
-	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jun 2020 16:52:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0269B1EE6FA
+	for <lists+linux-rockchip@lfdr.de>; Thu,  4 Jun 2020 16:52:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rn0dsT8OLbFsw+xMthlcklVufrp3p0P1Fe6/+Pw1kXk=; b=UEbwoka4XVhQSC
-	8pKvc182lMH7rTh606Zdr9mCkhnPdhg5iNY0dtHfMB3roEbXA0xn8gCbPbSRiHQ61XqMihnFlKNaj
-	qJ0joyt5ZeF8HNjmlc8/2MkpCPNkhkTOmahPn/tw91qbTj2XfHDVvoPI04aFac/X2w/9SAvfXRXy5
-	jUr1nOTcYGzO1ecmVe3OQPDmHxsGeaqO35o+qxc+yBBVeBm81YF1RIFW0P5XfGRxi5luveRO9/S8G
-	QzNa0umZk0iDSlzEOPqPD6ASScOtCzV52PbMW34K1HYxl2vAzW3qdryB0KwkWDa7bdlEfnitErfBt
-	gPm8a/L5EnA9ovOX5v2A==;
+	List-Owner; bh=DJspm9GExRe1hCPulhtBThI8FTQvTqFU9eL7wcFDeKc=; b=k+TQ9P361+AxZw
+	Z213sdndLKYiLugHtlaYMqVZHzpId8B4dlIjt+/Ewi8znx7RB9pNSngywp8phpVi+T33WmMM13XpY
+	roz2nTb5GFxPKcx0A1bN03irC/5EcKRoxw4LaOC0z45y5AeBZkB+MNy7lFnPGmkQOgZBfIZipwMGH
+	GUwO7ojxICC4s8Jhs5liIDHkkj2C0i3Z0m6OiWsctMmQKg5udDI/yhpnhv7F8QQYDVrb/5NsXlgM/
+	sB6D5JncsVGBcIhw6tdxY1VGnzMc5OesVejpAwYERwV5/Vnunvbqxe0YeyFplpitsqoN8WL6unLmV
+	7QE2h0L2x5iCl8qToc6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrDz-0006hd-FW; Thu, 04 Jun 2020 14:52:07 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jgrE4-0006kd-4y; Thu, 04 Jun 2020 14:52:12 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrDv-0006ft-RR
- for linux-rockchip@lists.infradead.org; Thu, 04 Jun 2020 14:52:05 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o6so3585529pgh.2
- for <linux-rockchip@lists.infradead.org>; Thu, 04 Jun 2020 07:52:03 -0700 (PDT)
+ id 1jgrE1-0006jM-8D
+ for linux-rockchip@lists.infradead.org; Thu, 04 Jun 2020 14:52:10 +0000
+Received: by mail-pf1-x444.google.com with SMTP id z64so3372431pfb.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 04 Jun 2020 07:52:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=xOZD5a5BKPNBvSCMbNYcHacgo1bsu/9VtngWLQjb1VE=;
- b=MBtxAHlPx45IWXxlD/d7HKPQRdbKkf7jxrAZ9zamuk5E/Ss9tH9ZK2GxKC0IQYLSvx
- z772LexmwqAb6OCoSUk4P6fANUZJ0AKecVft3BdjxmmEEGWpBeNcaaJn6it4vDnfgH9x
- EGdFFVbCI6DQOQ4DidKV+RO/12fgHDsj/QfP4=
+ bh=ajOUqm25QJXTmSvPTEwkjDDkta2sca3MVhwOQCgFpK0=;
+ b=N5hd4Y4qHMmOR0JzFfWMWbSRQ0c7tEZC8P0PWOf97DHzmpIL7PD7Vvs8qF1uteNfhZ
+ EbUmkSMtEEHcyuv5yG2jaZbb/pYCZQkJ43CtY/0Qbr1LieBHJwRdt3Q/jRjX+gn2DOTR
+ EWNfBjMsqMeuqqG9yCoTgqPg2flEYsa/qp39A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=xOZD5a5BKPNBvSCMbNYcHacgo1bsu/9VtngWLQjb1VE=;
- b=iAf1y9MuKlVlasXEkPz39DGbd8A2KCsgd/4jaRE0319kTh0rEmCVKsTRquwonyHqui
- IpQ2x2rwKMkBz5c6LdYXEK6rtmno50Nxdg6vVnB0ykNUar/OyD7ZLB4bqM7ApSY5laxL
- JAXmO+wiZo7BoxH/gcuOjeBEGOQvYqd6s++BbKjJKe2hsM2ZXiBOE1qqpFuejqKFyy2+
- ysBCXypz/b7/s9I043f8Svywad5DQOrSJcezFcLyhqCf9F09himBvr/fXVAY4TtSTdIE
- 6xvgEc9zcqaiNv997UrAStqiurMRfNtgSFcBv1rq9/ZKTT+qkTPlKM1dl471ngjbCxYf
- pFvA==
-X-Gm-Message-State: AOAM531RfTpyA+YlE8i8wOr6K1A+LXh6QyKxjiQQl2HgNaQFRpCSij/R
- UpvCJ5Ycs0agGIVEXPoBySE1sQ==
-X-Google-Smtp-Source: ABdhPJywOxFpleCfDboJiQipI3uqk0Ulf6GrV0kKi3jIXRZGdCWttyjNDVyfTmwxJ0eQuw4OqROsaA==
-X-Received: by 2002:a63:fb14:: with SMTP id o20mr4863896pgh.144.1591282323037; 
- Thu, 04 Jun 2020 07:52:03 -0700 (PDT)
+ bh=ajOUqm25QJXTmSvPTEwkjDDkta2sca3MVhwOQCgFpK0=;
+ b=YiabR9l0DhBwFYR/zLkWTZSjrbFEYlCOQTD12D8Pt615F7CybTEFnx1+DbLal7CSCB
+ bJaY5O7QnsNUvUCQvraNdqn1S0JUFWAPdFsBhxVSmDkY+nUFQHaXTknkRKndQ7Gl9b5X
+ N5r08Fm3AG4jKbBAXwfB2AVif9pEvoX/rThq+HceQQmdcTFfBy0kZJr+Xoc07wE+ukZY
+ z3vKwTktq+YMI5LankKBke5PWwnIlm8wjg8HhJ727Hd4RnwxUOQAxtzlEp8hu0nmzmWT
+ WTkXN2tGl3idJm14ptEwO9Od3GjipiUd+mq3vC7fBHwDvDL9+x6x7ozcYAsRQGUp1Yu4
+ m/Tw==
+X-Gm-Message-State: AOAM532EDGbsR45U1BU2NXB3Tfe5HOWvuDilozPANqwMPOv8FbTuoqto
+ yRBzC0fTDzRSs0hDlEUd/WjdgQ==
+X-Google-Smtp-Source: ABdhPJyApHfAp1TjwTfbxn9KQJayifjJUvRLVTKvkeJ1u7Zo52JephlCE0QYFCc7Jt7WDUkRM0vG8A==
+X-Received: by 2002:a63:1650:: with SMTP id 16mr4935481pgw.23.1591282328404;
+ Thu, 04 Jun 2020 07:52:08 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:41f4:94a8:1af3:a574])
- by smtp.gmail.com with ESMTPSA id 2sm4831283pfz.39.2020.06.04.07.51.58
+ by smtp.gmail.com with ESMTPSA id 2sm4831283pfz.39.2020.06.04.07.52.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 04 Jun 2020 07:52:02 -0700 (PDT)
+ Thu, 04 Jun 2020 07:52:07 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>, Hugh Cole-Baker <sigmaris@gmail.com>
-Subject: [PATCH v3 2/4] roc-rk3399-pc: Mark default env from SPI
-Date: Thu,  4 Jun 2020 20:21:39 +0530
-Message-Id: <20200604145141.356702-3-jagan@amarulasolutions.com>
+Subject: [PATCH v3 3/4] roc-rk3399-pc: Add SPI boot
+Date: Thu,  4 Jun 2020 20:21:40 +0530
+Message-Id: <20200604145141.356702-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200604145141.356702-1-jagan@amarulasolutions.com>
 References: <20200604145141.356702-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_075203_897352_004E79F8 
-X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-CacheID: sfid-20200604_075209_301594_A3D9832D 
+X-CRM114-Status: UNSURE (   9.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,86 +106,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Mark the default U-Boot environment as SPI flash since
-this is an on board flash device.
+U-Boot TPL 2020.07-rc3-00090-gd4e919f927-dirty (Jun 01 2020 - 23:45:53)
+Channel 0: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=15 CS1 Row=15 CS=2 Die BW=16 Size=2048MB
+Channel 1: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=15 CS1 Row=15 CS=2 Die BW=16 Size=2048MB
+256B stride
+256B stride
+lpddr4_set_rate: change freq to 400000000 mhz 0, 1
+lpddr4_set_rate: change freq to 800000000 mhz 1, 0
+Trying to boot from BOOTROM
+Returning to boot ROM...
 
-Updated env offset, size in contrast with default since
-the U-Boot proper has to start from 384K.
+U-Boot SPL 2020.07-rc3-00087-ga21e9fd385 (Jun 02 2020 - 00:09:45 +0530)
+Trying to boot from MMC1
+NOTICE:  BL31: v2.2(release):
+NOTICE:  BL31: Built : 15:05:37, May 12 2020
+
+U-Boot 2020.07-rc3-00087-ga21e9fd385 (Jun 02 2020 - 00:09:45 +0530)
+
+SoC: Rockchip rk3399
+Reset cause: POR
+Model: Firefly ROC-RK3399-PC Board
+DRAM:  3.9 GiB
+PMIC:  RK808
+MMC:   mmc@fe320000: 1, sdhci@fe330000: 0
+Loading Environment from SPI Flash... SF: Detected w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Model: Firefly ROC-RK3399-PC Board
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Reviewed-by: Kever Yang <kever.yang@rock-chips.com>
 ---
 Changes for v3:
-- updated env settings
+- none
 
- configs/roc-pc-mezzanine-rk3399_defconfig | 6 ++++--
- configs/roc-pc-rk3399_defconfig           | 6 ++++--
- include/configs/roc-pc-rk3399.h           | 4 ----
- 3 files changed, 8 insertions(+), 8 deletions(-)
+ arch/arm/dts/rk3399-roc-pc-u-boot.dtsi    | 12 +++++++++++-
+ configs/roc-pc-mezzanine-rk3399_defconfig |  3 +++
+ configs/roc-pc-rk3399_defconfig           |  3 +++
+ 3 files changed, 17 insertions(+), 1 deletion(-)
 
+diff --git a/arch/arm/dts/rk3399-roc-pc-u-boot.dtsi b/arch/arm/dts/rk3399-roc-pc-u-boot.dtsi
+index 141dd0b306..fc155e6903 100644
+--- a/arch/arm/dts/rk3399-roc-pc-u-boot.dtsi
++++ b/arch/arm/dts/rk3399-roc-pc-u-boot.dtsi
+@@ -12,7 +12,11 @@
+ 	};
+ 
+ 	chosen {
+-		u-boot,spl-boot-order = "same-as-spl", &sdhci, &sdmmc;
++		u-boot,spl-boot-order = "same-as-spl", &spi_flash, &sdhci, &sdmmc;
++	};
++
++	config {
++		u-boot,spl-payload-offset = <0x60000>; /* @ 384KB */
+ 	};
+ 
+ 	vcc_hub_en: vcc_hub_en-regulator {
+@@ -40,6 +44,12 @@
+ 	vin-supply = <&vcc_vbus_typec0>;
+ };
+ 
++&spi1 {
++	spi_flash: flash@0 {
++		u-boot,dm-pre-reloc;
++	};
++};
++
+ &vdd_log {
+ 	regulator-min-microvolt = <430000>;
+ 	regulator-init-microvolt = <950000>;
 diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 1c1539bcb9..3b91c25ff4 100644
+index 3b91c25ff4..fd1b85c1e4 100644
 --- a/configs/roc-pc-mezzanine-rk3399_defconfig
 +++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -1,7 +1,9 @@
- CONFIG_ARM=y
- CONFIG_ARCH_ROCKCHIP=y
- CONFIG_SYS_TEXT_BASE=0x00200000
--CONFIG_ENV_OFFSET=0x3F8000
-+CONFIG_ENV_SIZE=0x6000
-+CONFIG_ENV_OFFSET=0x460000
-+CONFIG_ENV_SECT_SIZE=0x1000
- CONFIG_ROCKCHIP_RK3399=y
- CONFIG_TARGET_ROC_PC_RK3399=y
+@@ -9,12 +9,15 @@ CONFIG_TARGET_ROC_PC_RK3399=y
  CONFIG_NR_DRAM_BANKS=1
-@@ -25,7 +27,7 @@ CONFIG_CMD_TIME=y
- CONFIG_SPL_OF_CONTROL=y
- CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc-mezzanine"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
--CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
+ CONFIG_DEBUG_UART_BASE=0xFF1A0000
+ CONFIG_DEBUG_UART_CLOCK=24000000
++CONFIG_SPL_SPI_FLASH_SUPPORT=y
++CONFIG_SPL_SPI_SUPPORT=y
+ CONFIG_DEBUG_UART=y
+ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc-mezzanine.dtb"
+ CONFIG_DISPLAY_BOARDINFO_LATE=y
+ # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
+ CONFIG_SPL_STACK_R=y
+ CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
++CONFIG_SPL_SPI_LOAD=y
+ CONFIG_TPL=y
+ CONFIG_TPL_GPIO_SUPPORT=y
+ CONFIG_CMD_BOOTZ=y
 diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 76e76c160e..6edd4a8822 100644
+index 6edd4a8822..80e7001481 100644
 --- a/configs/roc-pc-rk3399_defconfig
 +++ b/configs/roc-pc-rk3399_defconfig
-@@ -1,7 +1,9 @@
- CONFIG_ARM=y
- CONFIG_ARCH_ROCKCHIP=y
- CONFIG_SYS_TEXT_BASE=0x00200000
--CONFIG_ENV_OFFSET=0x3F8000
-+CONFIG_ENV_SIZE=0x6000
-+CONFIG_ENV_OFFSET=0x460000
-+CONFIG_ENV_SECT_SIZE=0x1000
- CONFIG_ROCKCHIP_RK3399=y
- CONFIG_TARGET_ROC_PC_RK3399=y
+@@ -9,12 +9,15 @@ CONFIG_TARGET_ROC_PC_RK3399=y
  CONFIG_NR_DRAM_BANKS=1
-@@ -24,7 +26,7 @@ CONFIG_CMD_TIME=y
- CONFIG_SPL_OF_CONTROL=y
- CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
--CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-diff --git a/include/configs/roc-pc-rk3399.h b/include/configs/roc-pc-rk3399.h
-index d4cbc3532e..59fe22289c 100644
---- a/include/configs/roc-pc-rk3399.h
-+++ b/include/configs/roc-pc-rk3399.h
-@@ -13,10 +13,6 @@
- 
- #include <configs/rk3399_common.h>
- 
--#if defined(CONFIG_ENV_IS_IN_MMC)
--# define CONFIG_SYS_MMC_ENV_DEV		0
--#endif
--
- #define SDRAM_BANK_SIZE			(2UL << 30)
- 
- #endif
+ CONFIG_DEBUG_UART_BASE=0xFF1A0000
+ CONFIG_DEBUG_UART_CLOCK=24000000
++CONFIG_SPL_SPI_FLASH_SUPPORT=y
++CONFIG_SPL_SPI_SUPPORT=y
+ CONFIG_DEBUG_UART=y
+ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc.dtb"
+ CONFIG_DISPLAY_BOARDINFO_LATE=y
+ # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
+ CONFIG_SPL_STACK_R=y
+ CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
++CONFIG_SPL_SPI_LOAD=y
+ CONFIG_TPL=y
+ CONFIG_TPL_GPIO_SUPPORT=y
+ CONFIG_CMD_BOOTZ=y
 -- 
 2.25.1
 
