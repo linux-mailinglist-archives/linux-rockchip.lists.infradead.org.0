@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6F331F0639
+	by mail.lfdr.de (Postfix) with ESMTPS id BDAED1F063A
 	for <lists+linux-rockchip@lfdr.de>; Sat,  6 Jun 2020 12:56:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9ef8tvcVnuF96rvaZrKat5wyCWZ2ZDe/Qfg/tewYbmE=; b=Mzo
-	eG6n24nyUVplTuxaGkWfIkpE5BUQl9LjCvayQ/YHpEIFlR3gDE8yv0868HrVxtTC4weaZB5/H49aB
-	eDLj7XsPj48oISRraOWUg9jT8w1LcY1U0qTkUuHVG2y/H/YiK2iO1Cueou+Bx1rzWZbRmo/+OMLY6
-	fFJAVLCswW2J6THkNYyFMzRyAhSytwpVPHDMwn9jriS5kkVHgNd0HsKyPDtiQgnFAW+4mPMfrxunK
-	ILKI4puULo1eHEV2Je3eBa2XGzERA6qicRPUGS7KbdzVdvi+t675R8C+qtOaBWhcgi8vTlgXqtNAf
-	guc8iG/2wFX8ITeZAk60q6pc6LkagyA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7aMv+Xx3/x07IP/PelDaFPaYXShQ51+4FfYtSF1Ycwc=; b=Lwiv7dAXWpd4x8bhHwBGbYCwCq
+	koP0WXDFAzSWmv9EWDQdhukzxKNoXtTb2j35jxvlxDsiLg4lZvo5MkezUlVVwB9+D+xcNH3AJmnz1
+	EHWneQy32mHR1nZ8IRVFSf70MR1Tq8Lcln91vspNAsrST9a+TCd09Z7SfK5AZvRKtv4wARBPnaZR8
+	btC+yDfTtymlpPIarGcRUprlb3hMzsu9DZIk/HZfVtuQR+LxtGnn5gOHugDGNKSLKVk81GiYPK7qI
+	OPrMvLL+NoeLDcyKrU5W+Upd0DrGiu39a7k3Ijy7zun00fA8Y6gBC05gn3J1l6UHg2O5AJU4BhLcr
+	zKRY6yGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhWUi-0002kn-9H; Sat, 06 Jun 2020 10:56:08 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jhWUg-0002ir-Rp; Sat, 06 Jun 2020 10:56:06 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhWUb-0002gP-VU
- for linux-rockchip@lists.infradead.org; Sat, 06 Jun 2020 10:56:05 +0000
+ id 1jhWUb-0002gN-Vg
+ for linux-rockchip@lists.infradead.org; Sat, 06 Jun 2020 10:56:04 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 0DB56261A33
+ (Authenticated sender: dafna) with ESMTPSA id B4E58263992
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org,
 	laurent.pinchart@ideasonboard.com
-Subject: [PATCH v4l-utils 0/4] v4l2-ctl: add support to the CSC API
-Date: Sat,  6 Jun 2020 12:55:34 +0200
-Message-Id: <20200606105538.30147-1-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v4l-utils 1/4] v4l2-ctl: vidcap: Add support for the CSC API
+Date: Sat,  6 Jun 2020 12:55:35 +0200
+Message-Id: <20200606105538.30147-2-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200606105538.30147-1-dafna.hirschfeld@collabora.com>
+References: <20200606105538.30147-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_035602_166949_3D883F64 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200606_035602_167930_BEF8E90C 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -70,67 +70,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-This patchset is the userspace support for the CSC API RFC v4:
-https://patchwork.kernel.org/project/linux-media/list/?series=298891
+With the CSC API, capture drivers can allow userspace to request
+to set the quantization or the ycbcr_enc/hsv_enc fields of the
+pixelformat. This patch adds supports for this feature.
+when calling 'v4l2-ctl --set-fmt-video' on capture devices
+userspace can ask to change the quantization or the ycbcr/hsv_enc
+of the format if the driver supports it.
 
-Patches Summary:
-================
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+ utils/v4l2-compliance/v4l2-test-formats.cpp |  3 ++-
+ utils/v4l2-ctl/v4l2-ctl-vidcap.cpp          | 22 +++++++++++++++++++--
+ 2 files changed, 22 insertions(+), 3 deletions(-)
 
-patch 1 - allows userspace to set the quantization and {ycbcr/hsv}_enc
-fields in the command 'v4l2-ctl --set-fmt-video ..'
-it also adds the new enumeration flags to the compliance tests.
-
-patch 2 - adds the new enumeration flags V4L2_FMT_FLAG_CSC* to
-the function that prints the string description of the flags.
-The array fmtdesc_def is replaced by a macro FMTDESC_DEF(enc_type)
-since the flags V4L2_FMT_FLAG_CSC_YCBCR_ENC,V4L2_FMT_FLAG_CSC_HSV_ENC,
-have identical value and the string should change according to whether
-the pixelformat is HSV or not.
-
-patches 4, 3 - are similar to patches 1, 2 but for subdevices.
-So patch 3 adds support for the CSC API for subdevices
-and patch 4 adds the new enumeration flags V4L2_SUBDEV_MBUS_CODE_CSC*
-to the framework that prints the related string description
-
-Testing:
-=======
-
-I added a python script to run all possible combinations of CSC
-settings on vivid:
-https://gitlab.collabora.com/dafna/v4l-utils/-/blob/csc-rfc-v4-jun-6-mittag/contrib/test/vivid_test_csc.py
-
-The commands to run the script:
-
-git clone --single-branch --branch csc-rfc-v4-jun-6-mittag  https://gitlab.collabora.com/dafna/v4l-utils.git
-cd v4l-utils/contrib/test/
-modprobe vivid
-python3 vivid_test_csc.py
-
-Also added test for rkisp1:
-https://gitlab.collabora.com/dafna/v4l-utils/-/blob/csc-rfc-v4-jun-6-mittag/contrib/test/rkisp1-unit-tests.sh
-
-To run the test:
-
-git clone --single-branch --branch csc-rfc-v4-jun-6-mittag  https://gitlab.collabora.com/dafna/v4l-utils.git
-cd v4l-utils/contrib/test/
-./rkisp1-unit-tests.sh
-
-
-Dafna Hirschfeld (4):
-  v4l2-ctl: vidcap: Add support for the CSC API
-  v4l2: common: add the flags V4L2_FMT_FLAG_CSC* to the list that maps
-    flags to str
-  v4l2-ctl: subdev: Add support for the CSC API in the subdevices
-  v4l2-ctl: subdev: Add the flags to the list of supported mbus formats
-
- utils/common/v4l2-info.cpp                  | 41 +++++++++++++++++----
- utils/common/v4l2-info.h                    |  6 ++-
- utils/v4l2-compliance/v4l2-test-formats.cpp |  3 +-
- utils/v4l2-ctl/v4l2-ctl-subdev.cpp          | 18 +++++++--
- utils/v4l2-ctl/v4l2-ctl-vidcap.cpp          | 22 ++++++++++-
- utils/v4l2-ctl/v4l2-ctl.cpp                 | 16 ++++++--
- 6 files changed, 86 insertions(+), 20 deletions(-)
-
+diff --git a/utils/v4l2-compliance/v4l2-test-formats.cpp b/utils/v4l2-compliance/v4l2-test-formats.cpp
+index e1b00f3c..085f4986 100644
+--- a/utils/v4l2-compliance/v4l2-test-formats.cpp
++++ b/utils/v4l2-compliance/v4l2-test-formats.cpp
+@@ -264,7 +264,8 @@ static int testEnumFormatsType(struct node *node, unsigned type)
+ 			return fail("drivers must never set the emulated flag\n");
+ 		if (fmtdesc.flags & ~(V4L2_FMT_FLAG_COMPRESSED | V4L2_FMT_FLAG_EMULATED |
+ 				      V4L2_FMT_FLAG_CONTINUOUS_BYTESTREAM |
+-				      V4L2_FMT_FLAG_DYN_RESOLUTION))
++				      V4L2_FMT_FLAG_DYN_RESOLUTION | V4L2_FMT_FLAG_CSC_YCBCR_ENC |
++				      V4L2_FMT_FLAG_CSC_HSV_ENC | V4L2_FMT_FLAG_CSC_QUANTIZATION))
+ 			return fail("unknown flag %08x returned\n", fmtdesc.flags);
+ 		if (!(fmtdesc.flags & V4L2_FMT_FLAG_COMPRESSED))
+ 			fail_on_test(fmtdesc.flags & (V4L2_FMT_FLAG_CONTINUOUS_BYTESTREAM |
+diff --git a/utils/v4l2-ctl/v4l2-ctl-vidcap.cpp b/utils/v4l2-ctl/v4l2-ctl-vidcap.cpp
+index 80312b51..5cb529c8 100644
+--- a/utils/v4l2-ctl/v4l2-ctl-vidcap.cpp
++++ b/utils/v4l2-ctl/v4l2-ctl-vidcap.cpp
+@@ -21,6 +21,7 @@ static struct v4l2_frmsizeenum frmsize; /* list frame sizes */
+ static struct v4l2_frmivalenum frmival; /* list frame intervals */
+ static unsigned set_fmts;
+ static __u32 width, height, pixfmt, field, flags;
++static __u32 ycbcr, quantization;
+ static __u32 bytesperline[VIDEO_MAX_PLANES];
+ static __u32 sizeimage[VIDEO_MAX_PLANES];
+ 
+@@ -101,7 +102,7 @@ static void print_video_fields(int fd)
+ 
+ void vidcap_cmd(int ch, char *optarg)
+ {
+-	__u32 colorspace, xfer_func, ycbcr, quantization;
++	__u32 colorspace, xfer_func;
+ 	char *value, *subs;
+ 	bool be_pixfmt;
+ 
+@@ -112,7 +113,7 @@ void vidcap_cmd(int ch, char *optarg)
+ 				xfer_func, ycbcr, quantization, flags, bytesperline,
+ 				sizeimage);
+ 		if (!set_fmts ||
+-		    (set_fmts & (FmtColorspace | FmtYCbCr | FmtQuantization | FmtXferFunc))) {
++		    (set_fmts & (FmtColorspace | FmtXferFunc))) {
+ 			vidcap_usage();
+ 			std::exit(EXIT_FAILURE);
+ 		}
+@@ -220,6 +221,15 @@ int vidcap_get_and_update_fmt(cv4l_fd &_fd, struct v4l2_format &vfmt)
+ 				vfmt.fmt.pix_mp.plane_fmt[i].sizeimage =
+ 					sizeimage[i];
+ 		}
++
++		if (set_fmts & FmtYCbCr) {
++			vfmt.fmt.pix_mp.flags |= V4L2_PIX_FMT_FLAG_SET_CSC;
++			vfmt.fmt.pix_mp.ycbcr_enc = ycbcr;
++		}
++		if (set_fmts & FmtQuantization) {
++			vfmt.fmt.pix_mp.flags |= V4L2_PIX_FMT_FLAG_SET_CSC;
++			vfmt.fmt.pix_mp.quantization = quantization;
++		}
+ 	} else {
+ 		if (set_fmts & FmtWidth)
+ 			vfmt.fmt.pix.width = width;
+@@ -249,6 +259,14 @@ int vidcap_get_and_update_fmt(cv4l_fd &_fd, struct v4l2_format &vfmt)
+ 		}
+ 		if (set_fmts & FmtSizeImage)
+ 			vfmt.fmt.pix.sizeimage = sizeimage[0];
++		if (set_fmts & FmtYCbCr) {
++			vfmt.fmt.pix.flags |= V4L2_PIX_FMT_FLAG_SET_CSC;
++			vfmt.fmt.pix.ycbcr_enc = ycbcr;
++		}
++		if (set_fmts & FmtQuantization) {
++			vfmt.fmt.pix.flags |= V4L2_PIX_FMT_FLAG_SET_CSC;
++			vfmt.fmt.pix.quantization = quantization;
++		}
+ 	}
+ 
+ 	if ((set_fmts & FmtPixelFormat) &&
 -- 
 2.17.1
 
