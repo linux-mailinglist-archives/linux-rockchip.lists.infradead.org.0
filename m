@@ -2,46 +2,46 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 514331F2499
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 01:23:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E774E1F252C
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 01:26:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y2ab1YyNZDrTrUEidIgdmpmW+qkj8Ftma4Ae6HdKykU=; b=AdO6mkic93RFhR
-	gBs7+BeNgsGarbaL0ssvfQ/P/G4BQJO4pD8OFpkicu+3pdYtImGiYbLeeCkA20yFpaJM/uSIPS6Hw
-	zKyjsuzm2tD+Jf+Kp23QSXFIscW2YlIDK+HBjsMpyi6/JQAmI1eIbekjHlmr5VbEdbeTutIkIPpi3
-	AExDlPGWwudJhmrbmEkizdhJZhLFY7H7P2hv3HCgQPwm5Bi/WNoymcpf8SZavyeBebDBTIfGEw6T9
-	tK1hlYLoLVkpOD/KNvGj0VW7l7cngevhFrlYx+0upV/08w1viZMk5flvLj5I3NjF3e4zjMxg4R/1V
-	fwrlT0jG6epmDp/vR/3g==;
+	List-Owner; bh=qg0+HPiYP6rR9DhWbaR/n+7yejiPYRc8638E/2GDLzQ=; b=EIujuzVQsixpu2
+	ngzLEUJyqynwr5f1j88jcFwJgxHhPetiLCgWJnCtjRgEW5cwg4nrJNNMpxrZTOaPKvbVl3X5oxUmn
+	6dNAAjM8HhDYmQLIhGxOHNKuGh0nPWeWiB9gdZt4DwHqwOdw2i98F+ZMQ9wS67/qo+fC7iR6RcArc
+	Uo1hY2ZV7ra0ZdLjT00TsG05udZsEWE3KHdwUJ3h9ER/Tl47kyODtuJvO0BbeAhRCi5cjxO5nkyEb
+	SH/ZrDdcIRBsLjFkIDyksHtAL7majHVs6OqNcQfeFiEfa/SuTM4jXK3oqF1UB4PlDEu7CFk22OWOG
+	db+qtSs3hmaIZ+lseH6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiR74-0002kz-T9; Mon, 08 Jun 2020 23:23:30 +0000
+	id 1jiR9S-00072x-Lt; Mon, 08 Jun 2020 23:25:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQwz-0006Ry-Qi; Mon, 08 Jun 2020 23:13:07 +0000
+ id 1jiQxJ-0006k1-Rn; Mon, 08 Jun 2020 23:13:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47CF720B80;
- Mon,  8 Jun 2020 23:13:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 570D3214F1;
+ Mon,  8 Jun 2020 23:13:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657985;
- bh=7j31ytWFpCdfw0FB5VRFDqkG3S0rIAW1hLa6rqGWXpc=;
+ s=default; t=1591658004;
+ bh=xM1ntgsRqTxDriNXGFqvuAhtnMxp+m2fLoum72+rqno=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DeRUjI2rPln0Y4WqmO0OU++AmvA3uDLWqrfZXwjEXlRkmms9SDtz0Yu2v3HVAbUN+
- C+cX0lKyQg+zl/Yx83d9qI+1SxCLGgfItiGtID8of/ZHQN73Iv2LC4AqG+zaKudaNn
- qhfKql2smJFT+dwAzl1pPOVyNNzRcxaPq5qWzaMs=
+ b=VpAl5rLgn6ZIR6an72xlLKjJQijn3He+rfjIXAEaFR95CSGXlMp/b+DQeJNiWT95T
+ o/qAwD7GKvt8sDnI4mnOBbT5cl3R+ZGYSEae4Jcmeo3NqFflm9++DTQXDLsIMlFc+u
+ kl5GdXvBAST8ilDiljhzKFyRmBbI17eyLeWuU+Zk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 045/606] clk: rockchip: fix incorrect
- configuration of rk3228 aclk_gpu* clocks
-Date: Mon,  8 Jun 2020 19:02:50 -0400
-Message-Id: <20200608231211.3363633-45-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 060/606] arm64: dts: rockchip: Replace RK805 PMIC
+ node name with "pmic" on rk3328 boards
+Date: Mon,  8 Jun 2020 19:03:05 -0400
+Message-Id: <20200608231211.3363633-60-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
 References: <20200608231211.3363633-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161305_929647_078923B4 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200608_161325_994535_0951748F 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,89 +80,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Justin Swartz <justin.swartz@risingedge.co.za>,
- Heiko Stuebner <heiko@sntech.de>,
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Justin Swartz <justin.swartz@risingedge.co.za>
+From: Chen-Yu Tsai <wens@csie.org>
 
-commit cec9d101d70a3509da9bd2e601e0b242154ce616 upstream.
+commit 83b994129fb4c18a8460fd395864a28740e5e7fb upstream.
 
-The following changes prevent the unrecoverable freezes and rcu_sched
-stall warnings experienced in each of my attempts to take advantage of
-lima.
+In some board device tree files, "rk805" was used for the RK805 PMIC's
+node name. However the policy for device trees is that generic names
+should be used.
 
-Replace the COMPOSITE_NOGATE definition of aclk_gpu_pre with a
-COMPOSITE that retains the selection of HDMIPHY as the PLL source, but
-instead makes uses of the aclk_gpu PLL source gate and parent names
-defined by mux_pll_src_4plls_p rather than mux_aclk_gpu_pre_p.
+Replace the "rk805" node name with the generic "pmic" name.
 
-Remove the now unused mux_aclk_gpu_pre_p and the four named but also
-unused definitions (cpll_gpu, gpll_gpu, hdmiphy_gpu and usb480m_gpu)
-of the aclk_gpu PLL source gate.
-
-Use the correct gate offset for aclk_gpu and aclk_gpu_noc.
-
-Fixes: 307a2e9ac524 ("clk: rockchip: add clock controller for rk3228")
-Cc: stable@vger.kernel.org
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
-[double-checked against SoC manual and added fixes tag]
-Link: https://lore.kernel.org/r/20200114162503.7548-1-justin.swartz@risingedge.co.za
+Fixes: 1e28037ec88e ("arm64: dts: rockchip: add rk805 node for rk3328-evb")
+Fixes: 955bebde057e ("arm64: dts: rockchip: add rk3328-rock64 board")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Link: https://lore.kernel.org/r/20200327030414.5903-3-wens@kernel.org
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
- 1 file changed, 4 insertions(+), 13 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3328-evb.dts    | 2 +-
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
-index d17cfb7a3ff4..d7243c09cc84 100644
---- a/drivers/clk/rockchip/clk-rk3228.c
-+++ b/drivers/clk/rockchip/clk-rk3228.c
-@@ -156,8 +156,6 @@ PNAME(mux_i2s_out_p)		= { "i2s1_pre", "xin12m" };
- PNAME(mux_i2s2_p)		= { "i2s2_src", "i2s2_frac", "xin12m" };
- PNAME(mux_sclk_spdif_p)		= { "sclk_spdif_src", "spdif_frac", "xin12m" };
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+index 49c4b96da3d4..6abc6f4a86cf 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-evb.dts
+@@ -92,7 +92,7 @@ &gmac2phy {
+ &i2c1 {
+ 	status = "okay";
  
--PNAME(mux_aclk_gpu_pre_p)	= { "cpll_gpu", "gpll_gpu", "hdmiphy_gpu", "usb480m_gpu" };
--
- PNAME(mux_uart0_p)		= { "uart0_src", "uart0_frac", "xin24m" };
- PNAME(mux_uart1_p)		= { "uart1_src", "uart1_frac", "xin24m" };
- PNAME(mux_uart2_p)		= { "uart2_src", "uart2_frac", "xin24m" };
-@@ -468,16 +466,9 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
- 			RK2928_CLKSEL_CON(24), 6, 10, DFLAGS,
- 			RK2928_CLKGATE_CON(2), 8, GFLAGS),
+-	rk805: rk805@18 {
++	rk805: pmic@18 {
+ 		compatible = "rockchip,rk805";
+ 		reg = <0x18>;
+ 		interrupt-parent = <&gpio2>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+index 62936b432f9a..304fad1a0b57 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -169,7 +169,7 @@ &hdmiphy {
+ &i2c1 {
+ 	status = "okay";
  
--	GATE(0, "cpll_gpu", "cpll", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "gpll_gpu", "gpll", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "hdmiphy_gpu", "hdmiphy", 0,
--			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	GATE(0, "usb480m_gpu", "usb480m", 0,
-+	COMPOSITE(0, "aclk_gpu_pre", mux_pll_src_4plls_p, 0,
-+			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS,
- 			RK2928_CLKGATE_CON(3), 13, GFLAGS),
--	COMPOSITE_NOGATE(0, "aclk_gpu_pre", mux_aclk_gpu_pre_p, 0,
--			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS),
- 
- 	COMPOSITE(SCLK_SPI0, "sclk_spi0", mux_pll_src_2plls_p, 0,
- 			RK2928_CLKSEL_CON(25), 8, 1, MFLAGS, 0, 7, DFLAGS,
-@@ -582,8 +573,8 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
- 	GATE(0, "pclk_peri_noc", "pclk_peri", CLK_IGNORE_UNUSED, RK2928_CLKGATE_CON(12), 2, GFLAGS),
- 
- 	/* PD_GPU */
--	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 14, GFLAGS),
--	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 15, GFLAGS),
-+	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 14, GFLAGS),
-+	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 15, GFLAGS),
- 
- 	/* PD_BUS */
- 	GATE(0, "sclk_initmem_mbist", "aclk_cpu", 0, RK2928_CLKGATE_CON(8), 1, GFLAGS),
+-	rk805: rk805@18 {
++	rk805: pmic@18 {
+ 		compatible = "rockchip,rk805";
+ 		reg = <0x18>;
+ 		interrupt-parent = <&gpio2>;
 -- 
 2.25.1
 
