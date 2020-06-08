@@ -2,62 +2,63 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFEDF1F1676
-	for <lists+linux-rockchip@lfdr.de>; Mon,  8 Jun 2020 12:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F27B41F17DD
+	for <lists+linux-rockchip@lfdr.de>; Mon,  8 Jun 2020 13:32:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/2/7NKmEzWemTX4903Eiy0Mq9H4F3ZatH/KviDxa5wk=; b=JdPW/zN/e2sqL/
-	PObytLl8zGRAxg/5xPXNcKg901ZuYwQKZ43TKI9dhRmQF4KGZh88asafhiXR/BIa+9w6Y2ujGk7e0
-	8C6Eoa1LswF5BU9oe6O3bgPIFZ8LSZzwEzHedo0qLEqF8+9lwwklJabPNYSFuipo5uWHe+mqDyhg4
-	2qNJ7B7VbVDJ9ONoYkybE9JReV5AHKWh5O+0Fy2jKCH9qhfEOeX8iBPVcs8nHWWhHqGDL5CVP/DMe
-	zqGKvCwIiyDSdl5qTp3YUHKqv8I8LS/iw37T7L+IXGS/X28hj2fSaWHshQ9h5DPWi/M1rKi2sfW2C
-	fHSDObfPk3OUoYyZs4vg==;
+	List-Owner; bh=NPQ10RHV64Huv1UGNW/Er0eOs/ace72f76WcCENtIuY=; b=dJ9Bu5w0qI2SqU
+	Gc4XQ5E11V9z89rpHbHeMECZ9HNteEJFAGJ8VB0tfX1Hy4W8k3Y/cZxLhtDwPk4lwlXEYnRVTEBRf
+	y9Joj/udtPlxTRxCBjfxmz1j6dkYz1IDHSqXtkHlLGBG9dz+p3fVnC/F+vhGzcEwAInsbbDbnCzyz
+	W13Y9wNcIlQitwjED+AfKQfS06VIUVGiEpTaA23JqQZVHQd5/OQPBX3/OR+Y8zB/QueawGyMaRILm
+	58XyWogaqytS/08V5+29PHuMQCiLp89EHarvM18mji3R+k6CWXE3fnoazfFX/J+0Yhgk+O1iv0kab
+	rOBX0jqM061bm4Mwd5vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiEk4-0005Tc-OI; Mon, 08 Jun 2020 10:10:56 +0000
+	id 1jiG0Q-0007MN-Ss; Mon, 08 Jun 2020 11:31:54 +0000
 Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiEk0-0005T8-IW
- for linux-rockchip@lists.infradead.org; Mon, 08 Jun 2020 10:10:54 +0000
+ id 1jiG0N-0007Lx-D0
+ for linux-rockchip@lists.infradead.org; Mon, 08 Jun 2020 11:31:53 +0000
 Received: from cust-b5b5937f ([IPv6:fc0c:c16d:66b8:757f:c639:739b:9d66:799d])
  by smtp-cloud9.xs4all.net with ESMTPA
- id iEjujQ5qhCKzeiEjyjlXn2; Mon, 08 Jun 2020 12:10:50 +0200
+ id iG0HjQdY4CKzeiG0Kjlusf; Mon, 08 Jun 2020 13:31:49 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1591611050; bh=l2JNPRkMsdK0bRWYS/0Eu9dzGdf9ruIBhJhrGpi+Zbg=;
+ t=1591615909; bh=Anz/P42LyFrZUpWS2NR5kigUEkgwjzKuHAFeL8LWRr0=;
  h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
  Subject;
- b=Uy73MmMTDIySAvl+MkU2XZKF8ApPfZXW9D8xMRPB3gqXpoNbXeTvdqKb52dAEF88O
- 8dwMuYwavoQ1adgxQaNjrPi4b3kSwkQKeHkWKzR6NsHNvPTZCc0A5dhS22X42WQPiJ
- 4cdKttuHt7P6uPRZOus4xEdJtj7bS78+MiJUlHDnMabD5mEDQYdDDhwj49Ao7IUqfn
- mLeSK1HWs9lXG67hQR4mfyiGxXawu0PqahhBT3cVZHtatoXKx7oInM0LpB1TmAbGm2
- NS1/jFvbKr4LQNszTW8Ppxl+ZmYFUAa4T+7i6n+6g750D7nSt8CvTAzq6khS/FYu0X
- KtoMZE93GIe6g==
-Subject: Re: [RFC v4 7/8] media: vivid: Add support to the CSC API
+ b=SWhCfLDbzJ3YUsvxR7HG4IdRwUOE0jA8c/qlSmg4V6m4QNyPsjiyfiP4ldFOHpKK3
+ I7T0pROhvZ54cTYa3kwfpQIuZSam170Kz8VN3yJeC5nX0cYcoXTtGo95HYxLFgDKvY
+ KlFNEq44OJCmyARpHki7XPeej9zm3kT39WfPgobUpUK3/Q5HIDppfyCDQ1QACWZb/a
+ VB9juB4YNqcPiWEKYuy7P7Bvgs+BnjxP/KBJLSzW2olp3Ga2kCfAWEzx9q759N+6UF
+ rjASMJfP2UoFmZR5iCLPfSz1+xU7pYVLRCYfJrktm+uF7DMQQu0gMNcoeyTApu3tFa
+ /1fD7z/HowMvg==
+Subject: Re: [RFC v4 2/8] media: staging: rkisp1: rsz: set default format if
+ the given format is not RKISP1_DIR_SRC
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  linux-media@vger.kernel.org, laurent.pinchart@ideasonboard.com
 References: <20200605172625.19777-1-dafna.hirschfeld@collabora.com>
- <20200605172625.19777-8-dafna.hirschfeld@collabora.com>
+ <20200605172625.19777-3-dafna.hirschfeld@collabora.com>
 From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <faedc5f3-d872-ef5c-b503-26de899be09e@xs4all.nl>
-Date: Mon, 8 Jun 2020 12:10:46 +0200
+Message-ID: <ae1d2389-a054-a6ae-e4b6-a447bb64c071@xs4all.nl>
+Date: Mon, 8 Jun 2020 13:31:45 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200605172625.19777-8-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200605172625.19777-3-dafna.hirschfeld@collabora.com>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfKZb5RBQVxz0cHpn6dgXj5/q8xn8Tmqri3oFZOXKi1XEfiP8EHDcyp3pd34ImizrpKn/8kVq3raE2aO8ct+ItoZlm//EKvLFSXodiZc+kL9Snhzvr7yF
- SUBvaYNA8DTQPfrREH/mT8MU2hWdPbRUzxiXDsjVKC2fS10CF3oArbCag0HaSklcqRu/sbI5TR4EWwvPZS6fphccPVqHSU1oytO0lwF7V5DVUBbZXhld7MNr
- 1b2mn0z0UcBiG2uoCyy2diqFEaYzSDOZ8OMZs2h2FLtw4A1gMHLxEFkNGliU/fnT00TUKsd9aARoTtz8A/5J9hDBqQvWmuwmDPLAggcgI1FqJjwHO1Ie0qXA
- Hk+nOs+bLVqwi+Kk3jffRQmTWDc/z1XpoTcGe7PacZDSBYP6HBg1LKdXkZ1CnzPbAuDS0xO/a8Yst1IffIMu7F2ROX28vVahTtr3+PSMM6wzTzf2aeSdCQW2
- ym6K5NhQ5exWv2+dpH56UyqytOUGu0h7aGwWKYWXFNM6Ab9LtkGetP8tlOgS/G5xAKHVyDsoTTAKmMq9uOV6qAC8mEj7nr5VA5raFYKuDOwbPqBDKoGIRPCJ
- MTUW9aYlmyhJT76zO7qRuCvHMunOBZDailUbCWoB8gPOIA==
+X-CMAE-Envelope: MS4wfHyBh+BQb4GKKQgR/jqOp83cWQgqcGQD5PeziMeomxJ2HIohRdAlHosoDX41LmgHncJHzdwgRJ6Sx+1c5TipTzg2sS0xNCRxyOasYd47qrBhbQrg+3VJ
+ 0gCYq3EcxPJXnFWvdGLJhwG/Vp4Dvj0dNhPe2l5Z1mrTyprA4IR7rbtnJtiQ99u+Trx3afvCUjL75anPCpYRmmt0QKPgUut663NFNc8DjzdH2NLX0hzaGFSX
+ LhsAheR48Qkw9eZuYfNiRd6TEVJhBcEigw6pf0T4rVJgEkO3Z/oZMOj7KGprOhgiKVE2jDcgvKQp8nguJv9CZxIy116zfR+uf3AAKbLA15BKshjLWw/hrki7
+ em1l17g4L9LgCl2lifVMjksrI1IJes4nAdHzm3ziho+0qfM+EpoSnGX9ki3xzhdSKKRU95zo6GFxDYYV4gVkSkbelBe5vZ7vFqhvIhNOFISgBH/eTFAOqIX4
+ 9uZefcmkCHk/vtqnsadHiQbd/m74YD7ont5DdKvmquyHFBuMg5jzeMNCT2wBWFft06pyNyUKEQp8crAUxQdopEXH+IQJNVnc2mPlvZdF6FhVlQBIj/NwsdZC
+ N3hJzQYOVsQqlKArue6i5xqHi2kW8xXTQyup8x7BtLI9yA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_031052_754735_B3CA46DD 
-X-CRM114-Status: GOOD (  20.51  )
+X-CRM114-CacheID: sfid-20200608_043151_583292_16411EC2 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -99,155 +100,70 @@ Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
 On 05/06/2020 19:26, Dafna Hirschfeld wrote:
-> The CSC API (Colorspace conversion) allows userspace to try
-> to configure the ycbcr/hsv_enc function and the quantization
-> for capture devices. This patch adds support to the CSC API
-> in vivid.
-> Using the CSC API, userspace is allowed to do the following:
+> When setting the sink format of the 'rkisp1_resizer'
+> the format should be supported by 'rkisp1_isp' on
+> the video source pad. This patch checks this condition
+> and set the format to default if the condition is false.
 > 
-> 1. Set the ycbcr_enc function for YUV formats.
-> 2. Set the hsv_enc function for HSV formats
-> 3. Set the quantization for YUV and RGB formats.
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+>  drivers/staging/media/rkisp1/rkisp1-common.h  | 4 ++++
+>  drivers/staging/media/rkisp1/rkisp1-isp.c     | 4 ----
+>  drivers/staging/media/rkisp1/rkisp1-resizer.c | 2 +-
+>  3 files changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+> index 0c4fe503adc9..39d8e46d8d8a 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
+> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+> @@ -22,6 +22,10 @@
+>  #include "rkisp1-regs.h"
+>  #include "uapi/rkisp1-config.h"
+>  
+> +#define RKISP1_DIR_SRC BIT(0)
+> +#define RKISP1_DIR_SINK BIT(1)
+> +#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
+> +
+>  #define RKISP1_ISP_MAX_WIDTH		4032
+>  #define RKISP1_ISP_MAX_HEIGHT		3024
+>  #define RKISP1_ISP_MIN_WIDTH		32
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> index dc2b59a0160a..e66e87d6ea8b 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+> @@ -23,10 +23,6 @@
+>  
+>  #define RKISP1_ISP_DEV_NAME	RKISP1_DRIVER_NAME "_isp"
+>  
+> -#define RKISP1_DIR_SRC BIT(0)
+> -#define RKISP1_DIR_SINK BIT(1)
+> -#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
 
-I just realized something. We excluded colorspace and xfer_func from the CSC API
-for now since there are no drivers that support those conversions. But actually,
-that's not true since vivid *does* support this unless it is in loopback mode
-(then no CSC conversion is supported).
+Helen had a comment about this in the original patch (https://patchwork.linuxtv.org/patch/64292/).
 
-So if dev->loop_video is true, then disable CSC conversion in vivid.
-
-Otherwise CSC can be fully enabled for all four colorimetry fields.
-
-So I think we should add flags to signal this for colorspace and xfer_func as well
-and implement this in vivid.
-
-Sorry about this, I should have realized this (much) earlier.
+Can you process that comment for the v5 of this series?
 
 Regards,
 
 	Hans
 
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> ---
->  .../media/test-drivers/vivid/vivid-vid-cap.c  | 49 +++++++++++++++++--
->  .../test-drivers/vivid/vivid-vid-common.c     | 20 ++++++++
->  2 files changed, 65 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/media/test-drivers/vivid/vivid-vid-cap.c b/drivers/media/test-drivers/vivid/vivid-vid-cap.c
-> index e94beef008c8..8a43d7ebe53f 100644
-> --- a/drivers/media/test-drivers/vivid/vivid-vid-cap.c
-> +++ b/drivers/media/test-drivers/vivid/vivid-vid-cap.c
-> @@ -549,6 +549,29 @@ int vivid_g_fmt_vid_cap(struct file *file, void *priv,
->  	return 0;
->  }
->  
-> +static bool vivid_is_hsv_enc_valid(__u8 hsv_enc)
-> +{
-> +	if (hsv_enc == V4L2_HSV_ENC_180 || hsv_enc == V4L2_HSV_ENC_256)
-> +		return true;
-> +	return false;
-> +}
-> +
-> +static bool vivid_is_ycbcr_enc_valid(__u8 ycbcr_enc)
-> +{
-> +	/* V4L2_YCBCR_ENC_SMPTE240M is the last ycbcr_enc enum */
-> +	if (ycbcr_enc && ycbcr_enc <= V4L2_YCBCR_ENC_SMPTE240M)
-> +		return true;
-> +	return false;
-> +}
-> +
-> +static bool vivid_is_quant_valid(__u8 quantization)
-> +{
-> +	if (quantization == V4L2_QUANTIZATION_FULL_RANGE ||
-> +	    quantization == V4L2_QUANTIZATION_LIM_RANGE)
-> +		return true;
-> +	return false;
-> +}
-> +
->  int vivid_try_fmt_vid_cap(struct file *file, void *priv,
->  			struct v4l2_format *f)
->  {
-> @@ -560,6 +583,7 @@ int vivid_try_fmt_vid_cap(struct file *file, void *priv,
->  	unsigned factor = 1;
->  	unsigned w, h;
->  	unsigned p;
-> +	bool user_set_csc = !!(mp->flags & V4L2_PIX_FMT_FLAG_SET_CSC);
->  
->  	fmt = vivid_get_format(dev, mp->pixelformat);
->  	if (!fmt) {
-> @@ -634,12 +658,23 @@ int vivid_try_fmt_vid_cap(struct file *file, void *priv,
->  			(fmt->bit_depth[0] / fmt->vdownsampling[0]);
->  
->  	mp->colorspace = vivid_colorspace_cap(dev);
-> -	if (fmt->color_enc == TGP_COLOR_ENC_HSV)
-> -		mp->hsv_enc = vivid_hsv_enc_cap(dev);
-> -	else
-> +	if (fmt->color_enc == TGP_COLOR_ENC_HSV) {
-> +		if (!user_set_csc || !vivid_is_hsv_enc_valid(mp->hsv_enc))
-> +			mp->hsv_enc = vivid_hsv_enc_cap(dev);
-> +	} else if (fmt->color_enc == TGP_COLOR_ENC_YCBCR) {
-> +		if (!user_set_csc || !vivid_is_ycbcr_enc_valid(mp->ycbcr_enc))
-> +			mp->ycbcr_enc = vivid_ycbcr_enc_cap(dev);
-> +	} else {
->  		mp->ycbcr_enc = vivid_ycbcr_enc_cap(dev);
-> +	}
->  	mp->xfer_func = vivid_xfer_func_cap(dev);
-> -	mp->quantization = vivid_quantization_cap(dev);
-> +	if (fmt->color_enc == TGP_COLOR_ENC_YCBCR ||
-> +	    fmt->color_enc == TGP_COLOR_ENC_RGB) {
-> +		if (!user_set_csc || !vivid_is_quant_valid(mp->quantization))
-> +			mp->quantization = vivid_quantization_cap(dev);
-> +	} else {
-> +		mp->quantization = vivid_quantization_cap(dev);
-> +	}
->  	memset(mp->reserved, 0, sizeof(mp->reserved));
->  	return 0;
->  }
-> @@ -769,6 +804,12 @@ int vivid_s_fmt_vid_cap(struct file *file, void *priv,
->  	if (vivid_is_sdtv_cap(dev))
->  		dev->tv_field_cap = mp->field;
->  	tpg_update_mv_step(&dev->tpg);
-> +	dev->tpg.quantization = mp->quantization;
-> +	if (dev->fmt_cap->color_enc == TGP_COLOR_ENC_YCBCR)
-> +		dev->tpg.ycbcr_enc = mp->ycbcr_enc;
-> +	else
-> +		dev->tpg.hsv_enc = mp->hsv_enc;
-> +
->  	return 0;
->  }
->  
-> diff --git a/drivers/media/test-drivers/vivid/vivid-vid-common.c b/drivers/media/test-drivers/vivid/vivid-vid-common.c
-> index 76b0be670ebb..19aacb180e67 100644
-> --- a/drivers/media/test-drivers/vivid/vivid-vid-common.c
-> +++ b/drivers/media/test-drivers/vivid/vivid-vid-common.c
-> @@ -920,6 +920,26 @@ int vivid_enum_fmt_vid(struct file *file, void  *priv,
->  	fmt = &vivid_formats[f->index];
->  
->  	f->pixelformat = fmt->fourcc;
-> +
-> +	if (f->type != V4L2_BUF_TYPE_VIDEO_CAPTURE &&
-> +	    f->type != V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE)
-> +		return 0;
-> +	/*
-> +	 * For capture devices, we support the CSC API.
-> +	 * We allow userspace to:
-> +	 * 1. set the ycbcr_enc on yuv format
-> +	 * 2. set the hsv_enc on hsv format
-> +	 * 3. set the quantization on yuv and rgb formats
-> +	 */
-> +	if (fmt->color_enc == TGP_COLOR_ENC_YCBCR) {
-> +		f->flags |= V4L2_FMT_FLAG_CSC_YCBCR_ENC;
-> +		f->flags |= V4L2_FMT_FLAG_CSC_QUANTIZATION;
-> +	} else if (fmt->color_enc == TGP_COLOR_ENC_HSV) {
-> +		f->flags |= V4L2_FMT_FLAG_CSC_HSV_ENC;
-> +	} else if (fmt->color_enc == TGP_COLOR_ENC_RGB) {
-> +		f->flags |= V4L2_FMT_FLAG_CSC_QUANTIZATION;
-> +	}
-> +
->  	return 0;
->  }
->  
+> -
+>  /*
+>   * NOTE: MIPI controller and input MUX are also configured in this file.
+>   * This is because ISP Subdev describes not only ISP submodule (input size,
+> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> index d64c064bdb1d..fa28f4bd65c0 100644
+> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> @@ -542,7 +542,7 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+>  					    which);
+>  	sink_fmt->code = format->code;
+>  	mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+> -	if (!mbus_info) {
+> +	if (!mbus_info || !(mbus_info->direction & RKISP1_DIR_SRC)) {
+>  		sink_fmt->code = RKISP1_DEF_FMT;
+>  		mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+>  	}
 > 
 
 
