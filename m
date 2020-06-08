@@ -2,48 +2,73 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D46D1F1001
-	for <lists+linux-rockchip@lfdr.de>; Sun,  7 Jun 2020 23:29:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 300511F13F4
+	for <lists+linux-rockchip@lfdr.de>; Mon,  8 Jun 2020 09:50:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d6Xscfn6BjrbrIzpnbNxAZEx77l+czukrOzIr1MEV4Y=; b=JB9trdtGL7I8jD
-	dG2e5dIxFYnceljFKMqzxeRr9Bd7EPx1W9hRrHUpYz5hLNv/zcq5ticrXymGBzwTzaXLSmvZEvKQR
-	oEsweRGMOsFKKwRiw9ouDWLbT2wJf40KD5dXtA0jRnWbqaw7ddpGpnYI/mRcRH51NW/zJzoWUi5tc
-	D/nNsO6rsEkeuiBmwZhM0hQQg/01HsKHl0AOOP1Bqqv90h+RIAcV//wh44FjPU5GkI7SoC5LBHt4c
-	jKdwzZ026YWeLsQpRqHIaIzNt4dqsAnxyHs34ZoyEr+8NPVQcTbtuTbzqVgAxVonpcDXzK5RldjYK
-	4XR8Qn5LRXe6GKbEE9hQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+D9FF8CHelO86tvED1BHKrXaUPQKDiGLE6DTDJABstY=; b=hzM
+	kROLtE1xySCqH9P0tNGCDrXM7Hak2fSLtrjpUuusxT+UDjtZr8qW6e7IiHt9dQ3PS4+nXbIfgRm4v
+	BgsxkCRSik7EinnBvcOL8n54YPHRY6TkRhRlAZ5aWwgpug8PHzHwQEFtINTDCLgblIsm74A7tSy6K
+	hVQ33DijQrW4wgalEbcHQBJRX9xh1SWQqnHJ/EaL3/L61bXPj/hHhl0Tprf9EBHgENOeQY3LUcGPl
+	dTPs0M2Hb2k9b+4+3q3Gpb5+ZecNcnxrqrR0JtNET6uoxT3RaWiGtgmOxszPjVkL0jGbTBGxW6wtY
+	J6RvNumXZT8ZVfhKPgzhiUKDJ0RsOQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ji2r5-000701-0U; Sun, 07 Jun 2020 21:29:23 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jiCYQ-0004RW-Te; Mon, 08 Jun 2020 07:50:46 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ji2r1-0006zO-Sb; Sun, 07 Jun 2020 21:29:21 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=phil.lan)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1ji2qs-0008GG-Ts; Sun, 07 Jun 2020 23:29:10 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH] arm64: dts: rockchip: fix rk3368-lion gmac reset gpio
-Date: Sun,  7 Jun 2020 23:29:09 +0200
-Message-Id: <20200607212909.920575-1-heiko@sntech.de>
-X-Mailer: git-send-email 2.26.2
-MIME-Version: 1.0
+ id 1jiCXY-0001KG-MW; Mon, 08 Jun 2020 07:49:55 +0000
+Received: from localhost (unknown [192.168.167.16])
+ by lucky1.263xmail.com (Postfix) with ESMTP id C5AF1C9595;
+ Mon,  8 Jun 2020 15:49:41 +0800 (CST)
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-ABS-CHECKED: 0
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P760T139944219621120S1591602577688290_; 
+ Mon, 08 Jun 2020 15:49:39 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <e10282be9cd3eae483e94464a5236c88>
+X-RL-SENDER: sugar.zhang@rock-chips.com
+X-SENDER: zxg@rock-chips.com
+X-LOGIN-NAME: sugar.zhang@rock-chips.com
+X-FST-TO: vkoul@kernel.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+X-System-Flag: 0
+From: Sugar Zhang <sugar.zhang@rock-chips.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH v1 0/13] Patches to improve dma transfer efficiency for
+ Rockchip SoCs.
+Date: Mon,  8 Jun 2020 15:49:14 +0800
+Message-Id: <1591602567-43788-1-git-send-email-sugar.zhang@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_142919_923024_7867016F 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200608_004952_908537_22A69B7A 
+X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.130 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.130 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,47 +81,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- klaus.goger@theobroma-systems.com, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: devicetree@vger.kernel.org, Carlos de Paula <me@carlosedp.com>,
+ dmaengine@vger.kernel.org, Jonas Karlman <jonas@kwiboo.se>,
+ Shawn Lin <shawn.lin@rock-chips.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Sugar Zhang <sugar.zhang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-The lion gmac node currently uses opposite active-values for the
-gmac phy reset pin. The gpio-declaration uses active-high while the
-separate snps,reset-active-low property marks the pin as active low.
 
-While on the kernel side this works ok, other DT users may get
-confused - as seen with uboot right now.
 
-So bring this in line and make both properties match, similar to the
-other Rockchip board.
+Sugar Zhang (13):
+  dmaengine: pl330: Remove the burst limit for quirk 'NO-FLUSHP'
+  dmaengine: pl330: Add quirk 'arm,pl330-periph-burst'
+  dt-bindings: dma: pl330: Document the quirk 'arm,pl330-periph-burst'
+  ARM: dts: rk3036: Add 'arm,pl330-periph-burst' for dmac
+  ARM: dts: rk322x: Add 'arm,pl330-periph-burst' for dmac
+  ARM: dts: rk3288: Add 'arm,pl330-periph-burst' for dmac
+  ARM: dts: rk3xxx: Add 'arm,pl330-periph-burst' for dmac
+  ARM: dts: rv1108: Add 'arm,pl330-periph-burst' for dmac
+  arm64: dts: px30: Add 'arm,pl330-periph-burst' for dmac
+  arm64: dts: rk3308: Add 'arm,pl330-periph-burst' for dmac
+  arm64: dts: rk3328: Add 'arm,pl330-periph-burst' for dmac
+  arm64: dts: rk3368: Add 'arm,pl330-periph-burst' for dmac
+  arm64: dts: rk3399: Add 'arm,pl330-periph-burst' for dmac
 
-Fixes: d99a02bcfa81 ("arm64: dts: rockchip: add RK3368-uQ7 (Lion) SoM")
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
- arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../devicetree/bindings/dma/arm-pl330.txt          |  1 +
+ arch/arm/boot/dts/rk3036.dtsi                      |  1 +
+ arch/arm/boot/dts/rk322x.dtsi                      |  1 +
+ arch/arm/boot/dts/rk3288.dtsi                      |  3 ++
+ arch/arm/boot/dts/rk3xxx.dtsi                      |  3 ++
+ arch/arm/boot/dts/rv1108.dtsi                      |  1 +
+ arch/arm64/boot/dts/rockchip/px30.dtsi             |  1 +
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi           |  2 +
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi           |  1 +
+ arch/arm64/boot/dts/rockchip/rk3368.dtsi           |  2 +
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi           |  2 +
+ drivers/dma/pl330.c                                | 44 +++++++++++++++-------
+ 12 files changed, 49 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-index a53de05b5c80..0a137df1ed40 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
-@@ -157,7 +157,7 @@ &gmac {
- 	pinctrl-0 = <&rgmii_pins>;
- 	snps,reset-active-low;
- 	snps,reset-delays-us = <0 10000 50000>;
--	snps,reset-gpio = <&gpio3 RK_PB3 GPIO_ACTIVE_HIGH>;
-+	snps,reset-gpio = <&gpio3 RK_PB3 GPIO_ACTIVE_LOW>;
- 	tx_delay = <0x10>;
- 	rx_delay = <0x10>;
- 	status = "okay";
 -- 
-2.26.2
+2.7.4
+
+
 
 
 _______________________________________________
