@@ -2,79 +2,62 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 407411F1F0E
-	for <lists+linux-rockchip@lfdr.de>; Mon,  8 Jun 2020 20:32:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 514331F2499
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 01:23:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MTr0m1rOsqA8lDLFI7ekyht49smnMLRMwiXZnzwKN1A=; b=m4uyXUxewdXgwV
-	QQu9KTCTt2JIeLl97096gHVLOhTSZZaFfVYK6w+ZEiS2Mb4izzAGwx9Rvud79Jv1hbygEJRTDxP2X
-	hfe/W47N5FbM3fF+DWe7NoDiyqbcMqoLR8wRnGTT95kWFLVpP30ST0FGJiZxHFXJjFcPmkQDGozws
-	Sobjs0aYLZ7flBocsnC3k9v5W7KO0CsJv/S7VAQfnQFbDkDSUflUsh59h8+TzILaNdPU3DeoO29Ju
-	b/1O8KVhjDgeL3/8/Eby7o0HN4oWSgBy6hG/UaGLOZEbPk56v0PLd9G3vYG+TD8mgt0P12JHKhWmu
-	ttWwSrne0FQDALRVEWVw==;
+	List-Owner; bh=y2ab1YyNZDrTrUEidIgdmpmW+qkj8Ftma4Ae6HdKykU=; b=AdO6mkic93RFhR
+	gBs7+BeNgsGarbaL0ssvfQ/P/G4BQJO4pD8OFpkicu+3pdYtImGiYbLeeCkA20yFpaJM/uSIPS6Hw
+	zKyjsuzm2tD+Jf+Kp23QSXFIscW2YlIDK+HBjsMpyi6/JQAmI1eIbekjHlmr5VbEdbeTutIkIPpi3
+	AExDlPGWwudJhmrbmEkizdhJZhLFY7H7P2hv3HCgQPwm5Bi/WNoymcpf8SZavyeBebDBTIfGEw6T9
+	tK1hlYLoLVkpOD/KNvGj0VW7l7cngevhFrlYx+0upV/08w1viZMk5flvLj5I3NjF3e4zjMxg4R/1V
+	fwrlT0jG6epmDp/vR/3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiMZL-0003M0-J1; Mon, 08 Jun 2020 18:32:23 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jiR74-0002kz-T9; Mon, 08 Jun 2020 23:23:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiMZI-0003L5-TE
- for linux-rockchip@lists.infradead.org; Mon, 08 Jun 2020 18:32:22 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id h95so191377pje.4
- for <linux-rockchip@lists.infradead.org>; Mon, 08 Jun 2020 11:32:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lj7UGgufzUrli12AvwkCo5i8blVe87esYrdniDn/yFw=;
- b=VoxPyd/qf/mZWC0YEfWVnlHPTc9U9skg3sJpVZSdrRqDYKoj6KAio8bNrYjRScgk54
- yrKw/8DcyPJCfg11V0S1xxIyHTkoo7ElIJae/Xu2pLUpTqkTPQo68OkPAlIuPOXbg4JI
- dnb9Mdisr3bBB8CtpbDr9yjnThONNHPtoU+vI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lj7UGgufzUrli12AvwkCo5i8blVe87esYrdniDn/yFw=;
- b=Iwj15pDWpH7grBKqOYesBOdWua1IiMX1DpvhwziEh28RmQlwu941DXO1G66KpKEcEe
- 0P48zxr6qdPvRHGsE5Kx1S17CZJr5ZJ+ZsiMz5atziCWa6v+vKpFxJp7O2+7HHchMhTz
- U7uv6Ym7/kCLUuOJinKzF2ttJwsuwlLqK+JHifCJdrDWLgL9Ys1WUbSYKAVEiD+r/1N6
- +TTTdeFD49NtpxTvkM6xK0OpCbM1pM55mY8crpTUrsSg2I21P7WMNLsir9g1mImQoDSS
- hEqnasvXffHqo9ahNCUdqRwWFj1kEXflhMxjNOaYJYso6YcyIsJbHXPnZ3Kx5g8zatTg
- 1JgQ==
-X-Gm-Message-State: AOAM530qte3PBm52b5YNp3CNPFMg3sZXsCcWucrLJJacctVh6igHoYU0
- SIeNyUZ4p7Dk00XRu0aC3IYBXg==
-X-Google-Smtp-Source: ABdhPJypCmSzNW5Io35Hs/Bp7sb3cEuXeVxVaiePkK1EZpexT0GXnzz9Ukqm+xmzYiIKJ6AyHHRBag==
-X-Received: by 2002:a17:902:bcc9:: with SMTP id o9mr94687pls.335.1591641140373; 
- Mon, 08 Jun 2020 11:32:20 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:9043:af95:b7b4:3ade])
- by smtp.gmail.com with ESMTPSA id k29sm6680961pgf.77.2020.06.08.11.32.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 08 Jun 2020 11:32:19 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Simon Glass <sjg@chromium.org>
-Subject: [PATCH v3 5/5] roc-rk3399-pc: Set LED only during POR and pwr_key=y
-Date: Mon,  8 Jun 2020 14:31:44 -0400
-Message-Id: <20200608183144.26809-6-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200608183144.26809-1-jagan@amarulasolutions.com>
-References: <20200608183144.26809-1-jagan@amarulasolutions.com>
+ id 1jiQwz-0006Ry-Qi; Mon, 08 Jun 2020 23:13:07 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47CF720B80;
+ Mon,  8 Jun 2020 23:13:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591657985;
+ bh=7j31ytWFpCdfw0FB5VRFDqkG3S0rIAW1hLa6rqGWXpc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=DeRUjI2rPln0Y4WqmO0OU++AmvA3uDLWqrfZXwjEXlRkmms9SDtz0Yu2v3HVAbUN+
+ C+cX0lKyQg+zl/Yx83d9qI+1SxCLGgfItiGtID8of/ZHQN73Iv2LC4AqG+zaKudaNn
+ qhfKql2smJFT+dwAzl1pPOVyNNzRcxaPq5qWzaMs=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.6 045/606] clk: rockchip: fix incorrect
+ configuration of rk3228 aclk_gpu* clocks
+Date: Mon,  8 Jun 2020 19:02:50 -0400
+Message-Id: <20200608231211.3363633-45-sashal@kernel.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
+References: <20200608231211.3363633-1-sashal@kernel.org>
 MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_113220_943630_71AE8415 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_161305_929647_078923B4 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,146 +80,91 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>
+Cc: Justin Swartz <justin.swartz@risingedge.co.za>,
+ Heiko Stuebner <heiko@sntech.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-ROC-RK3399-PC has specific set of configurations for
-on-board led setup.
+From: Justin Swartz <justin.swartz@risingedge.co.za>
 
-Due to easiness for user to know the state of the board
-roc-rk339-pc board code will setup the low power led
-on/off, and waiting for user to press power key and then
-glow full power led.
+commit cec9d101d70a3509da9bd2e601e0b242154ce616 upstream.
 
-All this needs to happen only during power-on-reset not
-for soft reset or WDT.
+The following changes prevent the unrecoverable freezes and rcu_sched
+stall warnings experienced in each of my attempts to take advantage of
+lima.
 
-Also, it is not a proper usage to ask the user to press
-the Power key if the board connected remotely, so add
-the environment variable 'pwr_key' to check as well.
+Replace the COMPOSITE_NOGATE definition of aclk_gpu_pre with a
+COMPOSITE that retains the selection of HDMIPHY as the PLL source, but
+instead makes uses of the aclk_gpu PLL source gate and parent names
+defined by mux_pll_src_4plls_p rather than mux_aclk_gpu_pre_p.
 
-So, user need to press Power key only
-- during POR
-- pwr_key=y
+Remove the now unused mux_aclk_gpu_pre_p and the four named but also
+unused definitions (cpll_gpu, gpll_gpu, hdmiphy_gpu and usb480m_gpu)
+of the aclk_gpu PLL source gate.
 
-Tested-by: Suniel Mahesh <sunil@amarulasolutions.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Use the correct gate offset for aclk_gpu and aclk_gpu_noc.
+
+Fixes: 307a2e9ac524 ("clk: rockchip: add clock controller for rk3228")
+Cc: stable@vger.kernel.org
+Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+[double-checked against SoC manual and added fixes tag]
+Link: https://lore.kernel.org/r/20200114162503.7548-1-justin.swartz@risingedge.co.za
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
-Changes for v3:
-- new patch
+ drivers/clk/rockchip/clk-rk3228.c | 17 ++++-------------
+ 1 file changed, 4 insertions(+), 13 deletions(-)
 
- board/firefly/roc-pc-rk3399/spl.c         | 35 ++++++++++++++++++++++-
- configs/roc-pc-mezzanine-rk3399_defconfig |  4 ++-
- configs/roc-pc-rk3399_defconfig           |  4 ++-
- 3 files changed, 40 insertions(+), 3 deletions(-)
-
-diff --git a/board/firefly/roc-pc-rk3399/spl.c b/board/firefly/roc-pc-rk3399/spl.c
-index a7664c6b86..771a7fb2f2 100644
---- a/board/firefly/roc-pc-rk3399/spl.c
-+++ b/board/firefly/roc-pc-rk3399/spl.c
-@@ -4,16 +4,49 @@
-  */
+diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
+index d17cfb7a3ff4..d7243c09cc84 100644
+--- a/drivers/clk/rockchip/clk-rk3228.c
++++ b/drivers/clk/rockchip/clk-rk3228.c
+@@ -156,8 +156,6 @@ PNAME(mux_i2s_out_p)		= { "i2s1_pre", "xin12m" };
+ PNAME(mux_i2s2_p)		= { "i2s2_src", "i2s2_frac", "xin12m" };
+ PNAME(mux_sclk_spdif_p)		= { "sclk_spdif_src", "spdif_frac", "xin12m" };
  
- #include <common.h>
-+#include <env.h>
- #include <spl_gpio.h>
-+#include <asm/io.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/gpio.h>
-+#include <asm/arch-rockchip/grf_rk3399.h>
+-PNAME(mux_aclk_gpu_pre_p)	= { "cpll_gpu", "gpll_gpu", "hdmiphy_gpu", "usb480m_gpu" };
+-
+ PNAME(mux_uart0_p)		= { "uart0_src", "uart0_frac", "xin24m" };
+ PNAME(mux_uart1_p)		= { "uart1_src", "uart1_frac", "xin24m" };
+ PNAME(mux_uart2_p)		= { "uart2_src", "uart2_frac", "xin24m" };
+@@ -468,16 +466,9 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
+ 			RK2928_CLKSEL_CON(24), 6, 10, DFLAGS,
+ 			RK2928_CLKGATE_CON(2), 8, GFLAGS),
  
-+#define PMUGRF_BASE		0xff320000
- #define GPIO0_BASE		0xff720000
+-	GATE(0, "cpll_gpu", "cpll", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "gpll_gpu", "gpll", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "hdmiphy_gpu", "hdmiphy", 0,
+-			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	GATE(0, "usb480m_gpu", "usb480m", 0,
++	COMPOSITE(0, "aclk_gpu_pre", mux_pll_src_4plls_p, 0,
++			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS,
+ 			RK2928_CLKGATE_CON(3), 13, GFLAGS),
+-	COMPOSITE_NOGATE(0, "aclk_gpu_pre", mux_aclk_gpu_pre_p, 0,
+-			RK2928_CLKSEL_CON(34), 5, 2, MFLAGS, 0, 5, DFLAGS),
  
-+/**
-+ * LED setup for roc-rk3399-pc
-+ *
-+ * 1. Set the low power leds (only during POR, pwr_key env is 'y')
-+ *    glow yellow LED, termed as low power
-+ *    poll for on board power key press
-+ *    once powe key pressed, turn off yellow
-+ * 2. Turn on red LED, indicating full power mode
-+ */
- static void led_setup(void)
- {
- 	struct rockchip_gpio_regs * const gpio0 = (void *)GPIO0_BASE;
-+	struct rk3399_pmugrf_regs * const pmugrf = (void *)PMUGRF_BASE;
-+	bool press_pwr_key = false;
-+
-+	if (IS_ENABLED(CONFIG_SPL_ENV_SUPPORT)) {
-+		env_init();
-+		env_load();
-+		if (env_get_yesno("pwr_key") == 1)
-+			press_pwr_key = true;
-+	}
-+
-+	if (press_pwr_key && !strcmp(get_reset_cause(), "POR")) {
-+		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 1);
-+
-+		spl_gpio_set_pull(&pmugrf->gpio0_p, GPIO(BANK_A, 5),
-+				  GPIO_PULL_NORMAL);
-+		while (readl(&gpio0->ext_port) & 0x20)
-+			;
-+
-+		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 0);
-+	}
+ 	COMPOSITE(SCLK_SPI0, "sclk_spi0", mux_pll_src_2plls_p, 0,
+ 			RK2928_CLKSEL_CON(25), 8, 1, MFLAGS, 0, 7, DFLAGS,
+@@ -582,8 +573,8 @@ static struct rockchip_clk_branch rk3228_clk_branches[] __initdata = {
+ 	GATE(0, "pclk_peri_noc", "pclk_peri", CLK_IGNORE_UNUSED, RK2928_CLKGATE_CON(12), 2, GFLAGS),
  
--	/* Turn on red LED, indicating full power mode */
- 	spl_gpio_output(gpio0, GPIO(BANK_B, 5), 1);
- }
+ 	/* PD_GPU */
+-	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 14, GFLAGS),
+-	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(13), 15, GFLAGS),
++	GATE(ACLK_GPU, "aclk_gpu", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 14, GFLAGS),
++	GATE(0, "aclk_gpu_noc", "aclk_gpu_pre", 0, RK2928_CLKGATE_CON(7), 15, GFLAGS),
  
-diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 8ad74dc408..d3369063ea 100644
---- a/configs/roc-pc-mezzanine-rk3399_defconfig
-+++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -17,7 +17,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc-mezzanine.dtb"
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
--CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
-+CONFIG_SPL_ENV_SUPPORT=y
- CONFIG_SPL_SPI_LOAD=y
- CONFIG_TPL=y
- CONFIG_CMD_BOOTZ=y
-@@ -32,6 +33,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc-mezzanine"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
- CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_SPL_DM_SEQ_ALIAS=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
- CONFIG_MISC=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 6fd06d6381..0650b941c2 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -17,7 +17,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc.dtb"
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
--CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
-+CONFIG_SPL_ENV_SUPPORT=y
- CONFIG_SPL_SPI_LOAD=y
- CONFIG_TPL=y
- CONFIG_CMD_BOOTZ=y
-@@ -31,6 +32,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
- CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_SPL_DM_SEQ_ALIAS=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
- CONFIG_MISC=y
+ 	/* PD_BUS */
+ 	GATE(0, "sclk_initmem_mbist", "aclk_cpu", 0, RK2928_CLKGATE_CON(8), 1, GFLAGS),
 -- 
-2.20.1
+2.25.1
 
 
 _______________________________________________
