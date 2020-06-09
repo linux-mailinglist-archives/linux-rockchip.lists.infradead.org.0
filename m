@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15AAB1F31C4
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 03:20:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A10D41F31C8
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 03:21:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,22 +11,22 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=A0yRhSmrFOF3BTgXhxWCmHOljLuSk16otri/+3d7QNk=; b=E3eaX80b5IQ7439l4dHAf83mcn
-	LuImkeRHNw2Obfp7Y8SqPovsNMXYsAkwec71b017/tvH06TLdJFCmJyMdhcC4SDUbfifwBJtSA+gM
-	9h5aWdi9fQZEraEl7vuBXSqXaAHgm+ryZO6F0d2Zf+hzaVJ+VVJmkGSU+an1KRpgG2r3hEHclYy3M
-	CMe5cZKpK6m6N8D46RiIT54qqMsUkYBVfhwdJ+RyymoM88Gg3nRGcJq1XxgKLnM4XVdF+bzzLAXlo
-	31KsG5m5Gm4br69zDqTvOkbMRj6mz155gcp4SOy1yxXGwLPaA86JOikNSF8KuwCRcwk9UYyNwOdAP
-	I1vUXLOw==;
+	bh=LeKNuVn2raDbHKJZ5Dns/j1/dzgCm5I/ynjSDCwIj7o=; b=mIC1ph1kbhE1Mi+ID4uLXsD3PF
+	n1ATjCpIVoMK+ClgNWO6NMx4PR74mokeQ2BpHtDAPmEnqi1PXF1yB9noTkagRwvZcE3PZv3G7eIiu
+	t0Maz0+J4b1CJQ4i94f/qpYADgnU5cDM4iXtKm5g2bwFQkaoVCU+lJ8NBGbi2toio1WMYTv0gJS9I
+	gUKD1aqA++dsY+pAvFii5VhH/VeX7eiNQRwUNZ1R71pzXYeSEbx0OCaO5lnbUhsJ6+4f+GbOMG1PV
+	ZGzgXm1iTCDYmTvcJRaesbqSJv6w1xcUzONPxS0mMWlbAt8MGatmpLWCihoptOjwhaQ3VqHIKyR0h
+	12Yo/Jgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiSwT-0006PM-JE; Tue, 09 Jun 2020 01:20:41 +0000
+	id 1jiSx0-0006YE-45; Tue, 09 Jun 2020 01:21:14 +0000
 Received: from lucky1.263xmail.com ([211.157.147.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiSwO-0006Mc-Op
- for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 01:20:38 +0000
+ id 1jiSww-0006Wj-73
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 01:21:11 +0000
 Received: from localhost (unknown [192.168.167.235])
- by lucky1.263xmail.com (Postfix) with ESMTP id B7069B93B7;
- Tue,  9 Jun 2020 09:20:32 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 718BEB965B;
+ Tue,  9 Jun 2020 09:21:08 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -35,9 +35,9 @@ X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P31250T139913132439296S1591665629442073_; 
- Tue, 09 Jun 2020 09:20:32 +0800 (CST)
+ Tue, 09 Jun 2020 09:20:37 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <4a4d5c523ac6a2ee5f9dc2a97bcc4e11>
+X-UNIQUE-TAG: <e8c8adda6691bea497be2b670b81f097>
 X-RL-SENDER: sugar.zhang@rock-chips.com
 X-SENDER: zxg@rock-chips.com
 X-LOGIN-NAME: sugar.zhang@rock-chips.com
@@ -49,15 +49,15 @@ X-System-Flag: 0
 From: Sugar Zhang <sugar.zhang@rock-chips.com>
 To: heiko@sntech.de,
 	vkoul@kernel.org
-Subject: [PATCH v2 06/13] ARM: dts: rk3288: Add 'arm,
+Subject: [PATCH v2 07/13] ARM: dts: rk3xxx: Add 'arm,
  pl330-periph-burst' for dmac
-Date: Tue,  9 Jun 2020 09:20:16 +0800
-Message-Id: <1591665623-38275-2-git-send-email-sugar.zhang@rock-chips.com>
+Date: Tue,  9 Jun 2020 09:20:17 +0800
+Message-Id: <1591665623-38275-3-git-send-email-sugar.zhang@rock-chips.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
 References: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_182037_011834_3B0FC314 
+X-CRM114-CacheID: sfid-20200608_182110_455401_4E85C283 
 X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -102,35 +102,35 @@ Signed-off-by: Sugar Zhang <sugar.zhang@rock-chips.com>
 Changes in v2:
 - fix FATAL ERROR: Unable to parse input tree
 
- arch/arm/boot/dts/rk3288.dtsi | 3 +++
+ arch/arm/boot/dts/rk3xxx.dtsi | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 0cd8877..740267a 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -168,6 +168,7 @@
+diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
+index d929b60..859a747 100644
+--- a/arch/arm/boot/dts/rk3xxx.dtsi
++++ b/arch/arm/boot/dts/rk3xxx.dtsi
+@@ -45,6 +45,7 @@
+ 				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
+ 			#dma-cells = <1>;
+ 			arm,pl330-broken-no-flushp;
++			arm,pl330-periph-burst;
+ 			clocks = <&cru ACLK_DMA1>;
+ 			clock-names = "apb_pclk";
+ 		};
+@@ -56,6 +57,7 @@
+ 				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
+ 			#dma-cells = <1>;
+ 			arm,pl330-broken-no-flushp;
++			arm,pl330-periph-burst;
+ 			clocks = <&cru ACLK_DMA1>;
+ 			clock-names = "apb_pclk";
+ 			status = "disabled";
+@@ -68,6 +70,7 @@
  				     <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
  			#dma-cells = <1>;
  			arm,pl330-broken-no-flushp;
 +			arm,pl330-periph-burst;
- 			clocks = <&cru ACLK_DMAC2>;
- 			clock-names = "apb_pclk";
- 		};
-@@ -179,6 +180,7 @@
- 				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
- 			#dma-cells = <1>;
- 			arm,pl330-broken-no-flushp;
-+			arm,pl330-periph-burst;
- 			clocks = <&cru ACLK_DMAC1>;
- 			clock-names = "apb_pclk";
- 			status = "disabled";
-@@ -191,6 +193,7 @@
- 				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
- 			#dma-cells = <1>;
- 			arm,pl330-broken-no-flushp;
-+			arm,pl330-periph-burst;
- 			clocks = <&cru ACLK_DMAC1>;
+ 			clocks = <&cru ACLK_DMA2>;
  			clock-names = "apb_pclk";
  		};
 -- 
