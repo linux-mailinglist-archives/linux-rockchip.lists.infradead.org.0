@@ -2,89 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9F71F3D92
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 16:05:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A28D1F3E5D
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 16:38:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hrxji58BQvaj/MBCsz2L/ovMgsoVjGn88VTLfjdfl8s=; b=AuYt071oBd8n0o
-	y5BC/qMIM4q8M4KAGJnDr6qD2itkm3WegMxGvL/f6XvrPsCbjRVTj1Pfq97HwgiU2Mrq5XVQGGeqD
-	PU2TkbGBxv9KP9GXbkJGK3IcFtRY2U0X7421MSkFIU6R97jwvM+s1yAIUIRuNVd28ynzfwcpK5WlQ
-	fKZAViiNTqDp328SN9MHS0pYHzX+Fl1VQe6BQgTQwcMgApzwVdYKJCndYGq7qqRJT3BZ/8nyJcEA4
-	OzY9FeWx7SzmU4ZJjq05yjW/dz4oQnodmEolK+3n9Dqp5nszv9xuz/6Fi0FYY8Z1pT3oKMZd84jRC
-	zFMshtg5yxFsBZgnD3HQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4xfOwo3gkwniMeqK4LR00DGtng1O3tS0CRrIOle8/nM=; b=cJXgdIFnEK9vLDyFqW0wpNJsp
+	LuoT8W8smdurgcV1bAFuaJRd9Wf5uDvtb1Kqpp53uFzatTp32O1r8nRs0VzZOBM65Y5L2tti4gWJJ
+	Jhn8UjMVF19rse01Wm3vRsKFLfVVgE4NrU3wcVXiRyezGzOLbFDgeI/rH2WKt0xx7bx3XENczukd/
+	Toedpbg5peQ6UTBnN+sGcMK5IkJWhSUs1ek6uHvQBpU1jbNpVYsXT06Vik1tdCNanvzknQ3ferbVK
+	OV2yoAjSOX7rX0LVPURfc/vSpxEorKR+bQww1V7jrVH7TOzm1yfQslnAOch9qAVjen9BCztVLrlzi
+	HYkjjTomg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiesu-0001Og-Cj; Tue, 09 Jun 2020 14:05:48 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiesq-0001Eh-O3
- for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 14:05:46 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z64so10134372pfb.1
- for <linux-rockchip@lists.infradead.org>; Tue, 09 Jun 2020 07:05:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=f9CrqcnaefmHITTXwApYWeo0mtWKOQnGsVEcpxOXfhI=;
- b=JBJSiEHIFI3buTLjFk5PvwntfKCzO9sTPv1Kd/b/BtLK47Pebb4h0qLouI0D7W6Y9I
- jxk6Aw/RmkyqYJoMHE422vJgDiKTChy6rzLV/prT1OSxNoloFLDOK8z9oLTt6sKpJOzr
- 5+bqVS7Nf1kvue7mehbOqmXzgepi81Of8xjDM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=f9CrqcnaefmHITTXwApYWeo0mtWKOQnGsVEcpxOXfhI=;
- b=qY6Mj7Eq3mchcV7iE71oY3lVr98aS/a+Yc7LXIQ5S0d8bl+7tcDel4E6b0g03deVkZ
- myWBVINkg2vPoWYAu2ZRdbdMuses+MEcLrr9k4MKjDqX2QJ+dLzs3/W8F086QA/pPvRH
- 9q3aLrmewS16zYiX3TmE1MdMeuCOzO4+oqZ2kz+7Rq0a++GIaayIRrsHhHi6D7ZIVffx
- GVS2JfrD/aJOguvbKY218wgYJ6kWhlghDJOIit2xopxq1Kc+MvWnFtpUZy/z0OeT4m25
- HTpPRx9Z6dLDdyHLH+VLbtarPHtnis2z6TyTKTysxQw6guPfIEY6OOv8M4ZRiM+RffJp
- yUFg==
-X-Gm-Message-State: AOAM532DgKhcPMvsoCNjn9UFyCiI1mRLtNPWiPZii9s93vxhtloiY/s7
- /Fc9M+W6vpXljkYtLH/LUfo4rQ==
-X-Google-Smtp-Source: ABdhPJwUWoMUA7gjEpXahv0TTMb16+nlgmwQrXH7It5QA4yOl7Gy9fh9x8HxfbXYJXEt9Q1NU1c2Ng==
-X-Received: by 2002:a62:1654:: with SMTP id 81mr26437119pfw.137.1591711544093; 
- Tue, 09 Jun 2020 07:05:44 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:6575:fcd2:e4d4:715a])
- by smtp.gmail.com with ESMTPSA id e12sm8961817pgi.40.2020.06.09.07.05.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 07:05:42 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Simon Glass <sjg@chromium.org>
-Subject: [PATCH 3/3] roc-rk3399-pc: Enable USB Gadget
-Date: Tue,  9 Jun 2020 19:35:14 +0530
-Message-Id: <20200609140514.132579-3-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200609140514.132579-1-jagan@amarulasolutions.com>
-References: <20200609140514.132579-1-jagan@amarulasolutions.com>
+	id 1jifOS-0002nd-Ep; Tue, 09 Jun 2020 14:38:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jifOP-0002md-7G
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 14:38:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 488E41FB;
+ Tue,  9 Jun 2020 07:38:20 -0700 (PDT)
+Received: from [10.57.11.57] (unknown [10.57.11.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15D273F66F;
+ Tue,  9 Jun 2020 07:38:16 -0700 (PDT)
+Subject: Re: [PATCH v2] mmc: sdhci: Fix HISPD bit handling
+To: Jagan Teki <jagan@amarulasolutions.com>, Peng Fan <peng.fan@nxp.com>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ Kever Yang <kever.yang@rock-chips.com>
+References: <20200609140135.131887-1-jagan@amarulasolutions.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <097786ed-37ca-cf20-35f4-20a57e6c3b63@arm.com>
+Date: Tue, 9 Jun 2020 15:38:11 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200609140135.131887-1-jagan@amarulasolutions.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_070544_805600_73EBEA70 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200609_073821_303986_6F420330 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,50 +66,88 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: u-boot@lists.denx.de, sunil@amarulasolutions.com,
+ linux-amarula@amarulasolutions.com, linux-rockchip@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable DWC3 core, gadget for roc-rk3399-pc board.
+On 2020-06-09 15:01, Jagan Teki wrote:
+> SDHCI HISPD bits need to be configured based on desired mmc
+> timings mode and some HISPD quirks.
+> 
+> So, handle the HISPD bit based on the mmc computed selected
+> mode(timing parameter) rather than fixed mmc card clock
+> frequency.
+> 
+> Linux handle the HISPD similar like this in below commit,
+> 
+> commit <501639bf2173> ("mmc: sdhci: fix SDHCI_QUIRK_NO_HISPD_BIT handling")
+> 
+> This eventually fixed the mmc write issue observed in
+> rk3399 sdhci controller.
+> 
+> Bug log for refernece,
+> => gpt write mmc 0 $partitions
+> Writing GPT: mmc write failed
+> ** Can't write to device 0 **
+> ** Can't write to device 0 **
+> error!
+> 
+> Cc: Kever Yang <kever.yang@rock-chips.com>
+> Cc: Peng Fan <peng.fan@nxp.com>
+> Reviewed-by: Jaehoon Chung <jh80.chung@samsung.com>
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+> Changes for v2:
+> - collect Jaehoon R-b
+> 
+>   drivers/mmc/sdhci.c | 23 +++++++++++++++--------
+>   1 file changed, 15 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/mmc/sdhci.c b/drivers/mmc/sdhci.c
+> index 92cc8434af..280b8c88eb 100644
+> --- a/drivers/mmc/sdhci.c
+> +++ b/drivers/mmc/sdhci.c
+> @@ -594,14 +594,21 @@ static int sdhci_set_ios(struct mmc *mmc)
+>   			ctrl &= ~SDHCI_CTRL_4BITBUS;
+>   	}
+>   
+> -	if (mmc->clock > 26000000)
+> -		ctrl |= SDHCI_CTRL_HISPD;
+> -	else
+> -		ctrl &= ~SDHCI_CTRL_HISPD;
+> -
+> -	if ((host->quirks & SDHCI_QUIRK_NO_HISPD_BIT) ||
+> -	    (host->quirks & SDHCI_QUIRK_BROKEN_HISPD_MODE))
+> -		ctrl &= ~SDHCI_CTRL_HISPD;
+> +	if (!(host->quirks & SDHCI_QUIRK_NO_HISPD_BIT) ||
 
-This would help to use fastboot by default.
+Should that be "&&" rather than "||"? Otherwise this will always 
+evaluate to true unless *both* quirks are set, which isn't equivalent to 
+the check being removed above.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Tested-by: Suniel Mahesh <sunil@amarulasolutions.com>
----
- configs/roc-pc-rk3399_defconfig | 3 +++
- 1 file changed, 3 insertions(+)
+Robin.
 
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 80e7001481..046fb73858 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -12,6 +12,7 @@ CONFIG_DEBUG_UART_CLOCK=24000000
- CONFIG_SPL_SPI_FLASH_SUPPORT=y
- CONFIG_SPL_SPI_SUPPORT=y
- CONFIG_DEBUG_UART=y
-+# CONFIG_ANDROID_BOOT_IMAGE is not set
- CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc.dtb"
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
-@@ -61,7 +62,9 @@ CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
- CONFIG_USB_DWC3=y
- CONFIG_USB_DWC3_GENERIC=y
-+CONFIG_ROCKCHIP_USB2_PHY=y
- CONFIG_USB_KEYBOARD=y
-+CONFIG_USB_GADGET=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
--- 
-2.25.1
-
+> +	    !(host->quirks & SDHCI_QUIRK_BROKEN_HISPD_MODE)) {
+> +		if (mmc->selected_mode == MMC_HS ||
+> +		    mmc->selected_mode == SD_HS ||
+> +		    mmc->selected_mode == MMC_DDR_52 ||
+> +		    mmc->selected_mode == MMC_HS_200 ||
+> +		    mmc->selected_mode == MMC_HS_400 ||
+> +		    mmc->selected_mode == UHS_SDR25 ||
+> +		    mmc->selected_mode == UHS_SDR50 ||
+> +		    mmc->selected_mode == UHS_SDR104 ||
+> +		    mmc->selected_mode == UHS_DDR50)
+> +			ctrl |= SDHCI_CTRL_HISPD;
+> +		else
+> +			ctrl &= ~SDHCI_CTRL_HISPD;
+> +	}
+>   
+>   	sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
+>   
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
