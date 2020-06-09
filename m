@@ -2,7 +2,7 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B5FF1F3F47
+	by mail.lfdr.de (Postfix) with ESMTPS id 16F331F3F46
 	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 17:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,35 +11,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kF2BFTP4pc7hzUgWxtyaLf8jITKOv3fm3tw2dgOXq7A=; b=PjENrX3eEwwRzf5EKYI58tYJu/
-	7TV5WHih8lXdmNPuATOx19UxWx8tymmn2vRIagJeDAp+5HD7PEnAjyZR9kX0TZa7Jpi/DVdGynP3v
-	jlqzdkiaaxcET4nVjsg8nh5nMmHL/0d49qr3KYMghxBE6t0b+AWTE92Q2Y2kqigMG0rYZR6Jh0xJ8
-	8rIRNSoXrdi9tuurwGk60coKXHGuP9sFfh4jXKE0nOSyIguWm9axqMcBxzHIvKWxcl3nDXtRwv61e
-	bTFtL+b8Gm7Yndx5lQpyH4R+j0JrBtts6+AjhB0Td/LjeCbclvMUMMFTCA2YcoJn3bUVFX8E0Cits
-	0855DnKg==;
+	bh=mGo4kJvceRBpdNwz0MHCDA7H1Pm4i6LUagyCa2+goFQ=; b=dOxcHMMdx1Wfn7Cqw08Tg7Qu1q
+	9975komwERVe7P3KQMfe9x0DZwfVl2ZMQTtyNvPoSShmc+X1a8LXeCt2WQ47McJgeUEC9SP1n8sRA
+	d+AyIN2L/u86IxD5CNQiZv4BzZRLZ8+GJb5MqJB+gEUDDdPjeVuN+p1pNIeFx9YlmUwmOWAZOh9rP
+	QQ5Nvg5lLJEnPceEsSaBxURHCiy6s14OoPNhVt0GyqVHLjDogLakVHGweBT8mJUsUnTHuEcCgGtER
+	Xc4sLaVmTx6OQ9nndpB8gBSndRZXTczDu0IR7LPDJtObWbPyj/BCxwINajk/LMPtzmvq8uUpBJyjG
+	xsalyoNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jigBc-0002tk-Pi; Tue, 09 Jun 2020 15:29:12 +0000
+	id 1jigBd-0002uP-Ld; Tue, 09 Jun 2020 15:29:13 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jigBY-0002sL-93
- for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 15:29:09 +0000
+ id 1jigBY-0002sM-94
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 15:29:10 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id D90722A3B20
+ (Authenticated sender: dafna) with ESMTPSA id 2F6A82A3B22
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: linux-media@vger.kernel.org,
 	laurent.pinchart@ideasonboard.com
-Subject: [PATCH v2 1/4] media: staging: rkisp1: rsz: supported formats are the
- isp's src formats, not sink formats
-Date: Tue,  9 Jun 2020 17:28:22 +0200
-Message-Id: <20200609152825.24772-2-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v2 2/4] media: staging: rkisp1: rsz: set default format if the
+ given format is not RKISP1_DIR_SRC
+Date: Tue,  9 Jun 2020 17:28:23 +0200
+Message-Id: <20200609152825.24772-3-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200609152825.24772-1-dafna.hirschfeld@collabora.com>
 References: <20200609152825.24772-1-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_082908_571463_A79BA422 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200609_082908_569375_55CD6114 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -71,34 +70,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The rkisp1_resizer's enum callback 'rkisp1_rsz_enum_mbus_code'
-calls the enum callback of the 'rkisp1_isp' on it's video sink pad.
-This is a bug, the resizer should support the same formats
-supported by the 'rkisp1_isp' on the source pad (not the sink pad).
+When setting the sink format of the 'rkisp1_resizer'
+the format should be supported by 'rkisp1_isp' on
+the video source pad. This patch checks this condition
+and set the format to default if the condition is false.
 
 Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
 
 Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Acked-by: Helen Koike <helen.koike@collabora.com>
 ---
- drivers/staging/media/rkisp1/rkisp1-resizer.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/staging/media/rkisp1/rkisp1-common.h  | 4 ++++
+ drivers/staging/media/rkisp1/rkisp1-isp.c     | 4 ----
+ drivers/staging/media/rkisp1/rkisp1-resizer.c | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+index 0c4fe503adc9..39d8e46d8d8a 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-common.h
++++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+@@ -22,6 +22,10 @@
+ #include "rkisp1-regs.h"
+ #include "uapi/rkisp1-config.h"
+ 
++#define RKISP1_DIR_SRC BIT(0)
++#define RKISP1_DIR_SINK BIT(1)
++#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
++
+ #define RKISP1_ISP_MAX_WIDTH		4032
+ #define RKISP1_ISP_MAX_HEIGHT		3024
+ #define RKISP1_ISP_MIN_WIDTH		32
+diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+index dc2b59a0160a..e66e87d6ea8b 100644
+--- a/drivers/staging/media/rkisp1/rkisp1-isp.c
++++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+@@ -23,10 +23,6 @@
+ 
+ #define RKISP1_ISP_DEV_NAME	RKISP1_DRIVER_NAME "_isp"
+ 
+-#define RKISP1_DIR_SRC BIT(0)
+-#define RKISP1_DIR_SINK BIT(1)
+-#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
+-
+ /*
+  * NOTE: MIPI controller and input MUX are also configured in this file.
+  * This is because ISP Subdev describes not only ISP submodule (input size,
 diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-index d049374413dc..d64c064bdb1d 100644
+index d64c064bdb1d..fa28f4bd65c0 100644
 --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
 +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
-@@ -437,8 +437,8 @@ static int rkisp1_rsz_enum_mbus_code(struct v4l2_subdev *sd,
- 	u32 pad = code->pad;
- 	int ret;
- 
--	/* supported mbus codes are the same in isp sink pad */
--	code->pad = RKISP1_ISP_PAD_SINK_VIDEO;
-+	/* supported mbus codes are the same in isp video src pad */
-+	code->pad = RKISP1_ISP_PAD_SOURCE_VIDEO;
- 	ret = v4l2_subdev_call(&rsz->rkisp1->isp.sd, pad, enum_mbus_code,
- 			       &dummy_cfg, code);
- 
+@@ -542,7 +542,7 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+ 					    which);
+ 	sink_fmt->code = format->code;
+ 	mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+-	if (!mbus_info) {
++	if (!mbus_info || !(mbus_info->direction & RKISP1_DIR_SRC)) {
+ 		sink_fmt->code = RKISP1_DEF_FMT;
+ 		mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+ 	}
 -- 
 2.17.1
 
