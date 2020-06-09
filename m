@@ -2,8 +2,8 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91AC71F358A
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 09:51:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 906451F3588
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 09:51:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,20 +11,20 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=30qDTYGjKJTZTsm46cRS1izTilSzTwjLSAwBTYWdMQE=; b=DQx+M5IWve6578iQ9o0m34NbGa
-	NmUCGlRAWzR7SrdD2fGakFO0DCWYdOyWw0lubigUAgfn+7Ur6j/6Krpi/UtZ6grTluk7uUSnb6yGJ
-	SpYdbqki/d0Y81DD1+dY8YuhTv4F+Yo/xuQjK0siMk5i0Fqb3b8yieTrDI4mpv6b3LG8X0YgFJxye
-	aHzwaTPbJRSwGo9De0q24d2BkP4TE3jYJpAOat63djbfkDEtCWhICK9L7+htKC/AsuGg49NJ79rNl
-	AtQM2s/eKSz94M14ueW75AbLD2JPLSxTEcyTstGB+9sXf6maHMZh7ncTq5rUizqLd+5DQqyPdqz9h
-	T1epuHWQ==;
+	bh=q5Sjd5MRAroylsTH2TbtFpz9x3ea75A3hB0e79OM/QI=; b=W0HF/3FSq1DZt/2S4VDE34Bzsr
+	lmxCUAv+OshuBmKB8s22nxI+GYRgxSovaimoFANtScDdE9CNoC2jMlkfj6rdHuG5477+jZvxpmpfa
+	4Yegn4nJhdRzzXVIirGikMFFiIYKcP1rGL7a0XJiykOGBbstRE5eMqCSRgSrIAlz+j8ccA3KxYszk
+	WMOg6Xs5XMw+1+GW/QVY2zm9EqBM9C5q4mRX6zspSsciiYM9fIjImV14ZjIKCBOsNw1BSdjZeyqjs
+	uSgRLm57Qi0zRdxeDOB9YMj1In6ooMJuDdWW/rZBoi0VtcE5zwPRTCkQ6ERMQtPWo4NBekRZQmRY7
+	N74w1T6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiZ2t-0007Fb-LP; Tue, 09 Jun 2020 07:51:43 +0000
-Received: from lucky1.263xmail.com ([211.157.147.135])
+	id 1jiZ2c-0006vw-Hf; Tue, 09 Jun 2020 07:51:26 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiZ0Z-0002eo-7g; Tue, 09 Jun 2020 07:49:21 +0000
+ id 1jiZ0X-0002dQ-HR; Tue, 09 Jun 2020 07:49:19 +0000
 Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id 58F109AAA4;
+ by lucky1.263xmail.com (Postfix) with ESMTP id 9712CC946C;
  Tue,  9 Jun 2020 15:49:15 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -34,9 +34,9 @@ X-ABS-CHECKED: 0
 Received: from ubuntu18.lan (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P3328T139696428545792S1591688948875935_; 
- Tue, 09 Jun 2020 15:49:14 +0800 (CST)
+ Tue, 09 Jun 2020 15:49:15 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <c5b3b76bf2bc8e13c8af1b769897c139>
+X-UNIQUE-TAG: <fb53448cfdf7ec3ce13533315e27abd9>
 X-RL-SENDER: yifeng.zhao@rock-chips.com
 X-SENDER: zyf@rock-chips.com
 X-LOGIN-NAME: yifeng.zhao@rock-chips.com
@@ -48,16 +48,17 @@ X-System-Flag: 0
 From: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 To: miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
  robh+dt@kernel.org
-Subject: [PATCH v6 6/8] arm: dts: rockchip: Add nfc dts for RV1108 SOC
-Date: Tue,  9 Jun 2020 15:49:05 +0800
-Message-Id: <20200609074907.24075-2-yifeng.zhao@rock-chips.com>
+Subject: [PATCH v6 7/8] arm: dts: rockchip: Add nfc dts for RK2928 and other
+ SOC
+Date: Tue,  9 Jun 2020 15:49:06 +0800
+Message-Id: <20200609074907.24075-3-yifeng.zhao@rock-chips.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200609074907.24075-1-yifeng.zhao@rock-chips.com>
 References: <20200609074020.23860-1-yifeng.zhao@rock-chips.com>
  <20200609074907.24075-1-yifeng.zhao@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_004919_528206_FC4E81D7 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20200609_004917_807373_CF1E224A 
+X-CRM114-Status: UNSURE (   8.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -65,12 +66,12 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.135 listed in list.dnswl.org]
+ no trust [211.157.147.130 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.135 listed in wl.mailspike.net]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.130 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,7 +95,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Add nfc(nand flash controller) node for RV1108 Soc.
+Add nfc(nand flash controller) node for RK2928, RK3066, RK3168
+and RK3188 Soc.
 
 Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
 ---
@@ -105,31 +107,29 @@ Changes in v4: None
 Changes in v3: None
 Changes in v2: None
 
- arch/arm/boot/dts/rv1108.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm/boot/dts/rk3xxx.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
-index f9cfe2c80791..56cf7f49773b 100644
---- a/arch/arm/boot/dts/rv1108.dtsi
-+++ b/arch/arm/boot/dts/rv1108.dtsi
-@@ -451,6 +451,17 @@
- 		#reset-cells = <1>;
+diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
+index f9fcb7e9657b..4209ca73af9a 100644
+--- a/arch/arm/boot/dts/rk3xxx.dtsi
++++ b/arch/arm/boot/dts/rk3xxx.dtsi
+@@ -273,6 +273,15 @@
+ 		status = "disabled";
  	};
  
-+	nfc: nand-controller@30100000 {
-+		compatible = "rockchip,rv1108-nfc";
-+		reg = <0x30100000  0x1000>;
-+		interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
-+		clocks = <&cru HCLK_NANDC>, <&cru SCLK_NANDC>;
-+		clock-names = "ahb", "nfc";
-+		assigned-clocks = <&cru SCLK_NANDC>;
-+		assigned-clock-rates = <150000000>;
++	nfc: nand-controller@10500000 {
++		compatible = "rockchip,rk2928-nfc";
++		reg = <0x10500000 0x4000>;
++		interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&cru HCLK_NANDC0>;
++		clock-names = "ahb";
 +		status = "disabled";
 +	};
 +
- 	emmc: mmc@30110000 {
- 		compatible = "rockchip,rv1108-dw-mshc", "rockchip,rk3288-dw-mshc";
- 		reg = <0x30110000 0x4000>;
+ 	pmu: pmu@20004000 {
+ 		compatible = "rockchip,rk3066-pmu", "syscon", "simple-mfd";
+ 		reg = <0x20004000 0x100>;
 -- 
 2.17.1
 
