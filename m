@@ -2,47 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 780061F429A
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 19:43:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2546E1F4309
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 19:49:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DvHr6UE3XYev4a/BojnF4ZxOV0I5uYMbC4oSMHS6Uoc=; b=fr0obh/rVcB23qPZoeMOUp38t
-	bv4Os+dA0EiJuxEKhBalKEEcyDlsRvg6DQt70jgyqAr7BDlEzGdOxb2l/7A7W1onPbEwQ0jZaq2WV
-	vFmY/dpucsGEftm4yEABBfCrAXsPJssZ/aArRQfVJ6t/QWyxPx4pslf1aP1MivsY8KkwOZrGHEnDq
-	VC7xHM4VOcH/O/J+9ncTc97YrW3FFircLsdqAMupUp2rcKMMOP3HclHl3vO6tTEVSWgCrdunvk/VE
-	g7oz2SCfADm5e9TLMU/VQU1dR6VpuCpCfiKMVgzLsYsGjAvr7u1YkPDhlFY46f6NhohzU0oUhoFyc
-	UBjctS9/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=axhPNDsLJ8duREQ0/5sBIht3cNeALd/L6Qmadr+S/xs=; b=Lyt6svIYascfhy
+	YY72p4mSnX3B33iKMkUn46/fp6ysD5lONBTyKvt9B1dCChG0Jk9/UcwurnaX/JQIgFMc6VFMMGyUA
+	az1u1MRebIqlkBIhzscZLLpuTansBoIdmsu5T7/yyz+lJN3Q5+XI89VBvKDAu8C+fHw6myu0sIFZX
+	g88mrx/78PkkKZsxd0ss0tzXTl4zblSMQoxLk5dI+zT8uU2lXaa/BkkIQgyTQdbVOIeGItTR48rhs
+	u1HkEuVOGqx4/vgmGrO6tB8mVq5YO4fHGaoyuo2dmsB/HfQbMUkVkIRYU3S6PCCmpxVQzQUz8v2mo
+	uVrFn1GEwppMcmrjwzRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiiHI-00030t-Hj; Tue, 09 Jun 2020 17:43:12 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jiiNH-0006vT-Jp; Tue, 09 Jun 2020 17:49:23 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiiH8-0002tG-2X; Tue, 09 Jun 2020 17:43:03 +0000
+ id 1jiiMV-0006KJ-4b; Tue, 09 Jun 2020 17:48:36 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id 77DE12A07B0
+ (Authenticated sender: aratiu) with ESMTPSA id 132B52A3B67
 From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Daniel Vetter <daniel.vetter@ffwll.ch>
-Subject: Re: [PATCH v9 11/11] Documentation: gpu: todo: Add dw-mipi-dsi
- consolidation plan
-In-Reply-To: <CAKMK7uGLQCj_oJcbXynt_1bmwBQy6ncUgc49DPejyfCtb68e_g@mail.gmail.com>
-References: <20200609162700.953260-1-adrian.ratiu@collabora.com>
- <20200609162700.953260-12-adrian.ratiu@collabora.com>
- <CAKMK7uGLQCj_oJcbXynt_1bmwBQy6ncUgc49DPejyfCtb68e_g@mail.gmail.com>
-Date: Tue, 09 Jun 2020 20:44:26 +0300
-Message-ID: <87sgf4i16t.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Subject: [PATCH v9 00/11] Genericize DW MIPI DSI bridge and add i.MX 6 driver
+Date: Tue,  9 Jun 2020 20:49:48 +0300
+Message-Id: <20200609174959.955926-1-adrian.ratiu@collabora.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_104302_252534_E791E585 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20200609_104835_309539_E5D1CE39 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -59,98 +59,76 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Andrzej Hajda <a.hajda@samsung.com>, Jonas Karlman <jonas@kwiboo.se>,
- Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Philippe CORNU <philippe.cornu@st.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-imx@nxp.com, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, 09 Jun 2020, Daniel Vetter <daniel.vetter@ffwll.ch> wrote:
-> On Tue, Jun 9, 2020 at 6:25 PM Adrian Ratiu 
-> <adrian.ratiu@collabora.com> wrote: 
->> 
->> This documents the longer-term plan to cleanup the dw-mipi-dsi 
->> bridge based drivers after the regmap refactor and i.MX6 driver 
->> have landed. 
->> 
->> The goal is to get the entire bridge logic in one place and 
->> continue the refactorings under the drm/bridge tree. 
->> 
->> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com> Cc: 
->> Boris Brezillon <boris.brezillon@collabora.com> Cc: Sam 
->> Ravnborg <sam@ravnborg.org> Cc: Daniel Vetter 
->> <daniel.vetter@ffwll.ch> Signed-off-by: Adrian Ratiu 
->> <adrian.ratiu@collabora.com> 
-> 
-> This cc's the world, but not dri-devel. Can you pls resubmit 
-> with that added? 
+[Re-submitting to cc dri-devel, sorry about the noise]
 
-Yes, sorry about omitting dri-devel, it was unintentional. Will 
-resubmit the same version.
+Hello all,
 
+v9 cleanly applies on top of latest next-20200609 tree.
+
+v9 does not depend on other patches as the last binding doc has been merged.
+
+All feedback up to this point has been addressed. Specific details in
+individual patch changelogs.
+
+The biggest changes are the deprecation of the Synopsys DW bridge bind()
+API in favor of of_drm_find_bridge() and .attach callbacks, the addition
+of a TODO entry which outlines future planned bridge driver refactorings
+and a reordering of some i.MX 6 patches to appease checkpatch.
+
+The idea behind the TODO is to get this regmap and i.MX 6 driver merged
+and then do the rest of refactorings in-tree because it's easier and the
+refactorings themselves are out-of-scope of this series which is adding
+i.MX 6 support and is quite big already, so please, if there are more
+refactoring ideas, let's add them to the TODO doc. :) I intend to tackle
+those after this series is merged to avoid two complex inter-dependent
+simultaneous series.
+
+As always more testing is welcome especially on Rockchip and STM SoCs.
+
+Big thank you to everyone who has contributed to this up to now,
 Adrian
 
->
-> Thanks, Daniel
->
->> ---
->>  Documentation/gpu/todo.rst | 25 +++++++++++++++++++++++++
->>  1 file changed, 25 insertions(+)
->>
->> diff --git a/Documentation/gpu/todo.rst b/Documentation/gpu/todo.rst
->> index 658b52f7ffc6c..2b142980a4b16 100644
->> --- a/Documentation/gpu/todo.rst
->> +++ b/Documentation/gpu/todo.rst
->> @@ -548,6 +548,31 @@ See drivers/gpu/drm/amd/display/TODO for tasks.
->>
->>  Contact: Harry Wentland, Alex Deucher
->>
->> +Reorganize dw-mipi-dsi bridge-based host-controller drivers
->> +-----------------------------------------------------------
->> +
->> +The Synopsys DW MIPI DSI bridge is used by a number of SoC platform drivers
->> +(STM, Rockchip, i.MX) which don't cleanly encapsulate their bridge logic which
->> +gets split between the Synopsys bridge (drm/bridge/synopsys/dw-mipi-dsi.c) and
->> +platform drivers like drm/imx/dw_mipi_dsi-imx6.c by passing around the bridge
->> +configuration regmap, creating new bridges / daisy chaining in platform drivers,
->> +duplicating encoder creation, having too much encoder logic instead of using the
->> +simple encoder interface and so on.
->> +
->> +The goal of this rework is to make the dw-mipi-dsi driver a better encapsulated
->> +bridge by moving all bridge-related logic under drm/bridge, including the SoC
->> +bindings which chain to the core Synopsys code under drm/bridge/dw-mipi-dsi/
->> +from which they can be further consolidated and cleaned up.
->> +
->> +If this goal proves to be impossible then drm_bridge might not be the correct
->> +abstraction for these host controllers and unifying their logic into a helper
->> +library encapsulating a drm_encoder might be more desirable, in other words to
->> +move away from drm_bridge entirely.
->> +
->> +Contact: Adrian Ratiu, Daniel Vetter, Laurent Pinchart
->> +
->> +Level: Intermediate
->> +
->>  Bootsplash
->>  ==========
->>
->> --
->> 2.27.0
->>
->
->
-> -- 
-> Daniel Vetter
-> Software Engineer, Intel Corporation
-> http://blog.ffwll.ch
+Adrian Ratiu (11):
+  drm: bridge: dw_mipi_dsi: add initial regmap infrastructure
+  drm: bridge: dw_mipi_dsi: abstract register access using reg_fields
+  drm: bridge: dw_mipi_dsi: add dsi v1.01 support
+  drm: bridge: dw_mipi_dsi: remove bind/unbind API
+  dt-bindings: display: add i.MX6 MIPI DSI host controller doc
+  ARM: dts: imx6qdl: add missing mipi dsi properties
+  drm: imx: Add i.MX 6 MIPI DSI host platform driver
+  drm: stm: dw-mipi-dsi: let the bridge handle the HW version check
+  drm: bridge: dw-mipi-dsi: split low power cfg register into fields
+  drm: bridge: dw-mipi-dsi: fix bad register field offsets
+  Documentation: gpu: todo: Add dw-mipi-dsi consolidation plan
+
+ .../display/imx/fsl,mipi-dsi-imx6.yaml        | 112 +++
+ Documentation/gpu/todo.rst                    |  25 +
+ arch/arm/boot/dts/imx6qdl.dtsi                |   8 +
+ drivers/gpu/drm/bridge/synopsys/Kconfig       |   1 +
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 713 ++++++++++++------
+ drivers/gpu/drm/imx/Kconfig                   |   8 +
+ drivers/gpu/drm/imx/Makefile                  |   1 +
+ drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c        | 399 ++++++++++
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |   7 +-
+ drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  16 +-
+ 10 files changed, 1059 insertions(+), 231 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+ create mode 100644 drivers/gpu/drm/imx/dw_mipi_dsi-imx6.c
+
+-- 
+2.27.0
+
 
 _______________________________________________
 Linux-rockchip mailing list
