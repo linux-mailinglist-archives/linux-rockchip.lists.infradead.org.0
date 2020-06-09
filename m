@@ -2,29 +2,31 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 515231F319E
-	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 03:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7CAB1F319F
+	for <lists+linux-rockchip@lfdr.de>; Tue,  9 Jun 2020 03:15:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C6BoajXWWcp6iZL8Ds2CbfLKAp3Cf/KK2eIpnPImVu8=; b=jez
-	OkH1RXOHaFx0fmTV1sxWhbZkhQyl/Ox8almbMZlg0BP1IYI5JYJVnsFR1CiJN37RehLZWcCanAc2Y
-	uCzwUBZMAZwCUKwxBdxi9T6TGtvGX3TZGjJ4GM+vrhzwFFp+2I73rNpH2FmQ1jIkKlGJU/7xFOCXd
-	ERnds1ohOhzj2e8usxKw7C4a7WaeYxrZXmJQ0l4Jimf49URUrZfIWDiJ0855gZgzFApvE/vgaZuOY
-	nepj5EtT8b3VkJlL1lmOtkDrTK2HpjSTxxN1D8CVAREEsZArpyRmFtaPgRvqwZzJk8bhvAXiGahhw
-	RZLQY57WdvqthaBQ/MiLc2IvPKioHWg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=3F4HAtT+EOQpzO6APdj2kcNFLeWNP/DO5SkCNYZ1rTo=; b=RDS1RtPHWZhBX0SXyDQqJ0CES9
+	XNk9kgMfBUvgxjErFCy37gvIjsvItnTSKZ3DE/s3oVZdq6DIhwur3Q+iiuS3wBMFezlWeH7Qps2Il
+	ijg5mwz8/+qSxhxsBtmWUKUB6Y+rkW1pQeWAXPn6Tf+ABkpqeMZkqHta4kz8TG2ELQJ3C6YNYIkib
+	A0mR3lCJtxWkt7HPkiVNU6t1oc+6FroPgrP5fnFmfXHgunx8u/YTbIo8Qn9qZyb/G+rBEtgIMMSvU
+	h0VnK7p2AREeaGt0abgcF30tJzZCsHYbTYCTtXqiSEXdT0cZnLAkkjPvIvhFyMymFW5H+nDx8zV73
+	18p4XLLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiSrE-00079K-GY; Tue, 09 Jun 2020 01:15:17 +0000
+	id 1jiSrO-0000EC-CR; Tue, 09 Jun 2020 01:15:26 +0000
 Received: from lucky1.263xmail.com ([211.157.147.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiSqn-00070m-Ae; Tue, 09 Jun 2020 01:14:51 +0000
+ id 1jiSqn-00070q-Ow
+ for linux-rockchip@lists.infradead.org; Tue, 09 Jun 2020 01:14:51 +0000
 Received: from localhost (unknown [192.168.167.32])
- by lucky1.263xmail.com (Postfix) with ESMTP id 335D5AD6BE;
- Tue,  9 Jun 2020 09:14:42 +0800 (CST)
+ by lucky1.263xmail.com (Postfix) with ESMTP id 7ABB3AD7D9;
+ Tue,  9 Jun 2020 09:14:45 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -33,9 +35,9 @@ X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P3328T139696397076224S1591665277471272_; 
- Tue, 09 Jun 2020 09:14:39 +0800 (CST)
+ Tue, 09 Jun 2020 09:14:45 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <9366da969142352c044371455015e4cb>
+X-UNIQUE-TAG: <71cb5e1613a1d627514ec9d43b8b166b>
 X-RL-SENDER: sugar.zhang@rock-chips.com
 X-SENDER: zxg@rock-chips.com
 X-LOGIN-NAME: sugar.zhang@rock-chips.com
@@ -47,26 +49,27 @@ X-System-Flag: 0
 From: Sugar Zhang <sugar.zhang@rock-chips.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 0/13] Patches to improve transfer efficiency for Rockchip
- SoCs.
-Date: Tue,  9 Jun 2020 09:14:14 +0800
-Message-Id: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+Subject: [PATCH v2 01/13] dmaengine: pl330: Remove the burst limit for quirk
+ 'NO-FLUSHP'
+Date: Tue,  9 Jun 2020 09:14:15 +0800
+Message-Id: <1591665267-37713-2-git-send-email-sugar.zhang@rock-chips.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+References: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_181449_567031_7C116632 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200608_181450_158873_4FC9380A 
+X-CRM114-Status: GOOD (  14.13  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.131 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [211.157.147.131 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.131 listed in list.dnswl.org]
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-rockchip@lists.infradead.org
@@ -81,57 +84,100 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Carlos de Paula <me@carlosedp.com>,
- dmaengine@vger.kernel.org, Jonas Karlman <jonas@kwiboo.se>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Sugar Zhang <sugar.zhang@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, Dan Williams <dan.j.williams@intel.com>,
- "Leonidas P. Papadakos" <papadakospan@gmail.com>
+Cc: Sugar Zhang <sugar.zhang@rock-chips.com>,
+ linux-rockchip@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
+ dmaengine@vger.kernel.org, linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+There is no reason to limit the performance on the 'NO-FLUSHP' SoCs,
+cuz these platforms are just that the 'FLUSHP' instruction is broken.
+so, remove the limit to improve the efficiency.
 
+Signed-off-by: Sugar Zhang <sugar.zhang@rock-chips.com>
+---
 
-Changes in v2:
-- fix FATAL ERROR: Unable to parse input tree
+Changes in v2: None
 
-Sugar Zhang (13):
-  dmaengine: pl330: Remove the burst limit for quirk 'NO-FLUSHP'
-  dmaengine: pl330: Add quirk 'arm,pl330-periph-burst'
-  dt-bindings: dma: pl330: Document the quirk 'arm,pl330-periph-burst'
-  ARM: dts: rk3036: Add 'arm,pl330-periph-burst' for dmac
-  ARM: dts: rk322x: Add 'arm,pl330-periph-burst' for dmac
-  ARM: dts: rk3288: Add 'arm,pl330-periph-burst' for dmac
-  ARM: dts: rk3xxx: Add 'arm,pl330-periph-burst' for dmac
-  ARM: dts: rv1108: Add 'arm,pl330-periph-burst' for dmac
-  arm64: dts: px30: Add 'arm,pl330-periph-burst' for dmac
-  arm64: dts: rk3308: Add 'arm,pl330-periph-burst' for dmac
-  arm64: dts: rk3328: Add 'arm,pl330-periph-burst' for dmac
-  arm64: dts: rk3368: Add 'arm,pl330-periph-burst' for dmac
-  arm64: dts: rk3399: Add 'arm,pl330-periph-burst' for dmac
+ drivers/dma/pl330.c | 34 ++++++++++++++++++++++------------
+ 1 file changed, 22 insertions(+), 12 deletions(-)
 
- .../devicetree/bindings/dma/arm-pl330.txt          |  1 +
- arch/arm/boot/dts/rk3036.dtsi                      |  1 +
- arch/arm/boot/dts/rk322x.dtsi                      |  1 +
- arch/arm/boot/dts/rk3288.dtsi                      |  3 ++
- arch/arm/boot/dts/rk3xxx.dtsi                      |  3 ++
- arch/arm/boot/dts/rv1108.dtsi                      |  1 +
- arch/arm64/boot/dts/rockchip/px30.dtsi             |  1 +
- arch/arm64/boot/dts/rockchip/rk3308.dtsi           |  2 +
- arch/arm64/boot/dts/rockchip/rk3328.dtsi           |  1 +
- arch/arm64/boot/dts/rockchip/rk3368.dtsi           |  2 +
- arch/arm64/boot/dts/rockchip/rk3399.dtsi           |  2 +
- drivers/dma/pl330.c                                | 44 +++++++++++++++-------
- 12 files changed, 49 insertions(+), 13 deletions(-)
-
+diff --git a/drivers/dma/pl330.c b/drivers/dma/pl330.c
+index 6a158ee..ff0a91f 100644
+--- a/drivers/dma/pl330.c
++++ b/drivers/dma/pl330.c
+@@ -1183,9 +1183,6 @@ static inline int _ldst_peripheral(struct pl330_dmac *pl330,
+ {
+ 	int off = 0;
+ 
+-	if (pl330->quirks & PL330_QUIRK_BROKEN_NO_FLUSHP)
+-		cond = BURST;
+-
+ 	/*
+ 	 * do FLUSHP at beginning to clear any stale dma requests before the
+ 	 * first WFP.
+@@ -1231,8 +1228,9 @@ static int _bursts(struct pl330_dmac *pl330, unsigned dry_run, u8 buf[],
+ }
+ 
+ /*
+- * transfer dregs with single transfers to peripheral, or a reduced size burst
+- * for mem-to-mem.
++ * only the unaligned bursts transfers have the dregs.
++ * transfer dregs with a reduced size burst to peripheral,
++ * or a reduced size burst for mem-to-mem.
+  */
+ static int _dregs(struct pl330_dmac *pl330, unsigned int dry_run, u8 buf[],
+ 		const struct _xfer_spec *pxs, int transfer_length)
+@@ -1247,8 +1245,23 @@ static int _dregs(struct pl330_dmac *pl330, unsigned int dry_run, u8 buf[],
+ 	case DMA_MEM_TO_DEV:
+ 		/* fall through */
+ 	case DMA_DEV_TO_MEM:
+-		off += _ldst_peripheral(pl330, dry_run, &buf[off], pxs,
+-			transfer_length, SINGLE);
++		/*
++		 * dregs_len = (total bytes - BURST_TO_BYTE(bursts, ccr)) /
++		 *             BRST_SIZE(ccr)
++		 * the dregs len must be smaller than burst len,
++		 * so, for higher efficiency, we can modify CCR
++		 * to use a reduced size burst len for the dregs.
++		 */
++		dregs_ccr = pxs->ccr;
++		dregs_ccr &= ~((0xf << CC_SRCBRSTLEN_SHFT) |
++			(0xf << CC_DSTBRSTLEN_SHFT));
++		dregs_ccr |= (((transfer_length - 1) & 0xf) <<
++			CC_SRCBRSTLEN_SHFT);
++		dregs_ccr |= (((transfer_length - 1) & 0xf) <<
++			CC_DSTBRSTLEN_SHFT);
++		off += _emit_MOV(dry_run, &buf[off], CCR, dregs_ccr);
++		off += _ldst_peripheral(pl330, dry_run, &buf[off], pxs, 1,
++					BURST);
+ 		break;
+ 
+ 	case DMA_MEM_TO_MEM:
+@@ -2221,9 +2234,7 @@ static bool pl330_prep_slave_fifo(struct dma_pl330_chan *pch,
+ 
+ static int fixup_burst_len(int max_burst_len, int quirks)
+ {
+-	if (quirks & PL330_QUIRK_BROKEN_NO_FLUSHP)
+-		return 1;
+-	else if (max_burst_len > PL330_MAX_BURST)
++	if (max_burst_len > PL330_MAX_BURST)
+ 		return PL330_MAX_BURST;
+ 	else if (max_burst_len < 1)
+ 		return 1;
+@@ -3128,8 +3139,7 @@ pl330_probe(struct amba_device *adev, const struct amba_id *id)
+ 	pd->dst_addr_widths = PL330_DMA_BUSWIDTHS;
+ 	pd->directions = BIT(DMA_DEV_TO_MEM) | BIT(DMA_MEM_TO_DEV);
+ 	pd->residue_granularity = DMA_RESIDUE_GRANULARITY_BURST;
+-	pd->max_burst = ((pl330->quirks & PL330_QUIRK_BROKEN_NO_FLUSHP) ?
+-			 1 : PL330_MAX_BURST);
++	pd->max_burst = PL330_MAX_BURST;
+ 
+ 	ret = dma_async_device_register(pd);
+ 	if (ret) {
 -- 
 2.7.4
 
