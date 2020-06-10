@@ -2,81 +2,76 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A4AF1F5274
-	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 12:37:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196FC1F5275
+	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 12:38:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=36c69ZwPD6cN208Fepwhg1OkA9gsUc83ymgZXW1sW64=; b=UK1T8d4bcGRXGg
-	vwKuaKNl+Ek36Jtp9Z9DF4uBZJ88/pRtIoY5DKbrPKCQVLtVAoGsH2i/MMzs23muAX+8ksNCWxf4n
-	LldgLbXeWLUicwj1YzDk/VyGHRWqyQJnXh3BDwCHVffVQTWYinpBuTwgHMLDsBhxbMzSLWAqs05zR
-	N+SQEnBd1Lw2cxfGfFUpPSMjsGeg0REmkfNdOJaYTIrZIR657FtiSzUWPP8fR/wNWrgnNHXCbti6Z
-	d5XSmrwDpH40MTJC8hfQerrNE7wjh2+/aGkQ96AcalVcgWV4j8twPU9vJzXGKDQbZW4wahuVynIHZ
-	HbpNRgI1y+tTeafcoP+Q==;
+	List-Owner; bh=IY/BIzYRe5GbolaogRdsyr4+FxcmeWNMLVoQ/2zz6Pk=; b=pFaKkrXmNpezC7
+	BmLQhj+TpWFx2pjqjh5R3dKazCxdqV/4EATgIjF5uMxct9JXIyAuP9Uzf/VPqB2tulPogevuzr2Qi
+	C1sciaihVjsXy9el5IDyJERGUDBw9moOe8b/cSBvpyaAb4xG4hQzbQizNx6Sg+P6TMiBWX/kUeOjz
+	OfZOV7B/ohQ+ohVtZYkY/fSpJLTOvWobRtcvjcyRCMFigiuRAjoH3d1e8lzocqvd1mumSPtniBais
+	4O0+EB+QvAVMCGdPVhcXpuPzwTwp8+TXGNaZBD8uNeY2A1HtAkLZ9drxL7zppfgor8WkqMOYRN1Xl
+	yX9yD0K47JO+VVVfnWiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiy6y-000501-MQ; Wed, 10 Jun 2020 10:37:36 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jiy7K-000559-Dq; Wed, 10 Jun 2020 10:37:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiy6v-0004y1-55
- for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 10:37:34 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id s88so718393pjb.5
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jun 2020 03:37:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=e6IVnybWPlJWNbvR/6aFZERVLH4MS68wkLid7aBGi0U=;
- b=aIOHuNkoJ7SGflSRY5dizzywvu4LQgo+sp9YkQXodlxrR60ID+dA8lMgbpHRL6TY79
- nAAaMuV8ASGPvb83EJTg8rYNxKArXvhx/+2rhRWpVlilVPu5lKou/urAxjr2HWnORWAX
- zfJk3M517LbW08NN07lVd6Pf52/HA7CoNcrxk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=e6IVnybWPlJWNbvR/6aFZERVLH4MS68wkLid7aBGi0U=;
- b=khZ6Qtiocgku/YN9I1xbELeWPm8ckDj5YB0HEH6yBxdXOSzxyKqxwWWHJLRFCbKVKy
- xm1ekzPhq7tpzZeQAtGxDmzln+lW8yq29PvMm8CoYWI6p3WQrJR5OEc73PousG56mErU
- CRU5GerlyNUAvGD9FMtrONLtTRyU55gq1O/o/WJ8InW20T2X5auvZ+4k541OQnhqBrNT
- MAhalx1ERJGJvWPyRIR7QJfq5S0Wu0vkP7fKkHJOPhjxvacWjf6Jv7sZGo8+KJCRFJ/X
- dM8FDWwUu8fb+un4hp53PonRVGPJ0Alvt7cle1PVNp5ocZo1wc2EE5Q9iVVtfXWxQMTs
- fl1g==
-X-Gm-Message-State: AOAM531hqU8rdVeGyIUjf1usnoCaR24WOhz6V3xUBruVuYXamBqAxe9v
- sqdHRqaO2O2tG6xDoO6xHTW4PA==
-X-Google-Smtp-Source: ABdhPJwAgrRCAvs8dA61T++ETsItWTYCWeEBp3ii5lTeQSJPnOxAQFF7s99Gj7GlxiAtxY8F0meAcQ==
-X-Received: by 2002:a17:902:8496:: with SMTP id
- c22mr2523993plo.57.1591785452416; 
- Wed, 10 Jun 2020 03:37:32 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:9daa:1b72:7bd0:50df])
- by smtp.gmail.com with ESMTPSA id x191sm12454754pfd.37.2020.06.10.03.37.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 03:37:31 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Simon Glass <sjg@chromium.org>
-Subject: [PATCH 4/4] arm64: dts: rockchip: Add Radxa Rock Pi N10 initial
- support
-Date: Wed, 10 Jun 2020 16:06:58 +0530
-Message-Id: <20200610103658.96678-5-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200610103658.96678-1-jagan@amarulasolutions.com>
-References: <20200610103658.96678-1-jagan@amarulasolutions.com>
+ id 1jiy7I-00054o-0r
+ for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 10:37:57 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 91F42206F7;
+ Wed, 10 Jun 2020 10:37:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591785475;
+ bh=unj+bDeTM9fOHOLXyvvzW5zaczB/Zm7P+S7gpr9QXkU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=IybCrIIIeArEOnjyF/g26wFDO+W/ajQOHWiwuiwrxt6+am8eHRulBvOROiuEm4/2q
+ 0F0qyzB/JQT4j+zo9t0+ZN8YrNoWGSBlOWlV7shckFOsoSoiwZrmvwEBX/QR/MmyUD
+ bC7uwGblthzHL6cfBFTyOMU94SPQYgsRMjt2+2Q4=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jiy7F-001ktN-Vy; Wed, 10 Jun 2020 11:37:54 +0100
+Date: Wed, 10 Jun 2020 11:37:52 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Jaehoon Chung <jh80.chung@samsung.com>
+Subject: Re: [PATCH v2] mmc: sdhci: Fix HISPD bit handling
+Message-ID: <20200610113752.65d6f537@why>
+In-Reply-To: <b46fe992-89d4-4a5f-fdb3-e2ec53de2b11@samsung.com>
+References: <20200609140135.131887-1-jagan@amarulasolutions.com>
+ <CGME20200609143823epcas1p24772f20296869f9a7dc5ed53460ea0a4@epcas1p2.samsung.com>
+ <097786ed-37ca-cf20-35f4-20a57e6c3b63@arm.com>
+ <b46fe992-89d4-4a5f-fdb3-e2ec53de2b11@samsung.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: jh80.chung@samsung.com, robin.murphy@arm.com,
+ jagan@amarulasolutions.com, peng.fan@nxp.com, kever.yang@rock-chips.com,
+ u-boot@lists.denx.de, linux-rockchip@lists.infradead.org,
+ linux-amarula@amarulasolutions.com, sunil@amarulasolutions.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_033733_196945_6159A2E8 
-X-CRM114-Status: GOOD (  13.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_033756_101347_48D02C40 
+X-CRM114-Status: GOOD (  18.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,180 +94,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Tom Cubie <tom@radxa.com>,
- U-Boot-Denx <u-boot@lists.denx.de>, Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Peng Fan <peng.fan@nxp.com>, u-boot@lists.denx.de,
+ linux-amarula@amarulasolutions.com, Kever Yang <kever.yang@rock-chips.com>,
+ linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
+ sunil@amarulasolutions.com, Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
-- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
-
-VAMRC RK3399Pro SOM need to mount on top of radxa dalang
-carrier board for making Rock Pi N10 SBC.
-
-So, add initial support for Rock Pi N10 by including rk3399,
-rk3399pro vamrc-som and raxda dalang carrier board dtsi files.
-
-rk3399pro-rock-pi-n10.dts was synced from linux-next v5.7-rc1.
-
-Tested
-- ROCK PI N10 Model B
-- ROCK PI N10 Model C
-- Boot from SD
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm/dts/Makefile                         |  3 +-
- .../arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi |  7 +++
- arch/arm/dts/rk3399pro-rock-pi-n10.dts        | 18 ++++++++
- arch/arm/dts/rk3399pro-u-boot.dtsi            |  6 +++
- board/rockchip/evb_rk3399/MAINTAINERS         |  6 +++
- configs/rock-pi-n10-rk3399pro_defconfig       | 46 +++++++++++++++++++
- 6 files changed, 85 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi
- create mode 100644 arch/arm/dts/rk3399pro-rock-pi-n10.dts
- create mode 100644 arch/arm/dts/rk3399pro-u-boot.dtsi
- create mode 100644 configs/rock-pi-n10-rk3399pro_defconfig
-
-diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index 9900b44274..07dfe06230 100644
---- a/arch/arm/dts/Makefile
-+++ b/arch/arm/dts/Makefile
-@@ -136,7 +136,8 @@ dtb-$(CONFIG_ROCKCHIP_RK3399) += \
- 	rk3399-roc-pc-mezzanine.dtb \
- 	rk3399-rock-pi-4.dtb \
- 	rk3399-rock960.dtb \
--	rk3399-rockpro64.dtb
-+	rk3399-rockpro64.dtb \
-+	rk3399pro-rock-pi-n10.dtb
- 
- dtb-$(CONFIG_ROCKCHIP_RV1108) += \
- 	rv1108-elgin-r1.dtb \
-diff --git a/arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi b/arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi
-new file mode 100644
-index 0000000000..946a0230db
---- /dev/null
-+++ b/arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi
-@@ -0,0 +1,7 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399pro-u-boot.dtsi"
-+#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
-diff --git a/arch/arm/dts/rk3399pro-rock-pi-n10.dts b/arch/arm/dts/rk3399pro-rock-pi-n10.dts
-new file mode 100644
-index 0000000000..6ac2d4d721
---- /dev/null
-+++ b/arch/arm/dts/rk3399pro-rock-pi-n10.dts
-@@ -0,0 +1,18 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ * Copyright (c) 2019 Radxa Limited
-+ * Copyright (c) 2019 Amarula Solutions(India)
-+ */
-+
-+/dts-v1/;
-+#include "rk3399.dtsi"
-+#include "rk3399-opp.dtsi"
-+#include "rk3399pro-vmarc-som.dtsi"
-+#include <rockchip-radxa-dalang-carrier.dtsi>
-+
-+/ {
-+	model = "Radxa ROCK Pi N10";
-+	compatible = "radxa,rockpi-n10", "vamrs,rk3399pro-vmarc-som",
-+		     "rockchip,rk3399pro";
-+};
-diff --git a/arch/arm/dts/rk3399pro-u-boot.dtsi b/arch/arm/dts/rk3399pro-u-boot.dtsi
-new file mode 100644
-index 0000000000..7bddc3acdb
---- /dev/null
-+++ b/arch/arm/dts/rk3399pro-u-boot.dtsi
-@@ -0,0 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (C) 2019 Jagan Teki <jagan@amarulasolutions.com>
-+ */
-+
-+#include "rk3399-u-boot.dtsi"
-diff --git a/board/rockchip/evb_rk3399/MAINTAINERS b/board/rockchip/evb_rk3399/MAINTAINERS
-index 792df1087f..578638a58b 100644
---- a/board/rockchip/evb_rk3399/MAINTAINERS
-+++ b/board/rockchip/evb_rk3399/MAINTAINERS
-@@ -68,3 +68,9 @@ M:	Jagan Teki <jagan@amarulasolutions.com>
- S:	Maintained
- F:	configs/rock-pi-4-rk3399_defconfig
- F:	arch/arm/dts/rk3399-rock-pi-4-u-boot.dtsi
-+
-+ROCK-PI-N10
-+M:	Jagan Teki <jagan@amarulasolutions.com>
-+S:	Maintained
-+F:	configs/rock-pi-n10-rk3399pro_defconfig
-+F:	arch/arm/dts/rk3399pro-rock-pi-n10-u-boot.dtsi
-diff --git a/configs/rock-pi-n10-rk3399pro_defconfig b/configs/rock-pi-n10-rk3399pro_defconfig
-new file mode 100644
-index 0000000000..c705ce01ce
---- /dev/null
-+++ b/configs/rock-pi-n10-rk3399pro_defconfig
-@@ -0,0 +1,46 @@
-+CONFIG_ARM=y
-+CONFIG_ARCH_ROCKCHIP=y
-+CONFIG_SYS_TEXT_BASE=0x00200000
-+CONFIG_SPL_GPIO_SUPPORT=y
-+CONFIG_ENV_OFFSET=0x3F8000
-+CONFIG_ROCKCHIP_RK3399=y
-+CONFIG_TARGET_EVB_RK3399=y
-+CONFIG_NR_DRAM_BANKS=1
-+CONFIG_DEBUG_UART_BASE=0xFF1A0000
-+CONFIG_DEBUG_UART_CLOCK=24000000
-+CONFIG_DEBUG_UART=y
-+CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399pro-rock-pi-n10.dtb"
-+CONFIG_MISC_INIT_R=y
-+CONFIG_DISPLAY_BOARDINFO_LATE=y
-+# CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
-+CONFIG_SPL_STACK_R=y
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_TPL=y
-+CONFIG_CMD_BOOTZ=y
-+CONFIG_CMD_GPT=y
-+CONFIG_CMD_MMC=y
-+# CONFIG_CMD_SETEXPR is not set
-+CONFIG_CMD_TIME=y
-+CONFIG_SPL_OF_CONTROL=y
-+CONFIG_DEFAULT_DEVICE_TREE="rk3399pro-rock-pi-n10"
-+CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
-+CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_ROCKCHIP_GPIO=y
-+CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
-+CONFIG_MMC_DW=y
-+CONFIG_MMC_DW_ROCKCHIP=y
-+CONFIG_MMC_SDHCI=y
-+CONFIG_MMC_SDHCI_ROCKCHIP=y
-+CONFIG_DM_ETH=y
-+CONFIG_ETH_DESIGNWARE=y
-+CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PMIC_RK8XX=y
-+CONFIG_REGULATOR_PWM=y
-+CONFIG_REGULATOR_RK8XX=y
-+CONFIG_PWM_ROCKCHIP=y
-+CONFIG_BAUDRATE=1500000
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYSRESET=y
-+CONFIG_ERRNO_STR=y
--- 
-2.25.1
-
-
-_______________________________________________
-Linux-rockchip mailing list
-Linux-rockchip@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-rockchip
+T24gV2VkLCAxMCBKdW4gMjAyMCAxMjo0NTozMyArMDkwMApKYWVob29uIENodW5nIDxqaDgwLmNo
+dW5nQHNhbXN1bmcuY29tPiB3cm90ZToKCj4gT24gNi85LzIwIDExOjM4IFBNLCBSb2JpbiBNdXJw
+aHkgd3JvdGU6Cj4gPiBPbiAyMDIwLTA2LTA5IDE1OjAxLCBKYWdhbiBUZWtpIHdyb3RlOiAgCj4g
+Pj4gU0RIQ0kgSElTUEQgYml0cyBuZWVkIHRvIGJlIGNvbmZpZ3VyZWQgYmFzZWQgb24gZGVzaXJl
+ZCBtbWMKPiA+PiB0aW1pbmdzIG1vZGUgYW5kIHNvbWUgSElTUEQgcXVpcmtzLgo+ID4+Cj4gPj4g
+U28sIGhhbmRsZSB0aGUgSElTUEQgYml0IGJhc2VkIG9uIHRoZSBtbWMgY29tcHV0ZWQgc2VsZWN0
+ZWQKPiA+PiBtb2RlKHRpbWluZyBwYXJhbWV0ZXIpIHJhdGhlciB0aGFuIGZpeGVkIG1tYyBjYXJk
+IGNsb2NrCj4gPj4gZnJlcXVlbmN5Lgo+ID4+Cj4gPj4gTGludXggaGFuZGxlIHRoZSBISVNQRCBz
+aW1pbGFyIGxpa2UgdGhpcyBpbiBiZWxvdyBjb21taXQsCj4gPj4KPiA+PiBjb21taXQgPDUwMTYz
+OWJmMjE3Mz4gKCJtbWM6IHNkaGNpOiBmaXggU0RIQ0lfUVVJUktfTk9fSElTUERfQklUIGhhbmRs
+aW5nIikKPiA+Pgo+ID4+IFRoaXMgZXZlbnR1YWxseSBmaXhlZCB0aGUgbW1jIHdyaXRlIGlzc3Vl
+IG9ic2VydmVkIGluCj4gPj4gcmszMzk5IHNkaGNpIGNvbnRyb2xsZXIuCj4gPj4KPiA+PiBCdWcg
+bG9nIGZvciByZWZlcm5lY2UsICAKPiA+PiA9PiBncHQgd3JpdGUgbW1jIDAgJHBhcnRpdGlvbnMg
+IAo+ID4+IFdyaXRpbmcgR1BUOiBtbWMgd3JpdGUgZmFpbGVkCj4gPj4gKiogQ2FuJ3Qgd3JpdGUg
+dG8gZGV2aWNlIDAgKioKPiA+PiAqKiBDYW4ndCB3cml0ZSB0byBkZXZpY2UgMCAqKgo+ID4+IGVy
+cm9yIQo+ID4+Cj4gPj4gQ2M6IEtldmVyIFlhbmcgPGtldmVyLnlhbmdAcm9jay1jaGlwcy5jb20+
+Cj4gPj4gQ2M6IFBlbmcgRmFuIDxwZW5nLmZhbkBueHAuY29tPgo+ID4+IFJldmlld2VkLWJ5OiBK
+YWVob29uIENodW5nIDxqaDgwLmNodW5nQHNhbXN1bmcuY29tPgo+ID4+IFNpZ25lZC1vZmYtYnk6
+IEphZ2FuIFRla2kgPGphZ2FuQGFtYXJ1bGFzb2x1dGlvbnMuY29tPgo+ID4+IC0tLQo+ID4+IENo
+YW5nZXMgZm9yIHYyOgo+ID4+IC0gY29sbGVjdCBKYWVob29uIFItYgo+ID4+Cj4gPj4gwqAgZHJp
+dmVycy9tbWMvc2RoY2kuYyB8IDIzICsrKysrKysrKysrKysrKy0tLS0tLS0tCj4gPj4gwqAgMSBm
+aWxlIGNoYW5nZWQsIDE1IGluc2VydGlvbnMoKyksIDggZGVsZXRpb25zKC0pCj4gPj4KPiA+PiBk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9tbWMvc2RoY2kuYyBiL2RyaXZlcnMvbW1jL3NkaGNpLmMKPiA+
+PiBpbmRleCA5MmNjODQzNGFmLi4yODBiOGM4OGViIDEwMDY0NAo+ID4+IC0tLSBhL2RyaXZlcnMv
+bW1jL3NkaGNpLmMKPiA+PiArKysgYi9kcml2ZXJzL21tYy9zZGhjaS5jCj4gPj4gQEAgLTU5NCwx
+NCArNTk0LDIxIEBAIHN0YXRpYyBpbnQgc2RoY2lfc2V0X2lvcyhzdHJ1Y3QgbW1jICptbWMpCj4g
+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY3RybCAmPSB+U0RIQ0lfQ1RSTF80QklUQlVT
+Owo+ID4+IMKgwqDCoMKgwqAgfQo+ID4+IMKgIC3CoMKgwqAgaWYgKG1tYy0+Y2xvY2sgPiAyNjAw
+MDAwMCkKPiA+PiAtwqDCoMKgwqDCoMKgwqAgY3RybCB8PSBTREhDSV9DVFJMX0hJU1BEOwo+ID4+
+IC3CoMKgwqAgZWxzZQo+ID4+IC3CoMKgwqDCoMKgwqDCoCBjdHJsICY9IH5TREhDSV9DVFJMX0hJ
+U1BEOwo+ID4+IC0KPiA+PiAtwqDCoMKgIGlmICgoaG9zdC0+cXVpcmtzICYgU0RIQ0lfUVVJUktf
+Tk9fSElTUERfQklUKSB8fAo+ID4+IC3CoMKgwqDCoMKgwqDCoCAoaG9zdC0+cXVpcmtzICYgU0RI
+Q0lfUVVJUktfQlJPS0VOX0hJU1BEX01PREUpKQo+ID4+IC3CoMKgwqDCoMKgwqDCoCBjdHJsICY9
+IH5TREhDSV9DVFJMX0hJU1BEOwo+ID4+ICvCoMKgwqAgaWYgKCEoaG9zdC0+cXVpcmtzICYgU0RI
+Q0lfUVVJUktfTk9fSElTUERfQklUKSB8fCAgCj4gPiAKPiA+IFNob3VsZCB0aGF0IGJlICImJiIg
+cmF0aGVyIHRoYW4gInx8Ij8gT3RoZXJ3aXNlIHRoaXMgd2lsbCBhbHdheXMKPiA+IGV2YWx1YXRl
+IHRvIHRydWUgdW5sZXNzICpib3RoKiBxdWlya3MgYXJlIHNldCwgd2hpY2ggaXNuJ3QKPiA+IGVx
+dWl2YWxlbnQgdG8gdGhlIGNoZWNrIGJlaW5nIHJlbW92ZWQgYWJvdmUuICAKPiAKPiAKPiBZb3Un
+cmUgcmlnaHQuCgpJdCdkIGJlIGdyZWF0IGlmIHlvdSBjb3VsZCByZXNwaW4gdGhpcyBwYXRjaCBx
+dWlja2x5IGFuZCBnZXQgaXQgbWVyZ2VkLAphcyBpdCBqdXN0IGhlbHBlZCBtZSBnZXR0aW5nIG15
+IE5hbm9QQy1UNCB1cCBhbmQgcnVubmluZy4KCkZXSVc6CgpUZXN0ZWQtYnk6IE1hcmMgWnluZ2ll
+ciA8bWF6QGtlcm5lbC5vcmc+CgoJTS4KLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21l
+bGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QKTGludXgtcm9ja2NoaXBAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LXJvY2tjaGlwCg==
