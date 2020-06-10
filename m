@@ -2,78 +2,80 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23B781F5A49
-	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 19:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EC671F5A4F
+	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 19:29:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2UzRdXdSL+O6fVgI1Mkgv+8L1J+Cm2RfUrcCY32wPto=; b=MI+PqLC1YdavY4
-	fG0trrUXvjohpxS5Qv9vb/JvkNiiN5zUIQsbzMGz2hQVYq3UikN0tttiRp9kehKjeaslyKGawuJfI
-	shny3Mzhc38j6G/wGSv5Ixr0uVM+XCaZuEhXLllWN0JDJATT330pWEkSHDIqzYul9a/zVHuI2ULSc
-	bT4GRHLqUJYiQrLqqVfQfbXoGV9oU+z90XvnXOZYttpNTg9m4UNYUb4gPXJs8cD85vu9Cp5DdCIV2
-	DmiSjEoYDZDUNUNJB93sEy/Sw3++msuU/D/QWEN+gPljGw5Cm0v2THwkn5d7DXBqNnCn4Uwxm+Cqe
-	S9BuNfXtqbJtnYmT4f+A==;
+	List-Owner; bh=tjyRwi7rk6axM052mXgtUXBNunRG1K4Lee72hwgK0yY=; b=pFBUbklhZXo3m6
+	EdBkx5T1LEb7NPD4mPzqYDTRNZnTLjpvl/2Mam3jKMRq61w0Vln6roUH5daif02T20YtqE8qc0o/A
+	he7Y7QFcpn/jKi0fNqYM1g1cwuMfBNGamb5SAkVOYqv2awMdF2x2iBJAOzucM2Kc80jPyYb5XGsSC
+	ZrHnh26AFemRLWR9AgtG4AfKX8uYxwaA8L6vYJCIBi2gI6Wzx3ZTQdkx9tS/Rt/1c3pYAr/KXtCTH
+	k06Bk8YzHRtqyrAk8dnDyiq74rEbCFX7HodjvY/DPmH+WOURzjdo8OBsfoarTuUs+nr5QIKy5XBWJ
+	ZrvD+tnLYXJU3ur+sEYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj4Uf-0006cy-Gn; Wed, 10 Jun 2020 17:26:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jj4X9-0006xJ-MX; Wed, 10 Jun 2020 17:29:03 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj4Uc-0006cf-6o
- for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 17:26:27 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q11so3216777wrp.3
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jun 2020 10:26:25 -0700 (PDT)
+ id 1jj4X6-0006wm-HZ
+ for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 17:29:01 +0000
+Received: by mail-wm1-x343.google.com with SMTP id j198so5156419wmj.0
+ for <linux-rockchip@lists.infradead.org>; Wed, 10 Jun 2020 10:29:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=pN4qz1OJ+BC71bQQgMJmBK/Rkr81r60RgNevtGOVJRw=;
- b=PjPq4t33YTJYhGikvp5ZvRE311q6JnUdjD5ZseotuyhX9vuY0ugbZuohTre+MvhoGL
- AuX07/T01LF1doxI0rRSL87hT+g2TyOl0VFpIUfRIUTiZw9rc+w2cQRWCwe+FfNVb40O
- k6bkWvWF8UEVtN/VIqLU7Fe9ppskcls1l7cbE=
+ bh=E/OpYtkdJhBuYsHSJhq676XvJqjKjlf+gMoabLS0g4A=;
+ b=nYUpGKBs4xEHPwNFak20lPLO9cHto5Hm28yV7rMIpULXEx9LOCq282m5wJn8aspYyf
+ deotVxLT/l5bQk1UdN/3Rkf/mR5CKcy25daHDqFrqa81Iy5I8EqC2cNLcOvG8y48WaMF
+ CAHmtDsJZD52OQM43AQ5C0AJyEjuSwD/nw0oE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=pN4qz1OJ+BC71bQQgMJmBK/Rkr81r60RgNevtGOVJRw=;
- b=QIuy2pmVwWX1QqzwL6FTd8smY2bptEE5IG9gzrPuPd82wXMufhTAsnFIayu5jvH10V
- DObDNJX4OcLo//WF94j3CwMtdpC2Dtoiw7fHlg0wR9OB/lVKlhveOUZshiWlzAbf2bGp
- TtdaFTfWkqudFcz2UYSu0Z1xauVIOBx4v70cWKQbuu6Rapm8E89GiJAHg5XnAxiZoPtn
- m8m9RulFh/uI9tvMP/CxSP4GCcgqxpXe5jYDRLMYgDjhMEZIxLjiVnbtGt3efM24XWzR
- tEhGCtImf8LoyD7hPikCDw/mK7fRM3iX331dYhlLxJ5y3b8aiZcveeyjYZ+h5LuN01hb
- IHgQ==
-X-Gm-Message-State: AOAM532Jz+Aai7UGW7K++7bsS7agaS6vDrO9/b6nm5Ia4a6ESPzTUKtW
- 91rNeHrN0qJL3B4P1qtjzNdJkw==
-X-Google-Smtp-Source: ABdhPJycBqFX8BS1ni07dLwx0DghAhGJcYIzvSfMyZ0y/3zEl5jFPCRUarF5/ZW+wN8AFqWV4oa6Jg==
-X-Received: by 2002:adf:e588:: with SMTP id l8mr5198923wrm.255.1591809984517; 
- Wed, 10 Jun 2020 10:26:24 -0700 (PDT)
+ bh=E/OpYtkdJhBuYsHSJhq676XvJqjKjlf+gMoabLS0g4A=;
+ b=Tu6FnRYVaF38VSneR592dyTNvarRL2lektKmA/DO6PFEGP/IGpI+9HMGKbU892ON+Y
+ RgvX6v2SgT1pMWYuMTzab0qAnYDrbzQA0nhi5HSw/loSaNUgECSt78XDROyIYohIxR56
+ it4HZzuTaLvy6vzvfILllBPLKkimL++SsSqr7eCzn3+Mnq5ZqpNFbreQwnoH65MevTD3
+ yw8LPCySRt5svXrCv9SFy6uqLCppqP6sdXOW7XWK//mG2zMX9QaKrVa1wh51n8lXSN7n
+ AVGISiWw9a8/ZlQQyR4aza5YcMeqkGu2s9slFXuflxlYe+nhxpMcDYKxAuOFUcSCL2Jn
+ Dpyg==
+X-Gm-Message-State: AOAM5312nbKJV/AWU9+CAxnOb7ykE4WeSpQF9fTXwk6tfdAIuh0yzazQ
+ qvUn3IcqSlx2mOuEQxiUywTx0A==
+X-Google-Smtp-Source: ABdhPJzkHS+OI1HGIrKjMxe9yNET80vIiPkjUOxBkrzk8eds2xaarln9Q8zxhAniA4Pm9pxWM6Lc7A==
+X-Received: by 2002:a7b:cbd9:: with SMTP id n25mr4188276wmi.30.1591810139023; 
+ Wed, 10 Jun 2020 10:28:59 -0700 (PDT)
 Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
  [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id h12sm648820wro.80.2020.06.10.10.26.23
+ by smtp.gmail.com with ESMTPSA id c5sm678037wrb.72.2020.06.10.10.28.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 10:26:24 -0700 (PDT)
-Date: Wed, 10 Jun 2020 17:26:22 +0000
+ Wed, 10 Jun 2020 10:28:58 -0700 (PDT)
+Date: Wed, 10 Jun 2020 17:28:57 +0000
 From: Tomasz Figa <tfiga@chromium.org>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v2 4/4] media: staging: rkisp1: rename the field
- 'direction' in 'rkisp1_isp_mbus_info' to 'isp_pads_flags'
-Message-ID: <20200610172622.GG201868@chromium.org>
-References: <20200609152825.24772-1-dafna.hirschfeld@collabora.com>
- <20200609152825.24772-5-dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v4 4/5] media: staging: rkisp1: cap: use
+ v4l2_pipeline_stream_{enable,disable} helpers
+Message-ID: <20200610172857.GH201868@chromium.org>
+References: <20200522075522.6190-1-dafna.hirschfeld@collabora.com>
+ <20200522075522.6190-5-dafna.hirschfeld@collabora.com>
+ <20200610170344.GC201868@chromium.org>
+ <02c8bd4a-0fc1-fcc5-4d8b-63ff1d406988@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200609152825.24772-5-dafna.hirschfeld@collabora.com>
+In-Reply-To: <02c8bd4a-0fc1-fcc5-4d8b-63ff1d406988@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_102626_249798_EF88AD7A 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20200610_102900_589093_A731564E 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,50 +99,79 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
+Cc: niklas.soderlund@ragnatech.se--annotate, mchehab@kernel.org,
+ dafna3@gmail.com, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, skhan@linuxfoundation.org, kernel@collabora.com,
+ ezequiel@collabora.com, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
-
-On Tue, Jun 09, 2020 at 05:28:25PM +0200, Dafna Hirschfeld wrote:
-> The field 'direction' in 'struct rkisp1_isp_mbus_info' holds
-> the flags of the supported pads of the mbus code. Therefore
-> the name 'isp_pads_flags' is better.
-> The patch also rename a local variable 'dir' that holds such flag
-> to 'pad'.
+On Wed, Jun 10, 2020 at 07:22:04PM +0200, Dafna Hirschfeld wrote:
 > 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> ---
->  drivers/staging/media/rkisp1/rkisp1-common.h  |  2 +-
->  drivers/staging/media/rkisp1/rkisp1-isp.c     | 46 +++++++++----------
->  drivers/staging/media/rkisp1/rkisp1-resizer.c |  2 +-
->  3 files changed, 25 insertions(+), 25 deletions(-)
 > 
+> On 10.06.20 19:03, Tomasz Figa wrote:
+> > Hi Dafna,
+> > 
+> > On Fri, May 22, 2020 at 09:55:21AM +0200, Dafna Hirschfeld wrote:
+> > > From: Helen Koike <helen.koike@collabora.com>
+> > > 
+> > > Use v4l2_pipeline_stream_{enable,disable} to call .s_stream()
+> > > subdevice callbacks through the pipeline.
+> > > Those helpers are called only if the other capture is not streaming.
+> > > 
+> > > If the other capture is streaming then he already did that for us
+> > > so we call s_stream only on the resizer that is connected to the
+> > > capture node.
+> > > 
+> > > Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> > > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> > > ---
+> > >   drivers/staging/media/rkisp1/rkisp1-capture.c | 104 ++++++------------
+> > >   1 file changed, 32 insertions(+), 72 deletions(-)
+> > > 
+> > 
+> > Thank you for the patch. Please see my comments inline.
+> > 
+> > [snip]
+> > > +static int rkisp1_s_stream_subdev(struct rkisp1_capture *cap, int enable)
+> > > +{
+> > > +	struct rkisp1_device *rkisp1 = cap->rkisp1;
+> > > +	struct rkisp1_capture *other = &rkisp1->capture_devs[cap->id ^ 1];
+> > > +	int ret;
+> > > +
+> > > +	/*
+> > > +	 * if the other capture is already streaming then we only need to
+> > > +	 * call s_stream of our reszier
+> > > +	 */
+> > > +	if (other->is_streaming) {
+> > > +		struct v4l2_subdev *rsz_sd  = &rkisp1->resizer_devs[cap->id].sd;
+> > > +
+> > > +		ret = v4l2_subdev_call(rsz_sd, video, s_stream, enable);
+> > > +		if (ret && ret != -ENOIOCTLCMD)
+> > > +			dev_err(rkisp1->dev,
+> > > +				"stream %s resizer '%s' failed (%d)\n",
+> > > +				enable ? "on" : "off", rsz_sd->name, ret);
+> > 
+> > Do we need this special case? Wouldn't v4l2_pipeline_stream_*() simply
+> > increment reference counters for the other entities?
+> 
+> I removed the stream count in v4 of the patchset since I thought it
+> might be problematic/confusing to add a field "stream_count" in
+> "struct v4l2_subdev" that is used and updated only by those helper functions
+> 
+> What do you think?
+> 
+> There is also the issue that both you and Sakari Ailus mentioned that
+> an isp driver can't know the subtopology of a sensor driver and how it handle the
+> s_stream callback on it's entities.
 
-Thank you for the patch. Please see my comments inline.
+Ah, okay, so we settled on removing the refcounting from the helpers.
+Fair enough. Sorry for the noise.
 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
-> index a6cd9fc13b3d..1dda6d53adea 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
-> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
-> @@ -283,7 +283,7 @@ struct rkisp1_isp_mbus_info {
-
-FYI, there is some missing documentation of the fields above. If
-changing this field, perhaps its documentation could be added as well?
-
->  	u32 yuv_seq;
->  	u8 bus_width;
->  	enum rkisp1_fmt_raw_pat_type bayer_pat;
-> -	unsigned int direction;
-> +	unsigned int isp_pads_flags;
-
-nit: Wouldn't "isp_pads_mask" represent the usage more precisely?
+Feel free to add my Reviewed-by.
 
 Best regards,
 Tomasz
