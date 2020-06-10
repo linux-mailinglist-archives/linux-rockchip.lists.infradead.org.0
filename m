@@ -2,89 +2,58 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA0041F5A26
-	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 19:20:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 031091F5A33
+	for <lists+linux-rockchip@lfdr.de>; Wed, 10 Jun 2020 19:22:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cbQS7CfUblVZ/+Fh7OzZ2qIkEH5YU+Arkhyr5sZoZUI=; b=FCheIzWzNTxH0v
-	jQSivxI0Tb9adDduaf515nL/SU8ZIgrksTpLB6Ew+hjuT9+LV6CcY+R5GT+wQubtsqE7loHa5oQ7r
-	QizhZ+nn/dFD5vFb32Q8ryoKkU3DOyv4zVwKAtoMibJKeayLUaN+VvEOVWWOfcEo2NX4TsZSCc3h6
-	+78K9oHFXGlW8O24q3a7Iwx2DDM9XVCC9S1SlnMMEsSf0OY2iQ3pFx9V4cDeA9pkwIJl1YEZqDjiv
-	gU9dRTBQo8KQ/5JqUC4KX+SptIJfLhVVggdGUqVBBk9esdNAjn7h0gGnJnZXSejNP6OmMht0HIsNx
-	KnPEE6ZYQBw/hZZT6VZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ooOZF7rOulRo6tsv/SwQ+wfTkHjHf+uAVIloGOU94s4=; b=RABXfInK/NLjGkyDEWtMDP4kv
+	AiPFeOGrG3kUYrZ2Vp7CIXrbhEAiPFAJGY1CL5+PtzCCK76JeWFJsS/nnxJrUwSD2vUYeKtMovlO9
+	425UjFCLrKVrifIKHZtaCg7ZDrj4vXpelWNRofnDvlG7NW7r3B4Nb8wFxhqtlYk7o35clr9i2Mxqm
+	1ZcEKBl2ZG9ZEM6gLhH5ueDGde6SWWWq3hyeHAkx7yXP6rF8ekyNEcHd7+R/VFI3MH/2QesdvcrSA
+	jeeoYTaKAOhimjhoyfCaSmD+JL43O1bD5cP40PLcc+hYq8zbUUlSlfZe53c8+fZnNzQefn7o9eS8t
+	o90gvXLcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj4Ow-00039M-M8; Wed, 10 Jun 2020 17:20:34 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jj4QW-0003Jh-FM; Wed, 10 Jun 2020 17:22:12 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj4OR-0000T3-Pc
- for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 17:20:08 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c71so2550336wmd.5
- for <linux-rockchip@lists.infradead.org>; Wed, 10 Jun 2020 10:20:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=h8HyYgtFYXdwj3j5EqhXlU6JbKond+XQSDlH3SE1BY0=;
- b=e+r0chico50lMWOLTZK3FJguyDrSMPT1EfqOemgP9hggj2/qkJZGWILBvvruoF1zLZ
- vhAKV3QduMe+a9kck07cQ8zOawV6Xq/HHToytkWsRUXhEZXIlCC3vp39kONRdpOiqyuM
- g9c0AA6tCArSPIEJenVXkgzhf3psDfwMBcyGo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=h8HyYgtFYXdwj3j5EqhXlU6JbKond+XQSDlH3SE1BY0=;
- b=VezR6KEvpNZxELHPVxAcQDwGnbjeDZukygoHVr/HagxZPfoJEHuehIh1gXJyREi0qF
- uOF8jgsACWfFGwWwaoTi7kQaZocz+a16e74kmUoqyM8JNO5Da9LkNuJKaYGPOFJ+WKcm
- gAsk9tCFoqwAPOK5Ovj1Vq7XNsKeHOgqs0Hmi148U/CDWx2pwoz7j6TsDfspXFR9YRZa
- nJsSs9LFOyiEAoTgzZTxpeYe5tCNRfII8U2wZfE1Um8/8izPmrCzMSOW5+QpDO7Jr8pZ
- yxiNpVMSVN3G0VETrbBpgMWTIDSCo6tYrc40RhomhwKmuqk3Rdpvbvjn/NtvQ2vYvI4L
- EwHQ==
-X-Gm-Message-State: AOAM533ha20wbo3977qn9VJRtdNNxS2m3+fpo2Qm6jNWmAdaLeyrjkhh
- c6DLi9BOgysavpfl1fjY+wOirohIn1addg==
-X-Google-Smtp-Source: ABdhPJxQurlAnyNlApFm06RmgK7xkepR1kY2Hj5RiumxoCo2vSUcxx1yxHKPDHDgb4UwMRt59MTxPw==
-X-Received: by 2002:a1c:5683:: with SMTP id k125mr4364907wmb.55.1591809600677; 
- Wed, 10 Jun 2020 10:20:00 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id c16sm388493wml.45.2020.06.10.10.20.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 10 Jun 2020 10:20:00 -0700 (PDT)
-Date: Wed, 10 Jun 2020 17:19:58 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v2 2/4] media: staging: rkisp1: rsz: set default format
- if the given format is not RKISP1_DIR_SRC
-Message-ID: <20200610171958.GE201868@chromium.org>
-References: <20200609152825.24772-1-dafna.hirschfeld@collabora.com>
- <20200609152825.24772-3-dafna.hirschfeld@collabora.com>
+ id 1jj4QT-0003JD-15
+ for linux-rockchip@lists.infradead.org; Wed, 10 Jun 2020 17:22:10 +0000
+Received: from [IPv6:2003:cb:871f:5b00:9cc4:c525:7ca2:283]
+ (p200300cb871f5b009cc4c5257ca20283.dip0.t-ipconnect.de
+ [IPv6:2003:cb:871f:5b00:9cc4:c525:7ca2:283])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: dafna)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 383BE2A0596;
+ Wed, 10 Jun 2020 18:22:07 +0100 (BST)
+Subject: Re: [PATCH v4 4/5] media: staging: rkisp1: cap: use
+ v4l2_pipeline_stream_{enable,disable} helpers
+To: Tomasz Figa <tfiga@chromium.org>
+References: <20200522075522.6190-1-dafna.hirschfeld@collabora.com>
+ <20200522075522.6190-5-dafna.hirschfeld@collabora.com>
+ <20200610170344.GC201868@chromium.org>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <02c8bd4a-0fc1-fcc5-4d8b-63ff1d406988@collabora.com>
+Date: Wed, 10 Jun 2020 19:22:04 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200609152825.24772-3-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200610170344.GC201868@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_102003_877667_7BFA9FED 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200610_102209_202672_9DC8B497 
+X-CRM114-Status: GOOD (  20.87  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,37 +66,90 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, hverkuil@xs4all.nl,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- kernel@collabora.com, ezequiel@collabora.com, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: niklas.soderlund@ragnatech.se--annotate, mchehab@kernel.org,
+ dafna3@gmail.com, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, skhan@linuxfoundation.org, kernel@collabora.com,
+ ezequiel@collabora.com, linux-media@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Dafna,
 
-On Tue, Jun 09, 2020 at 05:28:23PM +0200, Dafna Hirschfeld wrote:
-> When setting the sink format of the 'rkisp1_resizer'
-> the format should be supported by 'rkisp1_isp' on
-> the video source pad. This patch checks this condition
-> and set the format to default if the condition is false.
-> 
-> Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> ---
->  drivers/staging/media/rkisp1/rkisp1-common.h  | 4 ++++
->  drivers/staging/media/rkisp1/rkisp1-isp.c     | 4 ----
->  drivers/staging/media/rkisp1/rkisp1-resizer.c | 2 +-
->  3 files changed, 5 insertions(+), 5 deletions(-)
-> 
 
-Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+On 10.06.20 19:03, Tomasz Figa wrote:
+> Hi Dafna,
+> 
+> On Fri, May 22, 2020 at 09:55:21AM +0200, Dafna Hirschfeld wrote:
+>> From: Helen Koike <helen.koike@collabora.com>
+>>
+>> Use v4l2_pipeline_stream_{enable,disable} to call .s_stream()
+>> subdevice callbacks through the pipeline.
+>> Those helpers are called only if the other capture is not streaming.
+>>
+>> If the other capture is streaming then he already did that for us
+>> so we call s_stream only on the resizer that is connected to the
+>> capture node.
+>>
+>> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>> ---
+>>   drivers/staging/media/rkisp1/rkisp1-capture.c | 104 ++++++------------
+>>   1 file changed, 32 insertions(+), 72 deletions(-)
+>>
+> 
+> Thank you for the patch. Please see my comments inline.
+> 
+> [snip]
+>> +static int rkisp1_s_stream_subdev(struct rkisp1_capture *cap, int enable)
+>> +{
+>> +	struct rkisp1_device *rkisp1 = cap->rkisp1;
+>> +	struct rkisp1_capture *other = &rkisp1->capture_devs[cap->id ^ 1];
+>> +	int ret;
+>> +
+>> +	/*
+>> +	 * if the other capture is already streaming then we only need to
+>> +	 * call s_stream of our reszier
+>> +	 */
+>> +	if (other->is_streaming) {
+>> +		struct v4l2_subdev *rsz_sd  = &rkisp1->resizer_devs[cap->id].sd;
+>> +
+>> +		ret = v4l2_subdev_call(rsz_sd, video, s_stream, enable);
+>> +		if (ret && ret != -ENOIOCTLCMD)
+>> +			dev_err(rkisp1->dev,
+>> +				"stream %s resizer '%s' failed (%d)\n",
+>> +				enable ? "on" : "off", rsz_sd->name, ret);
+> 
+> Do we need this special case? Wouldn't v4l2_pipeline_stream_*() simply
+> increment reference counters for the other entities?
 
-Best regards,
-Tomasz
+I removed the stream count in v4 of the patchset since I thought it
+might be problematic/confusing to add a field "stream_count" in
+"struct v4l2_subdev" that is used and updated only by those helper functions
+
+What do you think?
+
+There is also the issue that both you and Sakari Ailus mentioned that
+an isp driver can't know the subtopology of a sensor driver and how it handle the
+s_stream callback on it's entities.
+
+Thanks,
+Dafna
+
+
+> 
+>> +	} else {
+>> +		if (enable)
+>> +			ret = v4l2_pipeline_stream_enable(&cap->vnode.vdev);
+>> +		else
+>> +			ret = v4l2_pipeline_stream_disable(&cap->vnode.vdev);
+> 
+> I wonder if this doesn't ask for just making the helper
+> v4l2_pipeline_s_stream(..., int enable).> 
+> Best regards,
+> Tomasz
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
