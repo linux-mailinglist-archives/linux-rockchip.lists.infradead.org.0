@@ -2,67 +2,85 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88D4F1F6B8D
-	for <lists+linux-rockchip@lfdr.de>; Thu, 11 Jun 2020 17:51:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCA5A1F7193
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 03:06:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8edkGxpTWa5vmJd0TSnAkp40ShUx3l3h9XtlHMxc5jI=; b=aVM+9Ff8YztyZW
-	XAzlgHcFtxOMXRNNCPdOnWx8toVLdqyllF9QqloOusuhrO+A/RE+jvYXjXP6Hlg08/edLBI1KtlPd
-	/h+vLrmvaXyrn0xm+VgASRUc4Y/v9+IA4nSumL8XyDdpFHi0MBikzgv4sW2eSxoI4Leoq9oaEbIen
-	4K9MdUBfJd6yb3Zah+nBtt8horcvTjbzoBRUCI/svYmIr/uGg3DYqYcoLq41qkhrJou+EA71javXa
-	ym2AdnBY3pQECi7Lm5Jauc90EP+tvboF4PZbHoXG7UXvfNkFe+nBhgSr2MhAQkp19qUfWEOYo7t/n
-	iWVSrS0fkxLt2xCFx7oQ==;
+	List-Owner; bh=O0lGUhC0wl8ulhyonkWzVYrRRROlqS7vAKNsHklJ4Tw=; b=E7Uyg4DPsYTc5N
+	MGAue8C90kMZHeuCVB5IfU3ioMXKqq3IEMYzCfmMgAlKFYD0CBVOhxGeFjf9fFBmBavuD2XCXae+k
+	+b8HAu6kEkw/svoCXtiVmQqYeXxhBQg+mVU3BIOBI2301/CD9hxwGrYG8V5zkWXIzFgUt1ztMJaum
+	YCy1EQV+m9USfoosag1SWJ01VXZRzUOLzJZmcZnckA229xZFb1wFLOlSOi9uRuowvdaUL/gQslLPd
+	rGPGJGSyuH0sseZxVTZmZjk+CE4PkW+eyCpSySt+HZBu3RQq1F1Dyw+agZ7Xk3zc/Jb0xRNXWmCj1
+	DRej21dV4Q9hbs31swMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjPUQ-0004Vg-TR; Thu, 11 Jun 2020 15:51:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jjY9L-0005V0-FV; Fri, 12 Jun 2020 01:06:27 +0000
+Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjPUM-0004UL-VS
- for linux-rockchip@lists.infradead.org; Thu, 11 Jun 2020 15:51:36 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 328AE206A4;
- Thu, 11 Jun 2020 15:51:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591890694;
- bh=D4qOfF+EtsIO3+5PMIG2xLRbHUbv3FfAUcE0uae6gdI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2lG6wkWNJdRjST9yNoa5TMn/IA4lx348cBSh4mtX6SEE0fv7YfQRC7KyjpwiZ0ObT
- T3nL+DzEtk7HkVvrj5lnnzmO/XgSN85HQwBKGXn4n0hGBurluL/4I3eGB7/uJXbdmo
- BiB15E48mLCFZcHjk88wJVsZzMBpwlbYCNqypFX8=
-Date: Thu, 11 Jun 2020 17:51:28 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [RESEND PATCH v3 3/6] media: staging: rkisp1: remove macro
- RKISP1_DIR_SINK_SRC
-Message-ID: <20200611155128.GF1456044@kroah.com>
-References: <20200611154551.25022-1-dafna.hirschfeld@collabora.com>
- <20200611154551.25022-4-dafna.hirschfeld@collabora.com>
+ id 1jjY9H-0005UN-Tt; Fri, 12 Jun 2020 01:06:25 +0000
+Received: by mail-ej1-x642.google.com with SMTP id w16so7846954ejj.5;
+ Thu, 11 Jun 2020 18:06:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xWMqM4EWUTN/tZ1PSJ29RPSc7m9eyjQgLenvkceVjOU=;
+ b=mNx6536r715NBnskOPn1bdL5xCLTV9aec/WpZqRnZrhvWlD+kxiMUC9R+o/sQtOPK1
+ m2ldqoyMAEgUFiwM2DFUto+MuvVzSYlnys5Gwx99yKzZhRVmtm6FI19U8PDeV+0oKHIf
+ 4qtt5+hz0BWxGpHxFEakWLwDW+m/zs76ThXZ1XMjIyEk5CRBaHHDtzj11Eo3Q3AFYzAl
+ Y/SD6ODdt/SSDEo+kliR/bCL7fe9qra4GEEHjAaxEVAiiqWgp+XJyXHBjWRhUkO2MkzE
+ JyLgiLlc82/T3yfRmqXBMnPXlTzqI0OaJ0WbFqHQMkBBw73fJCszzV0zQsePLAMWCgpS
+ XF0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xWMqM4EWUTN/tZ1PSJ29RPSc7m9eyjQgLenvkceVjOU=;
+ b=Jz63sq/++7KxrQCKOVGmLROoBjqR7mgjY/zzXVHjKyw7MAlPVwA+UgpDB4RhfXe2mD
+ fLvQLugYPMbgwr6v5BDjJ0spqOsvHvLlkfp2w7uU4Tm4iTIG4FyBk3s2sC5i5sZUkJUV
+ R6PxyUHSF8k8hITr7qlJos1ga9CUyPFCsZbzknMfqKQBIZtZe8riTNO1KhjH7J2NeMHe
+ 3/nBJ1ST+GbjLUoWvr+cVdwLzIoWrKup8o5vYoKcVxtqe7yPhsDhLAXt+pxPMpdADvOA
+ YGqRstHpMnt/mRKMuVy63FRwAvKnownoT7z/vbhk+MUu59LWpZru8+zvlVOql1Xc6FHy
+ s/yQ==
+X-Gm-Message-State: AOAM531psRH3pK574kDQVM8fAX/ARLR2sDGXSv4oi3fqvSeov0zA0n9r
+ 11VMCbUbUEULO9cuqLqj+QHyYa5mFqbZiNHblrM=
+X-Google-Smtp-Source: ABdhPJyZ5DVMliAOduWmg47LdIrQ4yp92mfh3e85UoCZsPM9fdn/2djYt+DceiV9URZ9A6OY+OcY2ks7Bhv9wyUHhhI=
+X-Received: by 2002:a17:906:5595:: with SMTP id
+ y21mr11305629ejp.61.1591923979560; 
+ Thu, 11 Jun 2020 18:06:19 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200611154551.25022-4-dafna.hirschfeld@collabora.com>
+References: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+In-Reply-To: <1591665267-37713-1-git-send-email-sugar.zhang@rock-chips.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Date: Thu, 11 Jun 2020 21:06:07 -0400
+Message-ID: <CAMdYzYr+NF7L3KKzcGano=j9V844Gy8gH03hD++CoPe8Ao1QxQ@mail.gmail.com>
+Subject: Re: [PATCH v2 0/13] Patches to improve transfer efficiency for
+ Rockchip SoCs.
+To: Sugar Zhang <sugar.zhang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_085135_052276_C453F5A3 
-X-CRM114-Status: GOOD (  14.39  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200611_180623_981650_175D2C05 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pgwipeout[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,152 +93,79 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: mchehab@kernel.org, dafna3@gmail.com, stable@vger.kernel.org,
- tfiga@chromium.org, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
- helen.koike@collabora.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Carlos de Paula <me@carlosedp.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "Leonidas P. Papadakos" <papadakospan@gmail.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, dmaengine@vger.kernel.org,
+ Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Robin Murphy <robin.murphy@arm.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Jun 11, 2020 at 05:45:48PM +0200, Dafna Hirschfeld wrote:
-> The macro RKISP1_DIR_SINK_SRC is a mask of two flags.
-> The macro hides the fact that it's a mask and the code
-> is actually more clear if we replace it the with bitwise-or explicitly.
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-> ---
->  drivers/staging/media/rkisp1/rkisp1-common.h |  1 -
->  drivers/staging/media/rkisp1/rkisp1-isp.c    | 24 ++++++++++----------
->  2 files changed, 12 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
-> index 39d8e46d8d8a..0ec8718037a4 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
-> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
-> @@ -24,7 +24,6 @@
->  
->  #define RKISP1_DIR_SRC BIT(0)
->  #define RKISP1_DIR_SINK BIT(1)
-> -#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
->  
->  #define RKISP1_ISP_MAX_WIDTH		4032
->  #define RKISP1_ISP_MAX_HEIGHT		3024
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
-> index e66e87d6ea8b..157ac58c2efc 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
-> @@ -65,84 +65,84 @@ static const struct rkisp1_isp_mbus_info rkisp1_isp_formats[] = {
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SRGGB12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SRGGB8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_YUYV8_1X16,
->  		.pixel_enc	= V4L2_PIXEL_ENC_YUV,
-> -- 
-> 2.17.1
-> 
+Good Evening,
 
-<formletter>
+I am currently testing this on the rk3399-rockpro64, and it appears to
+fully fix the gmac problem without using txpbl.
+PCIe also seems to be more stable at high load.
+I need to conduct long term testing, but it seems to be doing very well.
 
-This is not the correct way to submit patches for inclusion in the
-stable kernel tree.  Please read:
-    https://www.kernel.org/doc/html/latest/process/stable-kernel-rules.html
-for how to do this properly.
+Unfortunately it doesn't fix the rk3328 gmac controller.
 
-</formletter>
+Tested-by: Peter Geis <pgwipeout@gmail.com>
+
+On Mon, Jun 8, 2020 at 9:15 PM Sugar Zhang <sugar.zhang@rock-chips.com> wrote:
+>
+>
+>
+> Changes in v2:
+> - fix FATAL ERROR: Unable to parse input tree
+>
+> Sugar Zhang (13):
+>   dmaengine: pl330: Remove the burst limit for quirk 'NO-FLUSHP'
+>   dmaengine: pl330: Add quirk 'arm,pl330-periph-burst'
+>   dt-bindings: dma: pl330: Document the quirk 'arm,pl330-periph-burst'
+>   ARM: dts: rk3036: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk322x: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk3288: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rk3xxx: Add 'arm,pl330-periph-burst' for dmac
+>   ARM: dts: rv1108: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: px30: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3308: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3328: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3368: Add 'arm,pl330-periph-burst' for dmac
+>   arm64: dts: rk3399: Add 'arm,pl330-periph-burst' for dmac
+>
+>  .../devicetree/bindings/dma/arm-pl330.txt          |  1 +
+>  arch/arm/boot/dts/rk3036.dtsi                      |  1 +
+>  arch/arm/boot/dts/rk322x.dtsi                      |  1 +
+>  arch/arm/boot/dts/rk3288.dtsi                      |  3 ++
+>  arch/arm/boot/dts/rk3xxx.dtsi                      |  3 ++
+>  arch/arm/boot/dts/rv1108.dtsi                      |  1 +
+>  arch/arm64/boot/dts/rockchip/px30.dtsi             |  1 +
+>  arch/arm64/boot/dts/rockchip/rk3308.dtsi           |  2 +
+>  arch/arm64/boot/dts/rockchip/rk3328.dtsi           |  1 +
+>  arch/arm64/boot/dts/rockchip/rk3368.dtsi           |  2 +
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi           |  2 +
+>  drivers/dma/pl330.c                                | 44 +++++++++++++++-------
+>  12 files changed, 49 insertions(+), 13 deletions(-)
+>
+> --
+> 2.7.4
+>
+>
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 Linux-rockchip mailing list
