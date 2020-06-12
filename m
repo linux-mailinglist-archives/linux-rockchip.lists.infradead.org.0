@@ -2,87 +2,84 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21C5C1F7DE7
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 22:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D1901F7E51
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 23:11:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6KU+fuFBX6PBQHp1MPDoLLy3PMrMG0AnxnlSYSRmMcY=; b=ucKB1aYh0HoRGp
-	iu7f+ssFgwyA2pyras+Z6RoC4nhuP/BpRhs7y7Mm51RT8mIP6/i5yzU315sB/AV4ZYI7SNxd4exa0
-	+ncS7a6fAaVzewoZ8NIs4w2dPjj/I/rf/H1Y7fPMGewlVlnRDE+flgIsAdVWDJJVaMsOIPG+PaKYI
-	5gZ+98UtvskZftDLwAdk3L2b9PuilrOVQtjm1z+q1WON4JCVJj+GAr13aFl6AzaMrEety1nsWYpqf
-	W8vNGLm76Q1O+wO20++jOUACF5V4+K6Sm5bnnEIDJLol4whAVdwtnzPAxAdlwSE1orbroqngo6Q2U
-	KI+WgMb9+3JHu3E7xNDQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I0xjHTNermza9aRjy3FmU8YaC3kjgNna3ciFistH4PM=; b=MMNx27J0dfKtv/
+	YGBOiCIDEZyvPuVvIVRjGqyEN3305rMjPoekGODWvk52Hx8jF+9Q1RVTuRqcz9koddhWLMxDUw8PF
+	LC6N57vMR72nYriWE5FEW5lIejkbn7zWeEhkwpeilbXZg5Ugg00uh5Jm/ee89UtQZhfM3tRptcBto
+	mxkWnWVaA6q/z+OQSZE34EoCKt8mA7z9VsfTLAkPPhf0y28hHa1/18hlz1x8IcrKKUAiaWfJkcrNS
+	J1yF2tPiCVGp5++p8IQRb83IexYuMSMr41gqoqtCSJqv6ggSiplKULyO6yzuefMdd+uMfJCA9beoJ
+	FUehQCn2rwUv1tmSSBNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjptD-0004yj-TP; Fri, 12 Jun 2020 20:02:59 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jjqxG-0005fv-M7; Fri, 12 Jun 2020 21:11:14 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjptA-0004xr-5p
- for linux-rockchip@lists.infradead.org; Fri, 12 Jun 2020 20:02:57 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p21so4602066pgm.13
- for <linux-rockchip@lists.infradead.org>; Fri, 12 Jun 2020 13:02:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6uGSExpyps+wiw7uOwP+l2H0cv+SpFFWTmb8dRKkt6U=;
- b=h7u6dR4B19jQUlPQPyqjXka9J3KhpwDNlIcPUaI2++siCsOQzCELypYC05rGhkBGfK
- g6A0zotR7FceCE016nrOeQktoGXFoxfPsVMkwkGm2ZK8vzxnm9PHYfuf86mrONiRQW2Z
- Zw4dDBZtjL34Gk9sshcTJuMJRBFPMalZqIERo=
+ id 1jjqx8-0005Za-4M; Fri, 12 Jun 2020 21:11:08 +0000
+Received: by mail-io1-f66.google.com with SMTP id q8so11739784iow.7;
+ Fri, 12 Jun 2020 14:11:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6uGSExpyps+wiw7uOwP+l2H0cv+SpFFWTmb8dRKkt6U=;
- b=WayV9g2h3dK4wGKX8i8E6aaIoGobUEcN2wyDtMnuO1lu0+B1BPyA8lRJzsP+rwnnao
- IXIUx26yPrbsBKWfySOsE2E/ZX3DabEPeS2P9rGJP8XA2YzjQaQftR9DKxGOzNbjRmVB
- smu6Qd5atCZQ1hYzuwykKe9ai0Ks1iyJu1P/3ovigq7pZAw58PLPYL2IWNo5po55pD5J
- sxaPLvf3a7eWohr4/z8eDxV0PY4TF+KK+QwYwcXEkQqI90xwcyjPlz505usNNLW/yxUp
- BGF6iSY/xAJlAWI1LVGsq3dXATH8mCmv4cbtTBn1VlTbbrJn+t8WTi7lLAnUcTJkGAXW
- L8BQ==
-X-Gm-Message-State: AOAM531hTfECuxxH8uOOGZPn91fDFhV1iq8sC5LKU5PeE4B2+8yTrAFo
- XiMYUs5mlZxfNTqjXJ3RNj2yHQ==
-X-Google-Smtp-Source: ABdhPJz0sMFDiDA11ABe5kT1o/km+Y+ock0L+fTuGu64VLLvv2xzyZOb5s8slfiJArkBbrcCb8SSjA==
-X-Received: by 2002:a63:1617:: with SMTP id w23mr12597286pgl.248.1591992175014; 
- Fri, 12 Jun 2020 13:02:55 -0700 (PDT)
-Received: from apsdesk.mtv.corp.google.com
- ([2620:15c:202:1:e09a:8d06:a338:aafb])
- by smtp.gmail.com with ESMTPSA id f7sm6544851pje.1.2020.06.12.13.02.54
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=LdO+yABvrQyODTNWEnFCNLq5SRWaCDFSeyJReNxOrN4=;
+ b=UFQgidd8hXbN617MbuDurBEVSDaNdhQjCBYalDKPlOOExJ7QD72rWN+8G1sqy0+cG1
+ jO1b9U5L1buMBCVqviU1JpvqXAjKUglvJ/pNfezOfL/lPp4nw7nsGXvQh8hge5qqRQfu
+ 9pct+Qi339kD98+8zBF/29NK/aVpwSaQGF5f9GLVIAPFHdsJSwjjBLo86A8Pt8GtnUsg
+ mUC+wmDDm/B9bGhktqp2+NHuUFOVMYZN0+ye3rGFINOjG/PphoSoCBQhKBv47oLZsfwv
+ uvKRJJuNRngu4o5ukDqXw19lgB7cjRvY0zNxf6P9TclBrDa0sXwyz1ekNHpZQzTcDLUl
+ JiwA==
+X-Gm-Message-State: AOAM530wGwvQCfOnA4AQBhye4E83daj0Ilivhtwk1TsQ+ZZ8DpacCDfC
+ +fmPXzVU7PC2IYExn1c82A==
+X-Google-Smtp-Source: ABdhPJyTLPwHiCPMWBDlg3TIAXPWsywr4DNWk8QAGkvpv7/LiQJCR/XEW/hsc3A/ByLjKLXUmh/i0w==
+X-Received: by 2002:a05:6638:406:: with SMTP id
+ q6mr10161463jap.125.1591996263990; 
+ Fri, 12 Jun 2020 14:11:03 -0700 (PDT)
+Received: from xps15 ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id d66sm3628624iof.27.2020.06.12.14.11.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 13:02:54 -0700 (PDT)
-From: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
-To: heiko@sntech.de,
-	linux-rockchip@lists.infradead.org
-Subject: [PATCH v2] ARM: dts: rockchip: Add marvell BT irq config
-Date: Fri, 12 Jun 2020 13:02:48 -0700
-Message-Id: <20200612130219.v2.1.I66864be898aa835ccb66b6cd5220d0b082338a81@changeid>
-X-Mailer: git-send-email 2.27.0.290.gba653c62da-goog
+ Fri, 12 Jun 2020 14:11:02 -0700 (PDT)
+Received: (nullmailer pid 3820221 invoked by uid 1000);
+ Fri, 12 Jun 2020 21:11:01 -0000
+Date: Fri, 12 Jun 2020 15:11:01 -0600
+From: Rob Herring <robh@kernel.org>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>
+Subject: Re: [PATCH v9 05/11] dt-bindings: display: add i.MX6 MIPI DSI host
+ controller doc
+Message-ID: <20200612211101.GA3808755@bogus>
+References: <20200609174959.955926-1-adrian.ratiu@collabora.com>
+ <20200609174959.955926-6-adrian.ratiu@collabora.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200609174959.955926-6-adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_130256_238120_7EBED4B7 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200612_141106_171170_D380198E 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,68 +92,130 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, chromeos-bluetooth-upstreaming@chromium.org,
- dianders@chromium.org, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
- mka@chromium.org, Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Martyn Welch <martyn.welch@collabora.com>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
+ linux-rockchip@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, kernel@collabora.com,
+ Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Veyron Jaq and Mighty both use the Marvel 8897 WiFi+BT chip. Add wakeup
-and pinctrl block to devicetree so the btmrvl driver can correctly
-configure the wakeup interrupt.
+On Tue, Jun 09, 2020 at 08:49:53PM +0300, Adrian Ratiu wrote:
+> This provides an example DT binding for the MIPI DSI host controller
 
-Signed-off-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
-Reviewed-by: Reviewed-by: Douglas Anderson <dianders@chromium.org>
----
-The Veyron Mighty Chromebook (rk3288 based board) is missing the wake
-configuration for Bluetooth. Without this change, the wake irq was not
-configurable and wake on Bluetooth was broken.
+It's not an example. It defines the exact binding for this peripheral.
 
-I verified this change with additional changes in the Bluetooth driver
-(the series is at https://patchwork.kernel.org/cover/11599101/). The
-driver changes are not necessary for this dts change and shouldn't block
-it.
+> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
+> 
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Cc: devicetree@vger.kernel.org
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
+> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> Changes since v8:
+>   - Fixed small compatible string typo caught by checkpatch
+>   - Added custom select for 'fsl,imx6-mipi-dsi' (Rob)
+>   - Replaced additionalProperties -> unevaluatedProperties (Rob)
+>   - Dropped all nodes not adding any new constraints apart from
+>   the recently upstreamed snps,dw-mipi-dsi.yaml (Rob)
+> 
+> Changes since v7:
+>   - Clarified port@0,1 descriptions, marked them as required and
+>   added missing port@0 in example (Laurent)
+> 
+> Changes since v6:
+>   - Added ref to the newly created snps,dw-mipi-dsi.yaml (Laurent)
+>   - Moved *-cells properties outside patternProperties (Laurent)
+>   - Removed the panel port documentation (Laurent)
+>   - Wrapped lines at 80 chars, typo fixes, sort includes (Laurent)
+> 
+> Changes since v5:
+>   - Fixed missing reg warning (Fabio)
+>   - Updated dt-schema and fixed warnings (Rob)
+> 
+> Changes since v4:
+>   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
+>   and addressed received binding feedback (Rob)
+> 
+> Changes since v3:
+>   - Added commit message (Neil)
+>   - Converted to yaml format (Neil)
+>   - Minor dt node + driver fixes (Rob)
+>   - Added small panel example to the host controller binding
+> 
+> Changes since v2:
+>   - Fixed commit tags (Emil)
+> ---
+>  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 112 ++++++++++++++++++
+>  1 file changed, 112 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> new file mode 100644
+> index 0000000000000..86093729fd5f9
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
+> @@ -0,0 +1,112 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX6 DW MIPI DSI Host Controller
+> +
+> +maintainers:
+> +  - Adrian Ratiu <adrian.ratiu@collabora.com>
+> +
+> +description: |
+> +  The i.MX6 DSI host controller is a Synopsys DesignWare MIPI DSI v1.01
+> +  IP block with a companion PHY IP.
+> +
+> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
+> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
+> +  the following device-specific properties.
+> +
+> +allOf:
+> +  - $ref: ../bridge/snps,dw-mipi-dsi.yaml#
+> +
+> +# Need a custom select here or 'snps,dw-mipi-dsi' will match lots of nodes
+> +select:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        enum:
+> +          - fsl,imx6-mipi-dsi
+> +  required:
+> +    - compatible
+> +
+> +properties:
 
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
 
-Changes in v2:
-- Move sdio0 ahead of sdmmc
+These 2 are covered by dsi-controller.yaml, so you can drop them.
 
- arch/arm/boot/dts/rk3288-veyron-jaq.dts | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+Otherwise,
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index 171ba6185b6d39..c15d6865f5a390 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -44,6 +44,21 @@ regulator-state-mem {
- 	};
- };
- 
-+&sdio0 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+
-+	btmrvl: btmrvl@2 {
-+		compatible = "marvell,sd8897-bt";
-+		reg = <2>;
-+		interrupt-parent = <&gpio4>;
-+		interrupts = <RK_PD7 IRQ_TYPE_LEVEL_LOW>;
-+		marvell,wakeup-pin = /bits/ 16 <13>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&bt_host_wake_l>;
-+	};
-+};
-+
- &sdmmc {
- 	disable-wp;
- 	pinctrl-names = "default";
--- 
-2.27.0.290.gba653c62da-goog
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 Linux-rockchip mailing list
