@@ -2,69 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A7BF1F73FA
+	by mail.lfdr.de (Postfix) with ESMTPS id 568621F73F9
 	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 08:41:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QFCEP2ZNeQkfZ90dx47CQf+dV/tdy+Yyyo7spzNkmN8=; b=aEMQylabwG+GD9
-	xMiYD/iW1OdNku+jAnf6BxJRkKTUxl+kt8X3JYWeu83NWcJ1lVmCpwyXxOp2F2QsOeHpdI0CqfRF1
-	CUyBy2GmKYka8oDecxSuV//WVwGXPpd4oKhYxPXCn8rFJEqWrlJwrO1ZODWex61Jv3t40075gdi3a
-	QVrCJcietUiui0Y6ZRNqGfHzDhdDKs5JikcqW0q1b/fLE2J5BYegBhp9e1kwRq2uNu4oc9VO0H5e3
-	X1y9F/Ywo2YvLzN3m2X/XnjBVQ0f7hhzCAVtxldq9kFABvhan13eJgWBU5Olh1fkQfm/u7qblnfzu
-	4cMCsVlqE/hql/m19N1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5gAZJRXb7Yi95lCJ5MxMPg0HdF4l+Ah0s5mN2PtCIbM=; b=kB/c1w/U7bJUpO
+	fVf2tsFpcCF6onM/qf1unjnB1OskhdIhsjwNpNRXGQBzLkv1PM+p1WmXW3nptR3bCi5uvLCun2JKD
+	lRfQiT6B0QE+cV/WHLdZZCLzsWFpq616a6AQq9tnLwDVmNvkXaQ0taxrky9BKlhIL5WMJ9CF3f7tp
+	7o3D/D9pxX1oHQB41N0tA8+KpexgHqDMfwxsoUoMIt+DtBMg3o4nDIcXLikuoehrxttfN2hE9N48W
+	JpBMkiKBDHTq5lkz1tY+aun67PyvkOCgwan3FGh3ce3v8K3cuUUbwggOEa6mbDZyyxXNC3rS4oYPE
+	N4E6fFmfZ+pdBICsqXRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjdNW-0003or-QS; Fri, 12 Jun 2020 06:41:26 +0000
+	id 1jjdNY-0003pb-DG; Fri, 12 Jun 2020 06:41:28 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjdNS-0003o4-Hg
- for linux-rockchip@lists.infradead.org; Fri, 12 Jun 2020 06:41:24 +0000
-Received: by mail-pg1-x543.google.com with SMTP id w20so3681000pga.6
- for <linux-rockchip@lists.infradead.org>; Thu, 11 Jun 2020 23:41:21 -0700 (PDT)
+ id 1jjdNV-0003of-Ue
+ for linux-rockchip@lists.infradead.org; Fri, 12 Jun 2020 06:41:27 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t7so3684902pgt.3
+ for <linux-rockchip@lists.infradead.org>; Thu, 11 Jun 2020 23:41:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wmiPMghMGOtJCYLz+C5PRYRGc3ipl34CadpNrrWCvwY=;
- b=GIcIDdlN0Q+GPOB6ghTJvxuY2lHTTeDLWNwKYBFbRrYPOoBBMWLGnd4wIm2LwyArOu
- 7hFjvLYByi/7Kw3gAkgvDawhWM/++94CTLiMHKmzk6P2FocQ+cE3tGJ+OXwjoT+G7ntV
- BfEIuRHk1IP+EDNYx8VLJ3QLBbw9COhYVBdtk=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=VZ/BwdmGkBFMIYL+4deXgcIl5rwY9fNYUfDELeT0SXQ=;
+ b=QZzNsedOdCaCAAjJ4kwNurEVRHIiRZ6ijFZVdcCsAB1caNeihFHvlt2aQ7h/HX0vc2
+ fMcNn5vuUI3FEsUIUPKco9FvFe38VwLw5yIZz4AB96C1nUl3o7B5UjifMLRZWuT0NMX5
+ 7j10vEBEpwYeOM8PhodxPH9gZ6Escxi2np13A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wmiPMghMGOtJCYLz+C5PRYRGc3ipl34CadpNrrWCvwY=;
- b=EQp2mJsagcuowg5Gw2GoKvS3l8v7lvzvFCsbFNPxM9wfq+Ku7BDBVgmoaUgjjPYEa8
- pkRDByYFV3hrebEez/87fev7oXKl9Fi7aH8xbK0Q7ZOECyB8Lka+y+8lT9WkfvXOXrt7
- V2zQkvwSTy5saJd9ipsCnlT4oMMLNmOk6YgQjfenVpetSygYpay1sjgQJi0pYl0U2g/y
- lgfyu37r5eLLbVY8QaovnBVFqn7SSyvLG9ZZZJu5b74EPZfbhLKrKHCn4auera4dDXm3
- PjYsPf+856V7AL1ufxO7WxqtUw38nX3oGyqxvTqUcNHTYsk3vnVaYjSAPetNja06rnSa
- BcdQ==
-X-Gm-Message-State: AOAM532ypokvrQu3BYTZXOhaKuSu2O5Gs5PKTwblbSk5N1prT6EBMgkw
- nhHuvlmAx1DqUEiqiQysfv8BaDLxgEnSmQ==
-X-Google-Smtp-Source: ABdhPJxo78iYwHudKTqOhNyKyP69NR4Q70v11slBFtyPkfK8dLvj3F2zNJ5ZcZ0CFp2DxMYA9Yflmw==
-X-Received: by 2002:a62:1654:: with SMTP id 81mr10755734pfw.137.1591944080970; 
- Thu, 11 Jun 2020 23:41:20 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=VZ/BwdmGkBFMIYL+4deXgcIl5rwY9fNYUfDELeT0SXQ=;
+ b=bKISvUvNYZ69lc1Cd5bS1RX+ojTPey12WqyrqMP0+K25acTLtB1a9hIfZTOeRDwpj+
+ qJar7mWrXzDtdn1Th1r82Wxy/igNFn2r2MAO5COPZsMtvOOwiiz5Rj8hYfC5au4CTzz0
+ 1eLEpIo7/ryT2ZnH5gLIM1ab09oHtiF9Ff+DYTLgc7DM31zSgIIR7Z8XVgxh3kcZaOzb
+ GQhtw5PQHh/PUL6rrjLEwJLUz0lFYfew1uylkwiY81RxVTO459RphPfehn0GHVzWLfqv
+ 3EhM4g9zIJGrL+I8Z7C7oEBCVC4Pw3ZK3i/gu/9HxuEFIcmp1M76k2b10IKj6/bcWaYV
+ I/ng==
+X-Gm-Message-State: AOAM532wJCPEK1G4iwg2Jja2vsyr15yfbmqhwzHAEkpjMks6lkZeujKZ
+ CfNwW3dVlye7dXFRdiBTLhSUxQmkJ+U8Tw==
+X-Google-Smtp-Source: ABdhPJzwulwnXrEIRw694i4Vsza7+z1D2ni18y6mZDKMT1yJYFY03BKX8BiFvjiebriiqdFXFHoR6w==
+X-Received: by 2002:a62:3103:: with SMTP id x3mr10156554pfx.130.1591944085489; 
+ Thu, 11 Jun 2020 23:41:25 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b5c9:c9f3:725c:9867])
- by smtp.gmail.com with ESMTPSA id j19sm5033878pfn.109.2020.06.11.23.41.16
+ by smtp.gmail.com with ESMTPSA id j19sm5033878pfn.109.2020.06.11.23.41.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 11 Jun 2020 23:41:20 -0700 (PDT)
+ Thu, 11 Jun 2020 23:41:23 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>
-Subject: [PATCH 1/2] rock-pi-4: Enable USB Gadget
-Date: Fri, 12 Jun 2020 12:11:06 +0530
-Message-Id: <20200612064108.459227-1-jagan@amarulasolutions.com>
+Subject: [PATCH] roc-rk3399-pc: Update ENV offset, size
+Date: Fri, 12 Jun 2020 12:11:07 +0530
+Message-Id: <20200612064108.459227-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200612064108.459227-1-jagan@amarulasolutions.com>
+References: <20200612064108.459227-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_234123_013278_2D1CA050 
-X-CRM114-Status: UNSURE (   6.50  )
+X-CRM114-CacheID: sfid-20200611_234125_986449_3078EB0D 
+X-CRM114-Status: UNSURE (   6.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -104,38 +106,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable USB gadget for rock-pi-4 boards.
-
-This would help to use fastboot by default.
-
-Note: Connect the Host USB cable (Port A or C) to rock-pi-4
-Upper USB 3.0 port.
+Adjust the ENV offset, size to fit into all images
+on 16MB flash.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- configs/rock-pi-4-rk3399_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ configs/roc-pc-mezzanine-rk3399_defconfig | 4 ++--
+ configs/roc-pc-rk3399_defconfig           | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/configs/rock-pi-4-rk3399_defconfig b/configs/rock-pi-4-rk3399_defconfig
-index f3eeef0293..a4b322074c 100644
---- a/configs/rock-pi-4-rk3399_defconfig
-+++ b/configs/rock-pi-4-rk3399_defconfig
-@@ -8,6 +8,7 @@ CONFIG_NR_DRAM_BANKS=1
- CONFIG_DEBUG_UART_BASE=0xFF1A0000
- CONFIG_DEBUG_UART_CLOCK=24000000
- CONFIG_DEBUG_UART=y
-+# CONFIG_ANDROID_BOOT_IMAGE is not set
- CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rock-pi-4.dtb"
- CONFIG_MISC_INIT_R=y
- CONFIG_DISPLAY_BOARDINFO_LATE=y
-@@ -57,6 +58,7 @@ CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
- CONFIG_USB_DWC3=y
- CONFIG_USB_DWC3_GENERIC=y
-+CONFIG_USB_GADGET=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
+diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
+index 7906948374..595f052cb7 100644
+--- a/configs/roc-pc-mezzanine-rk3399_defconfig
++++ b/configs/roc-pc-mezzanine-rk3399_defconfig
+@@ -1,8 +1,8 @@
+ CONFIG_ARM=y
+ CONFIG_ARCH_ROCKCHIP=y
+ CONFIG_SYS_TEXT_BASE=0x00200000
+-CONFIG_ENV_SIZE=0x6000
+-CONFIG_ENV_OFFSET=0x460000
++CONFIG_ENV_SIZE=0x8000
++CONFIG_ENV_OFFSET=0x3F8000
+ CONFIG_ENV_SECT_SIZE=0x1000
+ CONFIG_ROCKCHIP_RK3399=y
+ CONFIG_TARGET_ROC_PC_RK3399=y
+diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
+index 046fb73858..1c4db3443f 100644
+--- a/configs/roc-pc-rk3399_defconfig
++++ b/configs/roc-pc-rk3399_defconfig
+@@ -1,8 +1,8 @@
+ CONFIG_ARM=y
+ CONFIG_ARCH_ROCKCHIP=y
+ CONFIG_SYS_TEXT_BASE=0x00200000
+-CONFIG_ENV_SIZE=0x6000
+-CONFIG_ENV_OFFSET=0x460000
++CONFIG_ENV_SIZE=0x8000
++CONFIG_ENV_OFFSET=0x3F8000
+ CONFIG_ENV_SECT_SIZE=0x1000
+ CONFIG_ROCKCHIP_RK3399=y
+ CONFIG_TARGET_ROC_PC_RK3399=y
 -- 
 2.25.1
 
