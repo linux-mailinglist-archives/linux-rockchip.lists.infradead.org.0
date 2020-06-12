@@ -2,58 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 149641F780F
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 14:45:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 177F91F79D9
+	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 16:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oZq18e8LkHnXvQwYTyAqPhbdQd8eN4Ui3Up+yJiCifo=; b=dmtvwnpk5kizyiVvokYJQ1rE7
-	6t9vuUNaNRbjtFRS6UNfoeQpPjHx4UCOgcXVIU3gxNdGBvfkRaqLA1pLmCAr2O+ZYtSwd2iyglgZx
-	e2WliSgBDsE+/KKcM3cBZJLwqqx9IUQuzCEPQ6bIyl7UheaSqk1vpPHS0+kvmBVnCfhv5kiRMsKEt
-	bcyIgwSX/4MMBE/8W1N8Wcp5zsQ3+sc2sMcOfrh71Pra7FOdW1DXkPPofuf/dxSJR8rMu+mi3aaIA
-	vN/0KZHE3pjws7+Vw5cWxIAlrXF88jl0HdI5wuxOvbhCcvz9BkVTnXpdFtIOgeoyn1Ik2daqUXJ1L
-	Gc5u4hQHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2WhFs7jDtMlnVXVrBobSa+Pl3AtA4FqrFNl9+0314RQ=; b=DEHW6R35zfrDLu
+	9cY4GhmnWfzdejealo+RfH4laVgljGXL7tsITPUlyCnCPHCfFOKZPtuJG6PfXRP9gr3fBZ6vEzyl9
+	AB1PLbOzmgFx2KuX19A6O/CVPelXwuy1iAwq4FL5qEGnZMGXYJFO/5L/VTTzpterxC81eUFPB1w+4
+	wQyHDQS3aQGUMoXHHS/rjeMv1StuOsoHj76LEULceRl9QpfQRsc2CzaTcATTVvd3llTiPVE5z0TxP
+	WvtrFbfRo4YyCufStK6Iq/tmUQvBkcXmCkrgNonZ5fbFbXE2eRD38oQNlhf4y2AfzEk27T0XPvjEI
+	S7X9TNwQTgEHdF7LApSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjj3X-0003Y7-Go; Fri, 12 Jun 2020 12:45:11 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jjkis-00044t-H4; Fri, 12 Jun 2020 14:31:58 +0000
+Received: from lb2-smtp-cloud8.xs4all.net ([194.109.24.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjj3S-0001rB-IN
- for linux-rockchip@lists.infradead.org; Fri, 12 Jun 2020 12:45:08 +0000
-Received: from [IPv6:2003:cb:871f:5b00:2d5e:dfaf:ae68:33cc]
- (p200300cb871f5b002d5edfafae6833cc.dip0.t-ipconnect.de
- [IPv6:2003:cb:871f:5b00:2d5e:dfaf:ae68:33cc])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: dafna)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 347AB2A5476;
- Fri, 12 Jun 2020 13:45:03 +0100 (BST)
-Subject: Re: [PATCH v2 3/4] media: staging: rkisp1: rsz: set output format to
- YUV422 if cap format is YUV444
-To: Tomasz Figa <tfiga@chromium.org>
-References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
- <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
- <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Message-ID: <aa52f9f8-d9e9-06b2-22df-bbab2d26b516@collabora.com>
-Date: Fri, 12 Jun 2020 14:45:00 +0200
+ id 1jjkip-000440-CC
+ for linux-rockchip@lists.infradead.org; Fri, 12 Jun 2020 14:31:57 +0000
+Received: from cust-b5b5937f ([IPv6:fc0c:c16d:66b8:757f:c639:739b:9d66:799d])
+ by smtp-cloud8.xs4all.net with ESMTPA
+ id jkiWj7pG1ZgWWjkiZjWPog; Fri, 12 Jun 2020 16:31:46 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1591972306; bh=nCym+V68URqljB+zF0jxDoG5uZ9OAURpMHuY+4kVtNA=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=Ek25y6ooiVKrHsLtNoW2msBBEPPbmzkTtVlBE47CV/ciG+iatFdT6vGmuWS0SvSUl
+ xx4VUC3/8wTt9TZ+EY6fiFQ82WIEmE6tsyMS9wyh6ef6GKFZLrwY1+M/Jvcq5c0tMv
+ ZQQCXgKEpo83ayN9/NIyx4NyS0lESXPd6YEUNM51OgA5JD8FOvOKNo/H0P8zaWdMr4
+ aAbBYaKrc7Bg5UhrGi8+v02T/ogLkcA9q/6n3uZONDUeH5fKxtBEdSs3LL5bPXc6vf
+ KcSHXv0v1kYVap2GRvhatTGV/rKzC/MgOk9EJS+o/HVhQQPb2Rt3M8rQS/qZp/Dc4K
+ 6KcjRzJbA/lQw==
+Subject: Re: [RESEND PATCH v3 0/6] media: staging: rkisp1: bugs fixes and vars
+ renames
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ linux-media@vger.kernel.org, laurent.pinchart@ideasonboard.com
+References: <20200611154551.25022-1-dafna.hirschfeld@collabora.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <2f0f7297-6067-9af0-c544-fc7defad943d@xs4all.nl>
+Date: Fri, 12 Jun 2020 16:31:35 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
+In-Reply-To: <20200611154551.25022-1-dafna.hirschfeld@collabora.com>
 Content-Language: en-US
+X-CMAE-Envelope: MS4wfGmSocrPpAgHoUy6j0hE9l1Ucx0Lv4acvA1yIyIkDkq0MbHONKkz/0iOqaoMHY1142snEcuQGdyLW+1L02uMnPN+/5ecD/x8fIG4q1cmzYiJ8frhEiBo
+ Mhcoi6iY0CDU6hDEc9ADh32WYf8DcRQnD0VDIcmD1cfItpYaUw+CDdITL3PZKPzPZIts2ABlmuNoSIHBnILYr0GJjO/6Uj6Iagg7F6FjCFlfldoTWczNVrtr
+ Jyg4SZybRevmK3yjQotSpXSIYNY40CEBVmCzsG/c0Apl5w6y9LzuZ6nzfcRDps6w7Ad5h+9pitHpq0UAt+a3IuN3TmYhMWB9DafeJ06vpEQy1j+KAV5xl0L7
+ 8KEwGfasgaZXpx1yKBUsoI9lpqJROqdr1JkRRKOt7mHwf9Q2xNzBg77s5wM4sNRLpsP/XmfZSxr3i8YhcecmKO+FTYHEbdGewrZr3ULKICPA3VV/3bBFCOGU
+ efR+lrgfth1aK0TK9uyfB0WmKzrWFM/AWB7KWBz8RFjS6Lspz6+fNpqbm0sBwzG1sVs1Dkm7hoELFitY
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_054506_756155_D516A594 
-X-CRM114-Status: GOOD (  24.99  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200612_073155_844440_144BFEF5 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.25 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [194.109.24.25 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,85 +87,71 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Helen Koike <helen.koike@collabora.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@collabora.com,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: mchehab@kernel.org, dafna3@gmail.com, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ sakari.ailus@linux.intel.com, kernel@collabora.com, ezequiel@collabora.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
+(dropped the CC to stable)
 
+Dafna,
 
-On 27.05.20 01:09, Tomasz Figa wrote:
-> On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
-> <dafna.hirschfeld@collabora.com> wrote:
->>
->> If the capture format is YUV444M then the memory input format
->> should be YUV422, so the resizer should not change the default
->> hdiv, vdiv in that case.
->>
->> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
->> ---
->>   drivers/staging/media/rkisp1/rkisp1-resizer.c | 7 ++++---
->>   1 file changed, 4 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
->> index 04a29af8cc92..5f9740ddd558 100644
->> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
->> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
->> @@ -394,10 +394,11 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
->>           * (4:2:2 -> 4:2:0 for example). So the width/height of the CbCr
->>           * streams should be set according to the pixel format in the capture.
->>           * The resizer always gets the input as YUV422. If the capture format
->> -        * is RGB then the memory input (the resizer output) should be YUV422
->> -        * so we use the hdiv, vdiv of the YUV422 info in this case.
->> +        * is RGB or YUV444 then the memory input (the resizer output) should
->> +        * be YUV422 so we use the hdiv, vdiv of the YUV422 info in this case.
->>           */
->> -       if (v4l2_is_format_yuv(cap->pix.info)) {
->> +       if (v4l2_is_format_yuv(cap->pix.info) &&
->> +           cap->pix.info->format != V4L2_PIX_FMT_YUV444M) {
->>                  src_c.width = cap->pix.info->hdiv;
->>                  src_c.height = cap->pix.info->vdiv;
+Can you repost this an another RESEND, but without the CC to stable?
+
+That will make it easier to review otherwise any reply would go to stable
+as well and just annoy Greg :-)
+
+If you need patches to go to stable, then add a Cc: line to stable after your
+Signed-off-by tag. When the patch is merged into the mainline kernel it will
+be automatically Cc-ed to stable.
+
+Regards,
+
+	Hans
+
+On 11/06/2020 17:45, Dafna Hirschfeld wrote:
+> RESEND the patchset because I forgot to add the first two patches
+> to the set
 > 
-> As pointed out in another thread, this should have been the original
-> size divided by the divisor and not just the latter alone.
+> The first two patches in this patchset are two bug fixes related to the enumeration and
+> settings of the sink format of the resizer entity.
+> The next 3 patches are renaming/removing macros and variables.
+> patch 6 adds documentation to the struct rkisp1_isp_mbus_info
 > 
-> It seems a bit suspicious to me that we don't need to upscale the
-> chroma planes here, because it would mean that the MI itself would be
-> doing some horizontal pixel doubling. The hardware documentation
-> doesn't really explain this, though.
+> changes from v2:
+> - patch 3 is new - remove macro RKISP1_DIR_SINK_SRC since the code is more readable without it.
+> - patch 5 - rename 'direction' to 'isp_pads_mask' instead of 'isp_pads_flags'
+> - patch 6 is new - add documentation of the struct 'rkisp1_isp_mbus_info'
 > 
-> Have you been able to validate that the setting without upscaling
-> indeed produces correct output?
-
-Hi,
-I investigated it again, without this patch, the frames on mainpath for YUV444 look good: https://imgur.com/a/NtazWhY
-but there is a problem on selfpath: https://imgur.com/a/vQJPqAn
-
-This patch somehow solves the problem on selfpath but ruins the frames on mainpath.
-
-I think the bug is actually in another place in the code. The function 'rkisp1_sp_config'
-sets a constant value RKISP1_MI_CTRL_SP_INPUT_YUV422 as the input format on the RKISP1_CIF_MI_CTRL register.
-But the value should be set according to the configuration. For some reason the problem arises only
-when trying to capture yuv444. When I capture yuv420 on the selfpath the frame looks good although the
-value RKISP1_MI_CTRL_SP_INPUT_YUV422 is set.
-Setting the the SP_INPUT_* according to the configuration seems to solve the problem.
-
-Thanks,
-Dafna
-
-
+> changes from v1:
+> - added "Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
+> to the commit log of the first two patches.
+> - added two patches. One patch rename the macros "RKISP1_DIR_*"
+> to "RKISP1_ISP_SD_*", another that rename the field 'direction'
+> in 'struct rkisp1_isp_mbus_info' to 'isp_pads_flags'
 > 
-> Best regards,
-> Tomasz
+> Dafna Hirschfeld (6):
+>   media: staging: rkisp1: rsz: supported formats are the isp's src
+>     formats, not sink formats
+>   media: staging: rkisp1: rsz: set default format if the given format is
+>     not RKISP1_DIR_SRC
+>   media: staging: rkisp1: remove macro RKISP1_DIR_SINK_SRC
+>   media: staging: rkisp1: rename macros 'RKISP1_DIR_*' to
+>     'RKISP1_ISP_SD_*'
+>   media: staging: rkisp1: rename the field 'direction' in
+>     'rkisp1_isp_mbus_info' to 'isp_pads_mask'
+>   media: staging: rkisp1: common: add documentation for struct
+>     rkisp1_isp_mbus_info
 > 
+>  drivers/staging/media/rkisp1/rkisp1-common.h  | 18 ++++++-
+>  drivers/staging/media/rkisp1/rkisp1-isp.c     | 50 +++++++++----------
+>  drivers/staging/media/rkisp1/rkisp1-resizer.c |  6 +--
+>  3 files changed, 43 insertions(+), 31 deletions(-)
+> 
+
 
 _______________________________________________
 Linux-rockchip mailing list
