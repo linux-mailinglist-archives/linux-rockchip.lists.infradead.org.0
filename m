@@ -2,84 +2,52 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D1901F7E51
-	for <lists+linux-rockchip@lfdr.de>; Fri, 12 Jun 2020 23:11:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF2FF1F8226
+	for <lists+linux-rockchip@lfdr.de>; Sat, 13 Jun 2020 11:14:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I0xjHTNermza9aRjy3FmU8YaC3kjgNna3ciFistH4PM=; b=MMNx27J0dfKtv/
-	YGBOiCIDEZyvPuVvIVRjGqyEN3305rMjPoekGODWvk52Hx8jF+9Q1RVTuRqcz9koddhWLMxDUw8PF
-	LC6N57vMR72nYriWE5FEW5lIejkbn7zWeEhkwpeilbXZg5Ugg00uh5Jm/ee89UtQZhfM3tRptcBto
-	mxkWnWVaA6q/z+OQSZE34EoCKt8mA7z9VsfTLAkPPhf0y28hHa1/18hlz1x8IcrKKUAiaWfJkcrNS
-	J1yF2tPiCVGp5++p8IQRb83IexYuMSMr41gqoqtCSJqv6ggSiplKULyO6yzuefMdd+uMfJCA9beoJ
-	FUehQCn2rwUv1tmSSBNA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=webZBA2UHi1RieQ5nZacjTILv/sMTAP5Jm5gLBTTwAc=; b=J1P
+	knAWAHgP5IDytSH/E3SYi7TTRM7l7sSrPgl58VO3yOQzV928U4w6LGvzdDL+CBy/P9V23rvZ+BKgc
+	qqWuEXP0PH97gh11u4vyjtKDi2u1ZcZx7MIE8grSB+teALKjYFJS7q5U15n+92Q768UUBm6u55i8+
+	5YXraX3Bfed4hX/XWWQyH6hpced4iXVDR2w89FN3Rcu1TL+TwTfcMVGLEYvaf9PDQg5qCUHAPqgnV
+	5WITGIsOiQaiTllWPxCpl2ra4kY4xXDilF6ujvVo9TAnzzs2XtY0DgEbXlCZlLWzHiDvcMaH8HB8q
+	29dKcNP8s65R4OxiCMhkBeIWW1YnBrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjqxG-0005fv-M7; Fri, 12 Jun 2020 21:11:14 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1jk2Ew-0002UR-2i; Sat, 13 Jun 2020 09:14:14 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjqx8-0005Za-4M; Fri, 12 Jun 2020 21:11:08 +0000
-Received: by mail-io1-f66.google.com with SMTP id q8so11739784iow.7;
- Fri, 12 Jun 2020 14:11:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=LdO+yABvrQyODTNWEnFCNLq5SRWaCDFSeyJReNxOrN4=;
- b=UFQgidd8hXbN617MbuDurBEVSDaNdhQjCBYalDKPlOOExJ7QD72rWN+8G1sqy0+cG1
- jO1b9U5L1buMBCVqviU1JpvqXAjKUglvJ/pNfezOfL/lPp4nw7nsGXvQh8hge5qqRQfu
- 9pct+Qi339kD98+8zBF/29NK/aVpwSaQGF5f9GLVIAPFHdsJSwjjBLo86A8Pt8GtnUsg
- mUC+wmDDm/B9bGhktqp2+NHuUFOVMYZN0+ye3rGFINOjG/PphoSoCBQhKBv47oLZsfwv
- uvKRJJuNRngu4o5ukDqXw19lgB7cjRvY0zNxf6P9TclBrDa0sXwyz1ekNHpZQzTcDLUl
- JiwA==
-X-Gm-Message-State: AOAM530wGwvQCfOnA4AQBhye4E83daj0Ilivhtwk1TsQ+ZZ8DpacCDfC
- +fmPXzVU7PC2IYExn1c82A==
-X-Google-Smtp-Source: ABdhPJyTLPwHiCPMWBDlg3TIAXPWsywr4DNWk8QAGkvpv7/LiQJCR/XEW/hsc3A/ByLjKLXUmh/i0w==
-X-Received: by 2002:a05:6638:406:: with SMTP id
- q6mr10161463jap.125.1591996263990; 
- Fri, 12 Jun 2020 14:11:03 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id d66sm3628624iof.27.2020.06.12.14.11.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 12 Jun 2020 14:11:02 -0700 (PDT)
-Received: (nullmailer pid 3820221 invoked by uid 1000);
- Fri, 12 Jun 2020 21:11:01 -0000
-Date: Fri, 12 Jun 2020 15:11:01 -0600
-From: Rob Herring <robh@kernel.org>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
-Subject: Re: [PATCH v9 05/11] dt-bindings: display: add i.MX6 MIPI DSI host
- controller doc
-Message-ID: <20200612211101.GA3808755@bogus>
-References: <20200609174959.955926-1-adrian.ratiu@collabora.com>
- <20200609174959.955926-6-adrian.ratiu@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200609174959.955926-6-adrian.ratiu@collabora.com>
+ id 1jk2Es-0002SO-8Z
+ for linux-rockchip@lists.infradead.org; Sat, 13 Jun 2020 09:14:11 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id 705492A0D2F
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org,
+	laurent.pinchart@ideasonboard.com
+Subject: [RESEND PATCH v3 0/6] media: staging: rkisp1: bugs fixes and vars
+ renames
+Date: Sat, 13 Jun 2020 11:13:47 +0200
+Message-Id: <20200613091353.12689-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_141106_171170_D380198E 
-X-CRM114-Status: GOOD (  17.71  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200613_021410_429835_FCCCC25A 
+X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,130 +60,58 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
- Martyn Welch <martyn.welch@collabora.com>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
- linux-rockchip@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- Neil Armstrong <narmstrong@baylibre.com>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
+Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
+ tfiga@chromium.org, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, sakari.ailus@linux.intel.com, kernel@collabora.com,
+ ezequiel@collabora.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 08:49:53PM +0300, Adrian Ratiu wrote:
-> This provides an example DT binding for the MIPI DSI host controller
 
-It's not an example. It defines the exact binding for this peripheral.
+RESEND the patchset because I forgot to add the first two patches
+to the set (now also dropping CC to stable)
 
-> present on the i.MX6 SoC based on Synopsis DesignWare v1.01 IP.
-> 
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Neil Armstrong <narmstrong@baylibre.com>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: devicetree@vger.kernel.org
-> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-> ---
-> Changes since v8:
->   - Fixed small compatible string typo caught by checkpatch
->   - Added custom select for 'fsl,imx6-mipi-dsi' (Rob)
->   - Replaced additionalProperties -> unevaluatedProperties (Rob)
->   - Dropped all nodes not adding any new constraints apart from
->   the recently upstreamed snps,dw-mipi-dsi.yaml (Rob)
-> 
-> Changes since v7:
->   - Clarified port@0,1 descriptions, marked them as required and
->   added missing port@0 in example (Laurent)
-> 
-> Changes since v6:
->   - Added ref to the newly created snps,dw-mipi-dsi.yaml (Laurent)
->   - Moved *-cells properties outside patternProperties (Laurent)
->   - Removed the panel port documentation (Laurent)
->   - Wrapped lines at 80 chars, typo fixes, sort includes (Laurent)
-> 
-> Changes since v5:
->   - Fixed missing reg warning (Fabio)
->   - Updated dt-schema and fixed warnings (Rob)
-> 
-> Changes since v4:
->   - Fixed yaml binding to pass `make dt_binding_check dtbs_check`
->   and addressed received binding feedback (Rob)
-> 
-> Changes since v3:
->   - Added commit message (Neil)
->   - Converted to yaml format (Neil)
->   - Minor dt node + driver fixes (Rob)
->   - Added small panel example to the host controller binding
-> 
-> Changes since v2:
->   - Fixed commit tags (Emil)
-> ---
->  .../display/imx/fsl,mipi-dsi-imx6.yaml        | 112 ++++++++++++++++++
->  1 file changed, 112 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> new file mode 100644
-> index 0000000000000..86093729fd5f9
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/fsl,mipi-dsi-imx6.yaml
-> @@ -0,0 +1,112 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/imx/fsl,mipi-dsi-imx6.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX6 DW MIPI DSI Host Controller
-> +
-> +maintainers:
-> +  - Adrian Ratiu <adrian.ratiu@collabora.com>
-> +
-> +description: |
-> +  The i.MX6 DSI host controller is a Synopsys DesignWare MIPI DSI v1.01
-> +  IP block with a companion PHY IP.
-> +
-> +  These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-> +  Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-> +  the following device-specific properties.
-> +
-> +allOf:
-> +  - $ref: ../bridge/snps,dw-mipi-dsi.yaml#
-> +
-> +# Need a custom select here or 'snps,dw-mipi-dsi' will match lots of nodes
-> +select:
-> +  properties:
-> +    compatible:
-> +      contains:
-> +        enum:
-> +          - fsl,imx6-mipi-dsi
-> +  required:
-> +    - compatible
-> +
-> +properties:
+The first two patches in this patchset are two bug fixes related to the enumeration and
+settings of the sink format of the resizer entity.
+The next 3 patches are renaming/removing macros and variables.
+patch 6 adds documentation to the struct rkisp1_isp_mbus_info
 
-> +  '#address-cells':
-> +    const: 1
-> +
-> +  '#size-cells':
-> +    const: 0
+changes from v2:
+- patch 3 is new - remove macro RKISP1_DIR_SINK_SRC since the code is more readable without it.
+- patch 5 - rename 'direction' to 'isp_pads_mask' instead of 'isp_pads_flags'
+- patch 6 is new - add documentation of the struct 'rkisp1_isp_mbus_info'
 
-These 2 are covered by dsi-controller.yaml, so you can drop them.
+changes from v1:
+- added "Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
+to the commit log of the first two patches.
+- added two patches. One patch rename the macros "RKISP1_DIR_*"
+to "RKISP1_ISP_SD_*", another that rename the field 'direction'
+in 'struct rkisp1_isp_mbus_info' to 'isp_pads_flags'
 
-Otherwise,
+Dafna Hirschfeld (6):
+  media: staging: rkisp1: rsz: supported formats are the isp's src
+    formats, not sink formats
+  media: staging: rkisp1: rsz: set default format if the given format is
+    not RKISP1_DIR_SRC
+  media: staging: rkisp1: remove macro RKISP1_DIR_SINK_SRC
+  media: staging: rkisp1: rename macros 'RKISP1_DIR_*' to
+    'RKISP1_ISP_SD_*'
+  media: staging: rkisp1: rename the field 'direction' in
+    'rkisp1_isp_mbus_info' to 'isp_pads_mask'
+  media: staging: rkisp1: common: add documentation for struct
+    rkisp1_isp_mbus_info
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+ drivers/staging/media/rkisp1/rkisp1-common.h  | 18 ++++++-
+ drivers/staging/media/rkisp1/rkisp1-isp.c     | 50 +++++++++----------
+ drivers/staging/media/rkisp1/rkisp1-resizer.c |  6 +--
+ 3 files changed, 43 insertions(+), 31 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
