@@ -2,46 +2,47 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 100CA1FAFCC
-	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jun 2020 14:05:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE0031FAFDD
+	for <lists+linux-rockchip@lfdr.de>; Tue, 16 Jun 2020 14:07:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hoqd+jXBShfBycLj4K7iYqjG5kDbuhO/dx10aJAT11U=; b=Xe13opcMwTZng1
-	T2ibvoGD9kePKClIvbOK43Vi0ccUO2qz/Mqn7EheAfQGnvdUVXkM81BBQfZDfIgno57Vfiq8RMz7f
-	PrbPDwfEH0mWcFHaZOPmZNR6+ESRS0EmIDTGGs/BF0RbvVNEdLE8lga0R6pwVHy4Jc7H8mSNFhr9S
-	ISAwOhSkaC4Y2UPXiGAMbkZJyYs9FQDdd72arhXVmsKVGtlgy0w7b6nxLQaXmJscjg9skPNsoCHkY
-	WweX+pqON08Yh+nipJ7ZCyf972D8S0BzkcdcvUyk+zoGU0Xk5gOnOvUQEcjh0NkWJRoNhusCzSWC2
-	3nuXQ0/O7G1J00R5wyew==;
+	List-Owner; bh=03kBrZVcMGBxmG2M/BOPOEroMAuFMS8t7E4TGnI8bfM=; b=aJOD230w8/kWV+
+	nqv7uZZgpBqt9DghigfnN3jD8PXZG+iCWia9QY4YdQbqLC/9D/rOuUqiylcgQJEpmiAHiilamMGmk
+	ps2AYVFoE5rZe5kdNScUSVi3Htm17FITq9ADv9vKgZ+M+KbGQr0RrmxvvfD28g9id72F6nfpi9to5
+	WkaFQKrFS1Ibtxp6kVKf1vRKZCWSZwu8Jb/AGtPi8IxMWogBV37FzWYBUiEQT1XsiAvOraI/xv6g6
+	YliZfenLTRflYC82megUNcFPXLmLiInjT4nPi587DTm413FGmIRxoLzLcbWqQlLswH+zsVedi7R23
+	YGwLZCrp4rSexLBpo2sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlAL6-0002FO-D8; Tue, 16 Jun 2020 12:05:16 +0000
+	id 1jlANe-0002h3-OR; Tue, 16 Jun 2020 12:07:54 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlAL2-0002E2-F1
- for linux-rockchip@lists.infradead.org; Tue, 16 Jun 2020 12:05:14 +0000
+ id 1jlANa-0002gd-Sa
+ for linux-rockchip@lists.infradead.org; Tue, 16 Jun 2020 12:07:52 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 972842A35B5
-Subject: Re: [RESEND PATCH v3 3/6] media: staging: rkisp1: remove macro
- RKISP1_DIR_SINK_SRC
+ (Authenticated sender: koike) with ESMTPSA id 0C3552A35B5
+Subject: Re: [RESEND PATCH v3 2/6] media: staging: rkisp1: rsz: set default
+ format if the given format is not RKISP1_DIR_SRC
+From: Helen Koike <helen.koike@collabora.com>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
  linux-media@vger.kernel.org, laurent.pinchart@ideasonboard.com
 References: <20200613091353.12689-1-dafna.hirschfeld@collabora.com>
- <20200613091353.12689-4-dafna.hirschfeld@collabora.com>
-From: Helen Koike <helen.koike@collabora.com>
-Message-ID: <919fa1e3-ae48-873b-613f-8f4f46ec42aa@collabora.com>
-Date: Tue, 16 Jun 2020 09:05:04 -0300
+ <20200613091353.12689-3-dafna.hirschfeld@collabora.com>
+ <ded8a981-5e5e-f0a6-c72d-1a762d3fd153@collabora.com>
+Message-ID: <eca7b4c0-57a7-2c7d-9d1f-0fd107849541@collabora.com>
+Date: Tue, 16 Jun 2020 09:07:42 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200613091353.12689-4-dafna.hirschfeld@collabora.com>
+In-Reply-To: <ded8a981-5e5e-f0a6-c72d-1a762d3fd153@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_050512_771955_FF9A38A9 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20200616_050751_055006_6F285822 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -75,134 +76,85 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 
 
-On 6/13/20 6:13 AM, Dafna Hirschfeld wrote:
-> The macro RKISP1_DIR_SINK_SRC is a mask of two flags.
-> The macro hides the fact that it's a mask and the code
-> is actually more clear if we replace it the with bitwise-or explicitly.
+On 6/16/20 9:03 AM, Helen Koike wrote:
+> Hi Dafna,
 > 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> On 6/13/20 6:13 AM, Dafna Hirschfeld wrote:
+>> When setting the sink format of the 'rkisp1_resizer'
+>> the format should be supported by 'rkisp1_isp' on
+>> the video source pad. This patch checks this condition
+>> and set the format to default if the condition is false.
+>>
+>> Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
+>>
+>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>> Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+>> ---
+>>  drivers/staging/media/rkisp1/rkisp1-common.h  | 4 ++++
+>>  drivers/staging/media/rkisp1/rkisp1-isp.c     | 4 ----
+>>  drivers/staging/media/rkisp1/rkisp1-resizer.c | 2 +-
+>>  3 files changed, 5 insertions(+), 5 deletions(-)
+>>
+>> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+>> index 0c4fe503adc9..39d8e46d8d8a 100644
+>> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
+>> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+>> @@ -22,6 +22,10 @@
+>>  #include "rkisp1-regs.h"
+>>  #include "uapi/rkisp1-config.h"
+>>  
+>> +#define RKISP1_DIR_SRC BIT(0)
+>> +#define RKISP1_DIR_SINK BIT(1)
+>> +#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
+>> +
+>>  #define RKISP1_ISP_MAX_WIDTH		4032
+>>  #define RKISP1_ISP_MAX_HEIGHT		3024
+>>  #define RKISP1_ISP_MIN_WIDTH		32
+>> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+>> index dc2b59a0160a..e66e87d6ea8b 100644
+>> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
+>> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+>> @@ -23,10 +23,6 @@
+>>  
+>>  #define RKISP1_ISP_DEV_NAME	RKISP1_DRIVER_NAME "_isp"
+>>  
+>> -#define RKISP1_DIR_SRC BIT(0)
+>> -#define RKISP1_DIR_SINK BIT(1)
+>> -#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
+> 
+> As mentioned previously, please, check my comment on first version of the patch https://patchwork.linuxtv.org/patch/64292/
+> Or please let me know if you don't agree.
 
-Acked-by: Helen Koike <helen.koike@collabora.com>
+I just saw you submitted the change in a separated patch.
 
-> ---
->  drivers/staging/media/rkisp1/rkisp1-common.h |  1 -
->  drivers/staging/media/rkisp1/rkisp1-isp.c    | 24 ++++++++++----------
->  2 files changed, 12 insertions(+), 13 deletions(-)
+I would submit patch 4/6 before this one.
+
+Thanks
+Helen
+
+
 > 
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
-> index 39d8e46d8d8a..0ec8718037a4 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
-> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
-> @@ -24,7 +24,6 @@
->  
->  #define RKISP1_DIR_SRC BIT(0)
->  #define RKISP1_DIR_SINK BIT(1)
-> -#define RKISP1_DIR_SINK_SRC (RKISP1_DIR_SINK | RKISP1_DIR_SRC)
->  
->  #define RKISP1_ISP_MAX_WIDTH		4032
->  #define RKISP1_ISP_MAX_HEIGHT		3024
-> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
-> index e66e87d6ea8b..157ac58c2efc 100644
-> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
-> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
-> @@ -65,84 +65,84 @@ static const struct rkisp1_isp_mbus_info rkisp1_isp_formats[] = {
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG10_1X10,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW10,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 10,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SRGGB12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG12_1X12,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW12,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 12,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SRGGB8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_RGGB,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SBGGR8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_BGGR,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGBRG8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_GBRG,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_SGRBG8_1X8,
->  		.pixel_enc	= V4L2_PIXEL_ENC_BAYER,
->  		.mipi_dt	= RKISP1_CIF_CSI2_DT_RAW8,
->  		.bayer_pat	= RKISP1_RAW_GRBG,
->  		.bus_width	= 8,
-> -		.direction	= RKISP1_DIR_SINK_SRC,
-> +		.direction	= RKISP1_DIR_SINK | RKISP1_DIR_SRC,
->  	}, {
->  		.mbus_code	= MEDIA_BUS_FMT_YUYV8_1X16,
->  		.pixel_enc	= V4L2_PIXEL_ENC_YUV,
+> Thanks
+> Helen
 > 
+>> -
+>>  /*
+>>   * NOTE: MIPI controller and input MUX are also configured in this file.
+>>   * This is because ISP Subdev describes not only ISP submodule (input size,
+>> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>> index d64c064bdb1d..fa28f4bd65c0 100644
+>> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>> @@ -542,7 +542,7 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+>>  					    which);
+>>  	sink_fmt->code = format->code;
+>>  	mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+>> -	if (!mbus_info) {
+>> +	if (!mbus_info || !(mbus_info->direction & RKISP1_DIR_SRC)) {
+>>  		sink_fmt->code = RKISP1_DEF_FMT;
+>>  		mbus_info = rkisp1_isp_mbus_info_get(sink_fmt->code);
+>>  	}
+>>
 
 _______________________________________________
 Linux-rockchip mailing list
