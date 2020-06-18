@@ -2,83 +2,123 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BBA71FF460
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 16:13:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 404F41FF7D7
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 17:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mrEuL7geY3Y53AdnWPvp1MIRyht1R2pvP+VFS672AO8=; b=rkMQcNhcW4e7eR
-	oYUhOPnLygejiAgyV+tb52wTmddkeq1X3TRUExCO5BLvkgVSkiFqxW6OmdKzvACGvttiHPIoJARvD
-	AkVn9ykOC0kASolZ/wlnQEjx6seoqxFNoEYA7pBUvCNTuAlOk6mM42po0iOBwGblGyQqRLvaqscCd
-	dRSnvQrp0CA02j6LnsFP7Cmgi99X7OLXSVecGQXz+5JABugfnTR+PpWyWCE7HbRSEokY1myTQDHmK
-	CPPSu4MOP0YDeooqJ5RrZixvrLvkCKQRF3R0YGSsfg2pWhu+QFx0z/6kH1oFLpt4zYeQ08tNym9r/
-	JviSmS16DoFlsDOA8QzQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7uGYwxBXzFcLfo69noio+hOwUtSzy4XIiW7+qYO4JNY=; b=IED5p5k39tsdbZCHvb3spdOnVN
+	Ub6EloNMQuy8C6AS3Nzvx2BkNV2ydLv+ef8U+TOqiCTIW6cQlrgu+WPMD0YYPCLcmkhkMPOpUA6Ha
+	esSS30NCb9BCx5GLRCTB2risdVVnDXO/qi3OnjsfW1bPkHJB1Bzf0IJ290Sgw7IhSXUkvlITnpXMf
+	Pd9lWTq9emIYsBcbznXxwhiFoQ0VgIrKCVXO49Ie48qoPE4K5FflnMkeMrItGZc+5easJ67Kj2iHA
+	tNZkEqdzsOrjku3ofQCrg/ZZdlGB5eTPh5hQzR0WetY4fFwFGCdvHzUQag1f2J2vWA0LZY1HpRjE8
+	l7EDHfQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlvIO-0007MV-QT; Thu, 18 Jun 2020 14:13:36 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jlwkB-0002z7-MS; Thu, 18 Jun 2020 15:46:23 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlvIK-0007Kl-UC
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 14:13:34 +0000
-Received: by mail-pl1-x644.google.com with SMTP id g12so2481066pll.10
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 07:13:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=aXo79YsDlYiUwbb10I7rIRjM4i7XWuzplBzXYRC5D7k=;
- b=Io2072NDuT7c66vZ1n6FndjQgELtMFGDIwFzi5lL+4iPvEr+QTiBiaCxHG9DDQeUan
- D/ZX2zYRmDoQuairl5i/4w7rVydpLC5Uf+MogmSXTL4begWYraTZNNWsjtt7xCdAqZh2
- 6Mttt606jQ6fxncWu9APaW+0pK+BNpH8WuIhs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=aXo79YsDlYiUwbb10I7rIRjM4i7XWuzplBzXYRC5D7k=;
- b=XfZTKvP7laSf505LOkvUbPA2JvntCoW/0yNkuYBv8ciuK8YtzHVDffqbd9X+LVG6LN
- APYYgXwwDCgXt4lGz72TjhMLg91OAvCxA/o1ifEe7Cd5Z8qMagAXRmvGZxY9/+s4Bcc1
- VIItCKzNmpJc/JY33ZvsAIlyPDjJylah8Bdeu6kROP3Q56YBdM416TSQO8a5kJS2gaKW
- ifvCjtCRXcfkHEvwtdiv2bYcRarvEQ21D9rs2WnWvcuIJuXqUAztj1WEU+mwJo2qnfrO
- l6caVZIIOXvzXmZRP8w56YCXmBvK3jfLFIiqQbL+8MMsi4K7JvZEwk1Z4dCRBy+mQNS6
- X9TA==
-X-Gm-Message-State: AOAM5309F4rij7+jSbeRy4cyWaE26cd//JEV6KUlAJVicmkbzMFmhnkv
- 8i70oiT73uhXCC7Vw904bkeqbQ==
-X-Google-Smtp-Source: ABdhPJwbMkprPUXP6XpL59HOS/fjraOo38UJ03WsVQhXJLeZ4DYsSegRJNcoQvRY7QRfos7Xl6jF6Q==
-X-Received: by 2002:a17:90a:dc0f:: with SMTP id
- i15mr4315734pjv.221.1592489612365; 
- Thu, 18 Jun 2020 07:13:32 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id p6sm3340540pfb.152.2020.06.18.07.13.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 07:13:31 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Kever Yang <kever.yang@rock-chips.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Simon Glass <sjg@chromium.org>
-Subject: [PATCH v2 6/6] roc-rk3399-pc: Update ENV offset, size
-Date: Thu, 18 Jun 2020 19:42:59 +0530
-Message-Id: <20200618141259.155581-6-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200618141259.155581-1-jagan@amarulasolutions.com>
-References: <20200618141259.155581-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
+ id 1jlweV-0004IC-IW
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 15:40:36 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154027euoutp014131fa0abacae63046710ce72dc66497~ZrZuuxYEN1845018450euoutp017
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 15:40:27 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200618154027euoutp014131fa0abacae63046710ce72dc66497~ZrZuuxYEN1845018450euoutp017
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1592494827;
+ bh=Xz5Z61X+A6u/FrMD8ciD40ug8xujs/WBHWVc8ZYxDIk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=tC6UEjuKXNLSomqGjoEMK8w3W1gK8t6jjjsDBvf2C5Mn3pjdvL5lm3mQeS+RI6OWH
+ VEeQXGRiy3b/S8UlEfqJul/del29S9PvIA6uPutMqBDr2THZVqs0GvrHSy9cxVtECV
+ o9DWG+Is3oCxtrUBDHKPPpc1ZwnjPsA+Qy+tf1W4=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154027eucas1p146034164d01a03da01714b7775571575~ZrZucqgf01949419494eucas1p1C;
+ Thu, 18 Jun 2020 15:40:27 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 85.1F.61286.AEA8BEE5; Thu, 18
+ Jun 2020 16:40:27 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200618154026eucas1p27589d4e89563b89eb27459cf9743c7b4~ZrZttEmh70501005010eucas1p2h;
+ Thu, 18 Jun 2020 15:40:26 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200618154026eusmtrp1b90595c5c8a06a0bc99d6c76c8ffe717~ZrZtsY_KS2169821698eusmtrp1f;
+ Thu, 18 Jun 2020 15:40:26 +0000 (GMT)
+X-AuditID: cbfec7f2-f0bff7000001ef66-d7-5eeb8aeae3d1
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 98.E9.07950.AEA8BEE5; Thu, 18
+ Jun 2020 16:40:26 +0100 (BST)
+Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200618154025eusmtip1c83939d4801dd13c007ecd453f01f5fd~ZrZtDwou00742307423eusmtip1T;
+ Thu, 18 Jun 2020 15:40:25 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
+ linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v6 18/36] drm: rockchip: use common helper for a scatterlist
+ contiguity check
+Date: Thu, 18 Jun 2020 17:39:39 +0200
+Message-Id: <20200618153956.29558-19-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200618153956.29558-1-m.szyprowski@samsung.com>
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSfUhTURjGO7v3bnNsdtskjxYqg75RkzQuKaZScQ2E/jKxnK28TGubsqlp
+ EA1DiaWmrqaIzg8kbWqayRTLTMuWrabNMawMvwrR+RF+hUWuzav13+99zvuc530Ph43wuzFv
+ doo8nVLIxVIhk4Ma3qyb/e1qu+iophQQBeYBBvGkrAUjHIZihLCuLjKJR439DMIxaceIypKb
+ RHVPKLFinWAQbVM2jBjuqmASS+MOhGh+/ZVF9P74hkW4k026JkB2r1WjZMfaOEaO3TUyyKd1
+ t8gvG1MIqRmpB+SzTyom+ae8ByUL2/WA7LDpEHK5zeccN54TlkRJUzIpRWD4JU7yTGUtSGvk
+ Zs3WlWAq0MBRAzc2xIPhtK2N4WI+3gDg6ACqBhwnrwDYXTq5VSwDuPB5DGw7LO86UdpRD6Bt
+ 6CrNTkeN2tfFTDwIqufVTBd74LkAvi3guhjBtQjUr55xsQBPhB0LIywXo/g+6Ghv2mQeHg4/
+ vtKidJYvbGx9ibjYzambjLmYayCIW1gwp8vOpJtOwVrd2pZBAGeN7Sya90KTJh+lDbcBnDA3
+ s+giH8DhnLKtdULhqPmX8ya2c7xDsKUrkJYjYc2Dnk0Z4u5wZH4XvYA7LDGUIrTMg3fy+HT3
+ flhufPwvtnfIgtBMQov6N0I/YjGAppEmpAj4lv8PqwZADzypDKVMQimD5NT1AKVYpsyQSwKu
+ pMragPNTmTaMS51g1XK5D+BsIOTyIs7bRXxMnKnMlvUByEaEHryoDyYRn5ckzr5BKVITFRlS
+ StkH9rBRoSfvWO1MAh+XiNOpaxSVRim2TxlsN28VCO13+N2rTT0eWxgyZ7Nqyk6zFiVLVeui
+ YGnB/QlZ2AkvlmHgp/lgkXbQ/0DHkaiLqti42CysVVtSevaCVlCVVxmjy4z2CtGp3/tFn5z3
+ NFjHNUtJkfFR6XEvvovXzdU++ueru1uiHwoMaNXcTsdsoVQ/KEqI2SGdDpsfCq7IF6LKZHHQ
+ YUShFP8FLcLImlADAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrEIsWRmVeSWpSXmKPExsVy+t/xu7qvul7HGWz6LmDRe+4kk8XGGetZ
+ Lf5vm8hsceXrezaLlauPMln8f/Sa1WLupFqLBfutLb5cechksenxNVaLy7vmsFl8evCf2WLt
+ kbvsFgc/PGF14PNYM28No8febwtYPLZ/e8Dqcb/7OJPH5iX1Hrf/PWb2mHxjOaPH7psNbB5/
+ Z+1n8ejbsorRY/u1ecwenzfJBfBE6dkU5ZeWpCpk5BeX2CpFG1oY6RlaWugZmVjqGRqbx1oZ
+ mSrp29mkpOZklqUW6dsl6GW8nLuIsWA1T8WrJZNYGxhXcHUxcnJICJhIXDq1g6WLkYtDSGAp
+ o8SyezvYIRIyEienNbBC2MISf651sUEUfWKU+Nu0khkkwSZgKNH1FiIhItDJKDGt+yM7iMMs
+ MI9ZYvmqw0wgVcICsRIbnq4As1kEVCX+b1kDtoJXwE7i4uFpLBAr5CVWbzgANpUTKH76eCvY
+ aiEBW4nnH9rYJjDyLWBkWMUoklpanJueW2ykV5yYW1yal66XnJ+7iREYP9uO/dyyg7HrXfAh
+ RgEORiUe3hchr+OEWBPLiitzDzFKcDArifA6nT0dJ8SbklhZlVqUH19UmpNafIjRFOioicxS
+ osn5wNjOK4k3NDU0t7A0NDc2NzazUBLn7RA4GCMkkJ5YkpqdmlqQWgTTx8TBKdXA2LH0943k
+ JS7xDQ5O3EveuBoUBu1t+zv7yJ8DaV8f7d1l9Etu/XWttd4bA+/Yu8y2VsgQylQ5WsaeWqrH
+ oRLYxd8drHmCz+K4Ts/DlfPSPk7VEyzQthOcN+W+4ez6pH3/G+M/mj//Fv9gqUHr/RczZ99J
+ 3+u2PuVa8IPqKRWLpP4ee7E1JLbcU4mlOCPRUIu5qDgRAI6ky061AgAA
+X-CMS-MailID: 20200618154026eucas1p27589d4e89563b89eb27459cf9743c7b4
+X-Msg-Generator: CA
+X-RootMTR: 20200618154026eucas1p27589d4e89563b89eb27459cf9743c7b4
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200618154026eucas1p27589d4e89563b89eb27459cf9743c7b4
+References: <20200618153956.29558-1-m.szyprowski@samsung.com>
+ <CGME20200618154026eucas1p27589d4e89563b89eb27459cf9743c7b4@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_071332_987544_B6414327 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200618_084031_765675_0FD61365 
+X-CRM114-Status: GOOD (  11.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +126,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,79 +140,65 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
+ linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Adjust the ENV offset, size to fit into all images
-on 16MB flash.
+Use common helper for checking the contiguity of the imported dma-buf.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 ---
-Changes for v2:
-- rebase on master
+ drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
 
- configs/rock-pi-4-rk3399_defconfig | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/configs/rock-pi-4-rk3399_defconfig b/configs/rock-pi-4-rk3399_defconfig
-index 0d86fdc895..2487872219 100644
---- a/configs/rock-pi-4-rk3399_defconfig
-+++ b/configs/rock-pi-4-rk3399_defconfig
-@@ -28,6 +28,7 @@ CONFIG_ENV_IS_IN_MMC=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
-+CONFIG_MISC=y
- CONFIG_MMC_DW=y
- CONFIG_MMC_DW_ROCKCHIP=y
- CONFIG_MMC_SDHCI=y
-@@ -35,11 +36,14 @@ CONFIG_MMC_SDHCI_ROCKCHIP=y
- CONFIG_DM_ETH=y
- CONFIG_ETH_DESIGNWARE=y
- CONFIG_GMAC_ROCKCHIP=y
-+CONFIG_PHY_ROCKCHIP_INNO_USB2=y
- configs/roc-pc-mezzanine-rk3399_defconfig | 4 ++--
- configs/roc-pc-rk3399_defconfig           | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 7906948374..595f052cb7 100644
---- a/configs/roc-pc-mezzanine-rk3399_defconfig
-+++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -1,8 +1,8 @@
- CONFIG_ARM=y
- CONFIG_ARCH_ROCKCHIP=y
- CONFIG_SYS_TEXT_BASE=0x00200000
--CONFIG_ENV_SIZE=0x6000
--CONFIG_ENV_OFFSET=0x460000
-+CONFIG_ENV_SIZE=0x8000
-+CONFIG_ENV_OFFSET=0x3F8000
- CONFIG_ENV_SECT_SIZE=0x1000
- CONFIG_ROCKCHIP_RK3399=y
- CONFIG_TARGET_ROC_PC_RK3399=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 046fb73858..1c4db3443f 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -1,8 +1,8 @@
- CONFIG_ARM=y
- CONFIG_ARCH_ROCKCHIP=y
- CONFIG_SYS_TEXT_BASE=0x00200000
--CONFIG_ENV_SIZE=0x6000
--CONFIG_ENV_OFFSET=0x460000
-+CONFIG_ENV_SIZE=0x8000
-+CONFIG_ENV_OFFSET=0x3F8000
- CONFIG_ENV_SECT_SIZE=0x1000
- CONFIG_ROCKCHIP_RK3399=y
- CONFIG_TARGET_ROC_PC_RK3399=y
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
+index b9275ba7c5a5..2970e534e2bb 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
+@@ -460,23 +460,6 @@ struct sg_table *rockchip_gem_prime_get_sg_table(struct drm_gem_object *obj)
+ 	return sgt;
+ }
+ 
+-static unsigned long rockchip_sg_get_contiguous_size(struct sg_table *sgt,
+-						     int count)
+-{
+-	struct scatterlist *s;
+-	dma_addr_t expected = sg_dma_address(sgt->sgl);
+-	unsigned int i;
+-	unsigned long size = 0;
+-
+-	for_each_sg(sgt->sgl, s, count, i) {
+-		if (sg_dma_address(s) != expected)
+-			break;
+-		expected = sg_dma_address(s) + sg_dma_len(s);
+-		size += sg_dma_len(s);
+-	}
+-	return size;
+-}
+-
+ static int
+ rockchip_gem_iommu_map_sg(struct drm_device *drm,
+ 			  struct dma_buf_attachment *attach,
+@@ -498,7 +481,7 @@ rockchip_gem_dma_map_sg(struct drm_device *drm,
+ 	if (!count)
+ 		return -EINVAL;
+ 
+-	if (rockchip_sg_get_contiguous_size(sg, count) < attach->dmabuf->size) {
++	if (drm_prime_get_contiguous_size(sg) < attach->dmabuf->size) {
+ 		DRM_ERROR("failed to map sg_table to contiguous linear address.\n");
+ 		dma_unmap_sg(drm->dev, sg->sgl, sg->nents,
+ 			     DMA_BIDIRECTIONAL);
 -- 
-2.25.1
+2.17.1
 
 
 _______________________________________________
