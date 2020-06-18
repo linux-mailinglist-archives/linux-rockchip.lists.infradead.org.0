@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E62B1FEF53
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:09:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FC3B1FEF56
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:09:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xzP+/0Vfhk7KoUHD4ecGpSFzWm5LkWvkmFMFOnU9Axo=; b=OMtgZIluSbo8Sq
-	tNY4FKWtVgUQD7CKg94BhBD50I839zPEgTTxxSCj9mKl8EjEtI0EZZsbQo97kKT5YvU7dx3V6RrQa
-	QmXAurG4wUxHd8fRlD628z/G5lWc1YzCU7029f85XZTQi8z7poZ1v8T4cRfsIM3yr2kls4/09j/cp
-	E+EBEmVIt3mLKVBFm7XeYcd+B6y92Cbe8ejT8EjWNkQQsXojQHYzy5FEKkIn4+NY+zDkOnnezXO4B
-	3NoILRcMHYxOnerPos8jD0D1b44kfMi3jbNApIiC3d54fImS8odsnkHJHAM62uqSJVfHUNLrvqrWK
-	/TCfFvqO9WCUQBKwZkAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T/EYcSUvxPMAeAVUPSyA5TH+wTLDbYv6zesj6FnVaxU=; b=TwnqpkCokFTeHX
+	HRsglA5c8dh/P5YywxVmwv8Tx6xrLiny3TEAuadonsGwnVqXFaYicAEbkfrZ1hO654lP623Y2hyqV
+	FcKr64YAD7ePCEm94eCqckupdIHpChnx6BnDcUm7vadISWb23pPlLBkOuCrO4WKXnWxO3dryVV8Bl
+	Jh2K3CR2mdkd5K9cL6FlNR0fqldocvbTzdmfWCzGtm7yAU5YA0x6d+kJZXMSY+mrcPV/9tPxtxkSQ
+	3hzTYAyNYMP/JM7HO3RxA/Wi2UDIp0a37rdZrvJX9K5O8hxGdjru9GyK/o/43ENBu4SEnfzHz3exd
+	IMHiT+8RBI1BETv0NylQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlrTt-0008ET-9j; Thu, 18 Jun 2020 10:09:13 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jlrTx-0008MD-9D; Thu, 18 Jun 2020 10:09:17 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrTW-00082t-6O
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:08:51 +0000
-Received: by mail-pl1-x643.google.com with SMTP id bh7so2232598plb.11
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:08:49 -0700 (PDT)
+ id 1jlrTa-00084G-CT
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:08:56 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y17so2236721plb.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:08:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=s1VqP9EIERD+hagFVC72DAlEZ/VXVNsM2Fw1XLYSvTI=;
- b=H3jKplbfvME7fGxdX1WtYsdu4TmOA3VQ+7/NZMWf2u8wLO0HxmPsJa8PytQ7dZf9JW
- lUToFtWYpt9pEKmHUpw6Vs5GViXY6wsEzN3mACl0EEt0ZTGmJ5t3ZUYi1Tw4ulybGMco
- pYEiOxUiYIZleW1T4UibRgcAJWHxvG6L6HvpM=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=P9ZVEE5llXq13I1PufGR5qegeo37MSzNvw9PjU0Fjk8=;
+ b=QbTK/jyeJEquEVJY7l+T6/kG04+mjbA9G/JwcvZDLZ8k+okay/dSxqJ/GZK0me6aPC
+ T0/+LOR92quFHAlm1dVV68gOZr+8q/YvKBpK2wvxKO41bhYSGXU+4ZUQCTXjBFjTOyEq
+ R3MmYnYx6U71ysADED3OWBNbxPvBQAmA2Zurs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=s1VqP9EIERD+hagFVC72DAlEZ/VXVNsM2Fw1XLYSvTI=;
- b=OSnOeO28CX1FTvzNWs0iKkWqN/SFGWmPDbbrxzsON2oqp2+mf2y0XxxtSrzdGyRIXy
- 0d9ozB1ROkR2pTO2brU24hBSGu6n1XI28JpkjgwvS6QfKLVzbBEI7RIuwRqOGqfolz9H
- u8OwSRHXx+nLROXZPyLfYfO8eGLERnTqgVvvrazz6K+kCb33f5XFNs3XVeQlddjaMLDp
- j5m6Iw5AZZB/S2oqqa2EEMXGR7DTDmjzkRmek0ApDluazKwCOUct5RNVWRmQ96bQ/7bc
- /ziODx2zCLNlQMmr1e5BhINzOhpoHdZB21XLd0c28XS3Xz2yuhvh/jllSxeWCb58plKx
- BzYQ==
-X-Gm-Message-State: AOAM532NK22sOaNbt5EGK5ybj1QSkm18EhlSlDKrHBsAdx+rnACdeiaG
- lAymPHOTDUiOd1KcgzqqtkwFMqfZDdiG9w==
-X-Google-Smtp-Source: ABdhPJyHy7LJRn/VtSjB/Zvs5KMCzyZvT4A08M95yw8GvYTIy2Cx+yvqQMNC3B+pEj0gQ7MYz9hMxw==
-X-Received: by 2002:a17:90b:1246:: with SMTP id
- gx6mr3453815pjb.146.1592474928918; 
- Thu, 18 Jun 2020 03:08:48 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=P9ZVEE5llXq13I1PufGR5qegeo37MSzNvw9PjU0Fjk8=;
+ b=NQAeZtNqOvANSqn0hLYX/my/nGoEcc1rjEOAGaJD6I6gOhmydukipm1KW4xRbB2XoO
+ xFkMuN+msz/C/alwUUzZ0mYn6wIo1V0KzxCUiw9kW7dhxdeiJVSna0JdhyD6DKI5L1YV
+ Wqk6TXMeqR+jfVEuQXSv4bORhVCV5Gy6vUOqeDGNoKbFzDKHqzLpQoRwPqcSuf4jx1nt
+ VCsAalPmvnWi0H/KWB0s6q5YJS8aDUiEjlI09oAmJewpdWu+kYunDT0gosevZDfvt4NO
+ JwrMeKVK/i6tyb/Z9V66WSofLG3swuqEzEy2vdbM6Ji0788FaSGtzzDpQkAsqnVNpqeh
+ zQ+Q==
+X-Gm-Message-State: AOAM5305NF+KSPMi0CVlrvm0rSS+//SO08gpSO2etELg3PAO1vUR+Yh2
+ Vt1OHKBvT72NdXVo7ukiRquVew==
+X-Google-Smtp-Source: ABdhPJwZhtlcgjGat0WBZE26aDW8H3kZ66NuB49AdKJ182thmlVQ7g0Vc4xPRCKoybJ9oMJ6otar7w==
+X-Received: by 2002:a17:90a:f694:: with SMTP id
+ cl20mr3587632pjb.141.1592474933565; 
+ Thu, 18 Jun 2020 03:08:53 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.08.43
+ by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.08.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 03:08:48 -0700 (PDT)
+ Thu, 18 Jun 2020 03:08:52 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 0/4] ARM: dts: rockchip: Radxa Rock Pi N8 initial support
-Date: Thu, 18 Jun 2020 15:38:28 +0530
-Message-Id: <20200618100832.94202-1-jagan@amarulasolutions.com>
+Subject: [PATCH 1/4] ARM: dts: rockchip: radxa-dalang: Update sdmmc properties
+Date: Thu, 18 Jun 2020 15:38:29 +0530
+Message-Id: <20200618100832.94202-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200618100832.94202-1-jagan@amarulasolutions.com>
+References: <20200618100832.94202-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_030850_520835_361D5B93 
-X-CRM114-Status: UNSURE (   8.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200618_030854_453983_2FF82381 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,32 +106,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rock Pi N8 is a Rockchip RK3288 based SBC, which has
-- VMARC RK3288 SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
+Radxa dalang carrier boards are used to mount vmarc SoM's
+of rk3399pro and rk3288 to make complete SBC.
 
-VMARC RK3288 SOM need to mount on top of dalang carrier 
-board for making Rock PI N8 SBC.
+Among these combinations, card detection gpio, max-frequency
+properties are used with rk3399pro SoM but not required for
+rk3288 SoM based on the hardware schematics.
 
-Any inputs?
-Jagan.
+So, let's move these sdmmc specific properties on associate
+vmarc dtsi to make common use of dalang carrier device tree file.
 
-Jagan Teki (4):
-  ARM: dts: rockchip: radxa-dalang: Update sdmmc properties
-  dt-bindings: arm: rockchip: Add Rock Pi N8 binding
-  ARM: dts: rockchip: Add VMARC RK3288 SOM initial support
-  ARM: dts: rockchip: Add Radxa Rock Pi N8 initial support
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi  | 2 --
+ arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi | 5 +++++
+ 2 files changed, 5 insertions(+), 2 deletions(-)
 
- .../devicetree/bindings/arm/rockchip.yaml     |   6 +
- arch/arm/boot/dts/Makefile                    |   1 +
- arch/arm/boot/dts/rk3288-rock-pi-n8.dts       |  17 +
- arch/arm/boot/dts/rk3288-vmarc-som.dtsi       | 298 ++++++++++++++++++
- .../dts/rockchip-radxa-dalang-carrier.dtsi    |   2 -
- .../dts/rockchip/rk3399pro-vmarc-som.dtsi     |   5 +
- 6 files changed, 327 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm/boot/dts/rk3288-rock-pi-n8.dts
- create mode 100644 arch/arm/boot/dts/rk3288-vmarc-som.dtsi
-
+diff --git a/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+index df3712aedf8a..3e54f38f0ab6 100644
+--- a/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
++++ b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+@@ -52,10 +52,8 @@ &sdmmc {
+ 	bus-width = <4>;
+ 	cap-mmc-highspeed;
+ 	cap-sd-highspeed;
+-	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
+ 	disable-wp;
+ 	vqmmc-supply = <&vccio_sd>;
+-	max-frequency = <150000000>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
+ 	status = "okay";
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
+index 0a516334f15f..6fd17e8a815f 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
+@@ -317,6 +317,11 @@ &sdhci {
+ 	status = "okay";
+ };
+ 
++&sdmmc {
++	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
++	max-frequency = <150000000>;
++};
++
+ &tsadc {
+ 	status = "okay";
+ 	rockchip,hw-tshut-mode = <1>;
 -- 
 2.25.1
 
