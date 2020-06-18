@@ -2,70 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6B2D1FF459
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 16:13:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F21941FF45A
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 16:13:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RorH+jPp4Ffh21WWHCbzqBIdJ/ionYwnrWndFJmuwU0=; b=QiC4pCz3EDnVUj
-	w1w60TFCQ4XGLW3yB8PuQaMtKMekGG8R/LVHxheHFGueqDGY4Kwwf1My5Hupk4ON0o0N/6liLY8Ju
-	5JJtkWiQF/DpG0Ym9eMSd1VSPE+U0Sog29mSFSwGo4VyI58VE53uVw9kKrq/OsKWNjg2QA1gDREE8
-	n94WOJNjkOYqmwsOBscThAqTr+58uX0xKOXR29IjdOynhBGuEyWnvJBYua3PDZd5Pe/eiBTTgtMqE
-	tC9LVwWZer2LW2VKT7Pa0FtovCuatCZnRtkJ2CNdLFbDxgbBNAlWkySTEiztMf8nd8kwnO9/yc+jd
-	/5wMTkTF9khVQpBOwJRA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b33u8642MjPORu4blhFZQqqvokseDZBSrF9OWr24z34=; b=IbqGHuROHGl0x4
+	yGvyTcsWZ82L5kZNgVUsiEWTyyCejOb+S4hA6AkIASHZIeoHMDJ9zCH+fFuWnwGuUUszUFvAJgQgL
+	HIkto2WkTzUx9WKFggZa3+kLmDs3Di2gmOJ7ZM0QAkBzjjdofaDwJmXmoBCl260ZMiEagqbLhv7Rq
+	WTRmEQtd+KgN0KTtqoayHxnmXrekTXVHIk/RocKPqzS/LJushSxcxecJjgrpAdaeR4WeS3VutULKD
+	ce58jj4FxlF5OsBsaRebLDv2IZbQfwjQnriajPwXx7w+jyxAMWACoWb7NF3OREwgXROOUczAuhd6Z
+	6cLkxM+paxZHiECW338g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlvI3-00077a-Tl; Thu, 18 Jun 2020 14:13:15 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jlvI8-0007A1-31; Thu, 18 Jun 2020 14:13:20 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlvI0-000779-BR
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 14:13:14 +0000
-Received: by mail-pl1-x644.google.com with SMTP id x11so2487267plo.7
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 07:13:12 -0700 (PDT)
+ id 1jlvI4-00078B-Lk
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 14:13:17 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y17so2483090plb.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 07:13:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3oGKs23a93g8dSTZ3PSJDUOIgDA5dI03hvG0yMAmu9c=;
- b=N/kjHZ5EHpF6XzrNy06DD+tKAwgmKKUvBanmKJapsc17Z0TuDF+zGG6xLDK5QLV637
- oY82Jt9+UF0nrd+p2mOuPqut3Wx0/k42et3emYa5pDdUNjhVgFcY5ryvLR0SQY6KLqzA
- WBPOXEJvxCGkaBWbo7pqhdzLXvibfDgofg5ig=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=rl0AmOyJqoqpPJL86fFQlXlDYQFCvZQU411hyTBmyG8=;
+ b=DsF8S1ltrodxjruykYbTzaaZy97k0aQ6VY0JOKHuvMhxy/Wuf4uojC6Tcr33JV1VY3
+ AiVaexTz4aa9Mk6YnE2B6gBcahhPY6foMqy3TCzZ2QV2cBL43ljz3RnvAz61IX2rJFUb
+ IFC0pz/5SRnugbDLBuYfskTOu2pyI1TiZtWkc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3oGKs23a93g8dSTZ3PSJDUOIgDA5dI03hvG0yMAmu9c=;
- b=m/cPhRzcd9OwfHqo3jRqYQIzJYO3OktMJ+Qb4BcimAGbckGryUVbV5NmSITbPzudF4
- itcZkEvQwnfdf14UGU7fcSbWzJfcJhS1J5+GtGTuBOzBOUkjJ9wHdEqzVazslg9Ih4Af
- a6wwbJziGFJoe8NmCWJ/a5ve/fEaaM6l45fQwl8CH0M4NqXIVXXZy7IvKuCJucbKaid8
- 8vzpPpCo8MYTk4OFlqUxwylegC83Sc1sXOGoVLAEPApOS7PCxqhgoka8SQcoVPWV//8g
- IJ7Hoy10JAzd8Uv0/+Jg5XAGg1IV0l6WqXdyIiD291SnTt32cbWiWOoFLMW47yxC2AdR
- rtBA==
-X-Gm-Message-State: AOAM533eGGZ2VL4KxsNRs6HIUIiPORB12MEvm61KYcwYRWGy+Ptmd1MH
- 4CmElSs0U8Gc8gCUmgauCPF9rw==
-X-Google-Smtp-Source: ABdhPJx1J9oX3zIOPNz0UHzfcL/oeKzfF0rtK12Q5DV5wyeqlQXmtklEiIRGkZFZoGhlDnif5C0+6A==
-X-Received: by 2002:a17:90b:4c0f:: with SMTP id
- na15mr4473249pjb.112.1592489591483; 
- Thu, 18 Jun 2020 07:13:11 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=rl0AmOyJqoqpPJL86fFQlXlDYQFCvZQU411hyTBmyG8=;
+ b=GLBn+/CxjxA4xMBdOzV7rLYIV0cPYrSk/aFdOu1Hk2W11w+gq60QMB44VkI5IuZzan
+ a/guAq2Q3Jg34CfU60akLGdYgb5ruNN+drKfMJ1lTKfTt4MuDdoTXaEriVYrwrm8DITp
+ aKk2cL46JDQurBqdeZzO4ethmMM3q+S85U4u9W2zweC6UHKMMdR+2DR3INfovSNMzAuD
+ ja9SscVGgYImVPKPzxuOeb5SYRa/Sp6hm7DUZ6q/tZ+NjR35BXPAhJ7S0HS9R74YR6yf
+ ywrcV5DiY6/SYxqS3ATB/VTozePLlKQJmwPPckRX/YI4pQHLUPInbCwuRKbW7gXkZDst
+ NOKg==
+X-Gm-Message-State: AOAM532/UtrQgZ2VG8eaTdJrNFo+3fJR71uKfNuQOI+PF+JNFwIwNZyu
+ FUO5WZoTwE7OjKAquGsrFSQN8q2sjXYJmw==
+X-Google-Smtp-Source: ABdhPJywpUnFyBinKUfe7lFuQx59NwfmmSN/U5WhMccgVEu9w4vwvZ053cQkE6nNftyieEpWoh3usg==
+X-Received: by 2002:a17:90a:21a2:: with SMTP id
+ q31mr4532653pjc.230.1592489595901; 
+ Thu, 18 Jun 2020 07:13:15 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id p6sm3340540pfb.152.2020.06.18.07.13.06
+ by smtp.gmail.com with ESMTPSA id p6sm3340540pfb.152.2020.06.18.07.13.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 07:13:10 -0700 (PDT)
+ Thu, 18 Jun 2020 07:13:15 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>
-Subject: [PATCH v2 1/6] rock-pi-4: Enable USB3 Host
-Date: Thu, 18 Jun 2020 19:42:54 +0530
-Message-Id: <20200618141259.155581-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 2/6] rock-pi-4: Enable PCI/NVME
+Date: Thu, 18 Jun 2020 19:42:55 +0530
+Message-Id: <20200618141259.155581-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200618141259.155581-1-jagan@amarulasolutions.com>
+References: <20200618141259.155581-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_071312_820711_8AB1E827 
-X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-CacheID: sfid-20200618_071316_707803_34C2028C 
+X-CRM114-Status: UNSURE (   7.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -73,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,46 +107,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Enable USB3.0 Host support for RockPI-4 boards.
+Enable PCI/NVME for M.2 Slot on RockPI-4 boards.
 
-Note that the Upper USB3.0 port is marked as otg and
-lower USB3.0 port marked as host, so this below log
-capture when USB3.0 mass storage plug in at lower
-USB 3.0 port.
-
-Log:
-Bus usb@fe380000: USB EHCI 1.00
-Bus usb@fe3c0000: USB EHCI 1.00
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-Bus dwc3: usb maximum-speed not found
-Register 2000140 NbrPorts 2
-Starting the controller
-USB XHCI 1.10
-scanning bus usb@fe380000 for devices... 1 USB Device(s) found
-scanning bus usb@fe3c0000 for devices... 1 USB Device(s) found
-scanning bus dwc3 for devices... 1 USB Device(s) found
-scanning bus dwc3 for devices... cannot reset port 1!?
-2 USB Device(s) found
-       scanning usb for storage devices... 1 Storage Device(s) found
-=> usb tree
-USB device tree:
-  1  Hub (480 Mb/s, 0mA)
-     u-boot EHCI Host Controller
-
-  1  Hub (480 Mb/s, 0mA)
-     u-boot EHCI Host Controller
-
-  1  Hub (5 Gb/s, 0mA)
-     U-Boot XHCI Host Controller
-
-  1  Hub (5 Gb/s, 0mA)
-  |  U-Boot XHCI Host Controller
-  |
-  +-2  Mass Storage (5 Gb/s, 224mA)
-       SanDisk Dual Drive 040130e3ee554b7078843f4eb331646
+=> nvme info
+Device 0: Vendor: 0x144d Rev: 2B2QEXM7 Prod: S4EUNG0MC10012Y
+            Type: Hard Disk
+            Capacity: 238475.1 MB = 232.8 GB (488397168 x 512)
 
 Cc: Tom Cubie <tom@radxa.com>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
@@ -172,25 +140,30 @@ index 0d86fdc895..2487872219 100644
  CONFIG_ETH_DESIGNWARE=y
  CONFIG_GMAC_ROCKCHIP=y
 +CONFIG_PHY_ROCKCHIP_INNO_USB2=y
-+CONFIG_PHY_ROCKCHIP_TYPEC=y
+ configs/rock-pi-4-rk3399_defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/configs/rock-pi-4-rk3399_defconfig b/configs/rock-pi-4-rk3399_defconfig
+index 2487872219..f3eeef0293 100644
+--- a/configs/rock-pi-4-rk3399_defconfig
++++ b/configs/rock-pi-4-rk3399_defconfig
+@@ -18,6 +18,7 @@ CONFIG_TPL=y
+ CONFIG_CMD_BOOTZ=y
+ CONFIG_CMD_GPT=y
+ CONFIG_CMD_MMC=y
++CONFIG_CMD_PCI=y
+ CONFIG_CMD_USB=y
+ # CONFIG_CMD_SETEXPR is not set
+ CONFIG_CMD_TIME=y
+@@ -36,6 +37,8 @@ CONFIG_MMC_SDHCI_ROCKCHIP=y
+ CONFIG_DM_ETH=y
+ CONFIG_ETH_DESIGNWARE=y
+ CONFIG_GMAC_ROCKCHIP=y
++CONFIG_NVME=y
++CONFIG_PCI=y
+ CONFIG_PHY_ROCKCHIP_INNO_USB2=y
+ CONFIG_PHY_ROCKCHIP_TYPEC=y
  CONFIG_PMIC_RK8XX=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
- CONFIG_RAM_RK3399_LPDDR4=y
-+CONFIG_DM_RESET=y
- CONFIG_BAUDRATE=1500000
- CONFIG_DEBUG_UART_SHIFT=2
- CONFIG_SYSRESET=y
-@@ -48,6 +52,8 @@ CONFIG_USB_XHCI_HCD=y
- CONFIG_USB_XHCI_DWC3=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_GENERIC=y
-+CONFIG_USB_DWC3=y
-+CONFIG_USB_DWC3_GENERIC=y
- CONFIG_USB_HOST_ETHER=y
- CONFIG_USB_ETHER_ASIX=y
- CONFIG_USB_ETHER_ASIX88179=y
 -- 
 2.25.1
 
