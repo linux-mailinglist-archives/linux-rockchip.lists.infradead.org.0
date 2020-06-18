@@ -2,79 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85EC01FF8AF
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 18:08:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 353D91FF8B0
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 18:08:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gCBJvJos+2eR5acqyO2Gxe4x6cGGxK6SjoDqU3FAyeg=; b=Ek7p2Zi6kfin15
-	FLgQuxR9vmVFtyE0jGlRl+MGs9MP2ZV94taSCxq0CLuXgAELFOw6IIGw1Etu/chvAEInh92Gv4NgG
-	5xmXRJrXnWsAGWJSTf+9R1aRlOSACa9oZDt6vLZdhl0ECCW4CT6BfQ0ApOvTuhBAeRO4J0ni0QQtt
-	X8th1UpxVjc4rf2YN7gIbbi7iOBVAh25BBa8GwUje59TuJ1/o1NTLypxiO8VN7PBe8oMchtlw+c/L
-	K950lFWIErmkIsfH63Q2IZMbbTVuCBc6JCRWtmGYZTpZNEXBlGCG8qp5qZbaYLHSMAbF2WIc9AKPN
-	xSItihZqljIqEbBYVs4w==;
+	List-Owner; bh=2dPwuZ2LMBNZVi8gVndOEj1miBQ6OgSRSKbmAOyF49M=; b=gkC0scvrdauWCH
+	mp4xubG1vYYFx1gn+nD70ECJV+YBEbcX/iQFNIeSWXcYEZMSRtHBKPs2uqdGcvRySMnBbL6J9nVsv
+	z96MVpftwWhp8Py7NsvqiTNBfXN3OEBbvnz2EAaUb+GrARZq5W0QiZYCNASndHOog+irIILlhrDEV
+	EPmeZW2I2qqG75pFoLcoqwo4Nam+HeNavTXDcpnJPm7MMBjuDbtcsMnoKDCoNgHRiCLqB2I+39oSQ
+	GiFEGYvLRQ7lmCa3F8r5n2nBwiem0/zXDGA49cjFuLGHRagpXAMoHNj0WMmn4sOekAw2KR5vQWyIv
+	iAqxbyzLTHyI2hI0Dk5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlx5K-0000O6-RF; Thu, 18 Jun 2020 16:08:14 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jlx5Q-0000SK-Hg; Thu, 18 Jun 2020 16:08:20 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlx5I-0000Me-81
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 16:08:13 +0000
-Received: by mail-pl1-x642.google.com with SMTP id n9so2629623plk.1
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 09:08:12 -0700 (PDT)
+ id 1jlx5M-0000QK-S1
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 16:08:18 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id jz3so2749214pjb.0
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 09:08:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UJ44Kh57FeMHUsvOOPAvMrXRvlmf36r3Ig6kWg0HNps=;
- b=dBUjzQQ0MAqA+ytZdRDC1SS8v41DyrYhcpdsWfPTJPaSHAncoccxYLipM0t/GTrzzC
- L/w7TqgLN5xv47SwhKcsinRuvsi3t7LJSJi/mAxOR80eM42AH3h11LR+0Zjjv7Ll8swy
- MTI50Z7rPTkCZ66RYApEuZpLZcXPS/tAbvrL4=
+ bh=mNYUanoA/LbUwSUYp2wZmC9gOha0WbAjao5ZgQikr2M=;
+ b=W0hvtWN9mgyoniye/nvyx8ActCUSCH8yS6vcU0KnTlZ/vTKwM66IvWUxLNKGR9I9wv
+ E1+m3eCNCpv9n1YZjDgPdTp3YTaNMlXv1Uj8Ufb+89PTxXf6WRG7xfPHYufyTD/K72WW
+ J4qD1EAEpgp/9hKYvXdEqD902UNVT+aAnWupw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=UJ44Kh57FeMHUsvOOPAvMrXRvlmf36r3Ig6kWg0HNps=;
- b=tKaNRwnBn5p1YlLLqm/80++tVo3EEVZfcdp+P4Jszjp1iBCDO2cf/bhxt3SeaQ1pux
- tvXktY5Kn7DMOkvQiGVYtDgZywT7JkhSajOKBZEI1U00BOPCK0zNMyYygeYuRblxqt6B
- D0YnSOTvJxbrbTqKJEVNqVQuKPqoEC8lPPBSidvLvokomfqF+dnlp11sPVlvauEemuG5
- j0klZTv8N/g0lumWMDpSYCvoIlJQ+HOi4v0b6TA8eSnFgy4GH76q5PzgHU6nNKAD5fdD
- qvMFZPKdF0seA4yTobYz4jv/Dkb6MXOGW/yFUOLRX9o63njHcKTKPPuBJfR5+B896JBT
- uYIg==
-X-Gm-Message-State: AOAM5312JayCaERCXCwICgE9UjlsR6mZ5GcqNtGopPMvL2hOCLNlAU3L
- M7fPrE/A+zUyaV7erhQr/eP6eQ==
-X-Google-Smtp-Source: ABdhPJzmCr4Y8i7mBlMJ0jZTr52HYD8Q9vPJ87v0KcCfBHZdm2xaxrTAByb85M4vduBjvWl5SoEbZw==
-X-Received: by 2002:a17:90b:2308:: with SMTP id
- mt8mr4896758pjb.211.1592496491737; 
- Thu, 18 Jun 2020 09:08:11 -0700 (PDT)
+ bh=mNYUanoA/LbUwSUYp2wZmC9gOha0WbAjao5ZgQikr2M=;
+ b=KvdxjimMaoN0l9AJbyzXGyb187wuY4dNEyJRLqNHwoY0TJ5tSxNkf+3ZpyqPyGyIKV
+ Wzt7h9VVsUTSXLeSVFlNlz+Od5E2zPJYPJHDN/9v7r50w58MsyUdkIzQaDLHZilKAvDv
+ EIRZRYFwLbzC3WNiROvOx/f6mV9AbZtvAeaaUevA5v5hcID1XNEXMQX9hJsJcaUYnnyY
+ 7JEQCMw9olKTsfR6FOa5Wvgqxo62Fvc+bPDimGn9i2cHmOT+hxoVh2Yd2Fe+Bhm2OCzu
+ pbnRND9YQVd7+PYM4GrAOPL/GbVq8UTDl5NeWhQgOwijbxAuGNxUk7BcfgOsZAiJzyrL
+ Vjuw==
+X-Gm-Message-State: AOAM532in1xiKIloWgn7YdgU4rNG3fVsTC8CvtujUcbRmokY7ouou9CB
+ 0jC1WUqgtYltPRfLbpAY466MHA==
+X-Google-Smtp-Source: ABdhPJzsrh+P1yYUHPaBZeZ4jslJlN28hfslhJcxjL+rdG+0RyPW3aiW4RwMtmFyAgEth+Tm0ZmAow==
+X-Received: by 2002:a17:90b:1013:: with SMTP id
+ gm19mr5002759pjb.231.1592496496134; 
+ Thu, 18 Jun 2020 09:08:16 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id u4sm3264943pfl.102.2020.06.18.09.08.08
+ by smtp.gmail.com with ESMTPSA id u4sm3264943pfl.102.2020.06.18.09.08.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 09:08:11 -0700 (PDT)
+ Thu, 18 Jun 2020 09:08:15 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>
-Subject: [PATCH v4 4/5] rockchip: Separate the reset cause from display cpuinfo
-Date: Thu, 18 Jun 2020 21:09:47 +0530
-Message-Id: <20200618153948.218506-5-jagan@amarulasolutions.com>
+Subject: [PATCH v4 5/5] roc-rk3399-pc: Set LED only during POR and pwr_key=y
+Date: Thu, 18 Jun 2020 21:09:48 +0530
+Message-Id: <20200618153948.218506-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618153948.218506-1-jagan@amarulasolutions.com>
 References: <20200618153948.218506-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_090812_285369_B7DE60D1 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20200618_090816_908488_E986693D 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,71 +101,145 @@ Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
  linux-amarula <linux-amarula@amarulasolutions.com>,
  Jagan Teki <jagan@amarulasolutions.com>,
  Suniel Mahesh <sunil@amarulasolutions.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-cmVzZXQgY2F1c2UgaXMgYSBnZW5lcmljIGZ1bmN0aW9uYWxpdHkgYmFzZWQgb24gdGhlIHNvYwpj
-cnUgcmVnaXN0ZXJzIGluIHJvY2tjaGlwLiBUaGlzIGNhbiBiZSB1c2VkIGZvciBwcmludGluZwp0
-aGUgY2F1c2Ugb2YgcmVzZXQgaW4gY3B1aW5mbyBvciBzb21lIG90aGVyIHBsYWNlIHdoZXJlCnJl
-c2V0IGNhdXNlIGlzIG5lZWRlZC7CoAoKT3RoZXIgdGhhbiBjcHVpbmZvLCByZXNldCBjYXVzZSBj
-YW4gYWxzbyBiZSB1c2luZyBkdXJpbmcKYm9vdGNvdW50IGZvciBjaGVja2luZyB0aGUgc3BlY2lm
-aWMgcmVzZXQgY2F1c2UgYW5kIGdsb3cKdGhlIGxlZCBiYXNlZCBvbiB0aGUgcmVzZXQgY2F1c2Uu
-CgpTbywgbGV0J3Mgc2VwYXJhdGUgdGhlIHJlc2V0IGNhdXNlIGNvZGUgZnJvbSBjcHVpbmZvLCBh
-bmQKYWRkIGEgY2hlY2sgdG8gYnVpbGQgaXQgZm9yIHJrMzM5OSwgcmszMjg4IHNpbmNlIHRoZXNl
-IHR3bwpzb2MgYXJlIHN1cHBvcnRpbmcgcmVzZXQgY2F1c2UgYXMgb2Ygbm93LgoKU2lnbmVkLW9m
-Zi1ieTogSmFnYW4gVGVraSA8amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+ClRlc3RlZC1ieTog
-U3VuaWVsIE1haGVzaCA8c3VuaWxAYW1hcnVsYXNvbHV0aW9ucy5jb20+Ci0tLQpDaGFuZ2VzIGZv
-ciB2NDoKLSBub25lCgogYXJjaC9hcm0vaW5jbHVkZS9hc20vYXJjaC1yb2NrY2hpcC9jcnUuaCB8
-ICAyICsrCiBhcmNoL2FybS9tYWNoLXJvY2tjaGlwL01ha2VmaWxlICAgICAgICAgIHwgIDUgKysr
-Ky0KIGFyY2gvYXJtL21hY2gtcm9ja2NoaXAvY3B1LWluZm8uYyAgICAgICAgfCAyMCArKysrKysr
-KysrKystLS0tLS0tLQogMyBmaWxlcyBjaGFuZ2VkLCAxOCBpbnNlcnRpb25zKCspLCA5IGRlbGV0
-aW9ucygtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2luY2x1ZGUvYXNtL2FyY2gtcm9ja2NoaXAv
-Y3J1LmggYi9hcmNoL2FybS9pbmNsdWRlL2FzbS9hcmNoLXJvY2tjaGlwL2NydS5oCmluZGV4IDVl
-YjE3ZjlkNTUuLjMxN2ViNjEwNDkgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2luY2x1ZGUvYXNtL2Fy
-Y2gtcm9ja2NoaXAvY3J1LmgKKysrIGIvYXJjaC9hcm0vaW5jbHVkZS9hc20vYXJjaC1yb2NrY2hp
-cC9jcnUuaApAQCAtMzEsNCArMzEsNiBAQCBlbnVtIHsKIAogI2RlZmluZSBNSHoJCTEwMDAwMDAK
-IAorY2hhciAqZ2V0X3Jlc2V0X2NhdXNlKHZvaWQpOworCiAjZW5kaWYgLyogX1JPQ0tDSElQX0NM
-T0NLX0ggKi8KZGlmZiAtLWdpdCBhL2FyY2gvYXJtL21hY2gtcm9ja2NoaXAvTWFrZWZpbGUgYi9h
-cmNoL2FybS9tYWNoLXJvY2tjaGlwL01ha2VmaWxlCmluZGV4IDViMzg1MjZmZTAuLmVmNDg5OGUw
-MGMgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL21hY2gtcm9ja2NoaXAvTWFrZWZpbGUKKysrIGIvYXJj
-aC9hcm0vbWFjaC1yb2NrY2hpcC9NYWtlZmlsZQpAQCAtMTUsNiArMTUsMTAgQEAgb2JqLXRwbC0k
-KENPTkZJR19ST0NLQ0hJUF9QWDMwKSArPSBweDMwLWJvYXJkLXRwbC5vCiAKIG9iai1zcGwtJChD
-T05GSUdfUk9DS0NISVBfUkszMDM2KSArPSByazMwMzYtYm9hcmQtc3BsLm8KIAoraWZlcSAoJChD
-T05GSUdfUk9DS0NISVBfUkszMjg4KSQoQ09ORklHX1JPQ0tDSElQX1JLMzM5OSksIHkpCitvYmot
-eSArPSBjcHUtaW5mby5vCitlbmRpZgorCiBpZmVxICgkKENPTkZJR19TUExfQlVJTEQpJChDT05G
-SUdfVFBMX0JVSUxEKSwpCiAKICMgQWx3YXlzIGluY2x1ZGUgYm9vdF9tb2RlLm8sIGFzIHdlIGJ5
-cGFzcyBpdCAoaS5lLiB0dXJuIGl0IG9mZikKQEAgLTIyLDcgKzI2LDYgQEAgaWZlcSAoJChDT05G
-SUdfU1BMX0JVSUxEKSQoQ09ORklHX1RQTF9CVUlMRCksKQogIyB3ZSBjYW4gaGF2ZSB0aGUgcHJl
-cHJvY2Vzc29yIGNvcnJlY3RseSByZWNvZ25pc2UgYm90aCAweDAgYW5kIDAKICMgbWVhbmluZyAi
-dHVybiBpdCBvZmYiLgogb2JqLXkgKz0gYm9vdF9tb2RlLm8KLW9iai0kKENPTkZJR19ESVNQTEFZ
-X0NQVUlORk8pICs9IGNwdS1pbmZvLm8KIG9iai0kKENPTkZJR19ST0NLQ0hJUF9DT01NT05fQk9B
-UkQpICs9IGJvYXJkLm8KIG9iai0kKENPTkZJR19NSVNDX0lOSVRfUikgKz0gbWlzYy5vCiBlbmRp
-ZgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9jcHUtaW5mby5jIGIvYXJjaC9h
-cm0vbWFjaC1yb2NrY2hpcC9jcHUtaW5mby5jCmluZGV4IDIxY2E5ZGVkY2UuLjc2YTg0MGUyYzMg
-MTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL21hY2gtcm9ja2NoaXAvY3B1LWluZm8uYworKysgYi9hcmNo
-L2FybS9tYWNoLXJvY2tjaGlwL2NwdS1pbmZvLmMKQEAgLTEzLDcgKzEzLDcgQEAKICNpbmNsdWRl
-IDxhc20vYXJjaC1yb2NrY2hpcC9oYXJkd2FyZS5oPgogI2luY2x1ZGUgPGxpbnV4L2Vyci5oPgog
-Ci1zdGF0aWMgY2hhciAqZ2V0X3Jlc2V0X2NhdXNlKHZvaWQpCitjaGFyICpnZXRfcmVzZXRfY2F1
-c2Uodm9pZCkKIHsKIAlzdHJ1Y3Qgcm9ja2NoaXBfY3J1ICpjcnUgPSByb2NrY2hpcF9nZXRfY3J1
-KCk7CiAJY2hhciAqY2F1c2UgPSBOVUxMOwpAQCAtNDEsMTIgKzQxLDYgQEAgc3RhdGljIGNoYXIg
-KmdldF9yZXNldF9jYXVzZSh2b2lkKQogCQljYXVzZSA9ICJ1bmtub3duIHJlc2V0IjsKIAl9CiAK
-LQkvKioKLQkgKiByZXNldF9yZWFzb24gZW52IGlzIHVzZWQgYnkgcmszMjg4LCBkdWUgdG8gc3Bl
-Y2lhbCB1c2UgY2FzZQotCSAqIHRvIGZpZ3VyZSBpdCB0aGUgYm9vdCBiZWhhdmlvci4gc28ga2Vl
-cCB0aGlzIGFzIGl0IGlzLgotCSAqLwotCWVudl9zZXQoInJlc2V0X3JlYXNvbiIsIGNhdXNlKTsK
-LQogCS8qCiAJICogQ2xlYXIgZ2xiX3JzdF9zdCwgc28gd2UgY2FuIGRldGVybWluZSB0aGUgbGFz
-dCByZXNldCBjYXVzZQogCSAqIGZvciBmb2xsb3dpbmcgcmVzZXRzLgpAQCAtNTYsMTIgKzUwLDIy
-IEBAIHN0YXRpYyBjaGFyICpnZXRfcmVzZXRfY2F1c2Uodm9pZCkKIAlyZXR1cm4gY2F1c2U7CiB9
-CiAKKyNpZmRlZiBDT05GSUdfRElTUExBWV9DUFVJTkZPCiBpbnQgcHJpbnRfY3B1aW5mbyh2b2lk
-KQogeworCWNoYXIgKmNhdXNlID0gZ2V0X3Jlc2V0X2NhdXNlKCk7CisKIAlwcmludGYoIlNvQzog
-Um9ja2NoaXAgJXNcbiIsIENPTkZJR19TWVNfU09DKTsKLQlwcmludGYoIlJlc2V0IGNhdXNlOiAl
-c1xuIiwgZ2V0X3Jlc2V0X2NhdXNlKCkpOworCXByaW50ZigiUmVzZXQgY2F1c2U6ICVzXG4iLCBj
-YXVzZSk7CisKKwkvKioKKwkgKiByZXNldF9yZWFzb24gZW52IGlzIHVzZWQgYnkgcmszMjg4LCBk
-dWUgdG8gc3BlY2lhbCB1c2UgY2FzZQorCSAqIHRvIGZpZ3VyZSBpdCB0aGUgYm9vdCBiZWhhdmlv
-ci4gc28ga2VlcCB0aGlzIGFzIGl0IGlzLgorCSAqLworCWVudl9zZXQoInJlc2V0X3JlYXNvbiIs
-IGNhdXNlKTsKIAogCS8qIFRPRE8gcHJpbnQgb3BlcmF0aW5nIHRlbXBhcmF0dXJlIGFuZCBjbG9j
-ayAqLwogCiAJcmV0dXJuIDA7CiB9CisjZW5kaWYKLS0gCjIuMjUuMQoKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkxpbnV4LXJvY2tjaGlwIG1haWxpbmcg
-bGlzdApMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAK
+ROC-RK3399-PC has specific set of configurations for
+on-board led setup.
+
+Due to easiness for user to know the state of the board
+roc-rk339-pc board code will setup the low power led
+on/off, and waiting for user to press power key and then
+glow full power led.
+
+All this needs to happen only during power-on-reset not
+for soft reset or WDT.
+
+Also, it is not a proper usage to ask the user to press
+the Power key if the board connected remotely, so add
+the environment variable 'pwr_key' to check as well.
+
+So, user need to press Power key only
+- during POR
+- pwr_key=y
+
+Tested-by: Suniel Mahesh <sunil@amarulasolutions.com>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+Changes for v4:
+- none
+
+ board/firefly/roc-pc-rk3399/spl.c         | 35 ++++++++++++++++++++++-
+ configs/roc-pc-mezzanine-rk3399_defconfig |  4 ++-
+ configs/roc-pc-rk3399_defconfig           |  4 ++-
+ 3 files changed, 40 insertions(+), 3 deletions(-)
+
+diff --git a/board/firefly/roc-pc-rk3399/spl.c b/board/firefly/roc-pc-rk3399/spl.c
+index a7664c6b86..771a7fb2f2 100644
+--- a/board/firefly/roc-pc-rk3399/spl.c
++++ b/board/firefly/roc-pc-rk3399/spl.c
+@@ -4,16 +4,49 @@
+  */
+ 
+ #include <common.h>
++#include <env.h>
+ #include <spl_gpio.h>
++#include <asm/io.h>
++#include <asm/arch-rockchip/cru.h>
+ #include <asm/arch-rockchip/gpio.h>
++#include <asm/arch-rockchip/grf_rk3399.h>
+ 
++#define PMUGRF_BASE		0xff320000
+ #define GPIO0_BASE		0xff720000
+ 
++/**
++ * LED setup for roc-rk3399-pc
++ *
++ * 1. Set the low power leds (only during POR, pwr_key env is 'y')
++ *    glow yellow LED, termed as low power
++ *    poll for on board power key press
++ *    once powe key pressed, turn off yellow
++ * 2. Turn on red LED, indicating full power mode
++ */
+ static void led_setup(void)
+ {
+ 	struct rockchip_gpio_regs * const gpio0 = (void *)GPIO0_BASE;
++	struct rk3399_pmugrf_regs * const pmugrf = (void *)PMUGRF_BASE;
++	bool press_pwr_key = false;
++
++	if (IS_ENABLED(CONFIG_SPL_ENV_SUPPORT)) {
++		env_init();
++		env_load();
++		if (env_get_yesno("pwr_key") == 1)
++			press_pwr_key = true;
++	}
++
++	if (press_pwr_key && !strcmp(get_reset_cause(), "POR")) {
++		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 1);
++
++		spl_gpio_set_pull(&pmugrf->gpio0_p, GPIO(BANK_A, 5),
++				  GPIO_PULL_NORMAL);
++		while (readl(&gpio0->ext_port) & 0x20)
++			;
++
++		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 0);
++	}
+ 
+-	/* Turn on red LED, indicating full power mode */
+ 	spl_gpio_output(gpio0, GPIO(BANK_B, 5), 1);
+ }
+ 
+diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
+index 060b4bfecf..7ca9fd0906 100644
+--- a/configs/roc-pc-mezzanine-rk3399_defconfig
++++ b/configs/roc-pc-mezzanine-rk3399_defconfig
+@@ -18,7 +18,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc-mezzanine.dtb"
+ CONFIG_DISPLAY_BOARDINFO_LATE=y
+ # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
+ CONFIG_SPL_STACK_R=y
+-CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
++CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
++CONFIG_SPL_ENV_SUPPORT=y
+ CONFIG_SPL_SPI_LOAD=y
+ CONFIG_TPL=y
+ CONFIG_CMD_BOOTZ=y
+@@ -33,6 +34,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc-mezzanine"
+ CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
+ CONFIG_ENV_IS_IN_SPI_FLASH=y
+ CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++CONFIG_SPL_DM_SEQ_ALIAS=y
+ CONFIG_ROCKCHIP_GPIO=y
+ CONFIG_SYS_I2C_ROCKCHIP=y
+ CONFIG_MISC=y
+diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
+index 9897a52cd8..440c1ab303 100644
+--- a/configs/roc-pc-rk3399_defconfig
++++ b/configs/roc-pc-rk3399_defconfig
+@@ -18,7 +18,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc.dtb"
+ CONFIG_DISPLAY_BOARDINFO_LATE=y
+ # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
+ CONFIG_SPL_STACK_R=y
+-CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
++CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
++CONFIG_SPL_ENV_SUPPORT=y
+ CONFIG_SPL_SPI_LOAD=y
+ CONFIG_TPL=y
+ CONFIG_CMD_BOOTZ=y
+@@ -32,6 +33,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc"
+ CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
+ CONFIG_ENV_IS_IN_SPI_FLASH=y
+ CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++CONFIG_SPL_DM_SEQ_ALIAS=y
+ CONFIG_ROCKCHIP_GPIO=y
+ CONFIG_SYS_I2C_ROCKCHIP=y
+ CONFIG_MISC=y
+-- 
+2.25.1
+
+
+_______________________________________________
+Linux-rockchip mailing list
+Linux-rockchip@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
