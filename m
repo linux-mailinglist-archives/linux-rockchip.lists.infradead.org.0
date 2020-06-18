@@ -2,71 +2,71 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048561FFADF
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 20:14:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB5181FFAE2
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 20:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lI++jtJhsH2j/a9ekqHQA7Vk5XhgHq/1Khas9SXcooE=; b=djszt9RI2aXywc
-	/LkujHDF39y7694ZGyYZFRVzEA02Uk9K7eE7Q2LFoYazzs4eQbOwb3qM2UeSr4csV/xiIOS/4VCV3
-	/lWrv+Q5z5e+TQELrZsCFeLD/KwvPCvBLulvwHwNZ031AAssXCvLdK/LjEpKNY8dZZMK/0o0sZ5Tu
-	Hp07PxNUtXqfmMbjkyQkC8Q5Evv1dTRtxvhQj1RYwOVdDZBstDScVrdPe/0HlMipatQJVQY9UBXFV
-	9JVd0YlJMhOdF3BtTlC/VVe//A2vz1uFcf2k0yqfsrW7OdV/PtOZXOIz6kfLtucIzzuzDpD+sq9gR
-	gkxgAZorIe5T+kY7372A==;
+	List-Owner; bh=WazTE44bm7A/wjXkV92vyV6vioH1MRTdoNVautEM33E=; b=lfflr7+NtLSo0d
+	yww0NqnyvYgzjvwjxoE8Qf5jTpwajLEtb0XT1EAUKqh90Rl6Q6+0h4bwj7UijRHylfdegeDpCaGib
+	fnLr8ylF6HyPWpaWDVcAo3nWpMrKhuqzeQMlp6Td5+5NP6ovderztUqYlJOyplMNeVMummoEbtoVj
+	sxMbjyZEJJPNh/HdlpbbWkcNxbmP37JO/ggbEfjwc2f0kHZ+UyaZpeC+Hr0E3mfLnKFtCEIyw6rNi
+	w4G/OkZaLRm92MuTjFpuBazAMZ8dFoW6UESZmD0dzNqeqyCsgG4ximSxCWIBK311KlKbvsex5cxuN
+	8O7XvG5vu8MdTRszQjVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlz3H-0001ZB-GF; Thu, 18 Jun 2020 18:14:15 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jlz4P-00043h-2Z; Thu, 18 Jun 2020 18:15:25 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlz3E-0001Yc-1A
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 18:14:13 +0000
-Received: by mail-wm1-x341.google.com with SMTP id l26so6069405wme.3
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 11:14:11 -0700 (PDT)
+ id 1jlz4M-00042f-Pa
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 18:15:23 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t194so6666236wmt.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 11:15:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=qTsokCZQ3qkD3gmU6orySz5wx9a0kjdCHHCwCQljKo8=;
- b=VL24XiTpgMInwdhlip+IPwySXB/ZhlcOUp9mxr5jqzwXyL2xK687TGVeaoLYnisnPA
- KA9yco9zhBTs9qfP8hTdVCi15PMZ0/y7hgXxyKP/vp971MQX19AjbBsHP437LO7yjVA6
- yOvbxANf3uj8DbBmShrFDvfgyn1GN1VlXnPFg=
+ bh=rYZcCpEBWDuy84TWehiyL3pUu49gmGm9qhEhgRoOMIY=;
+ b=Epis1GM3O69JLDO/yi6VV8g8PigR3KNz/q/7mBShFIl2phy4rGEZJadVA1+hKQOurA
+ 8SSJGhbelR0XrPxavyhM9mCPKMS1caIvzItVAJtEr42jU6xVnSHtKxbPjYTx1RmXuU14
+ N4AqLjjWBUV7UAtf0WLysceEUzAArUH/2hy4Y=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=qTsokCZQ3qkD3gmU6orySz5wx9a0kjdCHHCwCQljKo8=;
- b=tO74stUk+2QPPA30UAQQZLub8IU+To9mBVT7jH5c0zkZNJz/fDy0qyPcw0YbYAXQDg
- d7BJ2EC24mIsfOKO/lVGQAEU6Dqy3BXPC/ASKsi7EqXGQgNuAHspUGWOfEuRjnq0fmCB
- s8NQwADR9q3xqMSyyFGdUdhYeUDErD7qZR3zCC5fCNqULZtcMgudiEH0YgMp6Q34yEDI
- SXN49g4UznlNscdWPvF1eSUrwOm67sxKYvsw65lOwZEe0WBklLq/kVw+YKnHX/jSL9oC
- 1K7/GbF5E41T97d5iVJEYVvdKA+u1CcJ6DcwMtqftsXqM37TGBpz8E4BZACWmovJjOW1
- 2fmQ==
-X-Gm-Message-State: AOAM532h6o46z5E2/x3fTYtdB1JHNorEMe7OvsmQj09E6qXZ7DIXWY2v
- fu4VKDxGGfiP8hoZ0yFSwz0OKw==
-X-Google-Smtp-Source: ABdhPJxz3cKlge7PwHSTIvLtqDFuNMrmSXpcG59MmBjXTzkvnzaVbDE5OVOsX9qXQwszllNUAT437A==
-X-Received: by 2002:a7b:c385:: with SMTP id s5mr5663214wmj.121.1592504049649; 
- Thu, 18 Jun 2020 11:14:09 -0700 (PDT)
+ bh=rYZcCpEBWDuy84TWehiyL3pUu49gmGm9qhEhgRoOMIY=;
+ b=rYXs98BMsGztU9f+/6FkU/1MdOS/uF3l4K/DPoOd+3yg7lOK/9Qv58pCTiOmC5Z23K
+ ++t30eDN+ShPkiLeBk/eonV7v7TSwU3ek5ZuI+nZC7G21yLbJhklObzs7YsFlNUj6pzv
+ Bay2Ncpi6dcHvGZI0qY3u1r7RD6STOWgy2zpRS+XqetbDcIYM04a75nQZwHZrsCTSnoh
+ nsYMN/GJoevxLrLQjOCcdjTQzDNNM4byA1Q4l4GbrPLl0ypwrWe3Biv1RU5AfgNH7PsR
+ 0Ch8n1hqMAwlZaKaQQBOi43flMo6n61JCkWMJ0to3BUU79wSys8N/5KcuJQLB1lvyzDq
+ vffQ==
+X-Gm-Message-State: AOAM533UcpgT7xoR8Rcziy6cvfV//Q42sWGQ6imBbwrGdyxqIeqh89o0
+ OTDV+MrE7St3TXipDF0Qf6Ugyg==
+X-Google-Smtp-Source: ABdhPJyDhU5hxcx5VpXHjUYCJv/HKPXfuLMTNk7DOTZhjVFocxpfIzErerAlnJEwyggRxt1hvD4tmw==
+X-Received: by 2002:a1c:80d4:: with SMTP id b203mr5303404wmd.138.1592504118101; 
+ Thu, 18 Jun 2020 11:15:18 -0700 (PDT)
 Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
  [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id a15sm4981844wrh.54.2020.06.18.11.14.08
+ by smtp.gmail.com with ESMTPSA id t188sm4503006wmt.27.2020.06.18.11.15.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 11:14:09 -0700 (PDT)
-Date: Thu, 18 Jun 2020 18:14:07 +0000
+ Thu, 18 Jun 2020 11:15:17 -0700 (PDT)
+Date: Thu, 18 Jun 2020 18:15:16 +0000
 From: Tomasz Figa <tfiga@chromium.org>
 To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v4 2/4] media: staging: rkisp1: remove macro
- RKISP1_DIR_SINK_SRC
-Message-ID: <20200618181407.GD10831@chromium.org>
+Subject: Re: [PATCH v4 3/4] media: staging: rkisp1: rename macros
+ 'RKISP1_DIR_*' to 'RKISP1_ISP_SD_*'
+Message-ID: <20200618181516.GE10831@chromium.org>
 References: <20200618113518.30057-1-dafna.hirschfeld@collabora.com>
- <20200618113518.30057-3-dafna.hirschfeld@collabora.com>
+ <20200618113518.30057-4-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200618113518.30057-3-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20200618113518.30057-4-dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_111412_068905_3F36FC44 
-X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-CacheID: sfid-20200618_111522_831686_2293EF0E 
+X-CRM114-Status: UNSURE (   8.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,16 +107,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Thu, Jun 18, 2020 at 01:35:16PM +0200, Dafna Hirschfeld wrote:
-> The macro RKISP1_DIR_SINK_SRC is a mask of two flags.
-> The macro hides the fact that it's a mask and the code
-> is actually more clear if we replace it the with bitwise-or explicitly.
+On Thu, Jun 18, 2020 at 01:35:17PM +0200, Dafna Hirschfeld wrote:
+> The macros 'RKISP1_DIR_*' are flags that indicate on which
+> pads of the isp subdevice the media bus code is supported. So the
+> prefix RKISP1_ISP_SD_ is better.
 > 
 > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 > Acked-by: Helen Koike <helen.koike@collabora.com>
 > ---
->  drivers/staging/media/rkisp1/rkisp1-isp.c | 25 +++++++++++------------
->  1 file changed, 12 insertions(+), 13 deletions(-)
+>  drivers/staging/media/rkisp1/rkisp1-isp.c | 46 +++++++++++------------
+>  1 file changed, 23 insertions(+), 23 deletions(-)
 > 
 
 Reviewed-by: Tomasz Figa <tfiga@chromium.org>
