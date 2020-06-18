@@ -2,78 +2,79 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FC3B1FEF56
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:09:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 055771FEF5D
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:09:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T/EYcSUvxPMAeAVUPSyA5TH+wTLDbYv6zesj6FnVaxU=; b=TwnqpkCokFTeHX
-	HRsglA5c8dh/P5YywxVmwv8Tx6xrLiny3TEAuadonsGwnVqXFaYicAEbkfrZ1hO654lP623Y2hyqV
-	FcKr64YAD7ePCEm94eCqckupdIHpChnx6BnDcUm7vadISWb23pPlLBkOuCrO4WKXnWxO3dryVV8Bl
-	Jh2K3CR2mdkd5K9cL6FlNR0fqldocvbTzdmfWCzGtm7yAU5YA0x6d+kJZXMSY+mrcPV/9tPxtxkSQ
-	3hzTYAyNYMP/JM7HO3RxA/Wi2UDIp0a37rdZrvJX9K5O8hxGdjru9GyK/o/43ENBu4SEnfzHz3exd
-	IMHiT+8RBI1BETv0NylQ==;
+	List-Owner; bh=mT/TUlddo9UZ62ssCMKcYkhjjdtiHWg/3S6t9JCLxAE=; b=fbjt/cgfpCPRrK
+	fECyJPUCVLo2XqQDJ/EgdGKBNDDCy+3mxWr1yLTlNdoxzzLr7ulHyJ+tRn5yDxrsl6oDmSUG3X4k+
+	GlSAHa1caGfRY/pAv20zeApnSOi9p3JDGveyiQs/tioPRZQz5AwwL9Kb/HzF8Xf6y2tKKuj3aO+s8
+	4sPLvbW+UV+6FUmKf1UhLzvqmlBSvTnj858Kn2x3CAs31diKLENX1AZLjAnqkFTw5DLuQY1JzzTt3
+	liLjp57dUo9m7SoWAejVCzcAWTXAh6OPueZdIA9V8dThHBnbrJVyH8oIZhBrDLunw3MYBbfOWS1ao
+	jO6ko++uTJwBqXjEjb4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlrTx-0008MD-9D; Thu, 18 Jun 2020 10:09:17 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jlrUW-0000V6-JE; Thu, 18 Jun 2020 10:09:52 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrTa-00084G-CT
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:08:56 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y17so2236721plb.8
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:08:54 -0700 (PDT)
+ id 1jlrTf-000896-El
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:09:01 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id ne5so2318779pjb.5
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:08:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=P9ZVEE5llXq13I1PufGR5qegeo37MSzNvw9PjU0Fjk8=;
- b=QbTK/jyeJEquEVJY7l+T6/kG04+mjbA9G/JwcvZDLZ8k+okay/dSxqJ/GZK0me6aPC
- T0/+LOR92quFHAlm1dVV68gOZr+8q/YvKBpK2wvxKO41bhYSGXU+4ZUQCTXjBFjTOyEq
- R3MmYnYx6U71ysADED3OWBNbxPvBQAmA2Zurs=
+ bh=Tg/Hm1A2t+lsaJur4AOo5t83FkcPA6mYe4DsoUQP1Mg=;
+ b=fAQvbqBHcgo8Q8qpa2FuXBYTJR3XAC4kMacXW4eiiO19pCNQCy+KFvZvhq8qyR4ORb
+ rKAGyxGdy1ZsbfKWmv8u1I+NMqbCNXXbD3Z94kUcuhJ+nLSHE7myXyQ5q24+AoAvvZGJ
+ 5NyL50/gO71s8/dk4lAl2Lx7VhwAjRlW0eH0Y=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=P9ZVEE5llXq13I1PufGR5qegeo37MSzNvw9PjU0Fjk8=;
- b=NQAeZtNqOvANSqn0hLYX/my/nGoEcc1rjEOAGaJD6I6gOhmydukipm1KW4xRbB2XoO
- xFkMuN+msz/C/alwUUzZ0mYn6wIo1V0KzxCUiw9kW7dhxdeiJVSna0JdhyD6DKI5L1YV
- Wqk6TXMeqR+jfVEuQXSv4bORhVCV5Gy6vUOqeDGNoKbFzDKHqzLpQoRwPqcSuf4jx1nt
- VCsAalPmvnWi0H/KWB0s6q5YJS8aDUiEjlI09oAmJewpdWu+kYunDT0gosevZDfvt4NO
- JwrMeKVK/i6tyb/Z9V66WSofLG3swuqEzEy2vdbM6Ji0788FaSGtzzDpQkAsqnVNpqeh
- zQ+Q==
-X-Gm-Message-State: AOAM5305NF+KSPMi0CVlrvm0rSS+//SO08gpSO2etELg3PAO1vUR+Yh2
- Vt1OHKBvT72NdXVo7ukiRquVew==
-X-Google-Smtp-Source: ABdhPJwZhtlcgjGat0WBZE26aDW8H3kZ66NuB49AdKJ182thmlVQ7g0Vc4xPRCKoybJ9oMJ6otar7w==
-X-Received: by 2002:a17:90a:f694:: with SMTP id
- cl20mr3587632pjb.141.1592474933565; 
- Thu, 18 Jun 2020 03:08:53 -0700 (PDT)
+ bh=Tg/Hm1A2t+lsaJur4AOo5t83FkcPA6mYe4DsoUQP1Mg=;
+ b=AgVTn3Rt4aDCB3jcS6rHfPpLnew7Iu+UZXS8yRXojVcbINcpEa3PYKewXOaKGRQV//
+ 5ylBhe63kF7QYrnPKQtrHFLjJut42Y65PAuNzcR9Y8j/sCuXVjh1ztiSkYKgZV0XTxRS
+ p8PJYTxRZjDBrUUYQOmew9Rw8MKceXUpMnlL3rFfydQjUATQ3wBr5uSVg1HZiYsJivqD
+ 4kL/qPQJrBuJJvWRE5GXdF5pUu/ZSYajJ/eRIRCzlTWa6DShZbRXG3nRcES40UCd3kPY
+ YnWAAAcPpxJcVDIMfrH9LIy7ia2NqvrqS9f6KaR+FdR5pgPjD/Bgv+udYIrcz661UAjv
+ qiNQ==
+X-Gm-Message-State: AOAM530ybV02nPtkFdzaLe+XtrSrw0seZ2tscP61l+zEp3Bnowi0Dc5/
+ WnCfN0aqBALzwh8EIGyyp0AhrA==
+X-Google-Smtp-Source: ABdhPJyCE56MacJy+rzWLhSlQ5DQWsr/6CsvbeyHuLNduw/AkcYxXxf6DUZG3PzMtdzHx0vZ9GTF+g==
+X-Received: by 2002:a17:90a:224a:: with SMTP id
+ c68mr3243563pje.21.1592474938662; 
+ Thu, 18 Jun 2020 03:08:58 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.08.49
+ by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.08.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 03:08:52 -0700 (PDT)
+ Thu, 18 Jun 2020 03:08:58 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 1/4] ARM: dts: rockchip: radxa-dalang: Update sdmmc properties
-Date: Thu, 18 Jun 2020 15:38:29 +0530
-Message-Id: <20200618100832.94202-2-jagan@amarulasolutions.com>
+Subject: [PATCH 2/4] dt-bindings: arm: rockchip: Add Rock Pi N8 binding
+Date: Thu, 18 Jun 2020 15:38:30 +0530
+Message-Id: <20200618100832.94202-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618100832.94202-1-jagan@amarulasolutions.com>
 References: <20200618100832.94202-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_030854_453983_2FF82381 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20200618_030859_518176_CC992010 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,53 +107,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Radxa dalang carrier boards are used to mount vmarc SoM's
-of rk3399pro and rk3288 to make complete SBC.
+Rock Pi N8 is a Rockchip RK3288 based SBC, which has
+- VMARC RK3288 SOM (as per SMARC standard) from Vamrs.
+- Compatible carrier board from Radxa.
 
-Among these combinations, card detection gpio, max-frequency
-properties are used with rk3399pro SoM but not required for
-rk3288 SoM based on the hardware schematics.
+VMARC RK3288 SOM need to mount on top of dalang carrier
+board for making Rock PI N8 SBC.
 
-So, let's move these sdmmc specific properties on associate
-vmarc dtsi to make common use of dalang carrier device tree file.
+Add dt-bindings for it.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi  | 2 --
- arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi | 5 +++++
- 2 files changed, 5 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/arm/rockchip.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
-index df3712aedf8a..3e54f38f0ab6 100644
---- a/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
-+++ b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
-@@ -52,10 +52,8 @@ &sdmmc {
- 	bus-width = <4>;
- 	cap-mmc-highspeed;
- 	cap-sd-highspeed;
--	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
- 	disable-wp;
- 	vqmmc-supply = <&vccio_sd>;
--	max-frequency = <150000000>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
- 	status = "okay";
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
-index 0a516334f15f..6fd17e8a815f 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
-@@ -317,6 +317,11 @@ &sdhci {
- 	status = "okay";
- };
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index d4a4045092df..db2e35796795 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -435,6 +435,12 @@ properties:
+           - const: radxa,rockpi4
+           - const: rockchip,rk3399
  
-+&sdmmc {
-+	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
-+	max-frequency = <150000000>;
-+};
++      - description: Radxa ROCK Pi N8
++        items:
++          - const: radxa,rockpi-n8
++          - const: vamrs,rk3288-vmarc-som
++          - const: rockchip,rk3288
 +
- &tsadc {
- 	status = "okay";
- 	rockchip,hw-tshut-mode = <1>;
+       - description: Radxa ROCK Pi N10
+         items:
+           - const: radxa,rockpi-n10
 -- 
 2.25.1
 
