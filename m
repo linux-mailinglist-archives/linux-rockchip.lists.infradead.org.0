@@ -2,77 +2,78 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E2751FEF63
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:10:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE4331FEF65
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:10:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hs2Dmuow58a8/9NVbvc4Owt6O05jxq8iK070hYYk38E=; b=eWaxh2+lfV6lEz
-	m6gxcqlCn7utD4xoVZgSCxlhMde2sWwRgOdeUPCeqYCp8MqhnAKfjmnLkKhuF1wu52H059sVug48E
-	e1d5Opca68epchbaCh772585quwpLbXSkqUQTjN/YbYOtecSwyAKFBZlFhUTKW4URdoNMKw3lD9lb
-	tHqmyaOXtIkmngIqFYrZWrCRhJHhMc5sSEGCGw4fUVItEJ2B872lhxBrQIQmdTO6GAH/vO0DP8aSP
-	z3vYYbiQknKTbWeZybsLesg4CHr/iKLqmz70YqYsKvlj0GUq/pBvlV72kqw97S0uVdC5NLjocwxtf
-	otVh7xaHHyOuFPBmiHbw==;
+	List-Owner; bh=WcqhqdR/9lRvxQahRpwPqQkDYcmIXSsZhB1tHX7/hwg=; b=kGPdfAV4ve+wD1
+	s3rffcYhuYQavaVPcbT2jGBrNF86vHcVlrC56ZlcDGHs6M3qITD8KUIjTJPAIjq2Iqp6X3Thb7KKm
+	w7uSXoojxyqJ12u20Ext25IqpzIa0GG+Ykco7pmJIBANm0j7TfsMIZCbO2Oo2l4mZSnYMwWGtrB80
+	LCGA1N4u4TF0AIk7AoDNcV7BCN/a2nhcvLV7IXCSWYEwP2glA68nmX62iPKw/4lRvJc+2QEU9athj
+	Q8KeL03w0ZpSs7WY10SFZ3SKRlhivM64j9y1s928DpoM7eAKiMSvxqAT+YqWiCgjJg5KcWJok7hnF
+	0q0UOy0K8CF77pBW5nqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlrV5-0003V5-Un; Thu, 18 Jun 2020 10:10:27 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jlrVI-0003nr-R8; Thu, 18 Jun 2020 10:10:40 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrTj-0008EQ-SW
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:09:06 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d66so2570429pfd.6
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:09:03 -0700 (PDT)
+ id 1jlrTp-0008Hu-CG
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:09:11 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y18so2247003plr.4
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:09:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OcplZ+ZedkXeLeGU4PsU+3UbK42Jbzafrwx7wAtyyR4=;
- b=hpyufXX/Nq/ooFs4QaAJ7ZNiVV3Px4OmSehXsxjx7IlcdawxclTYiE3+X5XxQh/D49
- nGlegvWkrPHoWEbM/vXTi+DjgBDUZ5Tg33E9iOtARtvIIk2QuIebIlBYq3NHCX+S8xLq
- hbgM6vMfCL71ZnMzHXNjcxYQsHyg5opSksRKk=
+ bh=0tx33LB4XJjdQBQtJdq8pHurr/XG5qcfV4Bojc0lI48=;
+ b=Xjk4lMJzfKrnO0dJ7ag4s5wJ293r8pN6aY06e7dmdJJAdcWKbyXrT4Lrd0ctnmWbZy
+ lDoSJPn4Mko3dbuiyumEg9xMiq9cbJM4Z/sxbZIMgQjxIpNigP9LDe2e7gjtnpx0USNq
+ 0Q1/Q7hodWx40U/KW/hIyUDq9BoujcY3vIhBE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OcplZ+ZedkXeLeGU4PsU+3UbK42Jbzafrwx7wAtyyR4=;
- b=KGQx+3yaZNWEi2LQaI20M6yXgF4HKJdKFrQs/wn4sB/GFoBtVbaVpoi+dZ1Atm1PeR
- MQ9yIi73PRa6/LBixGEFyrrM29JHefjxlWN9espxCUMFWvgjdKNXt4gE7Vlj6VQNWRW4
- UTUZvNKHYDraSaYatci6+lkA1QiDJU9P9IlZbrGGqNbtMrE+0jkwRcOn6H/+9XnUMdZ0
- bPfYgTeXW6152o0hFRUj1grgkcVXzMJKnVbwCOaJsakPw0oyPvop/ABB6lMcgH6E08e5
- EpklSbHC3/HxkQF4YbzSjWB/ZIi3RXwXBsmmf7+lLPOrurwD/1n4uXtQp17VtPk1H+yw
- 5uhw==
-X-Gm-Message-State: AOAM531kTNnPRGfk6MpKZrypLq35Y/XnSJs1EH0VYLEEx5OPh07rKcer
- WJVK88P5i2XQSFLlUjGz9xB8QQ==
-X-Google-Smtp-Source: ABdhPJwHDmPmUIeMl4IJN8N1GzpEFOFFpKg49lyGjA4ssVBIvl7wt5K4xoyLweyFaQB1HuvKo1zFqg==
-X-Received: by 2002:a63:ee0c:: with SMTP id e12mr2533914pgi.83.1592474943008; 
- Thu, 18 Jun 2020 03:09:03 -0700 (PDT)
+ bh=0tx33LB4XJjdQBQtJdq8pHurr/XG5qcfV4Bojc0lI48=;
+ b=fU8zbwMi1mU1csBHMhhvYjMKa2rPPcxg8ePH1Daa7B/3Qzc11DVQGfnyw/kXJUHu9t
+ GpdIavBakAWm6/4UjjazIcJ+TV+gSEkQC+UxyudxvUTkyl9bc/a0jsqclhYIiMdDas2A
+ 6NQJFl9ADmCgdtniHhbyBtbV+ANI2+0pBJwZ+nrckcdtVFCT9tjjQvjtqT4gZVkmpC/+
+ cpf20EisyCDeOThIMLQ7x4+DKjEyFEKMBkrGU2F6KrEWDkyvf2P/RVw+T46tRJOP2m3n
+ cXZEVPKc4zvPUNHj5gp8TSnfMnH+lCraqTeGH0D0lovoLDfQgoyY860g+dcAYcFQabKm
+ h0Tw==
+X-Gm-Message-State: AOAM533mGWAl/ZPtbka2lw0woJm/KiUhqe02boo3fszQv9YVA0ngW4BD
+ zz/cdl/cN4hKv5HOkKc4Wmfx8w==
+X-Google-Smtp-Source: ABdhPJyQtBMBw9LrfkiQ5o078z+MCo/lVLK2v8zmEGv9YGdhytmSTD/XuQ7v2f2i0mL/BOi1ny7s8w==
+X-Received: by 2002:a17:90b:4c4b:: with SMTP id
+ np11mr3550785pjb.58.1592474947624; 
+ Thu, 18 Jun 2020 03:09:07 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.08.59
+ by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.09.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 03:09:02 -0700 (PDT)
+ Thu, 18 Jun 2020 03:09:06 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>,
 	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 3/4] ARM: dts: rockchip: Add VMARC RK3288 SOM initial support
-Date: Thu, 18 Jun 2020 15:38:31 +0530
-Message-Id: <20200618100832.94202-4-jagan@amarulasolutions.com>
+Subject: [PATCH 4/4] ARM: dts: rockchip: Add Radxa Rock Pi N8 initial support
+Date: Thu, 18 Jun 2020 15:38:32 +0530
+Message-Id: <20200618100832.94202-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618100832.94202-1-jagan@amarulasolutions.com>
 References: <20200618100832.94202-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_030903_987716_7DFC9F46 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20200618_030909_542072_651C73DD 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,34 +106,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-VMARC RK3288 SOM is a standard SMARC SOM design with
-Rockchip RK3288 SoC, which is designed by Vamrs.
+Rock Pi N8 is a Rockchip RK3288 based SBC, which has
+- VMARC RK3288 SOM (as per SMARC standard) from Vamrs.
+- Compatible carrier board from Radxa.
 
-Specification:
-- Rockchip RK3288
-- PMIC: RK808
-- eMMC: 16GB/32GB/64GB
-- SD slot
-- 2xUSB-2.0, 1xUSB3.0
-- USB-C for power supply
-- Ethernet, PCIe
-- HDMI, MIPI-DSI/CSI, eDP
+VAMRC RK3288 SOM need to mount on top of radxa dalang
+carrier board for making Rock Pi N8 SBC.
 
-Add initial support for VMARC RK3288 SOM, this would use
-with associated carrier board.
+So, add initial support for Rock Pi N8 by including rk3288,
+rk3288 vamrc-som and raxda dalang carrier board dtsi files.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/boot/dts/rk3288-vmarc-som.dtsi | 298 ++++++++++++++++++++++++
- 1 file changed, 298 insertions(+)
- create mode 100644 arch/arm/boot/dts/rk3288-vmarc-som.dtsi
+ arch/arm/boot/dts/Makefile              |  1 +
+ arch/arm/boot/dts/rk3288-rock-pi-n8.dts | 17 +++++++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 arch/arm/boot/dts/rk3288-rock-pi-n8.dts
 
-diff --git a/arch/arm/boot/dts/rk3288-vmarc-som.dtsi b/arch/arm/boot/dts/rk3288-vmarc-som.dtsi
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e8dd99201397..1d1b6ac26394 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -964,6 +964,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
+ 	rk3288-popmetal.dtb \
+ 	rk3288-r89.dtb \
+ 	rk3288-rock2-square.dtb \
++	rk3288-rock-pi-n8.dtb \
+ 	rk3288-tinker.dtb \
+ 	rk3288-tinker-s.dtb \
+ 	rk3288-veyron-brain.dtb \
+diff --git a/arch/arm/boot/dts/rk3288-rock-pi-n8.dts b/arch/arm/boot/dts/rk3288-rock-pi-n8.dts
 new file mode 100644
-index 000000000000..1549ac404428
+index 000000000000..ffec77f0a1b6
 --- /dev/null
-+++ b/arch/arm/boot/dts/rk3288-vmarc-som.dtsi
-@@ -0,0 +1,298 @@
++++ b/arch/arm/boot/dts/rk3288-rock-pi-n8.dts
+@@ -0,0 +1,17 @@
 +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 +/*
 + * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
@@ -140,296 +148,15 @@ index 000000000000..1549ac404428
 + * Copyright (c) 2019 Amarula Solutions(India)
 + */
 +
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/pinctrl/rockchip.h>
-+#include <dt-bindings/pwm/pwm.h>
++/dts-v1/;
++#include "rk3288.dtsi"
++#include "rk3288-vmarc-som.dtsi"
++#include <arm/rockchip-radxa-dalang-carrier.dtsi>
 +
 +/ {
-+	compatible = "vamrs,rk3288-vmarc-som", "rockchip,rk3288";
-+
-+	ext_gmac: external-gmac-clock {
-+		compatible = "fixed-clock";
-+		clock-frequency = <125000000>;
-+		clock-output-names = "ext_gmac";
-+		#clock-cells = <0>;
-+	};
-+
-+	vccio_flash: vccio-flash-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vccio_flash";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		startup-delay-us = <150>;
-+		vin-supply = <&vcc_io>;
-+	};
-+
-+	vcc_sys: vsys-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_sys";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+};
-+
-+&emmc {
-+	bus-width = <8>;
-+	cap-mmc-highspeed;
-+	disable-wp;
-+	non-removable;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&emmc_clk &emmc_cmd &emmc_pwr &emmc_bus8>;
-+	status = "okay";
-+};
-+
-+&gmac {
-+	assigned-clocks = <&cru SCLK_MAC>;
-+	assigned-clock-parents = <&ext_gmac>;
-+	clock_in_out = "input";
-+	phy-mode = "rgmii";
-+	phy-supply = <&vcc_io>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&rgmii_pins>;
-+	snps,reset-gpio = <&gpio4 RK_PA7 GPIO_ACTIVE_HIGH>;
-+	snps,reset-active-low;
-+	snps,reset-delays-us = <0 10000 50000>;
-+	tx_delay = <0x30>;
-+	rx_delay = <0x10>;
-+	max-speed = <1000>;
-+};
-+
-+&i2c0 {
-+	clock-frequency = <400000>;
-+	status = "okay";
-+
-+	rk808: pmic@1b {
-+		compatible = "rockchip,rk808";
-+		reg = <0x1b>;
-+		interrupt-parent = <&gpio0>;
-+		interrupts = <RK_PA4 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pmic_int &global_pwroff>;
-+		rockchip,system-power-controller;
-+		wakeup-source;
-+		#clock-cells = <1>;
-+		clock-output-names = "rk808-clkout1", "rk808-clkout2";
-+
-+		vcc1-supply = <&vcc_sys>;
-+		vcc2-supply = <&vcc_sys>;
-+		vcc3-supply = <&vcc_sys>;
-+		vcc4-supply = <&vcc_sys>;
-+		vcc6-supply = <&vcc_sys>;
-+		vcc7-supply = <&vcc_sys>;
-+		vcc8-supply = <&vcc_io>;
-+		vcc9-supply = <&vcc_io>;
-+		vcc10-supply = <&vcc_sys>;
-+		vcc11-supply = <&vcc_sys>;
-+		vcc12-supply = <&vcc_io>;
-+		vddio-supply = <&vcc_io>;
-+
-+		regulators {
-+			vdd_cpu: DCDC_REG1 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <750000>;
-+				regulator-max-microvolt = <1400000>;
-+				regulator-name = "vdd_arm";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vdd_gpu: DCDC_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <850000>;
-+				regulator-max-microvolt = <1250000>;
-+				regulator-name = "vdd_gpu";
-+				regulator-ramp-delay = <6000>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_ddr: DCDC_REG3 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-name = "vcc_ddr";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+				};
-+			};
-+
-+			vcc_io: DCDC_REG4 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-name = "vcc_io";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vcc_tp: LDO_REG1 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-name = "vcc_tp";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcca_codec: LDO_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-name = "vcca_codec";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vdd_10: LDO_REG3 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1000000>;
-+				regulator-max-microvolt = <1000000>;
-+				regulator-name = "vdd_10";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1000000>;
-+				};
-+			};
-+
-+			vcc_wl: LDO_REG4 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-name = "vcc_wl";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+				};
-+			};
-+
-+			vccio_sd: LDO_REG5 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-name = "vccio_sd";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3300000>;
-+				};
-+			};
-+
-+			vdd10_lcd: LDO_REG6 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1000000>;
-+				regulator-max-microvolt = <1000000>;
-+				regulator-name = "vdd10_lcd";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_18: LDO_REG7 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-name = "vcc_18";
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1800000>;
-+				};
-+			};
-+
-+			vcc18_lcd: LDO_REG8 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-name = "vcc18_lcd";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_sd: SWITCH_REG1 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-name = "vcc_sd";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_lcd: SWITCH_REG2 {
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-name = "vcc_lcd";
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&io_domains {
-+	bb-supply = <&vcc_io>;
-+	flash0-supply = <&vccio_flash>;
-+	gpio1830-supply = <&vcc_18>;
-+	gpio30-supply = <&vcc_io>;
-+	sdcard-supply = <&vccio_sd>;
-+	status = "okay";
-+};
-+
-+&pinctrl {
-+	pcfg_pull_none_drv_8ma: pcfg-pull-none-drv-8ma {
-+		drive-strength = <8>;
-+	};
-+
-+	pcfg_pull_up_drv_8ma: pcfg-pull-up-drv-8ma {
-+		bias-pull-up;
-+		drive-strength = <8>;
-+	};
-+
-+	pmic {
-+		pmic_int: pmic-int {
-+			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+	};
-+
-+	sdmmc {
-+		sdmmc_bus4: sdmmc-bus4 {
-+			rockchip,pins =
-+				<6 RK_PC0 1 &pcfg_pull_up_drv_8ma>,
-+				<6 RK_PC1 1 &pcfg_pull_up_drv_8ma>,
-+				<6 RK_PC2 1 &pcfg_pull_up_drv_8ma>,
-+				<6 RK_PC3 1 &pcfg_pull_up_drv_8ma>;
-+		};
-+
-+		sdmmc_clk: sdmmc-clk {
-+			rockchip,pins =
-+				<6 RK_PC4 1 &pcfg_pull_none_drv_8ma>;
-+		};
-+
-+		sdmmc_cmd: sdmmc-cmd {
-+			rockchip,pins =
-+				<6 RK_PC5 1 &pcfg_pull_up_drv_8ma>;
-+		};
-+	};
++	model = "Radxa ROCK Pi N8";
++	compatible = "radxa,rockpi-n8", "vamrs,rk3288-vmarc-som",
++		     "rockchip,rk3288";
 +};
 -- 
 2.25.1
