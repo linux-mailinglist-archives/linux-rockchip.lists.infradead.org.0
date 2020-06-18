@@ -2,88 +2,51 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4331FEF65
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 12:10:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75AF91FF0A6
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 13:35:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WcqhqdR/9lRvxQahRpwPqQkDYcmIXSsZhB1tHX7/hwg=; b=kGPdfAV4ve+wD1
-	s3rffcYhuYQavaVPcbT2jGBrNF86vHcVlrC56ZlcDGHs6M3qITD8KUIjTJPAIjq2Iqp6X3Thb7KKm
-	w7uSXoojxyqJ12u20Ext25IqpzIa0GG+Ykco7pmJIBANm0j7TfsMIZCbO2Oo2l4mZSnYMwWGtrB80
-	LCGA1N4u4TF0AIk7AoDNcV7BCN/a2nhcvLV7IXCSWYEwP2glA68nmX62iPKw/4lRvJc+2QEU9athj
-	Q8KeL03w0ZpSs7WY10SFZ3SKRlhivM64j9y1s928DpoM7eAKiMSvxqAT+YqWiCgjJg5KcWJok7hnF
-	0q0UOy0K8CF77pBW5nqQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ptb5i2bJBx2E2rPiWEjhhah1MXTpmNoIMjI4X3f7fb8=; b=GRu
+	6Ooz5qn9z3WcmfiNCMjQMwJXuAHjXB2ihLTsDnSVujojAm01VEwdc+TDh9gye/p0TVyuOFeBesAZ3
+	nEZhCRRinzt+pZ48R/sAYmDAkkbCVmUOa/vqfhRBzAVecS0jBsYt4phXWRacicv2bFFsX8aOyhKk+
+	ruYLvkpAw/79Zu9fkgdUYl7yb1yhmKjmIyYBEjzNue358Krd7MmvG7sBG85myHPzhU5Fbgpr8oWpd
+	X2vJKZdDwia0MmLHKpMJfYWaNwio4VicVYKnb3k6YXB05u4GgSWqQLVFUacbysWZ0aKk9ytJe7leP
+	2DDgP9pT0OqrE4yik8DF/9RovM57stQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlrVI-0003nr-R8; Thu, 18 Jun 2020 10:10:40 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jlspY-0002wl-IF; Thu, 18 Jun 2020 11:35:40 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlrTp-0008Hu-CG
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 10:09:11 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y18so2247003plr.4
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 03:09:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=0tx33LB4XJjdQBQtJdq8pHurr/XG5qcfV4Bojc0lI48=;
- b=Xjk4lMJzfKrnO0dJ7ag4s5wJ293r8pN6aY06e7dmdJJAdcWKbyXrT4Lrd0ctnmWbZy
- lDoSJPn4Mko3dbuiyumEg9xMiq9cbJM4Z/sxbZIMgQjxIpNigP9LDe2e7gjtnpx0USNq
- 0Q1/Q7hodWx40U/KW/hIyUDq9BoujcY3vIhBE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=0tx33LB4XJjdQBQtJdq8pHurr/XG5qcfV4Bojc0lI48=;
- b=fU8zbwMi1mU1csBHMhhvYjMKa2rPPcxg8ePH1Daa7B/3Qzc11DVQGfnyw/kXJUHu9t
- GpdIavBakAWm6/4UjjazIcJ+TV+gSEkQC+UxyudxvUTkyl9bc/a0jsqclhYIiMdDas2A
- 6NQJFl9ADmCgdtniHhbyBtbV+ANI2+0pBJwZ+nrckcdtVFCT9tjjQvjtqT4gZVkmpC/+
- cpf20EisyCDeOThIMLQ7x4+DKjEyFEKMBkrGU2F6KrEWDkyvf2P/RVw+T46tRJOP2m3n
- cXZEVPKc4zvPUNHj5gp8TSnfMnH+lCraqTeGH0D0lovoLDfQgoyY860g+dcAYcFQabKm
- h0Tw==
-X-Gm-Message-State: AOAM533mGWAl/ZPtbka2lw0woJm/KiUhqe02boo3fszQv9YVA0ngW4BD
- zz/cdl/cN4hKv5HOkKc4Wmfx8w==
-X-Google-Smtp-Source: ABdhPJyQtBMBw9LrfkiQ5o078z+MCo/lVLK2v8zmEGv9YGdhytmSTD/XuQ7v2f2i0mL/BOi1ny7s8w==
-X-Received: by 2002:a17:90b:4c4b:: with SMTP id
- np11mr3550785pjb.58.1592474947624; 
- Thu, 18 Jun 2020 03:09:07 -0700 (PDT)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id o16sm2190793pgg.57.2020.06.18.03.09.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 03:09:06 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Heiko Stuebner <heiko@sntech.de>,
-	Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 4/4] ARM: dts: rockchip: Add Radxa Rock Pi N8 initial support
-Date: Thu, 18 Jun 2020 15:38:32 +0530
-Message-Id: <20200618100832.94202-5-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200618100832.94202-1-jagan@amarulasolutions.com>
-References: <20200618100832.94202-1-jagan@amarulasolutions.com>
-MIME-Version: 1.0
+ id 1jlspU-0002uK-LP
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 11:35:38 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: dafna) with ESMTPSA id 5F5EE2A36A5
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+To: linux-media@vger.kernel.org,
+	laurent.pinchart@ideasonboard.com
+Subject: [PATCH v4 0/4] media: staging: rkisp1: bugs fixes and vars renames
+Date: Thu, 18 Jun 2020 13:35:14 +0200
+Message-Id: <20200618113518.30057-1-dafna.hirschfeld@collabora.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_030909_542072_651C73DD 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200618_043536_837552_345AE063 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,70 +59,57 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Jagan Teki <jagan@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mchehab@kernel.org, dafna.hirschfeld@collabora.com, dafna3@gmail.com,
+ tfiga@chromium.org, hverkuil@xs4all.nl, linux-rockchip@lists.infradead.org,
+ helen.koike@collabora.com, sakari.ailus@linux.intel.com, kernel@collabora.com,
+ ezequiel@collabora.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Rock Pi N8 is a Rockchip RK3288 based SBC, which has
-- VMARC RK3288 SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
+This patchset contains two bug fixes related to the enumeration and
+settings of the sink format of the resizer entity.
+It also contains two patches, one that rename macros and one
+that removes a macro for better readability.
 
-VAMRC RK3288 SOM need to mount on top of radxa dalang
-carrier board for making Rock Pi N8 SBC.
+changes from v3:
+- reordering the patches, so that the patches that rename/remove macros
+come before the the patch "rsz: set default format if the given format is
+    not RKISP1_ISP_SD_SRC"
+- removing the last two patches from v3 that rename the field 'direction'
+and add documentation
 
-So, add initial support for Rock Pi N8 by including rk3288,
-rk3288 vamrc-som and raxda dalang carrier board dtsi files.
+changes from v2:
+- patch 3 is new - remove macro RKISP1_DIR_SINK_SRC since the code is more readable without it.
+- patch 5 - rename 'direction' to 'isp_pads_mask' instead of 'isp_pads_flags'
+- patch 6 is new - add documentation of the struct 'rkisp1_isp_mbus_info'
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm/boot/dts/Makefile              |  1 +
- arch/arm/boot/dts/rk3288-rock-pi-n8.dts | 17 +++++++++++++++++
- 2 files changed, 18 insertions(+)
- create mode 100644 arch/arm/boot/dts/rk3288-rock-pi-n8.dts
+changes from v1:
+- added "Fixes: 56e3b29f9f6b "media: staging: rkisp1: add streaming paths"
+to the commit log of the first two patches.
+- added two patches. One patch rename the macros "RKISP1_DIR_*"
+to "RKISP1_ISP_SD_*", another that rename the field 'direction'
+in 'struct rkisp1_isp_mbus_info' to 'isp_pads_flags'
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index e8dd99201397..1d1b6ac26394 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -964,6 +964,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
- 	rk3288-popmetal.dtb \
- 	rk3288-r89.dtb \
- 	rk3288-rock2-square.dtb \
-+	rk3288-rock-pi-n8.dtb \
- 	rk3288-tinker.dtb \
- 	rk3288-tinker-s.dtb \
- 	rk3288-veyron-brain.dtb \
-diff --git a/arch/arm/boot/dts/rk3288-rock-pi-n8.dts b/arch/arm/boot/dts/rk3288-rock-pi-n8.dts
-new file mode 100644
-index 000000000000..ffec77f0a1b6
---- /dev/null
-+++ b/arch/arm/boot/dts/rk3288-rock-pi-n8.dts
-@@ -0,0 +1,17 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ * Copyright (c) 2019 Vamrs Limited
-+ * Copyright (c) 2019 Amarula Solutions(India)
-+ */
-+
-+/dts-v1/;
-+#include "rk3288.dtsi"
-+#include "rk3288-vmarc-som.dtsi"
-+#include <arm/rockchip-radxa-dalang-carrier.dtsi>
-+
-+/ {
-+	model = "Radxa ROCK Pi N8";
-+	compatible = "radxa,rockpi-n8", "vamrs,rk3288-vmarc-som",
-+		     "rockchip,rk3288";
-+};
+
+Dafna Hirschfeld (4):
+  media: staging: rkisp1: rsz: supported formats are the isp's src
+    formats, not sink formats
+  media: staging: rkisp1: remove macro RKISP1_DIR_SINK_SRC
+  media: staging: rkisp1: rename macros 'RKISP1_DIR_*' to
+    'RKISP1_ISP_SD_*'
+  media: staging: rkisp1: rsz: set default format if the given format is
+    not RKISP1_ISP_SD_SRC
+
+ drivers/staging/media/rkisp1/rkisp1-common.h  |  3 ++
+ drivers/staging/media/rkisp1/rkisp1-isp.c     | 46 +++++++++----------
+ drivers/staging/media/rkisp1/rkisp1-resizer.c |  6 +--
+ 3 files changed, 27 insertions(+), 28 deletions(-)
+
 -- 
-2.25.1
+2.17.1
 
 
 _______________________________________________
