@@ -2,84 +2,72 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F15F11FD6E6
-	for <lists+linux-rockchip@lfdr.de>; Wed, 17 Jun 2020 23:16:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 351071FDCE1
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 03:23:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GQCLSu8bZEQju1P6dB0htGmxGdnyJaMRSsCRLCMU9WY=; b=TIKD5S/Jfxw5eM
-	SNZtxV5tMc0ELzyfedjT+K8r1hNj01Tucq6lMK3fgKiFGW/kdd1CDA3WdArpmq/1wrXJYTjjrrd/d
-	IJiXrD/LhkyliJ1gKRF1K5iGumq8JrkbWqjGyB71aGpKXUz/zKHKJ7S2qlBky0RGoIfTErxqX8S/Z
-	u+wgefo7GVyXiwkqlKA9VENlWZuYoOzpiPemuG9Yl454nvpJZUBumr82blZYok3H3K43pHj5nKSPY
-	jpF0Ey+sjWjPTbeWayi6A/zEq/Cq84Sd0ybhsIajoYeZNl3ujXvqYiqDfG3xwTH9kS9JrL0mXPqo9
-	yqynAlUHFsgvnJ0QfPgg==;
+	List-Owner; bh=fqZ2281gSGYuXVSx6gsBy+uOETZJeSvqS3Gx4OQZso4=; b=UDOVozRjG90i2W
+	1LnyYBNkw+HZtgMD4/31jds42xYUU0SX8BZMWTO97Wjww6MkjuRoVgQDuoxziLXfNfo21ZIIOhSrL
+	YVD6E+ajl0ndySPL6fH8XWmtqORosynDewEYqKZO5zlvss10+M6fDqL9Ip0RBwFgo4RXr8zchDyen
+	te84vEwbzf5G2Sk14N7CjK8chqcLKElK2WIqrxurHgpGxnJ5YViuk9EdAdEgZfrSg8TrDlkknnkiB
+	7VxPJrND5X3MM2KUvhqZr74J3Q/dEtAKtORv8Z3Cwre8fNXHnUjf/98Pb0RyMO8dtFI581kT17+R0
+	EUb3C8VABZI7dJdK52nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlfPc-0006H3-PP; Wed, 17 Jun 2020 21:16:00 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jljHL-00072c-Eo; Thu, 18 Jun 2020 01:23:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlfPL-00064b-5S; Wed, 17 Jun 2020 21:15:44 +0000
-Received: by mail-io1-f68.google.com with SMTP id q8so4648206iow.7;
- Wed, 17 Jun 2020 14:15:43 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=xI0mlKe2wRYjHDHCCF+79f1gMeJVs47ukTuRHuYoNXw=;
- b=OX4Vgd/15ilzN8GxzQ9RBGuC0U6pWPFg9Y4g3M0jwPa++2VzL6n0MKdzrpCcE6SPPv
- 0hDX9fZOVFYxUqYUVW1CsK2teRpQU08J+TiiGUusolCl6FapTWGUlO3SUgI2jUjBk9us
- bODOAKqD1tiP1k7GNK0InzmVtidR2serNcJ+owFtUszbRt/gljXbGPK7gA/MS7vmuP6K
- 4b4RQLXXhACo2lBoZrPPtjjA5Fn0Jlzdkl5zJfbizMViI8B5H6nCRRQyo0hxA5MEoWI2
- O2sF0mi0Om5cmBGkMmL+vPAzlMBMnDGKHZlC/22R7l2mnIfpKcWvvOJfHe0Ad3LsHCTr
- mucw==
-X-Gm-Message-State: AOAM530f5ef1JeEkxzjkjQkGjK8hWzaJvyikboOHLodonAMQAmfrLLXI
- hF3TVEu2/zM8dms+gSqlIg==
-X-Google-Smtp-Source: ABdhPJy9jNQ2ywvtsoluzmREgiIioIKxsPjeXA+erf0DpK8C5v435zxINloN/zcGsS3rvsY1j6EOLA==
-X-Received: by 2002:a05:6602:1204:: with SMTP id
- y4mr1523265iot.44.1592428542398; 
- Wed, 17 Jun 2020 14:15:42 -0700 (PDT)
-Received: from xps15 ([64.188.179.253])
- by smtp.gmail.com with ESMTPSA id l16sm398139ilm.58.2020.06.17.14.15.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 17 Jun 2020 14:15:42 -0700 (PDT)
-Received: (nullmailer pid 2835354 invoked by uid 1000);
- Wed, 17 Jun 2020 21:15:41 -0000
-Date: Wed, 17 Jun 2020 15:15:41 -0600
-From: Rob Herring <robh@kernel.org>
-To: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-Subject: Re: [PATCH v6 1/8] dt-bindings: mtd: Describe Rockchip RK3xxx NAND
- flash controller
-Message-ID: <20200617211541.GB2811091@bogus>
-References: <20200609074020.23860-1-yifeng.zhao@rock-chips.com>
- <20200609074020.23860-2-yifeng.zhao@rock-chips.com>
+ id 1jlj6N-0001yE-QM; Thu, 18 Jun 2020 01:12:26 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EC1B920B1F;
+ Thu, 18 Jun 2020 01:12:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592442742;
+ bh=Bxm1IXhPhmJlEOsXKfUJfwDjGaZpX7kqDL/sa5kdcJM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=QM6/A3ekay6DP8zupekGvHNh3WUzesZF9Q94UREzKi4kZLnNzyWwRL6iX7ZUlu87I
+ bTfDyNATio8is97xEY2AB/g5sUpw5xwmTMz0U8TcIbYTKG6BPJuytd2Na0sgZ/Xm9a
+ 5hu5j6P5H86qKA0xlHM8gOf7O0C/uRPcBUl+nmsk=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.7 196/388] pinctrl: rockchip: fix memleak in
+ rockchip_dt_node_to_map
+Date: Wed, 17 Jun 2020 21:04:53 -0400
+Message-Id: <20200618010805.600873-196-sashal@kernel.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
+References: <20200618010805.600873-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200609074020.23860-2-yifeng.zhao@rock-chips.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_141543_206142_388C0535 
-X-CRM114-Status: GOOD (  19.28  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200617_181223_975459_E94A34CB 
+X-CRM114-Status: GOOD (  12.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,212 +80,75 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, richard@nod.at,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- linux-arm-kernel@lists.infradead.org, vigneshr@ti.com
+Cc: Sasha Levin <sashal@kernel.org>,
+ Dafna Hirschfeld <dafna.hirschfeld@collabora.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 03:40:18PM +0800, Yifeng Zhao wrote:
-> Documentation support for Rockchip RK3xxx NAND flash controllers
-> 
-> Signed-off-by: Yifeng Zhao <yifeng.zhao@rock-chips.com>
-> ---
-> 
-> Changes in v6:
-> - Fix some wrong define
-> - Modified the definition of compatible
-> 
-> Changes in v5:
-> - Fix some wrong define
-> - Add boot-medium define
-> - Remove some compatible define
-> 
-> Changes in v4:
-> - The compatible define with rkxx_nfc
-> - Add assigned-clocks
-> - Fix some wrong define
-> 
-> Changes in v3:
-> - Change the title for the dt-bindings
-> 
-> Changes in v2: None
-> 
->  .../mtd/rockchip,nand-controller.yaml         | 154 ++++++++++++++++++
->  1 file changed, 154 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
-> new file mode 100644
-> index 000000000000..f753fe8248aa
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
-> @@ -0,0 +1,154 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mtd/rockchip,nand-controller.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip SoCs NAND FLASH Controller (NFC)
-> +
-> +allOf:
-> +  - $ref: "nand-controller.yaml#"
-> +
-> +maintainers:
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: rockchip,px30-nfc
-> +      - const: rockchip,rk2928-nfc
-> +      - const: rockchip,rv1108-nfc
-> +      - items:
-> +          - const: rockchip,rk3326-nfc
-> +          - const: rockchip,px30-nfc
-> +      - items:
-> +          - const: rockchip,rk3036-nfc
-> +          - const: rockchip,rk2928-nfc
-> +      - items:
-> +          - const: rockchip,rk3308-nfc
-> +          - const: rockchip,rv1108-nfc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 1
-> +    items:
-> +      - description: Bus Clock
-> +      - description: Module Clock
-> +
-> +  clock-names:
-> +    minItems: 1
-> +    items:
-> +      - const: ahb
-> +      - const: nfc
-> +
-> +  assigned-clocks:
-> +    maxItems: 1
-> +
-> +  assigned-clock-rates:
-> +    maxItems: 1
-> +
-> +  pinctrl-0:
-> +    maxItems: 1
-> +
-> +  pinctrl-names:
-> +    const: default
-> +
-> +  power-domains:
-> +     maxItems: 1
-> +
-> +patternProperties:
-> +  "^nand@[a-f0-9]$":
-> +    type: object
-> +    properties:
-> +      reg:
-> +        minimum: 0
-> +        maximum: 7
-> +
-> +      nand-ecc-mode:
-> +        const: hw
-> +
-> +      nand-ecc-step-size:
-> +        const: 1024
-> +
-> +      nand-ecc-strength:
-> +        enum: [16, 24, 40, 60, 70]
-> +        description:
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 
-This needs a '|' at the end if you want the below line breaks preserved.
+[ Upstream commit d7faa8ffb6be57bf8233a4b5a636d76b83c51ce7 ]
 
-> +          The ECC configurations that can be supported are as follows.
-> +          - NFCv900(PX30 and RK3326) support ecc strength 16, 40, 60 and 70.
-> +          - NFCv600(RK3066 and RK2928) support ecc strength 16, 24, 40 and 60.
-> +          - NFCv622(RK3036 and RK3128) support ecc strength 16, 24, 40 and 60.
-> +          - NFCv800(RK3308 and RV1108) support ecc strength 16.
-> +
-> +      nand-bus-width:
-> +        const: 8
-> +
-> +      rockchip,boot-blks:
-> +        minimum: 2
-> +        default: 16
-> +        allOf:
-> +        - $ref: /schemas/types.yaml#/definitions/uint32
-> +        description:
-> +          The NFC driver need this information to select ECC
-> +          algorithms supported by the BOOTROM.
-> +          Only used in combination with 'nand-is-boot-medium'.
-> +
-> +      rockchip,boot-ecc-strength:
-> +        enum: [16, 24, 40, 60, 70]
-> +        allOf:
-> +        - $ref: /schemas/types.yaml#/definitions/uint32
-> +        description:
-> +          If specified it indicates that a different BCH/ECC setting is
-> +          supported by the BOOTROM.
-> +          - NFCv900(PX30 and RK3326) support ecc strength 16 and 70.
-> +          - NFCv600(RK3066 and RK2928) support ecc strength 16, 24, 40 and 60.
-> +          - NFCv622(RK3036 and RK3128) support ecc strength 16, 24, 40 and 60.
-> +          - NFCv800(RK3308 and RV1108) support ecc strength 16.
-> +          Only used in combination with 'nand-is-boot-medium'.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rk3308-cru.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    nfc: nand-controller@ff4b0000 {
-> +      compatible = "rockchip,rk3308-nfc",
-> +                   "rockchip,rv1108-nfc";
-> +      reg = <0x0 0xff4b0000 0x0 0x4000>;
-> +      interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
-> +      clocks = <&cru HCLK_NANDC>, <&cru SCLK_NANDC>;
-> +      clock-names = "ahb", "nfc";
-> +      assigned-clocks = <&clks SCLK_NANDC>;
-> +      assigned-clock-rates = <150000000>;
-> +
-> +      pinctrl-0 = <&flash_ale &flash_bus8 &flash_cle &flash_csn0
-> +                   &flash_rdn &flash_rdy &flash_wrn>;
-> +      pinctrl-names = "default";
-> +
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +
-> +      nand@0 {
-> +        reg = <0>;
-> +        label = "rk-nand";
-> +        nand-bus-width = <8>;
-> +        nand-ecc-mode = "hw";
-> +        nand-ecc-step-size = <1024>;
-> +        nand-ecc-strength = <16>;
-> +        nand-is-boot-medium;
-> +        rockchip,boot-blks = <8>;
-> +        rockchip,boot-ecc-strength = <16>;
-> +      };
-> +    };
-> +
-> +...
-> -- 
-> 2.17.1
-> 
-> 
-> 
+In function rockchip_dt_node_to_map, a new_map variable is
+allocated by:
+
+new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
+		       GFP_KERNEL);
+
+This uses devres and attaches new_map to the pinctrl driver.
+This cause a leak since new_map is not released when the probed
+driver is removed. Fix it by using kcalloc to allocate new_map
+and free it in `rockchip_dt_free_map`
+
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Link: https://lore.kernel.org/r/20200506100903.15420-1-dafna.hirschfeld@collabora.com
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/pinctrl/pinctrl-rockchip.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/pinctrl/pinctrl-rockchip.c b/drivers/pinctrl/pinctrl-rockchip.c
+index 098951346339..d7869b636889 100644
+--- a/drivers/pinctrl/pinctrl-rockchip.c
++++ b/drivers/pinctrl/pinctrl-rockchip.c
+@@ -508,8 +508,8 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ 	}
+ 
+ 	map_num += grp->npins;
+-	new_map = devm_kcalloc(pctldev->dev, map_num, sizeof(*new_map),
+-								GFP_KERNEL);
++
++	new_map = kcalloc(map_num, sizeof(*new_map), GFP_KERNEL);
+ 	if (!new_map)
+ 		return -ENOMEM;
+ 
+@@ -519,7 +519,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ 	/* create mux map */
+ 	parent = of_get_parent(np);
+ 	if (!parent) {
+-		devm_kfree(pctldev->dev, new_map);
++		kfree(new_map);
+ 		return -EINVAL;
+ 	}
+ 	new_map[0].type = PIN_MAP_TYPE_MUX_GROUP;
+@@ -546,6 +546,7 @@ static int rockchip_dt_node_to_map(struct pinctrl_dev *pctldev,
+ static void rockchip_dt_free_map(struct pinctrl_dev *pctldev,
+ 				    struct pinctrl_map *map, unsigned num_maps)
+ {
++	kfree(map);
+ }
+ 
+ static const struct pinctrl_ops rockchip_pctrl_ops = {
+-- 
+2.25.1
+
 
 _______________________________________________
 Linux-rockchip mailing list
