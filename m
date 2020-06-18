@@ -2,79 +2,77 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 353D91FF8B0
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 18:08:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9A6B1FF8E4
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 18:12:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2dPwuZ2LMBNZVi8gVndOEj1miBQ6OgSRSKbmAOyF49M=; b=gkC0scvrdauWCH
-	mp4xubG1vYYFx1gn+nD70ECJV+YBEbcX/iQFNIeSWXcYEZMSRtHBKPs2uqdGcvRySMnBbL6J9nVsv
-	z96MVpftwWhp8Py7NsvqiTNBfXN3OEBbvnz2EAaUb+GrARZq5W0QiZYCNASndHOog+irIILlhrDEV
-	EPmeZW2I2qqG75pFoLcoqwo4Nam+HeNavTXDcpnJPm7MMBjuDbtcsMnoKDCoNgHRiCLqB2I+39oSQ
-	GiFEGYvLRQ7lmCa3F8r5n2nBwiem0/zXDGA49cjFuLGHRagpXAMoHNj0WMmn4sOekAw2KR5vQWyIv
-	iAqxbyzLTHyI2hI0Dk5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aOdCR8Q1HXbE9nKWqLUwXTYSeagq0Zux4JxO9N8lknc=; b=CATcZk9Afsc3xE
+	IyZh+za+zuHDEfiz/6myHO3+Xtt7PhKQFsmgdMcBwKAGTIRn60OYy158O7pUZokZyJ8MwSoSoO6Z0
+	c9aK+/I4oH2Q3+TuNhUtml2MtOEi4dH2E5caTZ3FyulUpUUJyVJ+ySgZnNforauVZJOR66KYLUt9l
+	T4ae4lFmyht0nzhCbECAwJSSBxZ/itjInauw1XGm7rldSwN0QsJbs7wsdmLnE17DNb86Jud6VnRZk
+	XOpJ+ls5DL1Y0Wkq6Mnz9/w26bxRrOh+gdzOZbmM6SAVwX+fjUzCc86sSf/Bu7Hh/aoe7XMni5tNz
+	DY6gHmWJMKOxybEQPPsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlx5Q-0000SK-Hg; Thu, 18 Jun 2020 16:08:20 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jlx9W-0003i0-VW; Thu, 18 Jun 2020 16:12:34 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlx5M-0000QK-S1
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 16:08:18 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id jz3so2749214pjb.0
- for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 09:08:16 -0700 (PDT)
+ id 1jlx9U-0003fg-LJ
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 16:12:33 +0000
+Received: by mail-pg1-x542.google.com with SMTP id v14so3122101pgl.1
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 09:12:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=mNYUanoA/LbUwSUYp2wZmC9gOha0WbAjao5ZgQikr2M=;
- b=W0hvtWN9mgyoniye/nvyx8ActCUSCH8yS6vcU0KnTlZ/vTKwM66IvWUxLNKGR9I9wv
- E1+m3eCNCpv9n1YZjDgPdTp3YTaNMlXv1Uj8Ufb+89PTxXf6WRG7xfPHYufyTD/K72WW
- J4qD1EAEpgp/9hKYvXdEqD902UNVT+aAnWupw=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=zoj9WyU2bqQK3SG2yN4XyxA8U89PNJD0eBlDF8ndOdo=;
+ b=bAZVNDaCtKdmj8oxdFA2i8cvSo+cGlcIqA1IOz8X+6zZgdx8WolQPC5KoZDBG1upKl
+ iIPbGgGab7/ZizBIolsYE3+z4JXS6ezUamzkcNxWMSP4+oj2aZ5/iuk1lcLoOIlp/4LN
+ tCdZ9wjbqoQx3o0ac1DMwzMR8PiCQK7tUnWHc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=mNYUanoA/LbUwSUYp2wZmC9gOha0WbAjao5ZgQikr2M=;
- b=KvdxjimMaoN0l9AJbyzXGyb187wuY4dNEyJRLqNHwoY0TJ5tSxNkf+3ZpyqPyGyIKV
- Wzt7h9VVsUTSXLeSVFlNlz+Od5E2zPJYPJHDN/9v7r50w58MsyUdkIzQaDLHZilKAvDv
- EIRZRYFwLbzC3WNiROvOx/f6mV9AbZtvAeaaUevA5v5hcID1XNEXMQX9hJsJcaUYnnyY
- 7JEQCMw9olKTsfR6FOa5Wvgqxo62Fvc+bPDimGn9i2cHmOT+hxoVh2Yd2Fe+Bhm2OCzu
- pbnRND9YQVd7+PYM4GrAOPL/GbVq8UTDl5NeWhQgOwijbxAuGNxUk7BcfgOsZAiJzyrL
- Vjuw==
-X-Gm-Message-State: AOAM532in1xiKIloWgn7YdgU4rNG3fVsTC8CvtujUcbRmokY7ouou9CB
- 0jC1WUqgtYltPRfLbpAY466MHA==
-X-Google-Smtp-Source: ABdhPJzsrh+P1yYUHPaBZeZ4jslJlN28hfslhJcxjL+rdG+0RyPW3aiW4RwMtmFyAgEth+Tm0ZmAow==
-X-Received: by 2002:a17:90b:1013:: with SMTP id
- gm19mr5002759pjb.231.1592496496134; 
- Thu, 18 Jun 2020 09:08:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=zoj9WyU2bqQK3SG2yN4XyxA8U89PNJD0eBlDF8ndOdo=;
+ b=tRXn/8XJU1k1RNs1Oi+sUB6A7HL4EX3TJzX9mVYzBLi/NzQP5T4IRVK1z+g44C3+qk
+ UcsUXb2PT9cm7rL1aEhQWSZ+qzQDZ2RGmjO5HGMZpdupxFbsDdkSVf6IjKV1l9xkcQ3S
+ RdS7UGeB1W8DXNEmcQqA6dLOlJ02sO1rzPp1GR/GroZQndVvf5CWtQSguJajXZjwOeUv
+ MlOA3F/Wgp1Zpv5oXVKLx+WBajT7/Wi8XRhsTzEtz/imA1MgJxHUImlSrAoxqfDQuNuk
+ gPl4UHKujiuR+EB7B6fDIjFvxkkaKC02VIQRVaGiv+sYaKt7z4AhLZ83W3JQzJOh7BYk
+ JZHQ==
+X-Gm-Message-State: AOAM530aBEVNSJK8CzTM204Lv3LMGevRX1UWikrEyJ4Kjcw1CVYMvPrr
+ UYVQQx5pr/jDQJhliqJmjvX31ayHohHEuw==
+X-Google-Smtp-Source: ABdhPJzw/VKoRZ1PKBhjqGuAkHNvVhRIrB5w+7T4oeRMe9/7Y5KB4A3uFDcG8S+pa0pN+uNdmtrcRw==
+X-Received: by 2002:a63:5d1:: with SMTP id 200mr3981969pgf.59.1592496751989;
+ Thu, 18 Jun 2020 09:12:31 -0700 (PDT)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:b0c7:f192:869b:df87])
- by smtp.gmail.com with ESMTPSA id u4sm3264943pfl.102.2020.06.18.09.08.12
+ by smtp.gmail.com with ESMTPSA id b3sm3247252pft.127.2020.06.18.09.12.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 18 Jun 2020 09:08:15 -0700 (PDT)
+ Thu, 18 Jun 2020 09:12:31 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Kever Yang <kever.yang@rock-chips.com>,
  Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
  Simon Glass <sjg@chromium.org>
-Subject: [PATCH v4 5/5] roc-rk3399-pc: Set LED only during POR and pwr_key=y
-Date: Thu, 18 Jun 2020 21:09:48 +0530
-Message-Id: <20200618153948.218506-6-jagan@amarulasolutions.com>
+Subject: [PATCH 0/3] rockchip: Add Radxa Rock Pi N8 support
+Date: Thu, 18 Jun 2020 21:42:17 +0530
+Message-Id: <20200618161220.219452-1-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200618153948.218506-1-jagan@amarulasolutions.com>
-References: <20200618153948.218506-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_090816_908488_E986693D 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200618_091232_701613_FA3347DD 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,144 +95,48 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: U-Boot-Denx <u-boot@lists.denx.de>, linux-rockchip@lists.infradead.org,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Suniel Mahesh <sunil@amarulasolutions.com>
+Cc: linux-rockchip@lists.infradead.org, Tom Cubie <tom@radxa.com>,
+ U-Boot-Denx <u-boot@lists.denx.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ Suniel Mahesh <sunil@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-ROC-RK3399-PC has specific set of configurations for
-on-board led setup.
+Rock Pi N8 is a Rockchip RK3288 based SBC, which has
+- VMARC RK3288 SOM (as per SMARC standard) from Vamrs.
+- Compatible carrier board from Radxa.
 
-Due to easiness for user to know the state of the board
-roc-rk339-pc board code will setup the low power led
-on/off, and waiting for user to press power key and then
-glow full power led.
+VMARC RK3288 SOM need to mount on top of dalang carrier
+board for making Rock PI N8 SBC.
 
-All this needs to happen only during power-on-reset not
-for soft reset or WDT.
+All these respective dts patches are in Linux mainling list.
 
-Also, it is not a proper usage to ask the user to press
-the Power key if the board connected remotely, so add
-the environment variable 'pwr_key' to check as well.
+N8 board support TPL boot flow.
 
-So, user need to press Power key only
-- during POR
-- pwr_key=y
+Any inputs?
+Jagan.
 
-Tested-by: Suniel Mahesh <sunil@amarulasolutions.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
-Changes for v4:
-- none
+Jagan Teki (3):
+  ARM: dts: rockchip: radxa-dalang: Update sdmmc properties
+  ARM: dts: rockchip: Add VMARC RK3288 SOM initial support
+  ARM: dts: rockchip: Add Radxa Rock Pi N8 initial support
 
- board/firefly/roc-pc-rk3399/spl.c         | 35 ++++++++++++++++++++++-
- configs/roc-pc-mezzanine-rk3399_defconfig |  4 ++-
- configs/roc-pc-rk3399_defconfig           |  4 ++-
- 3 files changed, 40 insertions(+), 3 deletions(-)
+ arch/arm/dts/Makefile                         |   1 +
+ arch/arm/dts/rk3288-rock-pi-n8-u-boot.dtsi    |  33 ++
+ arch/arm/dts/rk3288-rock-pi-n8.dts            |  17 ++
+ arch/arm/dts/rk3288-vmarc-som.dtsi            | 289 ++++++++++++++++++
+ arch/arm/dts/rk3399pro-vmarc-som.dtsi         |   5 +
+ .../dts/rockchip-radxa-dalang-carrier.dtsi    |   2 -
+ board/rockchip/evb_rk3288/MAINTAINERS         |   6 +
+ configs/rock-pi-n8-rk3288_defconfig           |  66 ++++
+ 8 files changed, 417 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm/dts/rk3288-rock-pi-n8-u-boot.dtsi
+ create mode 100644 arch/arm/dts/rk3288-rock-pi-n8.dts
+ create mode 100644 arch/arm/dts/rk3288-vmarc-som.dtsi
+ create mode 100644 configs/rock-pi-n8-rk3288_defconfig
 
-diff --git a/board/firefly/roc-pc-rk3399/spl.c b/board/firefly/roc-pc-rk3399/spl.c
-index a7664c6b86..771a7fb2f2 100644
---- a/board/firefly/roc-pc-rk3399/spl.c
-+++ b/board/firefly/roc-pc-rk3399/spl.c
-@@ -4,16 +4,49 @@
-  */
- 
- #include <common.h>
-+#include <env.h>
- #include <spl_gpio.h>
-+#include <asm/io.h>
-+#include <asm/arch-rockchip/cru.h>
- #include <asm/arch-rockchip/gpio.h>
-+#include <asm/arch-rockchip/grf_rk3399.h>
- 
-+#define PMUGRF_BASE		0xff320000
- #define GPIO0_BASE		0xff720000
- 
-+/**
-+ * LED setup for roc-rk3399-pc
-+ *
-+ * 1. Set the low power leds (only during POR, pwr_key env is 'y')
-+ *    glow yellow LED, termed as low power
-+ *    poll for on board power key press
-+ *    once powe key pressed, turn off yellow
-+ * 2. Turn on red LED, indicating full power mode
-+ */
- static void led_setup(void)
- {
- 	struct rockchip_gpio_regs * const gpio0 = (void *)GPIO0_BASE;
-+	struct rk3399_pmugrf_regs * const pmugrf = (void *)PMUGRF_BASE;
-+	bool press_pwr_key = false;
-+
-+	if (IS_ENABLED(CONFIG_SPL_ENV_SUPPORT)) {
-+		env_init();
-+		env_load();
-+		if (env_get_yesno("pwr_key") == 1)
-+			press_pwr_key = true;
-+	}
-+
-+	if (press_pwr_key && !strcmp(get_reset_cause(), "POR")) {
-+		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 1);
-+
-+		spl_gpio_set_pull(&pmugrf->gpio0_p, GPIO(BANK_A, 5),
-+				  GPIO_PULL_NORMAL);
-+		while (readl(&gpio0->ext_port) & 0x20)
-+			;
-+
-+		spl_gpio_output(gpio0, GPIO(BANK_A, 2), 0);
-+	}
- 
--	/* Turn on red LED, indicating full power mode */
- 	spl_gpio_output(gpio0, GPIO(BANK_B, 5), 1);
- }
- 
-diff --git a/configs/roc-pc-mezzanine-rk3399_defconfig b/configs/roc-pc-mezzanine-rk3399_defconfig
-index 060b4bfecf..7ca9fd0906 100644
---- a/configs/roc-pc-mezzanine-rk3399_defconfig
-+++ b/configs/roc-pc-mezzanine-rk3399_defconfig
-@@ -18,7 +18,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc-mezzanine.dtb"
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
--CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
-+CONFIG_SPL_ENV_SUPPORT=y
- CONFIG_SPL_SPI_LOAD=y
- CONFIG_TPL=y
- CONFIG_CMD_BOOTZ=y
-@@ -33,6 +34,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc-mezzanine"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
- CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_SPL_DM_SEQ_ALIAS=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
- CONFIG_MISC=y
-diff --git a/configs/roc-pc-rk3399_defconfig b/configs/roc-pc-rk3399_defconfig
-index 9897a52cd8..440c1ab303 100644
---- a/configs/roc-pc-rk3399_defconfig
-+++ b/configs/roc-pc-rk3399_defconfig
-@@ -18,7 +18,8 @@ CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-roc-pc.dtb"
- CONFIG_DISPLAY_BOARDINFO_LATE=y
- # CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
- CONFIG_SPL_STACK_R=y
--CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
-+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x20000
-+CONFIG_SPL_ENV_SUPPORT=y
- CONFIG_SPL_SPI_LOAD=y
- CONFIG_TPL=y
- CONFIG_CMD_BOOTZ=y
-@@ -32,6 +33,7 @@ CONFIG_DEFAULT_DEVICE_TREE="rk3399-roc-pc"
- CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
- CONFIG_ENV_IS_IN_SPI_FLASH=y
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
-+CONFIG_SPL_DM_SEQ_ALIAS=y
- CONFIG_ROCKCHIP_GPIO=y
- CONFIG_SYS_I2C_ROCKCHIP=y
- CONFIG_MISC=y
 -- 
 2.25.1
 
