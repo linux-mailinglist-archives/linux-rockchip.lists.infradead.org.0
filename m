@@ -2,55 +2,56 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D582A1FFB51
-	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 20:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A2641FFB58
+	for <lists+linux-rockchip@lfdr.de>; Thu, 18 Jun 2020 20:54:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pFzduzjfJ+pxDYjoEuxqKYtmc67K0LZcnkzjQEn1olE=; b=JoLBaIZXT4xkOEJaANUQrcz13
-	zIdCwznBEO4ocEshwxVHFMH2rX0wN8ZnPS5khEwZ2Ob4HSr1CENxQ5RTuTj2XDbNYGQjqbgN6YmmF
-	YZGwuTnEeKazfPQz0yPtHenIYBArYVWWAbxW1EEeDHoG8ocQUCXybW5fFSzkEkv9f9JCWqlY1goMW
-	iiHO9x/Q3NEt5AlO+8ERAeffC27iQwGPXqRy9bfgG0QjP24VwVeWwZTE3+419t9zid4CKxj+oivYg
-	zHxyAI4YdK0DrSacCDMRvwBQJGnc+8tped3xdxl+Kvs4yk5tKkkMp+AXFXOjnAYAmipK8S5SDoh4/
-	kfcUgDAKA==;
+	 bh=eVrF1aQmZtgQ6HQJ8UoP60lcH6UTlvYU204e9vuosMU=; b=ttRKNllrVcmT/GCr26PZdA67e
+	SX2CzK6guIBypJuLNR0aKl7T2cHP5OFfMFhX5NhjZdXjUE18Y+iEtQIg6fv1Mgok3OKL7StquPrVE
+	ImzlAjx4RMvvW3ga1hwhYsi0gO0uHabnnOkh0CC9Mkg9lbTF+FX7K8FCt5VYLl0oFSgCaWJWlffbT
+	JSnxJ4gPkKB/knACkZvcTsnmPLWQix5RjhWAHbENZO2O6U0bA3w0OBQU+ydkf0Er1XqqlttpspNM9
+	gyEl4Vmmmg9rqlr02jBcK09yALBOH05Phy2l5o1eWGaHET6/n5FGBImdCV9vCsuJsCpf1opcWOLAQ
+	iGQSHVElw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlzcN-0002j9-5y; Thu, 18 Jun 2020 18:50:31 +0000
+	id 1jlzgQ-0003rv-D6; Thu, 18 Jun 2020 18:54:42 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlzcK-0002ia-7p
- for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 18:50:30 +0000
+ id 1jlzgL-0003r9-ME
+ for linux-rockchip@lists.infradead.org; Thu, 18 Jun 2020 18:54:39 +0000
 Received: from [IPv6:2003:cb:871f:5b00:4da3:fbf7:1b31:245]
  (p200300cb871f5b004da3fbf71b310245.dip0.t-ipconnect.de
  [IPv6:2003:cb:871f:5b00:4da3:fbf7:1b31:245])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: dafna)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id F112F2A4F2E;
- Thu, 18 Jun 2020 19:50:25 +0100 (BST)
-Subject: Re: [PATCH v2 3/4] media: staging: rkisp1: rsz: set output format to
- YUV422 if cap format is YUV444
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 231272A4AC8;
+ Thu, 18 Jun 2020 19:54:36 +0100 (BST)
+Subject: Re: [RFC v3 2/2] media: staging: rkisp1: allow quantization
+ conversion from userspace for isp source pad
 To: Tomasz Figa <tfiga@chromium.org>
-References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
- <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
- <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
- <aa52f9f8-d9e9-06b2-22df-bbab2d26b516@collabora.com>
- <20200618174752.GA10831@chromium.org>
- <9ee01443-985d-751c-fff9-fa90337de68d@collabora.com>
- <20200618181220.GC10831@chromium.org>
+References: <20200416145605.12399-1-dafna.hirschfeld@collabora.com>
+ <20200416145605.12399-2-dafna.hirschfeld@collabora.com>
+ <20200604175443.GB76282@chromium.org>
+ <87f11ebf-aecf-7eee-f18c-98dd4e8d692b@collabora.com>
+ <CAAFQd5BPOUFsKb0Qa_6QiytE6=OM3jjSVWyoikdgyNvr4vu0fw@mail.gmail.com>
+ <CAAFQd5DoUu+bMO1GeSX0qbsW5u-KDmRvtO2kfGePghrv59bQmw@mail.gmail.com>
+ <62611ccd-e4cd-728a-355b-532661b36be0@collabora.com>
+ <20200618184923.GB68039@chromium.org>
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Message-ID: <f1660285-f6cb-6157-1e56-2974bc549fef@collabora.com>
-Date: Thu, 18 Jun 2020 20:50:23 +0200
+Message-ID: <a163dbb3-8278-684e-6324-4c36924ed335@collabora.com>
+Date: Thu, 18 Jun 2020 20:54:34 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200618181220.GC10831@chromium.org>
+In-Reply-To: <20200618184923.GB68039@chromium.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_115028_539106_6C9D34B9 
-X-CRM114-Status: GOOD (  32.09  )
+X-CRM114-CacheID: sfid-20200618_115437_999005_71777C5D 
+X-CRM114-Status: GOOD (  26.31  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -70,8 +71,7 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+Cc: Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
  Helen Koike <helen.koike@collabora.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
@@ -85,111 +85,251 @@ Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.o
 
 
 
-On 18.06.20 20:12, Tomasz Figa wrote:
-> On Thu, Jun 18, 2020 at 08:00:37PM +0200, Dafna Hirschfeld wrote:
+On 18.06.20 20:49, Tomasz Figa wrote:
+> On Thu, Jun 18, 2020 at 08:26:33PM +0200, Dafna Hirschfeld wrote:
 >>
 >>
->> On 18.06.20 19:47, Tomasz Figa wrote:
->>> On Fri, Jun 12, 2020 at 02:45:00PM +0200, Dafna Hirschfeld wrote:
+>> On 18.06.20 19:27, Tomasz Figa wrote:
+>>> On Wed, Jun 10, 2020 at 2:08 PM Tomasz Figa <tfiga@chromium.org> wrote:
 >>>>
->>>>
->>>> On 27.05.20 01:09, Tomasz Figa wrote:
->>>>> On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
->>>>> <dafna.hirschfeld@collabora.com> wrote:
->>>>>>
->>>>>> If the capture format is YUV444M then the memory input format
->>>>>> should be YUV422, so the resizer should not change the default
->>>>>> hdiv, vdiv in that case.
->>>>>>
->>>>>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
->>>>>> ---
->>>>>>     drivers/staging/media/rkisp1/rkisp1-resizer.c | 7 ++++---
->>>>>>     1 file changed, 4 insertions(+), 3 deletions(-)
->>>>>>
->>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
->>>>>> index 04a29af8cc92..5f9740ddd558 100644
->>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
->>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
->>>>>> @@ -394,10 +394,11 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
->>>>>>             * (4:2:2 -> 4:2:0 for example). So the width/height of the CbCr
->>>>>>             * streams should be set according to the pixel format in the capture.
->>>>>>             * The resizer always gets the input as YUV422. If the capture format
->>>>>> -        * is RGB then the memory input (the resizer output) should be YUV422
->>>>>> -        * so we use the hdiv, vdiv of the YUV422 info in this case.
->>>>>> +        * is RGB or YUV444 then the memory input (the resizer output) should
->>>>>> +        * be YUV422 so we use the hdiv, vdiv of the YUV422 info in this case.
->>>>>>             */
->>>>>> -       if (v4l2_is_format_yuv(cap->pix.info)) {
->>>>>> +       if (v4l2_is_format_yuv(cap->pix.info) &&
->>>>>> +           cap->pix.info->format != V4L2_PIX_FMT_YUV444M) {
->>>>>>                    src_c.width = cap->pix.info->hdiv;
->>>>>>                    src_c.height = cap->pix.info->vdiv;
+>>>> On Thu, Jun 4, 2020 at 9:11 PM Dafna Hirschfeld
+>>>> <dafna.hirschfeld@collabora.com> wrote:
 >>>>>
->>>>> As pointed out in another thread, this should have been the original
->>>>> size divided by the divisor and not just the latter alone.
+>>>>> Hi
 >>>>>
->>>>> It seems a bit suspicious to me that we don't need to upscale the
->>>>> chroma planes here, because it would mean that the MI itself would be
->>>>> doing some horizontal pixel doubling. The hardware documentation
->>>>> doesn't really explain this, though.
+>>>>> On 04.06.20 19:54, Tomasz Figa wrote:
+>>>>>> On Thu, Apr 16, 2020 at 04:56:05PM +0200, Dafna Hirschfeld wrote:
+>>>>>>> The isp entity has a hardware support to force full range quantization
+>>>>>>> for YUV formats. Use the new API to indicate userspace that
+>>>>>>> quantization conversion is supported by adding the flag
+>>>>>>> V4L2_SUBDEV_MBUS_CODE_CSC_QUANTIZATION during media code enumeration.
+>>>>>>> Then uppon s_fmt on the video source pad, we assign the
+>>>>>>> quantization from userspace for YUV formats.
+>>>>>>> Also in the capture and resizer entities we retrieve the colorspace
+>>>>>>> from the isp entity.
+>>>>>>>
+>>>>>>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>>>>>>> ---
+>>>>>>>     drivers/staging/media/rkisp1/rkisp1-capture.c | 28 ++++++-------
+>>>>>>>     drivers/staging/media/rkisp1/rkisp1-common.h  |  2 +
+>>>>>>>     drivers/staging/media/rkisp1/rkisp1-isp.c     | 39 +++++++++++++++++--
+>>>>>>>     drivers/staging/media/rkisp1/rkisp1-resizer.c | 13 +++++++
+>>>>>>>     4 files changed, 65 insertions(+), 17 deletions(-)
+>>>>>>>
+>>>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-capture.c b/drivers/staging/media/rkisp1/rkisp1-capture.c
+>>>>>>> index fbf62399fe3d..aca0f93bc772 100644
+>>>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-capture.c
+>>>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-capture.c
+>>>>>>> @@ -1066,14 +1066,13 @@ static void rkisp1_try_fmt(const struct rkisp1_capture *cap,
+>>>>>>>                           const struct v4l2_format_info **fmt_info)
+>>>>>>>     {
+>>>>>>>        const struct rkisp1_capture_config *config = cap->config;
+>>>>>>> -    struct rkisp1_capture *other_cap =
+>>>>>>> -                    &cap->rkisp1->capture_devs[cap->id ^ 1];
+>>>>>>>        const struct rkisp1_capture_fmt_cfg *fmt;
+>>>>>>>        const struct v4l2_format_info *info;
+>>>>>>>        const unsigned int max_widths[] = { RKISP1_RSZ_MP_SRC_MAX_WIDTH,
+>>>>>>>                                            RKISP1_RSZ_SP_SRC_MAX_WIDTH };
+>>>>>>>        const unsigned int max_heights[] = { RKISP1_RSZ_MP_SRC_MAX_HEIGHT,
+>>>>>>>                                             RKISP1_RSZ_SP_SRC_MAX_HEIGHT};
+>>>>>>> +    struct v4l2_subdev_format isp_sd_fmt;
+>>>>>>>
+>>>>>>>        fmt = rkisp1_find_fmt_cfg(cap, pixm->pixelformat);
+>>>>>>>        if (!fmt) {
+>>>>>>> @@ -1081,24 +1080,27 @@ static void rkisp1_try_fmt(const struct rkisp1_capture *cap,
+>>>>>>>                pixm->pixelformat = fmt->fourcc;
+>>>>>>>        }
+>>>>>>>
+>>>>>>> +    rkisp1_get_isp_src_fmt(cap->rkisp1, &isp_sd_fmt);
+>>>>>>> +    pixm->field = isp_sd_fmt.format.field;
+>>>>>>> +    pixm->colorspace = isp_sd_fmt.format.colorspace;
+>>>>>>> +    pixm->ycbcr_enc = isp_sd_fmt.format.ycbcr_enc;
+>>>>>>> +    pixm->xfer_func = isp_sd_fmt.format.xfer_func;
+>>>>>>> +
+>>>>>>> +    /*
+>>>>>>> +     * isp has a feature to set full range quantization for yuv formats.
+>>>>>>
+>>>>>> How about "select between limited and full range for YUV formats"?
+>>>>>>
+>>>>>>> +     * so we need to get the format from the isp.
+>>>>>>> +     */
+>>>>>>> +    pixm->quantization = isp_sd_fmt.format.quantization;
+>>>>>>> +    if (!v4l2_is_format_yuv(cap->pix.info))
+>>>>>>> +            pixm->quantization = V4L2_QUANTIZATION_FULL_RANGE;
+>>>>>>> +
+>>>>>>>        pixm->width = clamp_t(u32, pixm->width,
+>>>>>>>                              RKISP1_RSZ_SRC_MIN_WIDTH, max_widths[cap->id]);
+>>>>>>>        pixm->height = clamp_t(u32, pixm->height,
+>>>>>>>                               RKISP1_RSZ_SRC_MIN_HEIGHT, max_heights[cap->id]);
+>>>>>>>
+>>>>>>> -    pixm->field = V4L2_FIELD_NONE;
+>>>>>>> -    pixm->colorspace = V4L2_COLORSPACE_DEFAULT;
+>>>>>>> -    pixm->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
+>>>>>>> -
+>>>>>>>        info = rkisp1_fill_pixfmt(pixm, cap->id);
+>>>>>>>
+>>>>>>> -    /* can not change quantization when stream-on */
+>>>>>>> -    if (other_cap->is_streaming)
+>>>>>>> -            pixm->quantization = other_cap->pix.fmt.quantization;
+>>>>>>> -    /* output full range by default, take effect in params */
+>>>>>>> -    else if (!pixm->quantization ||
+>>>>>>> -             pixm->quantization > V4L2_QUANTIZATION_LIM_RANGE)
+>>>>>>> -            pixm->quantization = V4L2_QUANTIZATION_FULL_RANGE;
+>>>>>>>
+>>>>>>>        if (fmt_cfg)
+>>>>>>>                *fmt_cfg = fmt;
+>>>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-common.h b/drivers/staging/media/rkisp1/rkisp1-common.h
+>>>>>>> index 2d7b7e078636..7a5576fa14c9 100644
+>>>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-common.h
+>>>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-common.h
+>>>>>>> @@ -300,6 +300,8 @@ int rkisp1_isp_register(struct rkisp1_device *rkisp1,
+>>>>>>>                        struct v4l2_device *v4l2_dev);
+>>>>>>>     void rkisp1_isp_unregister(struct rkisp1_device *rkisp1);
+>>>>>>>
+>>>>>>> +int rkisp1_get_isp_src_fmt(struct rkisp1_device *rkisp1,
+>>>>>>> +                       struct v4l2_subdev_format *sd_fmt);
+>>>>>>>     const struct rkisp1_isp_mbus_info *rkisp1_isp_mbus_info_get(u32 mbus_code);
+>>>>>>>
+>>>>>>>     irqreturn_t rkisp1_isp_isr(struct rkisp1_device *rkisp1);
+>>>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-isp.c b/drivers/staging/media/rkisp1/rkisp1-isp.c
+>>>>>>> index dee8e96f3900..6fdf5ed0b6b1 100644
+>>>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-isp.c
+>>>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-isp.c
+>>>>>>> @@ -613,6 +613,10 @@ static int rkisp1_isp_enum_mbus_code(struct v4l2_subdev *sd,
+>>>>>>>
+>>>>>>>                if (code->index == pos - 1) {
+>>>>>>>                        code->code = fmt->mbus_code;
+>>>>>>> +                    if (fmt->pixel_enc == V4L2_PIXEL_ENC_YUV &&
+>>>>>>> +                        dir == RKISP1_DIR_SRC)
+>>>>>>> +                            code->flags =
+>>>>>>> +                                    V4L2_SUBDEV_MBUS_CODE_CSC_QUANTIZATION;
+>>>>>>>                        return 0;
+>>>>>>>                }
+>>>>>>>        }
+>>>>>>> @@ -639,12 +643,21 @@ static int rkisp1_isp_init_config(struct v4l2_subdev *sd,
+>>>>>>>        sink_crop->height = RKISP1_DEFAULT_HEIGHT;
+>>>>>>>        sink_crop->left = 0;
+>>>>>>>        sink_crop->top = 0;
+>>>>>>> +    sink_fmt->colorspace = V4L2_COLORSPACE_SRGB;
+>>>>>>> +    sink_fmt->ycbcr_enc = V4L2_MAP_YCBCR_ENC_DEFAULT(sink_fmt->colorspace);
+>>>>>>> +    sink_fmt->xfer_func = V4L2_MAP_XFER_FUNC_DEFAULT(sink_fmt->colorspace);
+>>>>>>> +    sink_fmt->quantization = V4L2_QUANTIZATION_FULL_RANGE;
+>>>>>>> +
+>>>>>>>
+>>>>>>>        src_fmt = v4l2_subdev_get_try_format(sd, cfg,
+>>>>>>>                                             RKISP1_ISP_PAD_SOURCE_VIDEO);
+>>>>>>>        *src_fmt = *sink_fmt;
+>>>>>>>        src_fmt->code = RKISP1_DEF_SRC_PAD_FMT;
+>>>>>>> -    src_fmt->quantization = V4L2_QUANTIZATION_FULL_RANGE;
+>>>>>>> +    src_fmt->colorspace = V4L2_COLORSPACE_SRGB;
+>>>>>>> +    src_fmt->ycbcr_enc = V4L2_MAP_YCBCR_ENC_DEFAULT(src_fmt->colorspace);
+>>>>>>> +    src_fmt->xfer_func = V4L2_MAP_XFER_FUNC_DEFAULT(src_fmt->colorspace);
+>>>>>>> +    src_fmt->quantization = V4L2_QUANTIZATION_LIM_RANGE;
+>>>>>>> +
+>>>>>>>
+>>>>>>>        src_crop = v4l2_subdev_get_try_crop(sd, cfg,
+>>>>>>>                                            RKISP1_ISP_PAD_SOURCE_VIDEO);
+>>>>>>> @@ -687,10 +700,17 @@ static void rkisp1_isp_set_src_fmt(struct rkisp1_isp *isp,
+>>>>>>>                isp->src_fmt = mbus_info;
+>>>>>>>        src_fmt->width  = src_crop->width;
+>>>>>>>        src_fmt->height = src_crop->height;
+>>>>>>> -    src_fmt->quantization = format->quantization;
+>>>>>>> -    /* full range by default */
+>>>>>>> -    if (!src_fmt->quantization)
+>>>>>>> +
+>>>>>>> +    src_fmt->colorspace = V4L2_COLORSPACE_SRGB;
+>>>>>>> +    src_fmt->ycbcr_enc = V4L2_MAP_YCBCR_ENC_DEFAULT(src_fmt->colorspace);
+>>>>>>> +    src_fmt->xfer_func = V4L2_MAP_XFER_FUNC_DEFAULT(src_fmt->colorspace);
+>>>>>>> +
+>>>>>>> +    if (mbus_info->pixel_enc == V4L2_PIXEL_ENC_BAYER)
+>>>>>>>                src_fmt->quantization = V4L2_QUANTIZATION_FULL_RANGE;
+>>>>>>> +    else if (format->quantization == V4L2_QUANTIZATION_DEFAULT)
+>>>>>>> +            src_fmt->quantization = V4L2_QUANTIZATION_LIM_RANGE;
+>>>>>>> +    else
+>>>>>>> +            src_fmt->quantization = format->quantization;
+>>>>>>>
+>>>>>>>        *format = *src_fmt;
+>>>>>>>     }
+>>>>>>> @@ -1068,6 +1088,17 @@ int rkisp1_isp_register(struct rkisp1_device *rkisp1,
+>>>>>>>        return ret;
+>>>>>>>     }
+>>>>>>>
+>>>>>>> +int rkisp1_get_isp_src_fmt(struct rkisp1_device *rkisp1,
+>>>>>>> +                       struct v4l2_subdev_format *sd_fmt)
+>>>>>>> +{
+>>>>>>> +    struct rkisp1_isp *isp = &rkisp1->isp;
+>>>>>>> +
+>>>>>>> +    sd_fmt->which = V4L2_SUBDEV_FORMAT_ACTIVE;
+>>>>>>> +    sd_fmt->pad = RKISP1_ISP_PAD_SOURCE_VIDEO;
+>>>>>>> +
+>>>>>>> +    return v4l2_subdev_call(&isp->sd, pad, get_fmt, NULL, sd_fmt);
+>>>>>>
+>>>>>> Do we need to get through the external API to access data that is
+>>>>>> driver-internal anyway?
+>>>>>>
+>>>>>>> +}
+>>>>>>> +
+>>>>>>>     void rkisp1_isp_unregister(struct rkisp1_device *rkisp1)
+>>>>>>>     {
+>>>>>>>        struct v4l2_subdev *sd = &rkisp1->isp.sd;
+>>>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>> index 7b6b7ddd4169..8705b133de68 100644
+>>>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>> @@ -525,6 +525,7 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+>>>>>>>        const struct rkisp1_isp_mbus_info *mbus_info;
+>>>>>>>        struct v4l2_mbus_framefmt *sink_fmt, *src_fmt;
+>>>>>>>        struct v4l2_rect *sink_crop;
+>>>>>>> +    struct v4l2_subdev_format isp_sd_fmt;
+>>>>>>>
+>>>>>>>        sink_fmt = rkisp1_rsz_get_pad_fmt(rsz, cfg, RKISP1_RSZ_PAD_SINK, which);
+>>>>>>>        src_fmt = rkisp1_rsz_get_pad_fmt(rsz, cfg, RKISP1_RSZ_PAD_SRC, which);
+>>>>>>> @@ -539,8 +540,20 @@ static void rkisp1_rsz_set_sink_fmt(struct rkisp1_resizer *rsz,
+>>>>>>>        if (which == V4L2_SUBDEV_FORMAT_ACTIVE)
+>>>>>>>                rsz->pixel_enc = mbus_info->pixel_enc;
+>>>>>>>
+>>>>>>> +    rkisp1_get_isp_src_fmt(rsz->rkisp1, &isp_sd_fmt);
+>>>>>>> +
+>>>>>>
+>>>>>> Is this necessary? My understanding was that in the subdev model, it was
+>>>>>> the userspace responsibility to propagate any configuration changes through
+>>>>>> the graph.
+>>>>>>
+>>>>>> Also, doing this only here wouldn't fully maintain the
+>>>>>> consistency of the state. For example, if one sets the ISP subdev format
+>>>>>> first, then the resizer subdev and then the ISP subdev again, wouldn't the
+>>>>>> resizer subdev end up with a wrong format?
 >>>>>
->>>>> Have you been able to validate that the setting without upscaling
->>>>> indeed produces correct output?
+>>>>> yes, this is indeed a bug, I am preparing v4 now.
+>>>>> What I thought to do is adding quantization conversion
+>>>>> support also on ther resizer and capture entities.
+>>>>> Then in the 'link_validation' callbacks, there
+>>>>> is a validation that the quantization fields matches.
 >>>>
->>>> Hi,
->>>> I investigated it again, without this patch, the frames on mainpath for YUV444 look good: https://imgur.com/a/NtazWhY
->>>> but there is a problem on selfpath: https://imgur.com/a/vQJPqAn
+>>>> My understanding is that, if we have the following topology
 >>>>
->>>> This patch somehow solves the problem on selfpath but ruins the frames on mainpath.
+>>>> [ ISP ] -> [ Resizer ] -> [ Video node ]
 >>>>
->>>> I think the bug is actually in another place in the code. The function 'rkisp1_sp_config'
->>>> sets a constant value RKISP1_MI_CTRL_SP_INPUT_YUV422 as the input format on the RKISP1_CIF_MI_CTRL register.
->>>> But the value should be set according to the configuration. For some reason the problem arises only
->>>> when trying to capture yuv444. When I capture yuv420 on the selfpath the frame looks good although the
->>>> value RKISP1_MI_CTRL_SP_INPUT_YUV422 is set.
->>>> Setting the the SP_INPUT_* according to the configuration seems to solve the problem.
->>>
->>> Looking at the datasheet, SP seems to have some internal format
->>> conversion capability - one can set SP_OUTPUT_FORMAT and SP_INPUT_FORMAT
->>> to different YUV subsampling modes or even some RGB formats. MP doesn't
->>> have this capability - it can only write whatever it receives.
->>>
->>> I think this needs to be reflected in the driver, if it isn't yet.
->>> Depending on the resizer source format, the MP video node must allow
->>> only formats with matching subsampling mode.
->>
->> Hi,
->> I work on v3 now that does that, it supports several yuv mbus codes on the source pads of the resizers
->> and then in the link_validation callback of the capture it checks that the subsampling matches.
+>>>> then the ISP source pad would have the csc capability, while resizer
+>>>> and video node would just accept whatever is configured on their sink
+>>>> pads (no need for csc capability for that) and propagate that to their
+>>>> outputs, i.e. resizer source pad and video node CAPTURE format.
+>>>>
+>>>> Is this what you were going to implement?
+>> Hi, I sent a v4 where the CSC capability is set on the reiszer and capture as well.
+>> I can send a v5 implementing it the way you suggest. Currently the doc says that the colorspace fields
+>> must be set by the driver for capture streams. This implies that userspace can set it
+>> only if the CSC is supported.
 > 
-> Is it enough? I believe the principle is that within the same entity the
-> state needs to stay consistent, i.e. if the sink pad changes, the source
-> pad or video node must be updated to expose only correct formats,
-> including resetting the current format.
-Yes, but video devices have only a sink pad. Also, the sink pad of
-a video device is not associated with an mbus code. The video format configuration
-is not related to the media controller API.
+> Why would the userspace have to set it for the capture stream on the
+> resizer and video nodes? Couldn't the userspace set it to DEFAULT and
+> then the driver override to whatever it received on the corresponding
+> sink?
+What do you mean "received on the corresponding sink"? Received from whom?
 
-> 
->>
->> It is not clear to me what is the meaning of the input/output capapility of the selfpath except of RGB convertion.
->> Since yuv subsampling is what the resizer does.
-> 
-> Could be some historical legacy, a byproduct of some feature (e.g.
-> RGB could be bundled with support for other formats) or could be there
-> on purpose.
-> 
-> It would be worth checking whether there are any quality or
-> performance/power differences depending on whether the resizer or the SP
-> is used for resampling. For example, one could be using some
-> interpolation algorithm, while the other just a simple pixel doubling or
-> decimation.
-
-I can experiment with that.
 
 Thanks,
 Dafna
-
 > 
 > Best regards,
 > Tomasz
