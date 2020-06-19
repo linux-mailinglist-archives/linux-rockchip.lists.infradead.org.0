@@ -2,29 +2,30 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64CD1200467
-	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 10:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB1E32004AD
+	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 11:09:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lqwLoKTjVNWh6JTtrJEqpM+YlsMf2nR4267TdWXY5yo=; b=tpx
-	N+dDN4Cxybzk7MpR0FqwXdIfnlyWdQpU+JCKvNudtICxHRSZyw2750qJCojg0HAEmaLPlUypaPahv
-	nIYnimiPdQ2Z9PxIw2rzXdP1s5PGHD4gsAdF5FWvYFLhDMJWL+EiDsNbV3Ygq4H+MtFe8S6SJ8ESF
-	zasGOoWvv3HmPV0kQ5vl3+AfdIi2Ouq6ZhafScF8u1H/WhplUd4SwvkpkqiexPEoEfz6/MknA8xd6
-	3wOHHS0WfBmRBocss/oRuuz9PXNOMOaJviLE5n6xa3Oe2K4F0Ic4FbJvXA5Y5x4kF/TAglysvSWcl
-	DjiJKkhs47dDd23qpEJDf8nROllFONQ==;
+	References:List-Owner; bh=TLHRj8eAUYOP0EywYiaGAtDn/tCs0IakGonJs5wU7kw=; b=Xe7
+	7++qrtZigV+3wdVeiAGqHuo/bUh3AaMCcEXoIyLBfFrINC8rf9dntSwBtkvicN+V8VCoqznVUlN7A
+	QkB0faIly6f90cv3q01DIKD6mpz9fds/UBIWDGXqJHNkGzzxv2jkN0rfTw9eDm36iz69O4T0vhDDd
+	oJl3IuCxNbRR9cXoT3i0HM2puetkg8BbWZdmlytrGejz5ZRp5ytrA+FyfvOMtSflIBqGr5ZuCep5N
+	8n4QQPy4twt7RisA+FJrwLcSuQoMhxf9ZFYVZkbjqODP9zJ9d/pOEBMEl6jRldvYwxnjhuFZsDy5S
+	KRDb1Upy0NZTViaUROWVqAoM5C1sXuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmCm5-0002jB-8A; Fri, 19 Jun 2020 08:53:25 +0000
-Received: from lucky1.263xmail.com ([211.157.147.134])
+	id 1jmD1T-0005LE-Ih; Fri, 19 Jun 2020 09:09:19 +0000
+Received: from lucky1.263xmail.com ([211.157.147.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmClr-0002YD-A5; Fri, 19 Jun 2020 08:53:12 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 6ADA7BFCA3;
- Fri, 19 Jun 2020 16:53:05 +0800 (CST)
+ id 1jmD1P-0005J5-28
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jun 2020 09:09:17 +0000
+Received: from localhost (unknown [192.168.167.32])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 6D418AFDC6;
+ Fri, 19 Jun 2020 17:09:11 +0800 (CST)
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
 X-ADDR-CHECKED4: 1
@@ -32,41 +33,43 @@ X-ANTISPAM-LEVEL: 2
 X-ABS-CHECKED: 0
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
- P10491T139788078274304S1592556784649283_; 
- Fri, 19 Jun 2020 16:53:05 +0800 (CST)
+ P3326T139697392834304S1592557749877054_; 
+ Fri, 19 Jun 2020 17:09:10 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <01c70fabecef316f33fcc8cfd259d260>
-X-RL-SENDER: hjc@rock-chips.com
-X-SENDER: hjc@rock-chips.com
-X-LOGIN-NAME: hjc@rock-chips.com
+X-UNIQUE-TAG: <434d5cdc956ae93f131f66b7a903d7ad>
+X-RL-SENDER: finley.xiao@rock-chips.com
+X-SENDER: xf@rock-chips.com
+X-LOGIN-NAME: finley.xiao@rock-chips.com
 X-FST-TO: heiko@sntech.de
 X-SENDER-IP: 58.22.7.114
 X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
 X-System-Flag: 0
-From: Sandy Huang <hjc@rock-chips.com>
-To: heiko@sntech.de, Sandy Huang <hjc@rock-chips.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH v2] drm/rockchip: vop: fix vop full rgb24 r/b color error
-Date: Fri, 19 Jun 2020 16:53:02 +0800
-Message-Id: <20200619085302.2263-1-hjc@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+From: Finley Xiao <finley.xiao@rock-chips.com>
+To: heiko@sntech.de, amit.kachhap@gmail.com, daniel.lezcano@linaro.org,
+ viresh.kumar@linaro.org, javi.merino@kernel.org, rui.zhang@intel.com,
+ amit.kucheria@verdurent.com
+Subject: [PATCH] thermal/drivers/cpufreq_cooling: Fix wrong frequency
+ converted from power
+Date: Fri, 19 Jun 2020 17:08:25 +0800
+Message-Id: <20200619090825.32747-1-finley.xiao@rock-chips.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_015311_538499_55039E9F 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20200619_020915_278614_3EC99744 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.134 listed in list.dnswl.org]
+ no trust [211.157.147.131 listed in list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [211.157.147.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.134 listed in wl.mailspike.net]
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,90 +82,59 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- andy.yan@rock-chips.com, linux-arm-kernel@lists.infradead.org
+Cc: huangtao@rock-chips.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, tony.xie@rock-chips.com,
+ Finley Xiao <finley.xiao@rock-chips.com>, cl@rock-chips.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RGB888 format msb is red component and the lsb is blue component,
-at vop full platform this is swapped, and this is different from vop
-lite and vop next, so add this patch to fix it.
+The function cpu_power_to_freq is used to find a frequency and set the
+cooling device to consume at most the power to be converted. For example,
+if the power to be converted is 80mW, and the em table is as follow.
+struct em_cap_state table[] = {
+	/* KHz     mW */
+	{ 1008000, 36, 0 },
+	{ 1200000, 49, 0 },
+	{ 1296000, 59, 0 },
+	{ 1416000, 72, 0 },
+	{ 1512000, 86, 0 },
+};
+The target frequency should be 1416000KHz, not 1512000KHz.
 
-v2:
-    move to has_rb_swapped() function.
-
-Signed-off-by: Sandy Huang <hjc@rock-chips.com>
+Fixes: 349d39dc5739 ("thermal: cpu_cooling: merge frequency and power tables")
+Cc: <stable@vger.kernel.org> # v4.13+
+Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 21 +++++++++++++++++----
- 1 file changed, 17 insertions(+), 4 deletions(-)
+ drivers/thermal/cpufreq_cooling.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index c80f7d9fd13f..99bdb5a2a185 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -132,6 +132,7 @@ struct vop_win {
- 
- struct rockchip_rgb;
- struct vop {
-+	uint32_t version;
- 	struct drm_crtc crtc;
- 	struct device *dev;
- 	struct drm_device *drm_dev;
-@@ -248,17 +249,28 @@ static inline void vop_cfg_done(struct vop *vop)
- 	VOP_REG_SET(vop, common, cfg_done, 1);
- }
- 
--static bool has_rb_swapped(uint32_t format)
-+static bool has_rb_swapped(struct vop *vop, uint32_t format)
+diff --git a/drivers/thermal/cpufreq_cooling.c b/drivers/thermal/cpufreq_cooling.c
+index 9e124020519f..6c0e1b053126 100644
+--- a/drivers/thermal/cpufreq_cooling.c
++++ b/drivers/thermal/cpufreq_cooling.c
+@@ -123,12 +123,12 @@ static u32 cpu_power_to_freq(struct cpufreq_cooling_device *cpufreq_cdev,
  {
-+	bool rb_swapped;
-+
- 	switch (format) {
- 	case DRM_FORMAT_XBGR8888:
- 	case DRM_FORMAT_ABGR8888:
- 	case DRM_FORMAT_BGR888:
- 	case DRM_FORMAT_BGR565:
--		return true;
-+		rb_swapped = true;
- 	default:
--		return false;
-+		rb_swapped = false;
+ 	int i;
+ 
+-	for (i = cpufreq_cdev->max_level - 1; i >= 0; i--) {
+-		if (power > cpufreq_cdev->em->table[i].power)
++	for (i = cpufreq_cdev->max_level; i >= 0; i--) {
++		if (power >= cpufreq_cdev->em->table[i].power)
+ 			break;
  	}
-+
-+	/*
-+	 * VOP full need to do rb swap to show rgb888/bgr888 format color correctly
-+	 */
-+	if ((format == DRM_FORMAT_RGB888 || format == DRM_FORMAT_BGR888) &&
-+	    VOP_MAJOR(vop->version) == 3)
-+		rb_swapped = !rb_swapped;
-+
-+	return rb_swapped;
+ 
+-	return cpufreq_cdev->em->table[i + 1].frequency;
++	return cpufreq_cdev->em->table[i].frequency;
  }
  
- static enum vop_data_format vop_convert_format(uint32_t format)
-@@ -988,7 +1000,7 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 	VOP_WIN_SET(vop, win, dsp_info, dsp_info);
- 	VOP_WIN_SET(vop, win, dsp_st, dsp_st);
- 
--	rb_swap = has_rb_swapped(fb->format->format);
-+	rb_swap = has_rb_swapped(vop, fb->format->format);
- 	VOP_WIN_SET(vop, win, rb_swap, rb_swap);
- 
- 	/*
-@@ -2091,6 +2103,7 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
- 	vop->dev = dev;
- 	vop->data = vop_data;
- 	vop->drm_dev = drm_dev;
-+	vop->version = vop_data->version;
- 	dev_set_drvdata(dev, vop);
- 
- 	vop_win_init(vop);
+ /**
 -- 
-2.17.1
+2.11.0
 
 
 
