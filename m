@@ -2,122 +2,88 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CA84200705
-	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 12:43:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA11D200851
+	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 14:04:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0NLu1StBnL8sCC2La1vTGpR0ECGg/1EZsoBTF3xnJWs=; b=YHwtMXFi3G3+aTPucxoNDdwaLx
-	TrtBSU5ns/04BF/Vo/IcfDxBBD+apYTf00lF65/oVXgfAI1kMbbZl3lrTmlNrgFGYjbhT3nQClsvU
-	PYjx9/42e3tlAIbEOLD1wCgg10n+O0icFtDQi0Mr7bfG8+H20DEPNf+dXgGPIN9S9zYI7LxKQomOs
-	J7W/o95FDOsssA8++4v9dfbRpSxzFOJMAm49TdvCaHlybKkpBC1xmc+pennv7DBNASwMpN9wGnvqY
-	iAbgZDsYjjktKUUDSm4adQnTLMAhXGHfzos6Lxx761v406idq1O+JqcnrDU0pFjc3aJLAayhJoxVk
-	z9/RP5QQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=br6uBiW+V6oUyLyo7yd3SLK6NATTEVkiv6e1Ebv7Leg=; b=QfkJnscIqIJRsB
+	Uqms+A0XbkRPfyKTQG6jO+q4qzkoPThYS1mzm5Z1fsvhpeiqlpwMwpfChT2DrNgbRk3PXb8dY4dL7
+	hkHc9cK34q0WuochxSIINsEo1kKuraBB31JJgMqi4RqmK9mpGl84xR1UxLjRqhu1Tsrd4JULvZrDR
+	wUcJKamzcBBcrG3JUKraJMuOB4GikOJUWyBP9X1L6xzGtLbq5VOvBoytZocaAqh/Bh6JqE/Kyxylf
+	aQB+kZSjvFUhOIyMGD3+WRt5BCWk/Iba+jw3aK9DqZUpRrf4JLDw8uhxrywVYXi7cFIkwAdPoxphl
+	ZM3vFGszWEdv+OczA6Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmEUz-0004tZ-0V; Fri, 19 Jun 2020 10:43:53 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jmFl3-0006Ts-4P; Fri, 19 Jun 2020 12:04:33 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmEOS-0005Fx-7J
- for linux-rockchip@lists.infradead.org; Fri, 19 Jun 2020 10:37:10 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200619103706euoutp02bb47b297981300383ebfc01f07b15fc9~Z66KPAR812242122421euoutp02c
- for <linux-rockchip@lists.infradead.org>; Fri, 19 Jun 2020 10:37:06 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200619103706euoutp02bb47b297981300383ebfc01f07b15fc9~Z66KPAR812242122421euoutp02c
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1592563026;
- bh=uRyWiAszaWTmT9aEcwSkw+b3g8jzvTahdvI0hzE+vrU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lbaOYvLms5DiuKSveV7FuZGNDZpNh/7jt68nQDj7zl1NU5PKsl1wrHTlKAbb/fRCV
- K6jwmEgWbJjwGqvhOBqLg1lde+mpva2HgHklcZmavk+DWi8ADwN+ZafFOiBFGPv8o6
- 6FGhlD7W2OnhNtOMB7oANWvcZE8wa2cXAYcRax+c=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200619103706eucas1p121aef2e4fae6027715b8bd2a43ba6886~Z66J542fP0705907059eucas1p1J;
- Fri, 19 Jun 2020 10:37:06 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id E2.9C.06318.2559CEE5; Fri, 19
- Jun 2020 11:37:06 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200619103706eucas1p24f226bc00559f0812bc44d7933acd1e4~Z66Jnmqsd1691016910eucas1p2_;
- Fri, 19 Jun 2020 10:37:06 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200619103705eusmtrp1742aa8321b387c113939ab0d15d6c93d~Z66Jm_XTT0959609596eusmtrp1K;
- Fri, 19 Jun 2020 10:37:05 +0000 (GMT)
-X-AuditID: cbfec7f5-38bff700000018ae-6b-5eec95529c22
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id BD.0B.06017.1559CEE5; Fri, 19
- Jun 2020 11:37:05 +0100 (BST)
-Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200619103705eusmtip2c4079c382c05ce6c31ccdc0672deae4a~Z66I8g9jD0229502295eusmtip2i;
- Fri, 19 Jun 2020 10:37:05 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v7 19/36] drm: rockchip: fix common struct sg_table related
- issues
-Date: Fri, 19 Jun 2020 12:36:19 +0200
-Message-Id: <20200619103636.11974-20-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200619103636.11974-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0WSfSzUcRzH973fw/3I3X4dzSeF7Yb1sJSutt/GlKj9tGk96J826ie/ZB53
- l0qtpRTSCWdiFqlV5LHU0BNR8lQ3nB5U1jnN4iQLV6xcd37ov9fn/Xl/Pu/v97svhckaCCcq
- MvYYr4zlouWkLV77alq7bm/uaOiGt59pJkPbLmLu51cTjLk2G2N6p36QzN3yFhFjNhgJplBz
- hilu9GYmewdETM3gO4LRPb5GMj/1ZoypfNkvZprGvxJbpWxFUQVin5mKcbbOpCfYL5dbReyD
- W2fZT7ODGJvzoQSxT/qSSPZvQSPOXnlYhti6d0UYO1HjstvugK1POB8deZxXrvc9ZHu0pVFD
- xGc6n0w2zBBJKAfSkQ0F9CYo6uvE05EtJaNLEfy+rieFYhKBpuocYXXJ6AkEWk3YwkT/o3Kx
- oJcg6B7hFgeSL+lIa4OkvSD9e/ocO9AXEbRl2FkZo69iUDa1w8r2dDDcNJrmPDjtDlVt+rml
- EtoXUuv7SSHMFcrvPcesbGPRjReaCGsY0D1ieNqeMm8KgJLaR0hgexhpfSgWeCV05qhxYSAZ
- wYC2UiwUagS68/nzE97wWTtj2URZjrcaqh+vF2Q/UHf0iawy0FL48H2pcAEpaGrzMEGWQFqK
- THB7QEFr1WJsU1cPJjALw3VdSHigbARqw0eUhVwL/ocVI1SGHPkEVUwEr1LE8ic8VVyMKiE2
- wvNwXEwNsvyqztnWqXrU8CesGdEUkttJvgUbQ2UEd1yVGNOMgMLkDpJtbzpDZZJwLvEUr4w7
- qEyI5lXNaAWFyx0lipvDITI6gjvGR/F8PK9c6IooG6ckVLpxn2H7UFB1d5rHlpyxI2SmVtHU
- +17MFPa379w8zoXqKh3r/X3cb+cFrqskJ1u8eoaGlwR3uHnfCNozvL/az3k6bDnPunmmhPkH
- ZtXdkb1ePj0D/ssMoxVrTavqB4buGfUZpYaxhhppWYDZPupg7q0XqehXiK7ZZRelOO2S9UyO
- q45yXmswpYr7BwQnTRZRAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrEIsWRmVeSWpSXmKPExsVy+t/xe7qBU9/EGSw+aGnRe+4kk8XGGetZ
- Lf5vm8hsceXrezaLlauPMln8f/Sa1WLupFqLBfutLb5cechksenxNVaLy7vmsFl8evCf2WLt
- kbvsFgc/PGF14PNYM28No8febwtYPLZ/e8Dqcb/7OJPH5iX1Hrf/PWb2mHxjOaPH7psNbB5/
- Z+1n8ejbsorRY/u1ecwenzfJBfBE6dkU5ZeWpCpk5BeX2CpFG1oY6RlaWugZmVjqGRqbx1oZ
- mSrp29mkpOZklqUW6dsl6GUc3T+JtaBftqL50S/WBsbJEl2MnBwSAiYSd3euZu9i5OIQEljK
- KPH6/lF2iISMxMlpDawQtrDEn2tdbBBFnxglHj6dyAKSYBMwlOh6C5EQEehklJjW/RFsFLPA
- PGaJ5asOM4FUCQsESWzcPg1sFIuAqsS6Ew/AVvAK2Em077jLBrFCXmL1hgPMIDYnUPx1y0Gw
- eiEBW4nlC94zT2DkW8DIsIpRJLW0ODc9t9hIrzgxt7g0L10vOT93EyMwfrYd+7llB2PXu+BD
- jAIcjEo8vC9CXscJsSaWFVfmHmKU4GBWEuF1Ons6Tog3JbGyKrUoP76oNCe1+BCjKdBRE5ml
- RJPzgbGdVxJvaGpobmFpaG5sbmxmoSTO2yFwMEZIID2xJDU7NbUgtQimj4mDU6qBkVvPz2Vd
- jjbb5z6Jh+wxCgr1uqGFr+4y6t5cHhwT1JmVJKx1cL19kfLNyRPVHlTMfHM0IrWP6UJYkFqM
- XgW7eNyRhoUr5zTcduQV1d/FOeXiBKXX/7/qz924WTTx3J2QbemHPHZx7J6g1pL2fzrz8hKD
- zAU7nY+eE52SHHlUMWJm3Pmo876/lFiKMxINtZiLihMBVz1aMbUCAAA=
-X-CMS-MailID: 20200619103706eucas1p24f226bc00559f0812bc44d7933acd1e4
-X-Msg-Generator: CA
-X-RootMTR: 20200619103706eucas1p24f226bc00559f0812bc44d7933acd1e4
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200619103706eucas1p24f226bc00559f0812bc44d7933acd1e4
-References: <20200619103636.11974-1-m.szyprowski@samsung.com>
- <CGME20200619103706eucas1p24f226bc00559f0812bc44d7933acd1e4@eucas1p2.samsung.com>
+ id 1jmFkz-0006TS-E7
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jun 2020 12:04:31 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g75so115008wme.5
+ for <linux-rockchip@lists.infradead.org>; Fri, 19 Jun 2020 05:04:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=KS+xgGiu4reqWu9ZkdrM3YZnT7jWjFWO57RJ5OWuTSI=;
+ b=DtJiEmCqkXekdqQSbNAj09lmMdfRM5aSbLXOPM2Qhj23YzlfDX1jrsXN8GbdBvLKRA
+ OKtlHGGRRKKFtXfMmfThXyNogdrzW4eQ2gfU2gvClCCkACasjco4P5OkXkZMnEqo4I6m
+ FPIA6gNwNsQzYFEKtd1OhG+MJfOIkfooW89QI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=KS+xgGiu4reqWu9ZkdrM3YZnT7jWjFWO57RJ5OWuTSI=;
+ b=Py/0F7opr6zF6kDUZzo8PdxW9iQvi4/yFwntQ3fkBh7zRLG5nhokVBAs4GUZUk8zIS
+ LX39/OvjPmKHK+z+po8tJIfspInQj4yl0OMfSARALuV4++ICTYtNO1pTsUXu6Fu5XCg6
+ AjEumWs5ei3aD1kctt42z5+ZzWclAUVZPwItRydjBEEAHsWQvieHsK32tWTRa2b2lPJ5
+ FcHUF7lxgQ34i0H+1EFoayZATl64MUg4ZjzwNhNPRtv2OXOEpmhO6LJs5RGdSMM4M69e
+ ZHz9ay6f1zcYfQuj2nFwNoMGB2hzhBcf8hXFRJVwVI8HZROrztfXGCDMIhKHy+DIFRLF
+ 4YwQ==
+X-Gm-Message-State: AOAM530nAw/V+UlAb9EwYWy2SaY7jA5zTK1oHEBzQxUt8A0BgQX+vTEH
+ lgJG2m+IfG6rvcXqt/JRbH8B5A==
+X-Google-Smtp-Source: ABdhPJzaTGL7AWLQpE5OqyHn4N1qE+gUsyQ9Tbeg8ks9m7xsEMBCzoXPk951voCPcvnOWVXDGg/GbA==
+X-Received: by 2002:a1c:1b13:: with SMTP id b19mr3343058wmb.84.1592568266908; 
+ Fri, 19 Jun 2020 05:04:26 -0700 (PDT)
+Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
+ [35.190.215.205])
+ by smtp.gmail.com with ESMTPSA id l17sm4951658wmh.14.2020.06.19.05.04.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 19 Jun 2020 05:04:26 -0700 (PDT)
+Date: Fri, 19 Jun 2020 12:04:25 +0000
+From: Tomasz Figa <tfiga@chromium.org>
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v2 3/4] media: staging: rkisp1: rsz: set output format to
+ YUV422 if cap format is YUV444
+Message-ID: <20200619120425.GA241696@chromium.org>
+References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
+ <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
+ <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
+ <aa52f9f8-d9e9-06b2-22df-bbab2d26b516@collabora.com>
+ <20200618174752.GA10831@chromium.org>
+ <9ee01443-985d-751c-fff9-fa90337de68d@collabora.com>
+ <20200618181220.GC10831@chromium.org>
+ <f1660285-f6cb-6157-1e56-2974bc549fef@collabora.com>
+ <20200618191857.GC73379@chromium.org>
+ <09b87404-b106-f58b-b773-cf4c344648df@collabora.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <09b87404-b106-f58b-b773-cf4c344648df@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_033708_431745_6646B38B 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200619_050429_501157_BEDE806C 
+X-CRM114-Status: GOOD (  39.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -126,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -140,110 +105,163 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
-returns the number of the created entries in the DMA address space.
-However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
-dma_unmap_sg must be called with the original number of the entries
-passed to the dma_map_sg().
+On Fri, Jun 19, 2020 at 09:30:50AM +0200, Dafna Hirschfeld wrote:
+> 
+> 
+> On 18.06.20 21:18, Tomasz Figa wrote:
+> > On Thu, Jun 18, 2020 at 08:50:23PM +0200, Dafna Hirschfeld wrote:
+> > > 
+> > > 
+> > > On 18.06.20 20:12, Tomasz Figa wrote:
+> > > > On Thu, Jun 18, 2020 at 08:00:37PM +0200, Dafna Hirschfeld wrote:
+> > > > > 
+> > > > > 
+> > > > > On 18.06.20 19:47, Tomasz Figa wrote:
+> > > > > > On Fri, Jun 12, 2020 at 02:45:00PM +0200, Dafna Hirschfeld wrote:
+> > > > > > > 
+> > > > > > > 
+> > > > > > > On 27.05.20 01:09, Tomasz Figa wrote:
+> > > > > > > > On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
+> > > > > > > > <dafna.hirschfeld@collabora.com> wrote:
+> > > > > > > > > 
+> > > > > > > > > If the capture format is YUV444M then the memory input format
+> > > > > > > > > should be YUV422, so the resizer should not change the default
+> > > > > > > > > hdiv, vdiv in that case.
+> > > > > > > > > 
+> > > > > > > > > Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> > > > > > > > > ---
+> > > > > > > > >      drivers/staging/media/rkisp1/rkisp1-resizer.c | 7 ++++---
+> > > > > > > > >      1 file changed, 4 insertions(+), 3 deletions(-)
+> > > > > > > > > 
+> > > > > > > > > diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> > > > > > > > > index 04a29af8cc92..5f9740ddd558 100644
+> > > > > > > > > --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> > > > > > > > > +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+> > > > > > > > > @@ -394,10 +394,11 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
+> > > > > > > > >              * (4:2:2 -> 4:2:0 for example). So the width/height of the CbCr
+> > > > > > > > >              * streams should be set according to the pixel format in the capture.
+> > > > > > > > >              * The resizer always gets the input as YUV422. If the capture format
+> > > > > > > > > -        * is RGB then the memory input (the resizer output) should be YUV422
+> > > > > > > > > -        * so we use the hdiv, vdiv of the YUV422 info in this case.
+> > > > > > > > > +        * is RGB or YUV444 then the memory input (the resizer output) should
+> > > > > > > > > +        * be YUV422 so we use the hdiv, vdiv of the YUV422 info in this case.
+> > > > > > > > >              */
+> > > > > > > > > -       if (v4l2_is_format_yuv(cap->pix.info)) {
+> > > > > > > > > +       if (v4l2_is_format_yuv(cap->pix.info) &&
+> > > > > > > > > +           cap->pix.info->format != V4L2_PIX_FMT_YUV444M) {
+> > > > > > > > >                     src_c.width = cap->pix.info->hdiv;
+> > > > > > > > >                     src_c.height = cap->pix.info->vdiv;
+> > > > > > > > 
+> > > > > > > > As pointed out in another thread, this should have been the original
+> > > > > > > > size divided by the divisor and not just the latter alone.
+> > > > > > > > 
+> > > > > > > > It seems a bit suspicious to me that we don't need to upscale the
+> > > > > > > > chroma planes here, because it would mean that the MI itself would be
+> > > > > > > > doing some horizontal pixel doubling. The hardware documentation
+> > > > > > > > doesn't really explain this, though.
+> > > > > > > > 
+> > > > > > > > Have you been able to validate that the setting without upscaling
+> > > > > > > > indeed produces correct output?
+> > > > > > > 
+> > > > > > > Hi,
+> > > > > > > I investigated it again, without this patch, the frames on mainpath for YUV444 look good: https://imgur.com/a/NtazWhY
+> > > > > > > but there is a problem on selfpath: https://imgur.com/a/vQJPqAn
+> > > > > > > 
+> > > > > > > This patch somehow solves the problem on selfpath but ruins the frames on mainpath.
+> > > > > > > 
+> > > > > > > I think the bug is actually in another place in the code. The function 'rkisp1_sp_config'
+> > > > > > > sets a constant value RKISP1_MI_CTRL_SP_INPUT_YUV422 as the input format on the RKISP1_CIF_MI_CTRL register.
+> > > > > > > But the value should be set according to the configuration. For some reason the problem arises only
+> > > > > > > when trying to capture yuv444. When I capture yuv420 on the selfpath the frame looks good although the
+> > > > > > > value RKISP1_MI_CTRL_SP_INPUT_YUV422 is set.
+> > > > > > > Setting the the SP_INPUT_* according to the configuration seems to solve the problem.
+> > > > > > 
+> > > > > > Looking at the datasheet, SP seems to have some internal format
+> > > > > > conversion capability - one can set SP_OUTPUT_FORMAT and SP_INPUT_FORMAT
+> > > > > > to different YUV subsampling modes or even some RGB formats. MP doesn't
+> > > > > > have this capability - it can only write whatever it receives.
+> > > > > > 
+> > > > > > I think this needs to be reflected in the driver, if it isn't yet.
+> > > > > > Depending on the resizer source format, the MP video node must allow
+> > > > > > only formats with matching subsampling mode.
+> > > > > 
+> > > > > Hi,
+> > > > > I work on v3 now that does that, it supports several yuv mbus codes on the source pads of the resizers
+> > > > > and then in the link_validation callback of the capture it checks that the subsampling matches.
+> > > > 
+> > > > Is it enough? I believe the principle is that within the same entity the
+> > > > state needs to stay consistent, i.e. if the sink pad changes, the source
+> > > > pad or video node must be updated to expose only correct formats,
+> > > > including resetting the current format.
+> > > Yes, but video devices have only a sink pad. Also, the sink pad of
+> > > a video device is not associated with an mbus code. The video format configuration
+> > > is not related to the media controller API.
+> > 
+> > The video device interface and the entity it is linked to belong to the
+> > same driver. The V4L2 video device interface requires that the state is
+> > always valid and the implementation of the video device needs to take
+> > into account its links to external entities.
+> 
+> But if the pad on the other side of the link is configured after the video device
+> then the state might become invalid.
 
-struct sg_table is a common structure used for describing a non-contiguous
-memory buffer, used commonly in the DRM and graphics subsystems. It
-consists of a scatterlist with memory pages and DMA addresses (sgl entry),
-as well as the number of scatterlist entries: CPU pages (orig_nents entry)
-and DMA mapped pages (nents entry).
+The pad on the other side of the link is already outside of the scope.
+Basically, the entity that interfaces with the video node must have
+state consistent with the video node.
 
-It turned out that it was a common mistake to misuse nents and orig_nents
-entries, calling DMA-mapping functions with a wrong number of entries or
-ignoring the number of mapped entries returned by the dma_map_sg()
-function.
+To make sure we're on the same page, let me give some examples below:
 
-To avoid such issues, lets use a common dma-mapping wrappers operating
-directly on the struct sg_table objects and use scatterlist page
-iterators where possible. This, almost always, hides references to the
-nents and orig_nents entries, making the code robust, easier to follow
-and copy/paste safe.
+Initial state:
+ISP source pad: YUV 4:2:2
+Resizer sink pad: YUV 4:2:2
+Resizer source pad: YUV 4:2:0
+Video CAPTURE format: NV12
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
----
- drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 23 +++++++++------------
- 1 file changed, 10 insertions(+), 13 deletions(-)
+Scenario 1:
+- Userspace changes ISP source pad to RAW.
+- Userspace starts streaming and link validation fails.
+- Still, the state is consistent between the resizer and the video node.
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-index 2970e534e2bb..cb50f2ba2e46 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-@@ -36,8 +36,8 @@ static int rockchip_gem_iommu_map(struct rockchip_gem_object *rk_obj)
- 
- 	rk_obj->dma_addr = rk_obj->mm.start;
- 
--	ret = iommu_map_sg(private->domain, rk_obj->dma_addr, rk_obj->sgt->sgl,
--			   rk_obj->sgt->nents, prot);
-+	ret = iommu_map_sgtable(private->domain, rk_obj->dma_addr, rk_obj->sgt,
-+				prot);
- 	if (ret < rk_obj->base.size) {
- 		DRM_ERROR("failed to map buffer: size=%zd request_size=%zd\n",
- 			  ret, rk_obj->base.size);
-@@ -98,11 +98,10 @@ static int rockchip_gem_get_pages(struct rockchip_gem_object *rk_obj)
- 	 * TODO: Replace this by drm_clflush_sg() once it can be implemented
- 	 * without relying on symbols that are not exported.
- 	 */
--	for_each_sg(rk_obj->sgt->sgl, s, rk_obj->sgt->nents, i)
-+	for_each_sgtable_sg(rk_obj->sgt, s, i)
- 		sg_dma_address(s) = sg_phys(s);
- 
--	dma_sync_sg_for_device(drm->dev, rk_obj->sgt->sgl, rk_obj->sgt->nents,
--			       DMA_TO_DEVICE);
-+	dma_sync_sgtable_for_device(drm->dev, rk_obj->sgt, DMA_TO_DEVICE);
- 
- 	return 0;
- 
-@@ -350,8 +349,8 @@ void rockchip_gem_free_object(struct drm_gem_object *obj)
- 		if (private->domain) {
- 			rockchip_gem_iommu_unmap(rk_obj);
- 		} else {
--			dma_unmap_sg(drm->dev, rk_obj->sgt->sgl,
--				     rk_obj->sgt->nents, DMA_BIDIRECTIONAL);
-+			dma_unmap_sgtable(drm->dev, rk_obj->sgt,
-+					  DMA_BIDIRECTIONAL, 0);
- 		}
- 		drm_prime_gem_destroy(obj, rk_obj->sgt);
- 	} else {
-@@ -476,15 +475,13 @@ rockchip_gem_dma_map_sg(struct drm_device *drm,
- 			struct sg_table *sg,
- 			struct rockchip_gem_object *rk_obj)
- {
--	int count = dma_map_sg(drm->dev, sg->sgl, sg->nents,
--			       DMA_BIDIRECTIONAL);
--	if (!count)
--		return -EINVAL;
-+	int err = dma_map_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL, 0);
-+	if (err)
-+		return err;
- 
- 	if (drm_prime_get_contiguous_size(sg) < attach->dmabuf->size) {
- 		DRM_ERROR("failed to map sg_table to contiguous linear address.\n");
--		dma_unmap_sg(drm->dev, sg->sgl, sg->nents,
--			     DMA_BIDIRECTIONAL);
-+		dma_unmap_sgtable(drm->dev, sg, DMA_BIDIRECTIONAL, 0);
- 		return -EINVAL;
- 	}
- 
--- 
-2.17.1
+Scenario 2:
+- Userspace changes ISP source pad to RAW.
+- Userspace changes Resizer sink pad to RAW.
+- Kernel updates Resizer source pad to RAW.
+- Kernel updates video CAPTURE format to a supported RAW pixelformat.
+- All the state is consistent and streaming can start.
+- If the userspace calls ENUM_FMT on video CAPTURE, it only gets RAW
+  pixelformats.
 
+Scenario 3:
+- Userspace changes Resizer source pad to YUV 4:2:2.
+- Kernel updates video CAPTURE to a supported YUV 4:2:2 pixelformat
+  (e.g. YUYV).
+- All the state is consistent and streaming can start.
+- If the userspace calls ENUM_FMT on video CAPTURE, it only gets YUV
+  4:2:2 pixelformats.
+
+Scenario 4:
+- Userspace calls ENUM_FMT on video CAPTURE and only gets YUV 4:2:0
+  pixelformats.
+- It's not possible to make the state inconsistent between the resizer
+  and the video node by using V4L2 video ioctls.
+
+Am I missing something?
+
+Best regards,
+Tomasz
 
 _______________________________________________
 Linux-rockchip mailing list
