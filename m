@@ -2,72 +2,90 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F2BE20001B
-	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 04:13:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 064922001CC
+	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 07:57:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=A72OspxlW2leIWYG6MbB/XLcFNgHkrWCN/zqjakmV3w=; b=Qyq
-	ljtoI60Mjbftk+z9QikA9kgWTC1OeN4udsccx0jjsZasYWEcIy5oBqBf5CuLbJQB+HE9tqOskOxlm
-	HpAb5bn8UmLenaoI+PTr95ucyNoO+IsZy0PYLFfgOdVknYRx1EkbHZYcvbAUmiiR8pHrjnT/c+dvU
-	J6tPiriCtgc5HiiUsowIeB+YPGdRwFJFWr/HebosUnGR3iIxjQCEHE7m9wttsB2Qk6kEA6VufPHnn
-	JovsFqjns5wVfmxp84rsDtQ0rfsXxrCtIIKrmln1JPJHBGagAppl+AGk90UGkDYUXovb3VUhpeWDj
-	WvHpklsG75AiN/800hsqYHOh5ps4VSw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QcjWw5pkmy4c6gB3cXEiQd7x2J/zyz2CVniq85nUU+k=; b=syDv7pL/G92Cw+
+	nlFgTMw6RpsguTR6vguONBNwEhO8zljjLME6RY6folyU/fBgkGz6Z5IEZKSpBHrLC62jOr1nhctN0
+	+CKGaytdhG0pSnqffRBjUosJmNQb+TMt98RpdBlgn88yUWzy4QpYaYOMZmzl2j9OUGg6hoFrb2f/6
+	K6jOjoeLBB9KoJbhJdQuakvJ1rOCFDbckJc/UWo8SLi3n4wFkbk6/dhZgxZdOVZgQwWcYDLXHHXVK
+	AsBWZ4yfLvSq7VSBBQk35cQPL7TU1UIhWU3+FRMaKULP+3NF8PlQYmRlm1lmrWhGpFtPty7qsed5x
+	H0A8+1QISt5nTfW0cWug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jm6Ww-0008BW-C5; Fri, 19 Jun 2020 02:13:22 +0000
-Received: from lucky1.263xmail.com ([211.157.147.131])
+	id 1jmA1n-0002U6-CN; Fri, 19 Jun 2020 05:57:27 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jm6Wl-000840-ID; Fri, 19 Jun 2020 02:13:12 +0000
-Received: from localhost (unknown [192.168.167.69])
- by lucky1.263xmail.com (Postfix) with ESMTP id 21911B01AE;
- Fri, 19 Jun 2020 10:12:58 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P15428T140189174576896S1592532776016090_; 
- Fri, 19 Jun 2020 10:12:57 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <47f99c70dacf3540e239705ea51efd83>
-X-RL-SENDER: hjc@rock-chips.com
-X-SENDER: hjc@rock-chips.com
-X-LOGIN-NAME: hjc@rock-chips.com
-X-FST-TO: hjc@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: Sandy Huang <hjc@rock-chips.com>
-To: Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH] drm/rockchip: vop: fix vop full rgb24 r/b color error
-Date: Fri, 19 Jun 2020 10:12:51 +0800
-Message-Id: <20200619021251.22991-1-hjc@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jmA1j-0002TV-MU
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jun 2020 05:57:25 +0000
+Received: by mail-pg1-x543.google.com with SMTP id b5so4029573pgm.8
+ for <linux-rockchip@lists.infradead.org>; Thu, 18 Jun 2020 22:57:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=vcoQU27veVgPOWd/0ckYZko/pX3wgLDFO82QmujnsUA=;
+ b=SeqgTILRIJeeuWL+GE8nzrMopFxDyt/JNfmF486iyq/55jNuqxsAccNrdbdv5opOMj
+ Cw3qYunXuIDd2VY5NGlEYPyiPM5XwZWEw+5l3uJLNtxvWG1elDUCcYsOPc2UxKlRwYrw
+ drbAtdpy+YOPGGvUXO82Awgd2CBAexIBU9UcOB/8//phJB+1c75Y1uTodsEU8C7K+xUI
+ an2BavnQWXoR/ffmARliRtdQvl1tPNNi/FcyC+2jopBNGa3IQqAbRHsryYEzw+Cj1k9G
+ i1kVlE4RhUlf/I1Y+/7pWnhZpu7snhTdgbAlx9LJVQFuD2oToJygoSduU/Q8mlkfL1Fx
+ 55bg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vcoQU27veVgPOWd/0ckYZko/pX3wgLDFO82QmujnsUA=;
+ b=BYpET7Sc5DJlm4u74A9nO0ECt+ffcD3Vxjoox5tL4VRwUl61E+XT/psUWT5t7JWgm1
+ 6smwUY1a/rXFlwsEUt7Am+0tELnK1BePpVa+kuiXKjHiwFuwvnhw+Kv5/sFW/druKxBh
+ Od6Baw4nIjslvaQRQ/N/Z6ol7Xlg+nSvxzDvQc7d+6m0p0IR159mQUNboVfjO+MJaW/d
+ MA7fSBHDQ2om1ZnIje3a6FPlVG7DIdDvzCHpgT6zuflbJdNEFCu1RKCi/4CyI+j1pZmS
+ HAX+g2S8toQctmOJWXDizjEWvD4FboCDwCUTVBlpgHAy1YXAr6UqmTfUp9Jmfm1Py2bz
+ TTWA==
+X-Gm-Message-State: AOAM532KT0YnCikHXxl4AHnT4STGh2rWHCToQiU+lUKlQwaGQHtU0se1
+ cHJV1qtahfYJOMSgeIOweWC+4HJDMgM=
+X-Google-Smtp-Source: ABdhPJz4MRK3ifLZfCXFaqSI4lm/LqkedTNZlXh7gAgSS7T865nY3qUJX8dSsfHTyUTvLewIMd3iRA==
+X-Received: by 2002:a63:1f0e:: with SMTP id f14mr1559154pgf.405.1592546240182; 
+ Thu, 18 Jun 2020 22:57:20 -0700 (PDT)
+Received: from localhost ([122.172.119.132])
+ by smtp.gmail.com with ESMTPSA id j130sm3859861pgc.75.2020.06.18.22.57.19
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 18 Jun 2020 22:57:19 -0700 (PDT)
+Date: Fri, 19 Jun 2020 11:27:17 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Finley Xiao <finley.xiao@rock-chips.com>
+Subject: Re: [PATCH] thermal/drivers/cpufreq_cooling: Fix wrong frequency
+ converted from power
+Message-ID: <20200619055717.egfs23qywj4kmjok@vireshk-i7>
+References: <20200619015126.15002-1-finley.xiao@rock-chips.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200619015126.15002-1-finley.xiao@rock-chips.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200618_191311_769470_539F6D79 
-X-CRM114-Status: GOOD (  11.28  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200618_225723_732512_6354F9D7 
+X-CRM114-Status: GOOD (  16.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.131 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [211.157.147.131 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,62 +98,62 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- andy.yan@rock-chips.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: huangtao@rock-chips.com, amit.kucheria@verdurent.com, heiko@sntech.de,
+ xf@rock-chips.com, amit.kachhap@gmail.com, daniel.lezcano@linaro.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ tony.xie@rock-chips.com, linux-pm@vger.kernel.org, rui.zhang@intel.com,
+ javi.merino@kernel.org, cl@rock-chips.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-RGB888 format msb is red component and the lsb is blue component,
-at vop full platform this is swapped, and this is different from vop
-lite and vop next, so add this patch to fix it.
+On 19-06-20, 09:51, Finley Xiao wrote:
+> The function cpu_power_to_freq is used to find a frequency and set the
+> cooling device to consume at most the power to be converted. For example,
+> if the power to be converted is 80mW, and the em table is as follow.
+> struct em_cap_state table[] = {
+> 	/* KHz     mW */
+> 	{ 1008000, 36, 0 },
+> 	{ 1200000, 49, 0 },
+> 	{ 1296000, 59, 0 },
+> 	{ 1416000, 72, 0 },
+> 	{ 1512000, 86, 0 },
+> };
+> The target frequency should be 1416000KHz, not 1512000KHz.
+> 
 
-Signed-off-by: Sandy Huang <hjc@rock-chips.com>
----
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+Cc: v4.13+ <stable@vger.kernel.org> # v4.13+
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index c80f7d9fd13f..1c17048ad737 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -132,6 +132,7 @@ struct vop_win {
- 
- struct rockchip_rgb;
- struct vop {
-+	uint32_t version;
- 	struct drm_crtc crtc;
- 	struct device *dev;
- 	struct drm_device *drm_dev;
-@@ -989,6 +990,12 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
- 	VOP_WIN_SET(vop, win, dsp_st, dsp_st);
- 
- 	rb_swap = has_rb_swapped(fb->format->format);
-+	/*
-+	 * VOP full need to do rb swap to show rgb888/bgr888 format color correctly
-+	 */
-+	if ((fb->format->format == DRM_FORMAT_RGB888 || fb->format->format == DRM_FORMAT_BGR888) &&
-+	    VOP_MAJOR(vop->version) == 3)
-+		rb_swap = !rb_swap;
- 	VOP_WIN_SET(vop, win, rb_swap, rb_swap);
- 
- 	/*
-@@ -2091,6 +2098,7 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
- 	vop->dev = dev;
- 	vop->data = vop_data;
- 	vop->drm_dev = drm_dev;
-+	vop->version = vop_data->version;
- 	dev_set_drvdata(dev, vop);
- 
- 	vop_win_init(vop);
+> Fixes: 349d39dc5739 ("thermal: cpu_cooling: merge frequency and power tables")
+> Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
+> ---
+>  drivers/thermal/cpufreq_cooling.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/thermal/cpufreq_cooling.c b/drivers/thermal/cpufreq_cooling.c
+> index 9e124020519f..6c0e1b053126 100644
+> --- a/drivers/thermal/cpufreq_cooling.c
+> +++ b/drivers/thermal/cpufreq_cooling.c
+> @@ -123,12 +123,12 @@ static u32 cpu_power_to_freq(struct cpufreq_cooling_device *cpufreq_cdev,
+>  {
+>  	int i;
+>  
+> -	for (i = cpufreq_cdev->max_level - 1; i >= 0; i--) {
+> -		if (power > cpufreq_cdev->em->table[i].power)
+> +	for (i = cpufreq_cdev->max_level; i >= 0; i--) {
+> +		if (power >= cpufreq_cdev->em->table[i].power)
+>  			break;
+>  	}
+>  
+> -	return cpufreq_cdev->em->table[i + 1].frequency;
+> +	return cpufreq_cdev->em->table[i].frequency;
+>  }
+
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+
 -- 
-2.17.1
-
-
-
+viresh
 
 _______________________________________________
 Linux-rockchip mailing list
