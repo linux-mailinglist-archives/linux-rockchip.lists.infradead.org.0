@@ -2,49 +2,66 @@ Return-Path: <linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradea
 X-Original-To: lists+linux-rockchip@lfdr.de
 Delivered-To: lists+linux-rockchip@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9007D200265
-	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 09:02:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D6C82002C0
+	for <lists+linux-rockchip@lfdr.de>; Fri, 19 Jun 2020 09:31:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GekH23teu7dzJzYgmC2aOipEyRluNQRTANSRA6SFF1Q=; b=TDigoGfGUO3Yac
-	dF/TUe5jK+IxXZghCkWEjVbFC2HctI5ioz9OXDgNHhCWNsMfyRnQmVFiQQBDeQ/f8sqI0Jdi864Uq
-	Hn0lcRM1nFB32ed3INC5wvD6kXS/4Ixm4gKGCanVTRJHnA40JSex4HKcK+cWB+imDkrSN1eHn+inD
-	E2V8ZQ7ZleUX0nQe4QJXNsw7wmntHXnvE5vl4ZgOEEAbC4sOb0M8vp6klZ9uJIPM9WpZXFIlf5MUO
-	uJuDRdqsOS4b6kBWudRo20+Nbnak8RTwaDfT7jsUKJbzgpcLbcpRrOlROjB/2M1fhZ28DNDj0IyvD
-	3GCpJRtBbN2BxboV469w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=l2AC20gnxuO5Iw0IyGLj8oc354tt2iFr8iZIfd7JDgA=; b=ZH+eEt0RPA5DWv/LLuP2bsC6p
+	RNyInPnbgP5uMniAtmiXakEKf2J46h+eJsCLYvEr9qLncLzar3Pokipn8rPBpykYwd8EqODOdr+Oq
+	iR+xMGvMaaVVPKyJoaub1gj+y23ZGrOwGrE1LVBFH1hFi8OO+SBVAJgQbkmi3QA81zlglRjaMreOR
+	A1Fwiko41prgqfsUOwHE1UqTh7T/KATUBlH5O5yyMJ7AuWIIwS2xTT7ZI89bBIgLN8sszo8/7TryJ
+	LEOQn9r04YQ8uC7OovTptGW99Q/pKh15nzj4W+GhztsB8V3AUYlOJXSyFFxcI3y70sUvYpMH1Wmiz
+	aKmMqcIZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmB2z-00078A-3z; Fri, 19 Jun 2020 07:02:45 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1jmBUN-0007LU-7e; Fri, 19 Jun 2020 07:31:03 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmB2l-0006zX-97; Fri, 19 Jun 2020 07:02:35 +0000
-Received: from p5b127c2f.dip0.t-ipconnect.de ([91.18.124.47]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jmB2d-00087c-5B; Fri, 19 Jun 2020 09:02:23 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Sandy Huang <hjc@rock-chips.com>
-Subject: Re: [PATCH] drm/rockchip: vop: fix vop full rgb24 r/b color error
-Date: Fri, 19 Jun 2020 09:02:22 +0200
-Message-ID: <2786595.VspqIdsi2r@phil>
-In-Reply-To: <20200619021251.22991-1-hjc@rock-chips.com>
-References: <20200619021251.22991-1-hjc@rock-chips.com>
+ id 1jmBUJ-0007Kv-H1
+ for linux-rockchip@lists.infradead.org; Fri, 19 Jun 2020 07:31:02 +0000
+Received: from [IPv6:2003:cb:8706:4c00:bc07:c8ad:1aab:8685]
+ (p200300cb87064c00bc07c8ad1aab8685.dip0.t-ipconnect.de
+ [IPv6:2003:cb:8706:4c00:bc07:c8ad:1aab:8685])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: dafna)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id B4A1B2A4FC3;
+ Fri, 19 Jun 2020 08:30:52 +0100 (BST)
+Subject: Re: [PATCH v2 3/4] media: staging: rkisp1: rsz: set output format to
+ YUV422 if cap format is YUV444
+To: Tomasz Figa <tfiga@chromium.org>
+References: <20200515142952.20163-1-dafna.hirschfeld@collabora.com>
+ <20200515142952.20163-4-dafna.hirschfeld@collabora.com>
+ <CAHD77HkjjWMOcX3oLnzdMuzZM-_NSydStnzLLcHEFRenL23d-A@mail.gmail.com>
+ <aa52f9f8-d9e9-06b2-22df-bbab2d26b516@collabora.com>
+ <20200618174752.GA10831@chromium.org>
+ <9ee01443-985d-751c-fff9-fa90337de68d@collabora.com>
+ <20200618181220.GC10831@chromium.org>
+ <f1660285-f6cb-6157-1e56-2974bc549fef@collabora.com>
+ <20200618191857.GC73379@chromium.org>
+From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Message-ID: <09b87404-b106-f58b-b773-cf4c344648df@collabora.com>
+Date: Fri, 19 Jun 2020 09:30:50 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200618191857.GC73379@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_000234_097041_74F0EEBF 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200619_003059_826766_E71E614C 
+X-CRM114-Status: GOOD (  29.30  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-rockchip@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,88 +74,125 @@ List-Post: <mailto:linux-rockchip@lists.infradead.org>
 List-Help: <mailto:linux-rockchip-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-rockchip>, 
  <mailto:linux-rockchip-request@lists.infradead.org?subject=subscribe>
-Cc: huangtao@rock-chips.com, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- andy.yan@rock-chips.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Dafna Hirschfeld <dafna3@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Helen Koike <helen.koike@collabora.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@collabora.com,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "Linux-rockchip" <linux-rockchip-bounces@lists.infradead.org>
 Errors-To: linux-rockchip-bounces+lists+linux-rockchip=lfdr.de@lists.infradead.org
 
-Hi Sandy,
 
-Am Freitag, 19. Juni 2020, 04:12:51 CEST schrieb Sandy Huang:
-> RGB888 format msb is red component and the lsb is blue component,
-> at vop full platform this is swapped, and this is different from vop
-> lite and vop next, so add this patch to fix it.
 
-just me struggling with color formats ... and wondering why this never
-came up so far - with Version 3 being all major SoCs of the last years.
-
-So I guess the reason that nobody noticed so far is, that most things
-will use ARGB888 instead of RGB888?
-
-One implementation nit below as well.
-
-> Signed-off-by: Sandy Huang <hjc@rock-chips.com>
-> ---
->  drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 8 ++++++++
->  1 file changed, 8 insertions(+)
+On 18.06.20 21:18, Tomasz Figa wrote:
+> On Thu, Jun 18, 2020 at 08:50:23PM +0200, Dafna Hirschfeld wrote:
+>>
+>>
+>> On 18.06.20 20:12, Tomasz Figa wrote:
+>>> On Thu, Jun 18, 2020 at 08:00:37PM +0200, Dafna Hirschfeld wrote:
+>>>>
+>>>>
+>>>> On 18.06.20 19:47, Tomasz Figa wrote:
+>>>>> On Fri, Jun 12, 2020 at 02:45:00PM +0200, Dafna Hirschfeld wrote:
+>>>>>>
+>>>>>>
+>>>>>> On 27.05.20 01:09, Tomasz Figa wrote:
+>>>>>>> On Fri, May 15, 2020 at 4:30 PM Dafna Hirschfeld
+>>>>>>> <dafna.hirschfeld@collabora.com> wrote:
+>>>>>>>>
+>>>>>>>> If the capture format is YUV444M then the memory input format
+>>>>>>>> should be YUV422, so the resizer should not change the default
+>>>>>>>> hdiv, vdiv in that case.
+>>>>>>>>
+>>>>>>>> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+>>>>>>>> ---
+>>>>>>>>      drivers/staging/media/rkisp1/rkisp1-resizer.c | 7 ++++---
+>>>>>>>>      1 file changed, 4 insertions(+), 3 deletions(-)
+>>>>>>>>
+>>>>>>>> diff --git a/drivers/staging/media/rkisp1/rkisp1-resizer.c b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>>> index 04a29af8cc92..5f9740ddd558 100644
+>>>>>>>> --- a/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>>> +++ b/drivers/staging/media/rkisp1/rkisp1-resizer.c
+>>>>>>>> @@ -394,10 +394,11 @@ static void rkisp1_rsz_config(struct rkisp1_resizer *rsz,
+>>>>>>>>              * (4:2:2 -> 4:2:0 for example). So the width/height of the CbCr
+>>>>>>>>              * streams should be set according to the pixel format in the capture.
+>>>>>>>>              * The resizer always gets the input as YUV422. If the capture format
+>>>>>>>> -        * is RGB then the memory input (the resizer output) should be YUV422
+>>>>>>>> -        * so we use the hdiv, vdiv of the YUV422 info in this case.
+>>>>>>>> +        * is RGB or YUV444 then the memory input (the resizer output) should
+>>>>>>>> +        * be YUV422 so we use the hdiv, vdiv of the YUV422 info in this case.
+>>>>>>>>              */
+>>>>>>>> -       if (v4l2_is_format_yuv(cap->pix.info)) {
+>>>>>>>> +       if (v4l2_is_format_yuv(cap->pix.info) &&
+>>>>>>>> +           cap->pix.info->format != V4L2_PIX_FMT_YUV444M) {
+>>>>>>>>                     src_c.width = cap->pix.info->hdiv;
+>>>>>>>>                     src_c.height = cap->pix.info->vdiv;
+>>>>>>>
+>>>>>>> As pointed out in another thread, this should have been the original
+>>>>>>> size divided by the divisor and not just the latter alone.
+>>>>>>>
+>>>>>>> It seems a bit suspicious to me that we don't need to upscale the
+>>>>>>> chroma planes here, because it would mean that the MI itself would be
+>>>>>>> doing some horizontal pixel doubling. The hardware documentation
+>>>>>>> doesn't really explain this, though.
+>>>>>>>
+>>>>>>> Have you been able to validate that the setting without upscaling
+>>>>>>> indeed produces correct output?
+>>>>>>
+>>>>>> Hi,
+>>>>>> I investigated it again, without this patch, the frames on mainpath for YUV444 look good: https://imgur.com/a/NtazWhY
+>>>>>> but there is a problem on selfpath: https://imgur.com/a/vQJPqAn
+>>>>>>
+>>>>>> This patch somehow solves the problem on selfpath but ruins the frames on mainpath.
+>>>>>>
+>>>>>> I think the bug is actually in another place in the code. The function 'rkisp1_sp_config'
+>>>>>> sets a constant value RKISP1_MI_CTRL_SP_INPUT_YUV422 as the input format on the RKISP1_CIF_MI_CTRL register.
+>>>>>> But the value should be set according to the configuration. For some reason the problem arises only
+>>>>>> when trying to capture yuv444. When I capture yuv420 on the selfpath the frame looks good although the
+>>>>>> value RKISP1_MI_CTRL_SP_INPUT_YUV422 is set.
+>>>>>> Setting the the SP_INPUT_* according to the configuration seems to solve the problem.
+>>>>>
+>>>>> Looking at the datasheet, SP seems to have some internal format
+>>>>> conversion capability - one can set SP_OUTPUT_FORMAT and SP_INPUT_FORMAT
+>>>>> to different YUV subsampling modes or even some RGB formats. MP doesn't
+>>>>> have this capability - it can only write whatever it receives.
+>>>>>
+>>>>> I think this needs to be reflected in the driver, if it isn't yet.
+>>>>> Depending on the resizer source format, the MP video node must allow
+>>>>> only formats with matching subsampling mode.
+>>>>
+>>>> Hi,
+>>>> I work on v3 now that does that, it supports several yuv mbus codes on the source pads of the resizers
+>>>> and then in the link_validation callback of the capture it checks that the subsampling matches.
+>>>
+>>> Is it enough? I believe the principle is that within the same entity the
+>>> state needs to stay consistent, i.e. if the sink pad changes, the source
+>>> pad or video node must be updated to expose only correct formats,
+>>> including resetting the current format.
+>> Yes, but video devices have only a sink pad. Also, the sink pad of
+>> a video device is not associated with an mbus code. The video format configuration
+>> is not related to the media controller API.
 > 
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> index c80f7d9fd13f..1c17048ad737 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-> @@ -132,6 +132,7 @@ struct vop_win {
->  
->  struct rockchip_rgb;
->  struct vop {
-> +	uint32_t version;
->  	struct drm_crtc crtc;
->  	struct device *dev;
->  	struct drm_device *drm_dev;
-> @@ -989,6 +990,12 @@ static void vop_plane_atomic_update(struct drm_plane *plane,
->  	VOP_WIN_SET(vop, win, dsp_st, dsp_st);
->  
->  	rb_swap = has_rb_swapped(fb->format->format);
-> +	/*
-> +	 * VOP full need to do rb swap to show rgb888/bgr888 format color correctly
-> +	 */
+> The video device interface and the entity it is linked to belong to the
+> same driver. The V4L2 video device interface requires that the state is
+> always valid and the implementation of the video device needs to take
+> into account its links to external entities.
 
-one-line-comment?
-	/* VOP-full needs rb_swap for correctly showing rgb888/bgr888 */
+But if the pad on the other side of the link is configured after the video device
+then the state might become invalid.
 
-> +	if ((fb->format->format == DRM_FORMAT_RGB888 || fb->format->format == DRM_FORMAT_BGR888) &&
-> +	    VOP_MAJOR(vop->version) == 3)
-> +		rb_swap = !rb_swap;
+Thanks,
+Dafna
 
-can we move this into the existing has_rb_swapped() function?
-Like doing
-	rb_swap = has_rb_swapped(vop, fb->format->format)
-and adding your conditional to the end there?
-
-
-Thanks
-Heiko
-
-
->  	VOP_WIN_SET(vop, win, rb_swap, rb_swap);
->  
->  	/*
-> @@ -2091,6 +2098,7 @@ static int vop_bind(struct device *dev, struct device *master, void *data)
->  	vop->dev = dev;
->  	vop->data = vop_data;
->  	vop->drm_dev = drm_dev;
-> +	vop->version = vop_data->version;
->  	dev_set_drvdata(dev, vop);
->  
->  	vop_win_init(vop);
 > 
-
-
-
-
+> Best regards,
+> Tomasz
+> 
 
 _______________________________________________
 Linux-rockchip mailing list
